@@ -58,7 +58,7 @@ jobs:
 
   deploy_miljo:
     docker:
-      - image: navikt/deployment-cli:v0.2.0
+      - image: nais/deploy:v1
     steps:
       - checkout
       - setup_remote_docker
@@ -67,7 +67,14 @@ jobs:
           command: |
             git clone https://github.com/navikt/sosialhjelp-ci.git
             VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            deployment-cli deploy create --cluster=dev-sbs --repository=navikt/$CIRCLE_PROJECT_REPONAME --team=digisos -r=nais.yaml --var version=${VERSION} --vars=nais/dev/${MILJO}.json
+            jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > deployment.json
+            /app/deploy \
+                --apikey="$NAIS_DEPLOY_APIKEY" \
+                --cluster="dev-sbs" \
+                --repository="navikt/$CIRCLE_PROJECT_REPONAME" \
+                --resource="nais.yml" \
+                --vars="deployment.json" \
+                --wait=true
 
   deploy_prod:
     docker:
