@@ -1,19 +1,20 @@
 import * as React from "react";
-import "../artikkel.less";
-import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
-import IllustrasjonBygningPerson from "../../components/illustrations/IllustrasjonBygningPerson";
+import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
-import {useBannerTittel} from "../../utils/navigasjonUtils";
 import Artikkel from "../Artikkel";
+import "../artikkel.less";
+import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmEnglish: React.FC = () => {
-    useBannerTittel("Financial assistance");
-    return (
-        <Artikkel>
-            <IllustrasjonBygningPerson className="illustrasjon"/>
 
-            <Sidetittel>What can financial assistance cover?</Sidetittel>
+    return (
+        <Artikkel
+            tittel="What can financial assistance cover?"
+            illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
+            sprak={detteKanDuSokeOmSprak}
+        >
 
             <Normaltekst>
                 We will work with you to find out what your financial assistance needs are.

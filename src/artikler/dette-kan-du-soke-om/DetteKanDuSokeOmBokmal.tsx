@@ -6,14 +6,17 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
+import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmBokmal: React.FC = () => {
 
     return (
-        <Artikkel>
-
-            <Sidetittel>Dette kan du søke om</Sidetittel>
-
+        <Artikkel
+            tittel="Dette kan du søke om"
+            illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
+            sprak={detteKanDuSokeOmSprak}
+        >
             <Normaltekst>
                 Vi vurderer sammen med deg behovet ditt for økonomisk sosialhjelp.
                 Hvor mye du kan få i stønad er avhengig av din familiesituasjon,
