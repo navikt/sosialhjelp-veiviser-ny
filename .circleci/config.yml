@@ -87,7 +87,7 @@ jobs:
       - run:
           name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
           command: |
-            VERSION=`cat version.txt`
+            VERSION=`cat /tmp/workspace/version.txt`
             jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > deployment.json
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
