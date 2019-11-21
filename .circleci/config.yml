@@ -116,8 +116,9 @@ workflows:
     jobs:
       - bygg
       - deploy_miljo:
-          requires:
-            - bygg
+          filters:
+            branches:
+              only: unknown_branch
       - faktisk_deploy_miljo:
           requires:
             - deploy_miljo
