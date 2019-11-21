@@ -59,6 +59,9 @@ jobs:
   deploy_miljo:
     docker:
       - image: nais/deploy:v1
+        auth:
+          username: $DEPLOYMENT_USERNAME
+          password: $DEPLOYMENT_PASSWORD
     steps:
       - checkout
       - setup_remote_docker
