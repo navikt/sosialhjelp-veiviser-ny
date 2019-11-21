@@ -1,6 +1,6 @@
 FROM node as node-builder
 
-ADD /web/frontend /source
+ADD . /source
 ENV CI=true
 WORKDIR /source
 RUN npm install && npm run build
