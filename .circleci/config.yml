@@ -69,10 +69,11 @@ jobs:
           command: |
             GIT_COMMIT_HASH=$(git log -n 1 --pretty=format:'%h')
             GIT_COMMIT_DATE=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d.%H%M')
-            echo "1.0_${GIT_COMMIT_DATE}_${GIT_COMMIT_HASH}" > /tmp/workspace/version.txt
+            VERSION="1.0_${GIT_COMMIT_DATE}_${GIT_COMMIT_HASH}"
+            jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > /tmp/workspace/deployment.json
       - persist_to_workspace:
           root: /tmp/workspace
-          paths: "version.txt"
+          paths: "deployment.json"
 
   faktisk_deploy_miljo:
     docker:
@@ -87,14 +88,12 @@ jobs:
       - run:
           name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
           command: |
-            VERSION=`cat /tmp/workspace/version.txt`
-            jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > deployment.json
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
                 --cluster="dev-sbs" \
                 --repository="navikt/$CIRCLE_PROJECT_REPONAME" \
                 --resource="nais.yml" \
-                --vars="deployment.json" \
+                --vars="/tmp/workspace/deployment.json" \
                 --wait=true
 
   deploy_prod:
