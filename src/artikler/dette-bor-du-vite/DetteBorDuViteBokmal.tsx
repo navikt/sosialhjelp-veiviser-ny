@@ -2,22 +2,32 @@ import * as React from "react";
 import Artikkel from "../Artikkel";
 import {
   Ingress,
-  Innholdstittel,
   Normaltekst,
   Undertittel
 } from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
+import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
+import {detteBorDuViteSprak} from "./DetteBorDuVite";
 
 const DetteBorDuViteBokmal: React.FC = () => {
 
   return (
-    <Artikkel tittel="Dette bør du vite før du søker">
+    <Artikkel
+        tittel="Dette bør du vite før du søker"
+        illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
+        sprak={detteBorDuViteSprak}
+    >
+        <b>Todo liste på veiviser:</b>
         <ul>
             <li style={{textDecoration: "line-through"}}>Craco: ok</li>
             <li style={{textDecoration: "line-through"}}>Router</li>
-            <li>Forside</li>
-            <li>Banner</li>
-            <li>Forskjellige html filer i dev og dev?</li>
+            <li style={{textDecoration: "line-through"}}>Forside</li>
+            <li style={{textDecoration: "line-through"}}>Banner</li>
+            <li>Språkvelger</li>
+            <li>Endre html title</li>
+            <li>Kommunesøk</li>
+            <li>Skjellet på alle undersider</li>
+            <li>Egen index.html i codesandbox?</li>
         </ul>
       <Ingress>
         Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få stønad må

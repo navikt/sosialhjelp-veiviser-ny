@@ -1,6 +1,6 @@
 import * as React from "react";
 import Veilederpanel from "nav-frontend-veilederpanel";
-import BrevHender from "../../../components/illustrations/BrevHender";
+import BrevHender from "../../../komponenter/bilder/BrevHender";
 
 const IkkeSokDigitaltPanel: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (

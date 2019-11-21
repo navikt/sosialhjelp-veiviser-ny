@@ -1,0 +1,143 @@
+@import '../../utils/index';
+
+.hidden {
+  display: none;
+}
+
+// -------------------------
+// Bullet point
+// -------------------------
+.bullet-point(@border-size, @border-color, @left, @top) {
+  // Hvorfor har vi egentlig denne?
+  // Svar: "bullet point" separering mellom lenker er noe som brukes
+  // flere plasser og det krever en del css linjer, kan gjenbrukes her
+  border: @border-size solid @border-color;
+  border-radius: 50% 50% 50% 50%;
+  content: " ";
+  left: @left;
+  top: @top;
+  float: left;
+  position: absolute;
+  text-align: left;
+}
+
+// Down arrow (caret, dropdown)
+// -------------------------
+.down-arrow(@border-left, @border-right, @border-top, @color) {
+
+  border-left: @border-left solid transparent;
+  border-right: @border-right solid transparent;
+  border-top: @border-top solid @color;
+  content: "";
+  display: inline-block;
+  height: 0;
+  width: 0;
+  vertical-align: top;
+}
+
+@iconLeft: 6px;
+@iconTop: 8px;
+
+// Språkvelger i toolbar
+.content-languages.selected {
+  background: @navGra80 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzBBRUFBRkEyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzBBRUFBRjkyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjAyMEVBMUIxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjAyMEVBMUMxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz63AdRaAAAAK0lEQVR42mL8DwQM2AEjEOOSgwMmBgrBMDCABRpYDHgCkqABo7FAIQAIMABRlwcXBhEEcwAAAABJRU5ErkJggg==') no-repeat @iconLeft @iconTop;
+  >span {
+    color: #ffffff;
+    &:after {
+      .down-arrow(4px, 4px, 4px, white);
+      margin-top:10px;
+      margin-left:4px;
+    }
+  }
+  &:hover, &:focus, &:active {
+    background: #000000 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzBBRUFBRkEyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzBBRUFBRjkyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjAyMEVBMUIxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjAyMEVBMUMxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz63AdRaAAAAK0lEQVR42mL8DwQM2AEjEOOSgwMmBgrBMDCABRpYDHgCkqABo7FAIQAIMABRlwcXBhEEcwAAAABJRU5ErkJggg==') no-repeat @iconLeft @iconTop;
+    span {
+      color: white;
+      &:after {
+        .down-arrow(4px, 4px, 4px, white);
+      }
+    }
+  }
+}
+
+.content-languages[data-is-open="true"] {
+  margin-right: 4.5%;
+}
+
+.content-languages {
+  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzBBRUFBRkUyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzBBRUFBRkQyRTU4MTFFMzgwOTJEQjNDRUQwMURERkEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjAyMEVBMUIxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjAyMEVBMUMxMzI4MTFFM0IzOEQ5OUI5M0RGMDNDM0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6eHmFgAAAALUlEQVR42mK0szD6z4AdMAIxLjk4YGKgEAwDA1iggcWAJyAJGjAaCxQCgAADANJ9BML9eah+AAAAAElFTkSuQmCC') no-repeat @iconLeft @iconTop;
+  display: inline-block;
+  padding: 3px 0;
+  vertical-align: top;
+  margin-top: -3.5px;
+  cursor: pointer;
+  width: 8.8em;
+  position: relative;
+
+  >span {
+    text-decoration: none;
+    color: @navGra80;
+    cursor: pointer;
+    padding-left: 27px;
+    display: block;
+    margin-top: 2px;
+
+    &:after {
+      .down-arrow(4px, 4px, 4px, @navGra80);
+      margin-top:8px;
+      margin-left:5px;
+    }
+  }
+
+  ul {
+    padding: 0;
+    width: 100%;
+    margin: 3px 0 0;
+    background: @navGra80;
+    border:1px solid @navGra40;
+    border-top: none;
+    position: absolute;
+
+    li {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding: 3px;
+
+      .active-lang {
+        &:after {
+          .bullet-point(2px, @navLysBlaLighten20, 7%, 46%);
+        }
+      }
+
+      &:first-child {
+        a {
+          padding-top: 7px;
+        }
+      }
+      &:last-child {
+        a {
+          padding-bottom: 7px;
+        }
+      }
+      a {
+        padding: 4px 27px;
+        color: #ffffff;
+        border-bottom: none !important;
+
+        &:hover {
+          color: @navLysBlaLighten20;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &:hover, &:focus, &:active {
+    span {
+      color: @navLysBlaLighten20;
+      &:after {
+        .down-arrow(4px, 4px, 4px, blue);
+      }
+    }
+  }
+}

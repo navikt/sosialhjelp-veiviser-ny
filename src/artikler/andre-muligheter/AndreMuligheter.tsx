@@ -1,23 +1,21 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
 import {Ingress, Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
-
 import SokJobbPanel from "./SokJobbPanel";
-
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
-
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import JobblystPanel from "./JobblystPanel";
+import {Sprak} from "../../utils/sprakUtils";
 
 const AndreMuligheter: React.FC = () => {
-
-
-
     return (
         <>
-            <Artikkel className="artikkel--andre_mulighter">
-
+            <Artikkel
+                className="artikkel--andre_mulighter"
+                sprak={[Sprak.NORSK_BOKMAL]}
+                tittel="Andre muligheter"
+            >
                 <Sidetittel>Andre muligheter</Sidetittel>
                 <Ingress>
                     Økonomisk sosialhjelp er en midlertidig stønad. Du må vurdere andre

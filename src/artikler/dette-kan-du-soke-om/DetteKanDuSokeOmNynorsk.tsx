@@ -1,20 +1,22 @@
 import * as React from "react";
 import "../artikkel.less";
 import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
-import IllustrasjonBygningPerson from "../../components/illustrations/IllustrasjonBygningPerson";
+
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
-import {useBannerTittel} from "../../utils/navigasjonUtils";
+
 import Artikkel from "../Artikkel";
+import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmNynorsk: React.FC = () => {
-    useBannerTittel("Dette kan du søkje om");
 
     return (
-        <Artikkel>
-            <IllustrasjonBygningPerson className="illustrasjon"/>
-
-            <Sidetittel>Dette kan du søkje om</Sidetittel>
+        <Artikkel
+            tittel="Dette kan du søkje om"
+            illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
+            sprak={detteKanDuSokeOmSprak}
+        >
 
             <Normaltekst>
                 Vi vurderer saman med deg kva behovet ditt er for økonomisk sosialhjelp.

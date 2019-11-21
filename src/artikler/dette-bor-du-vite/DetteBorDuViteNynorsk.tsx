@@ -2,19 +2,17 @@ import * as React from "react";
 import Artikkel from "../Artikkel";
 import {Ingress, Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import IllustrasjonInfoSirkel from "../../components/illustrations/IllustrasjonInfoSirkel";
-import {useBannerTittel} from "../../utils/navigasjonUtils";
+import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
+import {detteBorDuViteSprak} from "./DetteBorDuVite";
 
 const DetteBorDuViteNynorsk: React.FC = () => {
 
-    useBannerTittel("Dette bør du vite før du søker");
-
     return (
-        <Artikkel>
-
-            <IllustrasjonInfoSirkel className="illustrasjon"/>
-
-            <Innholdstittel>Dette bør du vite før du søker</Innholdstittel>
+        <Artikkel
+            tittel="Dette bør du vite før du søker"
+            illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
+            sprak={detteBorDuViteSprak}
+        >
 
             <Ingress>
                 Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få stønad må
