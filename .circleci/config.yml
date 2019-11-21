@@ -58,7 +58,7 @@ jobs:
 
   deploy_miljo:
     docker:
-      - image: nais/deploy:v1
+      - image: docker.pkg.github.com/nais/deploy/deploy:v1
         auth:
           username: $DEPLOYMENT_USERNAME
           password: $DEPLOYMENT_PASSWORD
