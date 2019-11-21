@@ -112,6 +112,7 @@ workflows:
   bygg-og-publish-image:
     jobs:
       - bygg
+      - deploy_miljo
       - faktisk_deploy_miljo:
           requires:
             - deploy_miljo
