@@ -69,7 +69,7 @@ jobs:
           command: |
             GIT_COMMIT_HASH=$(git log -n 1 --pretty=format:'%h')
             GIT_COMMIT_DATE=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d.%H%M')
-            echo "1.0_${GIT_COMMIT_DATE}_${GIT_COMMIT_HASH}" > version.txt
+            echo "1.0_${GIT_COMMIT_DATE}_${GIT_COMMIT_HASH}" > /tmp/workspace/version.txt
       - persist_to_workspace:
           root: /tmp/workspace
           paths: "version.txt"
