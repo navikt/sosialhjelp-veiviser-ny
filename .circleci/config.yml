@@ -41,15 +41,15 @@ jobs:
       - run:
           name: Build docker image
           command: docker build -t $DOCKER_TAG .
-#      - run:
-#          name: Create tag and release
-#          command: |
-#            echo $DIGISOS_KEY | tr '_' '\n' > digisos.key
-#            GH_TOKEN=$(generate-installation-token.sh `generate-jwt.sh digisos.key $DIGISOS_APPID`)
-#            rm digisos.key
-#
-#            create-github-release.sh -p $CIRCLE_PROJECT_REPONAME -t $(create-artifact-version.sh) \
-#            -c $CIRCLE_SHA1 -m "$(format-commit-message.sh)" -a $GH_TOKEN
+      - run:
+          name: Create tag and release
+          command: |
+            echo $DIGISOS_KEY | tr '_' '\n' > digisos.key
+            GH_TOKEN=$(generate-installation-token.sh `generate-jwt.sh digisos.key $DIGISOS_APPID`)
+            rm digisos.key
+
+            create-github-release.sh -p $CIRCLE_PROJECT_REPONAME -t $(create-artifact-version.sh) \
+            -c $CIRCLE_SHA1 -m "$(format-commit-message.sh)" -a $GH_TOKEN
       - run:
           name: Pusher Docker image
           command: |
