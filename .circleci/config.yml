@@ -73,7 +73,7 @@ jobs:
                 --apikey="$NAIS_DEPLOY_APIKEY" \
                 --cluster="dev-sbs" \
                 --repository="navikt/$CIRCLE_PROJECT_REPONAME" \
-                --resource="nais.yml" \
+                --resource="nais.yaml" \
                 --vars="deployment.json" \
                 --wait=true
 
