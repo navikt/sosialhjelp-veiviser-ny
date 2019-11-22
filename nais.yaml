@@ -16,10 +16,10 @@ spec:
     enabled: true
     path: /prometheus
   liveness:
-    path: sosialhjelp/selftest/alive.txt
+    path: sosialhjelp/internal/isAlive
     initialDelay: 20
   readiness:
-    path: sosialhjelp/selftest/ready.txt
+    path: sosialhjelp/internal/isAlive
     initialDelay: 20
   resources:
     limits:
