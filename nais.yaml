@@ -1,0 +1,39 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: sosialhjelp-veiviser
+  namespace: {{namespace}}
+  labels:
+    team: digisos
+spec:
+  image: docker.pkg.github.com/navikt/sosialhjelp-veiviser/sosialhjelp-veiviser:{{version}}
+  port: 8080
+  ingresses:
+{{#each ingresses}}
+   - "{{this}}"
+{{/each}}
+  prometheus:
+    enabled: true
+    path: /prometheus
+  liveness:
+    path: sosialhjelp/selftest/alive.txt
+    initialDelay: 20
+  readiness:
+    path: sosialhjelp/selftest/ready.txt
+    initialDelay: 20
+  resources:
+    limits:
+      cpu: 3000m
+      memory: 1024Mi
+    requests:
+      cpu: 400m
+      memory: 512Mi
+  replicas:
+    min: 1
+    max: 2
+    cpuThresholdPercentage: 50
+  env:
+{{#each env}}
+    - name: {{@key}}
+      value: "{{this}}"
+{{/each}}
