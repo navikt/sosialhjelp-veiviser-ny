@@ -58,36 +58,16 @@ jobs:
 
   deploy_miljo:
     docker:
-      - image: navikt/deployment-cli:v0.2.0
+      - image: navikt/deployment:v1
     steps:
       - checkout
-      - run:
-          name: Create workspace
-          command: mkdir -p /tmp/workspace
       - run:
           name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
           command: |
             GIT_COMMIT_HASH=$(git log -n 1 --pretty=format:'%h')
             GIT_COMMIT_DATE=$(git log -1 --pretty='%ad' --date=format:'%Y%m%d.%H%M')
             VERSION="1.0_${GIT_COMMIT_DATE}_${GIT_COMMIT_HASH}"
-            jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > /tmp/workspace/deployment.json
-      - persist_to_workspace:
-          root: /tmp/workspace
-          paths: "deployment.json"
-
-  faktisk_deploy_miljo:
-    docker:
-      - image: docker.pkg.github.com/nais/deploy/deploy:v1
-        auth:
-          username: $DEPLOYMENT_USERNAME
-          password: $DEPLOYMENT_PASSWORD
-    steps:
-      - checkout
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
-          command: |
+            jq '.version = "${VERSION}"' nais/dev/${MILJO}.json > deployment.json
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
                 --cluster="dev-sbs" \
@@ -95,6 +75,27 @@ jobs:
                 --resource="nais.yml" \
                 --vars="/tmp/workspace/deployment.json" \
                 --wait=true
+
+#  faktisk_deploy_miljo:
+#    docker:
+#      - image: docker.pkg.github.com/nais/deploy/deploy:v1
+#        auth:
+#          username: $DEPLOYMENT_USERNAME
+#          password: $DEPLOYMENT_PASSWORD
+#    steps:
+#      - checkout
+#      - attach_workspace:
+#          at: /tmp/workspace
+#      - run:
+#          name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
+#          command: |
+#            /app/deploy \
+#                --apikey="$NAIS_DEPLOY_APIKEY" \
+#                --cluster="dev-sbs" \
+#                --repository="navikt/$CIRCLE_PROJECT_REPONAME" \
+#                --resource="nais.yml" \
+#                --vars="/tmp/workspace/deployment.json" \
+#                --wait=true
 
   deploy_prod:
     docker:
@@ -114,10 +115,10 @@ workflows:
   bygg-og-publish-image:
     jobs:
       - bygg
-      - deploy_miljo:
-          filters:
-            branches:
-              only: unknown_branch
-      - faktisk_deploy_miljo:
-          requires:
-            - deploy_miljo
+#      - deploy_miljo:
+#          filters:
+#            branches:
+#              only: unknown_branch
+#      - faktisk_deploy_miljo:
+#          requires:
+#            - deploy_miljo
