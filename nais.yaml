@@ -6,7 +6,7 @@ metadata:
   labels:
     team: digisos
 spec:
-  image: docker.pkg.github.com/navikt/sosialhjelp-veiviser/sosialhjelp-veiviser:{{version}}
+  image: docker.pkg.github.com/navikt/sosialhjelp-veiviser-ny/sosialhjelp-veiviser-ny:{{version}}
   port: 8080
   ingresses:
 {{#each ingresses}}
