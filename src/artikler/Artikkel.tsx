@@ -10,7 +10,7 @@ interface Props {
     className?: string;
     tittel: string;
     illustrasjon?: React.ReactNode;
-    sprak?: Sprak[]
+    sprak: Sprak[]
 }
 const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, sprak}) => {
 
@@ -20,7 +20,7 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, s
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
                 <div className="artikkel">
-                    {sprak && (<SprakVelger sprak={sprak}/>)}
+                    <SprakVelger sprak={sprak}/>
                     <div className="innhold">
                         {illustrasjon && (<span>{illustrasjon}</span>)}
                         <Innholdstittel>{tittel}</Innholdstittel>

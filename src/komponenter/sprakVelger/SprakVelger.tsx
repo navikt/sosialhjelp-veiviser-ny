@@ -2,6 +2,7 @@ import * as React from "react";
 import "./sprakVelger.less";
 import {useEffect, useState} from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
+import {history, onClickLink} from "../../utils/navigasjon";
 
 interface Props {
     sprak: Sprak[];
@@ -9,6 +10,8 @@ interface Props {
 
 const SprakVelger: React.FC<Props> = ({sprak}) => {
     const [aapen, setAapen] = useState(false);
+    const [search, setSearch] = useState<string|undefined>(undefined);
+    let mounted = true;
 
     // Denne skaper problemer med React 16:
     // Detekter klikk på utsiden av språkvelgeren
@@ -25,10 +28,21 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
 
     const onClick = (event: any): void => {
         setAapen(!aapen);
+        mounted = false;
     };
 
+    useEffect(() => {
+        if (search !== undefined) {
+            history.push({search: search});
+        }
+    }, [search]);
+
     const velgSpraak = (event: any, search: string) => {
-        window.location.search = search;
+        setSearch(search);
+        // console.log("debug: " + window.location.pathname);
+        // console.log("debug: " + window.location.search);
+        // console.log("debug: " + search);
+        // window.location.pathname = window.location.pathname + search;
         event.preventDefault();
     };
 
