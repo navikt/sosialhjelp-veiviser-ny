@@ -10,11 +10,7 @@ interface Props {
 
 const SprakVelger: React.FC<Props> = ({sprak}) => {
     const [aapen, setAapen] = useState(false);
-    const [search, setSearch] = useState<string|undefined>(undefined);
-    let mounted = true;
 
-    // Denne skaper problemer med React 16:
-    // Detekter klikk på utsiden av språkvelgeren
     useEffect(() => {
         if (aapen) {
             const handler = (event: any) => {
@@ -28,21 +24,10 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
 
     const onClick = (event: any): void => {
         setAapen(!aapen);
-        mounted = false;
     };
 
-    useEffect(() => {
-        if (search !== undefined) {
-            history.push({search: search});
-        }
-    }, [search]);
-
     const velgSpraak = (event: any, search: string) => {
-        setSearch(search);
-        // console.log("debug: " + window.location.pathname);
-        // console.log("debug: " + window.location.search);
-        // console.log("debug: " + search);
-        // window.location.pathname = window.location.pathname + search;
+        history.push({search: search});
         event.preventDefault();
     };
 

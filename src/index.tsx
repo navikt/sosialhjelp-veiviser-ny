@@ -8,6 +8,7 @@ import DetteKanDuSokeOm from "./artikler/dette-kan-du-soke-om/DetteKanDuSokeOm";
 import AndreMuligheter from "./artikler/andre-muligheter/AndreMuligheter";
 import {history } from "./utils/navigasjon";
 import Forside from "./artikler/forside/Forside";
+import TestSprakValg from "./komponenter/sprakvalg/TestSprakValg";
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
                 <Route exact path="/dette-bor-du-vite" component={DetteBorDuVite}/>
                 <Route exact path="/andre-mulighter" component={AndreMuligheter}/>
                 <Route exact path="/dette-kan-du-soke-om" component={DetteKanDuSokeOm}/>
+
+                <Route exact path="/test-sprak-valg" component={TestSprakValg}/>
+
             </Switch>
             <br/>
             <br/>

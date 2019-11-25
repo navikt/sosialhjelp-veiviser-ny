@@ -1,5 +1,5 @@
 export enum Sprak {
-    NORSK_BOKMAL= "nb",
+    NORSK_BOKMAL = "nb",
     NYNORSK = "nn",
     ENGELSK = "en",
     SAMISK = "se"
