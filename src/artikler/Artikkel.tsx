@@ -4,6 +4,7 @@ import Dekorator from "../komponenter/dekorator/Dekorator";
 import {Innholdstittel} from "nav-frontend-typografi";
 import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
 import {Sprak} from "../utils/sprakUtils";
+import Brodsmulesti from "../komponenter/brodsmulesti/Brodsmulesti";
 
 interface Props {
     children: React.ReactNode;
@@ -19,6 +20,11 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, s
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
+
+                <Brodsmulesti
+                    tittel={tittel ? tittel : "ingen tittel"}
+                />
+
                 <div className="artikkel">
                     <SprakVelger sprak={sprak}/>
                     <div className="innhold">

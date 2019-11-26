@@ -1,11 +1,12 @@
 import * as React from "react";
 import {InfoPanel, InfoPanelContainer} from "../../komponenter/infopanel/InfoPanel";
-import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import "./komponenter/forside.less";
-import {Normaltekst, Systemtittel} from "nav-frontend-typografi";
+import {Normaltekst, Systemtittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import {onClickLink} from "../../utils/navigasjon";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
+import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
+import ChatIkon from "../../komponenter/bilder/ChatIkon";
 
 const Forside: React.FC = () => {
 
@@ -14,98 +15,71 @@ const Forside: React.FC = () => {
             <div className="blokk-center forside">
 
                 <InfoPanelContainer>
-                    <InfoPanel
-                        ikon={<span/>}
-                        href="/dette-bor-du-vite"
-                        onClick={(event: any) => onClickLink(event, "dette-bor-du-vite")}
-                    >
-                        Dette bør du vite før du søker
+
+                    <InfoPanel href="./dette-bor-du-vite">
+                        <Undertittel>Dette bør du vite før du søker</Undertittel>
+                        <Normaltekst>
+                            Hvem kan søke? Hva må du dokumentere? Hva skjer etter at du har søkt?
+                        </Normaltekst>
                     </InfoPanel>
 
-                    <InfoPanel
-                        ikon={<span/>}
-                        href="/andre-mulighter"
-                        onClick={(event: any) => onClickLink(event, "andre-mulighter")}
-                    >
-                        Andre muligheter
+                    <InfoPanel href="./dette-kan-du-soke-om">
+                        <Undertittel>Dette kan du søke om</Undertittel>
+                        <Normaltekst>
+                            Hvilke utgifter kan du søke om å få hjelp til å betale?
+                        </Normaltekst>
                     </InfoPanel>
 
-                    <InfoPanel
-                        ikon={<span/>}
-                        href="/dette-kan-du-soke-om"
-                        onClick={(event: any) => onClickLink(event, "dette-kan-du-soke-om")}
-                    >
-                        Dette kan du søke om
-                    </InfoPanel>
                 </InfoPanelContainer>
 
+                <SokOmSosialhjelpPanel href="./slik-soker-du">
+                    Søk om økonomisk sosialhjelp
+                </SokOmSosialhjelpPanel>
 
-                <LenkepanelBase
-                    className="start_soknad_panel"
-                    href="/slik-soker-du"
-                    onClick={(event: any) => onClickLink(event, "slik-soker-du")}
-                >
-                    <Systemtittel>
-                        Søk om økonomisk sosialhjelp
-                    </Systemtittel>
-                </LenkepanelBase>
+                <InfoPanelContainer>
 
-
-                <div className="lenkeboks_container lenkeboks_container--2_spalter">
-                    <div className="lenkeboks">
+                    <InfoPanel href="./nodsituasjon">
+                        <Undertittel>Dette gjør du i en nødsituasjon</Undertittel>
                         <Normaltekst>
-                            Har du spørsmål om sosiale tjenester og økonomisk sosialhjelp?
-                            <br/>
-                            <Lenke href="todo123">Chat med oss om sosiale tjenester</Lenke>
+                            Hva betyr det å være i en nødsituasjon? Hva bør du gjøre om du er i en nødsituasjon?
                         </Normaltekst>
-                        <br/>
+                    </InfoPanel>
+
+                    <InfoPanel href="./andre-mulighter">
+                        <Undertittel>Andre muligheter</Undertittel>
                         <Normaltekst>
-                            Har du spørsmål om budsjett, økonomi og gjeldsrådgivning?
-                            <br/>
-                            <Lenke href="todo123">Chat med oss om gjeldsrådgivning</Lenke>
+                            Har du sjekket andre muligheter til å forsørge deg selv?
                         </Normaltekst>
-                    </div>
+                    </InfoPanel>
 
-                    <div className="lenkeboks">
+                </InfoPanelContainer>
 
-                        <ul>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514880"
-                                >
-                                    Dette gjør du i en
-                                    nødssituasjon
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    href="https://www.nav.no/353421/finn-ditt-nav-kontor"
-                                    className="no-text-decoration"
-                                >
-                                    Finn NAV-kontoret ditt
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="https://www.nav.no/87526/generelle-råd-og-veiledning"
-                                   className="no-text-decoration"
-                                >
-                                    Du har rett til opplysning,
-                                    råd og veiledning
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514876"
-                                >
-                                    Slik foregår et møte med
-                                    oss
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <InfoPanelContainer>
+
+                    <InfoPanel
+                        href="https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/Relatert+innhold/chat-med-oss-om-sosiale-tjenester"
+                        className="infopanel_chat"
+                    >
+                        <Undertittel>Har du spørsmål om sosiale tjenester og økonomisk sosialhjelp?</Undertittel>
+                        <Normaltekst>
+                            <ChatIkon/>
+                            Chat med oss om sosiale tjenester
+                        </Normaltekst>
+                    </InfoPanel>
+
+                    <InfoPanel
+                        href="https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/Relatert+innhold/chat-med-oss-om-%C3%B8konomiske-problemer"
+                        className="infopanel_chat"
+                    >
+                        <Undertittel>Har du spørsmål om budsjett, økonomi, og gjeldsrådgivning?</Undertittel>
+                        <Normaltekst>
+                            <ChatIkon/>
+                            Chat med oss om gjeldsrådgivning
+                        </Normaltekst>
+                    </InfoPanel>
+
+                </InfoPanelContainer>
+
             </div>
         </Dekorator>
     )

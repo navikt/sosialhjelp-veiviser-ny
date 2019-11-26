@@ -1,7 +1,7 @@
 import React from "react";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
-import {Systemtittel} from "nav-frontend-typografi";
 import "./infoPanel.less";
+import {onClickLink} from "../../utils/navigasjon";
 
 const InfoPanelContainer: React.FC<{children: React.ReactNode, className?: string}> = ({children, className}) => {
     return (
@@ -12,21 +12,20 @@ const InfoPanelContainer: React.FC<{children: React.ReactNode, className?: strin
 };
 
 type Props = {
-    children: React.ReactNode,
-    ikon: React.ReactNode,
-    href: string,
-    onClick?: (event: any) => void
+    children: React.ReactNode;
+    href: string;
+    onClick?: (event: any) => void;
+    className?: string;
 };
 
-const InfoPanel: React.FC<Props> = ({children, ikon, href, onClick}) => {
+const InfoPanel: React.FC<Props> = ({children, href, onClick, className}) => {
+    let onClickHandler = onClick ? onClick : (event: any) => onClickLink(event, href);
+    if (href.match(/^http/) !== null) {
+        onClickHandler = (event: any) => {};
+    }
     return (
-        <LenkepanelBase href={href} className="infopanel" onClick={onClick}>
-            <span className="infopanel___ikon">
-                {ikon}
-            </span>
-            <Systemtittel className="lenkepanel__heading">{children}</Systemtittel>
-
-
+        <LenkepanelBase href={href} className={"infopanel " + className} onClick={onClickHandler}>
+            {children}
         </LenkepanelBase>
     );
 };

@@ -32,21 +32,28 @@
 
   &__underside {
     padding-top: 20px;
-
   }
 
 }
 
 .banner__forside {
-  padding-top: 4rem;
+  // border: 1px dotted red;
+  // padding-top: 4rem;
 }
 
 .banner__forside-wrapper {
   display: flex;
   padding-left: 3rem;
+  align-items: flex-end;
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 741px) {
+  .banner__forside-wrapper {
+    height: 160px;
+  }
+}
+
+@media all and (max-width: 740px) {
   .banner__forside-wrapper {
     padding-left: 0.6rem;
   }
@@ -73,8 +80,7 @@
 
 .banner__forside-illustrasjon {
   flex-shrink: 0;
-  height: 160px;
-  margin-bottom: 0px;
+  margin-bottom: -1px;
 }
 
 @media all and (max-width: 730px) {

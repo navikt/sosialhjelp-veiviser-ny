@@ -2,6 +2,7 @@ import * as React from 'react';
 import './banner.less';
 import {Sidetittel, Innholdstittel} from 'nav-frontend-typografi';
 import VeiviserBannerIllustrasjon from "../bilder/VeiviserBannerIllustrasjon";
+import ForsideBanner from "../bilder/ForsideBanner";
 
 const Dekorator: React.FC<{ children: React.ReactNode, tittel?: string, erForside?: boolean}> = ({children, tittel, erForside}) => {
 
@@ -19,8 +20,7 @@ const Dekorator: React.FC<{ children: React.ReactNode, tittel?: string, erForsid
                                     Økonomisk sosialhjelp
                                 </Sidetittel>
                             </div>
-                            <VeiviserBannerIllustrasjon
-                                className="banner__forside-illustrasjon"/>
+                            <ForsideBanner className="banner__forside-illustrasjon"/>
                         </div>
                     )}
                     {!erForside && (

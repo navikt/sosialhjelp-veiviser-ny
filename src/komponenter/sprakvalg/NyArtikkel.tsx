@@ -61,7 +61,7 @@ const NyArtikkel: React.FC<{ oversettelser: { [key: string]: React.FC; } }> = ({
             <br/>
             Spike:
             {Object.keys(oversettelser).map((key: string) => {
-                return (<span>{oversettelser[key]}</span>);
+                return (<span key={key}>{oversettelser[key]}</span>);
                 // {key.match(/^no.*/) && sprak === Sprak.NORSK_BOKMAL.toString() && (
                 //     <span>{oversettelser[key]}</span>
                 // )}

@@ -11,16 +11,18 @@ interface Props {
 const SprakVelger: React.FC<Props> = ({sprak}) => {
     const [aapen, setAapen] = useState(false);
 
-    useEffect(() => {
-        if (aapen) {
-            const handler = (event: any) => {
-                setAapen(false);
-                window.removeEventListener('click', handler);
-            };
-            window.addEventListener('click', handler);
-        }
-
-    }, [aapen]);
+    // Detekter klikk utenfor språkvelger, og lukk språkvelger.
+    // Gir desverre feilmelding "can't update unmounted component..."
+    // useEffect(() => {
+    //     if (aapen) {
+    //         const handler = (event: any) => {
+    //             setAapen(false);
+    //             window.removeEventListener('click', handler);
+    //         };
+    //         window.addEventListener('click', handler);
+    //     }
+    //
+    // }, [aapen]);
 
     const onClick = (event: any): void => {
         setAapen(!aapen);
