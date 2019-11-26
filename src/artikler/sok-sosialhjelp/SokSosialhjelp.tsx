@@ -1,21 +1,21 @@
 import * as React from "react";
 import {Normaltekst, Undertittel, Systemtittel, Element} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
-import {useBannerTittel} from "../../utils/navigasjonUtils";
 import "./komponenter/sokSosialhjelp.less";
 import Lenke from "nav-frontend-lenker";
 import { Hovedknapp } from 'nav-frontend-knapper';
 import Lesmerpanel from 'nav-frontend-lesmerpanel';
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
+import {Sprak} from "../../utils/sprakUtils";
 
 const SokSosialhjelp: React.FC = () => {
 
-    useBannerTittel("Søk om økonomisk sosialhjelp");
-
     return (
-        <Artikkel>
-            <Systemtittel className="artikkel_sidetittel">Søk om økonomisk sosialhjelp</Systemtittel>
+        <Artikkel
+            sprak={[Sprak.NORSK_BOKMAL]}
+            tittel="Søk om økonomisk sosialhjelp"
+        >
 
             <Normaltekst>
                 Du skal søke til NAV-kontoret der du bor. Stadig flere kommuner kan ta i mot digitale søknader.

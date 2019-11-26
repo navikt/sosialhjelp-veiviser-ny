@@ -16,7 +16,6 @@ const AndreMuligheter: React.FC = () => {
                 sprak={[Sprak.NORSK_BOKMAL]}
                 tittel="Andre muligheter"
             >
-                <Sidetittel>Andre muligheter</Sidetittel>
                 <Ingress>
                     Økonomisk sosialhjelp er en midlertidig stønad. Du må vurdere andre
                     muligheter til å forsørge deg selv.

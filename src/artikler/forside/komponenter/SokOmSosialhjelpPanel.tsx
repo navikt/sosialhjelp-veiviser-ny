@@ -3,7 +3,6 @@ import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import {onClickLink} from "../../../utils/navigasjon";
 import {Systemtittel} from "nav-frontend-typografi";
 import "./sokOmSosialhjelpPanel.less";
-import MobilSirkel from "../../../komponenter/bilder/MobilSirkel";
 import IllustrasjonsGruppe from "../../../komponenter/bilder/IllustrasjonsGruppe";
 
 const SokOmSosialhjelpPanel: React.FC<{href: string, children: React.ReactNode}> = ({href, children}) => {
@@ -14,7 +13,9 @@ const SokOmSosialhjelpPanel: React.FC<{href: string, children: React.ReactNode}>
             href={href}
             onClick={(event: any) => onClickLink(event, href)}
         >
-            <MobilSirkel />
+            <div className="sokMobilIllustrasjon" />
+
+            {/*SVG har feil: <MobilSirkel />*/}
             <Systemtittel>
                 {children}
             </Systemtittel>
