@@ -24,15 +24,21 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run:
-          name: GitHub package registry login
-          command: |
-            echo "$DEPLOYMENT_PASSWORD" | docker login -u "$DEPLOYMENT_USERNAME" --password-stdin docker.pkg.github.com
-      - run:
           name: Checkout CI scripts
           command: |
             git clone https://github.com/navikt/github-apps-support.git
             git clone https://github.com/navikt/sosialhjelp-ci.git
             echo "export PATH=\"`pwd`/github-apps-support/bin:`pwd`/sosialhjelp-ci/bin:$PATH\"" >> $BASH_ENV
+      - run:
+          name: Generate GitHub token
+          command: |
+            echo $DIGISOS_KEY | tr '_' '\n' > digisos.key
+            echo "export GITHUB_TOKEN=$(generate-installation-token.sh `generate-jwt.sh digisos.key $DIGISOS_APPID`)" >> $BASH_ENV
+            rm digisos.key
+      - run:
+          name: GitHub package registry login
+          command: |
+            echo "$GITHUB_TOKEN" | docker login -u "x-access-token" --password-stdin docker.pkg.github.com
       - run:
           name: Generate version number and docker image tags
           command: |
