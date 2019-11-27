@@ -1,7 +1,7 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
 import {
-  Ingress,
+  Ingress, Innholdstittel,
   Normaltekst,
   Undertittel
 } from "nav-frontend-typografi";
@@ -17,6 +17,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
         illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
         sprak={detteBorDuViteSprak}
     >
+        <Innholdstittel>Dette bør du vite</Innholdstittel>
         <b>Todo liste på veiviser:</b>
         <ul>
             <li style={{textDecoration: "line-through"}}>Craco: ok</li>

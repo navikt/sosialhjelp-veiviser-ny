@@ -8,7 +8,7 @@ const Brodsmulesti: React.FC<{tittel: string}> = ({tittel}) => {
             <a href=".."
                onClick={(event: any) => onClickLink(event, "/")}
             >
-                Sosialhjelp
+                Økonomisk sosialhjelp
             </a> / {tittel}
         </div>
     )

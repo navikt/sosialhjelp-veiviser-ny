@@ -1,9 +1,7 @@
 import * as React from "react";
 import {InfoPanel, InfoPanelContainer} from "../../komponenter/infopanel/InfoPanel";
 import "./komponenter/forside.less";
-import {Normaltekst, Systemtittel, Undertittel} from "nav-frontend-typografi";
-import Lenke from "nav-frontend-lenker";
-import {onClickLink} from "../../utils/navigasjon";
+import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
@@ -13,6 +11,10 @@ const Forside: React.FC = () => {
     return (
         <Dekorator erForside={true}>
             <div className="blokk-center forside">
+
+                <div className="brodsmulesti">
+                    <a href="https://www.nav.no">Forside</a> / Økonomisk sosialhjelp
+                </div>
 
                 <InfoPanelContainer>
 

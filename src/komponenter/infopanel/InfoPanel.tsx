@@ -25,7 +25,9 @@ const InfoPanel: React.FC<Props> = ({children, href, onClick, className}) => {
     }
     return (
         <LenkepanelBase href={href} className={"infopanel " + className} onClick={onClickHandler}>
-            {children}
+            <div className="infopanel__content">
+                {children}
+            </div>
         </LenkepanelBase>
     );
 };
