@@ -14,3 +14,5 @@ For å kjøre lokalt:
   npm install
   npm start
 ```
+
+### Deploy
