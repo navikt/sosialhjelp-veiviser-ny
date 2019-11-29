@@ -13,7 +13,6 @@ const AndreMuligheter: React.FC = () => {
         <>
             <Artikkel
                 className="artikkel--andre_mulighter"
-                sprak={[Sprak.NORSK_BOKMAL]}
                 tittel="Andre muligheter"
             >
                 <Sidetittel>Andre muligheter</Sidetittel>

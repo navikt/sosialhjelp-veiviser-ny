@@ -3,7 +3,6 @@ import Artikkel from "../Artikkel";
 import {Ingress, Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
-import {detteBorDuViteSprak} from "./DetteBorDuVite";
 
 const DetteBorDuViteEnglish: React.FC = () => {
 
@@ -11,9 +10,9 @@ const DetteBorDuViteEnglish: React.FC = () => {
         <Artikkel
             tittel="What you should know"
             illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
-            sprak={detteBorDuViteSprak}
         >
 
+            <Innholdstittel>What you should know</Innholdstittel>
             <Ingress>
                 Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få stønad må
                 du vurdere alle andre muligheter til å forsørge deg selv. Dette kan for
