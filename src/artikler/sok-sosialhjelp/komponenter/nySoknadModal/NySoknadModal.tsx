@@ -86,14 +86,7 @@ const NySoknadModal: React.FC<{ synlig: boolean, onRequestClose: () => void }> =
 
     return (
 
-        <EnkelModal
-            className="modal vedlegg_bilde_modal"
-            isOpen={synlig}
-            onRequestClose={() => onClose()}
-            closeButton={true}
-            contentLabel="Vedlegg"
-            shouldCloseOnOverlayClick={true}
-        >
+        <>
             <div className={
                 "nySoknadModal " +
                 (currentSuggestion && (!soknadTilgjengelig || midlertidigNede) ?
@@ -194,7 +187,7 @@ const NySoknadModal: React.FC<{ synlig: boolean, onRequestClose: () => void }> =
 
             </div>
 
-        </EnkelModal>
+        </>
     );
 };
 
