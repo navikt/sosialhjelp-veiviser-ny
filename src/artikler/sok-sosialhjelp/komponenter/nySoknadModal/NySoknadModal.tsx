@@ -14,7 +14,7 @@ import "./nySoknadModal.less"
 import AdvarselIkon from "./AdvarselIkon";
 
 import KryssIkon from "./KryssIkon";
-import {FormattedMessage} from "react-intl";
+
 import NySoknadIntlProvider from "./NySoknadIntlProvider";
 import {REST_STATUS} from "../../../../utils/restUtil";
 import VeilederIkon from "../../../../komponenter/bilder/VeilederIkon";
@@ -85,117 +85,116 @@ const NySoknadModal: React.FC<{ synlig: boolean, onRequestClose: () => void }> =
     }
 
     return (
-        <NySoknadIntlProvider>
-            <EnkelModal
-                className="modal vedlegg_bilde_modal"
-                isOpen={synlig}
-                onRequestClose={() => onClose()}
-                closeButton={true}
-                contentLabel="Vedlegg"
-                shouldCloseOnOverlayClick={true}
-            >
-                <div className={
-                    "nySoknadModal " +
-                    (currentSuggestion && (!soknadTilgjengelig || midlertidigNede) ?
-                            "nySoknadModal--soknadIkkeTilgjengeligAdvarsel" : ""
-                    )
-                }>
-                    <Veilederpanel
-                        fargetema={fargetema}
-                        svg={<PanelIkon/>}
-                        type={"normal"}
-                        kompakt={false}
-                    >
-                        {currentSuggestion && (
-                            <>
-                                {midlertidigNede && (
-                                    <>
-                                        <Undertittel className="nySoknadModal__tittel">
-                                            {currentSuggestion.value} <FormattedMessage id={"nySoknadModal.midlertidig_nede"} />
-                                        </Undertittel>
-                                        <Normaltekst className="nySoknadModal__normaltekst">
-                                            <FormattedMessage id={"nySoknadModal.din_kommune"}/>
-                                        </Normaltekst>
-                                    </>
-                                )}
-                                {!midlertidigNede && (
-                                    <>
-                                        {soknadTilgjengelig && (
-                                            <>
-                                                <Undertittel className="nySoknadModal__tittel">
-                                                    <FormattedMessage id={"nySoknadModal.soknad_tilgjengelig.undertittel.part1"} />
-                                                    {currentSuggestion.value}
-                                                    <FormattedMessage id={"nySoknadModal.soknad_tilgjengelig.undertittel.part2"} />
-                                                </Undertittel>
-                                                <Normaltekst className="nySoknadModal__normaltekst">
-                                                    <FormattedMessage id={"nySoknadModal.din_kommune"} />
-                                                </Normaltekst>
-                                            </>
-                                        )}
-                                        {!soknadTilgjengelig && (
-                                            <>
-                                                <Undertittel className="nySoknadModal__tittel">
-                                                    {currentSuggestion.value} <FormattedMessage id={"nySoknadModal.soknad_ikke_tilgjengelig"} />
-                                                </Undertittel>
-                                                <Normaltekst className="nySoknadModal__normaltekst">
-                                                    <FormattedMessage id={"nySoknadModal.din_kommune"} />
-                                                </Normaltekst>
-                                            </>
-                                        )}
-                                    </>
-                                )}
 
-                            </>
-                        )}
+        <EnkelModal
+            className="modal vedlegg_bilde_modal"
+            isOpen={synlig}
+            onRequestClose={() => onClose()}
+            closeButton={true}
+            contentLabel="Vedlegg"
+            shouldCloseOnOverlayClick={true}
+        >
+            <div className={
+                "nySoknadModal " +
+                (currentSuggestion && (!soknadTilgjengelig || midlertidigNede) ?
+                        "nySoknadModal--soknadIkkeTilgjengeligAdvarsel" : ""
+                )
+            }>
+                <Veilederpanel
+                    fargetema={fargetema}
+                    svg={<PanelIkon/>}
+                    type={"normal"}
+                    kompakt={false}
+                >
+                    {currentSuggestion && (
+                        <>
+                            {midlertidigNede && (
+                                <>
+                                    <Undertittel className="nySoknadModal__tittel">
+                                        {currentSuggestion.value} "nySoknadModal.midlertidig_nede"
+                                    </Undertittel>
+                                    <Normaltekst className="nySoknadModal__normaltekst">
+                                        "nySoknadModal.din_kommune"
+                                    </Normaltekst>
+                                </>
+                            )}
+                            {!midlertidigNede && (
+                                <>
+                                    {soknadTilgjengelig && (
+                                        <>
+                                            <Undertittel className="nySoknadModal__tittel">
+                                                "nySoknadModal.soknad_tilgjengelig.undertittel.part1"
+                                                {currentSuggestion.value}
+                                                "nySoknadModal.soknad_tilgjengelig.undertittel.part2"
+                                            </Undertittel>
+                                            <Normaltekst className="nySoknadModal__normaltekst">
+                                                "nySoknadModal.din_kommune"
+                                            </Normaltekst>
+                                        </>
+                                    )}
+                                    {!soknadTilgjengelig && (
+                                        <>
+                                            <Undertittel className="nySoknadModal__tittel">
+                                                {currentSuggestion.value} "nySoknadModal.soknad_ikke_tilgjengelig"
+                                            </Undertittel>
+                                            <Normaltekst className="nySoknadModal__normaltekst">
+                                                "nySoknadModal.din_kommune"
+                                            </Normaltekst>
+                                        </>
+                                    )}
+                                </>
+                            )}
+
+                        </>
+                    )}
 
 
-                        {currentSuggestion === null && (
-                            <>
-                                <Undertittel className="nySoknadModal__tittel">
-                                    <FormattedMessage id={"nySoknadModal.current_suggestion_null"} />
-                                </Undertittel>
-                                <Normaltekst className="nySoknadModal__normaltekst">
-                                    <FormattedMessage id={"nySoknadModal.din_kommune"} />
-                                </Normaltekst>
-                            </>
-                        )}
-
-                        {kommunerService.restStatus === REST_STATUS.OK && (
-                            <NavAutocomplete
-                                placeholder="Skriv kommunenavn"
-                                suggestions={kommunerService.payload.results}
-                                ariaLabel="Søk etter kommunenavn"
-                                id="kommunesok"
-                                onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
-                                onReset={() => onReset()}
-                                feil={(visFeilmelding && currentSuggestion === null) ?
-                                    "nySoknadModal.feil_tom_kommunenavn" : undefined
-                                }
-                            />
-                        )}
-
-                        <div className="knappOgLenke">
-                            <Knapp
-                                type="hoved"
-                                onClick={(event: any) => onButtonClick(event)}
-                            >
-                                <FormattedMessage id="nySoknadModal.sok_digitalt"/>
-                            </Knapp>
-                            <Normaltekst>
-                                <b>
-                                    <Lenke href={sokPaaPapirUrl}>
-                                        <FormattedMessage id="nySoknadModal.skal_ikke_soke_digitalt"/>
-                                    </Lenke>
-                                </b>
+                    {currentSuggestion === null && (
+                        <>
+                            <Undertittel className="nySoknadModal__tittel">
+                                "nySoknadModal.current_suggestion_null"
+                            </Undertittel>
+                            <Normaltekst className="nySoknadModal__normaltekst">
+                                "nySoknadModal.din_kommune"
                             </Normaltekst>
+                        </>
+                    )}
 
-                        </div>
-                    </Veilederpanel>
+                    {kommunerService.restStatus === REST_STATUS.OK && (
+                        <NavAutocomplete
+                            placeholder="Skriv kommunenavn"
+                            suggestions={kommunerService.payload.results}
+                            ariaLabel="Søk etter kommunenavn"
+                            id="kommunesok"
+                            onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
+                            onReset={() => onReset()}
+                            feil={(visFeilmelding && currentSuggestion === null) ?
+                                "nySoknadModal.feil_tom_kommunenavn" : undefined
+                            }
+                        />
+                    )}
 
-                </div>
+                    <div className="knappOgLenke">
+                        <Knapp
+                            type="hoved"
+                            onClick={(event: any) => onButtonClick(event)}
+                        >
+                            "nySoknadModal.sok_digitalt"
+                        </Knapp>
+                        <Normaltekst>
+                            <b>
+                                <Lenke href={sokPaaPapirUrl}>
+                                    "nySoknadModal.skal_ikke_soke_digitalt"/>
+                                </Lenke>
+                            </b>
+                        </Normaltekst>
 
-            </EnkelModal>
-        </NySoknadIntlProvider>
+                    </div>
+                </Veilederpanel>
+
+            </div>
+
+        </EnkelModal>
     );
 };
 
