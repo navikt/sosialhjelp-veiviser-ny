@@ -7,13 +7,13 @@ import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import JobblystPanel from "./JobblystPanel";
 import {Sprak} from "../../utils/sprakUtils";
+import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 
 const AndreMuligheter: React.FC = () => {
     return (
-        <>
+        <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
             <Artikkel
                 className="artikkel--andre_mulighter"
-                sprak={[Sprak.NORSK_BOKMAL]}
                 tittel="Andre muligheter"
             >
                 <Sidetittel>Andre muligheter</Sidetittel>
@@ -247,7 +247,7 @@ const AndreMuligheter: React.FC = () => {
                 <JobblystPanel/>
 
             </div>
-        </>
+        </Oversettelser>
     );
 };
 

@@ -7,7 +7,6 @@ import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
-import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmBokmal: React.FC = () => {
 
@@ -15,7 +14,6 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
         <Artikkel
             tittel="Dette kan du søke om"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
-            sprak={detteKanDuSokeOmSprak}
         >
             <Normaltekst>
                 Vi vurderer sammen med deg behovet ditt for økonomisk sosialhjelp.

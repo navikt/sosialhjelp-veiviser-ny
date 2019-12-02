@@ -1,11 +1,8 @@
-import * as React from "react";
-import DetteKanDuSokeOmBokmal from "./DetteKanDuSokeOmBokmal";
-import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import DetteKanDuSokeOmNynorsk from "./DetteKanDuSokeOmNynorsk";
-import DetteKanDuSokeOmEnglish from "./DetteKanDuSokeOmEnglish";
-import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+### Oversettelser
 
+Sett hvilke språk som skal være tilgjengelig i språkvelger.
 
+```jsx harmony
 const DetteKanDuSokeOm: React.FC = () => {
     const valgtSprak: string = detekterSprak();
     return (
@@ -16,5 +13,5 @@ const DetteKanDuSokeOm: React.FC = () => {
         </Oversettelser>
     );
 };
+```
 
-export default DetteKanDuSokeOm;

@@ -1,11 +1,10 @@
 import * as React from "react";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
-import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmEnglish: React.FC = () => {
 
@@ -13,9 +12,9 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
         <Artikkel
             tittel="What can financial assistance cover?"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
-            sprak={detteKanDuSokeOmSprak}
         >
 
+            <Sidetittel>"What can financial assistance cover?"</Sidetittel>
             <Normaltekst>
                 We will work with you to find out what your financial assistance needs are.
                 How much financial assistance you qualify for will depend on your family

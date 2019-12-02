@@ -1,13 +1,10 @@
 import * as React from "react";
 import "../artikkel.less";
 import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
-
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
-
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
-import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmNynorsk: React.FC = () => {
 
@@ -15,9 +12,9 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
         <Artikkel
             tittel="Dette kan du søkje om"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
-            sprak={detteKanDuSokeOmSprak}
         >
 
+            <Sidetittel>Dette kan du søkje om</Sidetittel>
             <Normaltekst>
                 Vi vurderer saman med deg kva behovet ditt er for økonomisk sosialhjelp.
                 Kor mykje du kan få i stønad er avhengig av din familiesituasjon, talet
