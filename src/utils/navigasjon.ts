@@ -15,8 +15,8 @@ const history = createBrowserHistory({
 });
 
 const onClickLink = (event: any, sti: string) => {
-    // history.push(sti);
-    // event.preventDefault();
+    history.push(sti);
+    event.preventDefault();
 };
 
 export {

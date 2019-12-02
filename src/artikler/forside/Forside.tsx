@@ -18,7 +18,7 @@ const Forside: React.FC = () => {
         </div>
 
         <InfoPanelContainer>
-          <InfoPanel href="./dette-bor-du-vite">
+          <InfoPanel href="/dette-bor-du-vite?x=y">
             <Undertittel>Dette bør du vite før du søker</Undertittel>
             <Normaltekst>
               Hvem kan søke? Hva må du dokumentere? Hva skjer etter at du har
@@ -26,7 +26,7 @@ const Forside: React.FC = () => {
             </Normaltekst>
           </InfoPanel>
 
-          <InfoPanel href="./dette-kan-du-soke-om">
+          <InfoPanel href="/dette-kan-du-soke-om?x=123">
             <Undertittel>Dette kan du søke om</Undertittel>
             <Normaltekst>
               Hvilke utgifter kan du søke om å få hjelp til å betale?
