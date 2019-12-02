@@ -9,7 +9,6 @@ import Lenke from "nav-frontend-lenker";
 import {Hovedknapp} from "nav-frontend-knapper";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import Lesmerpanel from "nav-frontend-lesmerpanel";
-import NySoknadModal from "./komponenter/nySoknadModal/NySoknadModal";
 import {useState} from "react";
 
 const SokSosialhjelp: React.FC = () => {
@@ -27,7 +26,9 @@ const SokSosialhjelp: React.FC = () => {
                 tittel="Søk om økonomisk sosialhjelp"
             >
 
-                <NySoknadModal synlig={synligModal} onRequestClose={() => setSynligModal(false)}/>
+                <div style={{border: "1px solid grey", borderRadius: "4px", padding: "1rem", margin:"1rem 0 1rem 0"}}>
+                    Her skal kommunesøk ligge.
+                </div>
                 <Normaltekst>
                     Du skal søke til NAV-kontoret der du bor. Stadig flere kommuner kan ta i mot digitale søknader.
                     Hvis du ikke skal søke digitalt, kan du søke med kommunens papirskjema.
