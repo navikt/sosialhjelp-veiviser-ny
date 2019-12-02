@@ -7,6 +7,7 @@ import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmNynorsk: React.FC = () => {
 
@@ -14,6 +15,7 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
         <Artikkel
             tittel="Dette kan du søkje om"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
+            sprak={detteKanDuSokeOmSprak}
         >
 
             <Normaltekst>

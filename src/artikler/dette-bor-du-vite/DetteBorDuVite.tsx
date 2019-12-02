@@ -3,17 +3,21 @@ import DetteBorDuViteBokmal from "./DetteBorDuViteBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import DetteBorDuViteNynorsk from "./DetteBorDuViteNynorsk";
 import DetteBorDuViteEnglish from "./DetteBorDuViteEnglish";
-import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+
+export const detteBorDuViteSprak = [Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK];
 
 const DetteBorDuVite: React.FC = () => {
     const valgtSprak: string = detekterSprak();
-    return (
-        <Oversettelser sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}>
-            {valgtSprak === Sprak.NORSK_BOKMAL && <DetteBorDuViteBokmal/>}
-            {valgtSprak === Sprak.NYNORSK && <DetteBorDuViteNynorsk/>}
-            {valgtSprak === Sprak.ENGELSK && <DetteBorDuViteEnglish/>}
-        </Oversettelser>
-    );
+    switch (valgtSprak) {
+        case Sprak.NORSK_BOKMAL:
+            return <DetteBorDuViteBokmal />;
+        case Sprak.NYNORSK:
+            return <DetteBorDuViteNynorsk />;
+        case Sprak.ENGELSK:
+            return <DetteBorDuViteEnglish />;
+        default:
+            return <div/>;
+    }
 };
 
 export default DetteBorDuVite;

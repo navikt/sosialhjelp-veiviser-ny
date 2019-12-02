@@ -4,22 +4,20 @@ import Dekorator from "../komponenter/dekorator/Dekorator";
 import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
 import {Sprak} from "../utils/sprakUtils";
 import Brodsmulesti from "../komponenter/brodsmulesti/Brodsmulesti";
-import {useContext} from "react";
-import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
 
 interface Props {
     children: React.ReactNode;
     className?: string;
     tittel: string;
     illustrasjon?: React.ReactNode;
+    sprak: Sprak[]
 }
-const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) => {
+const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, sprak}) => {
 
     document.title = (tittel ? tittel : "ingen tittel");
-    const context = useContext(SprakvelgerContext);
-    const sprak: Sprak[] = context.sprak;
 
     return (
+
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
 
@@ -28,7 +26,7 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) 
                 />
 
                 <div className="artikkel">
-                    {sprak.length > 1 && (<SprakVelger sprak={sprak}/>)}
+                    <SprakVelger sprak={sprak}/>
                     <div className="innhold">
                         {illustrasjon && (<span>{illustrasjon}</span>)}
                         {children}

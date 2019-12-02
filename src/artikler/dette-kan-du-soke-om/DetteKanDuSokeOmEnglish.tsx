@@ -5,6 +5,7 @@ import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {detteKanDuSokeOmSprak} from "./DetteKanDuSokeOm";
 
 const DetteKanDuSokeOmEnglish: React.FC = () => {
 
@@ -12,6 +13,7 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
         <Artikkel
             tittel="What can financial assistance cover?"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
+            sprak={detteKanDuSokeOmSprak}
         >
 
             <Normaltekst>

@@ -3,6 +3,7 @@ import Artikkel from "../Artikkel";
 import {Ingress, Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
+import {detteBorDuViteSprak} from "./DetteBorDuVite";
 
 const DetteBorDuViteNynorsk: React.FC = () => {
 
@@ -10,6 +11,7 @@ const DetteBorDuViteNynorsk: React.FC = () => {
         <Artikkel
             tittel="Dette bør du vite før du søker"
             illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
+            sprak={detteBorDuViteSprak}
         >
 
             <Ingress>
