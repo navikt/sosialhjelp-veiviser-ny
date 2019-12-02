@@ -9,6 +9,7 @@ import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 
 const SokSosialhjelp: React.FC = () => {
 
@@ -24,6 +25,7 @@ const SokSosialhjelp: React.FC = () => {
                     Hvis du ikke skal søke digitalt, kan du søke med kommunens papirskjema.
                 </Normaltekst>
 
+                <KommuneSok />
                 <br/>
                 <SokDigitaltPanel>
                     <Undertittel>Søk digitalt</Undertittel>
