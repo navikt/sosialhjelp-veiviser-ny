@@ -11,7 +11,7 @@ const getAbsoluteBasename = () => {
 };
 
 const history = createBrowserHistory({
-    basename: getAbsoluteBasename()
+    basename: "/sosialhjelp" // getAbsoluteBasename()
 });
 
 const onClickLink = (event: any, sti: string) => {
