@@ -24,7 +24,6 @@ const useKommuneNrService = () => {
     if (erDevMiljo()) {
         headers = new Headers({
             "Origin": "null",
-            "Accept-Charset": "utf-8",
             "Accept": "application/json, text/plain, */*"
         });
     }

@@ -25,7 +25,7 @@ const useTilgjengeligeKommunerService = () => {
         // Nytt endepunkt:
         url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
         // Gammelt endepunkt:
-        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     let headers = new Headers({
