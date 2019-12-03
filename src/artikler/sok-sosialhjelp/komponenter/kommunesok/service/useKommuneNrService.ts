@@ -19,12 +19,14 @@ const useKommuneNrService = () => {
     }
 
     let headers = new Headers({
-        "Accept": "application/json, text/plain, */*"
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Charset": "utf-8"
     });
 
     if (erDevMiljo()) {
         headers = new Headers({
-            // "Origin": "null",
+            // "Origin": "null", // For cors-anywhere
+            "Accept-Charset": "utf-8",
             "Accept": "application/json, text/plain, */*"
         });
     }
