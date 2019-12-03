@@ -19,7 +19,7 @@ const useTilgjengeligeKommunerService = () => {
         restStatus: REST_STATUS.PENDING
     });
 
-    let url = "/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
+    let url = "/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
 
     if (erDevMiljo()) {
         // Nytt endepunkt:

@@ -15,7 +15,7 @@ const useKommuneNrService = () => {
     let url = "/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     if (erDevMiljo()) {
         // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
-        url = "https://cors-anywhere.herokuapp.com/https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
+        url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
     }
 
     let headers = new Headers({
@@ -24,7 +24,7 @@ const useKommuneNrService = () => {
 
     if (erDevMiljo()) {
         headers = new Headers({
-            "Origin": "null",
+            // "Origin": "null",
             "Accept": "application/json, text/plain, */*"
         });
     }
