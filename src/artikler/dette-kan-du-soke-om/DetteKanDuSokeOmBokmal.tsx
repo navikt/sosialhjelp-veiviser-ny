@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../artikkel.less";
-import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
