@@ -3,7 +3,14 @@
   &.start_soknad_panel {
     border: solid 1px #78706a;
     transition: all .2s;
+    position: relative;
 
+    .illustrasjonsGruppe {
+      position: absolute;
+      bottom: 0;
+      right: 60px;
+      margin-bottom: -5px;
+    }
 
     @media all and (min-width: 802px) {
       padding: 2rem;
@@ -13,12 +20,6 @@
         width: 80%;
       }
 
-      .illustrasjonsGruppe {
-        position: absolute;
-        bottom: 0;
-        right: 60px;
-        margin-bottom: -5px;
-      }
     }
 
     @media all and (max-width: 802px) {
@@ -29,7 +30,13 @@
       }
 
       .illustrasjonsGruppe {
-        display: none;
+        right: 2vw;
+
+        svg {
+          height: 4vw;
+          max-width: 40vw;
+
+        }
       }
     }
 
