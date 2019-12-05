@@ -1,12 +1,18 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {Ingress, Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
+import {
+    Ingress,
+    Normaltekst,
+    Sidetittel,
+    Undertittel,
+} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import JobblystPanel from "./JobblystPanel";
 import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 
 const AndreMuligheter: React.FC = () => {
     return (
@@ -18,214 +24,113 @@ const AndreMuligheter: React.FC = () => {
                 <Sidetittel>Andre muligheter</Sidetittel>
 
                 <Ingress>
-                    Økonomisk sosialhjelp er en midlertidig stønad. Du må vurdere andre
-                    muligheter til å forsørge deg selv.
+                    Økonomisk sosialhjelp er en midlertidig stønad. Du må
+                    vurdere andre muligheter til å forsørge deg selv.
                 </Ingress>
             </Artikkel>
 
             <div className="blokk-center artikkel--andre_mulighter">
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
-
                     <div className="lenkeboks">
-                        <Undertittel style={{textAlign: "left"}}>Finn og søk jobb</Undertittel>
+                        <Undertittel style={{textAlign: "left"}}>
+                            Hjelp til å komme i jobb og aktivitet
+                        </Undertittel>
                         <ul>
-                            <li className="lenkeboks-linje">
-                                <a className="no-text-decoration" href="https://tjenester.nav.no/veiledearbeidssoker/?sprak=nb">
-                                    Dette trenger du for å komme i gang med å søke jobber
-                                </a>
-                            </li>
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/?sprak=nb">
+                                Dette trenger du for å komme i gang med å søke
+                                jobber
+                            </LenkeboksLinje>
                         </ul>
-                        <Undertittel style={{textAlign: "left"}}>Ung og lite jobberfaring</Undertittel>
+                        <Undertittel style={{textAlign: "left"}}>
+                            Ung og lite jobberfaring
+                        </Undertittel>
                         <ul>
-                            <li className="lenkeboks-linje">
-                                <a className="no-text-decoration" href="https://veiledearbeidssoker.nav.no/ung-lite-erfaring">
-                                    Hvordan kan du fullføre utdanningen din?
-                                </a>
-                            </li>
+                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/ung-lite-erfaring">
+                                Hvordan kan du fullføre utdanningen din?
+                            </LenkeboksLinje>
                         </ul>
                     </div>
 
                     <div className="lenkeboks">
-
-                        <Undertittel style={{textAlign: "left"}}>Annen økonomisk støtte</Undertittel>
+                        <Undertittel style={{textAlign: "left"}}>
+                            Annen økonomisk støtte
+                        </Undertittel>
 
                         <ul>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514880"
-                                >
-                                    Dette gjør du i en
-                                    nødssituasjon
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/relatert-informasjon/finn-ditt-nav-kontor"
-                                    className="no-text-decoration"
-                                >
-                                    Finn NAV-kontoret ditt
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning"
-                                   className="no-text-decoration"
-                                >
-                                    Du har rett til opplysning,
-                                    råd og veiledning
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514876"
-                                >
-                                    Slik foregår et møte med oss
-                                </a>
-                            </li>
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger?sprak=nb">
+                                Dagpenger
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger?sprak=nb">
+                                Tiltakspenger
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap?sprak=nb">
+                                Arbeidsavklaringspenger
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
+                                Søknad for deg med kort botid i Norge
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="todo">
+                                Kvalifiseringsprogram
+                            </LenkeboksLinje>
                         </ul>
                     </div>
                 </div>
-
 
                 <PanelBase className="hjelp_til_bolig_panel">
                     <Undertittel>Hjelp til bolig</Undertittel>
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
-                    <LenkepanelBase
-                        href={"todo"}
-                    >
+                    <LenkepanelBase href={"todo"}>
                         <Undertittel>Bostøtte</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
-                    <LenkepanelBase
-                        href={"todo"}
-                    >
+                    <LenkepanelBase href={"todo"}>
                         <Undertittel>Midlertidig botilbud</Undertittel>
                         <Normaltekst>Nødsituasjon</Normaltekst>
                     </LenkepanelBase>
-                    <LenkepanelBase
-                        href={"todo"}
-                    >
+                    <LenkepanelBase href={"todo"}>
                         <Undertittel>Leie eller eie bolig</Undertittel>
                     </LenkepanelBase>
                 </div>
 
-
-                <div className="lenkeboks_container lenkeboks_container--3_spalter">
-
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
-                        <Undertittel>Helse og jobb</Undertittel>
+                        <Undertittel>Når du vil snakke med noen</Undertittel>
                         <ul>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="todo"
-                                >
-                                    Psykiste problemer
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    href="todo"
-                                    className="no-text-decoration"
-                                >
-                                    Nedsatt funksjonsevne
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Rus
-                                </a>
-                            </li>
+                            <LenkeboksLinje href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/relatert-informasjon/finn-ditt-nav-kontor">
+                                Finn ditt NAV-kontor
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
+                                Du har rett til opplysning, råd og veiledning
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="todo">
+                                Slik foregår et møte med oss
+                            </LenkeboksLinje>
                         </ul>
                     </div>
 
                     <div className="lenkeboks">
-                        <Undertittel>Hjelp til å komme i jobb eller aktivitet</Undertittel>
+                        <Undertittel>
+                            Rettigheter og plikter som forsørger
+                        </Undertittel>
                         <ul>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="todo"
-                                >
-                                    Registrer deg som arbeidssøker
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    href="todo"
-                                    className="no-text-decoration"
-                                >
-                                    Finn og søk jobb
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Kvalifiseringsprogrammet
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Arbeidstrening
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Tiltak for å komme i jobb
-                                </a>
-                            </li>
+                            <LenkeboksLinje href="todo">
+                                Hvis du er enslig forsørger
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="todo">
+                                Hvis du har barn
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="todo">
+                                Hvis du har samboer
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="todo">
+                                Hvis du er gift
+                            </LenkeboksLinje>
                         </ul>
                     </div>
-
-                    <div className="lenkeboks">
-                        <Undertittel>Rettigheter og plikter som forsørger</Undertittel>
-                        <ul>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="todo"
-                                >
-                                    Hvis du er enslig forsørger
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    href="todo"
-                                    className="no-text-decoration"
-                                >
-                                    Hvis du har barn
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Hvis du har samboer
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="todo"
-                                   className="no-text-decoration"
-                                >
-                                    Hvis du er gift
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
                 </div>
 
-                <JobblystPanel/>
-
+                <JobblystPanel />
             </div>
         </Oversettelser>
     );
