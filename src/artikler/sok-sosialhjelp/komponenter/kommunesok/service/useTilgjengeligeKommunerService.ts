@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
-import {RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
+import {erCodesandbox, RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
 
 export interface TilgjengeligeKommuner {
     results: string[];
@@ -19,6 +19,10 @@ const useTilgjengeligeKommunerService = () => {
     //     // url = "/https://www.nav.no/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
     //     // Gammelt endepunkt med bare kommunenummer:
     //     url = "https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+    }
+
+    if (erCodesandbox()) {
+        url = "http://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     useEffect(() => {

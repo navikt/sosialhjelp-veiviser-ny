@@ -9,6 +9,10 @@ export function erHeroku(): boolean {
     return (url.indexOf("heroku") > 0) || (url.indexOf("digisos-test") > 0);
 }
 
+export function erCodesandbox(): boolean {
+    return window.location.hostname.match(/codesandbox\.io/) !== null;
+}
+
 export enum REST_STATUS {
     OK = "OK",
     FEILET = "FEILET",

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
 import {Suggestion} from "../navAutocomplete/NavAutcomplete";
-import {RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
+import {erCodesandbox, RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
 
 export interface KommuneNummere {
     results: Suggestion[];
@@ -18,6 +18,10 @@ const useKommuneNrService = () => {
         // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
         // url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
         // url = "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
+    }
+
+    if (erCodesandbox()) {
+        url = "http://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     }
 
     useEffect(() => {
