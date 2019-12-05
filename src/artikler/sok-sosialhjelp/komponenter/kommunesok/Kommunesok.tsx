@@ -7,6 +7,7 @@ import {REST_STATUS} from "../../../../utils/restUtils";
 import useTilgjengeligeKommunerService, {
     finnTilgjengeligKommune
 } from "./service/useTilgjengeligeKommunerService";
+import EnkelModal from "./EnkelModal";
 
 const KommuneSok: React.FC = () => {
 
@@ -32,30 +33,45 @@ const KommuneSok: React.FC = () => {
         setCurrentSuggestion(suggestion);
     };
 
+    const onCloseModal = () => {
+        console.log("onCloseModal....");
+    };
+
     return (
         <div className="kommunesok">
             Kommunesøk skal være her.
 
-            <br/>
+            <EnkelModal
+                className="modal kommunesok_modal"
+                isOpen={true}
+                onRequestClose={() => onCloseModal()}
+                closeButton={true}
+                contentLabel="Vedlegg"
+                shouldCloseOnOverlayClick={true}
+            >
+                {kommunerService.restStatus === REST_STATUS.OK && (
+                    <NavAutocomplete
+                        placeholder="Skriv kommunenavn"
+                        suggestions={kommunerService.payload.results}
+                        ariaLabel="Søk etter kommunenavn"
+                        id="kommunesok"
+                        onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
+                        onReset={() => onReset()}
+                        feil={(visFeilmelding && currentSuggestion === null) ?
+                            "Du må skrive inn navnet på kommunen din før du kan gå videre" : undefined
+                        }
+                    />
+                )}
+            </EnkelModal>
+
+                <br/>
             <pre>
                 soknadTilgjengelig: {soknadTilgjengelig ? "true" : "false"}
                 <br/>
                 visFeilmelding: {visFeilmelding ? "true" : "false"}
             </pre>
 
-            {kommunerService.restStatus === REST_STATUS.OK && (
-                <NavAutocomplete
-                    placeholder="Skriv kommunenavn"
-                    suggestions={kommunerService.payload.results}
-                    ariaLabel="Søk etter kommunenavn"
-                    id="kommunesok"
-                    onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
-                    onReset={() => onReset()}
-                    feil={(visFeilmelding && currentSuggestion === null) ?
-                        "Du må skrive inn navnet på kommunen din før du kan gå videre" : undefined
-                    }
-                />
-            )}
+
         </div>
     )
 };
