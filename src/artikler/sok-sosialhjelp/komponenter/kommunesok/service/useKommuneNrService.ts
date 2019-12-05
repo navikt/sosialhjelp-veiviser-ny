@@ -26,10 +26,16 @@ const useKommuneNrService = () => {
 
     useEffect(() => {
         let headers = new Headers({
-            // "Origin": "null", // For cors-anywhere
-            "Accept": "application/json, text/plain, */*",
-            "Accept-Charset": "utf-8"
+            "Accept-Charset": "utf-8",
+            "Accept": "application/json, text/plain, */*"
         });
+        if (erCodesandbox()) {
+            headers = new Headers({
+                "Origin": "null",
+                "Accept-Charset": "utf-8",
+                "Accept": "application/json, text/plain, */*"
+            });
+        }
         const options: RequestInit = {
             headers: headers,
             method: RequestMethod.GET
