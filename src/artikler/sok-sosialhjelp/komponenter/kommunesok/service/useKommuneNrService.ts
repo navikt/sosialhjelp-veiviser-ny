@@ -14,7 +14,10 @@ const useKommuneNrService = () => {
 
     let url = "/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     if (erDevMiljo()) {
-        url = "http://localhost:8080/https://www.nav.no" + url;
+        // url = "http://localhost:8080/https://www.nav.no" + url;
+        url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
+
+
         // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
         // url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
         // url = "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
@@ -55,7 +58,9 @@ const ekstraherKommuneNr = (result: any): KommuneNummere => {
     const LABEL = "label";
     const STATUS = "status";
     const kommuner: any[] = [];
-    const responseData = result[CONTAINED_ITEMS].filter((item: any) => item[STATUS] === "Gyldig");
+    const responseData = result[CONTAINED_ITEMS].filter((item: any) => {
+        return item[STATUS] === "Gyldig" || item[STATUS] === "Valid"});
+
     responseData.map((item: any) => {
         return kommuner.push({
             key: item[LABEL],
