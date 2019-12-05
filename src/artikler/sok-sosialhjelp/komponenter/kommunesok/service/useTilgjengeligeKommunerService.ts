@@ -22,7 +22,8 @@ const useTilgjengeligeKommunerService = () => {
     }
 
     if (erCodesandbox()) {
-        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+        url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
+        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     useEffect(() => {
