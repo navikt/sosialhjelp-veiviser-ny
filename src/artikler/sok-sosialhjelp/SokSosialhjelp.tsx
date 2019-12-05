@@ -1,8 +1,6 @@
 import * as React from "react";
 import {Normaltekst, Undertittel, Element, Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
-import "./komponenter/sokSosialhjelp.less";
-import Lenke from "nav-frontend-lenker";
 import {Hovedknapp} from 'nav-frontend-knapper';
 import Lesmerpanel from 'nav-frontend-lesmerpanel';
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
@@ -10,6 +8,7 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
+import "./komponenter/sokSosialhjelp.less";
 
 const SokSosialhjelp: React.FC = () => {
 
@@ -25,19 +24,27 @@ const SokSosialhjelp: React.FC = () => {
                     Hvis du ikke skal søke digitalt, kan du søke med kommunens papirskjema.
                 </Normaltekst>
 
-                <KommuneSok />
                 <br/>
+
                 <SokDigitaltPanel>
-                    <Undertittel>Søk digitalt</Undertittel>
-                    <Lenke href=".">Sjekk om du kan søke digitalt i din kommune</Lenke>
-                    <span className="sok_knapp">
-                    <Hovedknapp
-                        onClick={(event: any) => console.log("TODO: Gå til søknad")}
+                    <Undertittel className="sok_digitalt_overskrift">Søk digitalt</Undertittel>
+                    <Lesmerpanel
+                        border={false}
+                        apneTekst="Sjekk om du kan søke digitalt i din kommune"
+                        intro={
+                            <div style={{paddingBottom: "1rem"}}>
+                                <Hovedknapp
+                                    onClick={(event: any) => console.log("TODO: Gå til søknad")}
+                                >
+                                    Gå til søknad
+                                </Hovedknapp>
+                            </div>
+                        }
                     >
-                        Søk digitalt
-                    </Hovedknapp>
-                </span>
+                        <KommuneSok />
+                    </Lesmerpanel>
                 </SokDigitaltPanel>
+
 
                 <br/>
                 <br/>

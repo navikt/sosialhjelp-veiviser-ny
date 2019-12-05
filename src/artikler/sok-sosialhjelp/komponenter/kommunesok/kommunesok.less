@@ -1,6 +1,27 @@
 .kommunesok {
-  border: 1px solid #4e4e4e;
-  border-radius: 4px;
-  margin: 1rem 0 1rem 0;
+  border: none;
+  margin: 0;
   padding: 1rem;
+}
+
+.kommunesok_tilbakemelding {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  svg {
+    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.kommunesok_tilbakemelding--ikke_tilgjengelig {
+
+  svg {
+    margin-top: -10px;
+    width: 40px;
+    height: 40px;
+  }
 }
