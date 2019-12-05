@@ -9,6 +9,7 @@ import AndreMuligheter from "./artikler/andre-muligheter/AndreMuligheter";
 import {history} from "./utils/navigasjon";
 import Forside from "./artikler/forside/Forside";
 import SokSosialhjelp from "./artikler/sok-sosialhjelp/SokSosialhjelp";
+import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
                 />
                 <Route exact path="/slik-soker-du" component={SokSosialhjelp} />
                 {/* Et alias */}
+                <Route
+                    exact
+                    path="/hvis-du-har-samboer"
+                    component={HvisDuHarSamboer}
+                />
                 <Route exact path="/hvis-du-er-gift" component={HvisDuErGift} />
             </Switch>
             <br />
