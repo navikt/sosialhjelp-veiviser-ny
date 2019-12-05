@@ -123,7 +123,7 @@ const AndreMuligheter: React.FC = () => {
                             <LenkeboksLinje href="todo">
                                 Hvis du har samboer
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="todo">
+                            <LenkeboksLinje href="/hvis-du-er-gift">
                                 Hvis du er gift
                             </LenkeboksLinje>
                         </ul>
