@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Normaltekst, Undertittel, Systemtittel, Element, Innholdstittel} from "nav-frontend-typografi";
+import {Normaltekst, Undertittel, Element, Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import "./komponenter/sokSosialhjelp.less";
 import Lenke from "nav-frontend-lenker";

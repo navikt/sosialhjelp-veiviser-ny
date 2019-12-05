@@ -1,8 +1,8 @@
 import * as React from "react";
 import "./sprakVelger.less";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import {history, onClickLink} from "../../utils/navigasjon";
+import {history} from "../../utils/navigasjon";
 
 interface Props {
     sprak: Sprak[];
