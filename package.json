@@ -38,16 +38,17 @@
     "nav-frontend-veileder-style": "^2.0.10",
     "nav-frontend-veilederpanel": "^0.1.18",
     "nav-frontend-veilederpanel-style": "0.0.21",
-    "react": "16.8.4",
+    "react": "16.12.0",
     "react-collapse": "^5.0.0",
-    "react-dom": "16.8.4",
+    "react-dom": "16.12.0",
     "react-router": "^5.1.2",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "3.2.0"
   },
   "devDependencies": {
-    "@types/react": "16.8.8",
-    "@types/react-dom": "16.8.2",
-    "typescript": "3.3.3"
+    "@types/react": "16.9.14",
+    "@types/react-dom": "16.9.4",
+    "typescript": "3.7.2",
+    "prettier": "1.19.1"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",

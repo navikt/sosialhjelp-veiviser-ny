@@ -1,7 +1,6 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {Ingress, Normaltekst, Sidetittel, Systemtittel, Undertittel} from "nav-frontend-typografi";
-import SokJobbPanel from "./SokJobbPanel";
+import {Ingress, Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
@@ -26,39 +25,21 @@ const AndreMuligheter: React.FC = () => {
 
             <div className="blokk-center artikkel--andre_mulighter">
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
+
                     <div className="lenkeboks">
-                        <Undertittel>Skole og utdanning</Undertittel>
+                        <Undertittel style={{textAlign: "left"}}>Finn og søk jobb</Undertittel>
                         <ul>
                             <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514880"
-                                >
-                                    Dette gjør du i en nødssituasjon
+                                <a className="no-text-decoration" href="https://tjenester.nav.no/veiledearbeidssoker/?sprak=nb">
+                                    Dette trenger du for å komme i gang med å søke jobber
                                 </a>
                             </li>
+                        </ul>
+                        <Undertittel style={{textAlign: "left"}}>Ung og lite jobberfaring</Undertittel>
+                        <ul>
                             <li className="lenkeboks-linje">
-                                <a
-                                    href="https://www.nav.no/353421/finn-ditt-nav-kontor"
-                                    className="no-text-decoration"
-                                >
-                                    Finn NAV-kontoret ditt
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a href="https://www.nav.no/87526/generelle-råd-og-veiledning"
-                                   className="no-text-decoration"
-                                >
-                                    Du har rett til opplysning,
-                                    råd og veiledning
-                                </a>
-                            </li>
-                            <li className="lenkeboks-linje">
-                                <a
-                                    className="no-text-decoration"
-                                    href="/sosialhjelp/artikkel/514876"
-                                >
-                                    Slik foregår et møte med oss
+                                <a className="no-text-decoration" href="https://veiledearbeidssoker.nav.no/ung-lite-erfaring">
+                                    Hvordan kan du fullføre utdanningen din?
                                 </a>
                             </li>
                         </ul>
@@ -66,7 +47,7 @@ const AndreMuligheter: React.FC = () => {
 
                     <div className="lenkeboks">
 
-                        <Undertittel>Annen økonomisk støtte</Undertittel>
+                        <Undertittel style={{textAlign: "left"}}>Annen økonomisk støtte</Undertittel>
 
                         <ul>
                             <li className="lenkeboks-linje">
@@ -80,14 +61,14 @@ const AndreMuligheter: React.FC = () => {
                             </li>
                             <li className="lenkeboks-linje">
                                 <a
-                                    href="https://www.nav.no/353421/finn-ditt-nav-kontor"
+                                    href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/relatert-informasjon/finn-ditt-nav-kontor"
                                     className="no-text-decoration"
                                 >
                                     Finn NAV-kontoret ditt
                                 </a>
                             </li>
                             <li className="lenkeboks-linje">
-                                <a href="https://www.nav.no/87526/generelle-råd-og-veiledning"
+                                <a href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning"
                                    className="no-text-decoration"
                                 >
                                     Du har rett til opplysning,
@@ -106,7 +87,6 @@ const AndreMuligheter: React.FC = () => {
                     </div>
                 </div>
 
-                <SokJobbPanel/>
 
                 <PanelBase className="hjelp_til_bolig_panel">
                     <Undertittel>Hjelp til bolig</Undertittel>
