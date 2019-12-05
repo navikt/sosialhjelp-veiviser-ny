@@ -1,7 +1,6 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
 import {Ingress, Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
-import SokJobbPanel from "./SokJobbPanel";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
