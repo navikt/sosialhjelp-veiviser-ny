@@ -14,33 +14,27 @@ const useKommuneNrService = () => {
 
     let url = "/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     if (erDevMiljo()) {
+        url = "http://localhost:8080/https://www.nav.no" + url;
         // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
         // url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
-        url = "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
+        // url = "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     }
 
-    let headers = new Headers({
-        "Accept": "application/json, text/plain, */*",
-        "Accept-Charset": "utf-8"
-    });
-
-    if (erDevMiljo()) {
-        headers = new Headers({
-            "Origin": "null", // For cors-anywhere
-            "Accept-Charset": "utf-8",
-            "Accept": "application/json, text/plain, */*"
-        });
-    }
-    const options: RequestInit = {
-        headers: headers,
-        method: RequestMethod.GET
-    };
     useEffect(() => {
+        let headers = new Headers({
+            // "Origin": "null", // For cors-anywhere
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Charset": "utf-8"
+        });
+        const options: RequestInit = {
+            headers: headers,
+            method: RequestMethod.GET
+        };
         fetch(url, options)
             .then(response => response.json())
             .then(response => setResult({ restStatus: REST_STATUS.OK, payload: ekstraherKommuneNr(response) }))
             .catch(error => setResult({ restStatus: REST_STATUS.FEILET, error }));
-    }, [url, options]);
+    }, [url]); // eslint-ignore
     return result;
 };
 

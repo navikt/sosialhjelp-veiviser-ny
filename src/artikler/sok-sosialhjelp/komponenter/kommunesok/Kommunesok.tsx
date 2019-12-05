@@ -13,7 +13,6 @@ const KommuneSok: React.FC = () => {
     const [currentSuggestion, setCurrentSuggestion] = useState<Suggestion | null>(null);
     const [soknadTilgjengelig, setSoknadTilgjengelig] = useState<boolean>(false);
     const [visFeilmelding, setVisFeilmelding] = useState<boolean | undefined>(false);
-
     const kommunerService = useKommuneNrService();
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
@@ -32,9 +31,6 @@ const KommuneSok: React.FC = () => {
         }
         setCurrentSuggestion(suggestion);
     };
-
-    console.log("REST: " + kommunerService.restStatus);
-
 
     return (
         <div className="kommunesok">
@@ -56,7 +52,7 @@ const KommuneSok: React.FC = () => {
                     onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
                     onReset={() => onReset()}
                     feil={(visFeilmelding && currentSuggestion === null) ?
-                        "nySoknadModal.feil_tom_kommunenavn" : undefined
+                        "Du må skrive inn navnet på kommunen din før du kan gå videre" : undefined
                     }
                 />
             )}
