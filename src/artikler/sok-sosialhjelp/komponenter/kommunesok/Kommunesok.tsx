@@ -5,8 +5,7 @@ import {useState} from "react";
 import useKommuneNrService from "./service/useKommuneNrService";
 import {REST_STATUS} from "../../../../utils/restUtils";
 import useTilgjengeligeKommunerService, {
-    finnTilgjengeligKommune,
-    KommuneTilgjengelighet
+    finnTilgjengeligKommune
 } from "./service/useTilgjengeligeKommunerService";
 
 const KommuneSok: React.FC = () => {

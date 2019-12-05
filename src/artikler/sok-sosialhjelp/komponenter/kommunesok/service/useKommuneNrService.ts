@@ -40,7 +40,7 @@ const useKommuneNrService = () => {
             .then(response => response.json())
             .then(response => setResult({ restStatus: REST_STATUS.OK, payload: ekstraherKommuneNr(response) }))
             .catch(error => setResult({ restStatus: REST_STATUS.FEILET, error }));
-    }, [url]);
+    }, [url, options]);
     return result;
 };
 
