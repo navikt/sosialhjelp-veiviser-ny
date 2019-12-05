@@ -10,7 +10,8 @@ export function erHeroku(): boolean {
 }
 
 export function erCodesandbox(): boolean {
-    return window.location.hostname.match(/codesandbox\.io/) !== null;
+    const hostname = window.location.hostname;
+    return hostname.match(/codesandbox\.io/) !== null || hostname.match(/\.csb\.app/) !== null;
 }
 
 export enum REST_STATUS {
