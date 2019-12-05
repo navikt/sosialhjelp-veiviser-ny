@@ -22,7 +22,7 @@ const useTilgjengeligeKommunerService = () => {
     }
 
     if (erCodesandbox()) {
-        url = "http://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     useEffect(() => {

@@ -21,7 +21,7 @@ const useKommuneNrService = () => {
     }
 
     if (erCodesandbox()) {
-        url = "http://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
+        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     }
 
     useEffect(() => {
