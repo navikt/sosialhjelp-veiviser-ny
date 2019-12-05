@@ -14,14 +14,20 @@ const useTilgjengeligeKommunerService = () => {
     let url = "/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
 
     if (erDevMiljo()) {
-        url = "http://localhost:8080/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
-    //     // Nytt endepunkt med status om kommune er midlertidig nede:
-    //     // url = "/https://www.nav.no/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
-    //     // Gammelt endepunkt med bare kommunenummer:
-    //     url = "https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+        // Kjør mot lokal proxyserver:
+        // url = "http://localhost:8080/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+
+        // Public proxy server:
+        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+
+        // Nytt endepunkt med status om kommune er midlertidig nede:
+        //    url = "/https://www.nav.no/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
+        // Gammelt endepunkt med bare kommunenummer:
+        //   url = "https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     if (erCodesandbox()) {
+        // Public
         url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 

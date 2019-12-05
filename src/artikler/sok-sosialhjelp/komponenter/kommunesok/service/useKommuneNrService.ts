@@ -14,17 +14,12 @@ const useKommuneNrService = () => {
 
     let url = "/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
     if (erDevMiljo()) {
-        // url = "http://localhost:8080/https://www.nav.no" + url;
         url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
-
-
-        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
-        // url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
-        // url = "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
+        // url = "http://localhost:8080/https://www.nav.no" + url; // NAV's egen proxy
+        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer"; // Public proxy
     }
 
     if (erCodesandbox()) {
-        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
         url = "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
     }
 
