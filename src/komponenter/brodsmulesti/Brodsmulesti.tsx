@@ -4,7 +4,7 @@ import NavFrontendChevron from 'nav-frontend-chevron';
 import {onClickLink} from "../../utils/navigasjon";
 import useWindowSize from "../../utils/useWindowSize";
 
-const Brodsmulesti: React.FC<{ tittel: string }> = ({tittel}) => {
+const Brodsmulesti: React.FC<{ tittel: string, className?: string }> = ({tittel, className}) => {
     const {width} = useWindowSize();
     const frontpageUrl = `/`;
 
@@ -51,7 +51,7 @@ const Brodsmulesti: React.FC<{ tittel: string }> = ({tittel}) => {
     }
 
     return (
-        <nav aria-label="Du er her" className="breadcrumbs">
+        <nav aria-label="Du er her" className={"breadcrumbs " + (className ? className : "")}>
             {crumbs}
         </nav>
     );

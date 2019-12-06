@@ -24,6 +24,7 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) 
             <div className={"blokk-center " + className}>
 
                 <Brodsmulesti
+                    className="breadcrumbs__article"
                     tittel={tittel ? tittel : "ingen tittel"}
                 />
 
