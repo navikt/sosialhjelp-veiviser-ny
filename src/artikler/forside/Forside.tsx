@@ -13,9 +13,6 @@ const Forside: React.FC = () => {
   return (
     <Dekorator erForside={true}>
       <div className="blokk-center forside">
-        <div className="brodsmulesti">
-          <a href="https://www.nav.no">Forside</a> / Økonomisk sosialhjelp
-        </div>
 
         <InfoPanelContainer>
           <InfoPanel href="./dette-bor-du-vite">

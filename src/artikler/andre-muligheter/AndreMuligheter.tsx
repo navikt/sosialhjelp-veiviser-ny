@@ -3,7 +3,6 @@ import Artikkel from "../Artikkel";
 import {
     Ingress,
     Normaltekst,
-    Sidetittel,
     Undertittel,
 } from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
@@ -13,6 +12,7 @@ import JobblystPanel from "./JobblystPanel";
 import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
+import LysPaere from "../../komponenter/bilder/LysPaere";
 
 const AndreMuligheter: React.FC = () => {
     return (
@@ -21,7 +21,7 @@ const AndreMuligheter: React.FC = () => {
                 className="artikkel--andre_mulighter"
                 tittel="Andre muligheter"
             >
-                <Sidetittel>Andre muligheter</Sidetittel>
+                <LysPaere/>
 
                 <Ingress>
                     Økonomisk sosialhjelp er en midlertidig stønad. Du må
