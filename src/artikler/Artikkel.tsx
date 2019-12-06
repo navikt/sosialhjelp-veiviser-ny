@@ -28,13 +28,13 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) 
                     tittel={tittel ? tittel : "ingen tittel"}
                 />
 
-                <div className="artikkel">
+                <article className="artikkel">
                     {sprak.length > 1 && (<SprakVelger sprak={sprak}/>)}
                     <div className="innhold">
                         {illustrasjon && (<span>{illustrasjon}</span>)}
                         {children}
                     </div>
-                </div>
+                </article>
             </div>
         </Dekorator>
     );

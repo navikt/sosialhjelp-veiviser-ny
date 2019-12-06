@@ -21,8 +21,8 @@
 }
 
 .banner {
-  background-color: #9bcfb0; // @navGronnLighten80;
-  border-bottom: 5px solid #37a161; // @navGronnLighten40;
+  background-color: #9bcfb0;
+  border-bottom: 5px solid #37a161;
   color: @navMorkGra;
   width: 100%;
   margin: 0;
@@ -36,15 +36,13 @@
 
 }
 
-.banner__forside {
-  // border: 1px dotted red;
-  // padding-top: 4rem;
-}
 
-.banner__forside-wrapper {
-  display: flex;
-  padding-left: 3rem;
-  align-items: flex-end;
+@media all and (min-width: 730px) {
+  .banner__forside-wrapper {
+    display: flex;
+    padding-left: 3rem;
+    align-items: flex-end;
+  }
 }
 
 @media all and (min-width: 741px) {
@@ -73,23 +71,9 @@
   width: 60%;
 }
 
-.banner__ingress {
-  margin-bottom: 2rem;
-  padding-right: 3rem;
-}
-
 .banner__forside-illustrasjon {
   flex-shrink: 0;
   margin-bottom: -1px;
-}
-
-@media all and (max-width: 730px) {
-
-  .banner__forside-illustrasjon {
-    height: 15vw;
-    max-width: 30vw;
-    // margin-left: -2vw;
-  }
 }
 
 @media all and (max-width: 730px) {
@@ -108,6 +92,11 @@
     padding-right: 0;
   }
 
+  .banner__forside-illustrasjon {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: -4px;
+  }
 }
 
 @media all and (max-width: 900px) {

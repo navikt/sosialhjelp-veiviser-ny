@@ -5,15 +5,12 @@
 
 .lenkeboks_container {
   display: flex;
-
   justify-content: space-between;
   align-items: stretch;
-
   margin-bottom: 1rem;
 
   @media all and (min-width: 601px) {
     flex-direction: row;
-
 
     &.lenkeboks_container--2_spalter {
 
@@ -44,7 +41,6 @@
     }
 
 
-
     .lenkeboks {
       min-height: 176px;
     }
@@ -54,6 +50,10 @@
   @media all and (max-width: 600px) {
     flex-direction: column;
     width: 100%;
+
+    &.lenkeboks_container--2_spalter {
+      margin-bottom: 0;
+    }
 
     .lenkeboks {
       max-width: none;
