@@ -39,7 +39,7 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
                        title={foreldreside.tittel}
                        className="breadcrumbs__parent"
                     >
-                        {foreldreside?.tittel}
+                        {foreldreside.tittel}
                     </a>
                 </>
             )}
