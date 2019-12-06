@@ -4,7 +4,18 @@ import NavFrontendChevron from 'nav-frontend-chevron';
 import {onClickLink} from "../../utils/navigasjon";
 import useWindowSize from "../../utils/useWindowSize";
 
-const Brodsmulesti: React.FC<{ tittel: string, className?: string }> = ({tittel, className}) => {
+export type BrodsmulestiForeldreside = {
+    tittel: string;
+    path: string;
+}
+
+interface Props {
+    tittel: string;
+    className?: string;
+    foreldreside?: BrodsmulestiForeldreside;
+}
+
+const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
     const {width} = useWindowSize();
     const frontpageUrl = `/`;
 
@@ -18,6 +29,21 @@ const Brodsmulesti: React.FC<{ tittel: string, className?: string }> = ({tittel,
                     Økonomisk sosialhjelp
                 </a>
             </div>
+            {foreldreside && (
+                <>
+                    <div key="chevron" aria-hidden={true}>
+                        <NavFrontendChevron type="høyre"/>
+                    </div>
+                    <a href=".."
+                       onClick={(event: any) => onClickLink(event, foreldreside?.path)}
+                       title={foreldreside?.tittel}
+                       className="breadcrumbs__parent"
+                    >
+                        {foreldreside?.tittel}
+                    </a>
+                </>
+            )}
+
             <div key="chevron" aria-hidden={true}>
                 <NavFrontendChevron type="høyre"/>
             </div>

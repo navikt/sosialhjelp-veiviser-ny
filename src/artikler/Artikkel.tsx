@@ -3,7 +3,7 @@ import "./artikkel.less";
 import Dekorator from "../komponenter/dekorator/Dekorator";
 import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
 import {Sprak} from "../utils/sprakUtils";
-import Brodsmulesti from "../komponenter/brodsmulesti/Brodsmulesti";
+import Brodsmulesti, {BrodsmulestiForeldreside} from "../komponenter/brodsmulesti/Brodsmulesti";
 import {useContext} from "react";
 import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
 
@@ -12,8 +12,10 @@ interface Props {
     className?: string;
     tittel: string;
     illustrasjon?: React.ReactNode;
+    foreldreside?: BrodsmulestiForeldreside;
 }
-const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) => {
+
+const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, foreldreside}) => {
 
     document.title = (tittel ? tittel : "ingen tittel");
     const context = useContext(SprakvelgerContext);
@@ -26,6 +28,7 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon}) 
                 <Brodsmulesti
                     className="breadcrumbs__article"
                     tittel={tittel ? tittel : "ingen tittel"}
+                    foreldreside={foreldreside}
                 />
 
                 <article className="artikkel">

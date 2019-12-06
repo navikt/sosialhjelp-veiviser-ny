@@ -13,6 +13,24 @@ import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
+import {BrodsmulestiForeldreside} from "../../komponenter/brodsmulesti/Brodsmulesti";
+
+const andreMuligheterUrlPath = "/andre-mulighter";
+
+export const andreMuligheterBrodsmulestiBokmal: BrodsmulestiForeldreside = {
+    tittel: "Andre muligheter",
+    path: andreMuligheterUrlPath
+};
+
+export const andreMuligheterBrodsmulestiNynorsk: BrodsmulestiForeldreside = {
+    tittel: "Andre moglegheiter",
+    path: andreMuligheterUrlPath
+};
+
+export const andreMuligheterBrodsmulestiEngelsk: BrodsmulestiForeldreside = {
+    tittel: "Other possibilities",
+    path: andreMuligheterUrlPath
+};
 
 const AndreMuligheter: React.FC = () => {
     return (

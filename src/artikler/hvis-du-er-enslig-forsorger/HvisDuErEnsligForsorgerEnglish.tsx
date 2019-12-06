@@ -5,11 +5,13 @@ import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
 
 const HvisDuErEnsligForsorgerEnglish = () => (
     <Artikkel
         tittel="If you are a single parent"
         illustrasjon={<Veiskilft className="illustrasjon" />}
+        foreldreside={andreMuligheterBrodsmulestiEngelsk}
     >
         <Innholdstittel>If you are a single parent</Innholdstittel>
         <Normaltekst>
