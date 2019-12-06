@@ -114,7 +114,7 @@ const AndreMuligheter: React.FC = () => {
                             Rettigheter og plikter som forsørger
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="todo">
+                            <LenkeboksLinje href="/hvis-du-er-enslig-forsorger">
                                 Hvis du er enslig forsørger
                             </LenkeboksLinje>
                             <LenkeboksLinje href="/hvis-du-har-barn">
