@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
@@ -13,6 +13,7 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
             tittel="Dette kan du søke om"
             illustrasjon={<IllustrasjonBygningPerson className="illustrasjon"/>}
         >
+            <Innholdstittel>Dette kan du søke om</Innholdstittel>
             <Normaltekst>
                 Vi vurderer sammen med deg behovet ditt for økonomisk sosialhjelp.
                 Hvor mye du kan få i stønad er avhengig av din familiesituasjon,
