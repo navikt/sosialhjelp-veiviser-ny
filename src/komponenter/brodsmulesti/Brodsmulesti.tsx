@@ -35,8 +35,8 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
                         <NavFrontendChevron type="høyre"/>
                     </div>
                     <a href=".."
-                       onClick={(event: any) => onClickLink(event, foreldreside?.path)}
-                       title={foreldreside?.tittel}
+                       onClick={(event: any) => onClickLink(event, foreldreside.path)}
+                       title={foreldreside.tittel}
                        className="breadcrumbs__parent"
                     >
                         {foreldreside?.tittel}
