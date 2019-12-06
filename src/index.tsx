@@ -3,7 +3,7 @@ import {render} from "react-dom";
 import DetteBorDuVite from "./artikler/dette-bor-du-vite/DetteBorDuVite";
 import "./styles.css";
 import "./index.less";
-import {Router, Route, Switch} from "react-router";
+import {Router, Route, Switch, Redirect} from "react-router";
 import DetteKanDuSokeOm from "./artikler/dette-kan-du-soke-om/DetteKanDuSokeOm";
 import AndreMuligheter from "./artikler/andre-muligheter/AndreMuligheter";
 import {history} from "./utils/navigasjon";
@@ -57,6 +57,20 @@ function App() {
                     component={HvisDuHarSamboer}
                 />
                 <Route exact path="/hvis-du-er-gift" component={HvisDuErGift} />
+
+                {/* Redirects */}
+                <Route exact path="/artikkel/514877">
+                    <Redirect to="/hvis-du-er-enslig-forsorger" />
+                </Route>
+                <Route exact path="/artikkel/514874">
+                    <Redirect to="/hvis-du-har-barn" />
+                </Route>
+                <Route exact path="/artikkel/514879">
+                    <Redirect to="/hvis-du-har-samboer" />
+                </Route>
+                <Route exact path="/artikkel/514878">
+                    <Redirect to="/hvis-du-er-gift" />
+                </Route>
             </Switch>
             <br />
             <br />
