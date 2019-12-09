@@ -1,10 +1,6 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {
-    Ingress,
-    Normaltekst,
-    Undertittel,
-} from "nav-frontend-typografi";
+import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
@@ -19,17 +15,17 @@ const andreMuligheterUrlPath = "/andre-mulighter";
 
 export const andreMuligheterBrodsmulestiBokmal: BrodsmulestiForeldreside = {
     tittel: "Andre muligheter",
-    path: andreMuligheterUrlPath
+    path: andreMuligheterUrlPath,
 };
 
 export const andreMuligheterBrodsmulestiNynorsk: BrodsmulestiForeldreside = {
     tittel: "Andre moglegheiter",
-    path: andreMuligheterUrlPath
+    path: andreMuligheterUrlPath,
 };
 
 export const andreMuligheterBrodsmulestiEngelsk: BrodsmulestiForeldreside = {
     tittel: "Other possibilities",
-    path: andreMuligheterUrlPath
+    path: andreMuligheterUrlPath,
 };
 
 const AndreMuligheter: React.FC = () => {
@@ -39,7 +35,7 @@ const AndreMuligheter: React.FC = () => {
                 className="artikkel--andre_mulighter"
                 tittel="Andre muligheter"
             >
-                <LysPaere/>
+                <LysPaere />
 
                 <Ingress>
                     Økonomisk sosialhjelp er en midlertidig stønad. Du må
@@ -87,7 +83,7 @@ const AndreMuligheter: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
                                 Søknad for deg med kort botid i Norge
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="todo">
+                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
                             </LenkeboksLinje>
                         </ul>
@@ -98,15 +94,23 @@ const AndreMuligheter: React.FC = () => {
                     <Undertittel>Hjelp til bolig</Undertittel>
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
-                    <LenkepanelBase href={"todo"}>
+                    <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
                         <Undertittel>Bostøtte</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
-                    <LenkepanelBase href={"todo"}>
+                    <LenkepanelBase
+                        href={
+                            "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/bolig/midlertidig-botilbud"
+                        }
+                    >
                         <Undertittel>Midlertidig botilbud</Undertittel>
                         <Normaltekst>Nødsituasjon</Normaltekst>
                     </LenkepanelBase>
-                    <LenkepanelBase href={"todo"}>
+                    <LenkepanelBase
+                        href={
+                            "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
+                        }
+                    >
                         <Undertittel>Leie eller eie bolig</Undertittel>
                     </LenkepanelBase>
                 </div>
@@ -121,7 +125,7 @@ const AndreMuligheter: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
                                 Du har rett til opplysning, råd og veiledning
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="todo">
+                            <LenkeboksLinje href="/slik-foregar-et-mote">
                                 Slik foregår et møte med oss
                             </LenkeboksLinje>
                         </ul>
