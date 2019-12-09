@@ -121,7 +121,7 @@ const AndreMuligheter: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
                                 Du har rett til opplysning, råd og veiledning
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="todo">
+                            <LenkeboksLinje href="./slik-foregar-et-mote">
                                 Slik foregår et møte med oss
                             </LenkeboksLinje>
                         </ul>

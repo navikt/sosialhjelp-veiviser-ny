@@ -8,7 +8,7 @@ const Veiskilt = (props: {className?: string}) => (
         viewBox="0 0 96 128"
         className={props.className}
     >
-        <g fill="none" fill-rule="evenodd">
+        <g fill="none" fillRule="evenodd">
             <path
                 fill="#3E3821"
                 d="M45 0h2a1 1 0 0 1 1 1v120h-4V1a1 1 0 0 1 1-1z"

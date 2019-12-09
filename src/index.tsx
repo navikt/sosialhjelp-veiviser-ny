@@ -14,6 +14,7 @@ import HvisDuErEnsligForsorger from "./artikler/hvis-du-er-enslig-forsorger/Hvis
 import HvisDuHarBarn from "./artikler/hvis-du-har-barn/HvisDuHarBarn";
 import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
+import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote";
 
 function App() {
     return (
@@ -60,6 +61,12 @@ function App() {
                 />
                 <Route exact path="/hvis-du-er-gift" component={HvisDuErGift} />
 
+                <Route
+                    exact
+                    path="/slik-foregar-et-mote"
+                    component={SlikForegatEtMote}
+                />
+
                 {/* Redirects */}
                 <Route exact path="/artikkel/514891">
                     <Redirect to="/nodsituasjon" />
@@ -75,6 +82,9 @@ function App() {
                 </Route>
                 <Route exact path="/artikkel/514878">
                     <Redirect to="/hvis-du-er-gift" />
+                </Route>
+                <Route exact path="/artikkel/514876">
+                    <Redirect to="/slik-foregar-et-mote" />
                 </Route>
             </Switch>
             <br />
