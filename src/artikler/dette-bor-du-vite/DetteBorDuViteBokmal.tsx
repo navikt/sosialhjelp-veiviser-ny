@@ -83,24 +83,24 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 går mer enn én måned, skal du få et foreløpig svar. Hvis du ikke
                 har levert all nødvendig dokumentasjon, kan det ta lengre tid
                 før du får svar på søknaden din. Hvis du er i en{" "}
-                <Lenke href="/sosialhjelp/nodsituasjon">nødssituasjon</Lenke>,
-                skal du få et raskt svar.
+                <Lenke href="./nodsituasjon">nødssituasjon</Lenke>, skal du få
+                et raskt svar.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du må <Lenke href="/gi-beskjed">gi beskjed</Lenke> til oss hvis
+                Du må <Lenke href="./gi-beskjed">gi beskjed</Lenke> til oss hvis
                 situasjonen din endrer seg etter at du har søkt.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Når vi har behandlet søknaden din, får du et vedtak som du må
                 lese nøye. Ofte vil vi stille ett eller flere{" "}
-                <Lenke href="/krav-til-deg">krav til deg</Lenke> i vedtaket som
+                <Lenke href="./krav-til-deg">krav til deg</Lenke> i vedtaket som
                 du må oppfylle.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du kan <Lenke href="/klage">klage</Lenke> hvis du mener at
+                Du kan <Lenke href="./klage">klage</Lenke> hvis du mener at
                 vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
             </Normaltekst>
             <Undertittel>Satser</Undertittel>
