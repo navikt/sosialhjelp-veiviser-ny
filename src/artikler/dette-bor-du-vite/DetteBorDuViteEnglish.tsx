@@ -87,14 +87,14 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 than a month goes by, you are entitled to a preliminary
                 response. If you fail to submit all the necessary documentation,
                 it may take longer for NAV to process your application. If your{" "}
-                <Lenke href="/sosialhjelp/nodsituasjon?lang=en">
+                <Lenke href="./nodsituasjon?lang=en">
                     situation is an emergency
                 </Lenke>
                 , you are entitled to get a response quickly.
             </Normaltekst>
             <br />
             <Normaltekst>
-                You must <Lenke href="/gi-beskjed?lang=en">notify</Lenke> us of
+                You must <Lenke href="./gi-beskjed?lang=en">notify</Lenke> us of
                 any changes to your situation.
             </Normaltekst>
             <br />
@@ -102,7 +102,7 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 Once we have processed your application, we will make a
                 decision, and you must read the decision carefully. Often, there
                 will be one or more{" "}
-                <Lenke href="/krav-til-deg?lang=en">
+                <Lenke href="./krav-til-deg?lang=en">
                     conditions listed in the decision
                 </Lenke>{" "}
                 that you have to meet.
@@ -110,7 +110,7 @@ const DetteBorDuViteEnglish: React.FC = () => {
             <br />
             <Normaltekst>
                 If you believe the decision is wrong, you have the right to{" "}
-                <Lenke href="/klage?lang=en">appeal</Lenke>. The term of appeal
+                <Lenke href="./klage?lang=en">appeal</Lenke>. The term of appeal
                 is 3 weeks from the date on which you receive notice of the
                 decision.
             </Normaltekst>
