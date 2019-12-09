@@ -3,11 +3,13 @@ import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
 
 const HvisDuHarSamboerBokmal = () => (
     <Artikkel
         tittel="Hvis du er samboer"
         illustrasjon={<Veiskilft className="illustrasjon" />}
+        foreldreside={andreMuligheterBrodsmulestiBokmal}
     >
         <Innholdstittel>Hvis du er samboer</Innholdstittel>
         <Normaltekst>
