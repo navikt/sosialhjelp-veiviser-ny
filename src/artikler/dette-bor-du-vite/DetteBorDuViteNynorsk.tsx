@@ -89,20 +89,21 @@ const DetteBorDuViteNynorsk: React.FC = () => {
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du må <Lenke href="todo">melde frå</Lenke> til oss dersom det
-                skjer endringar i situasjonen din.
+                Du må <Lenke href="/gi-beskjed?lang=nn">melde frå</Lenke> til
+                oss dersom det skjer endringar i situasjonen din.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Når vi har behandla søknaden din, får du eit vedtak som du må
                 lese nøye. Ofte vil vi stille eitt eller fleire{" "}
-                <Lenke href="todo">krav til deg</Lenke> i vedtaket som du må
-                oppfylle.
+                <Lenke href="/krav-til-deg?lang=nn">krav til deg</Lenke> i
+                vedtaket som du må oppfylle.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du kan <Lenke href="todo">klage</Lenke> hvis du meiner at
-                vedtaket er feil. Klagefrist er 3 uker frå du har fått vedtaket.
+                Du kan <Lenke href="/klage?lang=nn">klage</Lenke> hvis du meiner
+                at vedtaket er feil. Klagefrist er 3 uker frå du har fått
+                vedtaket.
             </Normaltekst>
         </Artikkel>
     );

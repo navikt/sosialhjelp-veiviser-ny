@@ -94,22 +94,25 @@ const DetteBorDuViteEnglish: React.FC = () => {
             </Normaltekst>
             <br />
             <Normaltekst>
-                You must <Lenke href="todo">notify</Lenke> us of any changes to
-                your situation.
+                You must <Lenke href="/gi-beskjed?lang=en">notify</Lenke> us of
+                any changes to your situation.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Once we have processed your application, we will make a
                 decision, and you must read the decision carefully. Often, there
                 will be one or more{" "}
-                <Lenke href="todo">conditions listed in the decision</Lenke>{" "}
+                <Lenke href="/krav-til-deg?lang=en">
+                    conditions listed in the decision
+                </Lenke>{" "}
                 that you have to meet.
             </Normaltekst>
             <br />
             <Normaltekst>
                 If you believe the decision is wrong, you have the right to{" "}
-                <Lenke href="todo">appeal</Lenke>. The term of appeal is 3 weeks
-                from the date on which you receive notice of the decision.
+                <Lenke href="/klage?lang=en">appeal</Lenke>. The term of appeal
+                is 3 weeks from the date on which you receive notice of the
+                decision.
             </Normaltekst>
         </Artikkel>
     );

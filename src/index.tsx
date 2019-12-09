@@ -14,6 +14,9 @@ import HvisDuErEnsligForsorger from "./artikler/hvis-du-er-enslig-forsorger/Hvis
 import HvisDuHarBarn from "./artikler/hvis-du-har-barn/HvisDuHarBarn";
 import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
+import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
+import Klage from "./artikler/klage/Klage";
+import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
 
 function App() {
     return (
@@ -35,6 +38,9 @@ function App() {
                     path="/dette-kan-du-soke-om"
                     component={DetteKanDuSokeOm}
                 />
+                <Route exact path="/gi-beskjed" component={GiBeskjed} />
+                <Route exact path="/klage" component={Klage} />
+                <Route exact path="/krav-til-deg" component={KravTilDeg} />
                 <Route
                     exact
                     path="/sok-sosialhjelp"
@@ -75,6 +81,15 @@ function App() {
                 </Route>
                 <Route exact path="/artikkel/514878">
                     <Redirect to="/hvis-du-er-gift" />
+                </Route>
+                <Route exact path="/artikkel/124876">
+                    <Redirect to="/gi-beskjed" />
+                </Route>
+                <Route exact path="/artikkel/514875">
+                    <Redirect to="/krav-til-deg" />
+                </Route>
+                <Route exact path="/artikkel/124875">
+                    <Redirect to="/klage" />
                 </Route>
             </Switch>
             <br />
