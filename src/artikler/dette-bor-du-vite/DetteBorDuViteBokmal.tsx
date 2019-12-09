@@ -88,19 +88,19 @@ const DetteBorDuViteBokmal: React.FC = () => {
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du må <Lenke href="todo">gi beskjed</Lenke> til oss hvis
+                Du må <Lenke href="/gi-beskjed">gi beskjed</Lenke> til oss hvis
                 situasjonen din endrer seg etter at du har søkt.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Når vi har behandlet søknaden din, får du et vedtak som du må
                 lese nøye. Ofte vil vi stille ett eller flere{" "}
-                <Lenke href="todo">krav til deg</Lenke> i vedtaket som du må
-                oppfylle.
+                <Lenke href="/krav-til-deg">krav til deg</Lenke> i vedtaket som
+                du må oppfylle.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du kan <Lenke href="todo">klage</Lenke> hvis du mener at
+                Du kan <Lenke href="/klage">klage</Lenke> hvis du mener at
                 vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
             </Normaltekst>
         </Artikkel>
