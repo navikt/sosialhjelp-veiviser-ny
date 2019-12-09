@@ -1,64 +1,109 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {Ingress, Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {
+    Ingress,
+    Innholdstittel,
+    Normaltekst,
+    Undertittel,
+} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
+import Lenke from "nav-frontend-lenker";
 
 const DetteBorDuViteNynorsk: React.FC = () => {
-
     return (
         <Artikkel
             tittel="Dette bør du vite før du søker"
-            illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
+            illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon" />}
         >
-
-            <Innholdstittel>Dette bør du vite før du søker</Innholdstittel>
+            <Innholdstittel>Slik søkjer du</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få stønad må
-                du vurdere alle andre muligheter til å forsørge deg selv. Dette kan for
-                eksempel være gjennom jobb, andre inntekter eller egne midler.
+                Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få
+                stønad må du vurdere alle andre muligheter til å forsørge deg
+                selv. Dette kan for eksempel være gjennom jobb, andre inntekter
+                eller egne midler.
             </Ingress>
 
-            <Undertittel>Før du søker</Undertittel>
+            <Undertittel>Før du søkjer</Undertittel>
             <Normaltekst>
-                NAV må ha tilstrekkelig dokumentasjon og trenger opplysninger om inntekter og utgifter.
-                Du må i utgangspunktet dokumentere alle opplysninger skriftlig.
+                NAV må ha tilstrekkeleg dokumentasjon og treng opplysningar om
+                inntekter og utgifter. Du må i utgangspunktet dokumentere alle
+                opplysningar skriftleg.
             </Normaltekst>
 
-            <Ekspanderbartpanel tittel="Eksempler på hva du må legge ved søknaden" border>
-                Panelet vil da ekspandere og vise innholdet.
+            <Ekspanderbartpanel
+                tittel="Døme på kva du må leggje ved søknaden"
+                border
+            >
+                <Normaltekst>
+                    <ul>
+                        <li>legitimasjon</li>
+                        <li>gyldig opphaldsløyve</li>
+                        <li>skattemelding (tidligare sjølvmelding)</li>
+                        <li>fastsetting (tidligare likning), skatteoppgjer</li>
+                        <li>lønnsslipp</li>
+                        <li>
+                            kontooversikter som viser alle dine konti med saldo
+                        </li>
+                        <li>
+                            kontoutskrifter (om ikkje nødvendige opplysningar
+                            kan bli dokumentert på annan måte. Du kan stryke
+                            over tekst som ikkje er relevant for saka)
+                        </li>
+                        <li>dokumentasjon på butilhøve (husleigekontrakt)</li>
+                        <li>
+                            fakturaer for husleige, bustadlån, straum,
+                            barnehage, skulefritidsordning (SFO) og
+                            fritidsaktivitetar for barn
+                        </li>
+                        <li>
+                            faste eller høge utgifter til helse og/eller
+                            tannbehandling
+                        </li>
+                    </ul>
+                </Normaltekst>
             </Ekspanderbartpanel>
 
-            <br/>
+            <br />
             <Normaltekst>
-                Du må ha lovlig opphold og ha fast bopel i Norge for å ha rett til økonomisk sosialhjelp.
-                Hvis du oppholder deg i utlandet, har du ikke rett til økonomisk sosialhjelp.
+                Du må ha lovleg opphald og ha fast bustad i Noreg for å ha rett
+                til økonomisk sosialhjelp. Dersom du oppheld deg i utlandet, har
+                du ikkje rett til økonomisk sosialhjelp.
             </Normaltekst>
-            <br/>
+            <br />
             <Normaltekst>
-                Alle har rett til å søke om økonomisk sosialhjelp og få en individuell vurdering av saken sin.
+                Alle har rett til å søkje om økonomisk sosialhjelp, og få ei
+                individuell vurdering av saka si.
             </Normaltekst>
 
             <Undertittel>Etter du har søkt</Undertittel>
             <Normaltekst>
-                Saksbehandlingstiden varierer fra kommune til kommune. Hvis det går mer enn én måned, skal
-                du få et foreløpig svar. Hvis du ikke har levert all nødvendig dokumentasjon, kan det
-                ta lengre tid før du får svar på søknaden din. Hvis du er i en nødssituasjon, skal du få et raskt svar.
+                Saksbehandlingstida varierer frå kommune til kommune. Dersom det
+                går meir enn éin månad, skal du få eit førebels svar. Om du
+                ikkje har levert all nødvendig dokumentasjon, kan det ta lengre
+                tid før du får svar på søknaden din. Om du er i en{" "}
+                <Lenke href="/sosialhjelp/nodsituasjon?lang=nn">
+                    nødssituasjon
+                </Lenke>
+                , skal du få svaret raskt.
             </Normaltekst>
-            <br/>
+            <br />
             <Normaltekst>
-                Du må gi beskjed til oss hvis situasjonen din endrer seg etter at du har søkt.
+                Du må <Lenke href="todo">melde frå</Lenke> til oss dersom det
+                skjer endringar i situasjonen din.
             </Normaltekst>
-            <br/>
+            <br />
             <Normaltekst>
-                Når vi har behandlet søknaden din, får du et vedtak som du må lese nøye. Ofte vil vi
-                stille ett eller flere krav til deg i vedtaket som du må oppfylle.
+                Når vi har behandla søknaden din, får du eit vedtak som du må
+                lese nøye. Ofte vil vi stille eitt eller fleire{" "}
+                <Lenke href="todo">krav til deg</Lenke> i vedtaket som du må
+                oppfylle.
             </Normaltekst>
-            <br/>
+            <br />
             <Normaltekst>
-                Du kan klage hvis du mener at vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
+                Du kan <Lenke href="todo">klage</Lenke> hvis du meiner at
+                vedtaket er feil. Klagefrist er 3 uker frå du har fått vedtaket.
             </Normaltekst>
-
         </Artikkel>
     );
 };

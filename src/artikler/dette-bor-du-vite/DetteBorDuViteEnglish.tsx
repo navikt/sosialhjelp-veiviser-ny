@@ -1,63 +1,116 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {Ingress, Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {
+    Ingress,
+    Innholdstittel,
+    Normaltekst,
+    Undertittel,
+} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
+import Lenke from "nav-frontend-lenker";
 
 const DetteBorDuViteEnglish: React.FC = () => {
-
     return (
         <Artikkel
             tittel="What you should know"
-            illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon"/>}
+            illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon" />}
         >
             <Innholdstittel>What you should know</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få stønad må
-                du vurdere alle andre muligheter til å forsørge deg selv. Dette kan for
-                eksempel være gjennom jobb, andre inntekter eller egne midler.
+                Financial assistance is a temporary form of income. Before you
+                can qualify for financial assistance you must consider every
+                other possibility for you to provide for yourself. This could
+                include employment, other means of income or using your own
+                savings.
             </Ingress>
 
-            <Undertittel>Før du søker</Undertittel>
+            <Undertittel>Before you apply</Undertittel>
             <Normaltekst>
-                NAV må ha tilstrekkelig dokumentasjon og trenger opplysninger om inntekter og utgifter.
-                Du må i utgangspunktet dokumentere alle opplysninger skriftlig.
+                NAV will need sufficient documentation and you must document
+                your income and expenses. Normally, you must provide written
+                documentation for everything.
             </Normaltekst>
 
-            <Ekspanderbartpanel tittel="Eksempler på hva du må legge ved søknaden" border>
-                Panelet vil da ekspandere og vise innholdet.
+            <Ekspanderbartpanel
+                tittel="Examples of documentation you must include in your application"
+                border
+            >
+                <Normaltekst>
+                    <ul>
+                        <li>Identification</li>
+                        <li>Valid residence permit</li>
+                        <li>Tax return</li>
+                        <li>Tax assessment/tax settlement notice</li>
+                        <li>Pay slip</li>
+                        <li>
+                            Bank account summary, presenting all of your bank
+                            accounts, including current balances
+                        </li>
+                        <li>
+                            Bank statements (Provided it is not possible to
+                            document necessary information by other means. You
+                            may cross out any information that is not relevant
+                            to your case.)
+                        </li>
+                        <li>Documentation of housing (lease agreement)</li>
+                        <li>
+                            Invoices documenting rent, mortgage payments,
+                            electricity, child care, care for school-aged
+                            children (SFO) and leisure time activities for
+                            children
+                        </li>
+                        <li>
+                            Recurrent or especially high costs related to health
+                            and/or dental services
+                        </li>
+                    </ul>
+                </Normaltekst>
             </Ekspanderbartpanel>
 
-            <br/>
+            <br />
             <Normaltekst>
-                Du må ha lovlig opphold og ha fast bopel i Norge for å ha rett til økonomisk sosialhjelp.
-                Hvis du oppholder deg i utlandet, har du ikke rett til økonomisk sosialhjelp.
+                You must have legal residence in Norway and be domiciled here in
+                order to qualify for financial assistance. If you live abroad
+                you do not qualify for social assistance.
             </Normaltekst>
-            <br/>
+            <br />
             <Normaltekst>
-                Alle har rett til å søke om økonomisk sosialhjelp og få en individuell vurdering av saken sin.
-            </Normaltekst>
-
-            <Undertittel>Etter du har søkt</Undertittel>
-            <Normaltekst>
-                Saksbehandlingstiden varierer fra kommune til kommune. Hvis det går mer enn én måned, skal
-                du få et foreløpig svar. Hvis du ikke har levert all nødvendig dokumentasjon, kan det
-                ta lengre tid før du får svar på søknaden din. Hvis du er i en nødssituasjon, skal du få et raskt svar.
-            </Normaltekst>
-            <br/>
-            <Normaltekst>
-                Du må gi beskjed til oss hvis situasjonen din endrer seg etter at du har søkt.
-            </Normaltekst>
-            <br/>
-            <Normaltekst>
-                Når vi har behandlet søknaden din, får du et vedtak som du må lese nøye. Ofte vil vi
-                stille ett eller flere krav til deg i vedtaket som du må oppfylle.
-            </Normaltekst>
-            <br/>
-            <Normaltekst>
-                Du kan klage hvis du mener at vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
+                Everyone has the right to submit an application for financial
+                assistance and to have NAV conduct an individual assessment of
+                their case.
             </Normaltekst>
 
+            <Undertittel>After you apply</Undertittel>
+            <Normaltekst>
+                Processing times vary from municipality to municipality. If more
+                than a month goes by, you are entitled to a preliminary
+                response. If you fail to submit all the necessary documentation,
+                it may take longer for NAV to process your application. If your{" "}
+                <Lenke href="/sosialhjelp/nodsituasjon?lang=en">
+                    situation is an emergency
+                </Lenke>
+                , you are entitled to get a response quickly.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                You must <Lenke href="todo">notify</Lenke> us of any changes to
+                your situation.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                Once we have processed your application, we will make a
+                decision, and you must read the decision carefully. Often, there
+                will be one or more{" "}
+                <Lenke href="todo">conditions listed in the decision</Lenke>{" "}
+                that you have to meet.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                If you believe the decision is wrong, you have the right to{" "}
+                <Lenke href="todo">appeal</Lenke>. The term of appeal is 3 weeks
+                from the date on which you receive notice of the decision.
+            </Normaltekst>
         </Artikkel>
     );
 };
