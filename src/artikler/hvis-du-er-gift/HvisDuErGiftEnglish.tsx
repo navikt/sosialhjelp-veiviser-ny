@@ -27,14 +27,14 @@ const HvisDuErGiftEnglish = () => (
             a limited time. Examples of circumstances where this would apply
             include
         </Normaltekst>
-        <Normaltekst>
+        <div className="typo-normal">
             <ul>
                 <li>if you are staying in a women’s crisis shelter</li>
                 <li>if you are living in hiding from an abusive spouse</li>
                 <li>if you are trying to get away from a forced marriage</li>
                 <li>if your spouse is serving time in prison</li>
             </ul>
-        </Normaltekst>
+        </div>
         <Undertittel>Spousal support</Undertittel>
         <br />
         <Normaltekst>

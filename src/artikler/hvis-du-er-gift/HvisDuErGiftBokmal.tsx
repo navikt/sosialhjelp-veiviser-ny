@@ -26,14 +26,14 @@ const HvisDuErGiftBokmal = () => (
             sosialhjelp i en periode. Eksempler hvor dette kan være aktuelt er
             hvis
         </Normaltekst>
-        <Normaltekst>
+        <div className="typo-normal">
             <ul>
                 <li>du oppholder deg på et krisesenter</li>
                 <li>du lever i skjul fra en voldelig ektefelle</li>
                 <li>du prøver å komme deg bort fra et tvangsekteskap</li>
                 <li>ektefellen din soner i fengsel</li>
             </ul>
-        </Normaltekst>
+        </div>
         <Undertittel>Ektefellebidrag</Undertittel>
         <br />
         <Normaltekst>
