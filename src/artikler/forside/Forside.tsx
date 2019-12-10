@@ -44,7 +44,7 @@ const Forside: React.FC = () => {
             </Normaltekst>
           </InfoPanel>
 
-          <InfoPanel href="./andre-mulighter">
+          <InfoPanel href="./andre-muligheter">
             <Undertittel>Andre muligheter</Undertittel>
             <Normaltekst>
               Har du sjekket andre muligheter til å forsørge deg selv?

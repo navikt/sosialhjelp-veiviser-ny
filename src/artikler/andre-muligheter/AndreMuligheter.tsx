@@ -11,7 +11,7 @@ import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
 import {BrodsmulestiForeldreside} from "../../komponenter/brodsmulesti/Brodsmulesti";
 
-const andreMuligheterUrlPath = "/andre-mulighter";
+const andreMuligheterUrlPath = "/andre-muligheter";
 
 export const andreMuligheterBrodsmulestiBokmal: BrodsmulestiForeldreside = {
     tittel: "Andre muligheter",

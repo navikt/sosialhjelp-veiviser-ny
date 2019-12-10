@@ -9,8 +9,18 @@ import {Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
+import {useState} from "react";
 
 const SokSosialhjelp: React.FC = () => {
+
+    const [kommuneId, setKommuneId] = useState<string|undefined>(undefined);
+
+    const sokDigital = (event: any) => {
+        const query = (kommuneId !== undefined) ? ("?kommuneId=" + kommuneId) : "";
+        let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
+        window.location.href = soknadUrl;
+        event.preventDefault();
+    };
 
     return (
         <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
@@ -34,14 +44,14 @@ const SokSosialhjelp: React.FC = () => {
                         intro={
                             <div style={{paddingBottom: "1rem"}}>
                                 <Hovedknapp
-                                    onClick={(event: any) => console.log("TODO: Gå til søknad")}
+                                    onClick={(event: any) => sokDigital(event)}
                                 >
                                     Gå til søknad
                                 </Hovedknapp>
                             </div>
                         }
                     >
-                        <KommuneSok />
+                        <KommuneSok onValgtKommune={(kommuneId: string) => setKommuneId(kommuneId)} />
                     </Lesmerpanel>
                 </SokDigitaltPanel>
 

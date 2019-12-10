@@ -31,7 +31,7 @@ function App() {
                 />
                 <Route
                     exact
-                    path="/andre-mulighter"
+                    path="/andre-muligheter"
                     component={AndreMuligheter}
                 />
                 <Route

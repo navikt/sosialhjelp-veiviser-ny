@@ -11,7 +11,11 @@ import AdvarselIkon from "../../../../komponenter/bilder/AdvarselIkon";
 import {Normaltekst} from "nav-frontend-typografi";
 import CheckOkIcon from "../../../../komponenter/bilder/CheckOkIcon";
 
-const KommuneSok: React.FC = () => {
+interface Props {
+    onValgtKommune: (kommuneId: string) => void;
+}
+
+const KommuneSok: React.FC<Props> = ({onValgtKommune}) => {
 
     const [currentSuggestion, setCurrentSuggestion] = useState<Suggestion | null>(null);
     const [soknadTilgjengelig, setSoknadTilgjengelig] = useState<boolean>(false);
@@ -29,6 +33,9 @@ const KommuneSok: React.FC = () => {
         if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
             let kommuneErTilgjengelig: boolean = finnTilgjengeligKommune(tilgjengeligeKommunerService.payload.results, suggestion.key);
             setSoknadTilgjengelig(kommuneErTilgjengelig);
+            if(kommuneErTilgjengelig) {
+                onValgtKommune(suggestion.key);
+            }
         }
         setCurrentSuggestion(suggestion);
     };
