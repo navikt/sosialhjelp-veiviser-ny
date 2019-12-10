@@ -199,17 +199,17 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
 
             <Undertittel>Korleis søkjer du?</Undertittel>
             <Normaltekst>
-                Du skal søke til NAV-kontoret der du bor. Stadig flere kommuner
-                kan ta i mot digitale søknader. Hvis du ikke skal søke digitalt,
-                kan du søke med kommunens papirskjema.
+                Du skal søkje til NAV-kontoret der du bor. Stadig fleire
+                kommunar kan ta i mot digitale søknader. Dersom du ikkje skal
+                søkje digitalt, kan du søkje med kommunens papirskjema.
             </Normaltekst>
             <Normaltekst>
                 <Lenke href={"sosialhjelp/slik-soker-du"}>Søk her.</Lenke>
                 <br />
                 <br />
-                For mer informasjon, se{" "}
+                For meir informasjon, sjå{" "}
                 <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nn"}>
-                    dette bør du vite før du søker
+                    slik søkjer du
                 </Lenke>
                 .
             </Normaltekst>

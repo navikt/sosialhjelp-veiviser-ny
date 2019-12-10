@@ -114,6 +114,32 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 is 3 weeks from the date on which you receive notice of the
                 decision.
             </Normaltekst>
+            <Undertittel>Rates</Undertittel>
+            <Normaltekst>
+                Financial assistance is granted on the basis of an individual
+                assessment.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                There are, however,{" "}
+                <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/oversikt-over-satser/statlige-veiledende-retningslinjer-for-okonomisk-stonad_kap">
+                    standard government rates and guidelines
+                </Lenke>{" "}
+                for calculating social assistance. Your municipality may apply
+                its own standard rates.
+            </Normaltekst>
+            <Undertittel>Payments</Undertittel>
+            <Normaltekst>
+                Your decision notice will include information about payments.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                Read more about{" "}
+                <Lenke href="https://www.nav.no/en/Home/Benefits+and+services/Relatert+informasjon/financial-assistance-social-assistance">
+                    financial assistance
+                </Lenke>
+                .
+            </Normaltekst>
         </Artikkel>
     );
 };
