@@ -75,8 +75,8 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 <Lesmerpanel
                     intro={
                         <Normaltekst>
-                            Dersom du ikkje skal søkje digitalt, kan du søke med
-                            kommunen sitt papirskjema.
+                            Dersom du ikkje skal søkje digitalt, kan du søkje
+                            med kommunen sitt papirskjema.
                         </Normaltekst>
                     }
                     border={false}
