@@ -4,11 +4,13 @@ import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {andreMuligheterBrodsmulestiNynorsk} from "../andre-muligheter/AndreMuligheter";
 
 const HvisDuErGiftNynorsk = () => (
     <Artikkel
         tittel="Dersom du er gift"
         illustrasjon={<Veiskilft className="illustrasjon" />}
+        foreldreside={andreMuligheterBrodsmulestiNynorsk}
     >
         <Innholdstittel>Dersom du er gift</Innholdstittel>
         <Normaltekst>

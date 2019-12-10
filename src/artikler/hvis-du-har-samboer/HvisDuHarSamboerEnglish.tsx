@@ -3,11 +3,13 @@ import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
 
 const HvisDuHarSamboerEnglish = () => (
     <Artikkel
         tittel="If you are a cohabitant"
         illustrasjon={<Veiskilft className="illustrasjon" />}
+        foreldreside={andreMuligheterBrodsmulestiEngelsk}
     >
         <Innholdstittel>If you are a cohabitant</Innholdstittel>
         <Normaltekst>

@@ -4,11 +4,13 @@ import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
 
 const HvisDuErGiftEnglish = () => (
     <Artikkel
         tittel="If you are married"
         illustrasjon={<Veiskilft className="illustrasjon" />}
+        foreldreside={andreMuligheterBrodsmulestiEngelsk}
     >
         <Innholdstittel>If you are married</Innholdstittel>
         <Normaltekst>

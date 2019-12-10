@@ -119,8 +119,8 @@ const AndreMuligheter: React.FC = () => {
                     <div className="lenkeboks">
                         <Undertittel>Når du vil snakke med noen</Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/relatert-informasjon/finn-ditt-nav-kontor">
-                                Finn ditt NAV-kontor
+                            <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+                                Finn NAV-kontoret ditt
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
                                 Du har rett til opplysning, råd og veiledning
