@@ -4,7 +4,7 @@ import {useState} from "react";
 import useKommuneNrService from "./service/useKommuneNrService";
 import {REST_STATUS} from "../../../../utils/restUtils";
 import useTilgjengeligeKommunerService, {
-    finnTilgjengeligKommune
+    finnTilgjengeligKommune,
 } from "./service/useTilgjengeligeKommunerService";
 import "./kommunesok.less";
 import AdvarselIkon from "../../../../komponenter/bilder/AdvarselIkon";
@@ -12,13 +12,29 @@ import {Normaltekst} from "nav-frontend-typografi";
 import CheckOkIcon from "../../../../komponenter/bilder/CheckOkIcon";
 
 interface Props {
+    ledetekst: string;
+    soknadTilgjengeligTekst: string;
+    soknadIkkeTilgjengeligTekst: string;
+    placeholderTekst: string;
+    ariaLabel: string;
     onValgtKommune: (kommuneId: string) => void;
 }
 
-const KommuneSok: React.FC<Props> = ({onValgtKommune}) => {
-
-    const [currentSuggestion, setCurrentSuggestion] = useState<Suggestion | null>(null);
-    const [soknadTilgjengelig, setSoknadTilgjengelig] = useState<boolean>(false);
+const KommuneSok: React.FC<Props> = ({
+    ledetekst,
+    soknadTilgjengeligTekst,
+    soknadIkkeTilgjengeligTekst,
+    placeholderTekst,
+    ariaLabel,
+    onValgtKommune,
+}) => {
+    const [
+        currentSuggestion,
+        setCurrentSuggestion,
+    ] = useState<Suggestion | null>(null);
+    const [soknadTilgjengelig, setSoknadTilgjengelig] = useState<boolean>(
+        false
+    );
     const kommunerService = useKommuneNrService();
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
@@ -31,31 +47,36 @@ const KommuneSok: React.FC<Props> = ({onValgtKommune}) => {
         // console.log("onSelect: " + JSON.stringify(suggestion, null, 8));
         onReset();
         if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
-            let kommuneErTilgjengelig: boolean = finnTilgjengeligKommune(tilgjengeligeKommunerService.payload.results, suggestion.key);
+            let kommuneErTilgjengelig: boolean = finnTilgjengeligKommune(
+                tilgjengeligeKommunerService.payload.results,
+                suggestion.key
+            );
             setSoknadTilgjengelig(kommuneErTilgjengelig);
-            if(kommuneErTilgjengelig) {
+            if (kommuneErTilgjengelig) {
                 onValgtKommune(suggestion.key);
             }
         }
         setCurrentSuggestion(suggestion);
     };
 
-    const suggestions: Suggestion[] = kommunerService.restStatus === REST_STATUS.OK ? kommunerService.payload.results : [];
+    const suggestions: Suggestion[] =
+        kommunerService.restStatus === REST_STATUS.OK
+            ? kommunerService.payload.results
+            : [];
 
     return (
         <div className="kommunesok">
-            Sjekk om du kan søke digitalt i din kommune
-
-            <br/>
-            <br/>
-
+            {ledetekst}
+            <br />
+            <br />
             {currentSuggestion && (
                 <div style={{textAlign: "left"}}>
                     {soknadTilgjengelig && (
                         <div className="kommunesok_tilbakemelding">
-                            <CheckOkIcon/>
+                            <CheckOkIcon />
                             <Normaltekst>
-                                Du kan søke digitalt i {currentSuggestion.value}
+                                {soknadTilgjengeligTekst}{" "}
+                                {currentSuggestion.value}
                             </Normaltekst>
                         </div>
                     )}
@@ -63,23 +84,23 @@ const KommuneSok: React.FC<Props> = ({onValgtKommune}) => {
                         <div className="kommunesok_tilbakemelding">
                             <AdvarselIkon />
                             <Normaltekst>
-                                {currentSuggestion.value} kan dessverre ikke ta i mot digitale søknader ennå. Du kan søke på papirskjema.
+                                {currentSuggestion.value}{" "}
+                                {soknadIkkeTilgjengeligTekst}
                             </Normaltekst>
                         </div>
                     )}
                 </div>
             )}
             <NavAutocomplete
-                placeholder="Skriv kommunenavn"
+                placeholder={placeholderTekst}
                 suggestions={suggestions}
-                ariaLabel="Søk etter kommunenavn"
+                ariaLabel={ariaLabel}
                 id="kommunesok"
                 onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
                 onReset={() => onReset()}
-
             />
         </div>
-    )
+    );
 };
 
 export default KommuneSok;
