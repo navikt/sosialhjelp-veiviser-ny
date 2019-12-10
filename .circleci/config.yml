@@ -62,11 +62,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
+          name: Deploy versjon=${VERSION} til miljø=digisos i dev-sbs
           command: |
             git clone https://github.com/navikt/sosialhjelp-ci.git
             VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            yq w nais/dev/${MILJO}.json version "${VERSION}" > deployment.yml
+            yq w nais/dev/digisos.json version "${VERSION}" > deployment.yml
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
                 --cluster="dev-gcp" \
