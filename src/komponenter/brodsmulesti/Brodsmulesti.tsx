@@ -20,7 +20,7 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
     const frontpageUrl = `/`;
 
     const tilbakeUrl = foreldreside && foreldreside.path ? foreldreside.path : frontpageUrl;
-    
+
     let crumbs: React.ReactNode = (
         <>
             <div key="tilbake" className="typo-normal breadcrumbs__item">
