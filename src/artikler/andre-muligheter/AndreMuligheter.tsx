@@ -50,7 +50,7 @@ const AndreMuligheter: React.FC = () => {
                             Hjelp til å komme i jobb og aktivitet
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/?sprak=nb">
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/">
                                 Dette trenger du for å komme i gang med å søke
                                 jobber
                             </LenkeboksLinje>
@@ -71,13 +71,13 @@ const AndreMuligheter: React.FC = () => {
                         </Undertittel>
 
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger?sprak=nb">
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger">
                                 Dagpenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger?sprak=nb">
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
                                 Tiltakspenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap?sprak=nb">
+                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
                                 Arbeidsavklaringspenger
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
