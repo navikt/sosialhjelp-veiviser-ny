@@ -207,17 +207,19 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
 
             <Undertittel>How to apply</Undertittel>
             <Normaltekst>
-                Du skal søke til NAV-kontoret der du bor. Stadig flere kommuner
-                kan ta i mot digitale søknader. Hvis du ikke skal søke digitalt,
-                kan du søke med kommunens papirskjema.
+                You must submit your application to the NAV office in the
+                municipality where you live. A growing number of municipalities
+                support online applications. If your municipality does not
+                support online applications, you can contact your local NAV
+                office to obtains the paper form.
             </Normaltekst>
             <Normaltekst>
-                <Lenke href={"/sosialhjelp/slik-soker-du"}>Søk her.</Lenke>
+                <Lenke href={"/sosialhjelp/slik-soker-du"}>Apply here</Lenke>.
                 <br />
                 <br />
-                For mer informasjon, se{" "}
+                For more information, see{" "}
                 <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=en"}>
-                    dette bør du vite før du søker
+                    what you should know before applying
                 </Lenke>
                 .
             </Normaltekst>

@@ -103,6 +103,31 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 Du kan <Lenke href="/klage">klage</Lenke> hvis du mener at
                 vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
             </Normaltekst>
+            <Undertittel>Satser</Undertittel>
+            <Normaltekst>
+                Stønaden blir beregnet etter en individuell vurdering.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                Det finnes{" "}
+                <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/oversikt-over-satser/statlige-veiledende-retningslinjer-for-okonomisk-stonad_kap">
+                    statlige veiledende satser og retningslinjer
+                </Lenke>{" "}
+                for å beregne økonomisk stønad. Kommunen din kan ha egne
+                veiledende satser.
+            </Normaltekst>
+            <Undertittel>Utbetalinger</Undertittel>
+            <Normaltekst>
+                I vedtaksbrevet ditt finner du mer informasjon om utbetalinger.
+            </Normaltekst>
+            <br />
+            <Normaltekst>
+                Se utfyllende informasjon om{" "}
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/okonomisk-sosialhjelp2">
+                    økonomisk sosialhjelp
+                </Lenke>
+                .
+            </Normaltekst>
         </Artikkel>
     );
 };
