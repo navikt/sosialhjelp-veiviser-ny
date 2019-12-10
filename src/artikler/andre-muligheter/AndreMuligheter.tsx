@@ -120,7 +120,7 @@ const AndreMuligheter: React.FC = () => {
                         <Undertittel>Når du vil snakke med noen</Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
-                                Finn NAV-kontoret ditt
+                                Ditt NAV-kontor
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
                                 Du har rett til opplysning, råd og veiledning

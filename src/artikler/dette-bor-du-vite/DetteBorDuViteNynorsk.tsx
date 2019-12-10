@@ -13,10 +13,10 @@ import Lenke from "nav-frontend-lenker";
 const DetteBorDuViteNynorsk: React.FC = () => {
     return (
         <Artikkel
-            tittel="Dette bør du vite før du søker"
+            tittel="Dette bør du vite"
             illustrasjon={<IllustrasjonInfoSirkel className="illustrasjon" />}
         >
-            <Innholdstittel>Slik søkjer du</Innholdstittel>
+            <Innholdstittel>Dette bør du vite før du søker</Innholdstittel>
             <Ingress>
                 Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få
                 stønad må du vurdere alle andre muligheter til å forsørge deg

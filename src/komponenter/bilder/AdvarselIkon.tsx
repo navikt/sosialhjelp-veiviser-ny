@@ -1,13 +1,10 @@
 import React from "react";
 
 const AdvarselIkon: React.FC = () => {
-    const size = "24";
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={size}
-            height={size}
-            viewBox={"0 0 " + size + " " + size}
+            width="24" height="24" viewBox="0 0 24 24"
         >
             <g fill="none" fillRule="evenodd">
                 <path

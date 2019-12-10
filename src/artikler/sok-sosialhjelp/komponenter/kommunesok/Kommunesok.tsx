@@ -72,8 +72,10 @@ const KommuneSok: React.FC<Props> = ({
             {currentSuggestion && (
                 <div style={{textAlign: "left"}}>
                     {soknadTilgjengelig && (
-                        <div className="kommunesok_tilbakemelding">
-                            <CheckOkIcon />
+                        <div className="kommunesok_tilbakemelding ">
+                            <div className="kommunesok_tilbakemelding_ikon">
+                                <CheckOkIcon/>
+                            </div>
                             <Normaltekst>
                                 {soknadTilgjengeligTekst}{" "}
                                 {currentSuggestion.value}
@@ -81,8 +83,10 @@ const KommuneSok: React.FC<Props> = ({
                         </div>
                     )}
                     {!soknadTilgjengelig && (
-                        <div className="kommunesok_tilbakemelding">
-                            <AdvarselIkon />
+                        <div className="kommunesok_tilbakemelding ">
+                            <div className="kommunesok_tilbakemelding_ikon kommunesok_tilbakemelding_ikon_advarsel">
+                                <AdvarselIkon />
+                            </div>
                             <Normaltekst>
                                 {currentSuggestion.value}{" "}
                                 {soknadIkkeTilgjengeligTekst}
