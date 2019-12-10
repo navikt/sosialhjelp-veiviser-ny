@@ -82,27 +82,25 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 går meir enn éin månad, skal du få eit førebels svar. Om du
                 ikkje har levert all nødvendig dokumentasjon, kan det ta lengre
                 tid før du får svar på søknaden din. Om du er i en{" "}
-                <Lenke href="/sosialhjelp/nodsituasjon?lang=nn">
-                    nødssituasjon
-                </Lenke>
-                , skal du få svaret raskt.
+                <Lenke href="./nodsituasjon?lang=nn">nødssituasjon</Lenke>, skal
+                du få svaret raskt.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du må <Lenke href="/gi-beskjed?lang=nn">melde frå</Lenke> til
+                Du må <Lenke href="./gi-beskjed?lang=nn">melde frå</Lenke> til
                 oss dersom det skjer endringar i situasjonen din.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Når vi har behandla søknaden din, får du eit vedtak som du må
                 lese nøye. Ofte vil vi stille eitt eller fleire{" "}
-                <Lenke href="/krav-til-deg?lang=nn">krav til deg</Lenke> i
+                <Lenke href="./krav-til-deg?lang=nn">krav til deg</Lenke> i
                 vedtaket som du må oppfylle.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Du kan <Lenke href="/klage?lang=nn">klage</Lenke> hvis du meiner
-                at vedtaket er feil. Klagefrist er 3 uker frå du har fått
+                Du kan <Lenke href="./klage?lang=nn">klage</Lenke> hvis du
+                meiner at vedtaket er feil. Klagefrist er 3 uker frå du har fått
                 vedtaket.
             </Normaltekst>
             <Undertittel>Satsar</Undertittel>
