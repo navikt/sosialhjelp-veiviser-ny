@@ -13,14 +13,13 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
+import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 
 const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
 
     const sokDigital = (event: any) => {
-        const query = kommuneId !== undefined ? "?kommuneId=" + kommuneId : "";
-        let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
-        window.location.href = soknadUrl;
+        gaaTilDigitalSoknad(kommuneId);
         event.preventDefault();
     };
 
@@ -59,7 +58,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                         soknadIkkeTilgjengeligTekst="kan dessverre ikkje ta i mot digitale søknader ennå. Du kan søkje på papirskjema."
                         placeholderTekst="Skriv kommunenavn"
                         ariaLabel="Søk etter kommunenavn"
-                        onValgtKommune={(kommuneId: string) =>
+                        onValgtKommune={(kommuneId: string|undefined) =>
                             setKommuneId(kommuneId)
                         }
                     />

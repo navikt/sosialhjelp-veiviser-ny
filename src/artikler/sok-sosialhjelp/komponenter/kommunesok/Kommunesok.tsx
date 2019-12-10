@@ -17,7 +17,7 @@ interface Props {
     soknadIkkeTilgjengeligTekst: string;
     placeholderTekst: string;
     ariaLabel: string;
-    onValgtKommune: (kommuneId: string) => void;
+    onValgtKommune: (kommuneId: string|undefined) => void;
 }
 
 const KommuneSok: React.FC<Props> = ({
@@ -44,7 +44,6 @@ const KommuneSok: React.FC<Props> = ({
     };
 
     const onSelect = (suggestion: Suggestion) => {
-        // console.log("onSelect: " + JSON.stringify(suggestion, null, 8));
         onReset();
         if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
             let kommuneErTilgjengelig: boolean = finnTilgjengeligKommune(
@@ -54,6 +53,8 @@ const KommuneSok: React.FC<Props> = ({
             setSoknadTilgjengelig(kommuneErTilgjengelig);
             if (kommuneErTilgjengelig) {
                 onValgtKommune(suggestion.key);
+            } else {
+                onValgtKommune(undefined);
             }
         }
         setCurrentSuggestion(suggestion);

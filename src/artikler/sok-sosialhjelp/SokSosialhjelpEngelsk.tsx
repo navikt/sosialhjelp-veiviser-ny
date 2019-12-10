@@ -13,14 +13,13 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
+import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
 
     const sokDigital = (event: any) => {
-        const query = kommuneId !== undefined ? "?kommuneId=" + kommuneId : "";
-        let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
-        window.location.href = soknadUrl;
+        gaaTilDigitalSoknad(kommuneId);
         event.preventDefault();
     };
 
@@ -62,7 +61,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                         soknadIkkeTilgjengeligTekst="is unfortunately not able to accept digital applications. You can apply using the municipality's own paper form."
                         placeholderTekst="Enter municipality name"
                         ariaLabel="Search for municipality"
-                        onValgtKommune={(kommuneId: string) =>
+                        onValgtKommune={(kommuneId: string|undefined) =>
                             setKommuneId(kommuneId)
                         }
                     />
