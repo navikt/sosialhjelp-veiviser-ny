@@ -130,7 +130,7 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
                     behandlingstyper, behandlingsformer eller behandlingssteder
                     som ikke er innenfor den offentlige helsetjenesten og
                     folketrygdloven. Du kan lese mer om egenandeler og betaling
-                    for helse- og tannlegetjenester på
+                    for helse- og tannlegetjenester på&nbsp;
                     <Lenke href="https://helsenorge.no/betaling-for-helsetjenester/frikort-for-helsetjenester">
                         helsenorge.no
                     </Lenke>

@@ -24,10 +24,10 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 søkje NAV-kontoret ditt om.
             </Normaltekst>
 
-            <Undertittel>Utgifter du kan søke om å få hjelp med</Undertittel>
+            <Undertittel>Utgifter du kan søkje om å få hjelp med</Undertittel>
 
             <Normaltekst>
-                Du kan søke om å få hjelp med utgifter til
+                Du kan søkje om å få hjelp med utgifter til
             </Normaltekst>
 
             <Ekspanderbartpanel tittel="å leve" border>
@@ -209,7 +209,7 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 <br />
                 For meir informasjon, sjå{" "}
                 <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nn"}>
-                    dette bør du vite før du søker
+                    dette bør du vite før du søkjer
                 </Lenke>
                 .
             </Normaltekst>

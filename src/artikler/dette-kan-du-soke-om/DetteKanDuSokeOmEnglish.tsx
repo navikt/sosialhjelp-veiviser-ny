@@ -178,7 +178,7 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
                     <Lenke href={"https://www.hvakostertannlegen.no/"}>
                         Prices may vary
                     </Lenke>
-                    from dentist to dentist, and NAV may limit your application
+                    &nbsp;from dentist to dentist, and NAV may limit your application
                     to a reasonable treatment option.
                 </Normaltekst>
                 <br />
