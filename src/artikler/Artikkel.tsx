@@ -24,16 +24,11 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, f
     const pathname = window.location.pathname;
 
     useEffect(() => {
-        const element: any = document.getElementsByClassName("blokk-center");
-        let offsetTop = 0;
-        if(element && element.length > 0) {
-            offsetTop = element[0].offsetTop-16;
-        }
         window.scrollTo({
             behavior: "smooth",
-            top: offsetTop
+            top: 0
         });
-    }, [pathname])
+    }, [pathname]);
 
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
