@@ -14,7 +14,7 @@ const NodsituasjonBokmal = () => (
         <Normaltekst>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
             nødvendigste, kan du ta kontakt med{" "}
-            <Lenke href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/relatert-informasjon/finn-ditt-nav-kontor">
                 NAV-kontoret
             </Lenke>{" "}
             i den kommunen du oppholder deg.
