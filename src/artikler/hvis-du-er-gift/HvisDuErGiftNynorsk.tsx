@@ -25,14 +25,14 @@ const HvisDuErGiftNynorsk = () => (
             økonomiske situasjon bli lagt til grunn for å utrekne økonomisk
             sosialhjelp i ein periode. Døme kor dette kan vere aktuelt er dersom
         </Normaltekst>
-        <Normaltekst>
+        <div className="typo-normal">
             <ul>
                 <li>du oppheld deg på eit krisesenter</li>
                 <li>du lev i skjul frå ein voldeleg ektefelle</li>
                 <li>du prøver å komme deg bort frå eit tvangsekteskap</li>
                 <li>ektefellen din sonar i fengsel</li>
             </ul>
-        </Normaltekst>
+        </div>
         <Undertittel>Ektefellebidrag</Undertittel>
         <br />
         <Normaltekst>

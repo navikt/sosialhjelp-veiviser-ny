@@ -19,6 +19,8 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
     const {width} = useWindowSize();
     const frontpageUrl = `/`;
 
+    const tilbakeUrl = foreldreside && foreldreside.path ? foreldreside.path : frontpageUrl;
+
     let crumbs: React.ReactNode = (
         <>
             <div key="tilbake" className="typo-normal breadcrumbs__item">
@@ -67,7 +69,7 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
                     <a
                         href=".."
                         title="Gå til forrige side"
-                        onClick={(event: any) => onClickLink(event, frontpageUrl)}
+                        onClick={(event: any) => onClickLink(event, tilbakeUrl)}
                     >
                         Tilbake
                     </a>

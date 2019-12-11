@@ -4,7 +4,7 @@ import Dekorator from "../komponenter/dekorator/Dekorator";
 import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
 import {Sprak} from "../utils/sprakUtils";
 import Brodsmulesti, {BrodsmulestiForeldreside} from "../komponenter/brodsmulesti/Brodsmulesti";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
 
 interface Props {
@@ -20,6 +20,15 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, f
     document.title = (tittel ? tittel : "ingen tittel");
     const context = useContext(SprakvelgerContext);
     const sprak: Sprak[] = context.sprak;
+
+    const pathname = window.location.pathname;
+
+    useEffect(() => {
+        window.scrollTo({
+            behavior: "smooth",
+            top: 0
+        });
+    }, [pathname]);
 
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>

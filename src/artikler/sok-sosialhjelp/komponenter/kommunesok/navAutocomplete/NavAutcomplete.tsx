@@ -56,7 +56,8 @@ const NavAutocomplete: React.FC<Props> = ({placeholder, suggestions, ariaLabel, 
         switch (event.keyCode) {
             case KEY.TAB:
                 if (hasSelectedSuggestion && shouldShowSuggestions) {
-                    setValue(suggestions[activeSuggestionIndex].value);
+                    setValue(displayedSuggestions[activeSuggestionIndex].value);
+                    onClick(displayedSuggestions[activeSuggestionIndex]);
                 }
                 break;
             case KEY.ENTER:

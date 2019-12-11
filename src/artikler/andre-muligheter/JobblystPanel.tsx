@@ -6,7 +6,7 @@ import "./komponenter/jobblyst_panel.less";
 const JobblystPanel: React.FC = () => {
     return (
         <Lenkepanel
-            href="https://tjenester.nav.no/veiledearbeidssoker/?sprak=nb"
+            href="https://tjenester.nav.no/veiledearbeidssoker/"
             tittelProps="normaltekst"
             border={false}
             className="jobblyst_panel"

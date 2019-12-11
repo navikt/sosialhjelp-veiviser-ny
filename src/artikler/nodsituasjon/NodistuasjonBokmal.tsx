@@ -17,7 +17,8 @@ const NodsituasjonBokmal = () => (
             <Lenke href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
                 NAV-kontoret
             </Lenke>{" "}
-            i den kommunen du oppholder deg.
+            i den kommunen du oppholder deg. Du kan også&nbsp;
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">kontakte oss på telefon</Lenke>.
         </Normaltekst>
         <br />
         <Normaltekst>

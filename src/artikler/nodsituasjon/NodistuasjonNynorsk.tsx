@@ -10,7 +10,7 @@ const NodsituasjonNynorsk = () => (
         tittel="Når du er i ein nødssituasjon"
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
-        <Innholdstittel>HNår du er i ein nødssituasjon</Innholdstittel>
+        <Innholdstittel>Når du er i ein nødssituasjon</Innholdstittel>
         <Normaltekst>
             Dersom du ikkje har moglegheit til å skaffe eigne midlar til det
             aller mest nødvendige, kan du ta kontakt med{" "}

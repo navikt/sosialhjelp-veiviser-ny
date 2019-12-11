@@ -32,10 +32,8 @@
 
     .infopanel {
       padding: 2rem;
-      // border: 2px dotted purple;
-      //display: flex;
-      //justify-content: space-between;
-      //align-items: center;
+      flex-grow: 1;
+      flex-basis: 0;
 
       .lenkepanel__indikator {
         position: relative;
@@ -50,10 +48,6 @@
   .infopanel:nth-child(1) {
     margin-right: 1rem;
   }
-
-  //.infopanel:nth-child(2) {
-  //  margin-right: 1rem;
-  //}
 
   .infopanel_chat {
     padding-bottom: 3rem;
@@ -78,14 +72,8 @@
   }
 
   .infopanel {
-    //flex-grow: 1;
-    //flex-basis: 0;
     min-height: 148px;
-    max-width: 384px; // 245px;
-    //display: flex;
-    //flex-direction: column;
-    //line-height: 22.8571px;
-
+    max-width: 384px;
 
     @media all and (min-width: 601px) {
       padding-top: 2rem;

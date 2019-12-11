@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../artikkel.less";
-import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
@@ -14,7 +14,7 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 <IllustrasjonBygningPerson className="illustrasjon" />
             }
         >
-            <Sidetittel>Dette kan du søkje om</Sidetittel>
+            <Innholdstittel>Dette kan du søkje om</Innholdstittel>
             <Normaltekst>
                 Vi vurderer saman med deg kva behovet ditt er for økonomisk
                 sosialhjelp. Kor mykje du kan få i stønad er avhengig av din
@@ -24,10 +24,10 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 søkje NAV-kontoret ditt om.
             </Normaltekst>
 
-            <Undertittel>Utgifter du kan søke om å få hjelp med</Undertittel>
+            <Undertittel>Utgifter du kan søkje om å få hjelp med</Undertittel>
 
             <Normaltekst>
-                Du kan søke om å få hjelp med utgifter til
+                Du kan søkje om å få hjelp med utgifter til
             </Normaltekst>
 
             <Ekspanderbartpanel tittel="å leve" border>
@@ -209,7 +209,7 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 <br />
                 For meir informasjon, sjå{" "}
                 <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nn"}>
-                    slik søkjer du
+                    dette bør du vite før du søkjer
                 </Lenke>
                 .
             </Normaltekst>

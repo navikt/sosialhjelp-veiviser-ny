@@ -1,10 +1,10 @@
 {
-  "name": "new",
-  "version": "1.0.0",
-  "description": "",
+  "name": "sosialhjelp-veiviser",
+  "version": "2.0.0",
+  "description": "Veiviser for økonomisk sosialhjelp",
   "keywords": [],
   "main": "src/index.tsx",
-  "homepage": "/sosialhjelp",
+  "homepage": "https://www.nav.no/sosialhjelp/",
   "dependencies": {
     "@craco/craco": "^5.6.2",
     "@types/history": "^4.7.3",
@@ -12,7 +12,8 @@
     "babel-polyfill": "^6.26.0",
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
-    "craco-less": "^1.14.4",
+    "craco-less": "^1.15.0",
+    "core-js": "^3.4.8",
     "history": "^4.10.1",
     "less-plugin-npm-import": "^2.1.0",
     "lodash.throttle": "^4.1.1",
@@ -22,8 +23,8 @@
     "nav-frontend-ekspanderbartpanel": "^2.0.0",
     "nav-frontend-ekspanderbartpanel-style": "^0.3.23",
     "nav-frontend-js-utils": "^1.0.8",
-    "nav-frontend-knapper": "^1.0.37",
-    "nav-frontend-knapper-style": "^0.3.32",
+    "nav-frontend-knapper": "^1.0.38",
+    "nav-frontend-knapper-style": "^0.3.33",
     "nav-frontend-lenkepanel": "^1.0.34",
     "nav-frontend-lenkepanel-style": "^0.3.27",
     "nav-frontend-lenker": "^1.0.32",
@@ -46,10 +47,11 @@
     "react-scripts": "3.3.0"
   },
   "devDependencies": {
-    "@types/react": "16.9.15",
+    "@types/react": "16.9.16",
     "@types/react-dom": "16.9.4",
     "typescript": "3.7.3",
-    "prettier": "1.19.1"
+    "prettier": "1.19.1",
+    "serialize-javascript": ">=2.1.2"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",

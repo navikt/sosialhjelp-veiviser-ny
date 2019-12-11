@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Normaltekst, Sidetittel, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
@@ -14,7 +14,7 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
                 <IllustrasjonBygningPerson className="illustrasjon" />
             }
         >
-            <Sidetittel>What can financial assistance cover?</Sidetittel>
+            <Innholdstittel>What can financial assistance cover?</Innholdstittel>
             <Normaltekst>
                 We will work with you to find out what your financial assistance
                 needs are. How much financial assistance you qualify for will
@@ -178,7 +178,7 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
                     <Lenke href={"https://www.hvakostertannlegen.no/"}>
                         Prices may vary
                     </Lenke>
-                    from dentist to dentist, and NAV may limit your application
+                    &nbsp;from dentist to dentist, and NAV may limit your application
                     to a reasonable treatment option.
                 </Normaltekst>
                 <br />

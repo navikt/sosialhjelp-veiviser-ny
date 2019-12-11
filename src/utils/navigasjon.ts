@@ -19,8 +19,15 @@ const onClickLink = (event: any, sti: string) => {
     event.preventDefault();
 };
 
+const gaaTilDigitalSoknad = (kommuneId?: string): void => {
+    const query = kommuneId !== undefined ? "?kommuneId=" + kommuneId : "";
+    let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
+    window.location.href = soknadUrl;
+};
+
 export {
     getAbsoluteBasename,
     history,
+    gaaTilDigitalSoknad,
     onClickLink
 }
