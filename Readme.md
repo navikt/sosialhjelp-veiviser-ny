@@ -16,3 +16,6 @@ For å kjøre lokalt:
 ```
 
 ### Deploy
+
+Bruk NAIS deploy. Gjerne fra CircleCI.
+
