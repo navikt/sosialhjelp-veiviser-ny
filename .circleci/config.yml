@@ -66,7 +66,7 @@ jobs:
           command: |
             git clone https://github.com/navikt/sosialhjelp-ci.git
             VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            yq w nais/dev/${MILJO}.json version "${VERSION}" > deployment.yaml
+            yq w nais/dev/digisos.json version "${VERSION}" > deployment.yaml
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
                 --cluster="dev-gcp" \
@@ -77,7 +77,7 @@ jobs:
 
   deploy_prod:
     docker:
-      - image: navikt/deployment:v1
+      - image: navikt/deployment-cli:v0.2.0
     steps:
       - checkout
       - run:
