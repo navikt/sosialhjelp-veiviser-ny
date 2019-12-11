@@ -12,6 +12,7 @@
     "babel-polyfill": "^6.26.0",
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
+    "core-js": "^3.4.8",
     "craco-less": "^1.14.4",
     "history": "^4.10.1",
     "less-plugin-npm-import": "^2.1.0",

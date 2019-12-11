@@ -1,3 +1,4 @@
+import "core-js";
 import * as React from "react";
 import {render} from "react-dom";
 import DetteBorDuVite from "./artikler/dette-bor-du-vite/DetteBorDuVite";
