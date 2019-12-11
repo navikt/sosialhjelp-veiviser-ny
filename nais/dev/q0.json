@@ -1,5 +1,6 @@
 {
   "namespace": "q0",
+  "appname": "sosialhjelp-veiviser",
   "ingresses": [
     "https://sosialhjelp-veiviser-q0.nais.oera-q.local/",
     "https://tjenester-q0.nav.no/sosialhjelp-veiviser",
