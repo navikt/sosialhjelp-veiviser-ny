@@ -96,7 +96,7 @@ const HvisDuHarBarnNynorsk = () => (
                 fritidsaktivitetar. Kontingent til trening, symjehall, kino og
                 leikeland er døme på aktivitetar. Tilboda varierer frå kommune
                 til kommune. Finn ut om kommunen din tilbyr{" "}
-                <Lenke href="https://opplevelseskortet.no/kommune/">
+                <Lenke href="https://opplevelseskortet.no/vaare-kommuner/">
                     opplevingskort
                 </Lenke>
                 . Du skal vanlegvis kontakte NAV-kontoret ditt, slik at de kan

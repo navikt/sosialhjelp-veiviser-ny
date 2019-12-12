@@ -18,6 +18,8 @@ const NodsituasjonNynorsk = () => (
                 NAV-kontoret
             </Lenke>{" "}
             i kommunen du oppheld deg.
+            Du kan også&nbsp;
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">kontakte oss på telefon</Lenke>.
         </Normaltekst>
         <br />
         <Normaltekst>
