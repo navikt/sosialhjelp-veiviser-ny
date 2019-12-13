@@ -102,6 +102,14 @@ function App() {
                 <Route exact path="/artikkel/124875">
                     <Redirect to="/klage" />
                 </Route>
+                <Route
+                    path="/internal/isAlive"
+                    component={SlikForegatEtMote}
+                />
+                <Route
+                    path="/internal/isReady"
+                    component={SlikForegatEtMote}
+                />
             </Switch>
         </Router>
     );

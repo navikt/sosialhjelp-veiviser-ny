@@ -4,9 +4,11 @@ FROM node:12.8.1 as node-builder
 ADD . /source
 ENV CI=true
 WORKDIR /source
-RUN npm install && npm run build
+RUN npm install
+EXPOSE 3000
+CMD npm start
 
-FROM navikt/pus-decorator
-ENV APPLICATION_NAME=sosialhjelp-veiviser
-ENV CONTEXT_PATH=sosialhjelp
-COPY --from=node-builder /source/build /app
+#FROM navikt/pus-decorator
+#ENV APPLICATION_NAME=sosialhjelp-veiviser
+#ENV CONTEXT_PATH=sosialhjelp
+#COPY --from=node-builder /source/build /app

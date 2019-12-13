@@ -7,7 +7,7 @@ metadata:
     team: digisos
 spec:
   image: docker.pkg.github.com/navikt/sosialhjelp-veiviser-ny/sosialhjelp-veiviser-ny:{{version}}
-  port: 8080
+  port: 3000
   ingresses:
 {{#each ingresses}}
    - "{{this}}"
@@ -18,11 +18,11 @@ spec:
   liveness:
     path: sosialhjelp/internal/isAlive
     initialDelay: 20
-    port: 8080
+    port: 3000
   readiness:
     path: sosialhjelp/internal/isReady
     initialDelay: 20
-    port: 8080
+    port: 3000
   resources:
     limits:
       cpu: 3000m
