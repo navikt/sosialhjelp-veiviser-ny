@@ -16,7 +16,7 @@
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
     "craco-less": "^1.15.0",
-
+    "core-js": "^3.4.8",
     "history": "^4.10.1",
     "less-plugin-npm-import": "^2.1.0",
     "lodash.throttle": "^4.1.1",
