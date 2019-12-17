@@ -93,7 +93,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                     </Element>
                     <Normaltekst>
                         Stadig flere kommuner kan ta i mot digitale søknader.
-                        Hver enkelt kommuner bestemmer selv om de skal ta i bruk
+                        Hver enkelt kommune bestemmer selv om de skal ta i bruk
                         digital søknad, og eventuelt når det skal skje. Ta
                         kontakt med kommunen din hvis du vil ha svar på om og
                         når du kan søke digitalt i din kommune.
