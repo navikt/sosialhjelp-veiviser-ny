@@ -14,9 +14,13 @@ import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
+import {REST_STATUS} from "../../utils/restUtils";
+import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
+import AlertStripe from "nav-frontend-alertstriper";
 
 const SokSosialhjelpBokmal: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
+    const nedetidService = useNedetidService();
 
     const sokDigital = (event: any) => {
         gaaTilDigitalSoknad(kommuneId);
@@ -39,6 +43,25 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 <Undertittel className="sok_digitalt_overskrift">
                     Søk digitalt
                 </Undertittel>
+
+                {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
+                    <div>
+                        <div style={{paddingBottom: "1rem"}}>
+                            <Hovedknapp disabled={true}>
+                                Gå til søknad
+                            </Hovedknapp>
+                        </div>
+                        <AlertStripe type="feil" style={{textAlign: "left"}}>
+                            Vi kan ikke motta digitale søknader.
+                            I perioden {nedetidService.payload.nedetidStartText} – {nedetidService.payload.nedetidSluttText} er
+                            digital søknad om økonomisk sosialhjelp nede grunnet teknisk vedlikehold.
+                            Du må derfor ta kontakt med ditt lokale NAV-kontor hvis du skal søke om
+                            økonomisk sosialhjelp i denne perioden.
+                        </AlertStripe>
+                    </div>
+                )}
+
+                {!(nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid) && (
                 <Lesmerpanel
                     border={false}
                     apneTekst="Sjekk om du kan søke digitalt i din kommune"
@@ -63,6 +86,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                         }
                     />
                 </Lesmerpanel>
+                )}
             </SokDigitaltPanel>
 
             <br />
