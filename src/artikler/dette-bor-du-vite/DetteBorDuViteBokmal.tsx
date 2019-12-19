@@ -19,10 +19,10 @@ const DetteBorDuViteBokmal: React.FC = () => {
         >
             <Innholdstittel>Dette bør du vite</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få
-                stønad må du vurdere alle andre muligheter til å forsørge deg
-                selv. Dette kan for eksempel være gjennom jobb, andre inntekter
-                eller egne midler.
+                Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
+                om du har andre muligheter til å forsørge deg selv. Dette kan
+                for eksempel være gjennom jobb, andre inntekter eller egne
+                midler.
             </Ingress>
 
             <Undertittel>Før du søker</Undertittel>
@@ -33,7 +33,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
             </Normaltekst>
 
             <Ekspanderbartpanel
-                tittel="Eksempler på hva du må legge ved søknaden"
+                tittel="Eksempler på hva du kan bli bedt om å dokumentere"
                 border
             >
                 <Normaltekst>
