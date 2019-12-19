@@ -54,11 +54,10 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                             </Hovedknapp>
                         </div>
                         <AlertStripe type="feil" style={{textAlign: "left"}}>
-                            We cannot receive digital applications.
-                            In the period {nedetidService.payload.nedetidStartTextEn} – {nedetidService.payload.nedetidSluttTextEn} is
-                            the digital application for financial social assistance down due to technical maintenance.
-                            Therefore, you must contact your local NAV office to apply
-                            financial social assistance during this period.
+                            You cannot send digital application during
+                            {nedetidService.payload.nedetidStartTextEn} – {nedetidService.payload.nedetidSluttTextEn}
+                            due to technical maintenance.
+                            Contact your local NAV office if you want to apply for social assistance during this period.
                         </AlertStripe>
                     </div>
                 )}
