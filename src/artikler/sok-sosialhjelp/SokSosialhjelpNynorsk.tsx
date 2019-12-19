@@ -52,11 +52,10 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                             </Hovedknapp>
                         </div>
                         <AlertStripe type="feil" style={{textAlign: "left"}}>
-                            Vi kan ikkje ta imot digitale søknader.
-                            I perioden {nedetidService.payload.nedetidStartText} – {nedetidService.payload.nedetidSluttText} er
-                            digital søknad om økonomisk sosialhjelp nede grunna teknisk vedlikehald.
-                            Du må derfor ta kontakt med ditt lokale NAV-kontor viss du skal søkje om
-                            økonomisk sosialhjelp i denne perioden.
+                            Du kan ikkje sende digital søknad i perioden
+                            {nedetidService.payload.nedetidStartText} – {nedetidService.payload.nedetidSluttText}
+                            grunna teknisk vedlikehald.
+                            Ta kontakt med ditt lokale NAV-kontor viss du skal søkje om økonomisk sosialhjelp i denne perioden.
                         </AlertStripe>
                     </div>
                 )}
