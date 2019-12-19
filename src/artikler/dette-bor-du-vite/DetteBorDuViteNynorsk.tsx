@@ -18,10 +18,9 @@ const DetteBorDuViteNynorsk: React.FC = () => {
         >
             <Innholdstittel>Dette bør du vite</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er en midlertidig inntekt. Før du kan få
-                stønad må du vurdere alle andre muligheter til å forsørge deg
-                selv. Dette kan for eksempel være gjennom jobb, andre inntekter
-                eller egne midler.
+                Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
+                andre moglegheitar til å forsørgje deg sjølv. Dette kan til
+                dømes vere arbeid, andre inntekter eller eigne midlar.
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
