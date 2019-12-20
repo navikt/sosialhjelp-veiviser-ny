@@ -18,11 +18,9 @@ spec:
   liveness:
     path: sosialhjelp/internal/isAlive
     initialDelay: 20
-    port: 3000
   readiness:
     path: sosialhjelp/internal/isAlive
     initialDelay: 20
-    port: 3000
   resources:
     limits:
       cpu: 3000m
