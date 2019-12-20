@@ -63,7 +63,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
                                 Arbeidsavklaringspenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
+                            <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/supplementary-benefit-for-persons-who-have-only-lived-a-short-period-in-norway">
                                 Søknad for deg med kort botid i Norge
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
@@ -105,8 +105,9 @@ const AndreMuligheterEnglish: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
                                 Ditt NAV-kontor
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
-                                Du har rett til opplysning, råd og veiledning
+                            <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
+                                You have the right to information, advice and
+                                guidance
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./slik-foregar-et-mote?lang=en">
                                 What happens in a meeting?
