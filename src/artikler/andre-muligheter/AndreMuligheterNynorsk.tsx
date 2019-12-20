@@ -62,8 +62,8 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
                                 Arbeidsavklaringspenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
-                                Søknad for deg med kort botid i Norge
+                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/supplerande-stonad-for-personar-med-kort-butid-i-noreg">
+                                Søknad for deg med kort botid i Noreg
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
@@ -104,8 +104,8 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
                                 Ditt NAV-kontor
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
-                                Du har rett til opplysning, råd og veiledning
+                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
+                                Du har rett til opplysning, råd og rettleiing
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./slik-foregar-et-mote?lang=nn">
                                 Korleis føregår eit møte?
