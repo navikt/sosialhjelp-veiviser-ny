@@ -50,21 +50,22 @@ const AndreMuligheterEnglish: React.FC = () => {
 
                     <div className="lenkeboks">
                         <Undertittel style={{textAlign: "left"}}>
-                            Annen økonomisk støtte
+                            Other economic benefits
                         </Undertittel>
 
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger">
-                                Dagpenger
+                            <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/unemployment-benefits">
+                                Unemployment benefits
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
                                 Tiltakspenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
-                                Arbeidsavklaringspenger
+                            <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/work-assessment-allowance-aap">
+                                Work assessment allowance
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/supplementary-benefit-for-persons-who-have-only-lived-a-short-period-in-norway">
-                                Søknad for deg med kort botid i Norge
+                                Supplementary benefit for persons who have only
+                                lived a short period in Norway
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
@@ -74,36 +75,42 @@ const AndreMuligheterEnglish: React.FC = () => {
                 </div>
 
                 <PanelBase className="hjelp_til_bolig_panel">
-                    <Undertittel>Hjelp til bolig</Undertittel>
+                    <Undertittel>Housing assistance</Undertittel>
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
-                    <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
-                        <Undertittel>Bostøtte</Undertittel>
+                    <LenkepanelBase
+                        href={
+                            "https://www.husbanken.no/english/what-is-housing-allowance/"
+                        }
+                    >
+                        <Undertittel>Housing allowance</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
                         href={
-                            "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/bolig/midlertidig-botilbud"
+                            "https://www.nav.no/en/home/relatert-informasjon/temporary-accommodation-emergency"
                         }
                     >
-                        <Undertittel>Midlertidig botilbud</Undertittel>
-                        <Normaltekst>Nødsituasjon</Normaltekst>
+                        <Undertittel>Temporary accommodation</Undertittel>
+                        <Normaltekst>Emergency</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
                         href={
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel>Leie eller eie bolig</Undertittel>
+                        <Undertittel>Rent or own housing</Undertittel>
                     </LenkepanelBase>
                 </div>
 
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
-                        <Undertittel>Når du vil snakke med noen</Undertittel>
+                        <Undertittel>
+                            When you want to talk to someone
+                        </Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
-                                Ditt NAV-kontor
+                                Your NAV office
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
                                 You have the right to information, advice and
@@ -117,7 +124,7 @@ const AndreMuligheterEnglish: React.FC = () => {
 
                     <div className="lenkeboks">
                         <Undertittel>
-                            Rettigheter og plikter som forsørger
+                            Rights and duties as a provider
                         </Undertittel>
                         <ul>
                             <LenkeboksLinje href="./hvis-du-er-enslig-forsorger?lang=en">
