@@ -8,6 +8,12 @@ metadata:
 spec:
   image: docker.pkg.github.com/navikt/sosialhjelp-veiviser-ny/sosialhjelp-veiviser-ny:{{version}}
   port: 8080
+  accessPolicy:
+    outbound:
+      external:
+        - host: "appres.nav.no"
+        - host: "nav.psplugin.com"
+      rules: []
   ingresses:
 {{#each ingresses}}
    - "{{this}}"
