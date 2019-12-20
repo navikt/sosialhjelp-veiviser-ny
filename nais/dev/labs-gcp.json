@@ -1,0 +1,10 @@
+{
+  "namespace": "digisos",
+  "ingresses": [
+    "https://sosialhjelp-veiviser.labs.nais.io/sosialhjelp"
+  ],
+  "prometheusEnabled": false,
+  "env": {
+    "APPRES_CMS_URL": "https://appres.q0.nav.no"
+  }
+}

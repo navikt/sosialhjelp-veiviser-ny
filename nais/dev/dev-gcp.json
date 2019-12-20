@@ -1,9 +1,9 @@
 {
   "namespace": "digisos",
-  "appname": "sosialhjelp-veiviser",
   "ingresses": [
     "https://sosialhjelp-veiviser.dev-nav.no/sosialhjelp"
   ],
+  "prometheusEnabled": false,
   "env": {
     "APPRES_CMS_URL": "https://appres.q0.nav.no"
   }

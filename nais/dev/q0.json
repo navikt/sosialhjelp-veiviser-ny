@@ -1,11 +1,11 @@
 {
   "namespace": "q0",
-  "appname": "sosialhjelp-veiviser",
   "ingresses": [
     "https://sosialhjelp-veiviser-q0.nais.oera-q.local/",
     "https://tjenester-q0.nav.no/sosialhjelp-veiviser",
     "https://www-q0.nav.no/sosialhjelp"
   ],
+  "prometheusEnabled": true,
   "env": {
     "APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY": "5ed4d975-ed5b-40b2-8ac6-9e0c0e61a67e",
     "APPDYNAMICS_AGENT_ACCOUNT_NAME": "NON-PROD",
