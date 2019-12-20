@@ -34,9 +34,9 @@ spec:
     min: 1
     max: 2
     cpuThresholdPercentage: 50
+  webproxy: {{webProxyEnabled}}
   env:
 {{#each env}}
     - name: {{@key}}
       value: "{{this}}"
 {{/each}}
-  webproxy: true
