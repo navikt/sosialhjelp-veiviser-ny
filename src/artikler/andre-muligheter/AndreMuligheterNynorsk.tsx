@@ -54,13 +54,13 @@ const AndreMuligheterNynorsk: React.FC = () => {
 
                         <ul>
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger">
-                                Dagpenger
+                                Dagpengar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
-                                Tiltakspenger
+                                Tiltakspengar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
-                                Arbeidsavklaringspenger
+                                Arbeidsavklaringspengar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/supplerande-stonad-for-personar-med-kort-butid-i-noreg">
                                 Søknad for deg med kort botid i Noreg
@@ -82,11 +82,11 @@ const AndreMuligheterNynorsk: React.FC = () => {
                     </LenkepanelBase>
                     <LenkepanelBase
                         href={
-                            "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/bolig/midlertidig-botilbud"
+                            "https://www.nav.no/no/person/flere-tema/sosiale-tjenester/mellombels-butilbod-naudssituasjon"
                         }
                     >
-                        <Undertittel>Midlertidig botilbud</Undertittel>
-                        <Normaltekst>Nødsituasjon</Normaltekst>
+                        <Undertittel>Mellombels butilbod</Undertittel>
+                        <Normaltekst>Nødssituasjon</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
                         href={
