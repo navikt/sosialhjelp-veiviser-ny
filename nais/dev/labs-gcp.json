@@ -7,6 +7,8 @@
   "webProxyEnabled": false,
   "env": {
     "APPRES_CMS_URL": "https://appres.nav.no",
-    "DISABLE_UNLEASH":true
+    "DISABLE_UNLEASH": true,
+    "DISABLE_PROXY": true,
+    "DISABLE_FRONTEND_LOGGER": true
   }
 }
