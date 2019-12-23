@@ -14,9 +14,13 @@ import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
+import {REST_STATUS} from "../../utils/restUtils";
+import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
+import AlertStripe from "nav-frontend-alertstriper";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
+    const nedetidService = useNedetidService();
 
     const sokDigital = (event: any) => {
         gaaTilDigitalSoknad(kommuneId);
@@ -41,6 +45,24 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 <Undertittel className="sok_digitalt_overskrift">
                     Apply digitally
                 </Undertittel>
+
+                {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
+                    <div>
+                        <div style={{paddingBottom: "1rem"}}>
+                            <Hovedknapp disabled={true}>
+                                Gå til søknad
+                            </Hovedknapp>
+                        </div>
+                        <AlertStripe type="feil" style={{textAlign: "left"}}>
+                            You cannot send digital application during
+                            {nedetidService.payload.nedetidStartTextEn} – {nedetidService.payload.nedetidSluttTextEn}
+                            due to technical maintenance.
+                            Contact your local NAV office if you want to apply for social assistance during this period.
+                        </AlertStripe>
+                    </div>
+                )}
+
+                {!(nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid) && (
                 <Lesmerpanel
                     border={false}
                     apneTekst="Check if your municipality support digital applications"
@@ -66,6 +88,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                         }
                     />
                 </Lesmerpanel>
+                )}
             </SokDigitaltPanel>
 
             <br />

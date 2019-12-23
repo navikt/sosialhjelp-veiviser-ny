@@ -71,7 +71,7 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                     behovet barn og unge har for å halde på nettverket sitt.
                 </Normaltekst>
                 <br />
-                <Undertittel tag="h3">Flyttingh</Undertittel>
+                <Undertittel tag="h3">Flytting</Undertittel>
                 <br />
                 <Normaltekst>
                     NAV kan vurdere å gi stønad til nødvendige utgifter til

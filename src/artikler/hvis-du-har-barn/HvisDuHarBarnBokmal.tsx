@@ -96,7 +96,7 @@ const HvisDuHarBarnBokmal = () => (
                 fritidsaktiviteter. Kontingent til trening, svømmehall, kino og
                 lekeland er eksempler på aktiviteter. Tilbudene varierer fra
                 kommune til kommune. Finn ut om din kommune tilbyr{" "}
-                <Lenke href="https://opplevelseskortet.no/kommune/">
+                <Lenke href="https://opplevelseskortet.no/vaare-kommuner/">
                     opplevelseskort
                 </Lenke>
                 . Du skal vanligvis kontakte NAV-kontoret ditt, slik at de kan

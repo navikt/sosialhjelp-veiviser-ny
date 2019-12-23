@@ -17,7 +17,8 @@ const NodsituasjonEnglish = () => (
             <Lenke href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
                 the NAV office
             </Lenke>{" "}
-            in the municipality where you live.
+            in the municipality where you live. You can also&nbsp;
+            <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">get in contact with us by telephone</Lenke>.
         </Normaltekst>
         <br />
         <Normaltekst>

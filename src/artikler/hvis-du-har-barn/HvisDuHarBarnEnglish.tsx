@@ -103,7 +103,7 @@ const HvisDuHarBarnEnglish = () => (
                 pool, cinema and activity centre entrance are examples of
                 activities the card covers. Services vary from municipality to
                 municipality. Find out if your municipality offers{" "}
-                <Lenke href="https://opplevelseskortet.no/kommune/">
+                <Lenke href="https://opplevelseskortet.no/vaare-kommuner/">
                     an Experience Card
                 </Lenke>
                 . Normally, you will be asked to contact your NAV office, so
