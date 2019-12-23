@@ -18,9 +18,9 @@ const useTilgjengeligeKommunerService = () => {
         // url = "http://localhost:8080/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
 
         if (window.location.origin.indexOf(".dev-nav.no") >= 0) {
-            url = "https://sosialhjelp-soknad.dev-nav.no" + url;
+            url = "https://sosialhjelp-soknad-api.dev-nav.no" + url;
         } else if (window.location.origin.indexOf(".labs.nais.io") >= 0) {
-            url = "https://sosialhjelp-soknad.labs.nais.io" + url;
+            url = "https://sosialhjelp-soknad-api.labs.nais.io" + url;
         } else {
             // Heroku:
             url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
