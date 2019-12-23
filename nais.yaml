@@ -22,10 +22,10 @@ spec:
     enabled: {{prometheusEnabled}}
     path: /prometheus
   liveness:
-    path: sosialhjelp/internal/isAlive
+    path: /sosialhjelp/internal/isAlive
     initialDelay: 20
   readiness:
-    path: sosialhjelp/internal/isAlive
+    path: /sosialhjelp/internal/isAlive
     initialDelay: 20
   resources:
     limits:
