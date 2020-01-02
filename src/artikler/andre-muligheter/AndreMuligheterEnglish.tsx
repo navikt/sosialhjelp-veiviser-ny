@@ -4,7 +4,7 @@ import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
-import JobblystPanel from "./JobblystPanel";
+import {JobblystEnglishPanel} from "./JobblystPanel";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
 
@@ -30,20 +30,20 @@ const AndreMuligheterEnglish: React.FC = () => {
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
                         <Undertittel style={{textAlign: "left"}}>
-                            Hjelp til å komme i jobb og aktivitet
+                            Help with finding jobs
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/">
-                                Dette trenger du for å komme i gang med å søke
-                                jobber
+                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/">
+                                What you need to get started when applying for
+                                jobs
                             </LenkeboksLinje>
                         </ul>
                         <Undertittel style={{textAlign: "left"}}>
-                            Ung og lite jobberfaring
+                            Young and lacking work experience
                         </Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/ung-lite-erfaring">
-                                Hvordan kan du fullføre utdanningen din?
+                                How you can complete your education{" "}
                             </LenkeboksLinje>
                         </ul>
                     </div>
@@ -57,8 +57,8 @@ const AndreMuligheterEnglish: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/unemployment-benefits">
                                 Unemployment benefits
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
-                                Tiltakspenger
+                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/tiltakspenger">
+                                Benefits while attending NAV activities
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/work-assessment-allowance-aap">
                                 Work assessment allowance
@@ -68,7 +68,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                                 lived a short period in Norway
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
-                                Kvalifiseringsprogram
+                                Qualification programme
                             </LenkeboksLinje>
                         </ul>
                     </div>
@@ -117,7 +117,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                                 guidance
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./slik-foregar-et-mote?lang=en">
-                                What happens in a meeting?
+                                What happens in a meeting with NAV?
                             </LenkeboksLinje>
                         </ul>
                     </div>
@@ -143,7 +143,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                     </div>
                 </div>
 
-                <JobblystPanel />
+                <JobblystEnglishPanel />
             </div>
         </>
     );
