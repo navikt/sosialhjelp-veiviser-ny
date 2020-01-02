@@ -18,7 +18,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                 <LysPaere />
 
                 <Ingress>
-                    Økonomisk sosialhjelp er en midlertidig stønad. Du bør
+                    Økonomisk sosialhjelp er ein midlertidig stønad. Du bør
                     vurdere andre moglegheitar til å forsørgje deg sjølv. Dersom
                     du hjelp, kan du ta kontakt med NAV-kontoret der du bur. Du
                     kan òg ta kontakt med oss på telefon.
