@@ -44,6 +44,14 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                     Søk digitalt
                 </Undertittel>
 
+                {/* Midlertidig driftsmelding mens adressesøk gir problemer i Stavanger */}
+                <div>
+                    <AlertStripe type="info" style={{textAlign: "left"}}>
+                        Det er noen som ikke får sendt digital søknad på grunn av
+                        melding om ugyldig adresse. Vi jobber med å finne feilen.
+                    </AlertStripe>
+                </div>
+
                 {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
                     <div>
                         <div style={{paddingBottom: "1rem"}}>
