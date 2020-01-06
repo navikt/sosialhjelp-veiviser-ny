@@ -44,6 +44,16 @@ const SokSosialhjelpBokmal: React.FC = () => {
                     Søk digitalt
                 </Undertittel>
 
+
+                {/* Midlertidig driftsmelding mens adressesøk gir problemer i Stavanger */}
+                <div>
+                    <AlertStripe type="info" style={{textAlign: "left"}}>
+                        Det er noen som ikke får sendt digital søknad på grunn av
+                        melding om ugyldig adresse. Vi jobber med å finne feilen.
+                    </AlertStripe>
+                </div>
+
+
                 {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
                     <div>
                         <div style={{paddingBottom: "1rem"}}>
@@ -52,9 +62,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                             </Hovedknapp>
                         </div>
                         <AlertStripe type="feil" style={{textAlign: "left"}}>
-                            Du kan ikke sende digital søknad i perioden
-                            {nedetidService.payload.nedetidStartText} – {nedetidService.payload.nedetidSluttText}
-                            grunnet teknisk vedlikehold.
+                            Du kan ikke sende digital søknad i perioden {nedetidService.payload.nedetidStartText} – {nedetidService.payload.nedetidSluttText} grunnet teknisk vedlikehold.
                             Ta kontakt med ditt lokale NAV-kontor hvis du skal søke om økonomisk sosialhjelp i denne perioden.
                         </AlertStripe>
                     </div>

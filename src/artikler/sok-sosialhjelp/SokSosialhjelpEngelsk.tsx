@@ -46,6 +46,14 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     Apply digitally
                 </Undertittel>
 
+                {/* Midlertidig driftsmelding mens adressesøk gir problemer i Stavanger */}
+                <div>
+                    <AlertStripe type="info" style={{textAlign: "left"}}>
+                        Some users will see an error message indicating that there
+                        is something wrong with their address. We are currently working on a fix.
+                    </AlertStripe>
+                </div>
+
                 {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
                     <div>
                         <div style={{paddingBottom: "1rem"}}>
@@ -54,9 +62,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                             </Hovedknapp>
                         </div>
                         <AlertStripe type="feil" style={{textAlign: "left"}}>
-                            You cannot send digital application during
-                            {nedetidService.payload.nedetidStartTextEn} – {nedetidService.payload.nedetidSluttTextEn}
-                            due to technical maintenance.
+                            You cannot send digital application during {nedetidService.payload.nedetidStartTextEn} – {nedetidService.payload.nedetidSluttTextEn} due to technical maintenance.
                             Contact your local NAV office if you want to apply for social assistance during this period.
                         </AlertStripe>
                     </div>
