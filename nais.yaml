@@ -8,18 +8,24 @@ metadata:
 spec:
   image: docker.pkg.github.com/navikt/sosialhjelp-veiviser-ny/sosialhjelp-veiviser-ny:{{version}}
   port: 8080
+  accessPolicy:
+    outbound:
+      external:
+        - host: "appres.nav.no"
+        - host: "nav.psplugin.com"
+      rules: []
   ingresses:
 {{#each ingresses}}
    - "{{this}}"
 {{/each}}
   prometheus:
-    enabled: true
+    enabled: {{prometheusEnabled}}
     path: /prometheus
   liveness:
-    path: sosialhjelp/internal/isAlive
+    path: /sosialhjelp/internal/isAlive
     initialDelay: 20
   readiness:
-    path: sosialhjelp/internal/isReady
+    path: /sosialhjelp/internal/isAlive
     initialDelay: 20
   resources:
     limits:
@@ -32,6 +38,7 @@ spec:
     min: 1
     max: 2
     cpuThresholdPercentage: 50
+  webproxy: {{webProxyEnabled}}
   env:
 {{#each env}}
     - name: {{@key}}
