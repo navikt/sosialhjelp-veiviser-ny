@@ -21,7 +21,8 @@ jobs:
       #          paths:
       #            - ~/usr/local/lib/node_modules # location depends on npm version
       #          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - setup_remote_docker
+      - setup_remote_docker:
+          docker_layer_caching: false
       - run:
           name: GitHub package registry login
           command: |
@@ -61,17 +62,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy versjon=${VERSION} til miljø=digisos i dev-sbs
+          name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
           command: |
             git clone https://github.com/navikt/sosialhjelp-ci.git
             VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            yq w nais/dev/digisos.json version "${VERSION}" > deployment.yaml
+            yq w nais/dev/${MILJO}.json version "${VERSION}" | yq r -j - > deployment.json
             /app/deploy \
                 --apikey="$NAIS_DEPLOY_APIKEY" \
-                --cluster="dev-gcp" \
+                --cluster="dev-sbs" \
                 --repository="$CIRCLE_PROJECT_REPONAME" \
                 --resource="nais.yaml" \
-                --vars="deployment.yaml" \
+                --vars="deployment.json" \
                 --wait=true
 
   deploy_prod:
