@@ -75,6 +75,25 @@ jobs:
                 --vars="deployment.json" \
                 --wait=true
 
+  deploy_miljo_tag:
+    docker:
+      - image: navikt/deployment:v1
+    steps:
+      - checkout
+      - run:
+          name: Deploy til miljø i dev-sbs
+          command: |
+            git clone https://github.com/navikt/sosialhjelp-ci.git
+            yq w "nais/dev/${MILJO}.json" version "${TAG}" > deployment.yaml
+
+            /app/deploy \
+                --apikey="$NAIS_DEPLOY_APIKEY" \
+                --cluster="dev-sbs" \
+                --repository="$CIRCLE_PROJECT_REPONAME" \
+                --resource="nais.yaml" \
+                --vars="deployment.yaml" \
+                --wait=true
+
   deploy_prod:
     docker:
       - image: navikt/deployment-cli:v0.2.0
