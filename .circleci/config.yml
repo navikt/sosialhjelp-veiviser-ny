@@ -133,8 +133,3 @@ jobs:
                           --resource="nais.yaml" \
                           --vars="deployment.yaml" \
                           --wait=true
-workflows:
-    version: 2
-    bygg-og-publish-image:
-        jobs:
-            - bygg
