@@ -4,7 +4,7 @@ import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
-import JobblystPanel from "./JobblystPanel";
+import {JobblystNynorskPanel} from "./JobblystPanel";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
 
@@ -18,10 +18,10 @@ const AndreMuligheterNynorsk: React.FC = () => {
                 <LysPaere />
 
                 <Ingress>
-                    Økonomisk sosialhjelp er ein midlertidig stønad. Du bør
+                    Økonomisk sosialhjelp er ein mellombels stønad. Du bør
                     vurdere andre moglegheitar til å forsørgje deg sjølv. Dersom
-                    du hjelp, kan du ta kontakt med NAV-kontoret der du bur. Du
-                    kan òg ta kontakt med oss på telefon.
+                    du treng hjelp, kan du ta kontakt med NAV-kontoret der du
+                    bur. Du kan òg ta kontakt med oss på chat og telefon.
                 </Ingress>
             </Artikkel>
 
@@ -33,8 +33,8 @@ const AndreMuligheterNynorsk: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/">
-                                Dette trenger du for å komme i gang med å søke
-                                jobber
+                                Dette treng du for å komme i gang med å søke
+                                jobbar
                             </LenkeboksLinje>
                         </ul>
                         <Undertittel style={{textAlign: "left"}}>
@@ -42,14 +42,14 @@ const AndreMuligheterNynorsk: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/ung-lite-erfaring">
-                                Hvordan kan du fullføre utdanningen din?
+                                Korleis kan du fullføre utdanninga di?
                             </LenkeboksLinje>
                         </ul>
                     </div>
 
                     <div className="lenkeboks">
                         <Undertittel style={{textAlign: "left"}}>
-                            Annen økonomisk støtte
+                            Annan økonomisk støtte
                         </Undertittel>
 
                         <ul>
@@ -73,11 +73,11 @@ const AndreMuligheterNynorsk: React.FC = () => {
                 </div>
 
                 <PanelBase className="hjelp_til_bolig_panel">
-                    <Undertittel>Hjelp til bolig</Undertittel>
+                    <Undertittel>Hjelp til bustad</Undertittel>
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
                     <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
-                        <Undertittel>Bostøtte</Undertittel>
+                        <Undertittel>Bustønad</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -93,13 +93,13 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel>Leie eller eie bolig</Undertittel>
+                        <Undertittel>Leige eller eige bustad</Undertittel>
                     </LenkepanelBase>
                 </div>
 
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
-                        <Undertittel>Når du vil snakke med noen</Undertittel>
+                        <Undertittel>Når du vil snakke med nokon</Undertittel>
                         <ul>
                             <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
                                 Ditt NAV-kontor
@@ -108,7 +108,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                                 Du har rett til opplysning, råd og rettleiing
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./slik-foregar-et-mote?lang=nn">
-                                Korleis føregår eit møte?
+                                Korleis foregår eit møte?
                             </LenkeboksLinje>
                         </ul>
                     </div>
@@ -134,7 +134,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                     </div>
                 </div>
 
-                <JobblystPanel />
+                <JobblystNynorskPanel />
             </div>
         </>
     );
