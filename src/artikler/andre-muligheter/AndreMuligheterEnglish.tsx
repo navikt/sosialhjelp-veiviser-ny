@@ -22,7 +22,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                     should consider every other possibility for you to provide
                     for yourself. If you need help, you can contact the NAV
                     office in the municipality where you live. You can also
-                    contact us by phone.
+                    contact us by chat or phone.
                 </Ingress>
             </Artikkel>
 
