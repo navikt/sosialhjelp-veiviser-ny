@@ -18,7 +18,7 @@ const DetteBorDuViteNynorsk: React.FC = () => {
         >
             <Innholdstittel>Dette bør du vite</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
+                Økonomisk sosialhjelp er ein mellombels stønad. Du bør vurdere
                 andre moglegheitar til å forsørgje deg sjølv. Dette kan til
                 dømes vere arbeid, andre inntekter eller eigne midlar.
             </Ingress>

@@ -4,7 +4,7 @@ import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
 import PanelBase from "nav-frontend-paneler";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
-import JobblystPanel from "./JobblystPanel";
+import {JobblystBokmalPanel} from "./JobblystPanel";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
 
@@ -21,7 +21,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                     Økonomisk sosialhjelp er en midlertidig stønad. Du bør
                     vurdere om du har andre muligheter til å forsørge deg selv.
                     Hvis du har behov for hjelp, kan du ta kontakt med
-                    NAV-kontoret der du bor. Du kan også kontakte oss på
+                    NAV-kontoret der du bor. Du kan også kontakte oss på chat og
                     telefon.
                 </Ingress>
             </Artikkel>
@@ -135,7 +135,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                     </div>
                 </div>
 
-                <JobblystPanel />
+                <JobblystBokmalPanel />
             </div>
         </>
     );
