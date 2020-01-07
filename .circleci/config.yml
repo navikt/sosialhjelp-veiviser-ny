@@ -1,130 +1,140 @@
 version: 2
 
 jobs:
-  bygg:
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout
-      #      - restore_cache:
-      #          keys:
-      #            # when lock file changes, use increasingly general patterns to restore cache
-      #            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      #            - node-v1-{{ .Branch }}-
-      #            - node-v1-
-      #      - run:
-      #          name: Bygg React app
-      #          command: |
-      #            npm ci
-      #            npm run build
-      #      - save_cache:
-      #          paths:
-      #            - ~/usr/local/lib/node_modules # location depends on npm version
-      #          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - setup_remote_docker:
-          docker_layer_caching: false
-      - run:
-          name: GitHub package registry login
-          command: |
-            echo "$DEPLOYMENT_PASSWORD" | docker login -u "$DEPLOYMENT_USERNAME" --password-stdin docker.pkg.github.com
-      - run:
-          name: Checkout CI scripts
-          command: |
-            git clone https://github.com/navikt/github-apps-support.git
-            git clone https://github.com/navikt/sosialhjelp-ci.git
-            echo "export PATH=\"`pwd`/github-apps-support/bin:`pwd`/sosialhjelp-ci/bin:$PATH\"" >> $BASH_ENV
-      - run:
-          name: Generate version number and docker image tags
-          command: |
-            VERSION=$(create-artifact-version.sh)
-            echo "export DOCKER_TAG=\"docker.pkg.github.com/navikt/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PROJECT_REPONAME:$VERSION\"" >> $BASH_ENV
-      - run:
-          name: Build docker image
-          command: docker build -t $DOCKER_TAG .
-      - run:
-          name: Create tag and release
-          command: |
-            echo $DIGISOS_KEY | tr '_' '\n' > digisos.key
-            GH_TOKEN=$(generate-installation-token.sh `generate-jwt.sh digisos.key $DIGISOS_APPID`)
-            rm digisos.key
+    bygg:
+        docker:
+            - image: circleci/node:10
+        steps:
+            - checkout
+            #      - restore_cache:
+            #          keys:
+            #            # when lock file changes, use increasingly general patterns to restore cache
+            #            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            #            - node-v1-{{ .Branch }}-
+            #            - node-v1-
+            #      - run:
+            #          name: Bygg React app
+            #          command: |
+            #            npm ci
+            #            npm run build
+            #      - save_cache:
+            #          paths:
+            #            - ~/usr/local/lib/node_modules # location depends on npm version
+            #          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - setup_remote_docker:
+                  docker_layer_caching: false
+            - run:
+                  name: GitHub package registry login
+                  command: |
+                      echo "$DEPLOYMENT_PASSWORD" | docker login -u "$DEPLOYMENT_USERNAME" --password-stdin docker.pkg.github.com
+            - run:
+                  name: Checkout CI scripts
+                  command: |
+                      git clone https://github.com/navikt/github-apps-support.git
+                      git clone https://github.com/navikt/sosialhjelp-ci.git
+                      echo "export PATH=\"`pwd`/github-apps-support/bin:`pwd`/sosialhjelp-ci/bin:$PATH\"" >> $BASH_ENV
+            - run:
+                  name: Generate version number and docker image tags
+                  command: |
+                      VERSION=$(create-artifact-version.sh)
+                      echo "export DOCKER_TAG=\"docker.pkg.github.com/navikt/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PROJECT_REPONAME:$VERSION\"" >> $BASH_ENV
+            - run:
+                  name: Build docker image
+                  command: docker build -t $DOCKER_TAG .
+            - run:
+                  name: Create tag and release
+                  command: |
+                      echo $DIGISOS_KEY | tr '_' '\n' > digisos.key
+                      GH_TOKEN=$(generate-installation-token.sh `generate-jwt.sh digisos.key $DIGISOS_APPID`)
+                      rm digisos.key
 
-            create-github-release.sh -p $CIRCLE_PROJECT_REPONAME -t $(create-artifact-version.sh) \
-            -c $CIRCLE_SHA1 -m "$(format-commit-message.sh)" -a $GH_TOKEN
-      - run:
-          name: Pusher Docker image
-          command: |
-            echo $DOCKER_TAG
-            docker push $DOCKER_TAG
+                      create-github-release.sh -p $CIRCLE_PROJECT_REPONAME -t $(create-artifact-version.sh) \
+                      -c $CIRCLE_SHA1 -m "$(format-commit-message.sh)" -a $GH_TOKEN
+            - run:
+                  name: Pusher Docker image
+                  command: |
+                      echo $DOCKER_TAG
+                      docker push $DOCKER_TAG
 
-  deploy_miljo:
-    docker:
-      - image: navikt/deployment:v1
-    steps:
-      - checkout
-      - run:
-          name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
-          command: |
-            git clone https://github.com/navikt/sosialhjelp-ci.git
-            VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            yq w nais/dev/${MILJO}.json version "${VERSION}" | yq r -j - > deployment.json
-            /app/deploy \
-                --apikey="$NAIS_DEPLOY_APIKEY" \
-                --cluster="dev-sbs" \
-                --repository="$CIRCLE_PROJECT_REPONAME" \
-                --resource="nais.yaml" \
-                --vars="deployment.json" \
-                --wait=true
+    deploy_miljo:
+        docker:
+            - image: navikt/deployment:v1
+        steps:
+            - checkout
+            - run:
+                  name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
+                  command: |
+                      git clone https://github.com/navikt/sosialhjelp-ci.git
+                      VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
+                      yq w nais/dev/${MILJO}.json version "${VERSION}" | yq r -j - > deployment.json
+                      /app/deploy \
+                          --apikey="$NAIS_DEPLOY_APIKEY" \
+                          --cluster="dev-sbs" \
+                          --repository="$CIRCLE_PROJECT_REPONAME" \
+                          --resource="nais.yaml" \
+                          --vars="deployment.json" \
+                          --wait=true
 
-  deploy_miljo_tag:
-    docker:
-      - image: navikt/deployment:v1
-    steps:
-      - checkout
-      - run:
-          name: Deploy til miljø i dev-sbs
-          command: |
-            git clone https://github.com/navikt/sosialhjelp-ci.git
-            yq w "nais/dev/${MILJO}.json" version "${TAG}" > deployment.yaml
+    deploy_miljo_tag:
+        docker:
+            - image: navikt/deployment:v1
+        steps:
+            - checkout
+            - run:
+                  name: Deploy til miljø i dev-sbs
+                  command: |
+                      git clone https://github.com/navikt/sosialhjelp-ci.git
+                      yq w "nais/dev/${MILJO}.json" version "${TAG}" > deployment.yaml
 
-            /app/deploy \
-                --apikey="$NAIS_DEPLOY_APIKEY" \
-                --cluster="dev-sbs" \
-                --repository="$CIRCLE_PROJECT_REPONAME" \
-                --resource="nais.yaml" \
-                --vars="deployment.yaml" \
-                --wait=true
+                      /app/deploy \
+                          --apikey="$NAIS_DEPLOY_APIKEY" \
+                          --cluster="dev-sbs" \
+                          --repository="$CIRCLE_PROJECT_REPONAME" \
+                          --resource="nais.yaml" \
+                          --vars="deployment.yaml" \
+                          --wait=true
+    #deploy_miljo_tag:
+    #  docker:
+    #    - image: navikt/deployment-cli:v0.2.0
+    #  steps:
+    #    - checkout
+    #    - setup_remote_docker
+    #    - run:
+    #        name: Deploy versjon=${VERSION} til miljø=${MILJO} i dev-sbs
+    #        command: |
+    #          deployment-cli deploy create --cluster=dev-sbs --repository=navikt/sosialhjelp-veiviser-ny --team=digisos -r=nais.yaml --var version=${TAG} --vars=nais/dev/${MILJO}.json
 
-  deploy_prod:
-    docker:
-      - image: navikt/deployment-cli:v0.2.0
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Deploy versjon=${VERSION} til prod
-          command: |
-            git clone https://github.com/navikt/sosialhjelp-ci.git
-            VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-            deployment-cli deploy create --cluster=prod-sbs --repository=navikt/$CIRCLE_PROJECT_REPONAME --team=digisos -r=nais.yaml --var version=${VERSION} --vars=nais/prod/default.json
+    deploy_prod:
+        docker:
+            - image: navikt/deployment-cli:v0.2.0
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                  name: Deploy versjon=${VERSION} til prod
+                  command: |
+                      git clone https://github.com/navikt/sosialhjelp-ci.git
+                      VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
+                      deployment-cli deploy create --cluster=prod-sbs --repository=navikt/$CIRCLE_PROJECT_REPONAME --team=digisos -r=nais.yaml --var version=${VERSION} --vars=nais/prod/default.json
 
-  deploy_gcp:
-    docker:
-      - image: navikt/deployment:v1
-    steps:
-      - checkout
-      - run:
-          name: Deploy til miljø i gcp
-          command: |
-            yq w nais/dev/${MILJO}.json version "${TAG}" > deployment.yaml
-            /app/deploy \
-                --apikey="$NAIS_DEPLOY_APIKEY" \
-                --cluster="${MILJO}" \
-                --repository="$CIRCLE_PROJECT_REPONAME" \
-                --resource="nais.yaml" \
-                --vars="deployment.yaml" \
-                --wait=true
+    deploy_gcp:
+        docker:
+            - image: navikt/deployment:v1
+        steps:
+            - checkout
+            - run:
+                  name: Deploy til miljø i gcp
+                  command: |
+                      yq w nais/dev/${MILJO}.json version "${TAG}" > deployment.yaml
+                      /app/deploy \
+                          --apikey="$NAIS_DEPLOY_APIKEY" \
+                          --cluster="${MILJO}" \
+                          --repository="$CIRCLE_PROJECT_REPONAME" \
+                          --resource="nais.yaml" \
+                          --vars="deployment.yaml" \
+                          --wait=true
 workflows:
-  version: 2
-  bygg-og-publish-image:
-    jobs:
-      - bygg
+    version: 2
+    bygg-og-publish-image:
+        jobs:
+            - bygg

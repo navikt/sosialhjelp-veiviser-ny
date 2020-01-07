@@ -18,11 +18,10 @@ const DetteBorDuViteEnglish: React.FC = () => {
         >
             <Innholdstittel>What you should know</Innholdstittel>
             <Ingress>
-                Financial assistance is a temporary form of income. Before you
-                can qualify for financial assistance you must consider every
-                other possibility for you to provide for yourself. This could
-                include employment, other means of income or using your own
-                savings.
+                Financial assistance is å temporary form of benefit. You should
+                consider every other possibility for you to provide for
+                yourself. This could include employment, other means of income
+                or using your own savings.
             </Ingress>
 
             <Undertittel>Before you apply</Undertittel>
