@@ -79,7 +79,7 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
     }
 
     return (
-        <nav aria-label="Du er her" className={"breadcrumbs " + (className ? className : "")}>
+        <nav role="navigation" aria-label="Du er her" className={"breadcrumbs " + (className ? className : "")}>
             {crumbs}
         </nav>
     );
