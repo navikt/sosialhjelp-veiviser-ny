@@ -54,7 +54,7 @@ jobs:
             - run:
                   name: Deploy versjon=${VERSION} til prod
                   command: |
-                      deployment-cli deploy create --cluster=prod-sbs --repository=navikt/sosialhjelp-veiviser-ny --team=digisos -r=nais.yaml --var version=${TAG} --vars=nais/prod/default.json
+                      deployment-cli deploy create --cluster=prod-sbs --repository=navikt/sosialhjelp-veiviser-ny --team=teamdigisos -r=nais.yaml --var version=${TAG} --vars=nais/prod/default.json
 
     deploy_prod:
         docker:
@@ -67,7 +67,7 @@ jobs:
                   command: |
                       git clone https://github.com/navikt/sosialhjelp-ci.git
                       VERSION=$(sosialhjelp-ci/bin/create-artifact-version.sh)
-                      deployment-cli deploy create --cluster=prod-sbs --repository=navikt/$CIRCLE_PROJECT_REPONAME --team=digisos -r=nais.yaml --var version=${VERSION} --vars=nais/prod/default.json
+                      deployment-cli deploy create --cluster=prod-sbs --repository=navikt/$CIRCLE_PROJECT_REPONAME --team=teamdigisos -r=nais.yaml --var version=${VERSION} --vars=nais/prod/default.json
 
     deploy_gcp:
         docker:
