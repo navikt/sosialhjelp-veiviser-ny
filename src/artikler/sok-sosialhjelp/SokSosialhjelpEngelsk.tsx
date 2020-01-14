@@ -46,14 +46,6 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     Apply digitally
                 </Undertittel>
 
-                {/* Midlertidig driftsmelding mens adressesøk gir problemer i Stavanger */}
-                <div>
-                    <AlertStripe type="info" style={{textAlign: "left"}}>
-                        Some users will see an error message indicating that there
-                        is something wrong with their address. We are currently working on a fix.
-                    </AlertStripe>
-                </div>
-
                 {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
                     <div>
                         <div style={{paddingBottom: "1rem"}}>
