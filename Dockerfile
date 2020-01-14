@@ -9,4 +9,5 @@ RUN npm install && npm run build
 FROM navikt/pus-decorator
 ENV APPLICATION_NAME=sosialhjelp-veiviser
 ENV CONTEXT_PATH=sosialhjelp
+ENV CONFIGURATION_LOCATION=/app/decorator.yaml
 COPY --from=node-builder /source/build /app

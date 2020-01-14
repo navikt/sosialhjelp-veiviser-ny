@@ -16,9 +16,9 @@ jobs:
           echo "***   Deploying $TAG to $MILJO   ***"
           git checkout ${TAG}
           REPOSITORY_NAME=$(echo $GITHUB_REPOSITORY | sed s/navikt\\///g)
-          test -f nais/dev/${MILJO}_pus_decorator.yaml && cp nais/dev/${MILJO}_pus_decorator.yaml /decorator.yaml
+          test -f nais/dev/${MILJO}_pus_decorator.yaml && cp nais/dev/${MILJO}_pus_decorator.yaml /app/decorator.yaml
           echo "DEBUG..."
-          ls -l /
+          ls -l /app
           echo "...DEBUG"
           /app/deploy \
               --actions \
