@@ -18,6 +18,7 @@ spec:
     inbound:
       external:
         - host: "sosialhjelp-test-proxy.labs.nais.io"
+      rules: []
 {{/if}}
   ingresses:
 {{#each ingresses}}
