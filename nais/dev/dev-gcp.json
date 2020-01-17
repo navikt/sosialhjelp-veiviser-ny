@@ -5,7 +5,6 @@
   ],
   "prometheusEnabled": false,
   "webProxyEnabled": false,
-  "openForLabsInbound": false,
   "env": {
     "APPRES_CMS_URL": "https://appres.nav.no",
     "DISABLE_UNLEASH": true,
