@@ -3,7 +3,9 @@ import "./artikkel.less";
 import Dekorator from "../komponenter/dekorator/Dekorator";
 import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
 import {Sprak} from "../utils/sprakUtils";
-import Brodsmulesti, {BrodsmulestiForeldreside} from "../komponenter/brodsmulesti/Brodsmulesti";
+import Brodsmulesti, {
+    BrodsmulestiForeldreside,
+} from "../komponenter/brodsmulesti/Brodsmulesti";
 import {useContext, useEffect} from "react";
 import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
 
@@ -15,9 +17,14 @@ interface Props {
     foreldreside?: BrodsmulestiForeldreside;
 }
 
-const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, foreldreside}) => {
-
-    document.title = (tittel ? tittel : "ingen tittel");
+const Artikkel: React.FC<Props> = ({
+    children,
+    className,
+    tittel,
+    illustrasjon,
+    foreldreside,
+}) => {
+    document.title = tittel ? tittel : "ingen tittel";
     const context = useContext(SprakvelgerContext);
     const sprak: Sprak[] = context.sprak;
 
@@ -26,14 +33,13 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, f
     useEffect(() => {
         window.scrollTo({
             behavior: "smooth",
-            top: 0
+            top: 0,
         });
     }, [pathname]);
 
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
-
                 <Brodsmulesti
                     className="breadcrumbs__article"
                     tittel={tittel ? tittel : "ingen tittel"}
@@ -41,9 +47,9 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, f
                 />
 
                 <article className="artikkel" role="main">
-                    {sprak.length > 1 && (<SprakVelger sprak={sprak}/>)}
+                    {sprak.length > 1 && <SprakVelger sprak={sprak} />}
                     <div className="innhold">
-                        {illustrasjon && (<span>{illustrasjon}</span>)}
+                        {illustrasjon && <span>{illustrasjon}</span>}
                         {children}
                     </div>
                 </article>
