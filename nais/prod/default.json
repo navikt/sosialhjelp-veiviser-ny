@@ -7,6 +7,7 @@
   ],
   "prometheusEnabled": true,
   "webProxyEnabled": true,
+  "openForLabsInbound": false,
   "env": {
     "APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY": "a2aa3452-c3af-4436-9871-d7d203a8f79f",
     "APPDYNAMICS_AGENT_ACCOUNT_NAME": "PROD",

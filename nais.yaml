@@ -14,6 +14,11 @@ spec:
         - host: "appres.nav.no"
         - host: "nav.psplugin.com"
       rules: []
+{{#if openForLabsInbound}}
+    inbound:
+      external:
+        - host: "sosialhjelp-test-proxy.labs.nais.io"
+{{/if}}
   ingresses:
 {{#each ingresses}}
    - "{{this}}"
