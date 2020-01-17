@@ -57,7 +57,7 @@
     "@types/react-dom": "16.9.4",
     "prettier": "1.19.1",
     "serialize-javascript": ">=2.1.2",
-    "typescript": "3.7.4"
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
