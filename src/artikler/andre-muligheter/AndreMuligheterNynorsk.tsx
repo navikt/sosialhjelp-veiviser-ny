@@ -63,7 +63,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                                 Arbeidsavklaringspengar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/supplerande-stonad-for-personar-med-kort-butid-i-noreg">
-                                Søknad for deg med kort butid i Noreg
+                                Stønad for deg med kort butid i Noreg
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
