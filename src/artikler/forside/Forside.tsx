@@ -12,7 +12,7 @@ import ChatIkon from "../../komponenter/bilder/ChatIkon";
 const Forside: React.FC = () => {
     return (
         <Dekorator erForside={true}>
-            <div className="blokk-center forside">
+            <div role="main" className="blokk-center forside">
                 <InfoPanelContainer>
                     <InfoPanel href="./dette-bor-du-vite">
                         <Undertittel>

@@ -19,6 +19,8 @@ const useTilgjengeligeKommunerService = () => {
 
         if (window.location.origin.indexOf(".dev-nav.no") >= 0) {
             url = "https://sosialhjelp-soknad-api.dev-nav.no" + url;
+        } else if (window.location.origin.indexOf("digisos.labs.nais.io") >= 0) {
+            url = "https://digisos.labs.nais.io" + url;
         } else if (window.location.origin.indexOf(".labs.nais.io") >= 0) {
             url = "https://sosialhjelp-soknad-api.labs.nais.io" + url;
         } else {

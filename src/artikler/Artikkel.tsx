@@ -40,7 +40,7 @@ const Artikkel: React.FC<Props> = ({children, className, tittel, illustrasjon, f
                     foreldreside={foreldreside}
                 />
 
-                <article className="artikkel">
+                <article className="artikkel" role="main">
                     {sprak.length > 1 && (<SprakVelger sprak={sprak}/>)}
                     <div className="innhold">
                         {illustrasjon && (<span>{illustrasjon}</span>)}

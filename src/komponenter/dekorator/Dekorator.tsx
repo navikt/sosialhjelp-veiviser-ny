@@ -9,7 +9,7 @@ const Dekorator: React.FC<{ children: React.ReactNode, tittel?: string, erForsid
 
     return (
         <div>
-            <div className={'banner ' + bannerClassNames}>
+            <div role="banner" className={'banner ' + bannerClassNames}>
                 <div className="blokk-center">
 
                     {erForside && (

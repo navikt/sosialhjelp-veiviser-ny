@@ -1,5 +1,5 @@
 {
-  "namespace": "digisos",
+  "namespace": "teamdigisos",
   "ingresses": [
     "https://sosialhjelp-veiviser.dev-nav.no/sosialhjelp"
   ],

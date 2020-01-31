@@ -22,7 +22,7 @@ jobs:
                     echo "${TAG} is not on master branch" 1>&2
                     exit 1
                   fi
-                  deployment-cli deploy create --cluster=prod-sbs --repository=${GITHUB_REPOSITORY} --team=digisos -r=nais.yaml --var version=${TAG} --vars=nais/prod/default.json
+                  deployment-cli deploy create --cluster=prod-sbs --repository=${GITHUB_REPOSITORY} --team=teamdigisos -r=nais.yaml --var version=${TAG} --vars=nais/prod/default.json
               env:
                   DEPLOYMENT_USERNAME: ${{ secrets.DEPLOYMENT_USERNAME }}
                   DEPLOYMENT_PASSWORD: ${{ secrets.DEPLOYMENT_PASSWORD }}
