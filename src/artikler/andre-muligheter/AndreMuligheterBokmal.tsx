@@ -64,7 +64,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                                 Arbeidsavklaringspenger
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
-                                Søknad for deg med kort botid i Norge
+                                Stønad for deg med kort botid i Norge
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
