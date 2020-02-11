@@ -1,6 +1,9 @@
 import "core-js";
 import * as React from "react";
 import {render} from "react-dom";
+import * as Sentry from "@sentry/browser";
+import {v4 as uuid} from "uuid";
+
 import DetteBorDuVite from "./artikler/dette-bor-du-vite/DetteBorDuVite";
 import "./styles.css";
 import "./index.less";
@@ -19,6 +22,14 @@ import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote
 import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
 import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
+import {erDev, erQ} from "./utils/restUtils";
+
+if (erDev() || erQ()) {
+    Sentry.init({
+        dsn: "https://92f71d949aac44bbbef3792447677d7c@sentry.gc.nav.no/16",
+    });
+    Sentry.setUser({ip_address: "", id: uuid()});
+}
 
 function App() {
     return (
