@@ -65,7 +65,7 @@ export const ForsideEnglish: React.FC = () => {
                     >
                         <Undertittel>
                             Do you have questions about social services and
-                            financial social assistance?
+                            financial assistance?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
