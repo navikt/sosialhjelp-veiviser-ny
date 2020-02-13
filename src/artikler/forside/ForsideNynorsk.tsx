@@ -51,7 +51,7 @@ export const ForsideNynorsk: React.FC = () => {
                     <InfoPanel href="./andre-muligheter?lang=nn">
                         <Undertittel>Andre moglegheitar</Undertittel>
                         <Normaltekst>
-                            Har du sjekka andre muligheitar til å forsørgje deg
+                            Har du sjekka andre moglegheitar til å forsørgje deg
                             sjølv?
                         </Normaltekst>
                     </InfoPanel>
@@ -63,12 +63,12 @@ export const ForsideNynorsk: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Har du spørsmål om sosiale tjenester og økonomisk
+                            Har du spørsmål om sosiale tenester og økonomisk
                             sosialhjelp?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
-                            Chat med oss om sosiale tjenester
+                            Chat med oss om sosiale tenester
                         </Normaltekst>
                     </InfoPanel>
 
