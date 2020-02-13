@@ -200,11 +200,13 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
                 kan du søke med kommunens papirskjema.
             </Normaltekst>
             <Normaltekst>
-                <Lenke href={"/sosialhjelp/slik-soker-du"}>Søk her.</Lenke>
+                <Lenke href={"/sosialhjelp/slik-soker-du?lang=nb"}>
+                    Søk her.
+                </Lenke>
                 <br />
                 <br />
                 For mer informasjon, se{" "}
-                <Lenke href={"/sosialhjelp/dette-bor-du-vite"}>
+                <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nb"}>
                     dette bør du vite før du søker
                 </Lenke>
                 .

@@ -9,12 +9,12 @@ import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygn
 const DetteKanDuSokeOmEnglish: React.FC = () => {
     return (
         <Artikkel
-            tittel="What can financial assistance cover?"
+            tittel="You can apply for this"
             illustrasjon={
                 <IllustrasjonBygningPerson className="illustrasjon" />
             }
         >
-            <Innholdstittel>What can financial assistance cover?</Innholdstittel>
+            <Innholdstittel>You can apply for this</Innholdstittel>
             <Normaltekst>
                 We will work with you to find out what your financial assistance
                 needs are. How much financial assistance you qualify for will
@@ -178,8 +178,8 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
                     <Lenke href={"https://www.hvakostertannlegen.no/"}>
                         Prices may vary
                     </Lenke>
-                    &nbsp;from dentist to dentist, and NAV may limit your application
-                    to a reasonable treatment option.
+                    &nbsp;from dentist to dentist, and NAV may limit your
+                    application to a reasonable treatment option.
                 </Normaltekst>
                 <br />
                 <Normaltekst>
@@ -214,7 +214,10 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
                 office to obtains the paper form.
             </Normaltekst>
             <Normaltekst>
-                <Lenke href={"/sosialhjelp/slik-soker-du"}>Apply here</Lenke>.
+                <Lenke href={"/sosialhjelp/slik-soker-du?lang=en"}>
+                    Apply here
+                </Lenke>
+                .
                 <br />
                 <br />
                 For more information, see{" "}

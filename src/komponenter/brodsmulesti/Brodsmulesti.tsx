@@ -26,15 +26,21 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
         "?lang=" +
         valgtSprak;
 
+    const title =
+        valgtSprak === "en" ? "Go to previous page" : "Gå til forrige side";
+
+    const breadcrumbFrontpageName =
+        valgtSprak === "en" ? "Financial Assistance" : "Økonomisk sosialhjelp";
+
     let crumbs: React.ReactNode = (
         <>
             <div key="tilbake" className="typo-normal breadcrumbs__item">
                 <a
                     href=".."
                     onClick={(event: any) => onClickLink(event, frontpageUrl)}
-                    title="Gå til forrige side"
+                    title={title}
                 >
-                    Økonomisk sosialhjelp
+                    {breadcrumbFrontpageName}
                 </a>
             </div>
             {foreldreside && (

@@ -17,25 +17,23 @@ export const ForsideEnglish: React.FC = () => {
                 <SprakvelgerForside />
                 <InfoPanelContainer>
                     <InfoPanel href="./dette-bor-du-vite?lang=en">
-                        <Undertittel>
-                            You should know this before applying
-                        </Undertittel>
+                        <Undertittel>What you should know</Undertittel>
                         <Normaltekst>
-                            Who can apply? What are the required documentations?
-                            What happens after you have applied?
+                            Who can apply? What do you need? What happens after
+                            you have applied?
                         </Normaltekst>
                     </InfoPanel>
 
                     <InfoPanel href="./dette-kan-du-soke-om?lang=en">
                         <Undertittel>You can apply for this</Undertittel>
                         <Normaltekst>
-                            What expenses can you apply for?
+                            What expenses can you apply for?{" "}
                         </Normaltekst>
                     </InfoPanel>
                 </InfoPanelContainer>
 
                 <SokOmSosialhjelpPanel href="./slik-soker-du?lang=en">
-                    Apply for financial assistance
+                    Apply for financial assitance
                 </SokOmSosialhjelpPanel>
 
                 <InfoPanelContainer>
