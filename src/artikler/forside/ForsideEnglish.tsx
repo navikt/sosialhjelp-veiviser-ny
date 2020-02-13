@@ -17,19 +17,19 @@ export const ForsideEnglish: React.FC = () => {
                 <SprakvelgerForside />
                 <InfoPanelContainer>
                     <InfoPanel href="./dette-bor-du-vite?lang=en">
-                        <Undertittel>What you should know</Undertittel>
+                        <Undertittel>
+                            You should know this before applying
+                        </Undertittel>
                         <Normaltekst>
-                            Who can apply? What should you document? What
-                            happens after you have applied?
+                            Who can apply? What are the required documentations?
+                            What happens after you have applied?
                         </Normaltekst>
                     </InfoPanel>
 
                     <InfoPanel href="./dette-kan-du-soke-om?lang=en">
-                        <Undertittel>
-                            What can financial assistance cover?
-                        </Undertittel>
+                        <Undertittel>You can apply for this</Undertittel>
                         <Normaltekst>
-                            Which expenses can you apply for help to cover?
+                            What expenses can you apply for?
                         </Normaltekst>
                     </InfoPanel>
                 </InfoPanelContainer>
@@ -40,10 +40,12 @@ export const ForsideEnglish: React.FC = () => {
 
                 <InfoPanelContainer>
                     <InfoPanel href="./nodsituasjon?lang=en">
-                        <Undertittel>In an emergency</Undertittel>
+                        <Undertittel>
+                            When you are in a financial emergency
+                        </Undertittel>
                         <Normaltekst>
-                            What does it mean to be in an emergency? What can
-                            you do in an emergency situation?
+                            What does it mean to be in an emergency? What should
+                            you do in an emergency?
                         </Normaltekst>
                     </InfoPanel>
 
@@ -63,7 +65,7 @@ export const ForsideEnglish: React.FC = () => {
                     >
                         <Undertittel>
                             Do you have questions about social services and
-                            financial assistance?
+                            financial social assistance?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
@@ -76,7 +78,7 @@ export const ForsideEnglish: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Do you have questions about budgetting, economy and
+                            Do you have questions about budgeting, finances, and
                             debt counseling?
                         </Undertittel>
                         <Normaltekst>
