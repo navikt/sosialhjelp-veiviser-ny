@@ -1,42 +1,48 @@
-import * as React from 'react';
-import './banner.less';
-import {Sidetittel, Innholdstittel} from 'nav-frontend-typografi';
+import * as React from "react";
+import "./banner.less";
+import {Sidetittel, Innholdstittel} from "nav-frontend-typografi";
 import ForsideBanner from "../bilder/ForsideBanner";
+import {detekterSprak} from "../../utils/sprakUtils";
 
-const Dekorator: React.FC<{ children: React.ReactNode, tittel?: string, erForside?: boolean}> = ({children, tittel, erForside}) => {
+const Dekorator: React.FC<{
+    children: React.ReactNode;
+    tittel?: string;
+    erForside?: boolean;
+}> = ({children, tittel, erForside}) => {
+    const valgtSprak: string = detekterSprak();
+    const sosialhjelpTittel =
+        valgtSprak === "en" ? "Financial Assistance" : "Økonomisk sosialhjelp";
 
-    let bannerClassNames = erForside ? 'banner__forside' : 'banner__underside';
+    const bannerClassNames = erForside
+        ? "banner__forside"
+        : "banner__underside";
 
     return (
         <div>
-            <div role="banner" className={'banner ' + bannerClassNames}>
+            <div role="banner" className={"banner " + bannerClassNames}>
                 <div className="blokk-center">
-
                     {erForside && (
                         <div className="banner__forside-wrapper">
                             <div className="banner__tittel-tekst">
-                                <Sidetittel>
-                                    Økonomisk sosialhjelp
-                                </Sidetittel>
+                                <Sidetittel>{sosialhjelpTittel}</Sidetittel>
                             </div>
-                            <ForsideBanner className="banner__forside-illustrasjon"/>
+                            <ForsideBanner className="banner__forside-illustrasjon" />
                         </div>
                     )}
                     {!erForside && (
                         <div className="undersideBanner__tekst">
-                            {tittel && tittel !== '' && (
+                            {tittel && tittel !== "" && (
                                 <Innholdstittel>{tittel}</Innholdstittel>
                             )}
-                            {!(tittel && tittel !== '') && (
-                                <span>Økonomisk sosialhjelp</span>
+                            {!(tittel && tittel !== "") && (
+                                <span>{sosialhjelpTittel}</span>
                             )}
                         </div>
                     )}
-
                 </div>
             </div>
-            <br/>
-            <br/>
+            <br />
+            <br />
             {children}
         </div>
     );

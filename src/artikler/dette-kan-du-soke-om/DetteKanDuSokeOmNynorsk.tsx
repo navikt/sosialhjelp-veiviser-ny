@@ -204,7 +204,9 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 søkje digitalt, kan du søkje med kommunens papirskjema.
             </Normaltekst>
             <Normaltekst>
-                <Lenke href={"sosialhjelp/slik-soker-du"}>Søk her.</Lenke>
+                <Lenke href={"sosialhjelp/slik-soker-du?lang=nn"}>
+                    Søk her.
+                </Lenke>
                 <br />
                 <br />
                 For meir informasjon, sjå{" "}

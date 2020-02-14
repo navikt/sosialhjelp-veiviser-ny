@@ -1,13 +1,14 @@
 import * as React from "react";
 import "./brodsmulesti.less";
-import NavFrontendChevron from 'nav-frontend-chevron';
+import NavFrontendChevron from "nav-frontend-chevron";
 import {onClickLink} from "../../utils/navigasjon";
 import useWindowSize from "../../utils/useWindowSize";
+import {detekterSprak} from "../../utils/sprakUtils";
 
 export type BrodsmulestiForeldreside = {
     tittel: string;
     path: string;
-}
+};
 
 interface Props {
     tittel: string;
@@ -16,30 +17,44 @@ interface Props {
 }
 
 const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
+    const valgtSprak: string = detekterSprak();
     const {width} = useWindowSize();
-    const frontpageUrl = `/`;
+    const frontpageUrl = `/?lang=${valgtSprak}`;
 
-    const tilbakeUrl = foreldreside && foreldreside.path ? foreldreside.path : frontpageUrl;
+    const tilbakeUrl =
+        (foreldreside && foreldreside.path ? foreldreside.path : frontpageUrl) +
+        "?lang=" +
+        valgtSprak;
+
+    const title =
+        valgtSprak === "en" ? "Go to previous page" : "Gå til forrige side";
+
+    const breadcrumbFrontpageName =
+        valgtSprak === "en" ? "Financial Assistance" : "Økonomisk sosialhjelp";
 
     let crumbs: React.ReactNode = (
         <>
             <div key="tilbake" className="typo-normal breadcrumbs__item">
-                <a href=".."
-                   onClick={(event: any) => onClickLink(event, frontpageUrl)}
-                   title="Gå til forrige side"
+                <a
+                    href=".."
+                    onClick={(event: any) => onClickLink(event, frontpageUrl)}
+                    title={title}
                 >
-                    Økonomisk sosialhjelp
+                    {breadcrumbFrontpageName}
                 </a>
             </div>
             {foreldreside && (
                 <>
                     <div key="chevron" aria-hidden={true}>
-                        <NavFrontendChevron type="høyre"/>
+                        <NavFrontendChevron type="høyre" />
                     </div>
-                    <a href=".."
-                       onClick={(event: any) => onClickLink(event, foreldreside.path)}
-                       title={foreldreside.tittel}
-                       className="breadcrumbs__parent"
+                    <a
+                        href=".."
+                        onClick={(event: any) =>
+                            onClickLink(event, foreldreside.path)
+                        }
+                        title={foreldreside.tittel}
+                        className="breadcrumbs__parent"
                     >
                         {foreldreside.tittel}
                     </a>
@@ -47,15 +62,15 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
             )}
 
             <div key="chevron" aria-hidden={true}>
-                <NavFrontendChevron type="høyre"/>
+                <NavFrontendChevron type="høyre" />
             </div>
-            <div aria-current="page"
-               key="currentPage"
-               className="typo-normal breadcrumbs__item breadcrumbs__current"
+            <div
+                aria-current="page"
+                key="currentPage"
+                className="typo-normal breadcrumbs__item breadcrumbs__current"
             >
                 {tittel}
             </div>
-
         </>
     );
 
@@ -63,7 +78,7 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
         crumbs = (
             <>
                 <div key="chevron" aria-hidden={true}>
-                    <NavFrontendChevron type="venstre"/>
+                    <NavFrontendChevron type="venstre" />
                 </div>
                 <p className="typo-normal breadcrumbs__item">
                     <a
@@ -71,15 +86,19 @@ const Brodsmulesti: React.FC<Props> = ({tittel, className, foreldreside}) => {
                         title="Gå til forrige side"
                         onClick={(event: any) => onClickLink(event, tilbakeUrl)}
                     >
-                        Tilbake
+                        {valgtSprak === "en" ? "Back" : "Tilbake"}
                     </a>
                 </p>
             </>
-        )
+        );
     }
 
     return (
-        <nav role="navigation" aria-label="Du er her" className={"breadcrumbs " + (className ? className : "")}>
+        <nav
+            role="navigation"
+            aria-label="Du er her"
+            className={"breadcrumbs " + (className ? className : "")}
+        >
             {crumbs}
         </nav>
     );

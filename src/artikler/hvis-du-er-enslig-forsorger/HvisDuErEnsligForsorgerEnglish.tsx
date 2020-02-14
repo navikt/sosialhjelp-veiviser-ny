@@ -69,7 +69,7 @@ const HvisDuErEnsligForsorgerEnglish = () => (
                 whom the child does not live must pay his or her share of the
                 costs as child support to the other parent. Child support
                 payments may also be ordered in cases where the parents have a
-                divided-residence arrangement for the child. Read more about
+                divided-residence arrangement for the child. Read more about{" "}
                 <Lenke href="https://www.nav.no/en/Home/Benefits+and+services/Relatert+informasjon/child-support-child-maintenance">
                     child support
                 </Lenke>
