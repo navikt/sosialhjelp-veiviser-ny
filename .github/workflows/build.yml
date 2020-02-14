@@ -24,11 +24,16 @@ jobs:
             - name: Create docker image tags
               run: |
                   PROJECT_NAME=$(echo $GITHUB_REPOSITORY | cut -d/ -f2)
+                  echo "docker.pkg.github.com/$GITHUB_REPOSITORY/$PROJECT_NAME" > DOCKER_IMAGE
                   echo "docker.pkg.github.com/$GITHUB_REPOSITORY/$PROJECT_NAME:$VERSION" > DOCKER_TAG
               env:
                   VERSION: ${{ steps.artifact-version.outputs.version }}
             - name: Build docker image
+              if: github.ref != 'refs/heads/test/tag-latest'
               run: docker build -t $(cat DOCKER_TAG) .
+            - name: Build docker image with latest
+              if: github.ref == 'refs/heads/test/tag-latest'
+              run: docker build -t $(cat DOCKER_TAG) -t $(cat DOCKER_IMAGE):latest .
             - name: Create tag and release
               # TODO: Bytt ut med upstream når/hvis https://github.com/actions/create-release/pull/32 merges
               uses: fleskesvor/create-release@feature/support-target-commitish
@@ -41,3 +46,7 @@ jobs:
             - name: Push docker image
               run: |
                   docker push $(cat DOCKER_TAG)
+            - name: Push docker image with latest
+              if: github.ref == 'refs/heads/test/tag-latest'
+              run: |
+                  docker push $(cat DOCKER_IMAGE):latest
