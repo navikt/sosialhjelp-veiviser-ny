@@ -12,6 +12,7 @@ interface Props {
     onSelect: (value: Suggestion) => void;
     onReset?: () => void;
     feil?: string;
+    onChange?: (value: string) => void;
 }
 
 export interface Suggestion {
@@ -34,6 +35,7 @@ const NavAutocomplete: React.FC<Props> = ({
     id,
     onSelect,
     onReset,
+    onChange,
     feil,
 }) => {
     const [value, setValue] = useState<string>("");
@@ -140,7 +142,7 @@ const NavAutocomplete: React.FC<Props> = ({
     /**
      * Vil skje hver gang man legger til eller fjerner en bokstav fra inputfeltet
      */
-    const onChange = (event: any) => {
+    const onChangeHandler = (event: any) => {
         const {value} = event.target;
         setValue(value);
         setShouldShowSuggestions(true);
@@ -166,6 +168,9 @@ const NavAutocomplete: React.FC<Props> = ({
         );
         if (activeFilteredSuggestion.length === 0) {
             setActiveSuggestionIndex(-1);
+        }
+        if (onChange) {
+            onChange(value);
         }
     };
 
@@ -253,7 +258,7 @@ const NavAutocomplete: React.FC<Props> = ({
                 placeholder={placeholder ? placeholder : ""}
                 value={value}
                 autoComplete="off"
-                onChange={(event: any) => onChange(event)}
+                onChange={(event: any) => onChangeHandler(event)}
                 onBlur={() => onBlur()}
                 onKeyDown={(event: any) => onKeyDown(event)}
                 onFocus={() => onFocus()}
