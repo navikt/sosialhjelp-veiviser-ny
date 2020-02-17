@@ -1,4 +1,4 @@
-#Autocomplete
+# Autocomplete
 
 Enkel autocomplete for små dataset. Støtte for ARIA attributer. 
 
@@ -10,6 +10,7 @@ Properties:
  * ariaLabel: string;
  * onSelect: (value: Suggestion) => void;
  * onReset?: Callback som trigges hvis bruker tømmer tekstfeltet;
+ * onChange?: (valuye: string) => void;
  
 Laget med inspirasjon fra `pam-portal/src/pages/home/searchbox/TypeaheadSuggestion.js`
 
