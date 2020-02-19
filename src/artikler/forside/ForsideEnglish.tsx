@@ -9,51 +9,62 @@ import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
+import {ForsideLenke} from "./komponenter/ForsideLenke";
+import {Panel} from "nav-frontend-paneler";
 
 export const ForsideEnglish: React.FC = () => {
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
                 <SprakvelgerForside />
-                <InfoPanelContainer>
-                    <InfoPanel href="./dette-bor-du-vite?lang=en">
-                        <Undertittel>What you should know</Undertittel>
-                        <Normaltekst>
-                            Who can apply? What do you need? What happens after
-                            you have applied?
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel href="./dette-kan-du-soke-om?lang=en">
-                        <Undertittel>You can apply for this</Undertittel>
-                        <Normaltekst>
-                            What expenses can you apply for?{" "}
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
 
                 <SokOmSosialhjelpPanel href="./slik-soker-du?lang=en">
                     Apply for financial assitance
                 </SokOmSosialhjelpPanel>
 
                 <InfoPanelContainer>
-                    <InfoPanel href="./nodsituasjon?lang=en">
-                        <Undertittel>
-                            When you are in a financial emergency
-                        </Undertittel>
-                        <Normaltekst>
-                            What does it mean to be in an emergency? What should
-                            you do in an emergency?
-                        </Normaltekst>
-                    </InfoPanel>
+                    <Panel className="infopanel">
+                        <Undertittel>Før du søker</Undertittel>
+                        <ul>
+                            <ForsideLenke href="./dette-bor-du-vite?lang=nb">
+                                Dette bør du vite før du søker
+                            </ForsideLenke>
+                            <ForsideLenke href="./dette-kan-du-soke-om?lang=nb">
+                                Hva kan du søke om?
+                            </ForsideLenke>
 
-                    <InfoPanel href="./andre-muligheter?lang=en">
-                        <Undertittel>Other possibilities</Undertittel>
-                        <Normaltekst>
-                            Have you considered other possibilities to provide
-                            for yourself?
-                        </Normaltekst>
-                    </InfoPanel>
+                            <ForsideLenke href="./nodsituasjon?lang=nb">
+                                Hva gjør du i en nødsituasjon?
+                            </ForsideLenke>
+                            <ForsideLenke href="./todo">
+                                Hvor finner du søknadskjema på papir?
+                            </ForsideLenke>
+                            <ForsideLenke href="./andre-muligheter?lang=nb">
+                                Andre muligheter til å forsørge deg
+                            </ForsideLenke>
+                        </ul>
+                    </Panel>
+
+                    <Panel className="infopanel">
+                        <Undertittel>Etter at du har søkt</Undertittel>
+                        <ul>
+                            <ForsideLenke href="./todo">
+                                Hva er status i saken min?
+                            </ForsideLenke>
+                            <ForsideLenke href="./todo">
+                                Hvordan ettersender du dokumentasjon?
+                            </ForsideLenke>
+                            <ForsideLenke href="./todo">
+                                Hvor lang tid tar det å behandle saken?{" "}
+                            </ForsideLenke>
+                            <ForsideLenke href="./todo">
+                                Hvordan kontakter du veilederen din?
+                            </ForsideLenke>
+                            <ForsideLenke href="./todo">
+                                Hvordan klager du på en sak?
+                            </ForsideLenke>
+                        </ul>
+                    </Panel>
                 </InfoPanelContainer>
 
                 <InfoPanelContainer>
