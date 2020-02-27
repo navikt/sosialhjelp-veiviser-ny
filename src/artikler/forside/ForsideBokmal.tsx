@@ -45,7 +45,7 @@ export const ForsideBokmal: React.FC = () => {
                                 Nødsituasjon
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./todo"
+                                href="./soknad-pa-papir?lang=nb"
                                 description="Hvor du finner søknadsskjema på papir"
                             >
                                 Søknadsskjema på papir

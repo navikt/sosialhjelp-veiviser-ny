@@ -13,8 +13,8 @@ const Forside = () => {
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
             {valgtSprak === Sprak.NORSK_BOKMAL && <ForsideBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <ForsideNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <ForsideEnglish />}
+            {valgtSprak === Sprak.NYNORSK && <ForsideBokmal />}
+            {valgtSprak === Sprak.ENGELSK && <ForsideBokmal />}
         </Oversettelser>
     );
 };

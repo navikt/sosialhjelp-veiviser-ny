@@ -22,6 +22,7 @@ import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote
 import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
 import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
+import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
 import {erDev, erQ} from "./utils/restUtils";
 
 if (erDev() || erQ()) {
@@ -83,6 +84,12 @@ function App() {
                     exact
                     path="/slik-foregar-et-mote"
                     component={SlikForegatEtMote}
+                />
+
+                <Route
+                    exact
+                    path="/soknad-pa-papir"
+                    component={SoknadPaPapir}
                 />
 
                 {/* Redirects */}
