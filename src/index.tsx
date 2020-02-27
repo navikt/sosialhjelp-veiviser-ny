@@ -23,6 +23,7 @@ import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
 import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
 import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
+import Ettersende from "./artikler/ettersende/Ettersende";
 import {erDev, erQ} from "./utils/restUtils";
 
 if (erDev() || erQ()) {
@@ -91,6 +92,14 @@ function App() {
                     path="/soknad-pa-papir"
                     component={SoknadPaPapir}
                 />
+
+                {/*<Route
+                    exact
+                    path="/behandlingstid"
+                    component={Behandlingstid}
+                />*/}
+
+                <Route exact path="/ettersende" component={Ettersende} />
 
                 {/* Redirects */}
                 <Route exact path="/artikkel/514891">

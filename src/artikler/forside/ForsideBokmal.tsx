@@ -69,7 +69,7 @@ export const ForsideBokmal: React.FC = () => {
                                 Behandlingstid
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./todo"
+                                href="./ettersende?lang=nb"
                                 description="Hvordan ettersende dokumentasjon"
                             >
                                 Ettersende
