@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Lenke from "nav-frontend-lenker";
-import {Undertekst, Normaltekst} from "nav-frontend-typografi";
+import {Normaltekst} from "nav-frontend-typografi";
 
 export const ForsideLenke = (props: {
     href: string;

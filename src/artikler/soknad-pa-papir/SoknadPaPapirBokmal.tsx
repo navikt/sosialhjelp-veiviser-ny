@@ -1,6 +1,5 @@
 import * as React from "react";
 import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
