@@ -25,6 +25,8 @@ import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
 import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
 import Ettersende from "./artikler/ettersende/Ettersende";
 import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
+import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
+import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
 import {erDev, erQ} from "./utils/restUtils";
 
 if (erDev() || erQ()) {
@@ -100,7 +102,15 @@ function App() {
                     component={Behandlingstid}
                 />
 
+                <Route exact path="/status-soknad" component={StatusSoknad} />
+
                 <Route exact path="/ettersende" component={Ettersende} />
+
+                <Route
+                    exact
+                    path="/kontakte-veileder"
+                    component={KontakteVeileder}
+                />
 
                 {/* Redirects */}
                 <Route exact path="/artikkel/514891">

@@ -2,17 +2,11 @@ import * as React from "react";
 import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import "../artikkel.less";
 
 const EttersendeBokmal: React.FC = () => {
     return (
-        <Artikkel
-            tittel="Hvordan ettersender du dokumentasjon"
-            illustrasjon={
-                <IllustrasjonBygningPerson className="illustrasjon" />
-            }
-        >
+        <Artikkel tittel="Hvordan ettersender du dokumentasjon">
             <Innholdstittel>
                 Hvordan ettersender du dokumentasjon
             </Innholdstittel>

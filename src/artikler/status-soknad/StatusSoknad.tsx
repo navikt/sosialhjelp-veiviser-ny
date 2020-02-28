@@ -1,8 +1,8 @@
 import * as React from "react";
-import BehandlingstidBokmal from "./BehandlingstidBokmal";
+import StatusSoknadBokmal from "./StatusSoknadBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import BehandlingstidNynorsk from "./BehandlingstidBokmal";
-import BehandlingstidEnglish from "./BehandlingstidBokmal";
+import StatusSoknadNynorsk from "./StatusSoknadBokmal";
+import StatusSoknadEnglish from "./StatusSoknadBokmal";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 
 const Ettersende: React.FC = () => {
@@ -11,9 +11,9 @@ const Ettersende: React.FC = () => {
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <BehandlingstidBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <BehandlingstidNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <BehandlingstidEnglish />}
+            {valgtSprak === Sprak.NORSK_BOKMAL && <StatusSoknadBokmal />}
+            {valgtSprak === Sprak.NYNORSK && <StatusSoknadNynorsk />}
+            {valgtSprak === Sprak.ENGELSK && <StatusSoknadEnglish />}
         </Oversettelser>
     );
 };

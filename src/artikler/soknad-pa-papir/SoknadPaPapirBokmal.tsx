@@ -2,17 +2,11 @@ import * as React from "react";
 import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import "../artikkel.less";
 
 const SoknadPaPapirBokmal: React.FC = () => {
     return (
-        <Artikkel
-            tittel="Hvor finner du søknadsskjema på papir"
-            illustrasjon={
-                <IllustrasjonBygningPerson className="illustrasjon" />
-            }
-        >
+        <Artikkel tittel="Hvor finner du søknadsskjema på papir">
             <Innholdstittel>
                 Hvor finner du søknadsskjema på papir
             </Innholdstittel>

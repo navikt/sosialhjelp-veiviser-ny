@@ -63,7 +63,7 @@ export const ForsideBokmal: React.FC = () => {
                         <Undertittel>Etter at du har søkt</Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./behandlingstid"
+                                href="./behandlingstid?lang=nb"
                                 description="Hvor lang tid tar det å behandle søknaden?"
                             >
                                 Behandlingstid
@@ -75,13 +75,13 @@ export const ForsideBokmal: React.FC = () => {
                                 Ettersende
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./todo"
+                                href="./status-soknad?lang=nb"
                                 description="Hva er status i saken din?"
                             >
                                 Status i sak
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./todo"
+                                href="./kontakte-veileder?lang=nb"
                                 description="Hvordan kan du kontakte veilederen din?"
                             >
                                 Kontakt veileder
