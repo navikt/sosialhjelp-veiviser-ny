@@ -63,7 +63,7 @@ export const ForsideBokmal: React.FC = () => {
                         <Undertittel>Etter at du har søkt</Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./todo"
+                                href="./behandlingstid"
                                 description="Hvor lang tid tar det å behandle søknaden?"
                             >
                                 Behandlingstid

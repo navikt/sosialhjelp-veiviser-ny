@@ -24,6 +24,7 @@ import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
 import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
 import Ettersende from "./artikler/ettersende/Ettersende";
+import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import {erDev, erQ} from "./utils/restUtils";
 
 if (erDev() || erQ()) {
@@ -93,11 +94,11 @@ function App() {
                     component={SoknadPaPapir}
                 />
 
-                {/*<Route
+                <Route
                     exact
                     path="/behandlingstid"
                     component={Behandlingstid}
-                />*/}
+                />
 
                 <Route exact path="/ettersende" component={Ettersende} />
 
