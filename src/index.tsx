@@ -22,6 +22,11 @@ import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote
 import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
 import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
+import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
+import Ettersende from "./artikler/ettersende/Ettersende";
+import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
+import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
+import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
 import {erDev, erQ} from "./utils/restUtils";
 
 if (erDev() || erQ()) {
@@ -83,6 +88,24 @@ function App() {
                     exact
                     path="/slik-foregar-et-mote"
                     component={SlikForegatEtMote}
+                />
+
+                <Route exact path="/sok-papir" component={SoknadPaPapir} />
+
+                <Route
+                    exact
+                    path="/behandlingstid"
+                    component={Behandlingstid}
+                />
+
+                <Route exact path="/status-soknad" component={StatusSoknad} />
+
+                <Route exact path="/ettersende" component={Ettersende} />
+
+                <Route
+                    exact
+                    path="/kontakte-veileder"
+                    component={KontakteVeileder}
                 />
 
                 {/* Redirects */}

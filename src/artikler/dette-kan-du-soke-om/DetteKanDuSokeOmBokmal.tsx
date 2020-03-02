@@ -16,11 +16,10 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
         >
             <Innholdstittel>Dette kan du søke om</Innholdstittel>
             <Normaltekst>
-                Vi vurderer sammen med deg behovet ditt for økonomisk
-                sosialhjelp. Hvor mye du kan få i stønad er avhengig av din
-                familiesituasjon, antall personer som hører til husholdningen,
-                bosituasjonen med mer. Vi fastsetter stønaden etter en
-                individuell vurdering i hver enkelt sak.
+                Vi vurdere behovet ditt for økonomisk sosialhjelp sammen med deg
+                og gjør en individuell vurdering. Hvor mye du kan få utbetalt er
+                avhengig av din familiesituasjon, antall personer som hører til
+                husholdningen, bosituasjonen med mer.
             </Normaltekst>
 
             <Undertittel>Utgifter du kan søke om å få hjelp med</Undertittel>

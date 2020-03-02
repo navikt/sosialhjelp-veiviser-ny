@@ -9,54 +9,91 @@ import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
+import {ForsideLenke} from "./komponenter/ForsideLenke";
+import {Panel} from "nav-frontend-paneler";
 
 export const ForsideBokmal: React.FC = () => {
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
                 <SprakvelgerForside />
-                <InfoPanelContainer>
-                    <InfoPanel href="./dette-bor-du-vite">
-                        <Undertittel>
-                            Dette bør du vite før du søker
-                        </Undertittel>
-                        <Normaltekst>
-                            Hvem kan søke? Hva må du dokumentere? Hva skjer
-                            etter at du har søkt?
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel href="./dette-kan-du-soke-om">
-                        <Undertittel>Dette kan du søke om</Undertittel>
-                        <Normaltekst>
-                            Hvilke utgifter kan du søke om å få hjelp til å
-                            betale?
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
 
                 <SokOmSosialhjelpPanel href="./slik-soker-du">
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
                 <InfoPanelContainer>
-                    <InfoPanel href="./nodsituasjon">
-                        <Undertittel>
-                            Dette gjør du i en nødsituasjon
-                        </Undertittel>
-                        <Normaltekst>
-                            Hva betyr det å være i en nødsituasjon? Hva bør du
-                            gjøre om du er i en nødsituasjon?
-                        </Normaltekst>
-                    </InfoPanel>
+                    <Panel className="infopanel">
+                        <Undertittel>Før du søker</Undertittel>
+                        <ul>
+                            <ForsideLenke
+                                href="./dette-bor-du-vite?lang=nb"
+                                description="Informasjon til deg som søker for første gang"
+                            >
+                                Dette bør du vite
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./dette-kan-du-soke-om?lang=nb"
+                                description="Hvilke utgifter kan du få hjelp til å betale"
+                            >
+                                Dette kan du søke om
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./nodsituasjon?lang=nb"
+                                description="Utgifter til det mest nødvendige"
+                            >
+                                Nødsituasjon
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./sok-papir?lang=nb"
+                                description="Hvor du finner søknadsskjema på papir"
+                            >
+                                Søknadsskjema på papir
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./andre-muligheter?lang=nb"
+                                description="Andre muligheter til å forsørge deg"
+                            >
+                                Andre muligheter
+                            </ForsideLenke>
+                        </ul>
+                    </Panel>
 
-                    <InfoPanel href="./andre-muligheter">
-                        <Undertittel>Andre muligheter</Undertittel>
-                        <Normaltekst>
-                            Har du sjekket andre muligheter til å forsørge deg
-                            selv?
-                        </Normaltekst>
-                    </InfoPanel>
+                    <Panel className="infopanel">
+                        <Undertittel>Etter at du har søkt</Undertittel>
+                        <ul>
+                            <ForsideLenke
+                                href="./behandlingstid?lang=nb"
+                                description="Hvor lang tid tar det å behandle søknaden?"
+                            >
+                                Behandlingstid
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./ettersende?lang=nb"
+                                description="Hvordan ettersende dokumentasjon"
+                            >
+                                Ettersende
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./status-soknad?lang=nb"
+                                description="Hva er status på søknaden din?"
+                            >
+                                Status på søknad
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./kontakte-veileder?lang=nb"
+                                description="Hvordan kan du kontakte veilederen din?"
+                            >
+                                Kontakt veileder
+                            </ForsideLenke>
+                            <ForsideLenke
+                                href="./klage?lang=nb"
+                                description="Hvor sender du klage på utfall i en sak?"
+                            >
+                                Klage
+                            </ForsideLenke>
+                        </ul>
+                    </Panel>
                 </InfoPanelContainer>
 
                 <InfoPanelContainer>
