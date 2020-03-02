@@ -5,7 +5,7 @@ import StatusSoknadNynorsk from "./StatusSoknadBokmal";
 import StatusSoknadEnglish from "./StatusSoknadBokmal";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 
-const Ettersende: React.FC = () => {
+const StatusSoknad: React.FC = () => {
     const valgtSprak: string = detekterSprak();
     return (
         <Oversettelser
@@ -18,4 +18,4 @@ const Ettersende: React.FC = () => {
     );
 };
 
-export default Ettersende;
+export default StatusSoknad;

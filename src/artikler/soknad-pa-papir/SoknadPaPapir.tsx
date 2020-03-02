@@ -5,7 +5,7 @@ import SoknadPaPapirBokmal from "./SoknadPaPapirBokmal";
 import SoknadPaPapirNynorsk from "./SoknadPaPapirBokmal";
 import SoknadPaPapirEngelsk from "./SoknadPaPapirEnglish";
 
-const SlikForegatEtMote: React.FC = () => {
+const SoknadPaPapir: React.FC = () => {
     const valgtSprak: string = detekterSprak();
     return (
         <Oversettelser
@@ -18,4 +18,4 @@ const SlikForegatEtMote: React.FC = () => {
     );
 };
 
-export default SlikForegatEtMote;
+export default SoknadPaPapir;

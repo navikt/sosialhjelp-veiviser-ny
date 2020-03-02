@@ -5,7 +5,7 @@ import BehandlingstidNynorsk from "./BehandlingstidBokmal";
 import BehandlingstidEnglish from "./BehandlingstidBokmal";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 
-const Ettersende: React.FC = () => {
+const Behandlingstid: React.FC = () => {
     const valgtSprak: string = detekterSprak();
     return (
         <Oversettelser
@@ -18,4 +18,4 @@ const Ettersende: React.FC = () => {
     );
 };
 
-export default Ettersende;
+export default Behandlingstid;
