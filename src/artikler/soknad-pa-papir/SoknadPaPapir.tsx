@@ -3,7 +3,7 @@ import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import SoknadPaPapirBokmal from "./SoknadPaPapirBokmal";
 import SoknadPaPapirNynorsk from "./SoknadPaPapirBokmal";
-import SoknadPaPapirEngelsk from "./SoknadPaPapirBokmal";
+import SoknadPaPapirEngelsk from "./SoknadPaPapirEnglish";
 
 const SlikForegatEtMote: React.FC = () => {
     const valgtSprak: string = detekterSprak();

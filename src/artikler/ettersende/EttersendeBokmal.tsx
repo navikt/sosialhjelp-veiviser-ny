@@ -20,13 +20,11 @@ const EttersendeBokmal: React.FC = () => {
                     <li>
                         Gå til listen over{" "}
                         <Lenke href={"./innsyn/"}>
-                            dine sosialhjelpssøknade
+                            dine sosialhjelpssøknader
                         </Lenke>
                     </li>
-                    <li>
-                        Finn søknaden du ønsker å ettersende dokumenter til{" "}
-                    </li>
-                    <li>Last opp dokumentene du skal ettersende </li>
+                    <li>Finn søknaden du ønsker å ettersende dokumenter til</li>
+                    <li>Last opp dokumentene du skal ettersende</li>
                 </ul>
             </div>
             <Normaltekst>

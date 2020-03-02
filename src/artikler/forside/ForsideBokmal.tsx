@@ -76,9 +76,9 @@ export const ForsideBokmal: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./status-soknad?lang=nb"
-                                description="Hva er status i saken din?"
+                                description="Hva er status på søknaden din?"
                             >
-                                Status i sak
+                                Status på søknad
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./kontakte-veileder?lang=nb"

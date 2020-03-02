@@ -112,7 +112,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 <br />
                 <Normaltekst>
                     You can use the{" "}
-                    <Lenke href={"./soknad-pa-papir?lang=en"}>
+                    <Lenke href={"./sok-papir?lang=en"}>
                         municipality's own paper form
                     </Lenke>{" "}
                     if you are not going to apply digitally.
