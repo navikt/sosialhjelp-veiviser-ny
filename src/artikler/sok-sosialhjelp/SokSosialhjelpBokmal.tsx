@@ -106,10 +106,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 <br />
                 <Normaltekst>
                     Hvis du ikke skal søke digitalt, kan du levere{" "}
-                    <Lenke href={"./soknad-pa-papir?lang=nb"}>
-                        søknad på papir
-                    </Lenke>
-                    .
+                    <Lenke href={"./sok-papir?lang=nb"}>søknad på papir</Lenke>.
                 </Normaltekst>
 
                 <br />

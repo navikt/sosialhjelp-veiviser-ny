@@ -90,11 +90,7 @@ function App() {
                     component={SlikForegatEtMote}
                 />
 
-                <Route
-                    exact
-                    path="/soknad-pa-papir"
-                    component={SoknadPaPapir}
-                />
+                <Route exact path="/sok-papir" component={SoknadPaPapir} />
 
                 <Route
                     exact
