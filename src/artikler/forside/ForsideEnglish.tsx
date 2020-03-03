@@ -24,44 +24,73 @@ export const ForsideEnglish: React.FC = () => {
 
                 <InfoPanelContainer>
                     <Panel className="infopanel">
-                        <Undertittel>Før du søker</Undertittel>
+                        <Undertittel>Before you apply</Undertittel>
                         <ul>
-                            <ForsideLenke href="./dette-bor-du-vite?lang=nb">
-                                Dette bør du vite før du søker
+                            <ForsideLenke
+                                href="./dette-bor-du-vite?lang=en"
+                                description="Information for first time applicants"
+                            >
+                                What you should know
                             </ForsideLenke>
-                            <ForsideLenke href="./dette-kan-du-soke-om?lang=nb">
-                                Hva kan du søke om?
+                            <ForsideLenke
+                                href="./dette-kan-du-soke-om?lang=en"
+                                description="What expenses can you apply for?"
+                            >
+                                You can apply for this
                             </ForsideLenke>
-
-                            <ForsideLenke href="./nodsituasjon?lang=nb">
-                                Hva gjør du i en nødsituasjon?
+                            <ForsideLenke
+                                href="./nodsituasjon?lang=en"
+                                description="Assistance to cover bare essentatials"
+                            >
+                                When you are in a financial emergency
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor finner du søknadskjema på papir?
+                            <ForsideLenke
+                                href="./sok-papir?lang=en"
+                                description="Where to find application form on paper"
+                            >
+                                Application form on paper
                             </ForsideLenke>
-                            <ForsideLenke href="./andre-muligheter?lang=nb">
-                                Andre muligheter til å forsørge deg
+                            <ForsideLenke
+                                href="./andre-muligheter?lang=en"
+                                description="Other possibilities to provide for yourself"
+                            >
+                                Other possibilities
                             </ForsideLenke>
                         </ul>
                     </Panel>
 
                     <Panel className="infopanel">
-                        <Undertittel>Etter at du har søkt</Undertittel>
+                        <Undertittel>After you have applied</Undertittel>
                         <ul>
-                            <ForsideLenke href="./todo">
-                                Hva er status i saken min?
+                            <ForsideLenke
+                                href="./behandlingstid?lang=en"
+                                description="How long will it take to process my application?"
+                            >
+                                Processing time
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan ettersender du dokumentasjon?
+                            <ForsideLenke
+                                href="./ettersende?lang=en"
+                                description="How to upload documentation"
+                            >
+                                Upload documentation
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor lang tid tar det å behandle saken?{" "}
+                            <ForsideLenke
+                                href="./status-soknad?lang=en"
+                                description="What is the status on your application?"
+                            >
+                                Application status
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan kontakter du veilederen din?
+                            <ForsideLenke
+                                href="./kontakte-veileder?lang=en"
+                                description="How to contact your councelor"
+                            >
+                                Contact counselor
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan klager du på en sak?
+                            <ForsideLenke
+                                href="./klage?lang=en"
+                                description="How to appeal for decisions on social services"
+                            >
+                                Appeal
                             </ForsideLenke>
                         </ul>
                     </Panel>
