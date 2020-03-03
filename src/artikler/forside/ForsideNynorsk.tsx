@@ -52,7 +52,7 @@ export const ForsideNynorsk: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./andre-muligheter?lang=nn"
-                                description="Andre moglegheitar til å forsørge deg sjølv"
+                                description="Andre moglegheitar til å forsørgje deg sjølv"
                             >
                                 Andre moglegheitar
                             </ForsideLenke>
@@ -88,7 +88,7 @@ export const ForsideNynorsk: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./klage?lang=nn"
-                                description="Kor sender du klage på utfall i en sak?"
+                                description="Kor sender du klage på utfall i ein sak?"
                             >
                                 Klage
                             </ForsideLenke>
