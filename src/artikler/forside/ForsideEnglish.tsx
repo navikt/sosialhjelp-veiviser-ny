@@ -36,7 +36,7 @@ export const ForsideEnglish: React.FC = () => {
                                 href="./dette-kan-du-soke-om?lang=en"
                                 description="What expenses can you apply for?"
                             >
-                                You can apply for this
+                                What you can apply for
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./nodsituasjon?lang=en"
@@ -82,9 +82,9 @@ export const ForsideEnglish: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./kontakte-veileder?lang=en"
-                                description="How to contact your councelor"
+                                description="How to contact your case worker"
                             >
-                                Contact counselor
+                                Contact case worker
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./klage?lang=en"
