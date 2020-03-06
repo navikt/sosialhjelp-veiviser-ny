@@ -10,13 +10,13 @@
   "homepage": "https://www.nav.no/sosialhjelp/",
   "dependencies": {
     "@craco/craco": "^5.6.3",
-    "@sentry/browser": "^5.12.1",
+    "@sentry/browser": "^5.13.2",
     "@types/react-router": "^5.1.4",
     "babel-polyfill": "^6.26.0",
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
-    "craco-less": "^1.15.0",
+    "craco-less": "^1.16.0",
     "history": "^4.10.1",
     "less-plugin-npm-import": "^2.1.0",
     "lodash.throttle": "^4.1.1",
@@ -46,21 +46,21 @@
     "nav-frontend-veilederpanel": "^0.1.21",
     "nav-frontend-veilederpanel-style": "0.0.24",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.13.0",
     "react-collapse": "^5.0.1",
-    "react-dom": "16.12.0",
+    "react-dom": "^16.13.0",
     "react-router": "^5.1.2",
-    "react-scripts": "3.3.0",
-    "uuid": "^3.4.0"
+    "react-scripts": "^3.4.0",
+    "uuid": "^7.0.2"
   },
   "devDependencies": {
-    "@types/history": "^4.7.4",
-    "@types/react": "16.9.17",
-    "@types/react-dom": "16.9.4",
-    "@types/uuid": "^3.4.7",
+    "@types/history": "^4.7.5",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/uuid": "^7.0.0",
     "prettier": "1.19.1",
-    "serialize-javascript": ">=2.1.2",
-    "typescript": "^3.7.5"
+    "serialize-javascript": "^3.0.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
