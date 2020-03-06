@@ -21,15 +21,17 @@ const DetteBorDuViteBokmal: React.FC = () => {
             <Ingress>
                 Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
                 om du har andre muligheter til å forsørge deg selv. Dette kan
-                for eksempel være gjennom jobb, andre inntekter eller egne
-                midler.
+                for eksempel være gjennom jobb, andre inntekter eller egne midler.
+                Hvis du trenger hjelp til å finne ut hvilke muligheter du har, så
+                kan du ta kontakt med NAV-kontoret der du bor. Du kan også kontakte
+                oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søker</Undertittel>
             <Normaltekst>
-                NAV må ha tilstrekkelig dokumentasjon og trenger opplysninger om
-                inntekter og utgifter. Du må i utgangspunktet dokumentere alle
-                opplysninger skriftlig.
+                Når du søker må du gi opplysninger om deg og den
+                økonomiske situasjnen din. Du må ha i utgangspunktet
+                dokumentere opplysningene.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -67,14 +69,20 @@ const DetteBorDuViteBokmal: React.FC = () => {
 
             <br />
             <Normaltekst>
-                Du må ha lovlig opphold og ha fast bopel i Norge for å ha rett
-                til økonomisk sosialhjelp. Hvis du oppholder deg i utlandet, har
-                du ikke rett til økonomisk sosialhjelp.
+                Du må i utgangsspunktet ha lovlig opphold i Norge for
+                å ha rett til økonomisk sosialhjelp. Du har ikke rett
+                til økonomisk sosialhjelp hvis du oppholder deg i utlandet.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Alle har rett til å søke om økonomisk sosialhjelp og få en
-                individuell vurdering av saken sin.
+                Alle har rett til å søke om økonomisk sosialhjelp og få
+                en individuell vurdering av søknaden sin. Du har rett til
+                {" "}
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
+                    opplysning, råd og veiledning
+                </Lenke>
+                {" "}
+                uavhengig av om du har rett til økonomisk sosialhjelp.
             </Normaltekst>
 
             <Undertittel>Etter du har søkt</Undertittel>

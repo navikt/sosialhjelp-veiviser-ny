@@ -18,16 +18,19 @@ const DetteBorDuViteNynorsk: React.FC = () => {
         >
             <Innholdstittel>Dette bør du vite</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er ein mellombels stønad. Du bør vurdere
-                andre moglegheitar til å forsørgje deg sjølv. Dette kan til
-                dømes vere arbeid, andre inntekter eller eigne midlar.
+                Økonomisk sosialhjelp er ein mellombels stønad.
+                Du bør vurdere andre moglegheitar til å forsørgje
+                deg sjølv. Dette kan til dømes vere arbeid, andre
+                inntekter eller eigne midlar. Dersom du trenger du
+                treng hjelp til å finne ut kva moglegheitar du har,
+                kan du ta kontakt med NAV-kontoret der du bur. Du
+                kan òg ta kontakt med oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
             <Normaltekst>
-                NAV må ha tilstrekkeleg dokumentasjon og treng opplysningar om
-                inntekter og utgifter. Du må i utgangspunktet dokumentere alle
-                opplysningar skriftleg.
+                Når du søkjer må du gi opplysningar om deg sjølv og
+                din situasjon din. Du må i utgangspunktet dokumentere opplysningane.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -65,14 +68,20 @@ const DetteBorDuViteNynorsk: React.FC = () => {
 
             <br />
             <Normaltekst>
-                Du må ha lovleg opphald og ha fast bustad i Noreg for å ha rett
-                til økonomisk sosialhjelp. Dersom du oppheld deg i utlandet, har
-                du ikkje rett til økonomisk sosialhjelp.
+                Du må i utgangspunktet ha lovleg opphald i Noreg for å ha rett
+                til ækonomisk sosialhjelp. Du har ikkje rett til økonomisk
+                sosialhjelp dersom du oppheld deg i utlandet.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Alle har rett til å søkje om økonomisk sosialhjelp, og få ei
-                individuell vurdering av saka si.
+                alle har rett til å søkje om økonomisk sosialhjelp, og få ei
+                individuell vurdering av søknaden sin. Du har rett til
+                {" "}
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
+                    opplysning, råd og rettleiing
+                </Lenke>
+                {" "}
+               uavhengig av om du har rett til økonomisk sosialhjelp.
             </Normaltekst>
 
             <Undertittel>Etter du har søkt</Undertittel>

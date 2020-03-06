@@ -18,17 +18,21 @@ const DetteBorDuViteEnglish: React.FC = () => {
         >
             <Innholdstittel>What you should know</Innholdstittel>
             <Ingress>
-                Financial assistance is å temporary form of benefit. You should
-                consider every other possibility for you to provide for
-                yourself. This could include employment, other means of income
-                or using your own savings.
+                Financial assistance is a temporary benefit. You
+                should consider every other possibility for you
+                to provide for yourself. This could include
+                employment, other means of income or using
+                your own savings. Consult with NAV if you need
+                help exploring your options, you can contact the
+                NAV office in the municipality where you live. You
+                can also contact us by chat or phone.
             </Ingress>
 
             <Undertittel>Before you apply</Undertittel>
             <Normaltekst>
-                NAV will need sufficient documentation and you must document
-                your income and expenses. Normally, you must provide written
-                documentation for everything.
+                When you apply, you must provide information about
+                yourself and your financial situation. You usually
+                have to provide documentation for this information.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -69,15 +73,22 @@ const DetteBorDuViteEnglish: React.FC = () => {
 
             <br />
             <Normaltekst>
-                You must have legal residence in Norway and be domiciled here in
-                order to qualify for financial assistance. If you live abroad
-                you do not qualify for social assistance.
+                Before you apply for financial aid, you should usually
+                have a legal residence i Norway. If you live abroad you
+                do not qualify for social assistance.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Everyone has the right to submit an application for financial
                 assistance and to have NAV conduct an individual assessment of
-                their case.
+                their application. You have the rights to
+                {" "}
+                <Lenke href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
+                    information, advice and guidance
+                </Lenke>
+                ,
+                {" "}
+                regardless of your current financial situation.
             </Normaltekst>
 
             <Undertittel>After you apply</Undertittel>
