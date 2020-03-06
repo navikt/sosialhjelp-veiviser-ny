@@ -10,7 +10,6 @@ import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
-import {Panel} from "nav-frontend-paneler";
 
 export const ForsideBokmal: React.FC = () => {
     return (
@@ -22,8 +21,8 @@ export const ForsideBokmal: React.FC = () => {
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
-                <InfoPanelContainer>
-                    <Panel className="infopanel">
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                    <div className="lenkeboks lenkeboks_med_border">
                         <Undertittel>Før du søker</Undertittel>
                         <ul>
                             <ForsideLenke
@@ -57,9 +56,9 @@ export const ForsideBokmal: React.FC = () => {
                                 Andre muligheter
                             </ForsideLenke>
                         </ul>
-                    </Panel>
+                    </div>
 
-                    <Panel className="infopanel">
+                    <div className="lenkeboks lenkeboks_med_border">
                         <Undertittel>Etter at du har søkt</Undertittel>
                         <ul>
                             <ForsideLenke
@@ -93,8 +92,8 @@ export const ForsideBokmal: React.FC = () => {
                                 Klage
                             </ForsideLenke>
                         </ul>
-                    </Panel>
-                </InfoPanelContainer>
+                    </div>
+                </div>
 
                 <InfoPanelContainer>
                     <InfoPanel
