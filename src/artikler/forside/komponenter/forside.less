@@ -78,16 +78,6 @@
         border-radius: 4px;
         padding: 1rem;
 
-        a {
-            text-decoration: underline;
-            color: #0067c5;
-        }
-
-        a:hover {
-            color: #0067c5;
-            text-decoration: none;
-        }
-
         @media all and (max-width: 600px) {
             max-width: none;
         }
@@ -104,6 +94,22 @@
             }
         }
     }
+
+    .lenkeboks_med_border {
+        border: solid 1px #78706a;
+
+        li {
+            border: none !important;
+        }
+    }
+
+    .lenkeboks_med_border:nth-child(1) {
+        margin-right: 1rem !important;
+    }
+
+    .lenkeboks_forside {
+        padding: 2rem;
+    }
 }
 
 .infopanel {
@@ -115,7 +121,6 @@
 
         li {
             margin-bottom: 0.7rem;
-            //padding-bottom: 0.5rem;
         }
     }
 }
