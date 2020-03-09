@@ -22,7 +22,7 @@ export const ForsideBokmal: React.FC = () => {
                 </SokOmSosialhjelpPanel>
 
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
-                    <div className="lenkeboks lenkeboks_med_border">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
                         <Undertittel style={{textAlign: "left"}}>
                             Før du søker
                         </Undertittel>
@@ -60,7 +60,7 @@ export const ForsideBokmal: React.FC = () => {
                         </ul>
                     </div>
 
-                    <div className="lenkeboks lenkeboks_med_border">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
                         <Undertittel style={{textAlign: "left"}}>
                             Etter at du har søkt
                         </Undertittel>
