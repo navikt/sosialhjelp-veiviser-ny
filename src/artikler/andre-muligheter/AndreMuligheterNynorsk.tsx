@@ -13,13 +13,13 @@ const AndreMuligheterNynorsk: React.FC = () => {
         <>
             <Artikkel
                 className="artikkel--andre_mulighter"
-                tittel="Andre moglegheitar"
+                tittel="Andre moglegheiter"
             >
                 <LysPaere />
 
                 <Ingress>
                     Økonomisk sosialhjelp er ein mellombels stønad. Du bør
-                    vurdere andre moglegheitar til å forsørgje deg sjølv. Dersom
+                    vurdere andre moglegheiter til å forsørgje deg sjølv. Dersom
                     du treng hjelp, kan du ta kontakt med NAV-kontoret der du
                     bur. Du kan òg ta kontakt med oss på chat og telefon.
                 </Ingress>

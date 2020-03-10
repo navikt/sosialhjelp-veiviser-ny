@@ -10,7 +10,6 @@ import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
-import {Panel} from "nav-frontend-paneler";
 
 export const ForsideEnglish: React.FC = () => {
     return (
@@ -22,9 +21,11 @@ export const ForsideEnglish: React.FC = () => {
                     Apply for financial assitance
                 </SokOmSosialhjelpPanel>
 
-                <InfoPanelContainer>
-                    <Panel className="infopanel">
-                        <Undertittel>Before you apply</Undertittel>
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Before applying
+                        </Undertittel>
                         <ul>
                             <ForsideLenke
                                 href="./dette-bor-du-vite?lang=en"
@@ -34,7 +35,7 @@ export const ForsideEnglish: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./dette-kan-du-soke-om?lang=en"
-                                description="What expenses can you apply for?"
+                                description="Expenses you can apply for"
                             >
                                 What you can apply for
                             </ForsideLenke>
@@ -57,10 +58,12 @@ export const ForsideEnglish: React.FC = () => {
                                 Other possibilities
                             </ForsideLenke>
                         </ul>
-                    </Panel>
+                    </div>
 
-                    <Panel className="infopanel">
-                        <Undertittel>After you have applied</Undertittel>
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            After applying
+                        </Undertittel>
                         <ul>
                             <ForsideLenke
                                 href="./behandlingstid?lang=en"
@@ -93,8 +96,8 @@ export const ForsideEnglish: React.FC = () => {
                                 Appeal
                             </ForsideLenke>
                         </ul>
-                    </Panel>
-                </InfoPanelContainer>
+                    </div>
+                </div>
 
                 <InfoPanelContainer>
                     <InfoPanel
