@@ -9,7 +9,6 @@ import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
-import {Panel} from "nav-frontend-paneler";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 
 export const ForsideNynorsk: React.FC = () => {
@@ -22,9 +21,11 @@ export const ForsideNynorsk: React.FC = () => {
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
-                <InfoPanelContainer>
-                    <Panel className="infopanel">
-                        <Undertittel>Før du søkjer</Undertittel>
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Før du søkjer
+                        </Undertittel>
                         <ul>
                             <ForsideLenke
                                 href="./dette-bor-du-vite?lang=nn"
@@ -52,15 +53,17 @@ export const ForsideNynorsk: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./andre-muligheter?lang=nn"
-                                description="Andre moglegheitar til å forsørgje deg sjølv"
+                                description="Andre moglegheiter til å forsørgje deg sjølv"
                             >
-                                Andre moglegheitar
+                                Andre moglegheiter
                             </ForsideLenke>
                         </ul>
-                    </Panel>
+                    </div>
 
-                    <Panel className="infopanel">
-                        <Undertittel>Etter at du har søkt</Undertittel>
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Etter at du har søkt
+                        </Undertittel>
                         <ul>
                             <ForsideLenke
                                 href="./behandlingstid?lang=nn"
@@ -82,9 +85,9 @@ export const ForsideNynorsk: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./kontakte-veileder?lang=nn"
-                                description="Korleis kan du kontakte veilederen din?"
+                                description="Korleis kan du kontakte rettleiaren din?"
                             >
-                                Kontakt veileder
+                                Kontakt rettleiar
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./klage?lang=nn"
@@ -93,8 +96,8 @@ export const ForsideNynorsk: React.FC = () => {
                                 Klage
                             </ForsideLenke>
                         </ul>
-                    </Panel>
-                </InfoPanelContainer>
+                    </div>
+                </div>
 
                 <InfoPanelContainer>
                     <InfoPanel
