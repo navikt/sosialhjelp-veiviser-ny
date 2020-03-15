@@ -14,7 +14,7 @@ const NodsituasjonBokmal = () => (
         <Normaltekst>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
             nødvendigste, kan du søke om økonomisk sosialhjelp i den kommunen du
-            oppholder deg i.{" "}
+            oppholder deg i. Du kan også{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
