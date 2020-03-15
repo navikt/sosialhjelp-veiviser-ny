@@ -12,13 +12,13 @@ const NodsituasjonEnglish = () => (
     >
         <Innholdstittel>In an emergency</Innholdstittel>
         <Normaltekst>
-            If you are unable to find the means to pay for essentials, please
-            contact{" "}
-            <Lenke href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
-                the NAV office
-            </Lenke>{" "}
-            in the municipality where you live. You can also&nbsp;
-            <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">get in contact with us by telephone</Lenke>.
+            You can apply for financial assistance in the municipality where you
+            are located, if you are unable to find the means to pay for
+            essentials. You can also{" "}
+            <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
+                get in contact with us by telephone
+            </Lenke>
+            .
         </Normaltekst>
         <br />
         <Normaltekst>
@@ -39,7 +39,12 @@ const NodsituasjonEnglish = () => (
                 temporary accommodation
             </Lenke>{" "}
             if you have an acute need for a place to sleep and stay for the next
-            24 hours.
+            24 hours. You can use the application form for financial assistance.
+            You can also{" "}
+            <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
+                get in contact with us by telephone
+            </Lenke>
+            .
         </Normaltekst>
         <br />
         <Normaltekst>

@@ -20,9 +20,8 @@ const KontakteVeilederBokmal: React.FC = () => {
                 >
                     kontakte oss på telefon
                 </Lenke>{" "}
-                eller møte opp på NAV-kontoret der du bor for å avtale et møte.
-                Du kan lese mer om{" "}
-                <Lenke href={"./slik-foregar-et-mote?lang=nb"}>
+                for å avtale et møte. Du kan lese mer om{" "}
+                <Lenke href="./slik-foregar-et-mote?lang=nb">
                     hvordan et møte foregår med oss
                 </Lenke>
                 .
