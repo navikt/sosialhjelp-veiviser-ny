@@ -13,12 +13,12 @@ const NodsituasjonBokmal = () => (
         <Innholdstittel>Hva gjør du i en nødsituasjon?</Innholdstittel>
         <Normaltekst>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
-            nødvendigste, kan du ta kontakt med{" "}
-            <Lenke href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
-                NAV-kontoret
-            </Lenke>{" "}
-            i den kommunen du oppholder deg. Du kan også&nbsp;
-            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">kontakte oss på telefon</Lenke>.
+            nødvendigste, kan du søke om økonomisk sosialhjelp i den kommunen du
+            oppholder deg i.{" "}
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">
+                kontakte oss på telefon
+            </Lenke>
+            .
         </Normaltekst>
         <br />
         <Normaltekst>
@@ -34,12 +34,17 @@ const NodsituasjonBokmal = () => (
         </Normaltekst>
         <br />
         <Normaltekst>
-            NAV skal også hjelpe deg med å finne et{" "}
+            Du kan også søke om hjelp til å finne et{" "}
             <Lenke href="https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/bolig/midlertidig-botilbud">
                 midlertidig botilbud
             </Lenke>{" "}
             hvis du helt akutt ikke har et sted å sove og oppholde deg det neste
-            døgnet.
+            døgnet. Du bruker søknadsskjema for økonomisk sosialhjelp. Du kan
+            også{" "}
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">
+                kontakte oss på telefon
+            </Lenke>
+            .
         </Normaltekst>
         <br />
         <Normaltekst>
