@@ -15,7 +15,7 @@ const KontakteVeilederBokmal: React.FC = () => {
                 din, kan du{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2"
+                        "https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2"
                     }
                 >
                     kontakte oss på telefon

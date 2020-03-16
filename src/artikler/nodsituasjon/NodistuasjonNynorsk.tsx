@@ -15,7 +15,7 @@ const NodsituasjonNynorsk = () => (
             Dersom du ikkje har moglegheit til å skaffe eigne midlar til det
             aller mest nødvendige, kan du søke om økonomisk sosialhjelp i
             kommunen du oppheld deg. Du kan også{" "}
-            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
             .
@@ -42,7 +42,7 @@ const NodsituasjonNynorsk = () => (
             dersom du heilt akutt ikkje har ein stad å sove og oppheld deg det
             neste døgnet. Du bruker søknadsskjema for økonomisk sosialhjelp. Du
             kan også{" "}
-            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-oss_2/kontakt-nav-pa-telefon2">
+            <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
             .
