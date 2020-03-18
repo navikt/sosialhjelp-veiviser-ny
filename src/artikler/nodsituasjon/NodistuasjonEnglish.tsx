@@ -54,7 +54,7 @@ const NodsituasjonEnglish = () => (
             <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
             your municipality. You can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
-                get in contact with us by telephone
+                contact us by phone
             </Lenke>
             .
         </Normaltekst>
