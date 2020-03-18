@@ -12,13 +12,22 @@ const NodsituasjonEnglish = () => (
     >
         <Innholdstittel>In an emergency</Innholdstittel>
         <Normaltekst>
-            You can apply for financial assistance in the municipality where you
-            are located, if you are unable to find the means to pay for
-            essentials. You can also{" "}
+            You can apply for{" "}
+            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>{" "}
+            in the municipality where you are located, if you are unable to find
+            the means to pay for essentials. Check if you can{" "}
+            <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
+            your municipality.
+        </Normaltekst>
+        <br />
+        <Normaltekst>
+            You should be available on the phone after submitting your
+            application. Someone from the NAV-office might contact you to
+            evaluate your situation. You can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
                 get in contact with us by telephone
-            </Lenke>
-            .
+            </Lenke>{" "}
+            if you need someone to talk to.
         </Normaltekst>
         <br />
         <Normaltekst>
@@ -39,8 +48,11 @@ const NodsituasjonEnglish = () => (
                 temporary accommodation
             </Lenke>{" "}
             if you have an acute need for a place to sleep and stay for the next
-            24 hours. You can use the application form for financial assistance.
-            You can also{" "}
+            24 hours. You can use the application form for{" "}
+            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>.
+            Check if you can{" "}
+            <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
+            your municipality. You can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
                 get in contact with us by telephone
             </Lenke>
