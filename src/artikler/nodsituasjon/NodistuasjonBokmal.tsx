@@ -13,8 +13,17 @@ const NodsituasjonBokmal = () => (
         <Innholdstittel>Hva gjør du i en nødsituasjon?</Innholdstittel>
         <Normaltekst>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
-            nødvendigste, kan du søke om økonomisk sosialhjelp i den kommunen du
-            oppholder deg i. Du kan også{" "}
+            nødvendigste, kan du{" "}
+            <Lenke href="./slik-soker-du">søke om økonomisk sosialhjelp</Lenke>{" "}
+            i den kommunen du oppholder deg i. Sjekk om du kan{" "}
+            <Lenke href="./slik-soker-du">søke digitalt</Lenke> i din kommune.
+        </Normaltekst>
+        <br />
+        <Normaltekst>
+            Du må du være tilgjengelig på telefon etter at du har sendt inn
+            søknaden. Ofte vil noen fra NAV-kontoret kontakte deg for å kunne
+            vurdere situasjonen din. Hvis du trenger å snakke med noen kan du
+            også{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
@@ -39,8 +48,10 @@ const NodsituasjonBokmal = () => (
                 midlertidig botilbud
             </Lenke>{" "}
             hvis du helt akutt ikke har et sted å sove og oppholde deg det neste
-            døgnet. Du bruker søknadsskjema for økonomisk sosialhjelp. Du kan
-            også{" "}
+            døgnet. Du bruker søknadsskjema for{" "}
+            <Lenke href="./slik-soker-du">økonomisk sosialhjelp</Lenke>. Sjekk
+            om du kan <Lenke href="./slik-soker-du">søke digitalt</Lenke> i din
+            kommune. Du kan også{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>

@@ -13,8 +13,20 @@ const NodsituasjonNynorsk = () => (
         <Innholdstittel>Når du er i ein nødssituasjon</Innholdstittel>
         <Normaltekst>
             Dersom du ikkje har moglegheit til å skaffe eigne midlar til det
-            aller mest nødvendige, kan du søke om økonomisk sosialhjelp i
-            kommunen du oppheld deg. Du kan også{" "}
+            aller mest nødvendige, kan du{" "}
+            <Lenke href="./slik-soker-du?lang=nn">
+                søkje om økonomisk sosialhjelp
+            </Lenke>{" "}
+            i kommunen du oppheld deg. Sjekk om du kan{" "}
+            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
+            kommune.
+        </Normaltekst>
+        <br />
+        <Normaltekst>
+            Du må vere tilgjengeleg på telefon etter at du har sendt inn
+            søknaden. Ofte vil nokon frå NAV-kontoret kontakte deg for å kunne
+            vurdere situasjonen din. Dersom du treng å snakke med nokon kan du
+            òg{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
@@ -40,8 +52,11 @@ const NodsituasjonNynorsk = () => (
                 midlertidig butilbod
             </Lenke>{" "}
             dersom du heilt akutt ikkje har ein stad å sove og oppheld deg det
-            neste døgnet. Du bruker søknadsskjema for økonomisk sosialhjelp. Du
-            kan også{" "}
+            neste døgnet. Du bruker søknadsskjema for{" "}
+            <Lenke href="./slik-soker-du?lang=nn">økonomisk sosialhjelp</Lenke>.
+            Sjekk om du kan{" "}
+            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
+            kommune. Du kan òg{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
