@@ -7,35 +7,35 @@ import Lenke from "nav-frontend-lenker";
 
 const NodsituasjonEnglish = () => (
     <Artikkel
-        tittel="In an emergency"
+        tittel="When you are in an emergency"
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
-        <Innholdstittel>In an emergency</Innholdstittel>
+        <Innholdstittel>When you are in an emergency</Innholdstittel>
         <Normaltekst>
-            You can apply for{" "}
-            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>{" "}
-            in the municipality where you are located, if you are unable to find
-            the means to pay for essentials. Check if you can{" "}
+            If you are unable to find the means to pay for essentials, you can
+            apply for{" "}
+            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke> .
+            Check if you can{" "}
             <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
             your municipality.
         </Normaltekst>
         <br />
         <Normaltekst>
-            You should be available on the phone after submitting your
-            application. Someone from the NAV-office might contact you to
-            evaluate your situation. You can also{" "}
+            You should be available by phone after submitting your application.
+            Someone from the NAV office will contact you to assess your
+            situation. If you need to talk to someone you can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
-                get in contact with us by telephone
-            </Lenke>{" "}
-            if you need someone to talk to.
+                contact us by phone
+            </Lenke>
+            .
         </Normaltekst>
         <br />
         <Normaltekst>
-            Emergency assistance is intended to cover bare essentials for a
-            limited time. Examples of such essentials include food, hygiene
-            articles and travel expenses. Bills that must be paid to prevent
-            necessary utilities, such as electricity, etc., being cut off, may
-            also be covered in an emergency.
+            Emergency financial assistance covers bare essential expenses for a
+            short period. Examples include food, hygiene items and travel
+            expenses. Bills that must be paid to prevent necessary services such
+            as electricity from being cut off may also be covered in an
+            emergency.
         </Normaltekst>
         <br />
         <Normaltekst>
@@ -48,9 +48,9 @@ const NodsituasjonEnglish = () => (
                 temporary accommodation
             </Lenke>{" "}
             if you have an acute need for a place to sleep and stay for the next
-            24 hours. You can use the application form for{" "}
-            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>.
-            Check if you can{" "}
+            24 hours. You can apply for this through through the{" "}
+            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>
+            form, check if you can{" "}
             <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
             your municipality. You can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
@@ -60,9 +60,8 @@ const NodsituasjonEnglish = () => (
         </Normaltekst>
         <br />
         <Normaltekst>
-            You have a responsibility to provide the best possible information
-            about your case, so that NAV is able to process your application
-            quickly.
+            NAV will be able to process your application more efficiently if you
+            provide the best possible information about your situation.
         </Normaltekst>
     </Artikkel>
 );
