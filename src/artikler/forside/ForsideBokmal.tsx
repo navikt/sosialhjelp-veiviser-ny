@@ -4,18 +4,36 @@ import {
     InfoPanelContainer,
 } from "../../komponenter/infopanel/InfoPanel";
 import "./komponenter/forside.less";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Undertittel, Systemtittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
+import {LenkepanelBase} from "nav-frontend-lenkepanel";
 
 export const ForsideBokmal: React.FC = () => {
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
                 <SprakvelgerForside />
+
+                <LenkepanelBase href="./korona" border>
+                    <div className="varsel">
+                        <div className="varsel__ikon">
+                            <div className="varsel__sirkel" />
+                            <div className="varsel__pulse" />
+                        </div>
+                        <div className="varsel__tekst">
+                            <Systemtittel className="lenkepanel__heading">
+                                Koronavirus
+                            </Systemtittel>
+                            <Normaltekst>
+                                Flere kan ha rett til økonomisk sosialhjelp
+                            </Normaltekst>
+                        </div>
+                    </div>
+                </LenkepanelBase>
 
                 <SokOmSosialhjelpPanel href="./slik-soker-du">
                     Søk om økonomisk sosialhjelp

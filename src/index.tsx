@@ -26,6 +26,7 @@ import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
 import Ettersende from "./artikler/ettersende/Ettersende";
 import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
+import Korona from "./artikler/korona/Korona";
 import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
 import {erDev, erQ} from "./utils/restUtils";
 
@@ -107,6 +108,8 @@ function App() {
                     path="/kontakte-veileder"
                     component={KontakteVeileder}
                 />
+
+                <Route exact path="/korona" component={Korona} />
 
                 {/* Redirects */}
                 <Route exact path="/artikkel/514891">
