@@ -15,18 +15,18 @@ const NodsituasjonNynorsk = () => (
             Dersom du ikkje har moglegheit til å skaffe eigne midlar til det
             aller mest nødvendige, kan du{" "}
             <Lenke href="./slik-soker-du?lang=nn">
-                søke om økonomisk sosialhjelp
+                søkje om økonomisk sosialhjelp
             </Lenke>{" "}
             i kommunen du oppheld deg. Sjekk om du kan{" "}
-            <Lenke href="./slik-soker-du?lang=nn">søke digitalt</Lenke> i din
+            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
             kommune.
         </Normaltekst>
         <br />
         <Normaltekst>
-            Du må vere tilgjengelig på telefon etter at du har sendt inn
+            Du må vere tilgjengeleg på telefon etter at du har sendt inn
             søknaden. Ofte vil nokon frå NAV-kontoret kontakte deg for å kunne
-            vurdere situasjonen din. Dersom du treng å snakke med noen kan du
-            også{" "}
+            vurdere situasjonen din. Dersom du treng å snakke med nokon kan du
+            òg{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
@@ -55,8 +55,8 @@ const NodsituasjonNynorsk = () => (
             neste døgnet. Du bruker søknadsskjema for{" "}
             <Lenke href="./slik-soker-du?lang=nn">økonomisk sosialhjelp</Lenke>.
             Sjekk om du kan{" "}
-            <Lenke href="./slik-soker-du?lang=nn">søke digitalt</Lenke> i din
-            kommune. Du kan også{" "}
+            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
+            kommune. Du kan òg{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>
