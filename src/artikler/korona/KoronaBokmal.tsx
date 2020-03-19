@@ -30,11 +30,14 @@ const KoronaBokmal = () => (
             særlig vekt på barn og unges behov.
         </Normaltekst>
 
-        <Undertittel>Selvstendig næringsdrivende eller permittert?</Undertittel>
+        <Undertittel>
+            Selvstendig næringsdrivende, frilanser eller permittert?
+        </Undertittel>
 
         <Normaltekst>
-            Hvis du er selvstendig næringsdrivende kan du finne informasjon om
-            dine rettigheter i forbindelse med koronaviruset under{" "}
+            Hvis du er selvstendig næringsdrivende eller frilanser kan du finne
+            informasjon om dine rettigheter i forbindelse med koronaviruset
+            under{" "}
             <Lenke href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/sporsmal-og-svar-i-forbindelse-med-koronaviruset/selvstendig-naeringsdrivende-hva-gjelder-i-min-situasjon">
                 Selvstendig næringsdrivende - hva gjelder i min situasjon
             </Lenke>
@@ -46,11 +49,6 @@ const KoronaBokmal = () => (
             <Lenke href="https://www.nav.no/arbeid/dagpenger/permittert">
                 Er du permittert som følge av koronaviruset?
             </Lenke>
-        </Normaltekst>
-        <br />
-        <Normaltekst>
-            Hvis du ikke har andre muligheter til å forsørge deg selv, kan du ha
-            rett til økonomisk sosialhjelp.
         </Normaltekst>
 
         <Undertittel>Koronavirus - informasjon fra NAV</Undertittel>
