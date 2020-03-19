@@ -24,8 +24,8 @@ const KoronaBokmal = () => (
             <Lenke href="./slik-soker-du">søke om økonomisk sosialhjelp</Lenke>{" "}
             og få en individuell vurdering av søknaden sin. Stengte barnehager
             og skoler, råd om å holde seg hjemme og begrensinger i bruk av
-            kollektivtransport kan føre til nye behov og økte utgifter for den
-            enkelte. Ved søknad om økonomisk sosialhjelp vil NAV-kontoret
+            kollektivtransport, kan føre til nye behov og økte utgifter for den
+            enkelte. Ved søknad om økonomisk sosialhjelp, vil NAV-kontoret
             vurdere om du har ekstrautgifter som vi bør ta hensyn til. Vi legger
             særlig vekt på barn og unges behov.
         </Normaltekst>
@@ -35,7 +35,7 @@ const KoronaBokmal = () => (
         </Undertittel>
 
         <Normaltekst>
-            Hvis du er selvstendig næringsdrivende eller frilanser kan du finne
+            Hvis du er selvstendig næringsdrivende eller frilanser, kan du finne
             informasjon om dine rettigheter i forbindelse med koronaviruset
             under{" "}
             <Lenke href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/sporsmal-og-svar-i-forbindelse-med-koronaviruset/selvstendig-naeringsdrivende-hva-gjelder-i-min-situasjon">
