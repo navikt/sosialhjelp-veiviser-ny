@@ -12,6 +12,7 @@ import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
+import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
@@ -38,6 +39,13 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
 
     const [lesMer, setLesMer] = useState<boolean>(true);
 
+    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+
+    let antallTilgjengeligKommuner: string = "";
+    if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
+        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
+    }
+
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
             <Innholdstittel>
@@ -51,22 +59,26 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
 
             <div>
                 <Normaltekst>
-                    Det er gjort midlertidige endringer av den digitale søknaden
-                    som følge av koronaviruset:
+                    The digital application has been temporarily updated in a response
+                    to the Corona virus::
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
-                            som søknad om midlertidig inntektssikring frem til
-                            ny løsning er på plass hos NAV.
+                            People who are freelancers or self-employed can now temporarily apply while
+                            the new solution from NAV is being ready.
                         </Normaltekst>
                     </li>
                     <li>
                         <Normaltekst>
-                            Alle kommuner skal innen kort tid ha digital søknad
-                            tilgjengelig. Foreløpig er 321 av 426 kommuner
-                            tilgjengelig.
+                            All municipalities will enable digital applications shortly
+                            {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
+                                <>
+                                    At the moment {antallTilgjengeligKommuner}
+                                    out of 426 municipalities can receive applications digitally.
+                                </>
+                            )}
+
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">

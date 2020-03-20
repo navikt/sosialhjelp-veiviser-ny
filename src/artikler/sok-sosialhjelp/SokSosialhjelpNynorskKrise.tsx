@@ -1,10 +1,10 @@
 import * as React from "react";
-import {useState} from "react";
-import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
+import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
@@ -12,7 +12,6 @@ import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
-import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
@@ -28,7 +27,7 @@ const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) =
     </>;
 };
 
-const SokSosialhjelpBokmalKrise: React.FC = () => {
+const SokSosialhjelpNynorskKrise: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const nedetidService = useNedetidService();
 
@@ -38,13 +37,6 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
     };
 
     const [lesMer, setLesMer] = useState<boolean>(true);
-
-    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
-
-    let antallTilgjengeligKommuner: string = "";
-    if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
-        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
-    }
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
@@ -71,25 +63,20 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     <li>
                         <Normaltekst>
                             Alle kommuner skal innen kort tid ha digital søknad
+                            tilgjengelig. Foreløpig er 321 av 426 kommuner
                             tilgjengelig.
-                            {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
-                                <>
-                                    Foreløpig er {antallTilgjengeligKommuner} av 426 kommuner
-                                    tilgjengelig.
-                                </>
-                            )}
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
                                 <KommuneSok
-                                    ledetekst="Sjekk om du kan søke digitalt i din kommune"
+                                    ledetekst="Sjekk om du kan søkje digitalt i din kommune"
                                     soknadTilgjengeligTekst="Du kan søke digitalt i"
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            kan dessverre ikke ta i mot digitale
+                                            kan dessverre ikkje ta i mot digitale
                                             søknader ennå. Du kan{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
-                                                søke på papir
+                                                søkje på papirskjema
                                             </Lenke>
                                             .
                                         </span>
@@ -151,4 +138,4 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
     );
 };
 
-export default SokSosialhjelpBokmalKrise;
+export default SokSosialhjelpNynorskKrise;
