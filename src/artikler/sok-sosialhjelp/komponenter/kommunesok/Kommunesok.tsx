@@ -14,7 +14,8 @@ import CheckOkIcon from "../../../../komponenter/bilder/CheckOkIcon";
 interface Props {
     ledetekst: string;
     soknadTilgjengeligTekst: string;
-    soknadIkkeTilgjengeligTekst: string;
+    soknadIkkeTilgjengeligTekst?: string;
+    soknadIkkeTilgjengelig?: React.ReactNode;
     placeholderTekst: string;
     ariaLabel: string;
     onValgtKommune: (kommuneId: string|undefined) => void;
@@ -24,6 +25,7 @@ const KommuneSok: React.FC<Props> = ({
     ledetekst,
     soknadTilgjengeligTekst,
     soknadIkkeTilgjengeligTekst,
+    soknadIkkeTilgjengelig,
     placeholderTekst,
     ariaLabel,
     onValgtKommune,
@@ -67,11 +69,20 @@ const KommuneSok: React.FC<Props> = ({
 
     return (
         <div className="kommunesok">
-            {ledetekst}
-            <br />
-            <br />
+            <Normaltekst>
+                {ledetekst}
+            </Normaltekst>
+            <br/>
+            <NavAutocomplete
+                placeholder={placeholderTekst}
+                suggestions={suggestions}
+                ariaLabel={ariaLabel}
+                id="kommunesok"
+                onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
+                onReset={() => onReset()}
+            />
             {currentSuggestion && (
-                <div style={{textAlign: "left"}}>
+                <div style={{textAlign: "left", paddingTop: "1rem"}}>
                     {soknadTilgjengelig && (
                         <div className="kommunesok_tilbakemelding ">
                             <div className="kommunesok_tilbakemelding_ikon">
@@ -83,27 +94,21 @@ const KommuneSok: React.FC<Props> = ({
                             </Normaltekst>
                         </div>
                     )}
-                    {!soknadTilgjengelig && (
-                        <div className="kommunesok_tilbakemelding ">
-                            <div className="kommunesok_tilbakemelding_ikon kommunesok_tilbakemelding_ikon_advarsel">
-                                <AdvarselIkon />
-                            </div>
-                            <Normaltekst>
-                                {currentSuggestion.value}{" "}
-                                {soknadIkkeTilgjengeligTekst}
-                            </Normaltekst>
-                        </div>
-                    )}
                 </div>
             )}
-            <NavAutocomplete
-                placeholder={placeholderTekst}
-                suggestions={suggestions}
-                ariaLabel={ariaLabel}
-                id="kommunesok"
-                onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
-                onReset={() => onReset()}
-            />
+            {!soknadTilgjengelig && currentSuggestion && (
+                <div className="kommunesok_tilbakemelding " style={{paddingTop: "0.5rem", marginBottom: "0"}}>
+                    <div className="kommunesok_tilbakemelding_ikon kommunesok_tilbakemelding_ikon_advarsel">
+                        <AdvarselIkon />
+                    </div>
+                    <Normaltekst>
+                        {currentSuggestion.value}{" "}
+                        {soknadIkkeTilgjengeligTekst && soknadIkkeTilgjengeligTekst}
+                        {soknadIkkeTilgjengelig && soknadIkkeTilgjengelig}
+                    </Normaltekst>
+                </div>
+            )}
+
         </div>
     );
 };
