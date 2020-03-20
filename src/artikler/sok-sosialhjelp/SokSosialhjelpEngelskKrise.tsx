@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Normaltekst, Innholdstittel} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
@@ -8,7 +8,7 @@ import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
-import {AlertStripeFeil} from "nav-frontend-alertstriper";
+import AlertStripe, {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
@@ -16,18 +16,18 @@ import {NedChevron, OppChevron} from "nav-frontend-chevron";
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
         <AlertStripeFeil>
-            Du kan ikke sende digital søknad i perioden{" "}
-            {nedetidService.payload.nedetidStartText} –{" "}
-            {nedetidService.payload.nedetidSluttText} grunnet
-            teknisk vedlikehold. Ta kontakt med ditt lokale
-            NAV-kontor hvis du skal søke om økonomisk
-            sosialhjelp i denne perioden.
+            You cannot send digital application during{" "}
+            {nedetidService.payload.nedetidStartTextEn} –{" "}
+            {nedetidService.payload.nedetidSluttTextEn} due
+            to technical maintenance. Contact your local NAV
+            office if you want to apply for social
+            assistance during this period.
         </AlertStripeFeil>
         <br/>
     </>;
 };
 
-const SokSosialhjelpBokmalKrise: React.FC = () => {
+const SokSosialhjelpEngelskKrise: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const nedetidService = useNedetidService();
 
@@ -40,7 +40,9 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
-            <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
+            <Innholdstittel>
+                Apply digitally
+            </Innholdstittel>
 
             {nedetidService.restStatus === REST_STATUS.OK &&
                 nedetidService.payload.isNedetid && (
@@ -69,20 +71,21 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
                                 <KommuneSok
-                                    ledetekst="Sjekk om du kan søke digitalt i din kommune"
-                                    soknadTilgjengeligTekst="Du kan søke digitalt i"
+                                    ledetekst="Check if you can apply digitally in your municipality"
+                                    soknadTilgjengeligTekst="You can apply digitally in "
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            kan dessverre ikke ta i mot digitale
-                                            søknader ennå. Du kan{" "}
+                                            is unfortunately not able to accept digital applications.
+                                            You can apply using the municipality's own
+                                            {" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
-                                                søke på papir
+                                                paper form
                                             </Lenke>
                                             .
                                         </span>
                                     }
-                                    placeholderTekst="Skriv kommunenavn"
-                                    ariaLabel="Søk etter kommunenavn"
+                                    placeholderTekst="Enter municipality name"
+                                    ariaLabel="Search for municipality"
                                     onValgtKommune={(
                                         kommuneId: string | undefined
                                     ) => setKommuneId(kommuneId)}
@@ -100,13 +103,13 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                             >
                                 {!lesMer && (
                                     <>
-                                        Sjekk om du kan søke digitalt i din
-                                        kommune <NedChevron />
+                                        Check if your municipality support digital applications
+                                        <NedChevron />
                                     </>
                                 )}
                                 {lesMer && (
                                     <>
-                                        Lukk <OppChevron />
+                                        Close <OppChevron />
                                     </>
                                 )}
                             </a>
@@ -130,7 +133,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     }
                     onClick={(event: any) => sokDigital(event)}
                 >
-                    Søk digitalt
+                    Apply digitally
                 </Hovedknapp>
             </div>
             <br />
@@ -138,4 +141,4 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
     );
 };
 
-export default SokSosialhjelpBokmalKrise;
+export default SokSosialhjelpEngelskKrise;
