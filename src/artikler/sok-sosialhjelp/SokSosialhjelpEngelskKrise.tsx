@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Normaltekst, Innholdstittel, Undertittel} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
@@ -8,7 +8,7 @@ import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
-import AlertStripe, {AlertStripeFeil} from "nav-frontend-alertstriper";
+import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
