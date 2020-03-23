@@ -63,19 +63,12 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
-                            som søknad om midlertidig inntektssikring frem til
-                            ny løsning er på plass hos NAV.
-                        </Normaltekst>
-                    </li>
-                    <li>
-                        <Normaltekst>
-                            Alle kommuner skal innen kort tid ha digital søknad
-                            tilgjengelig.
+                            Digital søknad om økonomisk sosialhjelp vil
+                            snart være tilgjengelig for hele landet
                             {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
                                 <>
-                                    Foreløpig er {antallTilgjengeligKommuner} av 426 kommuner
-                                    tilgjengelig.
+                                    Foreløpig kan <b>{antallTilgjengeligKommuner} av
+                                    426 kommuner</b> ta imot digital søknad.
                                 </>
                             )}
                         </Normaltekst>
@@ -89,7 +82,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                                             kan dessverre ikke ta i mot digitale
                                             søknader ennå. Du kan{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
-                                                søke på papir
+                                                søke på papirskjema
                                             </Lenke>
                                             .
                                         </span>
@@ -123,6 +116,13 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                                     </>
                                 )}
                             </a>
+                        </Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>
+                            Søknaden kan også brukes som inntektssikring for
+                            frilansere og selvstendig næringsdrivende
+                            frem til ny løsning er på plass hos NAV.
                         </Normaltekst>
                     </li>
                 </ul>

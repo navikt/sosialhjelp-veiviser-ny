@@ -7,9 +7,7 @@ import useTilgjengeligeKommunerService, {
     finnTilgjengeligKommune,
 } from "./service/useTilgjengeligeKommunerService";
 import "./kommunesok.less";
-import AdvarselIkon from "../../../../komponenter/bilder/AdvarselIkon";
 import {Normaltekst} from "nav-frontend-typografi";
-import CheckOkIcon from "../../../../komponenter/bilder/CheckOkIcon";
 
 interface Props {
     ledetekst: string;
@@ -70,7 +68,9 @@ const KommuneSok: React.FC<Props> = ({
     return (
         <div className="kommunesok">
             <Normaltekst>
+                <b>
                 {ledetekst}
+                </b>
             </Normaltekst>
             <br/>
             <NavAutocomplete
@@ -85,9 +85,6 @@ const KommuneSok: React.FC<Props> = ({
                 <div style={{textAlign: "left", paddingTop: "1rem"}}>
                     {soknadTilgjengelig && (
                         <div className="kommunesok_tilbakemelding ">
-                            <div className="kommunesok_tilbakemelding_ikon">
-                                <CheckOkIcon/>
-                            </div>
                             <Normaltekst>
                                 {soknadTilgjengeligTekst}{" "}
                                 {currentSuggestion.value}
@@ -98,9 +95,6 @@ const KommuneSok: React.FC<Props> = ({
             )}
             {!soknadTilgjengelig && currentSuggestion && (
                 <div className="kommunesok_tilbakemelding " style={{paddingTop: "0.5rem", marginBottom: "0"}}>
-                    <div className="kommunesok_tilbakemelding_ikon kommunesok_tilbakemelding_ikon_advarsel">
-                        <AdvarselIkon />
-                    </div>
                     <Normaltekst>
                         {currentSuggestion.value}{" "}
                         {soknadIkkeTilgjengeligTekst && soknadIkkeTilgjengeligTekst}
