@@ -14,18 +14,19 @@ import {UnmountClosed} from "react-collapse";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 
-const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
-    return <>
-        <AlertStripeFeil>
-            Du kan ikke sende digital søknad i perioden{" "}
-            {nedetidService.payload.nedetidStartText} –{" "}
-            {nedetidService.payload.nedetidSluttText} grunnet
-            teknisk vedlikehold. Ta kontakt med ditt lokale
-            NAV-kontor hvis du skal søke om økonomisk
-            sosialhjelp i denne perioden.
-        </AlertStripeFeil>
-        <br/>
-    </>;
+const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
+    return (
+        <>
+            <AlertStripeFeil>
+                Du kan ikke sende digital søknad i perioden{" "}
+                {nedetidService.payload.nedetidStartText} –{" "}
+                {nedetidService.payload.nedetidSluttText} grunnet teknisk
+                vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
+                søke om økonomisk sosialhjelp i denne perioden.
+            </AlertStripeFeil>
+            <br />
+        </>
+    );
 };
 
 const SokSosialhjelpBokmalKrise: React.FC = () => {
@@ -37,7 +38,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
         event.preventDefault();
     };
 
-    const [lesMer, setLesMer] = useState<boolean>(true);
+    const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
@@ -52,7 +53,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
 
             {nedetidService.restStatus === REST_STATUS.OK &&
                 nedetidService.payload.isNedetid && (
-                    <AdvarselNedetid nedetidService={nedetidService}/>
+                    <AdvarselNedetid nedetidService={nedetidService} />
                 )}
 
             <div>
@@ -63,12 +64,17 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Digital søknad om økonomisk sosialhjelp vil
-                            snart være tilgjengelig for hele landet
-                            {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
+                            Digital søknad om økonomisk sosialhjelp vil snart
+                            være tilgjengelig for hele landet
+                            {tilgjengeligeKommunerService.restStatus ===
+                                REST_STATUS.OK && (
                                 <>
-                                    Foreløpig kan <b>{antallTilgjengeligKommuner} av
-                                    426 kommuner</b> ta imot digital søknad.
+                                    Foreløpig kan{" "}
+                                    <b>
+                                        {antallTilgjengeligKommuner} av 426
+                                        kommuner
+                                    </b>{" "}
+                                    ta imot digital søknad.
                                 </>
                             )}
                         </Normaltekst>
@@ -121,8 +127,8 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     <li>
                         <Normaltekst>
                             Søknaden kan også brukes som inntektssikring for
-                            frilansere og selvstendig næringsdrivende
-                            frem til ny løsning er på plass hos NAV.
+                            frilansere og selvstendig næringsdrivende frem til
+                            ny løsning er på plass hos NAV.
                         </Normaltekst>
                     </li>
                 </ul>
@@ -147,6 +153,17 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                 </Hovedknapp>
             </div>
             <br />
+            <h3>Kom i gang med digital søknad</h3>
+            <div className="sok_sosialhjelp_video">
+                <iframe
+                    title="Kom i gang"
+                    src="https://video.qbrick.com/play2/embed/player?accountId=763558&mediaId=488b9cab-00015227-8c78175a&configId=wcag&pageStyling=adaptive&autoplay=false&repeat=false&sharing=false"
+                    allowFullScreen={true}
+                    frameBorder="0"
+                    style={{border: "none"}}
+                    className="sok_sosialhjelp_video_player"
+                ></iframe>
+            </div>
         </Artikkel>
     );
 };
