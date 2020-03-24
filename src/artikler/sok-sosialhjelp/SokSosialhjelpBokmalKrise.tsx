@@ -65,7 +65,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     <li>
                         <Normaltekst>
                             Digital søknad om økonomisk sosialhjelp vil snart
-                            være tilgjengelig for hele landet
+                            være tilgjengelig for hele landet.{" "}
                             {tilgjengeligeKommunerService.restStatus ===
                                 REST_STATUS.OK && (
                                 <>
