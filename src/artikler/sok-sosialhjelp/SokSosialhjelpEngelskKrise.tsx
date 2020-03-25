@@ -11,8 +11,8 @@ import useNedetidService from "./komponenter/kommunesok/service/useNedetidServic
 import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
-import {NedChevron, OppChevron} from "nav-frontend-chevron";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
+import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
@@ -37,7 +37,7 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
         event.preventDefault();
     };
 
-    const [lesMer, setLesMer] = useState<boolean>(true);
+    const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
@@ -60,7 +60,7 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
             <div>
                 <Normaltekst>
                     The digital application has been temporarily updated in a response
-                    to the Corona virus::
+                    to the Corona virus:
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
@@ -105,39 +105,18 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
                             </div>
                         </UnmountClosed>
                         <Normaltekst>
-                            <a
-                                href=".?sjekk_kommune=true"
-                                className="lenke"
-                                onClick={event => {
-                                    setLesMer(!lesMer);
-                                    event.preventDefault();
-                                }}
-                            >
-                                {!lesMer && (
-                                    <>
-                                        Check if your municipality support digital applications
-                                        <NedChevron />
-                                    </>
-                                )}
-                                {lesMer && (
-                                    <>
-                                        Close <OppChevron />
-                                    </>
-                                )}
-                            </a>
+                            <AapneLukkeLenke
+                                aapneTekst="Check if your municipality support digital applications"
+                                lukkeTekst="Close"
+                                aapen={lesMer}
+                                onClick={() => setLesMer(!lesMer)}
+                            />
                         </Normaltekst>
                     </li>
                 </ul>
             </div>
 
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    padding: "1rem",
-                }}
-            >
+            <div className="sok_sosialhjelp_hovedknapp">
                 <Hovedknapp
                     disabled={
                         nedetidService.restStatus === REST_STATUS.OK &&

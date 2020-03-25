@@ -11,23 +11,9 @@ import useNedetidService from "./komponenter/kommunesok/service/useNedetidServic
 import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
-import {NedChevron, OppChevron} from "nav-frontend-chevron";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
-
-const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
-    return (
-        <>
-            <AlertStripeFeil>
-                Du kan ikke sende digital søknad i perioden{" "}
-                {nedetidService.payload.nedetidStartText} –{" "}
-                {nedetidService.payload.nedetidSluttText} grunnet teknisk
-                vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
-                søke om økonomisk sosialhjelp i denne perioden.
-            </AlertStripeFeil>
-            <br />
-        </>
-    );
-};
+import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
+import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 
 const SokSosialhjelpBokmalKrise: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -51,10 +37,18 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
             <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
 
-            {nedetidService.restStatus === REST_STATUS.OK &&
-                nedetidService.payload.isNedetid && (
-                    <AdvarselNedetid nedetidService={nedetidService} />
-                )}
+            {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
+                <>
+                    <AlertStripeFeil>
+                        Du kan ikke sende digital søknad i perioden{" "}
+                        {nedetidService.payload.nedetidStartText} –{" "}
+                        {nedetidService.payload.nedetidSluttText} grunnet teknisk
+                        vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
+                        søke om økonomisk sosialhjelp i denne perioden.
+                    </AlertStripeFeil>
+                    <br/>
+                </>
+            )}
 
             <div>
                 <Normaltekst>
@@ -101,27 +95,14 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                                 />
                             </div>
                         </UnmountClosed>
+
                         <Normaltekst>
-                            <a
-                                href=".?sjekk_kommune=true"
-                                className="lenke"
-                                onClick={event => {
-                                    setLesMer(!lesMer);
-                                    event.preventDefault();
-                                }}
-                            >
-                                {!lesMer && (
-                                    <>
-                                        Sjekk om du kan søke digitalt i din
-                                        kommune <NedChevron />
-                                    </>
-                                )}
-                                {lesMer && (
-                                    <>
-                                        Lukk <OppChevron />
-                                    </>
-                                )}
-                            </a>
+                            <AapneLukkeLenke
+                                aapneTekst="Sjekk om du kan søke digitalt i din kommune"
+                                lukkeTekst="Lukk"
+                                aapen={lesMer}
+                                onClick={() => setLesMer(!lesMer)}
+                            />
                         </Normaltekst>
                     </li>
                     <li>
@@ -134,14 +115,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                 </ul>
             </div>
 
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    padding: "1rem",
-                }}
-            >
+            <div className="sok_sosialhjelp_hovedknapp">
                 <Hovedknapp
                     disabled={
                         nedetidService.restStatus === REST_STATUS.OK &&
@@ -154,16 +128,7 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
             </div>
             <br />
             <h3>Kom i gang med digital søknad</h3>
-            <div className="sok_sosialhjelp_video">
-                <iframe
-                    title="Kom i gang"
-                    src="https://video.qbrick.com/play2/embed/player?accountId=763558&mediaId=488b9cab-00015227-8c78175a&configId=wcag&pageStyling=adaptive&autoplay=false&repeat=false&sharing=false"
-                    allowFullScreen={true}
-                    frameBorder="0"
-                    style={{border: "none"}}
-                    className="sok_sosialhjelp_video_player"
-                ></iframe>
-            </div>
+            <HjelpeVideo tittel="Kom i gang"/>
         </Artikkel>
     );
 };

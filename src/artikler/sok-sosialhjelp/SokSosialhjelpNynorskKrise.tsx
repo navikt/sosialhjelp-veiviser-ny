@@ -11,7 +11,9 @@ import useNedetidService from "./komponenter/kommunesok/service/useNedetidServic
 import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
-import {NedChevron, OppChevron} from "nav-frontend-chevron";
+import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
+import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
+import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
@@ -36,7 +38,13 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
         event.preventDefault();
     };
 
-    const [lesMer, setLesMer] = useState<boolean>(true);
+    const [lesMer, setLesMer] = useState<boolean>(false);
+
+    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+    let antallTilgjengeligKommuner: string = "";
+    if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
+        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
+    }
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
@@ -55,16 +63,21 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
-                            som søknad om midlertidig inntektssikring frem til
-                            ny løsning er på plass hos NAV.
-                        </Normaltekst>
-                    </li>
-                    <li>
-                        <Normaltekst>
-                            Alle kommuner skal innen kort tid ha digital søknad
-                            tilgjengelig. Foreløpig er 321 av 426 kommuner
-                            tilgjengelig.
+                            Digital søknad om økonomisk sosialhjelp vil snart
+                            være tilgjengelig for hele landet.
+
+                            {tilgjengeligeKommunerService.restStatus ===
+                            REST_STATUS.OK && (
+                                <>
+                                    Foreløpig kan{" "}
+                                    <b>
+                                        {antallTilgjengeligKommuner} av 426
+                                        kommuner
+                                    </b>{" "}
+                                    ta imot digital søknad.
+                                </>
+                            )}
+
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
@@ -90,39 +103,25 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                             </div>
                         </UnmountClosed>
                         <Normaltekst>
-                            <a
-                                href=".?sjekk_kommune=true"
-                                className="lenke"
-                                onClick={event => {
-                                    setLesMer(!lesMer);
-                                    event.preventDefault();
-                                }}
-                            >
-                                {!lesMer && (
-                                    <>
-                                        Sjekk om du kan søke digitalt i din
-                                        kommune <NedChevron />
-                                    </>
-                                )}
-                                {lesMer && (
-                                    <>
-                                        Lukk <OppChevron />
-                                    </>
-                                )}
-                            </a>
+                            <AapneLukkeLenke
+                                aapneTekst="Sjekk om du kan søke digitalt i din kommune"
+                                lukkeTekst="Lukk"
+                                aapen={lesMer}
+                                onClick={() => setLesMer(!lesMer)}
+                            />
+                        </Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>
+                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
+                            som søknad om midlertidig inntektssikring frem til
+                            ny løsning er på plass hos NAV.
                         </Normaltekst>
                     </li>
                 </ul>
             </div>
 
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    padding: "1rem",
-                }}
-            >
+            <div className="sok_sosialhjelp_hovedknapp">
                 <Hovedknapp
                     disabled={
                         nedetidService.restStatus === REST_STATUS.OK &&
@@ -134,6 +133,8 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                 </Hovedknapp>
             </div>
             <br />
+            <h3>Kom i gang med digital søknad</h3>
+            <HjelpeVideo tittel="Kom i gang"/>
         </Artikkel>
     );
 };
