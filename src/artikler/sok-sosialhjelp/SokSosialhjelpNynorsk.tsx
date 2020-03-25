@@ -20,6 +20,7 @@ import Lenke from "nav-frontend-lenker";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
+import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
 const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -97,8 +98,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                                 <>
                                     Foreløpig kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av 426
-                                        kommuner
+                                        {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER} kommuner
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>

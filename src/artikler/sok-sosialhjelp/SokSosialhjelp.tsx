@@ -9,6 +9,8 @@ import SokSosialhjelpBokmal from "./SokSosialhjelpBokmal";
 import SokSosialhjelpEngelsk from "./SokSosialhjelpEngelsk";
 import "./sokSosialhjelp.less";
 
+export const ANTALL_KOMMUNER = 356;
+
 const SokSosialhjelp: React.FC = () => {
     const valgtSprak: string = detekterSprak();
 

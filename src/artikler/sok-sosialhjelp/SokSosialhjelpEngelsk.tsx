@@ -20,6 +20,7 @@ import Lenke from "nav-frontend-lenker";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
+import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -71,7 +72,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     REST_STATUS.OK && (
                         <>
                             At the moment <b>{antallTilgjengeligKommuner}{" "}
-                            out of 426 municipalities</b> can receive applications digitally.
+                            out of {ANTALL_KOMMUNER} municipalities</b> can receive applications digitally.
                         </>
                     )}
                 </Normaltekst>

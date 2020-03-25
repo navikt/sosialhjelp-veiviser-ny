@@ -13,6 +13,7 @@ import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
+import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
 const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
     return <>
@@ -69,7 +70,7 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
                             {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
                                 <>
                                     At the moment <b>{antallTilgjengeligKommuner}{" "}
-                                    out of 426 municipalities</b> can receive applications digitally.
+                                    out of {ANTALL_KOMMUNER} municipalities</b> can receive applications digitally.
                                 </>
                             )}
                         </Normaltekst>

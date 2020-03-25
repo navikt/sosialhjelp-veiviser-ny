@@ -21,6 +21,7 @@ import {UnmountClosed} from "react-collapse";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
+import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
 const SokSosialhjelpBokmal: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -98,7 +99,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                         <>
                             Foreløpig kan{" "}
                             <b>
-                                {antallTilgjengeligKommuner} av 426
+                                {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
                                 kommuner
                             </b>{" "}
                             ta imot digital søknad.
