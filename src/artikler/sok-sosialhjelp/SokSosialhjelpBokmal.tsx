@@ -32,7 +32,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
         event.preventDefault();
     };
 
-    const [lesMer, setLesMer] = useState<boolean>(true); // TOODOD
+    const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
