@@ -72,7 +72,6 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
                                     out of 426 municipalities</b> can receive applications digitally.
                                 </>
                             )}
-
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">

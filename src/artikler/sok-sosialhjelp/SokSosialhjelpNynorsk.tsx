@@ -7,7 +7,6 @@ import {
 } from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
-import Lesmerpanel from "nav-frontend-lesmerpanel";
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
@@ -18,6 +17,9 @@ import AlertStripe from "nav-frontend-alertstriper";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import {REST_STATUS} from "../../utils/restUtils";
 import Lenke from "nav-frontend-lenker";
+import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
+import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
+import {UnmountClosed} from "react-collapse";
 
 const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -27,6 +29,14 @@ const SokSosialhjelpNynorsk: React.FC = () => {
         gaaTilDigitalSoknad(kommuneId);
         event.preventDefault();
     };
+
+    const [lesMer, setLesMer] = useState<boolean>(false);
+
+    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+    let antallTilgjengeligKommuner: string = "";
+    if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
+        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
+    }
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
@@ -38,7 +48,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 søkje digitalt, kan du søkje med kommunen sitt papirskjema.
             </Normaltekst>
 
-            <br />
+            <br/>
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -46,71 +56,93 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 </Undertittel>
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
-                    nedetidService.payload.isNedetid && (
-                        <div>
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp disabled={true}>
-                                    Gå til søknad
-                                </Hovedknapp>
-                            </div>
-                            <AlertStripe
-                                type="feil"
-                                style={{textAlign: "left"}}
-                            >
-                                Du kan ikkje sende digital søknad i perioden{" "}
-                                {nedetidService.payload.nedetidStartText} –{" "}
-                                {nedetidService.payload.nedetidSluttText} grunna
-                                teknisk vedlikehald. Ta kontakt med ditt lokale
-                                NAV-kontor viss du skal søkje om økonomisk
-                                sosialhjelp i denne perioden.
-                            </AlertStripe>
+                nedetidService.payload.isNedetid && (
+                    <div>
+                        <div style={{paddingBottom: "1rem"}}>
+                            <Hovedknapp disabled={true}>
+                                Gå til søknad
+                            </Hovedknapp>
                         </div>
-                    )}
+                        <AlertStripe
+                            type="feil"
+                            style={{textAlign: "left"}}
+                        >
+                            Du kan ikkje sende digital søknad i perioden{" "}
+                            {nedetidService.payload.nedetidStartText} –{" "}
+                            {nedetidService.payload.nedetidSluttText} grunna
+                            teknisk vedlikehald. Ta kontakt med ditt lokale
+                            NAV-kontor viss du skal søkje om økonomisk
+                            sosialhjelp i denne perioden.
+                        </AlertStripe>
+                    </div>
+                )}
 
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid
                 ) && (
-                    <Lesmerpanel
-                        border={false}
-                        apneTekst="Sjekk om du kan søkje digitalt i din kommune."
-                        intro={
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp
-                                    onClick={(event: any) => sokDigital(event)}
-                                >
-                                    Gå til søknad
-                                </Hovedknapp>
-                            </div>
-                        }
-                    >
-                        <KommuneSok
-                            ledetekst="Sjekk om du kan søkje digitalt i din kommune"
-                            soknadTilgjengeligTekst="Du kan søkje digitalt i"
-                            soknadIkkeTilgjengeligTekst="kan dessverre ikkje ta i mot digitale søknader ennå. Du kan søkje på papirskjema."
-                            placeholderTekst="Skriv kommunenavn"
-                            ariaLabel="Søk etter kommunenavn"
-                            onValgtKommune={(kommuneId: string | undefined) =>
-                                setKommuneId(kommuneId)
-                            }
-                        />
-                    </Lesmerpanel>
+                    <>
+                        <Hovedknapp
+                            style={{marginTop: "1.5rem", marginBottom: "2rem"}}
+                            onClick={(event: any) => sokDigital(event)}
+                        >
+                            Søk digitalt
+                        </Hovedknapp>
+
+                        <Normaltekst>
+                            Digital søknad om økonomisk sosialhjelp skal innen kort tid
+                            være tilgjengelig for hele landet.{" "}
+                            {tilgjengeligeKommunerService.restStatus ===
+                            REST_STATUS.OK && (
+                                <>
+                                    Foreløpig kan{" "}
+                                    <b>
+                                        {antallTilgjengeligKommuner} av 426
+                                        kommuner
+                                    </b>{" "}
+                                    ta imot digital søknad.
+                                </>
+                            )}
+                        </Normaltekst>
+                        <br/>
+
+                        <UnmountClosed isOpened={lesMer}>
+                            <KommuneSok
+                                ledetekst="Sjekk om du kan søkje digitalt i din kommune"
+                                soknadTilgjengeligTekst="Du kan søkje digitalt i"
+                                soknadIkkeTilgjengeligTekst="kan dessverre ikkje ta i mot digitale søknader ennå. Du kan søkje på papirskjema."
+                                placeholderTekst="Skriv kommunenavn"
+                                ariaLabel="Søk etter kommunenavn"
+                                onValgtKommune={(kommuneId: string | undefined) =>
+                                    setKommuneId(kommuneId)
+                                }
+                            />
+                        </UnmountClosed>
+                        <Normaltekst>
+                            <AapneLukkeLenke
+                                aapneTekst="Sjekk om du kan søke digitalt i din kommune"
+                                lukkeTekst="Lukk"
+                                aapen={lesMer}
+                                onClick={() => setLesMer(!lesMer)}
+                            />
+                        </Normaltekst>
+                    </>
                 )}
             </SokDigitaltPanel>
 
-            <br />
-            <br />
+            <br/>
+            <br/>
 
             <IkkeSokDigitaltPanel>
                 <Undertittel>Dersom du ikkje skal søkje digitalt</Undertittel>
 
-                <br />
+                <br/>
                 <Normaltekst>
                     Dersom du ikkje skal søkje digitalt, kan du levere{" "}
                     <Lenke href={"./sok-papir?lang=nn"}>søknad på papir</Lenke>.
                 </Normaltekst>
 
-                <br />
+                <br/>
                 <Element>
                     Kvifor kan ikkje alle kommunar ta imot digital søknad?
                 </Element>

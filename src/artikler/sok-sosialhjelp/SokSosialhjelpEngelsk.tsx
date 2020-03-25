@@ -7,7 +7,6 @@ import {
 } from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
-import Lesmerpanel from "nav-frontend-lesmerpanel";
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
@@ -18,6 +17,9 @@ import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import AlertStripe from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
+import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
+import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
+import {UnmountClosed} from "react-collapse";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -27,6 +29,15 @@ const SokSosialhjelpEngelsk: React.FC = () => {
         gaaTilDigitalSoknad(kommuneId);
         event.preventDefault();
     };
+
+    const [lesMer, setLesMer] = useState<boolean>(false);
+
+    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+
+    let antallTilgjengeligKommuner: string = "";
+    if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
+        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
+    }
 
     return (
         <Artikkel tittel="Apply for financial assistance">
@@ -40,76 +51,92 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 digitally.
             </Normaltekst>
 
-            <br />
+            <br/>
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
                     Apply digitally
                 </Undertittel>
 
-                {nedetidService.restStatus === REST_STATUS.OK &&
-                    nedetidService.payload.isNedetid && (
-                        <div>
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp disabled={true}>
-                                    Gå til søknad
-                                </Hovedknapp>
-                            </div>
-                            <AlertStripe
-                                type="feil"
-                                style={{textAlign: "left"}}
-                            >
-                                You cannot send digital application during{" "}
-                                {nedetidService.payload.nedetidStartTextEn} –{" "}
-                                {nedetidService.payload.nedetidSluttTextEn} due
-                                to technical maintenance. Contact your local NAV
-                                office if you want to apply for social
-                                assistance during this period.
-                            </AlertStripe>
-                        </div>
+                <Hovedknapp
+                    style={{marginTop: "1.5rem", marginBottom: "2rem"}}
+                    onClick={(event: any) => sokDigital(event)}
+                >
+                    Apply digitally
+                </Hovedknapp>
+
+                <Normaltekst>
+                    All municipalities should be able to receive digital applications shortly.{" "}
+                    {tilgjengeligeKommunerService.restStatus ===
+                    REST_STATUS.OK && (
+                        <>
+                            At the moment <b>{antallTilgjengeligKommuner}{" "}
+                            out of 426 municipalities</b> can receive applications digitally.
+                        </>
                     )}
+                </Normaltekst>
+
+                {nedetidService.restStatus === REST_STATUS.OK &&
+                nedetidService.payload.isNedetid && (
+                    <div>
+                        <div style={{paddingBottom: "1rem"}}>
+                            <Hovedknapp disabled={true}>
+                                Gå til søknad
+                            </Hovedknapp>
+                        </div>
+                        <AlertStripe
+                            type="feil"
+                            style={{textAlign: "left"}}
+                        >
+                            You cannot send digital application during{" "}
+                            {nedetidService.payload.nedetidStartTextEn} –{" "}
+                            {nedetidService.payload.nedetidSluttTextEn} due
+                            to technical maintenance. Contact your local NAV
+                            office if you want to apply for social
+                            assistance during this period.
+                        </AlertStripe>
+                    </div>
+                )}
 
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid
                 ) && (
-                    <Lesmerpanel
-                        border={false}
-                        apneTekst="Check if your municipality support digital applications"
-                        lukkTekst="Close"
-                        intro={
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp
-                                    onClick={(event: any) => sokDigital(event)}
-                                >
-                                    Apply digitally
-                                </Hovedknapp>
-                            </div>
-                        }
-                    >
-                        <KommuneSok
-                            ledetekst="Check if you can apply digitally in your municipality"
-                            soknadTilgjengeligTekst="You can apply digitally in "
-                            soknadIkkeTilgjengeligTekst="is unfortunately not able to accept digital applications. You can apply using the municipality's own paper form."
-                            placeholderTekst="Enter municipality name"
-                            ariaLabel="Search for municipality"
-                            onValgtKommune={(kommuneId: string | undefined) =>
-                                setKommuneId(kommuneId)
-                            }
-                        />
-                    </Lesmerpanel>
+                    <>
+                        <UnmountClosed isOpened={lesMer}>
+                            <KommuneSok
+                                ledetekst="Check if you can apply digitally in your municipality"
+                                soknadTilgjengeligTekst="You can apply digitally in "
+                                soknadIkkeTilgjengeligTekst="is unfortunately not able to accept digital applications. You can apply using the municipality's own paper form."
+                                placeholderTekst="Enter municipality name"
+                                ariaLabel="Search for municipality"
+                                onValgtKommune={(kommuneId: string | undefined) =>
+                                    setKommuneId(kommuneId)
+                                }
+                            />
+                        </UnmountClosed>
+
+                        <Normaltekst>
+                            <AapneLukkeLenke
+                                aapneTekst="Check if your municipality support digital applications"
+                                lukkeTekst="Close"
+                                aapen={lesMer}
+                                onClick={() => setLesMer(!lesMer)}
+                            />
+                        </Normaltekst>
+                    </>
                 )}
             </SokDigitaltPanel>
 
-            <br />
-            <br />
+            <br/>
+            <br/>
 
             <IkkeSokDigitaltPanel>
                 <Undertittel>
                     If you are not going to apply digitally
                 </Undertittel>
 
-                <br />
+                <br/>
                 <Normaltekst>
                     You can use the{" "}
                     <Lenke href={"./sok-papir?lang=en"}>
@@ -118,7 +145,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     if you are not going to apply digitally.
                 </Normaltekst>
 
-                <br />
+                <br/>
                 <Element>
                     Why can't all municipalities accept digital applications?
                 </Element>
