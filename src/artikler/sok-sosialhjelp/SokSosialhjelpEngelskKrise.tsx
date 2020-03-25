@@ -65,17 +65,11 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            People who are freelancers or self-employed can now temporarily apply while
-                            the new solution from NAV is being ready.
-                        </Normaltekst>
-                    </li>
-                    <li>
-                        <Normaltekst>
-                            All municipalities will enable digital applications shortly
+                            All municipalities will enable digital applications shortly.{" "}
                             {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
                                 <>
-                                    At the moment {antallTilgjengeligKommuner}
-                                    out of 426 municipalities can receive applications digitally.
+                                    At the moment <b>{antallTilgjengeligKommuner}{" "}
+                                    out of 426 municipalities</b> can receive applications digitally.
                                 </>
                             )}
 
@@ -111,6 +105,12 @@ const SokSosialhjelpEngelskKrise: React.FC = () => {
                                 aapen={lesMer}
                                 onClick={() => setLesMer(!lesMer)}
                             />
+                        </Normaltekst>
+                    </li>
+                    <li>
+                        <Normaltekst>
+                            People who are freelancers or self-employed can now temporarily apply while
+                            the new solution from NAV is being ready.
                         </Normaltekst>
                     </li>
                 </ul>
