@@ -108,7 +108,17 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                             <KommuneSok
                                 ledetekst="Check if you can apply digitally in your municipality"
                                 soknadTilgjengeligTekst="You can apply digitally in "
-                                soknadIkkeTilgjengeligTekst="is unfortunately not able to accept digital applications. You can apply using the municipality's own paper form."
+                                soknadIkkeTilgjengelig={
+                                    <span>
+                                        is unfortunately not yet able to accept digital applications.{" "}
+                                        You can apply using the{" "}
+                                        <Lenke href={"./sok-papir?lang=en"}>
+                                                municipality's own paper form
+                                        </Lenke>
+                                        .
+                                    </span>
+                                }
+
                                 placeholderTekst="Enter municipality name"
                                 ariaLabel="Search for municipality"
                                 onValgtKommune={(kommuneId: string | undefined) =>

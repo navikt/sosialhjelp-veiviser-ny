@@ -91,14 +91,14 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                         </Hovedknapp>
 
                         <Normaltekst>
-                            Digital søknad om økonomisk sosialhjelp skal innen kort tid
-                            være tilgjengelig for hele landet.{" "}
+
+                            Digital søknad om økonomisk sosialhjelp vil snart vere tilgjengeleg for heile landet.{" "}
                             {tilgjengeligeKommunerService.restStatus ===
                             REST_STATUS.OK && (
                                 <>
-                                    Foreløpig kan{" "}
+                                    Førebels kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av {" "}{ANTALL_KOMMUNER} kommuner
+                                        {antallTilgjengeligKommuner} av {" "}{ANTALL_KOMMUNER} kommunar
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
@@ -110,7 +110,15 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                             <KommuneSok
                                 ledetekst="Sjekk om du kan søkje digitalt i din kommune"
                                 soknadTilgjengeligTekst="Du kan søkje digitalt i"
-                                soknadIkkeTilgjengeligTekst="kan dessverre ikkje ta i mot digitale søknader ennå. Du kan søkje på papirskjema."
+                                soknadIkkeTilgjengelig={
+                                    <span>
+                                        kan dessverre ikkje ta i mot digitale søknader enno. Du kan{" "}
+                                        <Lenke href={"./sok-papir?lang=nn"}>
+                                                søkje på papirskjema
+                                        </Lenke>
+                                        .
+                                    </span>
+                                }
                                 placeholderTekst="Skriv kommunenavn"
                                 ariaLabel="Søk etter kommunenavn"
                                 onValgtKommune={(kommuneId: string | undefined) =>
