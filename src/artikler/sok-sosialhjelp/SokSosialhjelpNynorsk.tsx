@@ -98,7 +98,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                                 <>
                                     Foreløpig kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER} kommuner
+                                        {antallTilgjengeligKommuner} av {" "}{ANTALL_KOMMUNER} kommuner
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>

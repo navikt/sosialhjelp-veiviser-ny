@@ -16,18 +16,18 @@ interface Props {
     soknadIkkeTilgjengelig?: React.ReactNode;
     placeholderTekst: string;
     ariaLabel: string;
-    onValgtKommune: (kommuneId: string|undefined) => void;
+    onValgtKommune: (kommuneId: string | undefined) => void;
 }
 
 const KommuneSok: React.FC<Props> = ({
-    ledetekst,
-    soknadTilgjengeligTekst,
-    soknadIkkeTilgjengeligTekst,
-    soknadIkkeTilgjengelig,
-    placeholderTekst,
-    ariaLabel,
-    onValgtKommune,
-}) => {
+                                         ledetekst,
+                                         soknadTilgjengeligTekst,
+                                         soknadIkkeTilgjengeligTekst,
+                                         soknadIkkeTilgjengelig,
+                                         placeholderTekst,
+                                         ariaLabel,
+                                         onValgtKommune,
+                                     }) => {
     const [
         currentSuggestion,
         setCurrentSuggestion,
@@ -69,7 +69,7 @@ const KommuneSok: React.FC<Props> = ({
         <div className="kommunesok">
             <Normaltekst>
                 <b>
-                {ledetekst}
+                    {ledetekst}
                 </b>
             </Normaltekst>
             <br/>
@@ -81,25 +81,25 @@ const KommuneSok: React.FC<Props> = ({
                 onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
                 onReset={() => onReset()}
             />
-            {currentSuggestion && (
+            {currentSuggestion && soknadTilgjengelig && (
                 <div style={{textAlign: "left", paddingTop: "1rem"}}>
-                    {soknadTilgjengelig && (
-                        <div className="kommunesok_tilbakemelding ">
-                            <Normaltekst>
-                                {soknadTilgjengeligTekst}{" "}
-                                {currentSuggestion.value}
-                            </Normaltekst>
-                        </div>
-                    )}
+                    <div className="kommunesok_tilbakemelding ">
+                        <Normaltekst>
+                            {soknadTilgjengeligTekst}{" "}
+                            {currentSuggestion.value}
+                        </Normaltekst>
+                    </div>
                 </div>
             )}
             {!soknadTilgjengelig && currentSuggestion && (
-                <div className="kommunesok_tilbakemelding " style={{paddingTop: "0.5rem", marginBottom: "0"}}>
-                    <Normaltekst>
-                        {currentSuggestion.value}{" "}
-                        {soknadIkkeTilgjengeligTekst && soknadIkkeTilgjengeligTekst}
-                        {soknadIkkeTilgjengelig && soknadIkkeTilgjengelig}
-                    </Normaltekst>
+                <div style={{textAlign: "left", paddingTop: "1rem"}}>
+                    <div className="kommunesok_tilbakemelding " style={{paddingTop: "0.5rem", marginBottom: "0"}}>
+                        <Normaltekst>
+                            {currentSuggestion.value}{" "}
+                            {soknadIkkeTilgjengeligTekst && soknadIkkeTilgjengeligTekst}
+                            {soknadIkkeTilgjengelig && soknadIkkeTilgjengelig}
+                        </Normaltekst>
+                    </div>
                 </div>
             )}
 

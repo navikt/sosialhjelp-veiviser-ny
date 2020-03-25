@@ -32,7 +32,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
         event.preventDefault();
     };
 
-    const [lesMer, setLesMer] = useState<boolean>(false);
+    const [lesMer, setLesMer] = useState<boolean>(true); // TOODOD
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
 
@@ -99,7 +99,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                         <>
                             Foreløpig kan{" "}
                             <b>
-                                {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
+                                {antallTilgjengeligKommuner} av{" "}{ANTALL_KOMMUNER}{" "}
                                 kommuner
                             </b>{" "}
                             ta imot digital søknad.
