@@ -9,7 +9,7 @@ const KoronaBokmal = () => (
             Koronavirus - flere kan ha rett til økonomisk sosialhjelp
         </Innholdstittel>
         <Normaltekst>
-            Pandemisituasjonen kan medføre at flere personer kan ha rett til
+            Pandemisituasjonen kan føre til at flere personer kan ha rett til
             økonomisk sosialhjelp.
         </Normaltekst>
         <br />
@@ -36,7 +36,7 @@ const KoronaBokmal = () => (
 
         <Normaltekst>
             Det skal ikke bli stilt vilkår og krav til deg som du ikke har mulighet til å følge opp på
-            grunn av koronaviruset.
+            grunn av koronaviruset og hensynet til smittevern.
         </Normaltekst>
         <br/>
         <Normaltekst>
