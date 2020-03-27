@@ -31,6 +31,24 @@ const KoronaBokmal = () => (
         </Normaltekst>
 
         <Undertittel>
+            Hva med vilkår om aktivitet?
+        </Undertittel>
+
+        <Normaltekst>
+            Det skal ikke bli stilt vilkår og krav til deg som du ikke har mulighet til å følge opp på
+            grunn av koronaviruset.
+        </Normaltekst>
+        <br/>
+        <Normaltekst>
+            Hvis du mottar økonomisk sosialhjelp og det allerede er stilt vilkår om aktivitet, så skal
+            ikke manglende gjennomført aktivitet føre til reduksjon av stønad eller andre konsekvenser for deg.
+        </Normaltekst>
+        <br/>
+        
+
+
+
+        <Undertittel>
             Selvstendig næringsdrivende, frilanser eller permittert?
         </Undertittel>
 
