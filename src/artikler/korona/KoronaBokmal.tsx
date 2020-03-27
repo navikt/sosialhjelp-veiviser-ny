@@ -44,38 +44,39 @@ const KoronaBokmal = () => (
             ikke manglende gjennomført aktivitet føre til reduksjon av stønad eller andre konsekvenser for deg.
         </Normaltekst>
         <br/>
-        
-
-
+        <Normaltekst>
+            Selv om det ikke stilles vilkår om aktivitet, så skal NAV-kontoret likevel gi deg råd og veiledning.
+            Oppfølgingen kan skje digitalt eller over telefon.
+        </Normaltekst>
 
         <Undertittel>
-            Selvstendig næringsdrivende, frilanser eller permittert?
+            Selvstendig næringsdrivende eller permittert?
         </Undertittel>
 
         <Normaltekst>
-            Hvis du er selvstendig næringsdrivende eller frilanser, kan du finne
-            informasjon om dine rettigheter i forbindelse med koronaviruset
-            under{" "}
+            Hvis du er selvstendig næringsdrivende finner du informasjon om dine rettigheter i forbindelse med 
+            koronaviruset  under{" "}
             <Lenke href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/sporsmal-og-svar-i-forbindelse-med-koronaviruset/selvstendig-naeringsdrivende-hva-gjelder-i-min-situasjon">
                 Selvstendig næringsdrivende - hva gjelder i min situasjon
             </Lenke>
             .
-        </Normaltekst>
-        <br />
-        <Normaltekst>
             Har du blitt permittert, så kan du lese{" "}
             <Lenke href="https://www.nav.no/arbeid/dagpenger/permittert">
                 Er du permittert som følge av koronaviruset?
             </Lenke>
         </Normaltekst>
+        <br/>
+        <Normaltekst>
+            Hvis du ikke har andre muligheter til å forsørge deg selv, kan du ha rett til økonomisk sosialhjelp.
+        </Normaltekst>
 
-        <Undertittel>Koronavirus - informasjon fra NAV</Undertittel>
+        <Undertittel>Koronaviruset- hva gjelder i din situasjon?</Undertittel>
 
         <Normaltekst>
-            Du finner oppdatert informasjon i forbindelse med koronaviruset og
-            hvordan du kommer i kontakt med oss nå under{" "}
-            <Lenke href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/koronavirus--informasjon-fra-nav">
-                Koronaviruset - informasjon fra NAV
+            Du finner oppdatert informasjon i forbindelse med koronaviruset og hvordan du kommer i kontakt med
+            oss nå under{" "}
+            <Lenke href="https://www.nav.no/person/koronaveiviser/">
+                Koronaviruset- hva gjelder i min situasjon?
             </Lenke>
             .
         </Normaltekst>
