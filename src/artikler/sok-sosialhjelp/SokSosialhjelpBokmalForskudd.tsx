@@ -16,7 +16,7 @@ import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
-const SokSosialhjelpBokmalKrise: React.FC = () => {
+const SokSosialhjelpBokmalForskudd: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const nedetidService = useNedetidService();
 
@@ -134,4 +134,4 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
     );
 };
 
-export default SokSosialhjelpBokmalKrise;
+export default SokSosialhjelpBokmalForskudd;
