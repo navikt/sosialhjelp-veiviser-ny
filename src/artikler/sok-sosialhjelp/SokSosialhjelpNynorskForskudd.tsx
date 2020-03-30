@@ -58,22 +58,22 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
 
             <div>
                 <Normaltekst>
-                    Det er gjort midlertidige endringer av den digitale søknaden
-                    som følge av koronaviruset:
+                    Det er gjort mellombelse endringar av den digitale søknaden som følgje
+                    av koronaviruset:
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Digital søknad om økonomisk sosialhjelp vil snart
-                            være tilgjengeleg for hele landet.{" "}
+                            Digital søknad om økonomisk sosialhjelp vil snart vere tilgjengeleg
+                            for heile landet.{" "}
 
                             {tilgjengeligeKommunerService.restStatus ===
                             REST_STATUS.OK && (
                                 <>
-                                    Foreløpig kan{" "}
+                                    Førebels kan{" "}
                                     <b>
                                         {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        {" "}kommuner
+                                        {" "}kommunar
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
@@ -88,7 +88,7 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
                                     soknadIkkeTilgjengelig={
                                         <span>
                                             kan dessverre ikkje ta i mot digitale
-                                            søknader ennå. Du kan{" "}
+                                            søknader enno. Du kan{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
                                                 søkje på papirskjema
                                             </Lenke>
@@ -114,9 +114,8 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
                     </li>
                     <li>
                         <Normaltekst>
-                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
-                            som søknad om midlertidig inntektssikring frem til
-                            ny løsning er på plass hos NAV.
+                            Søknaden kan også brukast som inntektssikring for frilansarar og sjølvstendig{" "}
+                            næringsdrivande fram til ny løysing er på plass hjå NAV.
                         </Normaltekst>
                     </li>
                 </ul>
