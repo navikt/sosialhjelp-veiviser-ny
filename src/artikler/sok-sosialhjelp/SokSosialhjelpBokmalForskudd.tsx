@@ -67,7 +67,7 @@ const SokSosialhjelpBokmalForskudd: React.FC = () => {
                                     Foreløpig kan{" "}
                                     <b>
                                         {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        kommuner
+                                        {" "}kommuner
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
