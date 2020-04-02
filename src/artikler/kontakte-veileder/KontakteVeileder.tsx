@@ -2,8 +2,8 @@ import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
 import KontakteVeilederBokmal from "./KontakteVeilederBokmal";
-import KontakteVeilederNynorsk from "./KontakteVeilederBokmal";
-import KontakteVeilederEngelsk from "./KontakteVeilederBokmal";
+import KontakteVeilederNynorsk from "./KontakteVeilederNynorsk";
+import KontakteVeilederEngelsk from "./KontakteVeilederEngelsk";
 
 const KontaktVeileder: React.FC = () => {
     const valgtSprak: string = detekterSprak();

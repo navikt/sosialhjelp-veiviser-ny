@@ -4,7 +4,7 @@ import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
 
-const KontakteVeilederBokmal: React.FC = () => {
+const KontakteVeilederEngelsk: React.FC = () => {
     return (
         <Artikkel tittel="Hvordan kontakter du veilederen din?">
             <Innholdstittel>
@@ -49,4 +49,4 @@ const KontakteVeilederBokmal: React.FC = () => {
     );
 };
 
-export default KontakteVeilederBokmal;
+export default KontakteVeilederEngelsk;
