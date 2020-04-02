@@ -14,15 +14,13 @@ export const ANTALL_KOMMUNER = 356;
 const SokSosialhjelp: React.FC = () => {
     const valgtSprak: string = detekterSprak();
 
-    const search: string = window.location.search;
-    const match: string[]|null = search.match(/coronaforskudd=false/);
-    const CORONAFORSKUDD = match ? false : true;
+    const KORONAFORSKUDD = false;
 
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {!CORONAFORSKUDD && (
+            {!KORONAFORSKUDD && (
                 <>
                     {valgtSprak === Sprak.NORSK_BOKMAL && (
                         <SokSosialhjelpBokmal />
@@ -31,7 +29,7 @@ const SokSosialhjelp: React.FC = () => {
                     {valgtSprak === Sprak.ENGELSK && <SokSosialhjelpEngelsk />}
                 </>
             )}
-            {CORONAFORSKUDD && (
+            {KORONAFORSKUDD && (
                 <>
                     {valgtSprak === Sprak.NORSK_BOKMAL && (
                         <SokSosialhjelpBokmalForskudd />
