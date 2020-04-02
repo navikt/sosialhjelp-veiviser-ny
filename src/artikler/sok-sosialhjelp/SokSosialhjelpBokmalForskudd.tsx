@@ -1,36 +1,22 @@
 import * as React from "react";
-import {Normaltekst, Innholdstittel} from "nav-frontend-typografi";
+import {useState} from "react";
+import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
-import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
+import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
-import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
-const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
-    return <>
-        <AlertStripeFeil>
-            Du kan ikke sende digital søknad i perioden{" "}
-            {nedetidService.payload.nedetidStartText} –{" "}
-            {nedetidService.payload.nedetidSluttText} grunnet
-            teknisk vedlikehold. Ta kontakt med ditt lokale
-            NAV-kontor hvis du skal søke om økonomisk
-            sosialhjelp i denne perioden.
-        </AlertStripeFeil>
-        <br/>
-    </>;
-};
-
-const SokSosialhjelpNynorskKrise: React.FC = () => {
+const SokSosialhjelpBokmalForskudd: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const nedetidService = useNedetidService();
 
@@ -42,6 +28,7 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
     const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+
     let antallTilgjengeligKommuner: string = "";
     if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
         antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
@@ -51,10 +38,18 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
             <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
 
-            {nedetidService.restStatus === REST_STATUS.OK &&
-                nedetidService.payload.isNedetid && (
-                    <AdvarselNedetid nedetidService={nedetidService}/>
-                )}
+            {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
+                <>
+                    <AlertStripeFeil>
+                        Du kan ikke sende digital søknad i perioden{" "}
+                        {nedetidService.payload.nedetidStartText} –{" "}
+                        {nedetidService.payload.nedetidSluttText} grunnet teknisk
+                        vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
+                        søke om økonomisk sosialhjelp i denne perioden.
+                    </AlertStripeFeil>
+                    <br/>
+                </>
+            )}
 
             <div>
                 <Normaltekst>
@@ -65,32 +60,30 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                     <li>
                         <Normaltekst>
                             Digital søknad om økonomisk sosialhjelp vil snart
-                            være tilgjengelig for hele landet.
-
+                            være tilgjengelig for hele landet.{" "}
                             {tilgjengeligeKommunerService.restStatus ===
-                            REST_STATUS.OK && (
+                                REST_STATUS.OK && (
                                 <>
                                     Foreløpig kan{" "}
                                     <b>
                                         {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        kommuner
+                                        {" "}kommuner
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
                             )}
-
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
                                 <KommuneSok
-                                    ledetekst="Sjekk om du kan søkje digitalt i din kommune"
+                                    ledetekst="Sjekk om du kan søke digitalt i din kommune"
                                     soknadTilgjengeligTekst="Du kan søke digitalt i"
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            kan dessverre ikkje ta i mot digitale
+                                            kan dessverre ikke ta i mot digitale
                                             søknader ennå. Du kan{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
-                                                søkje på papirskjema
+                                                søke på papirskjema
                                             </Lenke>
                                             .
                                         </span>
@@ -103,6 +96,7 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                                 />
                             </div>
                         </UnmountClosed>
+
                         <Normaltekst>
                             <AapneLukkeLenke
                                 aapneTekst="Sjekk om du kan søke digitalt i din kommune"
@@ -114,8 +108,8 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
                     </li>
                     <li>
                         <Normaltekst>
-                            Søknaden skal også brukes av frilansere og selvstendig næringsdrivende
-                            som søknad om midlertidig inntektssikring frem til
+                            Søknaden kan også brukes som inntektssikring for
+                            frilansere og selvstendig næringsdrivende frem til
                             ny løsning er på plass hos NAV.
                         </Normaltekst>
                     </li>
@@ -140,4 +134,4 @@ const SokSosialhjelpNynorskKrise: React.FC = () => {
     );
 };
 
-export default SokSosialhjelpNynorskKrise;
+export default SokSosialhjelpBokmalForskudd;

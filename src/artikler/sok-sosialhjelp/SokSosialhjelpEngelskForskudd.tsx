@@ -1,10 +1,10 @@
 import * as React from "react";
-import {useState} from "react";
-import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
+import {Normaltekst, Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Hovedknapp} from "nav-frontend-knapper";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
+import {useState} from "react";
 import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
@@ -12,11 +12,24 @@ import {AlertStripeFeil} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
 import {UnmountClosed} from "react-collapse";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
-import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
-const SokSosialhjelpBokmalKrise: React.FC = () => {
+const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
+    return <>
+        <AlertStripeFeil>
+            You cannot send digital application during{" "}
+            {nedetidService.payload.nedetidStartTextEn} –{" "}
+            {nedetidService.payload.nedetidSluttTextEn} due
+            to technical maintenance. Contact your local NAV
+            office if you want to apply for social
+            assistance during this period.
+        </AlertStripeFeil>
+        <br/>
+    </>;
+};
+
+const SokSosialhjelpEngelskForskudd: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const nedetidService = useNedetidService();
 
@@ -36,71 +49,59 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
-            <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
+            <Innholdstittel>
+                Apply digitally
+            </Innholdstittel>
 
-            {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
-                <>
-                    <AlertStripeFeil>
-                        Du kan ikke sende digital søknad i perioden{" "}
-                        {nedetidService.payload.nedetidStartText} –{" "}
-                        {nedetidService.payload.nedetidSluttText} grunnet teknisk
-                        vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
-                        søke om økonomisk sosialhjelp i denne perioden.
-                    </AlertStripeFeil>
-                    <br/>
-                </>
-            )}
+            {nedetidService.restStatus === REST_STATUS.OK &&
+                nedetidService.payload.isNedetid && (
+                    <AdvarselNedetid nedetidService={nedetidService}/>
+                )}
 
             <div>
                 <Normaltekst>
-                    Det er gjort midlertidige endringer av den digitale søknaden
-                    som følge av koronaviruset:
+                    The digital application has been temporarily updated in a response
+                    to the Corona virus:
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Digital søknad om økonomisk sosialhjelp vil snart
-                            være tilgjengelig for hele landet.{" "}
-                            {tilgjengeligeKommunerService.restStatus ===
-                                REST_STATUS.OK && (
+                            All municipalities will enable digital applications shortly.{" "}
+                            {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
                                 <>
-                                    Foreløpig kan{" "}
-                                    <b>
-                                        {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        kommuner
-                                    </b>{" "}
-                                    ta imot digital søknad.
+                                    At the moment <b>{antallTilgjengeligKommuner}{" "}
+                                    out of {ANTALL_KOMMUNER} municipalities</b> can receive applications digitally.
                                 </>
                             )}
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
                                 <KommuneSok
-                                    ledetekst="Sjekk om du kan søke digitalt i din kommune"
-                                    soknadTilgjengeligTekst="Du kan søke digitalt i"
+                                    ledetekst="Check if you can apply digitally in your municipality"
+                                    soknadTilgjengeligTekst="You can apply digitally in "
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            kan dessverre ikke ta i mot digitale
-                                            søknader ennå. Du kan{" "}
+                                            is unfortunately not able to accept digital applications.
+                                            You can apply using the municipality's own
+                                            {" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
-                                                søke på papirskjema
+                                                paper form
                                             </Lenke>
                                             .
                                         </span>
                                     }
-                                    placeholderTekst="Skriv kommunenavn"
-                                    ariaLabel="Søk etter kommunenavn"
+                                    placeholderTekst="Enter municipality name"
+                                    ariaLabel="Search for municipality"
                                     onValgtKommune={(
                                         kommuneId: string | undefined
                                     ) => setKommuneId(kommuneId)}
                                 />
                             </div>
                         </UnmountClosed>
-
                         <Normaltekst>
                             <AapneLukkeLenke
-                                aapneTekst="Sjekk om du kan søke digitalt i din kommune"
-                                lukkeTekst="Lukk"
+                                aapneTekst="Check if your municipality support digital applications"
+                                lukkeTekst="Close"
                                 aapen={lesMer}
                                 onClick={() => setLesMer(!lesMer)}
                             />
@@ -108,9 +109,8 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     </li>
                     <li>
                         <Normaltekst>
-                            Søknaden kan også brukes som inntektssikring for
-                            frilansere og selvstendig næringsdrivende frem til
-                            ny løsning er på plass hos NAV.
+                            People who are freelancers or self-employed can now temporarily apply while
+                            the new solution from NAV is being ready.
                         </Normaltekst>
                     </li>
                 </ul>
@@ -124,14 +124,12 @@ const SokSosialhjelpBokmalKrise: React.FC = () => {
                     }
                     onClick={(event: any) => sokDigital(event)}
                 >
-                    Søk digitalt
+                    Apply digitally
                 </Hovedknapp>
             </div>
             <br />
-            <h3>Kom i gang med digital søknad</h3>
-            <HjelpeVideo tittel="Kom i gang"/>
         </Artikkel>
     );
 };
 
-export default SokSosialhjelpBokmalKrise;
+export default SokSosialhjelpEngelskForskudd;
