@@ -13,10 +13,10 @@ const KontakteVeilederEngelsk: React.FC = () => {
             <Normaltekst>
                 Har du spørsmål i forbindelse med søknaden eller saken din om økonomisk sosialhjelp,
                 så kan du bruke{" "}
-                <Lenke href={"https://tjenester.nav.no/mininnboks/sporsmal/skriv/OKSOS"}>skriv til oss</Lenke>
+                <Lenke href={"https://mininnboks.nav.no/sporsmal/skriv/OKSOS"}>skriv til oss</Lenke>
                 {" "}
                 og velge området sosiale tjenester. Meldingen vil bli sendt til NAV-kontoret{" "}
-                der du er folkeregistrert. Du vil få svar på meldingen din i løpet av tre arbeidsdager.{" "}
+                der du er folkeregistrert.  Du vil få svar på meldingen din i løpet av tre arbeidsdager.{" "}
                 Hvis du oppholder deg i en annen kommune enn der du er{" "}
                 folkeregistrert, ber vi deg{" "}
                 <Lenke
