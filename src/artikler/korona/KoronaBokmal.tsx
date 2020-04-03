@@ -30,6 +30,23 @@ const KoronaBokmal = () => (
             særlig vekt på barn og unges behov.
         </Normaltekst>
 
+        <Undertittel>Har du økonomiske bekymringer?</Undertittel>
+        <Normaltekst>
+            I denne korte filmen får du som har økonomiske bekymringer og {" "}
+            midlertidige betalingsproblemer nyttige råd og tips.
+        </Normaltekst>
+
+        <br/>
+        <div style={{padding: "56.25% 0 0 0", position: "relative"}}>
+            <iframe
+                title={"Økonomiske bekymringer"}
+                src="https://player.vimeo.com/video/400233584"
+                style={{position:"absolute",top: "0", left: "0", width: "100%", height: "100%", border: "0"}}
+                allow="autoplay; fullscreen"
+            allowFullScreen
+            />
+        </div>
+
         <Undertittel>
             Hva med vilkår om aktivitet?
         </Undertittel>
