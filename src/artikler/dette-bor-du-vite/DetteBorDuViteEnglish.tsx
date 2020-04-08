@@ -23,9 +23,13 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 to provide for yourself. This could include
                 employment, other means of income or using
                 your own savings. Consult with NAV if you need
-                help exploring your options, you can contact the
-                NAV office in the municipality where you live. You
-                can also contact us by chat or phone.
+                help exploring your options, you can contact
+                {" "}
+                <Lenke href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                    your NAV-office
+                </Lenke>
+                .
+                You can also contact us by chat or phone.
             </Ingress>
 
             <Undertittel>Before you apply</Undertittel>

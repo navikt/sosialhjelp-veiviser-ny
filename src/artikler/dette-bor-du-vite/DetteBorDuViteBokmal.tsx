@@ -22,9 +22,14 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
                 om du har andre muligheter til å forsørge deg selv. Dette kan
                 for eksempel være gjennom jobb, andre inntekter eller egne midler.
-                Hvis du trenger hjelp til å finne ut hvilke muligheter du har, så
-                kan du ta kontakt med NAV-kontoret der du bor. Du kan også kontakte
-                oss på chat og telefon.
+                Hvis du trenger hjelp til å finne ut hvilke muligheter du har,
+                ta kontakt med
+                {" "}
+                <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                    ditt NAV-kontor
+                </Lenke>
+                .
+                Du kan også kontakte oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søker</Undertittel>

@@ -23,8 +23,13 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 deg sjølv. Dette kan til dømes vere arbeid, andre
                 inntekter eller eigne midlar. Dersom du trenger du
                 treng hjelp til å finne ut kva moglegheitar du har,
-                kan du ta kontakt med NAV-kontoret der du bur. Du
-                kan òg ta kontakt med oss på chat og telefon.
+                ta kontakt med
+                {" "}
+                <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                    ditt NAV-kontor
+                </Lenke>
+                .
+                Du kan òg ta kontakt med oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
