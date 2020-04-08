@@ -35,7 +35,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
             <Undertittel>Før du søker</Undertittel>
             <Normaltekst>
                 Når du søker må du gi opplysninger om deg og den
-                økonomiske situasjnen din. Du må ha i utgangspunktet
+                økonomiske situasjnen din. Du må i utgangspunktet
                 dokumentere opplysningene.
             </Normaltekst>
 

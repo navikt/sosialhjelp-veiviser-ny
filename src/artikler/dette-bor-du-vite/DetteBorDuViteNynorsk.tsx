@@ -74,12 +74,12 @@ const DetteBorDuViteNynorsk: React.FC = () => {
             <br />
             <Normaltekst>
                 Du må i utgangspunktet ha lovleg opphald i Noreg for å ha rett
-                til ækonomisk sosialhjelp. Du har ikkje rett til økonomisk
+                til økonomisk sosialhjelp. Du har ikkje rett til økonomisk
                 sosialhjelp dersom du oppheld deg i utlandet.
             </Normaltekst>
             <br />
             <Normaltekst>
-                alle har rett til å søkje om økonomisk sosialhjelp, og få ei
+                Alle har rett til å søkje om økonomisk sosialhjelp, og få ei
                 individuell vurdering av søknaden sin. Du har rett til
                 {" "}
                 <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
