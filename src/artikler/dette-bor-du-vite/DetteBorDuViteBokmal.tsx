@@ -23,7 +23,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 om du har andre muligheter til å forsørge deg selv. Dette kan
                 for eksempel være gjennom jobb, andre inntekter eller egne midler.
                 Hvis du trenger hjelp til å finne ut hvilke muligheter du har,
-                ta kontakt med
+                så kan du ta kontakt med
                 {" "}
                 <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
                     ditt NAV-kontor

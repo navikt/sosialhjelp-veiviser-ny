@@ -22,13 +22,12 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 should consider every other possibility for you
                 to provide for yourself. This could include
                 employment, other means of income or using
-                your own savings. Consult with NAV if you need
-                help exploring your options, you can contact
+                your own savings. Consult with
                 {" "}
                 <Lenke href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
                     your NAV-office
                 </Lenke>
-                .
+                if you need  help exploring your options.
                 You can also contact us by chat or phone.
             </Ingress>
 
