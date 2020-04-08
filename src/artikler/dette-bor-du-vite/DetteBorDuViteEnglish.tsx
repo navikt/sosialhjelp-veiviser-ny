@@ -27,6 +27,7 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 <Lenke href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
                     your NAV-office
                 </Lenke>
+                {" "}
                 if you need  help exploring your options.
                 You can also contact us by chat or phone.
             </Ingress>

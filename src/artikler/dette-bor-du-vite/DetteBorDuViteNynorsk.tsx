@@ -21,7 +21,7 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 Økonomisk sosialhjelp er ein mellombels stønad.
                 Du bør vurdere andre moglegheitar til å forsørgje
                 deg sjølv. Dette kan til dømes vere arbeid, andre
-                inntekter eller eigne midlar. Dersom du trenger du
+                inntekter eller eigne midlar. Dersom du
                 treng hjelp til å finne ut kva moglegheitar du har,
                 kan du ta kontakt med
                 {" "}
