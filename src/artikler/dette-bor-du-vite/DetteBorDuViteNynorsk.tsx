@@ -26,16 +26,17 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 kan du ta kontakt med
                 {" "}
                 <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
-                    ditt NAV-kontor
+                    NAV-kontoret
                 </Lenke>
-                .
+                {" "}
+                ditt.
                 Du kan òg ta kontakt med oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
             <Normaltekst>
                 Når du søkjer må du gi opplysningar om deg sjølv og
-                din situasjon din. Du må i utgangspunktet dokumentere opplysningane.
+                situasjonen din. Du må i utgangspunktet dokumentere opplysningane.
             </Normaltekst>
 
             <Ekspanderbartpanel

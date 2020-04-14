@@ -26,16 +26,17 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 så kan du ta kontakt med
                 {" "}
                 <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
-                    ditt NAV-kontor
+                    NAV-kontoret
                 </Lenke>
-                .
+                {" "}
+                ditt.
                 Du kan også kontakte oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søker</Undertittel>
             <Normaltekst>
-                Når du søker må du gi opplysninger om deg og den
-                økonomiske situasjnen din. Du må i utgangspunktet
+                Når du søker må du gi opplysninger om deg selv og den
+                økonomiske situasjonen din. Du må i utgangspunktet
                 dokumentere opplysningene.
             </Normaltekst>
 
@@ -74,7 +75,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
 
             <br />
             <Normaltekst>
-                Du må i utgangsspunktet ha lovlig opphold i Norge for
+                Du må i utgangspunktet ha lovlig opphold i Norge for
                 å ha rett til økonomisk sosialhjelp. Du har ikke rett
                 til økonomisk sosialhjelp hvis du oppholder deg i utlandet.
             </Normaltekst>
