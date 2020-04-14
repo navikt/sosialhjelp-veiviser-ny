@@ -36,7 +36,7 @@ const DetteBorDuViteNynorsk: React.FC = () => {
             <Undertittel>Før du søkjer</Undertittel>
             <Normaltekst>
                 Når du søkjer må du gi opplysningar om deg sjølv og
-                situasjon din. Du må i utgangspunktet dokumentere opplysningane.
+                situasjonen din. Du må i utgangspunktet dokumentere opplysningane.
             </Normaltekst>
 
             <Ekspanderbartpanel
