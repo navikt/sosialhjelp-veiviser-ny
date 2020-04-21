@@ -2,6 +2,7 @@
   "namespace": "default",
   "ingresses": [
     "https://sosialhjelp-veiviser.nais.oera.no/",
+    "https://sosialhjelp-veiviser.prod-sbs.nais.io/",
     "https://tjenester.nav.no/sosialhjelp-veiviser",
     "https://www.nav.no/sosialhjelp"
   ],

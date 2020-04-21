@@ -2,6 +2,7 @@
   "namespace": "q0",
   "ingresses": [
     "https://sosialhjelp-veiviser-q0.nais.oera-q.local/",
+    "https://sosialhjelp-veiviser-q0.dev-sbs.nais.io/",
     "https://tjenester-q0.nav.no/sosialhjelp-veiviser",
     "https://www-q0.nav.no/sosialhjelp"
   ],
