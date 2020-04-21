@@ -1,14 +1,20 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
-import {erCodesandbox, RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
+import {
+    erCodesandbox,
+    RequestMethod,
+    REST_STATUS,
+} from "../../../../../utils/restUtils";
 
 export interface TilgjengeligeKommuner {
     results: string[];
 }
 
 const useTilgjengeligeKommunerService = () => {
-    const [result, setResult] = useState<ServiceHookTypes<TilgjengeligeKommuner>>({
-        restStatus: REST_STATUS.PENDING
+    const [result, setResult] = useState<
+        ServiceHookTypes<TilgjengeligeKommuner>
+    >({
+        restStatus: REST_STATUS.PENDING,
     });
 
     let url = "/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
@@ -19,13 +25,16 @@ const useTilgjengeligeKommunerService = () => {
 
         if (window.location.origin.indexOf(".dev-nav.no") >= 0) {
             url = "https://sosialhjelp-soknad-api.dev-nav.no" + url;
-        } else if (window.location.origin.indexOf("digisos.labs.nais.io") >= 0) {
+        } else if (
+            window.location.origin.indexOf("digisos.labs.nais.io") >= 0
+        ) {
             url = "https://digisos.labs.nais.io" + url;
         } else if (window.location.origin.indexOf(".labs.nais.io") >= 0) {
             url = "https://sosialhjelp-soknad-api.labs.nais.io" + url;
         } else {
             // Heroku:
-            url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+            url =
+                "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
         }
 
         // Nytt endepunkt med status om kommune er midlertidig nede:
@@ -36,35 +45,46 @@ const useTilgjengeligeKommunerService = () => {
 
     if (erCodesandbox()) {
         // Public
-        url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+        url =
+            "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
     }
 
     useEffect(() => {
         let headers = new Headers({
             "Accept-Charset": "utf-8",
-            "Accept": "application/json, text/plain, */*"
+            Accept: "application/json, text/plain, */*",
         });
         if (erCodesandbox()) {
             headers = new Headers({
-                "Origin": "null",
+                Origin: "null",
                 "Accept-Charset": "utf-8",
-                "Accept": "application/json, text/plain, */*"
+                Accept: "application/json, text/plain, */*",
             });
         }
 
         const options: RequestInit = {
             headers: headers,
-            method: RequestMethod.GET
+            method: RequestMethod.GET,
         };
         fetch(url, options)
-            .then(response => response.json())
-            .then(response => setResult({ restStatus: REST_STATUS.OK, payload: {results: response} }))
-            .catch(error => setResult({ restStatus: REST_STATUS.FEILET, error }));
+            .then((response) => response.json())
+            .then((response) =>
+                setResult({
+                    restStatus: REST_STATUS.OK,
+                    payload: {results: response},
+                })
+            )
+            .catch((error) =>
+                setResult({restStatus: REST_STATUS.FEILET, error})
+            );
     }, [url]);
     return result;
 };
 
-const finnTilgjengeligKommune = (tilgjengeligeKommuner: string[], kommunenummer: string): boolean => {
+const finnTilgjengeligKommune = (
+    tilgjengeligeKommuner: string[],
+    kommunenummer: string
+): boolean => {
     let funnetKommune: any = undefined;
     tilgjengeligeKommuner.map((tilgjengeligeKommuneNr: string) => {
         if (tilgjengeligeKommuneNr.match(kommunenummer)) {

@@ -38,7 +38,7 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
     const tilgjengelige: Sprak[] = sprak;
 
     const erSprakTilgjengelig = (sprak: Sprak): boolean => {
-        return tilgjengelige.find(item => item === sprak) !== undefined;
+        return tilgjengelige.find((item) => item === sprak) !== undefined;
     };
 
     return (
@@ -53,13 +53,23 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                 aria-controls="language-selection"
             >
                 <span>Language</span>
-                <ul aria-hidden="false" className={aapen ? "" : "hidden"} id="language-selection">
+                <ul
+                    aria-hidden="false"
+                    className={aapen ? "" : "hidden"}
+                    id="language-selection"
+                >
                     {erSprakTilgjengelig(Sprak.NORSK_BOKMAL) && (
                         <li>
                             <a
                                 href="?lang=no"
-                                onClick={(event: any) => velgSpraak(event, "?lang=nb")}
-                                className={valgtSprak === Sprak.NORSK_BOKMAL ? "active-lang" : ""}
+                                onClick={(event: any) =>
+                                    velgSpraak(event, "?lang=nb")
+                                }
+                                className={
+                                    valgtSprak === Sprak.NORSK_BOKMAL
+                                        ? "active-lang"
+                                        : ""
+                                }
                                 title="Bokmål (Språkvalg for innhold)"
                             >
                                 Bokmål
@@ -71,8 +81,14 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                         <li>
                             <a
                                 href="?lang=nn"
-                                className={valgtSprak === Sprak.NYNORSK ? "active-lang" : ""}
-                                onClick={(event: any) => velgSpraak(event, "?lang=nn")}
+                                className={
+                                    valgtSprak === Sprak.NYNORSK
+                                        ? "active-lang"
+                                        : ""
+                                }
+                                onClick={(event: any) =>
+                                    velgSpraak(event, "?lang=nn")
+                                }
                                 title="Nynorsk (Språkvalg for innhold)"
                             >
                                 Nynorsk
@@ -84,8 +100,14 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                         <li>
                             <a
                                 href="?lang=en"
-                                onClick={(event: any) => velgSpraak(event, "?lang=en")}
-                                className={valgtSprak === Sprak.ENGELSK ? "active-lang" : ""}
+                                onClick={(event: any) =>
+                                    velgSpraak(event, "?lang=en")
+                                }
+                                className={
+                                    valgtSprak === Sprak.ENGELSK
+                                        ? "active-lang"
+                                        : ""
+                                }
                                 title="English (Språkvalg for innhold)"
                             >
                                 English

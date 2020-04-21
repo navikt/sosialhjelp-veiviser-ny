@@ -49,7 +49,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 søkje digitalt, kan du søkje med kommunen sitt papirskjema.
             </Normaltekst>
 
-            <br/>
+            <br />
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -57,26 +57,26 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 </Undertittel>
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
-                nedetidService.payload.isNedetid && (
-                    <div>
-                        <div style={{paddingBottom: "1rem"}}>
-                            <Hovedknapp disabled={true}>
-                                Gå til søknad
-                            </Hovedknapp>
+                    nedetidService.payload.isNedetid && (
+                        <div>
+                            <div style={{paddingBottom: "1rem"}}>
+                                <Hovedknapp disabled={true}>
+                                    Gå til søknad
+                                </Hovedknapp>
+                            </div>
+                            <AlertStripe
+                                type="feil"
+                                style={{textAlign: "left"}}
+                            >
+                                Du kan ikkje sende digital søknad i perioden{" "}
+                                {nedetidService.payload.nedetidStartText} –{" "}
+                                {nedetidService.payload.nedetidSluttText} grunna
+                                teknisk vedlikehald. Ta kontakt med ditt lokale
+                                NAV-kontor viss du skal søkje om økonomisk
+                                sosialhjelp i denne perioden.
+                            </AlertStripe>
                         </div>
-                        <AlertStripe
-                            type="feil"
-                            style={{textAlign: "left"}}
-                        >
-                            Du kan ikkje sende digital søknad i perioden{" "}
-                            {nedetidService.payload.nedetidStartText} –{" "}
-                            {nedetidService.payload.nedetidSluttText} grunna
-                            teknisk vedlikehald. Ta kontakt med ditt lokale
-                            NAV-kontor viss du skal søkje om økonomisk
-                            sosialhjelp i denne perioden.
-                        </AlertStripe>
-                    </div>
-                )}
+                    )}
 
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
@@ -91,20 +91,21 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                         </Hovedknapp>
 
                         <Normaltekst>
-
-                            Digital søknad om økonomisk sosialhjelp vil snart vere tilgjengeleg for heile landet.{" "}
+                            Digital søknad om økonomisk sosialhjelp vil snart
+                            vere tilgjengeleg for heile landet.{" "}
                             {tilgjengeligeKommunerService.restStatus ===
-                            REST_STATUS.OK && (
+                                REST_STATUS.OK && (
                                 <>
                                     Førebels kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av {" "}{ANTALL_KOMMUNER} kommunar
+                                        {antallTilgjengeligKommuner} av{" "}
+                                        {ANTALL_KOMMUNER} kommunar
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
                             )}
                         </Normaltekst>
-                        <br/>
+                        <br />
 
                         <UnmountClosed isOpened={lesMer}>
                             <KommuneSok
@@ -112,18 +113,19 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                                 soknadTilgjengeligTekst="Du kan søkje digitalt i"
                                 soknadIkkeTilgjengelig={
                                     <span>
-                                        kan dessverre ikkje ta i mot digitale søknader enno. Du kan{" "}
+                                        kan dessverre ikkje ta i mot digitale
+                                        søknader enno. Du kan{" "}
                                         <Lenke href={"./sok-papir?lang=nn"}>
-                                                søkje på papirskjema
+                                            søkje på papirskjema
                                         </Lenke>
                                         .
                                     </span>
                                 }
                                 placeholderTekst="Skriv kommunenavn"
                                 ariaLabel="Søk etter kommunenavn"
-                                onValgtKommune={(kommuneId: string | undefined) =>
-                                    setKommuneId(kommuneId)
-                                }
+                                onValgtKommune={(
+                                    kommuneId: string | undefined
+                                ) => setKommuneId(kommuneId)}
                             />
                         </UnmountClosed>
                         <Normaltekst>
@@ -138,19 +140,19 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 )}
             </SokDigitaltPanel>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <IkkeSokDigitaltPanel>
                 <Undertittel>Dersom du ikkje skal søkje digitalt</Undertittel>
 
-                <br/>
+                <br />
                 <Normaltekst>
                     Dersom du ikkje skal søkje digitalt, kan du levere{" "}
                     <Lenke href={"./sok-papir?lang=nn"}>søknad på papir</Lenke>.
                 </Normaltekst>
 
-                <br/>
+                <br />
                 <Element>
                     Kvifor kan ikkje alle kommunar ta imot digital søknad?
                 </Element>

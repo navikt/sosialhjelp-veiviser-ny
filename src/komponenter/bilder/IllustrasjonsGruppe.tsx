@@ -10,7 +10,7 @@ const IllustrasjonsGruppe: React.FC = () => {
             viewBox="0 0 315 40"
         >
             <defs>
-                <path id="a" d="M0 0h54.286v30.476H0z"/>
+                <path id="a" d="M0 0h54.286v30.476H0z" />
             </defs>
             <g fill="none" fillRule="evenodd">
                 <g fillRule="nonzero">
@@ -62,7 +62,10 @@ const IllustrasjonsGruppe: React.FC = () => {
                         fill="#C86151"
                         d="M235.238 10.476h11.429l.952 4.762h-13.333z"
                     />
-                    <path fill="#E7E9E9" d="M234.286 15.238h13.333v23.81h-13.333z"/>
+                    <path
+                        fill="#E7E9E9"
+                        d="M234.286 15.238h13.333v23.81h-13.333z"
+                    />
                 </g>
                 <g fillRule="nonzero">
                     <path
@@ -73,7 +76,10 @@ const IllustrasjonsGruppe: React.FC = () => {
                         fill="#85D5F0"
                         d="M219.048 10.476h11.428l.953 4.762h-13.334z"
                     />
-                    <path fill="#E7E9E9" d="M218.095 15.238h13.333v23.81h-13.333z"/>
+                    <path
+                        fill="#E7E9E9"
+                        d="M218.095 15.238h13.333v23.81h-13.333z"
+                    />
                 </g>
                 <path
                     fill="#FFBD66"
@@ -96,7 +102,7 @@ const IllustrasjonsGruppe: React.FC = () => {
                     d="M164.762 4.762h22.857v23.81h-22.857zm0 26.667h22.857v7.619h-22.857zm25.714-26.667h22.857v23.81h-22.857zm0 26.667h22.857v7.619h-22.857z"
                 />
                 <g fillRule="nonzero" transform="translate(200 27.619)">
-                    <path fill="#B26D14" d="M1.905 4.952h22.857v4.572H1.905z"/>
+                    <path fill="#B26D14" d="M1.905 4.952h22.857v4.572H1.905z" />
                     <rect
                         width="18.286"
                         height="1.143"
@@ -116,7 +122,7 @@ const IllustrasjonsGruppe: React.FC = () => {
                 </g>
                 <g transform="translate(63.81 8.571)">
                     <mask id="b" fill="#fff">
-                        <use xlinkHref="#a"/>
+                        <use xlinkHref="#a" />
                     </mask>
                     <g mask="url(#b)">
                         <g fillRule="nonzero" transform="translate(6.667)">
@@ -140,8 +146,18 @@ const IllustrasjonsGruppe: React.FC = () => {
                                 fill="#3E3832"
                                 d="M46.367 8.077a.586.586 0 01.793.209.567.567 0 01-.212.78l-14.077 8a.586.586 0 01-.793-.209.567.567 0 01.212-.78l14.077-8z"
                             />
-                            <circle cx="46.095" cy="9.143" r="1.524" fill="#78706A"/>
-                            <circle cx="32" cy="16.762" r="1.524" fill="#78706A"/>
+                            <circle
+                                cx="46.095"
+                                cy="9.143"
+                                r="1.524"
+                                fill="#78706A"
+                            />
+                            <circle
+                                cx="32"
+                                cy="16.762"
+                                r="1.524"
+                                fill="#78706A"
+                            />
                             <path
                                 fill="#F5E3E0"
                                 d="M10.296 4.825a.19.19 0 11.36-.126l2.667 7.62a.19.19 0 01-.243.242L5.46 9.894a.19.19 0 01.127-.36l7.245 2.537-2.536-7.246z"
@@ -150,7 +166,7 @@ const IllustrasjonsGruppe: React.FC = () => {
                     </g>
                 </g>
                 <g fillRule="nonzero">
-                    <path fill="#A5A3A1" d="M139.333 33.238v2h-14v-2z"/>
+                    <path fill="#A5A3A1" d="M139.333 33.238v2h-14v-2z" />
                     <path
                         fill="#8A3B2C"
                         d="M125.87 32.571c.808 0 1.463.747 1.463 1.667s-.655 1.667-1.464 1.667h-11.072c-.808 0-1.464-.746-1.464-1.667 0-.92.656-1.667 1.464-1.667h11.072z"
@@ -166,8 +182,7 @@ const IllustrasjonsGruppe: React.FC = () => {
                 </g>
             </g>
         </svg>
-
-    )
+    );
 };
 
 export default IllustrasjonsGruppe;

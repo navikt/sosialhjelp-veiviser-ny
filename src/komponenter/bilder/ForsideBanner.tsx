@@ -54,7 +54,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 />
                 <g transform="matrix(-1 0 0 1 105.6 68.8)">
                     <mask id="forside_b" fill="#fff">
-                        <use xlinkHref="#forside_a"/>
+                        <use xlinkHref="#forside_a" />
                     </mask>
                     <g mask="url(#forside_b)">
                         <path
@@ -70,10 +70,10 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 />
                 <g transform="matrix(-1 0 0 1 98.6 5.2)">
                     <mask id="forside_d" fill="#fff">
-                        <use xlinkHref="#forside_c"/>
+                        <use xlinkHref="#forside_c" />
                     </mask>
                     <g mask="url(#forside_d)">
-                        <path fill="#3E3832" d="M-15.4-26.4h82.8v94.8h-82.8z"/>
+                        <path fill="#3E3832" d="M-15.4-26.4h82.8v94.8h-82.8z" />
                     </g>
                 </g>
                 <path
@@ -83,7 +83,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 />
                 <g transform="matrix(-1 0 0 1 97.2 42.4)">
                     <mask id="forside_f" fill="#fff">
-                        <use xlinkHref="#forside_e"/>
+                        <use xlinkHref="#forside_e" />
                     </mask>
                     <g mask="url(#forside_f)">
                         <path
@@ -123,7 +123,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 />
                 <g transform="translate(191.8 70.807)">
                     <mask id="forside_h" fill="#fff">
-                        <use xlinkHref="#forside_g"/>
+                        <use xlinkHref="#forside_g" />
                     </mask>
                     <g mask="url(#forside_h)">
                         <path
@@ -140,7 +140,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 />
                 <g transform="translate(195.4 10.8)">
                     <mask id="forside_j" fill="#fff">
-                        <use xlinkHref="#forside_i"/>
+                        <use xlinkHref="#forside_i" />
                     </mask>
                     <g mask="url(#forside_j)">
                         <path
@@ -179,7 +179,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                         fill="#5A1F57"
                         d="M233.931 97.746h-1.606a.214.214 0 01-.215-.214v-.27c0-.117.096-.213.215-.213h1.606c.12 0 .215.096.215.214v.27a.214.214 0 01-.215.213"
                     />
-                    <path fill="#C2B5CF" d="M232.663 97.5h.93V95h-.93z"/>
+                    <path fill="#C2B5CF" d="M232.663 97.5h.93V95h-.93z" />
                 </g>
                 <g fillRule="nonzero">
                     <path
@@ -194,7 +194,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                         fill="#91C823"
                         d="M8 74.847L9.852 74 20 97.153 18.148 98 8 74.847zM9.852 74L20 97.153 18.148 98 8 74.847 9.852 74z"
                     />
-                    <path fill="#78706A" d="M33 96H1l3.835 26h24.323z"/>
+                    <path fill="#78706A" d="M33 96H1l3.835 26h24.323z" />
                     <path
                         fill="#91C823"
                         d="M.45 85.222c5.494-1.324 9.377-3.55 11.65-6.677 3.408-4.692 3.15-8.527.693-10.312-2.457-1.786-6.184-.846-9.593 3.846C.928 75.207.011 79.588.45 85.222z"
@@ -220,7 +220,7 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
                 </g>
             </g>
         </svg>
-    )
+    );
 };
 
 export default ForsideBanner;

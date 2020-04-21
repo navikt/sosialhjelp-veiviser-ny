@@ -7,11 +7,16 @@ import {createBrowserHistory} from "history";
 const getAbsoluteBasename = () => {
     // @ts-ignore
     // return erDev() ? "sosialhjelp/innsyn" : window.location.pathname.replace(/^\/(([^/]+\/)?sosialhjelp\/innsyn).+$/, "$1");
-    return erDev() ? "sosialhjelp" : window.location.pathname.replace(/^\/(([^/]+\/)?sosialhjelp).+$/, "$1");
+    return erDev()
+        ? "sosialhjelp"
+        : window.location.pathname.replace(
+              /^\/(([^/]+\/)?sosialhjelp).+$/,
+              "$1"
+          );
 };
 
 const history = createBrowserHistory({
-    basename: "/sosialhjelp" // getAbsoluteBasename()
+    basename: "/sosialhjelp", // getAbsoluteBasename()
 });
 
 const onClickLink = (event: any, sti: string) => {
@@ -23,18 +28,16 @@ const gaaTilDigitalSoknad = (kommuneId?: string): void => {
     const query = kommuneId !== undefined ? "?kommuneId=" + kommuneId : "";
     let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
     if (window.location.origin.indexOf(".dev-nav.no") >= 0) {
-        soknadUrl = "https://sosialhjelp-soknad.dev-nav.no/sosialhjelp/soknad/mock-login";
+        soknadUrl =
+            "https://sosialhjelp-soknad.dev-nav.no/sosialhjelp/soknad/mock-login";
     } else if (window.location.origin.indexOf("digisos.labs.nais.io") >= 0) {
-        soknadUrl = "https://digisos.labs.nais.io/sosialhjelp/soknad/mock-login";
+        soknadUrl =
+            "https://digisos.labs.nais.io/sosialhjelp/soknad/mock-login";
     } else if (window.location.origin.indexOf(".labs.nais.io") >= 0) {
-        soknadUrl = "https://sosialhjelp-soknad.labs.nais.io/sosialhjelp/soknad/mock-login";
+        soknadUrl =
+            "https://sosialhjelp-soknad.labs.nais.io/sosialhjelp/soknad/mock-login";
     }
     window.location.href = soknadUrl;
 };
 
-export {
-    getAbsoluteBasename,
-    history,
-    gaaTilDigitalSoknad,
-    onClickLink
-}
+export {getAbsoluteBasename, history, gaaTilDigitalSoknad, onClickLink};

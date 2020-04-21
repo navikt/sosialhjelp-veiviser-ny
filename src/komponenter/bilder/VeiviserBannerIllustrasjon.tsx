@@ -1,6 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) => {
+const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({
+    className,
+}) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,27 +32,25 @@ const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) 
             </defs>
             <g fill="none" fillRule="evenodd">
                 <g fill="#E7E5E2">
-                    <path
-                        d="M22.88 79.925c.62-.166.97-.857.783-1.558l-4.05-15.117c-.48-1.79-2.176-2.9-3.77-2.474-1.6.43-2.507 2.232-2.027 4.025l3.516 13.122c.482 1.798 2.172 2.907 3.775 2.477l1.773-.475z"/>
-                    <path
-                        d="M29.437 98.99c-2.063 1.515 3.79 34.982 27.385 35.01 22.755.027 23.666-32.663 23.604-34.2-1.043-.568-2.509-1.048-3.846-1.553 1.754-.33 4.788-.535 7.087-3.095C90.888 87.11 96 65.745 96 53.25 96 27.159 81.16 6 57.973 6 34.791 6 16 27.16 16 53.25c0 13.338 3.925 23.035 11.096 30.276 2.211 2.232 5.976 7.595 5.894 13.485-1.191.741-2.314 1.236-3.553 1.979z"/>
+                    <path d="M22.88 79.925c.62-.166.97-.857.783-1.558l-4.05-15.117c-.48-1.79-2.176-2.9-3.77-2.474-1.6.43-2.507 2.232-2.027 4.025l3.516 13.122c.482 1.798 2.172 2.907 3.775 2.477l1.773-.475z" />
+                    <path d="M29.437 98.99c-2.063 1.515 3.79 34.982 27.385 35.01 22.755.027 23.666-32.663 23.604-34.2-1.043-.568-2.509-1.048-3.846-1.553 1.754-.33 4.788-.535 7.087-3.095C90.888 87.11 96 65.745 96 53.25 96 27.159 81.16 6 57.973 6 34.791 6 16 27.16 16 53.25c0 13.338 3.925 23.035 11.096 30.276 2.211 2.232 5.976 7.595 5.894 13.485-1.191.741-2.314 1.236-3.553 1.979z" />
                 </g>
                 <g transform="matrix(-1 0 0 1 108 98)">
                     <mask id="b" fill="#fff">
-                        <use xlinkHref="#a"/>
+                        <use xlinkHref="#a" />
                     </mask>
-                    <use fill="#D8A25D" xlinkHref="#a"/>
+                    <use fill="#D8A25D" xlinkHref="#a" />
                     <g mask="url(#b)">
-                        <path fill="#117938" d="M-66 144h252V-56H-66z"/>
+                        <path fill="#117938" d="M-66 144h252V-56H-66z" />
                     </g>
                 </g>
                 <g transform="matrix(-1 0 0 1 96 0)">
                     <mask id="d" fill="#fff">
-                        <use xlinkHref="#c"/>
+                        <use xlinkHref="#c" />
                     </mask>
-                    <use fill="#F6B873" xlinkHref="#c"/>
+                    <use fill="#F6B873" xlinkHref="#c" />
                     <g fill="#8B5F26" mask="url(#d)">
-                        <path d="M-28-58h138v158H-28z"/>
+                        <path d="M-28-58h138v158H-28z" />
                     </g>
                 </g>
                 <path
@@ -69,11 +69,11 @@ const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) 
                 />
                 <g transform="translate(120.353 4)">
                     <mask id="f" fill="#fff">
-                        <use xlinkHref="#e"/>
+                        <use xlinkHref="#e" />
                     </mask>
-                    <use fill="#F5B773" xlinkHref="#e"/>
+                    <use fill="#F5B773" xlinkHref="#e" />
                     <g fill="#3E3832" mask="url(#f)">
-                        <path d="M-17.941-22.35h124v147h-124z"/>
+                        <path d="M-17.941-22.35h124v147h-124z" />
                     </g>
                 </g>
                 <path
@@ -82,11 +82,14 @@ const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) 
                 />
                 <g transform="translate(117.619 100.735)">
                     <mask id="h" fill="#fff">
-                        <use xlinkHref="#g"/>
+                        <use xlinkHref="#g" />
                     </mask>
-                    <use fill="#D8A25D" xlinkHref="#g"/>
+                    <use fill="#D8A25D" xlinkHref="#g" />
                     <g mask="url(#h)">
-                        <path fill="#0C5472" d="M-61.722 137.935h236v-189h-236z"/>
+                        <path
+                            fill="#0C5472"
+                            d="M-61.722 137.935h236v-189h-236z"
+                        />
                     </g>
                 </g>
                 <path
@@ -136,7 +139,7 @@ const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) 
                         fill="#5A1F57"
                         d="M183.862 139.492h-3.211a.428.428 0 01-.43-.427v-.54a.43.43 0 01.43-.427h3.211a.43.43 0 01.43.428v.539a.428.428 0 01-.43.427"
                     />
-                    <path fill="#C2B5CF" d="M181.327 139h1.86v-5h-1.86z"/>
+                    <path fill="#C2B5CF" d="M181.327 139h1.86v-5h-1.86z" />
                 </g>
                 <g>
                     <path
@@ -193,7 +196,10 @@ const VeiviserBannerIllustrasjon: React.FC<{className: string}> = ({className}) 
                         fill="#E9C264"
                         d="M310.597 132.967a.68.68 0 01-.238.08c-.57.084-.934-.41-1.362-.347-.424.06-.654.652-.654.652l.086.626 2.269-.34-.101-.671z"
                     />
-                    <path fill="#545757" d="M310.526 124.764l-.775 3.02 2.4-.36z"/>
+                    <path
+                        fill="#545757"
+                        d="M310.526 124.764l-.775 3.02 2.4-.36z"
+                    />
                     <path
                         fill="#C52C35"
                         d="M328.21 156.43l6.78 1.571c.567.129.925.698.787 1.269l-.91 3.943a1.062 1.062 0 01-1.269.793l-6.778-1.571a1.062 1.062 0 01-.793-1.269l.916-3.944a1.052 1.052 0 011.267-.792"

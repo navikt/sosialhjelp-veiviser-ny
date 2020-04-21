@@ -18,25 +18,26 @@ const DetteBorDuViteEnglish: React.FC = () => {
         >
             <Innholdstittel>What you should know</Innholdstittel>
             <Ingress>
-                Financial assistance is a temporary benefit. You
-                should consider every other possibility for you
-                to provide for yourself. This could include
-                employment, other means of income or using
-                your own savings. Consult with your
-                {" "}
-                <Lenke href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                Financial assistance is a temporary benefit. You should consider
+                every other possibility for you to provide for yourself. This
+                could include employment, other means of income or using your
+                own savings. Consult with your{" "}
+                <Lenke
+                    href={
+                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                    }
+                >
                     NAV-office
-                </Lenke>
-                {" "}
-                if you need  help exploring your options.
-                You can also contact us by chat or phone.
+                </Lenke>{" "}
+                if you need help exploring your options. You can also contact us
+                by chat or phone.
             </Ingress>
 
             <Undertittel>Before you apply</Undertittel>
             <Normaltekst>
-                When you apply, you must provide information about
-                yourself and your financial situation. You usually
-                have to provide documentation for this information.
+                When you apply, you must provide information about yourself and
+                your financial situation. You usually have to provide
+                documentation for this information.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -77,22 +78,19 @@ const DetteBorDuViteEnglish: React.FC = () => {
 
             <br />
             <Normaltekst>
-                Before you apply for financial aid, you should usually
-                have a legal residence i Norway. If you live abroad you
-                do not qualify for social assistance.
+                Before you apply for financial aid, you should usually have a
+                legal residence i Norway. If you live abroad you do not qualify
+                for social assistance.
             </Normaltekst>
             <br />
             <Normaltekst>
                 Everyone has the right to submit an application for financial
                 assistance and to have NAV conduct an individual assessment of
-                their application. You have the rights to
-                {" "}
+                their application. You have the rights to{" "}
                 <Lenke href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
                     information, advice and guidance
                 </Lenke>
-                ,
-                {" "}
-                regardless of your current financial situation.
+                , regardless of your current financial situation.
             </Normaltekst>
 
             <Undertittel>After you apply</Undertittel>

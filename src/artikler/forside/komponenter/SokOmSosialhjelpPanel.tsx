@@ -5,8 +5,10 @@ import {Systemtittel} from "nav-frontend-typografi";
 import "./sokOmSosialhjelpPanel.less";
 import IllustrasjonsGruppe from "../../../komponenter/bilder/IllustrasjonsGruppe";
 
-const SokOmSosialhjelpPanel: React.FC<{href: string, children: React.ReactNode}> = ({href, children}) => {
-
+const SokOmSosialhjelpPanel: React.FC<{
+    href: string;
+    children: React.ReactNode;
+}> = ({href, children}) => {
     return (
         <LenkepanelBase
             className="start_soknad_panel"
@@ -16,14 +18,12 @@ const SokOmSosialhjelpPanel: React.FC<{href: string, children: React.ReactNode}>
             <div className="sokMobilIllustrasjon" />
 
             {/*SVG har feil: <MobilSirkel />*/}
-            <Systemtittel>
-                {children}
-            </Systemtittel>
+            <Systemtittel>{children}</Systemtittel>
             <div className="illustrasjonsGruppe">
-                <IllustrasjonsGruppe/>
+                <IllustrasjonsGruppe />
             </div>
         </LenkepanelBase>
-    )
+    );
 };
 
 export default SokOmSosialhjelpPanel;

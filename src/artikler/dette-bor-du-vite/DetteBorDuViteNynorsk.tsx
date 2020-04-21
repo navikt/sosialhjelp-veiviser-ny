@@ -18,25 +18,25 @@ const DetteBorDuViteNynorsk: React.FC = () => {
         >
             <Innholdstittel>Dette bør du vite</Innholdstittel>
             <Ingress>
-                Økonomisk sosialhjelp er ein mellombels stønad.
-                Du bør vurdere andre moglegheitar til å forsørgje
-                deg sjølv. Dette kan til dømes vere arbeid, andre
-                inntekter eller eigne midlar. Dersom du
-                treng hjelp til å finne ut kva moglegheitar du har,
-                kan du ta kontakt med
-                {" "}
-                <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                Økonomisk sosialhjelp er ein mellombels stønad. Du bør vurdere
+                andre moglegheitar til å forsørgje deg sjølv. Dette kan til
+                dømes vere arbeid, andre inntekter eller eigne midlar. Dersom du
+                treng hjelp til å finne ut kva moglegheitar du har, kan du ta
+                kontakt med{" "}
+                <Lenke
+                    href={
+                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                    }
+                >
                     NAV-kontoret
-                </Lenke>
-                {" "}
-                ditt.
-                Du kan òg ta kontakt med oss på chat og telefon.
+                </Lenke>{" "}
+                ditt. Du kan òg ta kontakt med oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
             <Normaltekst>
-                Når du søkjer må du gi opplysningar om deg sjølv og
-                situasjonen din. Du må i utgangspunktet dokumentere opplysningane.
+                Når du søkjer må du gi opplysningar om deg sjølv og situasjonen
+                din. Du må i utgangspunktet dokumentere opplysningane.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -81,13 +81,11 @@ const DetteBorDuViteNynorsk: React.FC = () => {
             <br />
             <Normaltekst>
                 Alle har rett til å søkje om økonomisk sosialhjelp, og få ei
-                individuell vurdering av søknaden sin. Du har rett til
-                {" "}
+                individuell vurdering av søknaden sin. Du har rett til{" "}
                 <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
                     opplysning, råd og rettleiing
-                </Lenke>
-                {" "}
-               uavhengig av om du har rett til økonomisk sosialhjelp.
+                </Lenke>{" "}
+                uavhengig av om du har rett til økonomisk sosialhjelp.
             </Normaltekst>
 
             <Undertittel>Etter du har søkt</Undertittel>

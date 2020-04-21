@@ -38,18 +38,20 @@ const SokSosialhjelpBokmalForskudd: React.FC = () => {
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
             <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
 
-            {nedetidService.restStatus === REST_STATUS.OK && nedetidService.payload.isNedetid && (
-                <>
-                    <AlertStripeFeil>
-                        Du kan ikke sende digital søknad i perioden{" "}
-                        {nedetidService.payload.nedetidStartText} –{" "}
-                        {nedetidService.payload.nedetidSluttText} grunnet teknisk
-                        vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
-                        søke om økonomisk sosialhjelp i denne perioden.
-                    </AlertStripeFeil>
-                    <br/>
-                </>
-            )}
+            {nedetidService.restStatus === REST_STATUS.OK &&
+                nedetidService.payload.isNedetid && (
+                    <>
+                        <AlertStripeFeil>
+                            Du kan ikke sende digital søknad i perioden{" "}
+                            {nedetidService.payload.nedetidStartText} –{" "}
+                            {nedetidService.payload.nedetidSluttText} grunnet
+                            teknisk vedlikehold. Ta kontakt med ditt lokale
+                            NAV-kontor hvis du skal søke om økonomisk
+                            sosialhjelp i denne perioden.
+                        </AlertStripeFeil>
+                        <br />
+                    </>
+                )}
 
             <div>
                 <Normaltekst>
@@ -66,8 +68,8 @@ const SokSosialhjelpBokmalForskudd: React.FC = () => {
                                 <>
                                     Foreløpig kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        {" "}kommuner
+                                        {antallTilgjengeligKommuner} av{" "}
+                                        {ANTALL_KOMMUNER} kommuner
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
@@ -129,7 +131,7 @@ const SokSosialhjelpBokmalForskudd: React.FC = () => {
             </div>
             <br />
             <h3>Kom i gang med digital søknad</h3>
-            <HjelpeVideo tittel="Kom i gang"/>
+            <HjelpeVideo tittel="Kom i gang" />
         </Artikkel>
     );
 };

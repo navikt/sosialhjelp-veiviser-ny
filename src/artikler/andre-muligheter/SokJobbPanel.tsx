@@ -12,10 +12,11 @@ const SokJobbPanel: React.FC = () => {
             className="sok_jobb_panel"
         >
             <Innholdstittel>Finn og søk jobb</Innholdstittel>
-            <Normaltekst>Det du trenger for å komme i gang med å søke jobber</Normaltekst>
+            <Normaltekst>
+                Det du trenger for å komme i gang med å søke jobber
+            </Normaltekst>
         </Lenkepanel>
-    )
+    );
 };
 
 export default SokJobbPanel;
-

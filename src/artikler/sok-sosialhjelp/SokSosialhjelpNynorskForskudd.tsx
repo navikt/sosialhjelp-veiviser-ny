@@ -16,18 +16,19 @@ import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
-const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
-    return <>
-        <AlertStripeFeil>
-            Du kan ikke sende digital søknad i perioden{" "}
-            {nedetidService.payload.nedetidStartText} –{" "}
-            {nedetidService.payload.nedetidSluttText} grunnet
-            teknisk vedlikehold. Ta kontakt med ditt lokale
-            NAV-kontor hvis du skal søke om økonomisk
-            sosialhjelp i denne perioden.
-        </AlertStripeFeil>
-        <br/>
-    </>;
+const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
+    return (
+        <>
+            <AlertStripeFeil>
+                Du kan ikke sende digital søknad i perioden{" "}
+                {nedetidService.payload.nedetidStartText} –{" "}
+                {nedetidService.payload.nedetidSluttText} grunnet teknisk
+                vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du skal
+                søke om økonomisk sosialhjelp i denne perioden.
+            </AlertStripeFeil>
+            <br />
+        </>
+    );
 };
 
 const SokSosialhjelpNynorskForskudd: React.FC = () => {
@@ -53,32 +54,30 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
 
             {nedetidService.restStatus === REST_STATUS.OK &&
                 nedetidService.payload.isNedetid && (
-                    <AdvarselNedetid nedetidService={nedetidService}/>
+                    <AdvarselNedetid nedetidService={nedetidService} />
                 )}
 
             <div>
                 <Normaltekst>
-                    Det er gjort mellombelse endringar av den digitale søknaden som følgje
-                    av koronaviruset:
+                    Det er gjort mellombelse endringar av den digitale søknaden
+                    som følgje av koronaviruset:
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            Digital søknad om økonomisk sosialhjelp vil snart vere tilgjengeleg
-                            for heile landet.{" "}
-
+                            Digital søknad om økonomisk sosialhjelp vil snart
+                            vere tilgjengeleg for heile landet.{" "}
                             {tilgjengeligeKommunerService.restStatus ===
-                            REST_STATUS.OK && (
+                                REST_STATUS.OK && (
                                 <>
                                     Førebels kan{" "}
                                     <b>
-                                        {antallTilgjengeligKommuner} av {ANTALL_KOMMUNER}
-                                        {" "}kommunar
+                                        {antallTilgjengeligKommuner} av{" "}
+                                        {ANTALL_KOMMUNER} kommunar
                                     </b>{" "}
                                     ta imot digital søknad.
                                 </>
                             )}
-
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
                             <div className="kommunesok_midlertidig">
@@ -87,8 +86,8 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
                                     soknadTilgjengeligTekst="Du kan søke digitalt i"
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            kan dessverre ikkje ta i mot digitale
-                                            søknader enno. Du kan{" "}
+                                            kan dessverre ikkje ta i mot
+                                            digitale søknader enno. Du kan{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
                                                 søkje på papirskjema
                                             </Lenke>
@@ -114,8 +113,9 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
                     </li>
                     <li>
                         <Normaltekst>
-                            Søknaden kan også brukast som inntektssikring for frilansarar og sjølvstendig{" "}
-                            næringsdrivande fram til ny løysing er på plass hjå NAV.
+                            Søknaden kan også brukast som inntektssikring for
+                            frilansarar og sjølvstendig næringsdrivande fram til
+                            ny løysing er på plass hjå NAV.
                         </Normaltekst>
                     </li>
                 </ul>
@@ -134,7 +134,7 @@ const SokSosialhjelpNynorskForskudd: React.FC = () => {
             </div>
             <br />
             <h3>Kom i gang med digital søknad</h3>
-            <HjelpeVideo tittel="Kom i gang"/>
+            <HjelpeVideo tittel="Kom i gang" />
         </Artikkel>
     );
 };

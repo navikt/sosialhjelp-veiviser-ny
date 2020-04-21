@@ -11,7 +11,7 @@ npm install
 npm start
 ```
 
-Dette starter opp en proxyserver lokalt på port 8080. Alle endepunkter kan kontaktes via 
+Dette starter opp en proxyserver lokalt på port 8080. Alle endepunkter kan kontaktes via
 `http://localhost:8080/https://navn.no/osv.osv`
 
 ## Proxyserver på codesandbox
