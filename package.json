@@ -60,6 +60,8 @@
     "@types/react-dom": "16.9.4",
     "@types/uuid": "^3.4.7",
     "acorn": ">=7.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
     "minimist": ">=1.2.0",
     "prettier": "^2.0.4",
     "serialize-javascript": ">=2.1.2",
@@ -79,5 +81,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
 }
