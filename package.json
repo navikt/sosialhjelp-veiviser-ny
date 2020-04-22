@@ -62,7 +62,7 @@
     "acorn": ">=7.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
-    "minimist": ">=1.2.0",
+    "minimist": ">=1.2.3",
     "prettier": "^2.0.4",
     "serialize-javascript": ">=2.1.2",
     "typescript": "^3.7.5"
