@@ -1,86 +1,82 @@
 @media all and (min-width: 601px) {
-  .artikkel {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+    .artikkel {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 .sentrert_illustrasjon {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
 @media all and (max-width: 600px) {
-  .artikkel {
-    padding-bottom: 2rem;
-  }
+    .artikkel {
+        padding-bottom: 2rem;
+    }
 }
 
 .artikkel {
-  background-color: white;
-  margin-bottom: 4rem;
+    background-color: white;
+    margin-bottom: 4rem;
 
-  @media all and (min-width: 601px) {
+    @media all and (min-width: 601px) {
+        .innhold {
+            padding: 2rem 6rem 4rem 6rem;
+        }
+    }
+
+    @media all and (max-width: 600px) {
+        .innhold {
+            padding: 0rem 0.5rem 0rem 0.5rem;
+        }
+    }
 
     .innhold {
-      padding: 2rem 6rem 4rem 6rem;
-    }
-  }
+        display: block;
 
-  @media all and (max-width: 600px) {
-    .innhold {
-      padding: 0rem 0.5rem 0rem 0.5rem;
-    }
-  }
+        .illustrasjon {
+            width: 100%;
+            height: 65px;
+        }
 
-  .innhold {
-    display: block;
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
 
-    .illustrasjon {
-      width: 100%;
-      height: 65px;
-    }
+        h2.artikkel_sidetittel {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
 
-    h1 {
-      text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    h2.artikkel_sidetittel {
-      text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 6px;
+        }
     }
 
-    h2 {
-      margin-top: 2rem;
-      margin-bottom: 6px;
-    }
-  }
-
-  @media all and (min-width: 601px) {
-    .spraakvelger {
-      margin-left: 2rem;
-      padding-top: 2rem;
-    }
-  }
-
-  @media all and (max-width: 600px) {
-    .spraakvelger {
-      margin-left: 0.5rem;
-      padding-top: 0.5rem;
-    }
-  }
-
-
-  .ekspanderbartPanel {
-    margin-top: 1rem;
-
-    .ekspanderbartPanel__heading {
-      font-size: 1rem;
+    @media all and (min-width: 601px) {
+        .spraakvelger {
+            margin-left: 2rem;
+            padding-top: 2rem;
+        }
     }
 
-  }
+    @media all and (max-width: 600px) {
+        .spraakvelger {
+            margin-left: 0.5rem;
+            padding-top: 0.5rem;
+        }
+    }
 
+    .ekspanderbartPanel {
+        margin-top: 1rem;
+
+        .ekspanderbartPanel__heading {
+            font-size: 1rem;
+        }
+    }
 }

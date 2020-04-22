@@ -8,12 +8,14 @@ import SlikForegatEtMoteEngelsk from "./SlikForegatEtMoteEngelsk";
 const SlikForegatEtMote: React.FC = () => {
     const valgtSprak: string = detekterSprak();
     return (
-        <Oversettelser sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}>
-            {valgtSprak === Sprak.NORSK_BOKMAL && <SlikForegatEtMoteBokmal/>}
-            {valgtSprak === Sprak.NYNORSK && <SlikForegatEtMoteNynorsk/>}
-            {valgtSprak === Sprak.ENGELSK && <SlikForegatEtMoteEngelsk/>}
+        <Oversettelser
+            sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
+        >
+            {valgtSprak === Sprak.NORSK_BOKMAL && <SlikForegatEtMoteBokmal />}
+            {valgtSprak === Sprak.NYNORSK && <SlikForegatEtMoteNynorsk />}
+            {valgtSprak === Sprak.ENGELSK && <SlikForegatEtMoteEngelsk />}
         </Oversettelser>
-    )
+    );
 };
 
 export default SlikForegatEtMote;

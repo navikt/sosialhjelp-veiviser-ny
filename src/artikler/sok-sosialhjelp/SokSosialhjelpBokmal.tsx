@@ -51,7 +51,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 kan du søke med kommunens papirskjema.
             </Normaltekst>
 
-            <br/>
+            <br />
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -60,25 +60,25 @@ const SokSosialhjelpBokmal: React.FC = () => {
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid && (
-                    <div>
-                        <div style={{paddingBottom: "1rem"}}>
-                            <Hovedknapp disabled={true}>
-                                Gå til søknad
-                            </Hovedknapp>
+                        <div>
+                            <div style={{paddingBottom: "1rem"}}>
+                                <Hovedknapp disabled={true}>
+                                    Gå til søknad
+                                </Hovedknapp>
+                            </div>
+                            <AlertStripe
+                                type="feil"
+                                style={{textAlign: "left"}}
+                            >
+                                Du kan ikke sende digital søknad i perioden{" "}
+                                {nedetidService.payload.nedetidStartText} –{" "}
+                                {nedetidService.payload.nedetidSluttText}{" "}
+                                grunnet teknisk vedlikehold. Ta kontakt med ditt
+                                lokale NAV-kontor hvis du skal søke om økonomisk
+                                sosialhjelp i denne perioden.
+                            </AlertStripe>
                         </div>
-                        <AlertStripe
-                            type="feil"
-                            style={{textAlign: "left"}}
-                        >
-                            Du kan ikke sende digital søknad i perioden{" "}
-                            {nedetidService.payload.nedetidStartText} –{" "}
-                            {nedetidService.payload.nedetidSluttText}{" "}
-                            grunnet teknisk vedlikehold. Ta kontakt med ditt
-                            lokale NAV-kontor hvis du skal søke om økonomisk
-                            sosialhjelp i denne perioden.
-                        </AlertStripe>
-                    </div>
-                )}
+                    )}
 
                 <Hovedknapp
                     style={{marginTop: "1.5rem", marginBottom: "2rem"}}
@@ -95,18 +95,18 @@ const SokSosialhjelpBokmal: React.FC = () => {
                     Digital søknad om økonomisk sosialhjelp skal innen kort tid
                     være tilgjengelig for hele landet.{" "}
                     {tilgjengeligeKommunerService.restStatus ===
-                    REST_STATUS.OK && (
+                        REST_STATUS.OK && (
                         <>
                             Foreløpig kan{" "}
                             <b>
-                                {antallTilgjengeligKommuner} av{" "}{ANTALL_KOMMUNER}{" "}
-                                kommuner
+                                {antallTilgjengeligKommuner} av{" "}
+                                {ANTALL_KOMMUNER} kommuner
                             </b>{" "}
                             ta imot digital søknad.
                         </>
                     )}
                 </Normaltekst>
-                <br/>
+                <br />
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid
@@ -148,18 +148,18 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 )}
             </SokDigitaltPanel>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <IkkeSokDigitaltPanel>
                 <Undertittel>Hvis du ikke skal søke digitalt</Undertittel>
-                <br/>
+                <br />
                 <Normaltekst>
                     Hvis du ikke skal søke digitalt, kan du levere{" "}
                     <Lenke href={"./sok-papir?lang=nb"}>søknad på papir</Lenke>.
                 </Normaltekst>
 
-                <br/>
+                <br />
                 <Element>
                     Hvorfor kan ikke alle kommuner ta imot digital søknad?
                 </Element>
@@ -173,7 +173,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
             </IkkeSokDigitaltPanel>
             <br />
             <h3>Kom i gang med digital søknad</h3>
-            <HjelpeVideo tittel="Kom i gang"/>
+            <HjelpeVideo tittel="Kom i gang" />
         </Artikkel>
     );
 };

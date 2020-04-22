@@ -21,23 +21,24 @@ const DetteBorDuViteBokmal: React.FC = () => {
             <Ingress>
                 Økonomisk sosialhjelp er en midlertidig stønad. Du bør vurdere
                 om du har andre muligheter til å forsørge deg selv. Dette kan
-                for eksempel være gjennom jobb, andre inntekter eller egne midler.
-                Hvis du trenger hjelp til å finne ut hvilke muligheter du har,
-                så kan du ta kontakt med
-                {" "}
-                <Lenke  href={"https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"}>
+                for eksempel være gjennom jobb, andre inntekter eller egne
+                midler. Hvis du trenger hjelp til å finne ut hvilke muligheter
+                du har, så kan du ta kontakt med{" "}
+                <Lenke
+                    href={
+                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                    }
+                >
                     NAV-kontoret
-                </Lenke>
-                {" "}
-                ditt.
-                Du kan også kontakte oss på chat og telefon.
+                </Lenke>{" "}
+                ditt. Du kan også kontakte oss på chat og telefon.
             </Ingress>
 
             <Undertittel>Før du søker</Undertittel>
             <Normaltekst>
-                Når du søker må du gi opplysninger om deg selv og den
-                økonomiske situasjonen din. Du må i utgangspunktet
-                dokumentere opplysningene.
+                Når du søker må du gi opplysninger om deg selv og den økonomiske
+                situasjonen din. Du må i utgangspunktet dokumentere
+                opplysningene.
             </Normaltekst>
 
             <Ekspanderbartpanel
@@ -75,19 +76,17 @@ const DetteBorDuViteBokmal: React.FC = () => {
 
             <br />
             <Normaltekst>
-                Du må i utgangspunktet ha lovlig opphold i Norge for
-                å ha rett til økonomisk sosialhjelp. Du har ikke rett
-                til økonomisk sosialhjelp hvis du oppholder deg i utlandet.
+                Du må i utgangspunktet ha lovlig opphold i Norge for å ha rett
+                til økonomisk sosialhjelp. Du har ikke rett til økonomisk
+                sosialhjelp hvis du oppholder deg i utlandet.
             </Normaltekst>
             <br />
             <Normaltekst>
-                Alle har rett til å søke om økonomisk sosialhjelp og få
-                en individuell vurdering av søknaden sin. Du har rett til
-                {" "}
+                Alle har rett til å søke om økonomisk sosialhjelp og få en
+                individuell vurdering av søknaden sin. Du har rett til{" "}
                 <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/generelle-rad-og-veiledning">
                     opplysning, råd og veiledning
-                </Lenke>
-                {" "}
+                </Lenke>{" "}
                 uavhengig av om du har rett til økonomisk sosialhjelp.
             </Normaltekst>
 

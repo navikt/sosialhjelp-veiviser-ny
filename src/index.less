@@ -1,71 +1,69 @@
-@import 'utils/index';
+@import "utils/index";
 
 body {
-  background-color: #e7e9e9;
+    background-color: #e7e9e9;
 }
 
 .App {
-  color: #3e3832;
+    color: #3e3832;
 }
 
 .blokk-center {
-  max-width: @fullBredde;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: @fullBredde;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media all and (max-width: 803px) {
-  .blokk-center {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
+    .blokk-center {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
 
 @media all and (min-width: 804px) {
-  .blokk-center {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    .blokk-center {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .typo-sidetittel {
-  &.sidetittel {
-    margin-top: 17px;
-  }
+    &.sidetittel {
+        margin-top: 17px;
+    }
 }
 
-
 .forsideBanner {
-  width: 100%;
-  background-color: white;
-  margin-top: 0px;
-  padding: 5px;
-  position: relative;
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    padding: 5px;
+    position: relative;
 }
 
 #mainapp {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
 .maincontent {
-  padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 .knappeStil .typo-innholdstittel {
-  text-align: left;
+    text-align: left;
 }
 
 @media print {
-  .hodefot {
-    display: none;
-  }
+    .hodefot {
+        display: none;
+    }
 
-  #root a[href]:after {
-    content: "";
-  }
-
+    #root a[href]:after {
+        content: "";
+    }
 }
 
 a:not(.knapp).no-text-decoration {
-  border-bottom: none;
+    border-bottom: none;
 }

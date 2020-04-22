@@ -52,7 +52,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 digitally.
             </Normaltekst>
 
-            <br/>
+            <br />
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -67,37 +67,42 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 </Hovedknapp>
 
                 <Normaltekst>
-                    All municipalities should be able to receive digital applications shortly.{" "}
+                    All municipalities should be able to receive digital
+                    applications shortly.{" "}
                     {tilgjengeligeKommunerService.restStatus ===
-                    REST_STATUS.OK && (
+                        REST_STATUS.OK && (
                         <>
-                            At the moment <b>{antallTilgjengeligKommuner}{" "}
-                            out of {" "}{ANTALL_KOMMUNER} municipalities</b> can receive applications digitally.
+                            At the moment{" "}
+                            <b>
+                                {antallTilgjengeligKommuner} out of{" "}
+                                {ANTALL_KOMMUNER} municipalities
+                            </b>{" "}
+                            can receive applications digitally.
                         </>
                     )}
                 </Normaltekst>
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
-                nedetidService.payload.isNedetid && (
-                    <div>
-                        <div style={{paddingBottom: "1rem"}}>
-                            <Hovedknapp disabled={true}>
-                                Gå til søknad
-                            </Hovedknapp>
+                    nedetidService.payload.isNedetid && (
+                        <div>
+                            <div style={{paddingBottom: "1rem"}}>
+                                <Hovedknapp disabled={true}>
+                                    Gå til søknad
+                                </Hovedknapp>
+                            </div>
+                            <AlertStripe
+                                type="feil"
+                                style={{textAlign: "left"}}
+                            >
+                                You cannot send digital application during{" "}
+                                {nedetidService.payload.nedetidStartTextEn} –{" "}
+                                {nedetidService.payload.nedetidSluttTextEn} due
+                                to technical maintenance. Contact your local NAV
+                                office if you want to apply for social
+                                assistance during this period.
+                            </AlertStripe>
                         </div>
-                        <AlertStripe
-                            type="feil"
-                            style={{textAlign: "left"}}
-                        >
-                            You cannot send digital application during{" "}
-                            {nedetidService.payload.nedetidStartTextEn} –{" "}
-                            {nedetidService.payload.nedetidSluttTextEn} due
-                            to technical maintenance. Contact your local NAV
-                            office if you want to apply for social
-                            assistance during this period.
-                        </AlertStripe>
-                    </div>
-                )}
+                    )}
 
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
@@ -110,20 +115,20 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                                 soknadTilgjengeligTekst="You can apply digitally in "
                                 soknadIkkeTilgjengelig={
                                     <span>
-                                        is unfortunately not yet able to accept digital applications.{" "}
-                                        You can apply using the{" "}
+                                        is unfortunately not yet able to accept
+                                        digital applications. You can apply
+                                        using the{" "}
                                         <Lenke href={"./sok-papir?lang=en"}>
-                                                municipality's own paper form
+                                            municipality's own paper form
                                         </Lenke>
                                         .
                                     </span>
                                 }
-
                                 placeholderTekst="Enter municipality name"
                                 ariaLabel="Search for municipality"
-                                onValgtKommune={(kommuneId: string | undefined) =>
-                                    setKommuneId(kommuneId)
-                                }
+                                onValgtKommune={(
+                                    kommuneId: string | undefined
+                                ) => setKommuneId(kommuneId)}
                             />
                         </UnmountClosed>
 
@@ -139,15 +144,15 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 )}
             </SokDigitaltPanel>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
 
             <IkkeSokDigitaltPanel>
                 <Undertittel>
                     If you are not going to apply digitally
                 </Undertittel>
 
-                <br/>
+                <br />
                 <Normaltekst>
                     You can use the{" "}
                     <Lenke href={"./sok-papir?lang=en"}>
@@ -156,7 +161,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     if you are not going to apply digitally.
                 </Normaltekst>
 
-                <br/>
+                <br />
                 <Element>
                     Why can't all municipalities accept digital applications?
                 </Element>

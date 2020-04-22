@@ -18,7 +18,7 @@ const AapneLukkeLenke: React.FC<AapneLukkeLenkeProps> = ({
         <a
             href={".?aapne=" + (aapen ? "true" : "false")}
             className="lenke"
-            onClick={event => {
+            onClick={(event) => {
                 onClick();
                 event.preventDefault();
             }}

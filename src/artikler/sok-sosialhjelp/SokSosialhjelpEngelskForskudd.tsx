@@ -15,18 +15,19 @@ import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/us
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 
-const AdvarselNedetid: React.FC<{ nedetidService: any }> = ({ nedetidService}) => {
-    return <>
-        <AlertStripeFeil>
-            You cannot send digital application during{" "}
-            {nedetidService.payload.nedetidStartTextEn} –{" "}
-            {nedetidService.payload.nedetidSluttTextEn} due
-            to technical maintenance. Contact your local NAV
-            office if you want to apply for social
-            assistance during this period.
-        </AlertStripeFeil>
-        <br/>
-    </>;
+const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
+    return (
+        <>
+            <AlertStripeFeil>
+                You cannot send digital application during{" "}
+                {nedetidService.payload.nedetidStartTextEn} –{" "}
+                {nedetidService.payload.nedetidSluttTextEn} due to technical
+                maintenance. Contact your local NAV office if you want to apply
+                for social assistance during this period.
+            </AlertStripeFeil>
+            <br />
+        </>
+    );
 };
 
 const SokSosialhjelpEngelskForskudd: React.FC = () => {
@@ -49,28 +50,32 @@ const SokSosialhjelpEngelskForskudd: React.FC = () => {
 
     return (
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
-            <Innholdstittel>
-                Apply digitally
-            </Innholdstittel>
+            <Innholdstittel>Apply digitally</Innholdstittel>
 
             {nedetidService.restStatus === REST_STATUS.OK &&
                 nedetidService.payload.isNedetid && (
-                    <AdvarselNedetid nedetidService={nedetidService}/>
+                    <AdvarselNedetid nedetidService={nedetidService} />
                 )}
 
             <div>
                 <Normaltekst>
-                    The digital application has been temporarily updated in a response
-                    to the Corona virus:
+                    The digital application has been temporarily updated in a
+                    response to the Corona virus:
                 </Normaltekst>
                 <ul className="punktliste_med_luft">
                     <li>
                         <Normaltekst>
-                            All municipalities will enable digital applications shortly.{" "}
-                            {tilgjengeligeKommunerService.restStatus === REST_STATUS.OK && (
+                            All municipalities will enable digital applications
+                            shortly.{" "}
+                            {tilgjengeligeKommunerService.restStatus ===
+                                REST_STATUS.OK && (
                                 <>
-                                    At the moment <b>{antallTilgjengeligKommuner}{" "}
-                                    out of {ANTALL_KOMMUNER} municipalities</b> can receive applications digitally.
+                                    At the moment{" "}
+                                    <b>
+                                        {antallTilgjengeligKommuner} out of{" "}
+                                        {ANTALL_KOMMUNER} municipalities
+                                    </b>{" "}
+                                    can receive applications digitally.
                                 </>
                             )}
                         </Normaltekst>
@@ -81,9 +86,9 @@ const SokSosialhjelpEngelskForskudd: React.FC = () => {
                                     soknadTilgjengeligTekst="You can apply digitally in "
                                     soknadIkkeTilgjengelig={
                                         <span>
-                                            is unfortunately not able to accept digital applications.
-                                            You can apply using the municipality's own
-                                            {" "}
+                                            is unfortunately not able to accept
+                                            digital applications. You can apply
+                                            using the municipality's own{" "}
                                             <Lenke href={"./sok-papir?lang=nb"}>
                                                 paper form
                                             </Lenke>
@@ -109,8 +114,9 @@ const SokSosialhjelpEngelskForskudd: React.FC = () => {
                     </li>
                     <li>
                         <Normaltekst>
-                            People who are freelancers or self-employed can now temporarily apply while
-                            the new solution from NAV is being ready.
+                            People who are freelancers or self-employed can now
+                            temporarily apply while the new solution from NAV is
+                            being ready.
                         </Normaltekst>
                     </li>
                 </ul>

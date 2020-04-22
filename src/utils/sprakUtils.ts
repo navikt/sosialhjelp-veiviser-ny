@@ -2,7 +2,7 @@ export enum Sprak {
     NORSK_BOKMAL = "nb",
     NYNORSK = "nn",
     ENGELSK = "en",
-    SAMISK = "se"
+    SAMISK = "se",
 }
 
 export const detekterSprak = () => {

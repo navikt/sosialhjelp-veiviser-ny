@@ -1,6 +1,10 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
-import {erCodesandbox, RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
+import {
+    erCodesandbox,
+    RequestMethod,
+    REST_STATUS,
+} from "../../../../../utils/restUtils";
 
 export interface Nedetid {
     isNedetid: boolean;
@@ -15,7 +19,7 @@ export interface Nedetid {
 
 const useNedetidService = () => {
     const [result, setResult] = useState<ServiceHookTypes<Nedetid>>({
-        restStatus: REST_STATUS.PENDING
+        restStatus: REST_STATUS.PENDING,
     });
 
     let url = "/sosialhjelp/soknad-api/nedetid";
@@ -27,31 +31,33 @@ const useNedetidService = () => {
 
         let headers = new Headers({
             "Accept-Charset": "utf-8",
-            "Accept": "application/json, text/plain, */*"
+            Accept: "application/json, text/plain, */*",
         });
 
         const options: RequestInit = {
             headers: headers,
-            method: RequestMethod.GET
+            method: RequestMethod.GET,
         };
         fetch(url, options)
-            .then(response => response.json())
-            .then(response => setResult(
-                {
+            .then((response) => response.json())
+            .then((response) =>
+                setResult({
                     restStatus: REST_STATUS.OK,
-                    payload:
-                        {
-                            isNedetid: response.isNedetid,
-                            isPlanlagtNedetid: response.isPlanlagtNedetid,
-                            nedetidStart: response.nedetidStart,
-                            nedetidSlutt: response.nedetidSlutt,
-                            nedetidStartText: response.nedetidStartText,
-                            nedetidSluttText: response.nedetidSluttText,
-                            nedetidStartTextEn: response.nedetidStartTextEn,
-                            nedetidSluttTextEn: response.nedetidSluttTextEn,
-                        }
-                }))
-            .catch(error => setResult({restStatus: REST_STATUS.FEILET, error}));
+                    payload: {
+                        isNedetid: response.isNedetid,
+                        isPlanlagtNedetid: response.isPlanlagtNedetid,
+                        nedetidStart: response.nedetidStart,
+                        nedetidSlutt: response.nedetidSlutt,
+                        nedetidStartText: response.nedetidStartText,
+                        nedetidSluttText: response.nedetidSluttText,
+                        nedetidStartTextEn: response.nedetidStartTextEn,
+                        nedetidSluttTextEn: response.nedetidSluttTextEn,
+                    },
+                })
+            )
+            .catch((error) =>
+                setResult({restStatus: REST_STATUS.FEILET, error})
+            );
     }, [url]);
     return result;
 };
