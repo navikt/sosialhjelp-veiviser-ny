@@ -10,7 +10,7 @@ const NodsituasjonBokmal = () => (
         tittel="Dette gjør du i en nødssituasjon"
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
-        <Innholdstittel>Hva gjør du i en nødsituasjon?</Innholdstittel>
+        <Innholdstittel>Hva gjør du i en nødssituasjon?</Innholdstittel>
         <Normaltekst>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
             nødvendigste, kan du{" "}
