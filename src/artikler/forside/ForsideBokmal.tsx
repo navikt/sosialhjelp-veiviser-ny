@@ -54,7 +54,7 @@ export const ForsideBokmal: React.FC = () => {
                                 href="./nodsituasjon?lang=nb"
                                 description="Utgifter til det mest nødvendige"
                             >
-                                Nødsituasjon
+                                Nødssituasjon
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./sok-papir?lang=nb"
