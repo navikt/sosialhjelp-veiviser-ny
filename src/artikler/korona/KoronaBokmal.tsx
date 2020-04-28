@@ -74,7 +74,7 @@ const KoronaBokmal = () => (
             eller over telefon.
         </Normaltekst>
 
-        <Undertittel>Selvstendig næringsdrivende eller permittert?</Undertittel>
+        <Undertittel>Selvstendig næringsdrivende, frilanser eller permittert?</Undertittel>
 
         <Normaltekst>
             Myndighetene har vedtatt nye ordninger for inntektssikring. Hvis
