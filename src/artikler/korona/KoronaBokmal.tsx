@@ -77,15 +77,15 @@ const KoronaBokmal = () => (
         <Undertittel>Selvstendig næringsdrivende eller permittert?</Undertittel>
 
         <Normaltekst>
-            Hvis du er selvstendig næringsdrivende finner du informasjon om dine
-            rettigheter i forbindelse med  koronaviruset  under{" "}
-            <Lenke href="https://www.nav.no/no/person/innhold-til-person-forside/nyttig-a-vite/sporsmal-og-svar-i-forbindelse-med-koronaviruset/selvstendig-naeringsdrivende-hva-gjelder-i-min-situasjon">
-                Selvstendig næringsdrivende - hva gjelder i min situasjon
+            Myndighetene har vedtatt nye ordninger for inntektssikring. Hvis
+            du har mistet inntekt som følge av koronapandemien bør du sjekke
+            hvilke rettigheter du har. For deg som søker om dagpenger, så er
+            det også mulig å søke om forskudd på dagpengene. Les om
+            {" "}
+            <Lenke href="https://www.nav.no/person/koronaveiviser/">
+                Koronaviruset - hva gjelder i min situasjon?
             </Lenke>
-            . Har du blitt permittert, så kan du lese{" "}
-            <Lenke href="https://www.nav.no/arbeid/dagpenger/permittert">
-                Er du permittert som følge av koronaviruset?
-            </Lenke>
+            {" "}
         </Normaltekst>
         <br />
         <Normaltekst>
@@ -99,9 +99,8 @@ const KoronaBokmal = () => (
             Du finner oppdatert informasjon i forbindelse med koronaviruset og
             hvordan du kommer i kontakt med oss nå under{" "}
             <Lenke href="https://www.nav.no/person/koronaveiviser/">
-                Koronaviruset- hva gjelder i min situasjon?
+                Koronaviruset - hva gjelder i min situasjon?
             </Lenke>
-            .
         </Normaltekst>
     </Artikkel>
 );
