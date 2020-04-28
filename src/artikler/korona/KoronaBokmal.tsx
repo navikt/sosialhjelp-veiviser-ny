@@ -99,7 +99,7 @@ const KoronaBokmal = () => (
             Du finner oppdatert informasjon i forbindelse med koronaviruset og
             hvordan du kommer i kontakt med oss nå under{" "}
             <Lenke href="https://www.nav.no/person/koronaveiviser/">
-                Koronaviruset- hva gjelder i min situasjon?
+                Koronaviruset - hva gjelder i min situasjon?
             </Lenke>
         </Normaltekst>
     </Artikkel>
