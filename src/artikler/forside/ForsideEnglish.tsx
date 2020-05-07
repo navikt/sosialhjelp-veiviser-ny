@@ -21,8 +21,8 @@ export const ForsideEnglish: React.FC = () => {
 
                 <AlertStripeInfo>
                     <Lenke href="./korona">
-                        Koronavirus - Flere kan ha rett til økonomisk
-                        sosialhjelp
+                        Coronavirus - More people may be entitled to financial
+                        assistance
                     </Lenke>
                 </AlertStripeInfo>
 
@@ -90,7 +90,7 @@ export const ForsideEnglish: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./status-soknad?lang=en"
-                                description="What is the status on your application?"
+                                description="What is the status of your application?"
                             >
                                 Application status
                             </ForsideLenke>
@@ -102,7 +102,7 @@ export const ForsideEnglish: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./klage?lang=en"
-                                description="How to appeal for decisions on social services"
+                                description="How to appeal the decisions on social services"
                             >
                                 Appeal
                             </ForsideLenke>
