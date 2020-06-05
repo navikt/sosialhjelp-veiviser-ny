@@ -19,8 +19,9 @@ const StatusSoknadBokmal: React.FC = () => {
             <br />
             <Normaltekst>
                 Stadig flere kommuner tar i bruk de nye digitale mulighetene.
-                For øyeblikket er det kun Bergen som kan følge med på status av
-                søknaden, men etter hvert vil også resten av Norge bli med!
+                For øyeblikket er det bare innbyggere i enkelte kommuner som
+                kan følge med på status på søknaden, men etter hvert vil også
+                resten av Norge bli med!
             </Normaltekst>
         </Artikkel>
     );
