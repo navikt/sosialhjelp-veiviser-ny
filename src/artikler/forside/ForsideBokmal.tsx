@@ -131,7 +131,7 @@ export const ForsideBokmal: React.FC = () => {
                     >
                         <Undertittel>
                             Har du spørsmål om budsjett, økonomi, og
-                            gjeldsrådgivning?
+                            gjeld?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />

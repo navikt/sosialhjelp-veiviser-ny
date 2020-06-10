@@ -92,7 +92,7 @@ export const ForsideEnglish: React.FC = () => {
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
-                            Chat with us about debt counseling
+                            Chat with us about your finance and debt
                         </Normaltekst>
                     </InfoPanel>
                 </InfoPanelContainer>

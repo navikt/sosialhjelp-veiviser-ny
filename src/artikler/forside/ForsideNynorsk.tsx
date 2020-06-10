@@ -88,7 +88,7 @@ export const ForsideNynorsk: React.FC = () => {
                     >
                         <Undertittel>
                             Har du spørsmål om budsjett, økonomi, og
-                            gjeldsrådgivning?
+                            gjeld?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
