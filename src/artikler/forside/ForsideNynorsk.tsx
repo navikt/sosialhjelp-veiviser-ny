@@ -9,8 +9,9 @@ import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
-import {Panel} from "nav-frontend-paneler";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
+import {AlertStripeInfo} from "nav-frontend-alertstriper";
+import Lenke from "nav-frontend-lenker";
 
 export const ForsideNynorsk: React.FC = () => {
     return (
@@ -18,54 +19,96 @@ export const ForsideNynorsk: React.FC = () => {
             <div role="main" className="blokk-center forside">
                 <SprakvelgerForside />
 
+                <AlertStripeInfo>
+                    <Lenke href="./korona">
+                        Koronavirus - Fleire kan ha rett til økonomisk
+                        sosialhjelp
+                    </Lenke>
+                </AlertStripeInfo>
+
+                <br />
+
                 <SokOmSosialhjelpPanel href="./slik-soker-du?lang=nn">
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
-                <InfoPanelContainer>
-                    <Panel className="infopanel">
-                        <Undertittel>Før du søker</Undertittel>
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Før du søkjer
+                        </Undertittel>
                         <ul>
-                            <ForsideLenke href="./dette-bor-du-vite?lang=nb">
-                                Dette bør du vite før du søker
+                            <ForsideLenke
+                                href="./dette-bor-du-vite?lang=nn"
+                                description="Informasjon til deg som søkjer for første gang"
+                            >
+                                Dette bør du vite
                             </ForsideLenke>
-                            <ForsideLenke href="./dette-kan-du-soke-om?lang=nb">
-                                Hva kan du søke om?
+                            <ForsideLenke
+                                href="./dette-kan-du-soke-om?lang=nn"
+                                description="Kva utgifter kan du få hjelp til å betale"
+                            >
+                                Dette kan du søkje om
                             </ForsideLenke>
-
-                            <ForsideLenke href="./nodsituasjon?lang=nb">
-                                Hva gjør du i en nødsituasjon?
+                            <ForsideLenke
+                                href="./nodsituasjon?lang=nn"
+                                description="Utgifter til det mest nødvendige"
+                            >
+                                Nødsituasjon
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor finner du søknadskjema på papir?
+                            <ForsideLenke
+                                href="./sok-papir?lang=nn"
+                                description="Kor finn du søknadsskjema på papir"
+                            >
+                                Søknadsskjema på papir
                             </ForsideLenke>
-                            <ForsideLenke href="./andre-muligheter?lang=nb">
-                                Andre muligheter til å forsørge deg
+                            <ForsideLenke
+                                href="./andre-muligheter?lang=nn"
+                                description="Andre moglegheiter til å forsørgje deg sjølv"
+                            >
+                                Andre moglegheiter
                             </ForsideLenke>
                         </ul>
-                    </Panel>
+                    </div>
 
-                    <Panel className="infopanel">
-                        <Undertittel>Etter at du har søkt</Undertittel>
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Etter at du har søkt
+                        </Undertittel>
                         <ul>
-                            <ForsideLenke href="./todo">
-                                Hva er status i saken min?
+                            <ForsideLenke
+                                href="./behandlingstid?lang=nn"
+                                description="Kor lang tid tek det å behandle søknaden?"
+                            >
+                                Behandlingstid
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan ettersender du dokumentasjon?
+                            <ForsideLenke
+                                href="./ettersende?lang=nn"
+                                description="Korleis ettersende dokumentasjon"
+                            >
+                                Ettersende
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor lang tid tar det å behandle saken?{" "}
+                            <ForsideLenke
+                                href="./status-soknad?lang=nn"
+                                description="Kva er status på søknaden din?"
+                            >
+                                Status på søknad
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan kontakter du veilederen din?
+                            <ForsideLenke
+                                href="./kontakte-veileder?lang=nn"
+                                description="Korleis kan du kontakte rettleiaren din?"
+                            >
+                                Kontakt rettleiar
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan klager du på en sak?
+                            <ForsideLenke
+                                href="./klage?lang=nn"
+                                description="Kor sender du klage på utfall i ei sak?"
+                            >
+                                Klage
                             </ForsideLenke>
                         </ul>
-                    </Panel>
-                </InfoPanelContainer>
+                    </div>
+                </div>
 
                 <InfoPanelContainer>
                     <InfoPanel

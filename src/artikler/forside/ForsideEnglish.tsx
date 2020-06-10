@@ -10,7 +10,8 @@ import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
-import {Panel} from "nav-frontend-paneler";
+import {AlertStripeInfo} from "nav-frontend-alertstriper";
+import Lenke from "nav-frontend-lenker";
 
 export const ForsideEnglish: React.FC = () => {
     return (
@@ -18,54 +19,96 @@ export const ForsideEnglish: React.FC = () => {
             <div role="main" className="blokk-center forside">
                 <SprakvelgerForside />
 
+                <AlertStripeInfo>
+                    <Lenke href="./korona">
+                        Coronavirus - More people may be entitled to financial
+                        assistance
+                    </Lenke>
+                </AlertStripeInfo>
+
+                <br />
+
                 <SokOmSosialhjelpPanel href="./slik-soker-du?lang=en">
                     Apply for financial assitance
                 </SokOmSosialhjelpPanel>
 
-                <InfoPanelContainer>
-                    <Panel className="infopanel">
-                        <Undertittel>Før du søker</Undertittel>
+                <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            Before applying
+                        </Undertittel>
                         <ul>
-                            <ForsideLenke href="./dette-bor-du-vite?lang=nb">
-                                Dette bør du vite før du søker
+                            <ForsideLenke
+                                href="./dette-bor-du-vite?lang=en"
+                                description="Information for first time applicants"
+                            >
+                                What you should know
                             </ForsideLenke>
-                            <ForsideLenke href="./dette-kan-du-soke-om?lang=nb">
-                                Hva kan du søke om?
+                            <ForsideLenke
+                                href="./dette-kan-du-soke-om?lang=en"
+                                description="Expenses you can apply for"
+                            >
+                                What you can apply for
                             </ForsideLenke>
-
-                            <ForsideLenke href="./nodsituasjon?lang=nb">
-                                Hva gjør du i en nødsituasjon?
+                            <ForsideLenke
+                                href="./nodsituasjon?lang=en"
+                                description="Assistance to cover bare essentatials"
+                            >
+                                When you are in a financial emergency
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor finner du søknadskjema på papir?
+                            <ForsideLenke
+                                href="./sok-papir?lang=en"
+                                description="Where to find application form on paper"
+                            >
+                                Application form on paper
                             </ForsideLenke>
-                            <ForsideLenke href="./andre-muligheter?lang=nb">
-                                Andre muligheter til å forsørge deg
+                            <ForsideLenke
+                                href="./andre-muligheter?lang=en"
+                                description="Other possibilities to provide for yourself"
+                            >
+                                Other possibilities
                             </ForsideLenke>
                         </ul>
-                    </Panel>
+                    </div>
 
-                    <Panel className="infopanel">
-                        <Undertittel>Etter at du har søkt</Undertittel>
+                    <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
+                        <Undertittel style={{textAlign: "left"}}>
+                            After applying
+                        </Undertittel>
                         <ul>
-                            <ForsideLenke href="./todo">
-                                Hva er status i saken min?
+                            <ForsideLenke
+                                href="./behandlingstid?lang=en"
+                                description="How long will it take to process my application?"
+                            >
+                                Processing time
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan ettersender du dokumentasjon?
+                            <ForsideLenke
+                                href="./ettersende?lang=en"
+                                description="How to upload documentation"
+                            >
+                                Upload documentation
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvor lang tid tar det å behandle saken?{" "}
+                            <ForsideLenke
+                                href="./status-soknad?lang=en"
+                                description="What is the status of your application?"
+                            >
+                                Application status
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan kontakter du veilederen din?
+                            <ForsideLenke
+                                href="./kontakte-veileder?lang=en"
+                                description="How to contact your case worker"
+                            >
+                                Contact case worker
                             </ForsideLenke>
-                            <ForsideLenke href="./todo">
-                                Hvordan klager du på en sak?
+                            <ForsideLenke
+                                href="./klage?lang=en"
+                                description="How to appeal the decisions on social services"
+                            >
+                                Appeal
                             </ForsideLenke>
                         </ul>
-                    </Panel>
-                </InfoPanelContainer>
+                    </div>
+                </div>
 
                 <InfoPanelContainer>
                     <InfoPanel
