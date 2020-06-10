@@ -102,7 +102,7 @@ export const ForsideNynorsk: React.FC = () => {
                             </ForsideLenke>
                             <ForsideLenke
                                 href="./klage?lang=nn"
-                                description="Kor sender du klage på utfall i ein sak?"
+                                description="Kor sender du klage på utfall i ei sak?"
                             >
                                 Klage
                             </ForsideLenke>
