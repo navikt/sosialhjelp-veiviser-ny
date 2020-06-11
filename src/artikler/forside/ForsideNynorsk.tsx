@@ -130,7 +130,7 @@ export const ForsideNynorsk: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Har du spørsmål om budsjett, økonomi, og
+                            Har du spørsmål om budsjett, økonomi og
                             gjeld?
                         </Undertittel>
                         <Normaltekst>
