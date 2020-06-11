@@ -130,8 +130,8 @@ export const ForsideEnglish: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Do you have questions about budgeting, finances, and
-                            debt counseling?
+                            Do you have questions about budgeting, finances and
+                            debt?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
