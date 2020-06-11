@@ -131,11 +131,11 @@ export const ForsideNynorsk: React.FC = () => {
                     >
                         <Undertittel>
                             Har du spørsmål om budsjett, økonomi, og
-                            gjeldsrådgivning?
+                            gjeld?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />
-                            Chat med oss om gjeldsrådgivning
+                            Chat med oss om økonomi og gjeld
                         </Normaltekst>
                     </InfoPanel>
                 </InfoPanelContainer>
