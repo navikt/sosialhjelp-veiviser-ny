@@ -58,15 +58,15 @@
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/uuid": "^3.4.7",
-    "acorn": ">=7.1.0",
-    "craco-less": "^1.16.0",
+    "acorn": "^7.3.1",
+    "craco-less": "^1.17.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
-    "minimist": ">=1.2.0",
+    "minimist": "^1.2.5",
     "prettier": "^2.0.4",
     "serialize-javascript": ">=2.1.2",
     "typescript": "^3.7.5",
-    "webpack": "^4.42.0"
+    "webpack": "^4.43.0"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
