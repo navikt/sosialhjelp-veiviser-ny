@@ -15,6 +15,7 @@ const KontakteVeilederBokmal: React.FC = () => {
                 eller saken din, kan du kontakte oss på telefon eller
                 møte opp på NAV-kontoret der du bor for å avtale et møte.
                 Les mer om
+                {" "}
                 <Lenke
                     href={
                         "https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2"
