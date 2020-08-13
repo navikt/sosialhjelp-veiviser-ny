@@ -1,7 +1,7 @@
 {
   "namespace": "teamdigisos",
   "ingresses": [
-    "https://sosialhjelp-veiviser.dev-nav.no/sosialhjelp"
+    "https://sosialhjelp-veiviser.dev.nav.no/sosialhjelp"
   ],
   "prometheusEnabled": false,
   "webProxyEnabled": false,
