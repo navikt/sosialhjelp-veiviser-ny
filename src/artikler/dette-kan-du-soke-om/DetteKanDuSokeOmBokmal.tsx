@@ -16,7 +16,7 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
         >
             <Innholdstittel>Dette kan du søke om</Innholdstittel>
             <Normaltekst>
-                Vi vurdere behovet ditt for økonomisk sosialhjelp sammen med deg
+                Vi vurderer behovet ditt for økonomisk sosialhjelp sammen med deg
                 og gjør en individuell vurdering. Hvor mye du kan få utbetalt er
                 avhengig av din familiesituasjon, antall personer som hører til
                 husholdningen, bosituasjonen med mer.
