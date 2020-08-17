@@ -50,7 +50,7 @@
     "react-collapse": "^5.0.1",
     "react-dom": "16.12.0",
     "react-router": "^5.1.2",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.3",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
@@ -64,9 +64,8 @@
     "lint-staged": "^10.1.6",
     "minimist": "^1.2.5",
     "prettier": "^2.0.4",
-    "serialize-javascript": ">=2.1.2",
-    "typescript": "^3.7.5",
-    "webpack": "^4.42.0"
+    "serialize-javascript": "^4.0.0",
+    "typescript": "^3.7.5"
   },
   "scripts": {
     "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
