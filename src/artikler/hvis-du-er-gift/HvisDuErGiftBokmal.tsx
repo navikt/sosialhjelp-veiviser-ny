@@ -1,10 +1,11 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuErGiftBokmal = () => (
     <Artikkel
@@ -13,19 +14,21 @@ const HvisDuErGiftBokmal = () => (
         foreldreside={andreMuligheterBrodsmulestiBokmal}
     >
         <Innholdstittel>Hvis du er gift</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Hvis du er gift har du og ektefelle din gjensidig plikt til å
             forsørge hverandre. Det betyr at vi vurderer deres samlede økonomi
             når vi beregner økonomisk sosialhjelp.
-        </Normaltekst>
-        <br />
-        <Normaltekst>
+        </Avsnitt>
+
+        <Avsnitt>
             Hvis du som ektefelle ikke blir forsørget av den du er gift med,
             selv om ektefellen din har inntekter, kan din selvstendige
             økonomiske situasjon bli lagt til grunn for å beregne økonomisk
             sosialhjelp i en periode. Eksempler hvor dette kan være aktuelt er
             hvis
-        </Normaltekst>
+        </Avsnitt>
+
         <div className="typo-normal">
             <ul>
                 <li>du oppholder deg på et krisesenter</li>
@@ -34,9 +37,9 @@ const HvisDuErGiftBokmal = () => (
                 <li>ektefellen din soner i fengsel</li>
             </ul>
         </div>
+
         <Undertittel>Ektefellebidrag</Undertittel>
-        <br />
-        <Normaltekst>
+        <Avsnitt>
             Hvis et ektepar flytter fra hverandre, blir separert eller skilt,
             kan den ene parten i enkelte tilfeller kreve underholdsbidrag fra
             den andre. For eksempel hvis hans/hennes mulighet til å forsørge seg
@@ -46,7 +49,7 @@ const HvisDuErGiftBokmal = () => (
                 ektefellebidrag
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

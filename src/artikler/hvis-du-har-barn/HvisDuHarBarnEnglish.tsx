@@ -1,11 +1,12 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuHarBarnEnglish = () => (
     <Artikkel
@@ -14,34 +15,34 @@ const HvisDuHarBarnEnglish = () => (
         foreldreside={andreMuligheterBrodsmulestiEngelsk}
     >
         <Innholdstittel>If you have children</Innholdstittel>
-        <Normaltekst>
+        <Avsnitt>
             If you have children, other obligations and arrangements apply.
-        </Normaltekst>
-        <br />
+        </Avsnitt>
+
         <Ekspanderbartpanel tittel="Obligation to provide" border>
             <Undertittel tag="h3">When you have children</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 As a parent, you have an obligation to provide for your children
                 as long as they are minors, even when they do not live with you.
                 If your financial situation permits it, you may, as a parent,
                 also be ordered to provide for children older than 18, provided
                 they are still enrolled in an ordinary education programme.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Children older than 18 have the right to have their situation
                 assessed on an individual basis in terms of social assistance.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Children do not have an obligation to provide for their parents
                 or siblings.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">When you live together</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Parents who are cohabitants with joint children have an
                 obligation to provide for their children within the framework of
                 their financial situation. This means that you will normally not
@@ -50,54 +51,54 @@ const HvisDuHarBarnEnglish = () => (
                 for the children on their own. In families where one or both
                 parents have children from previous relationships, parts of the
                 family may be assessed separately.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 If you do not live with your children, expenses you incur in
                 connection with contact will be included in your subsistence
                 needs. Assistance for contact will be assessed on the basis of
                 the scope of the contact.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel
             tittel="Reduction in kindergarten and SFO costs"
             border
         >
-            <Normaltekst>
+            <Avsnitt>
                 If your income is low, you may apply to the municipality to
                 reduce your kindergarten payments.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 How much your payment can be reduced will vary from municipality
                 to municipality. Some municipalities will accept applications to
                 be exempt from kindergarten payments.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 You may also apply for a reduction in payments for day care for
                 school-aged children (SFO) or after school care programmes (AKS)
                 in certain municipalities.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 These services vary from municipality to municipality. Contact
                 your municipality or talk to your kindergarten about whom to
                 contact.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Holiday and laisure time activities" border>
-            <Normaltekst>
+            <Avsnitt>
                 Do you have children who need to participate in leisure time
                 activieis, but you cannot afford it given your family’s
                 financial situation? Contact your NAV office to learn more about
                 support for holiday and leisure time activities. There are also
                 some useful tips below.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Experience Card</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 The Experience Card gives children and youths free access to
                 cultural and leisure time activities. Training fees and swimming
                 pool, cinema and activity centre entrance are examples of
@@ -110,11 +111,11 @@ const HvisDuHarBarnEnglish = () => (
                 that they can assess your situation. In some municipalities, you
                 will instead be asked to contact child welfare services, the
                 health clinic or other bodies.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Holidays for all</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Holidays for all is a free service for families who need an
                 active holiday experience for the whole family. The service is
                 available in school holidays and is organized by the Red Cross.
@@ -125,13 +126,13 @@ const HvisDuHarBarnEnglish = () => (
                     the Red Cross website
                 </Lenke>{" "}
                 to read more about the services offered.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">
                 Feriesentralen - a holiday central
             </Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Private individuals and various organizations post tips about
                 activities and events at{" "}
                 <Lenke href="http://feriesentralen.no/">
@@ -141,7 +142,7 @@ const HvisDuHarBarnEnglish = () => (
                 tickets to events, etc. You can also go there to post your
                 requests for activities or holiday wishes, such as wanting to
                 borrow or rent a cabin or caravan, etc.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
     </Artikkel>
 );

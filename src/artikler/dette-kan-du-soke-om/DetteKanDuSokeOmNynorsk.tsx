@@ -1,10 +1,11 @@
 import * as React from "react";
 import "../artikkel.less";
-import {Normaltekst, Innholdstittel, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const DetteKanDuSokeOmNynorsk: React.FC = () => {
     return (
@@ -15,88 +16,86 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
             }
         >
             <Innholdstittel>Dette kan du søkje om</Innholdstittel>
-            <Normaltekst>
+            <Avsnitt>
                 Vi vurderer saman med deg kva behovet ditt er for økonomisk
                 sosialhjelp. Kor mykje du kan få i stønad er avhengig av din
                 familiesituasjon, talet på personar som høyrer til hushaldet,
                 butilhøve, med meir. Vi fastset stønaden etter ei individuell
                 vurdering i kvar enkelt sak. Under ser du døme på kva du kan
                 søkje NAV-kontoret ditt om.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Utgifter du kan søkje om å få hjelp med</Undertittel>
 
-            <Normaltekst>
-                Du kan søkje om å få hjelp med utgifter til
-            </Normaltekst>
+            <Avsnitt>Du kan søkje om å få hjelp med utgifter til</Avsnitt>
 
             <Ekspanderbartpanel tittel="å leve" border>
-                <Normaltekst>
+                <Avsnitt>
                     Dei heilt grunnleggande behova som mat, klede, bustad og
                     oppvarming omtalar vi ofte som livsopphald når vi gjer eit
                     vedtak om sosialhjelp.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Også utgifter til fritidsaktiviteter, telefoni, tv,
                     internett, transport og helse- og tannbehandling blir av NAV
                     rekna som en del av livsopphaldet. Vi vurderer òg om du har
                     særlege ekstrautgifter som vi bør ta omsyn til. Vi legg
                     særleg vekt på barn og unge sine behov.
-                </Normaltekst>
+                </Avsnitt>
             </Ekspanderbartpanel>
 
             <Ekspanderbartpanel tittel="å bo" border>
                 <Undertittel tag="h3">Bu- og straumutgifter</Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     Du kan søkje om å få dekt laupande utgifter til bustad, som
                     husleige, kommunale avgifter, faste utgifter i burettslag,
                     sameige og liknande, og betaling av renter på bustadlån. Har
                     du bustadlån vil vi be deg søkje banken om ein periode der
                     du ikkje betalar avdrag.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Du kan òg søkje om å få dekt laupande utgifter til straum og
                     oppvarming.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Dersom buutgiftene dine er så høge at du ikkje er i stand
                     til å betene dei med inntektene du har eller kan forvente å
                     få, kan vi stille krav om at du må redusere buutgiftene
                     dine. Det kan bety at du må flytte til ein rimelegare
                     bustad. I slike situasjonar er det viktig å ta omsyn til det
                     behovet barn og unge har for å halde på nettverket sitt.
-                </Normaltekst>
-                <br />
+                </Avsnitt>
+
                 <Undertittel tag="h3">Flytting</Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     NAV kan vurdere å gi stønad til nødvendige utgifter til
                     flytting. Særleg aktuelt er dette dersom det er NAV-kontoret
                     som har pålagt deg å flytte for å redusere buutgiftene,
                     eller dersom det er andre særskilde grunnar til at du må
                     flytte.
-                </Normaltekst>
-                <br />
+                </Avsnitt>
+
                 <Undertittel tag="h3">Innbu og utstyr</Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     Du kan søkje om stønad til det mest nødvendige av innbu og
                     utstyr til å bu i ein bustad, dersom du ikkje har økonomi
                     til å skaffe dette på andre måtar. NAV vurderer kva som er
                     nødvendig utstyr ut frå individuelle behov, livssituasjon,
                     alder og størrelse på husstanden din. Standarden skal vere
                     nøktern og rimeleg.
-                </Normaltekst>
-                <br />
+                </Avsnitt>
+
                 <Undertittel tag="h3">
                     Depositum og garanti for depositum
                 </Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     Ein utleigar av ein leigebustad krev normalt tryggleik for
                     leige som ikkje blir betalt, skadar og andre krav som
                     følgjer av leigeavtalen. Du kan søkje om stønad til
@@ -105,26 +104,26 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                     vanlegvis hjelp i form av garanti for depositum, men NAV kan
                     også gi økonomisk stønad til depositum på ein sperra
                     depositumskonto.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Når NAV gir garanti for depositum blir det ikkje utbetalt
                     pengar. NAV skriv eit garantidokument til utleigar. Kva krav
                     garantien dekkjer kan variere frå kommune til kommune.
                     Dersom heile eller deler av garantien eller depositumet blir
                     utbetalt, vil dette normalt bli eit lån som du må betale
                     tilbake. NAV vil då vurdere din tilbakebetalingsevne.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Partane i leigeforholdet er utleigar og leigetakar og dette
                     blir ikkje endra sjølv om NAV har gitt hjelp til depositum
                     eller garanti for depositum.
-                </Normaltekst>
+                </Avsnitt>
             </Ekspanderbartpanel>
 
             <Ekspanderbartpanel tittel="helse og tannbehandling" border>
-                <Normaltekst>
+                <Avsnitt>
                     Utgifter til lege, psykolog, tannlege, viktige legemidlar og
                     syns- og hørselshjelpemidlar kan i nokre tilfelle bli dekt
                     gjennom folketrygdlova ved Helfo. Du har i utgangspunktet
@@ -138,21 +137,21 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                         helsenorge.no
                     </Lenke>
                     .
-                </Normaltekst>
-                <br />
+                </Avsnitt>
+
                 <Undertittel tag="h3">
                     Om dekning av utgifter til tannbehandling
                 </Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     Som hovudregel må vaksne betale utgiftene til tannbehandling
                     sjølv, men det finst enkelte unntak dersom du har visse
                     sjukdommar, tilstandar eller skadar. Tannlegen skal vurdere
                     om du fell inn under nokre av disse unntaka, og difor kan ha
                     rett på støtte frå Helfo.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Dersom du har problem med å betale rekninga, kan du høyre
                     med tannlegen din om det er mogleg å lage ein
                     behandlingsplan med nedbetalingsavtale. Dersom du ikkje har
@@ -160,9 +159,9 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                     ikkje har økonomi til å få lage ein nedbetalingsavtale, kan
                     du søkje NAV om å få dekt desse utgiftene heilt eller
                     delvis.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     For at vi skal kunne vurdere saka di, må du leggje ved
                     nødvendig dokumentasjon. I tillegg til dokumentasjon på
                     inntekter, utgifter og formue, treng NAV eit
@@ -173,48 +172,49 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                     </Lenke>{" "}
                     frå tannlege til tannlege, og NAV kan avgrense stønaden til
                     å dekkje eit rimeleg behandlingsalternativ.
-                </Normaltekst>
-                <br />
-                <Normaltekst>
+                </Avsnitt>
+
+                <Avsnitt>
                     Ved akutt tannbehandling må du legge ved faktura og ei
                     melding frå tannlegen.
-                </Normaltekst>
+                </Avsnitt>
             </Ekspanderbartpanel>
 
             <Undertittel>Har du gjeldsproblem?</Undertittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 Du kan i utgangspunktet ikkje få dekt utgifter til gjeld. Viss
                 du har gjeld, kan du få økonomisk rådgjeving og hjelp til å
                 inngå avtale med kreditor. Hjelpa kan blant anna bestå i å inngå
                 avtale om ein nedbetalingsplan, endre lånevilkår eller
                 betalingsutsetting.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 I enkelte tilfelle kan NAV vurdere å dekkje utgifter til gjeld,
                 til dømes når det er fare for å miste straumen eller bustaden og
                 det ikkje finst andre moglege løysingar for å hindre dette.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Korleis søkjer du?</Undertittel>
-            <Normaltekst>
+
+            <Avsnitt>
                 Du skal søkje til NAV-kontoret der du bor. Stadig fleire
                 kommunar kan ta i mot digitale søknader. Dersom du ikkje skal
                 søkje digitalt, kan du søkje med kommunens papirskjema.
-            </Normaltekst>
-            <Normaltekst>
+            </Avsnitt>
+            <Avsnitt>
                 <Lenke href={"sosialhjelp/slik-soker-du?lang=nn"}>
                     Søk her.
                 </Lenke>
-                <br />
-                <br />
+            </Avsnitt>
+            <Avsnitt>
                 For meir informasjon, sjå{" "}
                 <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nn"}>
                     dette bør du vite før du søkjer
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

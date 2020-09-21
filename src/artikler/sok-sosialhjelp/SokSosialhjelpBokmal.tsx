@@ -22,6 +22,7 @@ import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SokSosialhjelpBokmal: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -45,13 +46,11 @@ const SokSosialhjelpBokmal: React.FC = () => {
         <Artikkel tittel="Søk om økonomisk sosialhjelp">
             <Innholdstittel>Søk om økonomisk sosialhjelp</Innholdstittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 Du skal søke til NAV-kontoret der du bor. Stadig flere kommuner
                 kan ta i mot digitale søknader. Hvis du ikke skal søke digitalt,
                 kan du søke med kommunens papirskjema.
-            </Normaltekst>
-
-            <br />
+            </Avsnitt>
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -91,7 +90,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                     Søk digitalt
                 </Hovedknapp>
 
-                <Normaltekst>
+                <Avsnitt>
                     Digital søknad om økonomisk sosialhjelp skal innen kort tid
                     være tilgjengelig for hele landet.{" "}
                     {tilgjengeligeKommunerService.restStatus ===
@@ -105,8 +104,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                             ta imot digital søknad.
                         </>
                     )}
-                </Normaltekst>
-                <br />
+                </Avsnitt>
                 {!(
                     nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid
@@ -148,30 +146,26 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 )}
             </SokDigitaltPanel>
 
-            <br />
-            <br />
-
             <IkkeSokDigitaltPanel>
                 <Undertittel>Hvis du ikke skal søke digitalt</Undertittel>
-                <br />
-                <Normaltekst>
+
+                <Avsnitt>
                     Hvis du ikke skal søke digitalt, kan du levere{" "}
                     <Lenke href={"./sok-papir?lang=nb"}>søknad på papir</Lenke>.
-                </Normaltekst>
+                </Avsnitt>
 
-                <br />
                 <Element>
                     Hvorfor kan ikke alle kommuner ta imot digital søknad?
                 </Element>
-                <Normaltekst>
+                <Avsnitt>
                     Stadig flere kommuner kan ta i mot digitale søknader. Hver
                     enkelt kommune bestemmer selv om de skal ta i bruk digital
                     søknad, og eventuelt når det skal skje. Ta kontakt med
                     kommunen din hvis du vil ha svar på om og når du kan søke
                     digitalt i din kommune.
-                </Normaltekst>
+                </Avsnitt>
             </IkkeSokDigitaltPanel>
-            <br />
+
             <h3>Kom i gang med digital søknad</h3>
             <HjelpeVideo tittel="Kom i gang" />
         </Artikkel>

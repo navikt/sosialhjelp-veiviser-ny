@@ -1,8 +1,9 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const EttersendeBokmal: React.FC = () => {
     return (
@@ -12,9 +13,10 @@ const EttersendeBokmal: React.FC = () => {
             </Innholdstittel>
 
             <Undertittel>Hvis du har søkt digitalt</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Du kan ettersende dokumenter digitalt. Det gjør du ved å:
-            </Normaltekst>
+            </Avsnitt>
+
             <div className="typo-normal">
                 <ul>
                     <li>
@@ -27,13 +29,13 @@ const EttersendeBokmal: React.FC = () => {
                     <li>Last opp dokumentene du skal ettersende</li>
                 </ul>
             </div>
-            <Normaltekst>
+
+            <Avsnitt>
                 Pass på at du ettersender til den riktige søknaden.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Hvis du har søkt på papir</Undertittel>
-
-            <Normaltekst>
+            <Avsnitt>
                 Har du søkt på papir, må du levere dokumentasjonen til{" "}
                 <Lenke
                     href={
@@ -43,7 +45,7 @@ const EttersendeBokmal: React.FC = () => {
                     ditt NAV-kontor
                 </Lenke>
                 . Du kan også sende det i posten.
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

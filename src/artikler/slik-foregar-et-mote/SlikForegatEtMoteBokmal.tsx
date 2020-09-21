@@ -1,15 +1,11 @@
 import * as React from "react";
-import {
-    Ingress,
-    Innholdstittel,
-    Normaltekst,
-    Undertittel,
-} from "nav-frontend-typografi";
+import {Ingress, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import Veiskilt from "../../komponenter/bilder/Veiskilt";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SlikForegatEtMoteBokmal: React.FC = () => {
     return (
@@ -25,22 +21,16 @@ const SlikForegatEtMoteBokmal: React.FC = () => {
                 NAV-kontoret ditt og avtale et møte.
             </Ingress>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Det kan hende du er usikker før det første møtet hos NAV, og
                 lurer på hvor mye du må fortelle om situasjonen din. Hvis du
                 ønsker det, kan du ta med deg en person du har tillit til.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 I møtet vil vi stille deg noen spørsmål for å finne ut hvilke
                 behov du har.
-            </Normaltekst>
-
-            <br />
+            </Avsnitt>
 
             <Ekspanderbartpanel tittel="Eksempler på spørsmål" border>
                 <div className="typo-normal">
@@ -96,47 +86,35 @@ const SlikForegatEtMoteBokmal: React.FC = () => {
                 </div>
             </Ekspanderbartpanel>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Når vi vet hva du trenger hjelp til, lager vi en plan sammen med
                 deg som vil hjelpe deg videre.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du skal søke økonomisk sosialhjelp, så bør du ha med deg{" "}
                 <Lenke href="./dette-bor-du-vite">dokumentasjon</Lenke> til
                 møtet.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du sliter med noe i livet ditt, psykisk helse, rus,
                 familiesituasjon eller andre ting, bør du si noe om det. Da kan
                 vi gi deg bedre hjelp.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du går på videregående skole og er i konflikt med
                 foreldrene dine, kan det være vi tilbyr en samtale med deg og
                 foreldrene dine.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du ikke snakker eller forstår norsk må du gi oss beskjed,
                 slik at vi kan bestille språktolk til samtalen.
-            </Normaltekst>
+            </Avsnitt>
 
-            <br />
-
-            <Normaltekst>Alle som jobber i NAV har taushetsplikt.</Normaltekst>
+            <Avsnitt>Alle som jobber i NAV har taushetsplikt.</Avsnitt>
         </Artikkel>
     );
 };

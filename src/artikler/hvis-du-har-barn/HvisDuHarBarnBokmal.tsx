@@ -1,11 +1,12 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuHarBarnBokmal = () => (
     <Artikkel
@@ -14,84 +15,85 @@ const HvisDuHarBarnBokmal = () => (
         foreldreside={andreMuligheterBrodsmulestiBokmal}
     >
         <Innholdstittel>Hvis du har barn</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Hvis du har barn er det egne plikter og ordninger som gjelder.
-        </Normaltekst>
-        <br />
+        </Avsnitt>
+
         <Ekspanderbartpanel tittel="Forsørgelsesplikt" border>
             <Undertittel tag="h3">Når du har barn</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Du har som forelder plikt til å forsørge dine mindreårige barn,
                 selv om de ikke bor sammen med deg. Hvis økonomien tilsier det,
                 kan du som forelder bli pålagt å forsørge barn over 18 år som
                 følger ordinær skolegang.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Barn over 18 år har rett til å bli vurdert selvstendig med
                 hensyn til beregning av økonomisk stønad.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Barn har ikke plikt til å forsørge foreldre eller søsken.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Når dere er samboere</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Foreldre i et samboerforhold med felles barn har plikt til å
                 forsørge barna etter økonomisk evne. Dette betyr at dere normalt
                 ikke kan søke om økonomisk sosialhjelp til å forsørge felles
                 barn hvis en av dere har tilstrekkelige inntekter til å forsørge
                 barna alene. I familier med særkullsbarn kan situasjonen være
                 slik at deler av familien blir vurdert for seg.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Hvis du ikke bor sammen med egne barn, skal utgifter til samvær
                 inngå i livsoppholdet. Stønad til samvær blir vurdert ut fra
                 samværets omfang.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel
             tittel="Redusert betaling for barnehage og SFO"
             border
         >
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du har lav inntekt, kan du søke kommunen om få redusert
                 utgiftene til barnehageplass.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Hvor mye du kan få redusert betalingen varierer fra kommune til
                 kommune. I noen kommuner kan du søke om helt fritak for
                 foreldrebetalingen.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Du kan også søke om redusert betaling for opphold i
                 skolefritidsordning (SFO) eller aktivitetsskole i enkelte
                 kommuner.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Disse tjenestene er organisert forskjellig i kommunene. Ta
                 kontakt med kommunen din, eller snakk med barnehagen om hvor du
                 skal henvende deg.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Ferie og fritidstilbud" border>
-            <Normaltekst>
+            <Avsnitt>
                 Har du barn som trenger å være med på fritidsaktiviteter, men
                 har ikke råd på grunn av familiens økonomi? Kontakt NAV-kontoret
                 og sjekk mulighetene for støtte til ferie og fritidstilbud.
                 Under finner du også noen nyttige tips.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Opplevelseskort</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Opplevelseskortet gir barn og unge gratis adgang til kultur- og
                 fritidsaktiviteter. Kontingent til trening, svømmehall, kino og
                 lekeland er eksempler på aktiviteter. Tilbudene varierer fra
@@ -102,11 +104,11 @@ const HvisDuHarBarnBokmal = () => (
                 . Du skal vanligvis kontakte NAV-kontoret ditt, slik at de kan
                 vurdere situasjonen din. I noen kommuner skal du kontakte
                 barneverntjenesten, helsestasjonen eller andre instanser.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Ferie for alle</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Ferie for alle er et gratis tilbud til familier som trenger en
                 aktiv ferieopplevelse for hele familien. Tilbudet foregår i
                 skoleferiene og Røde Kors er arrangør. Ta kontakt med
@@ -116,11 +118,11 @@ const HvisDuHarBarnBokmal = () => (
                     Røde Kors
                 </Lenke>{" "}
                 for hvilke tilbud som finnes.
-            </Normaltekst>
-            <br />
+            </Avsnitt>
+
             <Undertittel tag="h3">Feriesentralen</Undertittel>
-            <br />
-            <Normaltekst>
+
+            <Avsnitt>
                 Privatpersoner og forskjellige aktører legger inn tips om
                 aktiviteter og arrangementer på{" "}
                 <Lenke href="http://feriesentralen.no/">
@@ -130,7 +132,7 @@ const HvisDuHarBarnBokmal = () => (
                 arrangementer med mer. Du kan også legge inn dine aktivitets- og
                 ferieønsker, for eksempel låne eller leie en hytte eller
                 campingvogn.
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
     </Artikkel>
 );

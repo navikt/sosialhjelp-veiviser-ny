@@ -1,14 +1,10 @@
 import * as React from "react";
 import Artikkel from "../Artikkel";
-import {
-    Ingress,
-    Innholdstittel,
-    Normaltekst,
-    Undertittel,
-} from "nav-frontend-typografi";
+import {Ingress, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
 import Lenke from "nav-frontend-lenker";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const DetteBorDuViteNynorsk: React.FC = () => {
     return (
@@ -34,16 +30,16 @@ const DetteBorDuViteNynorsk: React.FC = () => {
             </Ingress>
 
             <Undertittel>Før du søkjer</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Når du søkjer må du gi opplysningar om deg sjølv og situasjonen
                 din. Du må i utgangspunktet dokumentere opplysningane.
-            </Normaltekst>
+            </Avsnitt>
 
             <Ekspanderbartpanel
                 tittel="Døme på kva du må leggje ved søknaden"
                 border
             >
-                <Normaltekst>
+                <div className="typo-normal">
                     <ul>
                         <li>legitimasjon</li>
                         <li>gyldig opphaldsløyve</li>
@@ -69,77 +65,78 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                             tannbehandling
                         </li>
                     </ul>
-                </Normaltekst>
+                </div>
             </Ekspanderbartpanel>
 
-            <br />
-            <Normaltekst>
+            <Avsnitt>
                 Du må i utgangspunktet ha lovleg opphald i Noreg for å ha rett
                 til økonomisk sosialhjelp. Du har ikkje rett til økonomisk
                 sosialhjelp dersom du oppheld deg i utlandet.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Alle har rett til å søkje om økonomisk sosialhjelp, og få ei
                 individuell vurdering av søknaden sin. Du har rett til{" "}
                 <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
                     opplysning, råd og rettleiing
                 </Lenke>{" "}
                 uavhengig av om du har rett til økonomisk sosialhjelp.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Etter du har søkt</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Saksbehandlingstida varierer frå kommune til kommune. Dersom det
                 går meir enn éin månad, skal du få eit førebels svar. Om du
                 ikkje har levert all nødvendig dokumentasjon, kan det ta lengre
                 tid før du får svar på søknaden din. Om du er i en{" "}
                 <Lenke href="./nodsituasjon?lang=nn">nødssituasjon</Lenke>, skal
                 du få svaret raskt.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Du må <Lenke href="./gi-beskjed?lang=nn">melde frå</Lenke> til
                 oss dersom det skjer endringar i situasjonen din.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Når vi har behandla søknaden din, får du eit vedtak som du må
                 lese nøye. Ofte vil vi stille eitt eller fleire{" "}
                 <Lenke href="./krav-til-deg?lang=nn">krav til deg</Lenke> i
                 vedtaket som du må oppfylle.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Du kan <Lenke href="./klage?lang=nn">klage</Lenke> hvis du
                 meiner at vedtaket er feil. Klagefrist er 3 uker frå du har fått
                 vedtaket.
-            </Normaltekst>
+            </Avsnitt>
+
             <Undertittel>Satsar</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Stønaden blir utrekna etter ei individuell vurdering.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Det finst{" "}
                 <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/oversikt-over-satser/statlige-veiledende-retningslinjer-for-okonomisk-stonad_kap">
                     statlege rettleiande satsar og retningslinjer
                 </Lenke>{" "}
                 for å utrekne økonomisk stønad. Kommunen din kan ha eigne
                 rettleiande satsar.
-            </Normaltekst>
+            </Avsnitt>
+
             <Undertittel>Utbetalingar</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 I vedtaksbrevet ditt finn du meir informasjon om utbetalingar.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+
+            <Avsnitt>
                 Sjå utfyllande informasjon om{" "}
                 <Lenke href="https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/Nynorsk/%C3%B8konomisk-sosialhjelp">
                     økonomisk sosialhjelp
                 </Lenke>
                 .{" "}
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

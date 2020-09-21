@@ -6,14 +6,16 @@ const SokDigitaltPanel: React.FC<{children: React.ReactNode}> = ({
     children,
 }) => {
     return (
-        <Veilederpanel
-            type={"plakat"}
-            kompakt={true}
-            svg={<Tastatur />}
-            fargetema="suksess"
-        >
-            <span className="sok_sosialhjelp_panel">{children}</span>
-        </Veilederpanel>
+        <div style={{margin: "5em 0 0 0"}}>
+            <Veilederpanel
+                type={"plakat"}
+                kompakt={true}
+                svg={<Tastatur />}
+                fargetema="suksess"
+            >
+                <span className="sok_sosialhjelp_panel">{children}</span>
+            </Veilederpanel>
+        </div>
     );
 };
 

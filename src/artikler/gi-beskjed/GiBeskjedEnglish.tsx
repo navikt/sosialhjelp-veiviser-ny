@@ -1,9 +1,10 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const GiBeskjedEnglish: React.FC = () => (
     <Artikkel
@@ -13,16 +14,18 @@ const GiBeskjedEnglish: React.FC = () => (
         <Innholdstittel>
             Notify us of any changes to your situation
         </Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Any changes in your situation that may affect the payment you
             receive from the Norwegian Labour and Welfare Administration (NAV)
             must immediately be reported to your local NAV office. This includes
             changes in the situation of your spouse or partner if you are
             married or have a registered partnership.
-        </Normaltekst>
-        <br />
+        </Avsnitt>
+
         <Undertittel>For example, you must notify us if:</Undertittel>
-        <Normaltekst>
+
+        <div className="typo-normal">
             <ul>
                 <li>
                     you start earning more or less than you have previously told
@@ -45,8 +48,9 @@ const GiBeskjedEnglish: React.FC = () => (
                 <li>you will be staying abroad</li>
                 <li>you plan to move out of the municipality</li>
             </ul>
-        </Normaltekst>
-        <Normaltekst>
+        </div>
+
+        <Avsnitt>
             If you are not sure whether the change in your situation will affect
             your payments, you can find more information in the letter we have
             sent you advising you of our decision in your case. You can also
@@ -59,7 +63,7 @@ const GiBeskjedEnglish: React.FC = () => (
                 phone
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

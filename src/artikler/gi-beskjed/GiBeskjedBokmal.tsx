@@ -1,9 +1,10 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const GiBeskjedBokmal: React.FC = () => (
     <Artikkel
@@ -11,19 +12,21 @@ const GiBeskjedBokmal: React.FC = () => (
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
         <Innholdstittel>Meld fra om endringer</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Hvis du får endringer i inntekt, familiesituasjon og/eller
             jobbsituasjon, eller planlegger opphold i utlandet, kan det ha
             betydning for beløpet du får utbetalt fra NAV. I slike tilfeller må
             du derfor straks melde fra til NAV. Er du gift eller registrert
             partner, må du også melde fra hvis det skjer endringer i situasjonen
             til ektefellen/partneren din.
-        </Normaltekst>
-        <br />
+        </Avsnitt>
+
         <Undertittel>
             Dette er eksempler på situasjoner som kan påvirke utbetalingen din:
         </Undertittel>
-        <Normaltekst>
+
+        <div className="typo-normal">
             <ul>
                 <li>
                     du begynner å tjene mer eller mindre enn du tidligere har
@@ -45,8 +48,9 @@ const GiBeskjedBokmal: React.FC = () => (
                 <li>du planlegger et opphold i eller flytting til utlandet</li>
                 <li>du skal flytte ut av kommunen</li>
             </ul>
-        </Normaltekst>
-        <Normaltekst>
+        </div>
+
+        <Avsnitt>
             Hvis du er usikker på om endringen vil virke inn på utbetalingen
             din, kan du lese mer i vedtaksbrevet du har fått fra oss. Du kan
             også ta kontakt med oss på{" "}
@@ -58,7 +62,7 @@ const GiBeskjedBokmal: React.FC = () => (
                 telefon
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

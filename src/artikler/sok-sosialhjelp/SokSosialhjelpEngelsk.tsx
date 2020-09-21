@@ -21,6 +21,7 @@ import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/us
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -44,15 +45,13 @@ const SokSosialhjelpEngelsk: React.FC = () => {
         <Artikkel tittel="Apply for financial assistance">
             <Innholdstittel>Apply for financial assistance</Innholdstittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 You must apply to the NAV office in the municipality where you
                 live. A growing number of municipalities support digital
                 applications online at nav.no. You can still use the
                 municipality's own paper form if you are not going to apply
                 digitally.
-            </Normaltekst>
-
-            <br />
+            </Avsnitt>
 
             <SokDigitaltPanel>
                 <Undertittel className="sok_digitalt_overskrift">
@@ -66,7 +65,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     Apply digitally
                 </Hovedknapp>
 
-                <Normaltekst>
+                <Avsnitt>
                     All municipalities should be able to receive digital
                     applications shortly.{" "}
                     {tilgjengeligeKommunerService.restStatus ===
@@ -80,7 +79,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                             can receive applications digitally.
                         </>
                     )}
-                </Normaltekst>
+                </Avsnitt>
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid && (
@@ -144,33 +143,28 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                 )}
             </SokDigitaltPanel>
 
-            <br />
-            <br />
-
             <IkkeSokDigitaltPanel>
                 <Undertittel>
                     If you are not going to apply digitally
                 </Undertittel>
 
-                <br />
-                <Normaltekst>
+                <Avsnitt>
                     You can use the{" "}
                     <Lenke href={"./sok-papir?lang=en"}>
                         municipality's own paper form
                     </Lenke>{" "}
                     if you are not going to apply digitally.
-                </Normaltekst>
+                </Avsnitt>
 
-                <br />
                 <Element>
                     Why can't all municipalities accept digital applications?
                 </Element>
-                <Normaltekst>
+                <Avsnitt>
                     A growing number of municipalities support digital
                     applications, but it is up to each municipality to decide
                     when and if they are going to support this. Contact your
                     municipality for more details of their plans.
-                </Normaltekst>
+                </Avsnitt>
             </IkkeSokDigitaltPanel>
         </Artikkel>
     );

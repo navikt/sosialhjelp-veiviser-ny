@@ -1,9 +1,10 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const GiBeskjedNynorsk: React.FC = () => (
     <Artikkel
@@ -11,19 +12,21 @@ const GiBeskjedNynorsk: React.FC = () => (
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
         <Innholdstittel>Meld frå om endringar</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Dersom du får endringar i inntekt, familiesituasjon og/eller
             jobbsituasjon, eller planlegger opphald i utlandet, kan det ha
             betyding for beløpet du får utbetalt frå NAV. I slike tilfeller må
             du derfor straks melde frå til NAV. Er du gift eller registrert
             partner, må du også melde frå dersom det skjer endringar i
             situasjonen til ektefellen/partnaren din.
-        </Normaltekst>
-        <br />
+        </Avsnitt>
+
         <Undertittel>
             Døme på forhold som kan ha innverknad på utbetalinga di:
         </Undertittel>
-        <Normaltekst>
+
+        <div className="typo-normal">
             <ul>
                 <li>
                     du begynner å tene meir eller mindre enn du tidlegare har
@@ -46,8 +49,9 @@ const GiBeskjedNynorsk: React.FC = () => (
                 <li>du planleggar eit opphald i eller flytting til utlandet</li>
                 <li>du skal flytte ut av kommunen</li>
             </ul>
-        </Normaltekst>
-        <Normaltekst>
+        </div>
+
+        <Avsnitt>
             Dersom du er usikker på om endringa har betyding for utbetalinga di,
             kan du lese meir i vedtaksbrevet du har fått frå oss. Du kan òg ta
             kontakt med oss på{" "}
@@ -59,7 +63,7 @@ const GiBeskjedNynorsk: React.FC = () => (
                 telefon
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 
