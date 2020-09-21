@@ -28,8 +28,9 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
         setAapen(!aapen);
     };
 
-    const velgSpraak = (event: any, search: string) => {
-        history.push({search: search});
+    const velgSpraak = (event: any, language: string) => {
+        document.documentElement.lang = language;
+        history.push({search: `?lang=${language}`});
         event.preventDefault();
     };
 
@@ -62,7 +63,7 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                             <a
                                 href="?lang=no"
                                 onClick={(event: any) =>
-                                    velgSpraak(event, "?lang=nb")
+                                    velgSpraak(event, "nb")
                                 }
                                 className={
                                     valgtSprak === Sprak.NORSK_BOKMAL
@@ -86,7 +87,7 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                                         : ""
                                 }
                                 onClick={(event: any) =>
-                                    velgSpraak(event, "?lang=nn")
+                                    velgSpraak(event, "nn")
                                 }
                                 title="Nynorsk (Språkvalg for innhold)"
                             >
@@ -100,7 +101,7 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                             <a
                                 href="?lang=en"
                                 onClick={(event: any) =>
-                                    velgSpraak(event, "?lang=en")
+                                    velgSpraak(event, "en")
                                 }
                                 className={
                                     valgtSprak === Sprak.ENGELSK
