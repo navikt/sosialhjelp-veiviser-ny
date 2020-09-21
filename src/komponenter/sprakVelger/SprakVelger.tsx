@@ -43,10 +43,9 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
 
     return (
         <div className="spraakvelger">
-            <div
+            <button
                 onClick={(event: any) => onClick(event)}
                 className={"content-languages " + (aapen ? "selected" : "")}
-                role="button"
                 data-is-open={aapen ? "true" : "false"}
                 aria-haspopup={aapen ? "true" : "false"}
                 aria-owns="language-selection"
@@ -115,7 +114,7 @@ const SprakVelger: React.FC<Props> = ({sprak}) => {
                         </li>
                     )}
                 </ul>
-            </div>
+            </button>
         </div>
     );
 };
