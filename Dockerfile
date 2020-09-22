@@ -1,5 +1,5 @@
-FROM navikt/pus-decorator
-ENV APPLICATION_NAME=sosialhjelp-veiviser
-ENV CONTEXT_PATH=sosialhjelp
-ENV FOOTER_TYPE=WITH_ALPHABET
-COPY /build /app
+FROM nginx:1.17.9-alpine
+RUN mkdir -p /usr/share/nginx/html/sosialhjelp
+COPY /build /usr/share/nginx/html/sosialhjelp/
+COPY default.conf /etc/nginx/nginx.conf
+COPY 404.html /usr/share/nginx/html/index.html

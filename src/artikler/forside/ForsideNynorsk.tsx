@@ -8,17 +8,16 @@ import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
-import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
+import {useDecorator} from "../../utils/useDecorator";
 
 export const ForsideNynorsk: React.FC = () => {
+    useDecorator([]);
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
-                <SprakvelgerForside />
-
                 <AlertStripeInfo>
                     <Lenke href="./korona">
                         Koronavirus - Fleire kan ha rett til økonomisk
@@ -130,8 +129,7 @@ export const ForsideNynorsk: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Har du spørsmål om budsjett, økonomi og
-                            gjeld?
+                            Har du spørsmål om budsjett, økonomi og gjeld?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />

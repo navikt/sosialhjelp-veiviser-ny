@@ -7,7 +7,7 @@ metadata:
     team: teamdigisos
 spec:
   image: {{image}}
-  port: 8080
+  port: 80
   accessPolicy:
     outbound:
       external:
@@ -22,22 +22,22 @@ spec:
     enabled: {{prometheusEnabled}}
     path: /prometheus
   liveness:
-    path: /sosialhjelp/internal/isAlive
+    path: /sosialhjelp/isAlive
     initialDelay: 20
   readiness:
-    path: /sosialhjelp/internal/isAlive
+    path: /sosialhjelp/isReady
     initialDelay: 20
   resources:
     limits:
-      cpu: 3000m
-      memory: 1024Mi
+      cpu: 300m
+      memory: 128Mi
     requests:
-      cpu: 400m
-      memory: 512Mi
+      cpu: 40m
+      memory: 64Mi
   replicas:
     min: 2
-    max: 4
-    cpuThresholdPercentage: 50
+    max: 3
+    cpuThresholdPercentage: 70
   webproxy: {{webProxyEnabled}}
   env:
 {{#each env}}

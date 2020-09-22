@@ -8,17 +8,16 @@ import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
-import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import Lenke from "nav-frontend-lenker";
+import {useDecorator} from "../../utils/useDecorator";
 
 export const ForsideEnglish: React.FC = () => {
+    useDecorator([]);
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
-                <SprakvelgerForside />
-
                 <AlertStripeInfo>
                     <Lenke href="./korona">
                         Coronavirus - More people may be entitled to financial
