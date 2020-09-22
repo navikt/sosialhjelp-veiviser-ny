@@ -14,9 +14,12 @@ interface AvailableLanguage {
     url: string;
 }
 
+const getAppUrl = (): string => {
+    return `${window.location.origin}/sosialhjelp`;
+};
+
 export const useDecorator = (pages: {title: string; slug: string}[]) => {
     const [cookie, setCookie] = useCookies(["decorator-language"]);
-    const {REACT_APP_APP_URL} = process.env;
 
     const language = detekterSprak();
 
@@ -26,14 +29,14 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
                 language === "en"
                     ? "Financial Assistance"
                     : "Økonomisk sosialhjelp",
-            url: `${REACT_APP_APP_URL}?lang=${language}`,
+            url: `${getAppUrl()}/?lang=${language}`,
         },
     ];
 
     pages.reverse().forEach((page) => {
         const breadcrumb = {
             title: page.title,
-            url: `${REACT_APP_APP_URL}${page.slug}?lang=${language}`,
+            url: `${getAppUrl()}${page.slug}?lang=${language}`,
         };
         breadcrumbs.push(breadcrumb);
     });
@@ -45,7 +48,7 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
         languages.forEach((locale) => {
             availableLanguages.push({
                 locale: locale,
-                url: `${REACT_APP_APP_URL}?lang=${locale}`,
+                url: `${getAppUrl()}/?lang=${locale}`,
             });
         });
     }
@@ -54,7 +57,7 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
         languages.forEach((locale) => {
             availableLanguages.push({
                 locale: locale,
-                url: `${REACT_APP_APP_URL}${page?.slug}?lang=${locale}`,
+                url: `${getAppUrl()}${page?.slug}?lang=${locale}`,
             });
         });
     }
