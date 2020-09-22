@@ -6,7 +6,7 @@ const IkkeSokDigitaltPanel: React.FC<{children: React.ReactNode}> = ({
     children,
 }) => {
     return (
-        <div style={{margin: "5em 0 0 0"}}>
+        <div className="sok_sosialhjelp_wrapper">
             <Veilederpanel
                 type={"plakat"}
                 kompakt={true}
