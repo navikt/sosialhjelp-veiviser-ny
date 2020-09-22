@@ -1,8 +1,9 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SoknadPaPapirBokmal: React.FC = () => {
     return (
@@ -10,34 +11,32 @@ const SoknadPaPapirBokmal: React.FC = () => {
             <Innholdstittel>
                 Hvor finner du søknadsskjema på papir
             </Innholdstittel>
-            <Normaltekst>
+            <Avsnitt>
                 Dessverre finnes det ikke et felles papirskjema for økonomisk
                 sosialhjelp. Hver kommune har et eget søknadskjema som du kan
                 benytte hvis du ikke kan søke digitalt.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Last ned papirskjema på nett</Undertittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 Du finner ikke papirskjema på NAV.no, men mange kommuner har
                 søknadskjema sitt tilgjengelig på sine nettsider. Du finner
                 kommunens nettside på:
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+            <Avsnitt>
                 www.[din kommune].kommune.no
                 <br />
                 f.eks. www.oslo.kommune.no
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Hent papirskjema på ditt NAV-kontor</Undertittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 Hvis du ikke finner søknadsskjema på kommunen din sine
                 nettsider, kan du hente papirskjema på NAV-kontoret ditt.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+            <Avsnitt>
                 Du finner adresse og telefonnummer til ditt nærmeste kontor
                 under finn{" "}
                 <Lenke
@@ -48,10 +47,10 @@ const SoknadPaPapirBokmal: React.FC = () => {
                     ditt NAV-kontor
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Når du skal levere søknaden</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Du kan levere søknaden på{" "}
                 <Lenke
                     href={
@@ -61,10 +60,10 @@ const SoknadPaPapirBokmal: React.FC = () => {
                     ditt NAV-kontor
                 </Lenke>{" "}
                 eller sende den i posten.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Hvis du trenger hjelp</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Ta kontakt med{" "}
                 <Lenke
                     href={
@@ -75,7 +74,7 @@ const SoknadPaPapirBokmal: React.FC = () => {
                 </Lenke>{" "}
                 hvis du trenger hjelp til å finne søknadsskjema eller fylle ut
                 søknaden.
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

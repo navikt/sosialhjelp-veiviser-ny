@@ -1,7 +1,8 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
+import {Innholdstittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import "../artikkel.less";
 
 const BehandlingstidBokmal: React.FC = () => {
@@ -10,7 +11,7 @@ const BehandlingstidBokmal: React.FC = () => {
             <Innholdstittel>
                 Hvor lang tid tar det å behandle søknaden?
             </Innholdstittel>
-            <Normaltekst>
+            <Avsnitt>
                 Saksbehandlingstiden varierer fra kommune til kommune. Hvis det
                 går mer enn én måned, skal du få brev om forlenget
                 saksbehandlingstid. Hvis vi mangler opplysninger, vil du få
@@ -19,7 +20,7 @@ const BehandlingstidBokmal: React.FC = () => {
                 for å få raskest mulig svar på søknaden din. Hvis du er i en{" "}
                 <Lenke href={"./nodsituasjon?lang=nb"}>nødsituasjon</Lenke>,
                 skal du få et raskt svar.
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

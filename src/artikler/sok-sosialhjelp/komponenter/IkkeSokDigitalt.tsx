@@ -6,14 +6,16 @@ const IkkeSokDigitaltPanel: React.FC<{children: React.ReactNode}> = ({
     children,
 }) => {
     return (
-        <Veilederpanel
-            type={"plakat"}
-            kompakt={true}
-            fargetema="suksess"
-            svg={<BrevHender />}
-        >
-            <span className="ikke_digitalt_sok_panel">{children}</span>
-        </Veilederpanel>
+        <div className="sok_sosialhjelp_wrapper">
+            <Veilederpanel
+                type={"plakat"}
+                kompakt={true}
+                fargetema="suksess"
+                svg={<BrevHender />}
+            >
+                <span className="ikke_digitalt_sok_panel">{children}</span>
+            </Veilederpanel>
+        </div>
     );
 };
 

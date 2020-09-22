@@ -1,10 +1,11 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiNynorsk} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuErGiftNynorsk = () => (
     <Artikkel
@@ -13,18 +14,20 @@ const HvisDuErGiftNynorsk = () => (
         foreldreside={andreMuligheterBrodsmulestiNynorsk}
     >
         <Innholdstittel>Dersom du er gift</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Dersom du er gift har du og ektefellen din gjensidig plikt til å
             forsørgje kvarandre. Det betyr at vi vurderer dykkar samla økonomi
             når vi utreknar økonomisk sosialhjelp.
-        </Normaltekst>
-        <br />
-        <Normaltekst>
+        </Avsnitt>
+
+        <Avsnitt>
             Dersom du som ektefelle ikkje blir forsørgja av den du er gift med,
             sjølv om ektefellen din har inntekter, kan din sjølvstendige
             økonomiske situasjon bli lagt til grunn for å utrekne økonomisk
             sosialhjelp i ein periode. Døme kor dette kan vere aktuelt er dersom
-        </Normaltekst>
+        </Avsnitt>
+
         <div className="typo-normal">
             <ul>
                 <li>du oppheld deg på eit krisesenter</li>
@@ -33,9 +36,10 @@ const HvisDuErGiftNynorsk = () => (
                 <li>ektefellen din sonar i fengsel</li>
             </ul>
         </div>
+
         <Undertittel>Ektefellebidrag</Undertittel>
-        <br />
-        <Normaltekst>
+
+        <Avsnitt>
             Om eit ektepar flyttar frå kvarandre, blir separert eller skild, kan
             den eine parten i enkelte tilfellet krevje underhaldsbidrag frå den
             andre. Til dømes dersom hans/hennes moglegheit til å forsørgje seg
@@ -45,7 +49,7 @@ const HvisDuErGiftNynorsk = () => (
                 ektefellebidrag
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

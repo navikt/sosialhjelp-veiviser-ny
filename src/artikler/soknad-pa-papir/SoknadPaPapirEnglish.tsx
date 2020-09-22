@@ -1,8 +1,9 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SoknadPaPapirEnglish: React.FC = () => {
     return (
@@ -10,34 +11,32 @@ const SoknadPaPapirEnglish: React.FC = () => {
             <Innholdstittel>
                 Where to find application form on paper
             </Innholdstittel>
-            <Normaltekst>
+            <Avsnitt>
                 Unfortunately, there is no common application form when you
                 apply on paper. Each municipality has its own application form
                 that you should use if you cannot apply digitally.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Download application form online</Undertittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 You can not find the paper form on NAV.no, but many
                 municipalities have their form available on their website. You
                 can find the municipality's website at:
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+            <Avsnitt>
                 www.[your municipality].kommune.no
                 <br />
                 for example. www.oslo.kommune.no
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>Get a paper form at your NAV office</Undertittel>
 
-            <Normaltekst>
+            <Avsnitt>
                 If you cannot find an application form on your municipality's
                 website, you can obtain a paper form at your NAV office.
-            </Normaltekst>
-            <br />
-            <Normaltekst>
+            </Avsnitt>
+            <Avsnitt>
                 You can find the address and telephone number of your nearest
                 office under find{" "}
                 <Lenke
@@ -48,10 +47,10 @@ const SoknadPaPapirEnglish: React.FC = () => {
                     your NAV office
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>When to submit the application</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 You can submit the application to{" "}
                 <Lenke
                     href={
@@ -61,10 +60,10 @@ const SoknadPaPapirEnglish: React.FC = () => {
                     your NAV office
                 </Lenke>{" "}
                 or send it by mail.
-            </Normaltekst>
+            </Avsnitt>
 
             <Undertittel>If you need help</Undertittel>
-            <Normaltekst>
+            <Avsnitt>
                 Contact{" "}
                 <Lenke
                     href={
@@ -75,7 +74,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
                 </Lenke>{" "}
                 if you need help finding an application form or filling out the
                 application.
-            </Normaltekst>
+            </Avsnitt>
         </Artikkel>
     );
 };

@@ -1,11 +1,12 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
+import {Innholdstittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuErEnsligForsorgerBokmal = () => (
     <Artikkel
@@ -14,42 +15,44 @@ const HvisDuErEnsligForsorgerBokmal = () => (
         foreldreside={andreMuligheterBrodsmulestiBokmal}
     >
         <Innholdstittel>Hvis du er enslig forsørger</Innholdstittel>
-        <Normaltekst>
+
+        <Avsnitt>
             Det er flere stønader og ordninger som kan være aktuelle for deg som
             er enslig mor eller far.
-        </Normaltekst>
+        </Avsnitt>
+
         <Ekspanderbartpanel tittel="Utvidet barnetrygd" border>
-            <Normaltekst>
+            <Avsnitt>
                 Du kan ha rett til barnetrygd for ett barn mer enn du faktisk
                 bor sammen med hvis du bor alene med barn. Les mer om{" "}
                 <Lenke href="https://www.nav.no/no/Person/Familie/Barnetrygd+og+kontantstotte/barnetrygd--156">
                     utvidet barnetrygd
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Overgangsstønad" border>
-            <Normaltekst>
+            <Avsnitt>
                 Du kan ha rett til overgangsstønad hvis du ikke har mulighet til
                 å forsørge deg selv på grunn av omsorg for barnet. Les mer om
                 <Lenke href="https://www.nav.no/no/Person/Familie/Enslig+mor+eller+far/Overgangsst%C3%B8nad.1039.cms">
                     overgangsstønad
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Stønad til barnetilsyn" border>
-            <Normaltekst>
+            <Avsnitt>
                 Stønad til barnetilsyn skal dekke deler av kostnadene til
                 barnetilsyn på grunn av arbeid. Les mer om{" "}
                 <Lenke href="https://www.nav.no/no/Person/Familie/Enslig+mor+eller+far/Nynorsk/barnetilsyn+p%C3%A5+grunn+av+arbeid">
                     stønad til barnetilsyn
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Tilleggsstønader" border>
-            <Normaltekst>
+            <Avsnitt>
                 Du kan ha rett til helt eller delvis få dekket utgifter du har
                 hvis du gjennomfører nødvendig og hensiktsmessig utdanning, er
                 registrert hos NAV som reell arbeidssøker, eller hvis du må
@@ -58,10 +61,10 @@ const HvisDuErEnsligForsorgerBokmal = () => (
                     tilleggsstønader og stønad til skolepenger
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Barnebidrag" border>
-            <Normaltekst>
+            <Avsnitt>
                 Hvis foreldrene til et barn ikke bor sammen, må den som ikke har
                 barnet boende hos seg betale sin andel som barnebidrag til den
                 andre. Det kan også være aktuelt å betale barnebidrag når barnet
@@ -70,10 +73,10 @@ const HvisDuErEnsligForsorgerBokmal = () => (
                     barnebidrag
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Bidragsforskudd" border>
-            <Normaltekst>
+            <Avsnitt>
                 Bidragsforskudd fra NAV skal sikre at barn får et beløp hver
                 måned hvis barnebidraget av ulike årsaker ikke blir betalt. Les
                 mer om{" "}
@@ -81,10 +84,10 @@ const HvisDuErEnsligForsorgerBokmal = () => (
                     bidragsforskudd
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
         <Ekspanderbartpanel tittel="Særtilskudd" border>
-            <Normaltekst>
+            <Avsnitt>
                 Ved spesielle utgifter som tannregulering, konfirmasjon og
                 briller, kan forelderen med utgiftene søke om at den andre
                 betaler sin del. Les mer om{" "}
@@ -92,7 +95,7 @@ const HvisDuErEnsligForsorgerBokmal = () => (
                     særtilskudd
                 </Lenke>
                 .
-            </Normaltekst>
+            </Avsnitt>
         </Ekspanderbartpanel>
     </Artikkel>
 );

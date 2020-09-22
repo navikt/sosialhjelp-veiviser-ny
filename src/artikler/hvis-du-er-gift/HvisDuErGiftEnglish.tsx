@@ -1,10 +1,11 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const HvisDuErGiftEnglish = () => (
     <Artikkel
@@ -13,20 +14,19 @@ const HvisDuErGiftEnglish = () => (
         foreldreside={andreMuligheterBrodsmulestiEngelsk}
     >
         <Innholdstittel>If you are married</Innholdstittel>
-        <Normaltekst>
+        <Avsnitt>
             If you are married, you and your spouse have a mutual obligation to
             provide for each other. That means we will consider your collective
             financial situation when we assess your need for financial
             assistance.
-        </Normaltekst>
-        <br />
-        <Normaltekst>
+        </Avsnitt>
+        <Avsnitt>
             If your spouse does not provide for you, even if he or she has an
             income, your individual financial situation may be taken into
             account in the assessment of your needs for financial assistance for
             a limited time. Examples of circumstances where this would apply
             include
-        </Normaltekst>
+        </Avsnitt>
         <div className="typo-normal">
             <ul>
                 <li>if you are staying in a women’s crisis shelter</li>
@@ -36,8 +36,7 @@ const HvisDuErGiftEnglish = () => (
             </ul>
         </div>
         <Undertittel>Spousal support</Undertittel>
-        <br />
-        <Normaltekst>
+        <Avsnitt>
             If a married couple separate or become divorced, one spouse may,
             under certain circumstances, claim spousal support from the other
             spouse. This would, for example, include situations where he or she
@@ -47,7 +46,7 @@ const HvisDuErGiftEnglish = () => (
                 spousal support
             </Lenke>
             .
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

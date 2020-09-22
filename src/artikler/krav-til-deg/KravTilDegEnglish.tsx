@@ -1,8 +1,9 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const KravTilDegEnglishl: React.FC = () => (
     <Artikkel
@@ -10,18 +11,18 @@ const KravTilDegEnglishl: React.FC = () => (
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
         <Innholdstittel>Activity conditions</Innholdstittel>
-        <Normaltekst>
+        <Avsnitt>
             NAV may require you to reduce your expenses, increase your income
             and participate in activities in order to qualify for social
             assistance.
-        </Normaltekst>
-        <br />
-        <Normaltekst>
+        </Avsnitt>
+
+        <Avsnitt>
             The goal is for you to become able to provide for yourself.
-        </Normaltekst>
-        <br />
-        <Normaltekst>NAV may also require that you</Normaltekst>
-        <Normaltekst>
+        </Avsnitt>
+
+        <Avsnitt>NAV may also require that you</Avsnitt>
+        <div className="typo-normal">
             <ul>
                 <li>attend counselling interviews</li>
                 <li>apply to relevant jobs</li>
@@ -31,19 +32,19 @@ const KravTilDegEnglishl: React.FC = () => (
                 </li>
                 <li>participate in education and training programmes</li>
             </ul>
-        </Normaltekst>
+        </div>
         <Undertittel>For applicants under the age of 30</Undertittel>
-        <Normaltekst>
+        <Avsnitt>
             If you are under 30 years old, NAV will require you to participate
             in certain activities in order to qualify for social assistance. The
             goal is to help you find employment or start an education, so that
             you will be able to provide for yourself with your own income.
-        </Normaltekst>
+        </Avsnitt>
         <Undertittel>If you fail to meet the requirements</Undertittel>
-        <Normaltekst>
+        <Avsnitt>
             If you fail to meet the requirements you agreed to with NAV, it may
             affect your payments.
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 

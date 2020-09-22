@@ -1,8 +1,9 @@
 import * as React from "react";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
+import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const KravTilDegBokmal: React.FC = () => (
     <Artikkel
@@ -10,15 +11,15 @@ const KravTilDegBokmal: React.FC = () => (
         illustrasjon={<Veiskilft className="illustrasjon" />}
     >
         <Innholdstittel>Krav om aktivitet</Innholdstittel>
-        <Normaltekst>
+        <Avsnitt>
             NAV kan stille vilkår om at du skal redusere utgifter, øke inntekter
             og delta i aktiviteter når du mottar økonomisk sosialhjelp.
-        </Normaltekst>
-        <br />
-        <Normaltekst>Målet er at du skal kunne forsørge deg selv.</Normaltekst>
-        <br />
-        <Normaltekst>NAV kan også stille vilkår om at du</Normaltekst>
-        <Normaltekst>
+        </Avsnitt>
+
+        <Avsnitt>Målet er at du skal kunne forsørge deg selv.</Avsnitt>
+
+        <Avsnitt>NAV kan også stille vilkår om at du</Avsnitt>
+        <div className="typo-normal">
             <ul>
                 <li>møter til veiledningssamtaler</li>
                 <li>søker på relevante jobber</li>
@@ -28,19 +29,19 @@ const KravTilDegBokmal: React.FC = () => (
                 </li>
                 <li>deltar i utdannings- og opplæringstiltak</li>
             </ul>
-        </Normaltekst>
+        </div>
         <Undertittel>For deg under 30</Undertittel>
-        <Normaltekst>
+        <Avsnitt>
             Hvis du er under 30 år, vil NAV stille krav om at du deltar i
             aktivitet når du mottar økonomisk sosialhjelp. Målet er å hjelpe deg
             til å komme i arbeid eller utdanning slik at du kan forsørge deg
             selv med egen inntekt.
-        </Normaltekst>
+        </Avsnitt>
         <Undertittel>Hvis du ikke oppfyller vilkårene</Undertittel>
-        <Normaltekst>
+        <Avsnitt>
             Hvis du ikke oppfyller vilkårene som du har avtalt med NAV, kan det
             få konsekvenser for stønaden din.
-        </Normaltekst>
+        </Avsnitt>
     </Artikkel>
 );
 
