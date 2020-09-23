@@ -9,8 +9,6 @@
     "APPRES_CMS_URL": "https://appres.nav.no",
     "DISABLE_UNLEASH": true,
     "DISABLE_PROXY": true,
-    "DISABLE_FRONTEND_LOGGER": true,
-    "REACT_APP_DECORATOR_URL": "https://dekoratoren.dev.nav.no/",
-    "REACT_APP_APP_URL": "https://sosialhjelp-veiviser.dev.nav.no/sosialhjelp"
+    "DISABLE_FRONTEND_LOGGER": true
   }
 }
