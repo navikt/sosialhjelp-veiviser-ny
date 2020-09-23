@@ -7,7 +7,7 @@ metadata:
     team: teamdigisos
 spec:
   image: {{image}}
-  port: 80
+  port: 5000
   accessPolicy:
     outbound:
       external:
@@ -22,10 +22,10 @@ spec:
     enabled: {{prometheusEnabled}}
     path: /prometheus
   liveness:
-    path: /sosialhjelp/isAlive
+    path: /sosialhjelp/internal/isAlive
     initialDelay: 20
   readiness:
-    path: /sosialhjelp/isReady
+    path: /sosialhjelp/internal/isReady
     initialDelay: 20
   resources:
     limits:
