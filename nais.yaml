@@ -30,13 +30,13 @@ spec:
   resources:
     limits:
       cpu: 300m
-      memory: 128Mi
+      memory: 256Mi
     requests:
       cpu: 40m
-      memory: 64Mi
+      memory: 128Mi
   replicas:
     min: 2
-    max: 3
+    max: 4
     cpuThresholdPercentage: 70
   webproxy: {{webProxyEnabled}}
   env:
