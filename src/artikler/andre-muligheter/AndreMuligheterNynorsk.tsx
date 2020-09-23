@@ -77,7 +77,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
                     <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
-                        <Undertittel>Bustønad</Undertittel>
+                        <Undertittel tag="h3">Bustønad</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -85,7 +85,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             "https://www.nav.no/no/person/flere-tema/sosiale-tjenester/mellombels-butilbod-naudssituasjon"
                         }
                     >
-                        <Undertittel>Mellombels butilbod</Undertittel>
+                        <Undertittel tag="h3">Mellombels butilbod</Undertittel>
                         <Normaltekst>Nødssituasjon</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -93,7 +93,9 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel>Leige eller eige bustad</Undertittel>
+                        <Undertittel tag="h3">
+                            Leige eller eige bustad
+                        </Undertittel>
                     </LenkepanelBase>
                 </div>
 

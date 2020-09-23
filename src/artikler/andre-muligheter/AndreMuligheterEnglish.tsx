@@ -83,7 +83,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.husbanken.no/english/what-is-housing-allowance/"
                         }
                     >
-                        <Undertittel>Housing allowance</Undertittel>
+                        <Undertittel tag="h3">Housing allowance</Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -91,7 +91,9 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.nav.no/en/home/relatert-informasjon/temporary-accommodation-emergency"
                         }
                     >
-                        <Undertittel>Temporary accommodation</Undertittel>
+                        <Undertittel tag="h3">
+                            Temporary accommodation
+                        </Undertittel>
                         <Normaltekst>Emergency</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -99,7 +101,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel>Rent or own housing</Undertittel>
+                        <Undertittel tag="h3">Rent or own housing</Undertittel>
                     </LenkepanelBase>
                 </div>
 

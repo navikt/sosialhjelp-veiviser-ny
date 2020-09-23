@@ -11,7 +11,7 @@ export const JobblystBokmalPanel = () => {
             border={false}
             className="jobblyst_panel"
         >
-            <Innholdstittel>Jobblyst på Facebook</Innholdstittel>
+            <Innholdstittel tag="h2">Jobblyst på Facebook</Innholdstittel>
             <Normaltekst>
                 Råd og veiledning for deg som er ung og har spørsmål
             </Normaltekst>
@@ -26,7 +26,7 @@ export const JobblystNynorskPanel = () => (
         border={false}
         className="jobblyst_panel"
     >
-        <Innholdstittel>Jobblyst på Facebook</Innholdstittel>
+        <Innholdstittel tag="h2">Jobblyst på Facebook</Innholdstittel>
         <Normaltekst>
             Råd og rettleiing for deg som er ung og har spørsmål
         </Normaltekst>
@@ -40,7 +40,7 @@ export const JobblystEnglishPanel = () => (
         border={false}
         className="jobblyst_panel"
     >
-        <Innholdstittel>"Jobblyst" on Facebook</Innholdstittel>
+        <Innholdstittel tag="h2">"Jobblyst" on Facebook</Innholdstittel>
         <Normaltekst>Advice and guidance for young people</Normaltekst>
     </Lenkepanel>
 );
