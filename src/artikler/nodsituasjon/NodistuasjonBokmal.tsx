@@ -5,6 +5,7 @@ import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import Lenke from "nav-frontend-lenker";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const NodsituasjonBokmal = () => (
     <Artikkel
@@ -15,9 +16,14 @@ const NodsituasjonBokmal = () => (
         <Avsnitt>
             Hvis du ikke har mulighet til å skaffe egne midler til det aller
             nødvendigste, kan du{" "}
-            <Lenke href="./slik-soker-du">søke om økonomisk sosialhjelp</Lenke>{" "}
+            <InternLenke href="/slik-soker-du?lang=nb">
+                søke om økonomisk sosialhjelp
+            </InternLenke>{" "}
             i den kommunen du oppholder deg i. Sjekk om du kan{" "}
-            <Lenke href="./slik-soker-du">søke digitalt</Lenke> i din kommune.
+            <InternLenke href="/slik-soker-du?lang=nb">
+                søke digitalt
+            </InternLenke>{" "}
+            i din kommune.
         </Avsnitt>
         <Avsnitt>
             Du må du være tilgjengelig på telefon etter at du har sendt inn
@@ -46,9 +52,14 @@ const NodsituasjonBokmal = () => (
             </Lenke>{" "}
             hvis du helt akutt ikke har et sted å sove og oppholde deg det neste
             døgnet. Du bruker søknadsskjema for{" "}
-            <Lenke href="./slik-soker-du">økonomisk sosialhjelp</Lenke>. Sjekk
-            om du kan <Lenke href="./slik-soker-du">søke digitalt</Lenke> i din
-            kommune. Du kan også{" "}
+            <InternLenke href="/slik-soker-du?lang=nb">
+                økonomisk sosialhjelp
+            </InternLenke>
+            . Sjekk om du kan{" "}
+            <InternLenke href="/slik-soker-du?lang=nb">
+                søke digitalt
+            </InternLenke>{" "}
+            i din kommune. Du kan også{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>

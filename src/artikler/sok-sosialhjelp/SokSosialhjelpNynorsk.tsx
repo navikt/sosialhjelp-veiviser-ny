@@ -22,6 +22,7 @@ import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -143,7 +144,10 @@ const SokSosialhjelpNynorsk: React.FC = () => {
 
                 <Avsnitt>
                     Dersom du ikkje skal søkje digitalt, kan du levere{" "}
-                    <Lenke href={"./sok-papir?lang=nn"}>søknad på papir</Lenke>.
+                    <InternLenke href="/sok-papir?lang=nn">
+                        søknad på papir
+                    </InternLenke>
+                    .
                 </Avsnitt>
 
                 <Element>

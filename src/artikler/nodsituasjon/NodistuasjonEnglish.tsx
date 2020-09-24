@@ -5,6 +5,7 @@ import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import Lenke from "nav-frontend-lenker";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const NodsituasjonEnglish = () => (
     <Artikkel
@@ -15,10 +16,14 @@ const NodsituasjonEnglish = () => (
         <Avsnitt>
             If you are unable to find the means to pay for essentials, you can
             apply for{" "}
-            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke> .
-            Check if you can{" "}
-            <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
-            your municipality.
+            <InternLenke href="/slik-soker-du?lang=en">
+                financial assistance
+            </InternLenke>{" "}
+            . Check if you can{" "}
+            <InternLenke href="/slik-soker-du?lang=en">
+                apply digitally
+            </InternLenke>{" "}
+            in your municipality.
         </Avsnitt>
         <Avsnitt>
             You should be available by phone after submitting your application.
@@ -46,10 +51,14 @@ const NodsituasjonEnglish = () => (
             </Lenke>{" "}
             if you have an acute need for a place to sleep and stay for the next
             24 hours. You can apply for this through through the{" "}
-            <Lenke href="./slik-soker-du?lang=en">financial assistance</Lenke>
+            <InternLenke href="/slik-soker-du?lang=en">
+                financial assistance
+            </InternLenke>
             form, check if you can{" "}
-            <Lenke href="./slik-soker-du?lang=en">apply digitally</Lenke> in
-            your municipality. You can also{" "}
+            <InternLenke href="/slik-soker-du?lang=en">
+                apply digitally
+            </InternLenke>{" "}
+            in your municipality. You can also{" "}
             <Lenke href="https://www.nav.no/en/home/about-nav/contact-us">
                 contact us by phone
             </Lenke>

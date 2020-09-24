@@ -23,6 +23,7 @@ import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/us
 import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SokSosialhjelpBokmal: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -151,7 +152,10 @@ const SokSosialhjelpBokmal: React.FC = () => {
 
                 <Avsnitt>
                     Hvis du ikke skal søke digitalt, kan du levere{" "}
-                    <Lenke href={"./sok-papir?lang=nb"}>søknad på papir</Lenke>.
+                    <InternLenke href="/sok-papir?lang=nb">
+                        søknad på papir
+                    </InternLenke>
+                    .
                 </Avsnitt>
 
                 <Element>
