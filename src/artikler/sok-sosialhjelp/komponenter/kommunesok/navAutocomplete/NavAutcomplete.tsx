@@ -1,8 +1,10 @@
 import React, {useState} from "react";
+import { Input } from 'nav-frontend-skjema';
 import "./navAutcomplete.less";
 import AutcompleteSuggestion from "./AutcompleteSuggestion";
 import {searchSuggestions} from "./AutcompleteUtils";
 import {isIe} from "../../../../../utils/browserUtils";
+import { detekterSprak, Sprak } from "../../../../../utils/sprakUtils";
 
 interface Props {
     placeholder?: string;
@@ -28,6 +30,17 @@ enum KEY {
     ARROW_DOWN = 40,
 }
 
+const getFeilmelding = () => {
+    const sprak = detekterSprak();
+    if (sprak === Sprak.NYNORSK) {
+        return "Vi fant ikkje denne kommunen, vennligst sjekk at du har skrevet det riktig."
+    } else if (sprak === Sprak.ENGELSK) {
+        return "We could not find this municipality, please check that it is spelled correctly"
+    } else  { // Defaulter til bokmål
+        return "Vi fant ikke denne kommunen, vennligst sjekk at du har skrevet det riktig."
+    } 
+}
+
 const NavAutocomplete: React.FC<Props> = ({
     placeholder,
     suggestions,
@@ -43,6 +56,7 @@ const NavAutocomplete: React.FC<Props> = ({
     const [blurDelay, setBlurDelay] = useState<any | undefined>(null);
     const [shouldBlur, setShouldBlur] = useState<boolean | undefined>(true);
     const [hasFocus, setHasFocus] = useState<boolean | undefined>(false);
+    const [hasErrors, setHasErrors] = useState<boolean>(false);
     const [ariaActiveDescendant, setAriaActiveDescendant] = useState<
         boolean | undefined
     >(false);
@@ -78,6 +92,9 @@ const NavAutocomplete: React.FC<Props> = ({
                 }
                 break;
             case KEY.ENTER:
+                if (displayedSuggestions.length === 0) {
+                    setHasErrors(true)
+                }
                 if (displayedSuggestions.length === 1) {
                     const displayedSuggestions: Suggestion[] = searchSuggestions(
                         suggestions,
@@ -98,6 +115,7 @@ const NavAutocomplete: React.FC<Props> = ({
                         );
                         onClick(displayedSuggestions[activeSuggestionIndex]);
                     } else {
+                        setHasErrors(true)
                         setShouldShowSuggestions(false);
                     }
                 }
@@ -144,6 +162,7 @@ const NavAutocomplete: React.FC<Props> = ({
      */
     const onChangeHandler = (event: any) => {
         const {value} = event.target;
+        setHasErrors(false)
         setValue(value);
         setShouldShowSuggestions(true);
         if (value.length === 0 && onReset) {
@@ -233,14 +252,13 @@ const NavAutocomplete: React.FC<Props> = ({
         ariaActiveDescendant && activeSuggestionIndex > -1
             ? `${id}-item-${activeSuggestionIndex}`
             : undefined;
-
     return (
         <div
             className={`navAutocomplete ${isIe() && "navAutocomplete__ie"}`}
             aria-owns={`${id}-suggestions`}
             aria-haspopup="listbox"
         >
-            <input
+            <Input
                 id={id}
                 className={
                     "typo-normal " +
@@ -262,6 +280,7 @@ const NavAutocomplete: React.FC<Props> = ({
                 onBlur={() => onBlur()}
                 onKeyDown={(event: any) => onKeyDown(event)}
                 onFocus={() => onFocus()}
+                feil={hasErrors ? getFeilmelding() : false}
             />
             <ul
                 id={`${id}-suggestions`}
