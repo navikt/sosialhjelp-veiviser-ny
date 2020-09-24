@@ -27,7 +27,7 @@ const onClickLink = (event: any, sti: string) => {
 const gaaTilDigitalSoknad = (kommuneId?: string): void => {
     const query = kommuneId !== undefined ? "?kommuneId=" + kommuneId : "";
     let soknadUrl: string = "/sosialhjelp/soknad/informasjon" + query;
-    if (window.location.origin.indexOf(".dev.nav.no") >= 0) {
+    if (window.location.origin.indexOf("sosialhjelp-veiviser.dev.nav.no") >= 0) {
         soknadUrl =
             "https://sosialhjelp-soknad.dev.nav.no/sosialhjelp/soknad/mock-login";
     } else if (window.location.origin.indexOf("digisos.labs.nais.io") >= 0) {
