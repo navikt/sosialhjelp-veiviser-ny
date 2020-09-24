@@ -166,7 +166,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                 </Avsnitt>
             </IkkeSokDigitaltPanel>
 
-            <h3>Kom i gang med digital søknad</h3>
+            <Undertittel>Kom i gang med digital søknad</Undertittel>
             <HjelpeVideo tittel="Kom i gang" />
         </Artikkel>
     );
