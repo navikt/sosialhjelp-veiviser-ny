@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { Input } from 'nav-frontend-skjema';
+import {Input} from "nav-frontend-skjema";
 import "./navAutcomplete.less";
 import AutcompleteSuggestion from "./AutcompleteSuggestion";
 import {searchSuggestions} from "./AutcompleteUtils";
 import {isIe} from "../../../../../utils/browserUtils";
-import { detekterSprak, Sprak } from "../../../../../utils/sprakUtils";
+import {detekterSprak, Sprak} from "../../../../../utils/sprakUtils";
 
 interface Props {
     placeholder?: string;
@@ -33,13 +33,14 @@ enum KEY {
 const getFeilmelding = () => {
     const sprak = detekterSprak();
     if (sprak === Sprak.NYNORSK) {
-        return "Vi fant ikkje denne kommunen, vennligst sjekk at du har skrevet det riktig."
+        return "Vi fant ikkje denne kommunen, vennligst sjekk at du har skrevet det riktig.";
     } else if (sprak === Sprak.ENGELSK) {
-        return "We could not find this municipality, please check that it is spelled correctly"
-    } else  { // Defaulter til bokmål
-        return "Vi fant ikke denne kommunen, vennligst sjekk at du har skrevet det riktig."
-    } 
-}
+        return "We could not find this municipality, please check that it is spelled correctly";
+    } else {
+        // Defaulter til bokmål
+        return "Vi fant ikke denne kommunen, vennligst sjekk at du har skrevet det riktig.";
+    }
+};
 
 const NavAutocomplete: React.FC<Props> = ({
     placeholder,
@@ -93,7 +94,8 @@ const NavAutocomplete: React.FC<Props> = ({
                 break;
             case KEY.ENTER:
                 if (displayedSuggestions.length === 0) {
-                    setHasErrors(true)
+                    onReset && onReset();
+                    setHasErrors(true);
                 }
                 if (displayedSuggestions.length === 1) {
                     const displayedSuggestions: Suggestion[] = searchSuggestions(
@@ -115,7 +117,8 @@ const NavAutocomplete: React.FC<Props> = ({
                         );
                         onClick(displayedSuggestions[activeSuggestionIndex]);
                     } else {
-                        setHasErrors(true)
+                        onReset && onReset();
+                        setHasErrors(true);
                         setShouldShowSuggestions(false);
                     }
                 }
@@ -162,7 +165,7 @@ const NavAutocomplete: React.FC<Props> = ({
      */
     const onChangeHandler = (event: any) => {
         const {value} = event.target;
-        setHasErrors(false)
+        setHasErrors(false);
         setValue(value);
         setShouldShowSuggestions(true);
         if (value.length === 0 && onReset) {
@@ -260,12 +263,7 @@ const NavAutocomplete: React.FC<Props> = ({
         >
             <Input
                 id={id}
-                className={
-                    "typo-normal " +
-                    (feil && feil.length > 0
-                        ? "navAutocomplete__input--harFeil"
-                        : "")
-                }
+                className={"typo-normal "}
                 type="search"
                 aria-label={ariaLabel}
                 aria-autocomplete="list"
@@ -315,7 +313,6 @@ const NavAutocomplete: React.FC<Props> = ({
                         )
                     )}
             </ul>
-            {feil && <div className="skjemaelement__feilmelding">Feil</div>}
         </div>
     );
 };
