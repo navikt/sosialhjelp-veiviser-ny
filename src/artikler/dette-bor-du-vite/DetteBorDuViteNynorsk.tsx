@@ -5,6 +5,7 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
 import Lenke from "nav-frontend-lenker";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteBorDuViteNynorsk: React.FC = () => {
     return (
@@ -89,26 +90,31 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 går meir enn éin månad, skal du få eit førebels svar. Om du
                 ikkje har levert all nødvendig dokumentasjon, kan det ta lengre
                 tid før du får svar på søknaden din. Om du er i en{" "}
-                <Lenke href="./nodsituasjon?lang=nn">nødssituasjon</Lenke>, skal
-                du få svaret raskt.
+                <InternLenke href="/nodsituasjon?lang=nn">
+                    nødssituasjon
+                </InternLenke>
+                , skal du få svaret raskt.
             </Avsnitt>
 
             <Avsnitt>
-                Du må <Lenke href="./gi-beskjed?lang=nn">melde frå</Lenke> til
-                oss dersom det skjer endringar i situasjonen din.
+                Du må{" "}
+                <InternLenke href="/gi-beskjed?lang=nn">melde frå</InternLenke>{" "}
+                til oss dersom det skjer endringar i situasjonen din.
             </Avsnitt>
 
             <Avsnitt>
                 Når vi har behandla søknaden din, får du eit vedtak som du må
                 lese nøye. Ofte vil vi stille eitt eller fleire{" "}
-                <Lenke href="./krav-til-deg?lang=nn">krav til deg</Lenke> i
-                vedtaket som du må oppfylle.
+                <InternLenke href="/krav-til-deg?lang=nn">
+                    krav til deg
+                </InternLenke>{" "}
+                i vedtaket som du må oppfylle.
             </Avsnitt>
 
             <Avsnitt>
-                Du kan <Lenke href="./klage?lang=nn">klage</Lenke> hvis du
-                meiner at vedtaket er feil. Klagefrist er 3 uker frå du har fått
-                vedtaket.
+                Du kan <InternLenke href="/klage?lang=nn">klage</InternLenke>{" "}
+                hvis du meiner at vedtaket er feil. Klagefrist er 3 uker frå du
+                har fått vedtaket.
             </Avsnitt>
 
             <Undertittel>Satsar</Undertittel>

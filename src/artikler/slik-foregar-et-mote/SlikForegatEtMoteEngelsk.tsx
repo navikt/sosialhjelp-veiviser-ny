@@ -3,9 +3,9 @@ import {Ingress, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import Veiskilt from "../../komponenter/bilder/Veiskilt";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import Lenke from "nav-frontend-lenker";
 import {andreMuligheterBrodsmulestiEngelsk} from "../andre-muligheter/AndreMuligheter";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SlikForegatEtMoteEngelsk: React.FC = () => {
     return (
@@ -104,7 +104,9 @@ const SlikForegatEtMoteEngelsk: React.FC = () => {
             </Avsnitt>
             <Avsnitt>
                 If you are applying for financial assistance, you should bring{" "}
-                <Lenke href="./dette-bor-du-vite?lang=en">documentation</Lenke>{" "}
+                <InternLenke href="/dette-bor-du-vite?lang=en">
+                    documentation
+                </InternLenke>{" "}
                 to the meeting.
             </Avsnitt>
             <Avsnitt>

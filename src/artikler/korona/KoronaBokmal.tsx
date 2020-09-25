@@ -3,6 +3,7 @@ import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const KoronaBokmal = () => (
     <Artikkel tittel="Koronavirus - flere kan ha rett til økonomisk sosialhjelp">
@@ -22,7 +23,9 @@ const KoronaBokmal = () => (
 
         <Avsnitt>
             Alle har rett til å{" "}
-            <Lenke href="./slik-soker-du">søke om økonomisk sosialhjelp</Lenke>{" "}
+            <InternLenke href="/slik-soker-du?lang=nb">
+                søke om økonomisk sosialhjelp
+            </InternLenke>{" "}
             og få en individuell vurdering av søknaden sin. Stengte barnehager
             og skoler, råd om å holde seg hjemme og begrensinger i bruk av
             kollektivtransport, kan føre til nye behov og økte utgifter for den

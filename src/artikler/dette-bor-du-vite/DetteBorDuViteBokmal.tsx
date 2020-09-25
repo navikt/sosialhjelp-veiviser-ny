@@ -6,6 +6,7 @@ import Lenke from "nav-frontend-lenker";
 
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteBorDuViteBokmal: React.FC = () => {
     return (
@@ -91,25 +92,26 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 går mer enn én måned, skal du få et foreløpig svar. Hvis du ikke
                 har levert all nødvendig dokumentasjon, kan det ta lengre tid
                 før du får svar på søknaden din. Hvis du er i en{" "}
-                <Lenke href="./nodsituasjon">nødssituasjon</Lenke>, skal du få
-                et raskt svar.
+                <InternLenke href="/nodsituasjon">nødssituasjon</InternLenke>,
+                skal du få et raskt svar.
             </Avsnitt>
 
             <Avsnitt>
-                Du må <Lenke href="./gi-beskjed">gi beskjed</Lenke> til oss hvis
-                situasjonen din endrer seg etter at du har søkt.
+                Du må <InternLenke href="/gi-beskjed">gi beskjed</InternLenke>{" "}
+                til oss hvis situasjonen din endrer seg etter at du har søkt.
             </Avsnitt>
 
             <Avsnitt>
                 Når vi har behandlet søknaden din, får du et vedtak som du må
                 lese nøye. Ofte vil vi stille ett eller flere{" "}
-                <Lenke href="./krav-til-deg">krav til deg</Lenke> i vedtaket som
-                du må oppfylle.
+                <InternLenke href="/krav-til-deg">krav til deg</InternLenke> i
+                vedtaket som du må oppfylle.
             </Avsnitt>
 
             <Avsnitt>
-                Du kan <Lenke href="./klage">klage</Lenke> hvis du mener at
-                vedtaket er feil. Klagefrist er 3 uker fra du mottar vedtaket.
+                Du kan <InternLenke href="/klage">klage</InternLenke> hvis du
+                mener at vedtaket er feil. Klagefrist er 3 uker fra du mottar
+                vedtaket.
             </Avsnitt>
 
             <Undertittel>Satser</Undertittel>

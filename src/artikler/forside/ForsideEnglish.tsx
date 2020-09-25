@@ -11,7 +11,7 @@ import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
-import Lenke from "nav-frontend-lenker";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 export const ForsideEnglish: React.FC = () => {
     return (
@@ -20,15 +20,15 @@ export const ForsideEnglish: React.FC = () => {
                 <SprakvelgerForside />
 
                 <AlertStripeInfo>
-                    <Lenke href="./korona">
+                    <InternLenke href="/korona">
                         Coronavirus - More people may be entitled to financial
                         assistance
-                    </Lenke>
+                    </InternLenke>
                 </AlertStripeInfo>
 
                 <br />
 
-                <SokOmSosialhjelpPanel href="./slik-soker-du?lang=en">
+                <SokOmSosialhjelpPanel href="/slik-soker-du?lang=en">
                     Apply for financial assitance
                 </SokOmSosialhjelpPanel>
 

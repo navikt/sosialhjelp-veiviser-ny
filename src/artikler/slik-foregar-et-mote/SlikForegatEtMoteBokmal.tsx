@@ -3,9 +3,9 @@ import {Ingress, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import Veiskilt from "../../komponenter/bilder/Veiskilt";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import Lenke from "nav-frontend-lenker";
 import {andreMuligheterBrodsmulestiBokmal} from "../andre-muligheter/AndreMuligheter";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SlikForegatEtMoteBokmal: React.FC = () => {
     return (
@@ -93,8 +93,10 @@ const SlikForegatEtMoteBokmal: React.FC = () => {
 
             <Avsnitt>
                 Hvis du skal søke økonomisk sosialhjelp, så bør du ha med deg{" "}
-                <Lenke href="./dette-bor-du-vite">dokumentasjon</Lenke> til
-                møtet.
+                <InternLenke href="/dette-bor-du-vite?lang=nb">
+                    dokumentasjon
+                </InternLenke>{" "}
+                til møtet.
             </Avsnitt>
 
             <Avsnitt>
