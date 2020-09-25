@@ -35,7 +35,7 @@ const HvisDuErEnsligForsorgerNynorsk = () => (
             <Avsnitt>
                 Du kan ha rett til overgangsstønad om du ikkje har moglegheit
                 til å forsørgje deg sjølv på grunn av omsorg for barnet. Les
-                meir om{" "}
+                meir om {" "}
                 <Lenke href="https://www.nav.no/familie/alene-med-barn/overgangsstonad">
                     overgangsstønad
                 </Lenke>
