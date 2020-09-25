@@ -36,7 +36,7 @@ const HvisDuErEnsligForsorgerEnglish = () => (
             <Avsnitt>
                 You may qualify for transitional benefits if you are unable to
                 provide for yourself as a result of caring for the child. Read
-                more about{" "}
+                more about {" "}
                 <Lenke href="https://www.nav.no/familie/alene-med-barn/overgangsstonad">
                     transitional benefits
                 </Lenke>

@@ -34,7 +34,7 @@ const HvisDuErEnsligForsorgerBokmal = () => (
         <Ekspanderbartpanel tittel="Overgangsstønad" border>
             <Avsnitt>
                 Du kan ha rett til overgangsstønad hvis du ikke har mulighet til
-                å forsørge deg selv på grunn av omsorg for barnet. Les mer om{" "}
+                å forsørge deg selv på grunn av omsorg for barnet. Les mer om {" "}
                 <Lenke href="https://www.nav.no/familie/alene-med-barn/overgangsstonad">
                     overgangsstønad
                 </Lenke>
