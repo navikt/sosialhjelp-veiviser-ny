@@ -4,7 +4,7 @@ import Dekorator from "../komponenter/dekorator/Dekorator";
 
 import {useEffect} from "react";
 import {useDecorator} from "../utils/useDecorator";
-import {useHistory} from "react-router";
+import {useHistory} from "react-router-dom";
 
 interface Props {
     children: React.ReactNode;
