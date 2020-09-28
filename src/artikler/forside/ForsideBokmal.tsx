@@ -28,7 +28,7 @@ export const ForsideBokmal: React.FC = () => {
 
                 <br />
 
-                <SokOmSosialhjelpPanel href="/slik-soker-du?lang=nb">
+                <SokOmSosialhjelpPanel href="./slik-soker-du?lang=nb">
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
