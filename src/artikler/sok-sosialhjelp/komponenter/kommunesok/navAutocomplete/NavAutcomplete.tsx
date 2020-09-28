@@ -33,12 +33,12 @@ enum KEY {
 const getFeilmelding = () => {
     const sprak = detekterSprak();
     if (sprak === Sprak.NYNORSK) {
-        return "Vi fant ikkje denne kommunen, vennligst sjekk at du har skrevet det riktig.";
+        return "Vi finn ikkje denne kommunen, ver vennleg og sjekk at du har skrive rett";
     } else if (sprak === Sprak.ENGELSK) {
         return "We could not find this municipality, please check that it is spelled correctly";
     } else {
         // Defaulter til bokmål
-        return "Vi fant ikke denne kommunen, vennligst sjekk at du har skrevet det riktig.";
+        return "Vi fant ikke denne kommunen, vennligst sjekk at du har skrevet det riktig";
     }
 };
 
