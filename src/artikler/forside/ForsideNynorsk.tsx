@@ -27,7 +27,7 @@ export const ForsideNynorsk: React.FC = () => {
 
                 <br />
 
-                <SokOmSosialhjelpPanel href="/slik-soker-du?lang=nn">
+                <SokOmSosialhjelpPanel href="./slik-soker-du?lang=nn">
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
