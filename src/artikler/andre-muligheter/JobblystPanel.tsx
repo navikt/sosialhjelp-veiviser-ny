@@ -6,7 +6,7 @@ import "./komponenter/jobblyst_panel.less";
 export const JobblystBokmalPanel = () => {
     return (
         <Lenkepanel
-            href="https://tjenester.nav.no/veiledearbeidssoker/"
+            href="https://www.facebook.com/navjobblyst/"
             tittelProps="normaltekst"
             border={false}
             className="jobblyst_panel"
@@ -21,7 +21,7 @@ export const JobblystBokmalPanel = () => {
 
 export const JobblystNynorskPanel = () => (
     <Lenkepanel
-        href="https://tjenester.nav.no/veiledearbeidssoker/"
+        href="https://www.facebook.com/navjobblyst/"
         tittelProps="normaltekst"
         border={false}
         className="jobblyst_panel"
@@ -35,7 +35,7 @@ export const JobblystNynorskPanel = () => (
 
 export const JobblystEnglishPanel = () => (
     <Lenkepanel
-        href="https://tjenester.nav.no/veiledearbeidssoker/"
+        href="https://www.facebook.com/navjobblyst/"
         tittelProps="normaltekst"
         border={false}
         className="jobblyst_panel"
