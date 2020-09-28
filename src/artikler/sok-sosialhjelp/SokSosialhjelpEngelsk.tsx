@@ -22,6 +22,7 @@ import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
@@ -150,9 +151,9 @@ const SokSosialhjelpEngelsk: React.FC = () => {
 
                 <Avsnitt>
                     You can use the{" "}
-                    <Lenke href={"./sok-papir?lang=en"}>
+                    <InternLenke href="/sok-papir?lang=en">
                         municipality's own paper form
-                    </Lenke>{" "}
+                    </InternLenke>{" "}
                     if you are not going to apply digitally.
                 </Avsnitt>
 

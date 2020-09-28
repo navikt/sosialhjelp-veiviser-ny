@@ -6,6 +6,7 @@ import Artikkel from "../Artikkel";
 import "../artikkel.less";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteKanDuSokeOmEnglish: React.FC = () => {
     return (
@@ -217,17 +218,17 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
             </Avsnitt>
 
             <Avsnitt>
-                <Lenke href={"/sosialhjelp/slik-soker-du?lang=en"}>
+                <InternLenke href="/slik-soker-du?lang=en">
                     Apply here
-                </Lenke>
+                </InternLenke>
                 .
             </Avsnitt>
 
             <Avsnitt>
                 For more information, see{" "}
-                <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=en"}>
+                <InternLenke href="/dette-bor-du-vite?lang=en">
                     what you should know before applying
-                </Lenke>
+                </InternLenke>
                 .
             </Avsnitt>
         </Artikkel>

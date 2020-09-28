@@ -6,6 +6,7 @@ import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteKanDuSokeOmBokmal: React.FC = () => {
     return (
@@ -194,15 +195,15 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
             </Avsnitt>
 
             <Avsnitt>
-                <Lenke href={"/sosialhjelp/slik-soker-du?lang=nb"}>
+                <InternLenke href="/slik-soker-du?lang=nb">
                     Søk her.
-                </Lenke>
+                </InternLenke>
             </Avsnitt>
             <Avsnitt>
                 For mer informasjon, se{" "}
-                <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nb"}>
+                <InternLenke href="/dette-bor-du-vite?lang=nb">
                     dette bør du vite før du søker
-                </Lenke>
+                </InternLenke>
                 .
             </Avsnitt>
         </Artikkel>

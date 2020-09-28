@@ -11,7 +11,7 @@ import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
-import Lenke from "nav-frontend-lenker";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 export const ForsideNynorsk: React.FC = () => {
     return (
@@ -20,10 +20,10 @@ export const ForsideNynorsk: React.FC = () => {
                 <SprakvelgerForside />
 
                 <AlertStripeInfo>
-                    <Lenke href="./korona">
+                    <InternLenke href="/korona">
                         Koronavirus - Fleire kan ha rett til økonomisk
                         sosialhjelp
-                    </Lenke>
+                    </InternLenke>
                 </AlertStripeInfo>
 
                 <br />
@@ -130,8 +130,7 @@ export const ForsideNynorsk: React.FC = () => {
                         className="infopanel_chat"
                     >
                         <Undertittel>
-                            Har du spørsmål om budsjett, økonomi og
-                            gjeld?
+                            Har du spørsmål om budsjett, økonomi og gjeld?
                         </Undertittel>
                         <Normaltekst>
                             <ChatIkon />

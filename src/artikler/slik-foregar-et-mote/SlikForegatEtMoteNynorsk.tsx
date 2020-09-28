@@ -3,9 +3,9 @@ import {Ingress, Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import Veiskilt from "../../komponenter/bilder/Veiskilt";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import Lenke from "nav-frontend-lenker";
 import {andreMuligheterBrodsmulestiNynorsk} from "../andre-muligheter/AndreMuligheter";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const SlikForegatEtMoteNynorsk: React.FC = () => {
     return (
@@ -91,7 +91,9 @@ const SlikForegatEtMoteNynorsk: React.FC = () => {
             </Avsnitt>
             <Avsnitt>
                 Dersom du skal søkje økonomisk sosialhjelp, bør du ha med deg{" "}
-                <Lenke href="./dette-bor-du-vite?lang=nn">dokumentasjon</Lenke>{" "}
+                <InternLenke href="/dette-bor-du-vite?lang=nn">
+                    dokumentasjon
+                </InternLenke>{" "}
                 til møtet.
             </Avsnitt>
             <Avsnitt>
