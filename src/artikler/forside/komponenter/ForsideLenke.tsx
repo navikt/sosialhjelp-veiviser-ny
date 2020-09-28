@@ -1,7 +1,7 @@
 import * as React from "react";
-
-import Lenke from "nav-frontend-lenker";
 import {Normaltekst} from "nav-frontend-typografi";
+
+import {InternLenke} from "../../../komponenter/InternLenke";
 
 export const ForsideLenke = (props: {
     href: string;
@@ -9,7 +9,7 @@ export const ForsideLenke = (props: {
     children: any;
 }) => (
     <li>
-        <Lenke href={props.href}>{props.children}</Lenke>
+        <InternLenke href={props.href}>{props.children}</InternLenke>
         <Normaltekst>{props.description}</Normaltekst>
     </li>
 );

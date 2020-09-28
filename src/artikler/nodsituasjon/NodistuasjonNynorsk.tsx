@@ -5,6 +5,7 @@ import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
 import Lenke from "nav-frontend-lenker";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const NodsituasjonNynorsk = () => (
     <Artikkel
@@ -15,12 +16,14 @@ const NodsituasjonNynorsk = () => (
         <Avsnitt>
             Dersom du ikkje har moglegheit til å skaffe eigne midlar til det
             aller mest nødvendige, kan du{" "}
-            <Lenke href="./slik-soker-du?lang=nn">
+            <InternLenke href="/slik-soker-du?lang=nn">
                 søkje om økonomisk sosialhjelp
-            </Lenke>{" "}
+            </InternLenke>{" "}
             i kommunen du oppheld deg. Sjekk om du kan{" "}
-            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
-            kommune.
+            <InternLenke href="/slik-soker-du?lang=nn">
+                søkje digitalt
+            </InternLenke>{" "}
+            i din kommune.
         </Avsnitt>
         <Avsnitt>
             Du må vere tilgjengeleg på telefon etter at du har sendt inn
@@ -50,10 +53,14 @@ const NodsituasjonNynorsk = () => (
             </Lenke>{" "}
             dersom du heilt akutt ikkje har ein stad å sove og oppheld deg det
             neste døgnet. Du bruker søknadsskjema for{" "}
-            <Lenke href="./slik-soker-du?lang=nn">økonomisk sosialhjelp</Lenke>.
-            Sjekk om du kan{" "}
-            <Lenke href="./slik-soker-du?lang=nn">søkje digitalt</Lenke> i din
-            kommune. Du kan òg{" "}
+            <InternLenke href="/slik-soker-du?lang=nn">
+                økonomisk sosialhjelp
+            </InternLenke>
+            . Sjekk om du kan{" "}
+            <InternLenke href="/slik-soker-du?lang=nn">
+                søkje digitalt
+            </InternLenke>{" "}
+            i din kommune. Du kan òg{" "}
             <Lenke href="https://www.nav.no/no/nav-og-samfunn/kontakt-nav/kontakt-nav-pa-telefon2">
                 kontakte oss på telefon
             </Lenke>

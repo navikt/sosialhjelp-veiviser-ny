@@ -6,6 +6,7 @@ import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteKanDuSokeOmNynorsk: React.FC = () => {
     return (
@@ -204,15 +205,15 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                 søkje digitalt, kan du søkje med kommunens papirskjema.
             </Avsnitt>
             <Avsnitt>
-                <Lenke href={"sosialhjelp/slik-soker-du?lang=nn"}>
+                <InternLenke href="/slik-soker-du?lang=nn">
                     Søk her.
-                </Lenke>
+                </InternLenke>
             </Avsnitt>
             <Avsnitt>
                 For meir informasjon, sjå{" "}
-                <Lenke href={"/sosialhjelp/dette-bor-du-vite?lang=nn"}>
+                <InternLenke href="/dette-bor-du-vite?lang=nn">
                     dette bør du vite før du søkjer
-                </Lenke>
+                </InternLenke>
                 .
             </Avsnitt>
         </Artikkel>

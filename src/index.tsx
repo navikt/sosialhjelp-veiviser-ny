@@ -7,7 +7,7 @@ import {v4 as uuid} from "uuid";
 import DetteBorDuVite from "./artikler/dette-bor-du-vite/DetteBorDuVite";
 import "./styles.css";
 import "./index.less";
-import {Router, Route, Switch, Redirect} from "react-router";
+import {Router, Route, Switch, Redirect} from "react-router-dom";
 import DetteKanDuSokeOm from "./artikler/dette-kan-du-soke-om/DetteKanDuSokeOm";
 import AndreMuligheter from "./artikler/andre-muligheter/AndreMuligheter";
 import {history} from "./utils/navigasjon";

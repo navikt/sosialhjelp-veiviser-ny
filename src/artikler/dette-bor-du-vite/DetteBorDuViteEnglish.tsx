@@ -5,6 +5,7 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import IllustrasjonInfoSirkel from "../../komponenter/bilder/IllustrasjonInfoSirkel";
 import Lenke from "nav-frontend-lenker";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const DetteBorDuViteEnglish: React.FC = () => {
     return (
@@ -94,32 +95,33 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 than a month goes by, you are entitled to a preliminary
                 response. If you fail to submit all the necessary documentation,
                 it may take longer for NAV to process your application. If your{" "}
-                <Lenke href="./nodsituasjon?lang=en">
+                <InternLenke href="/nodsituasjon?lang=en">
                     situation is an emergency
-                </Lenke>
+                </InternLenke>
                 , you are entitled to get a response quickly.
             </Avsnitt>
 
             <Avsnitt>
-                You must <Lenke href="./gi-beskjed?lang=en">notify</Lenke> us of
-                any changes to your situation.
+                You must{" "}
+                <InternLenke href="/gi-beskjed?lang=en">notify</InternLenke> us
+                of any changes to your situation.
             </Avsnitt>
 
             <Avsnitt>
                 Once we have processed your application, we will make a
                 decision, and you must read the decision carefully. Often, there
                 will be one or more{" "}
-                <Lenke href="./krav-til-deg?lang=en">
+                <InternLenke href="/krav-til-deg?lang=en">
                     conditions listed in the decision
-                </Lenke>{" "}
+                </InternLenke>{" "}
                 that you have to meet.
             </Avsnitt>
 
             <Avsnitt>
                 If you believe the decision is wrong, you have the right to{" "}
-                <Lenke href="./klage?lang=en">appeal</Lenke>. The term of appeal
-                is 3 weeks from the date on which you receive notice of the
-                decision.
+                <InternLenke href="/klage?lang=en">appeal</InternLenke>. The
+                term of appeal is 3 weeks from the date on which you receive
+                notice of the decision.
             </Avsnitt>
 
             <Undertittel>Rates</Undertittel>

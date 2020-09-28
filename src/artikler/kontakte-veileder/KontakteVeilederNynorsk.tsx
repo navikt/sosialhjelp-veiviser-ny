@@ -4,6 +4,7 @@ import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const KontakteVeilederNynorsk: React.FC = () => {
     return (
@@ -23,11 +24,9 @@ const KontakteVeilederNynorsk: React.FC = () => {
                 </Lenke>{" "}
                 eller møte opp på NAV-kontoret der du bor for å avtale et møte.
                 Les mer om{" "}
-                <Lenke
-                    href={"https://www.nav.no/sosialhjelp/slik-foregar-et-mote"}
-                >
+                <InternLenke href="/slik-foregar-et-mote?lang=nn">
                     hvordan et møte foregår med oss.
-                </Lenke>
+                </InternLenke>
             </Avsnitt>
         </Artikkel>
     );

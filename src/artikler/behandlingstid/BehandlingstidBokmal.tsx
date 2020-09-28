@@ -1,9 +1,9 @@
 import * as React from "react";
 import {Innholdstittel} from "nav-frontend-typografi";
-import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import "../artikkel.less";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const BehandlingstidBokmal: React.FC = () => {
     return (
@@ -18,8 +18,10 @@ const BehandlingstidBokmal: React.FC = () => {
                 beskjed om å ettersende det vi trenger. Har du ikke levert all
                 nødvendig dokumentasjon, bør du levere dette så snart som mulig
                 for å få raskest mulig svar på søknaden din. Hvis du er i en{" "}
-                <Lenke href={"./nodsituasjon?lang=nb"}>nødsituasjon</Lenke>,
-                skal du få et raskt svar.
+                <InternLenke href="/nodsituasjon?lang=nb">
+                    nødsituasjon
+                </InternLenke>
+                , skal du få et raskt svar.
             </Avsnitt>
         </Artikkel>
     );

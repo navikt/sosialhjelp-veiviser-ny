@@ -10,8 +10,8 @@ import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
-import Lenke from "nav-frontend-lenker";
 import {useDecorator} from "../../utils/useDecorator";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 export const ForsideBokmal: React.FC = () => {
     useDecorator([]);
@@ -20,15 +20,15 @@ export const ForsideBokmal: React.FC = () => {
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
                 <AlertStripeInfo>
-                    <Lenke href="./korona">
+                    <InternLenke href="/korona">
                         Koronavirus - Flere kan ha rett til økonomisk
                         sosialhjelp
-                    </Lenke>
+                    </InternLenke>
                 </AlertStripeInfo>
 
                 <br />
 
-                <SokOmSosialhjelpPanel href="./slik-soker-du">
+                <SokOmSosialhjelpPanel href="/slik-soker-du?lang=nb">
                     Søk om økonomisk sosialhjelp
                 </SokOmSosialhjelpPanel>
 
