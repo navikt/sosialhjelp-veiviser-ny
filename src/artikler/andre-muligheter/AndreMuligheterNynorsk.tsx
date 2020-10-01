@@ -129,7 +129,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             <LenkeboksLinje href="./hvis-du-har-barn?lang=nn">
                                 Dersom du har barn
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="./alene-med-barn?lang=nn">
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
                                 Dersom du er aleine med barn
                             </LenkeboksLinje>
                         </ul>

@@ -128,7 +128,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                             <LenkeboksLinje href="./hvis-du-har-barn">
                                 Hvis du har barn
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="./alene-med-barn">
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
                                 Hvis du er alene med barn
                             </LenkeboksLinje>
                         </ul>

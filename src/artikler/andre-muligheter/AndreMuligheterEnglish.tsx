@@ -138,7 +138,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             <LenkeboksLinje href="./hvis-du-har-barn?lang=en">
                                 If you have children
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="./alene-med-barn?lang=en">
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
                                 If you are alone with children
                             </LenkeboksLinje>
                         </ul>
