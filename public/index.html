@@ -42,24 +42,19 @@
     -->
         <!-- index.normal-->
         <link
-            href="https://dekoratoren.dev.nav.no/css/client.css"
+            href="%REACT_APP_DECORATOR_URL%/css/client.css"
             rel="stylesheet"
         />
         <title>Sosialhjelp</title>
     </head>
 
     <body>
-        <noscript>
-            You need to enable JavaScript to run this app.
-        </noscript>
+        <noscript> You need to enable JavaScript to run this app. </noscript>
         <div id="decorator-header"></div>
         <div id="root"></div>
         <div id="decorator-footer"></div>
-        <div
-            id="decorator-env"
-            data-src="https://dekoratoren.dev.nav.no/env"
-        ></div>
-        <script src="https://dekoratoren.dev.nav.no/client.js"></script>
+        <div id="decorator-env" data-src="%REACT_APP_DECORATOR_URL%/env"></div>
+        <script src="%REACT_APP_DECORATOR_URL%/client.js"></script>
         <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
