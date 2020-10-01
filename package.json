@@ -76,10 +76,7 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "use_index_codesandbox_html": "node -e \"require('fs').createReadStream('public/index_codesandbox.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
-    "use_index_normal_html": "node -e \"require('fs').createReadStream('public/index_normal.html').pipe(fs.createWriteStream('public/index.html'), function(err) { if (err) console.log(err); console.log('File use_index_codesandbox.html successfully renamed!') })\"",
-    "prepare_for_codesandbox": "craco build && npm run use_index_codesandbox_html",
-    "start": "npm run use_index_normal_html && craco start",
+    "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
