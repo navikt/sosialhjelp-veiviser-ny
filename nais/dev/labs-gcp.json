@@ -9,6 +9,7 @@
     "APPRES_CMS_URL": "https://appres.nav.no",
     "DISABLE_UNLEASH": true,
     "DISABLE_PROXY": true,
-    "DISABLE_FRONTEND_LOGGER": true
+    "DISABLE_FRONTEND_LOGGER": true,
+    "DECORATOR_URL": "https://dekoratoren.dev.nav.no"
   }
 }
