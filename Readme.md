@@ -17,9 +17,9 @@ Bygg deployes til miljø via eget CLI `https://github.com/navikt/sosialhjelp-ci`
 
 ### Dekoratør lokalt og i miljø
 
-Ved utvikling lokalt (`npm start`) er det oppsettet i `build/index.html` som brukes.
+Ved utvikling lokalt (`npm start`) er det oppsettet i `public/index.html` som brukes.
 
-Ved deploy til miljø har vi behov for å injecte env-variabler for blant annet URL til dekoratør. Disse injectes med express, og vi har en egen `build/index_express.html` for dette. Ved bygg på github action vil innholdet i `build/index.html` erstattes med innholdet i `build/index_express.html`.
+Ved deploy til miljø har vi behov for å injecte env-variabler for blant annet URL til dekoratør. Disse injectes med express, og vi har en egen `public/index_express.html` for dette. Ved bygg på github action vil innholdet i `public/index.html` erstattes med innholdet i `build/index_express.html`.
 
 ## Kodekvalitet
 

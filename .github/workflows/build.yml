@@ -29,7 +29,7 @@ jobs:
 #      - name: Run tests
 #        run: npm run test
       - name: Rename index_express.html to index.html
-        run: ls -l && mv build/index_express.html build/index.html
+        run: mv public/index_express.html public/index.html
       - name: Build application
         run: npm run build
       - name: Login to GitHub package registry
