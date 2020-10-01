@@ -28,6 +28,8 @@ jobs:
         run: npm ci
 #      - name: Run tests
 #        run: npm run test
+      - name: Rename index_express.html to index.html
+        run: mv build/index_express.html build/index.html
       - name: Build application
         run: npm run build
       - name: Login to GitHub package registry
