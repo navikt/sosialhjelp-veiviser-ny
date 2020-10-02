@@ -139,7 +139,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                                 If you have children
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
-                                If you are alone with children
+                                If you are a single parent
                             </LenkeboksLinje>
                         </ul>
                     </div>
