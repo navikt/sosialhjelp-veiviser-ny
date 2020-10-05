@@ -120,17 +120,17 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             Rettar og plikter som forsørgjar
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="./hvis-du-er-enslig-forsorger?lang=nn">
-                                Dersom du er einsleg forsørgjar
-                            </LenkeboksLinje>
-                            <LenkeboksLinje href="./hvis-du-har-barn?lang=nn">
-                                Dersom du har barn
-                            </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-har-samboer?lang=nn">
                                 Dersom du er sambuar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-er-gift?lang=nn">
                                 Dersom du er gift
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="./hvis-du-har-barn?lang=nn">
+                                Dersom du har barn
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
+                                Dersom du er aleine med barn
                             </LenkeboksLinje>
                         </ul>
                     </div>

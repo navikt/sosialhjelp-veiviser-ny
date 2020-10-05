@@ -119,17 +119,17 @@ const AndreMuligheterBokmal: React.FC = () => {
                             Rettigheter og plikter som forsørger
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="./hvis-du-er-enslig-forsorger">
-                                Hvis du er enslig forsørger
-                            </LenkeboksLinje>
-                            <LenkeboksLinje href="./hvis-du-har-barn">
-                                Hvis du har barn
-                            </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-har-samboer">
                                 Hvis du har samboer
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-er-gift">
                                 Hvis du er gift
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="./hvis-du-har-barn">
+                                Hvis du har barn
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
+                                Hvis du er alene med barn
                             </LenkeboksLinje>
                         </ul>
                     </div>

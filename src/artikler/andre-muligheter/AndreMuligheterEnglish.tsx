@@ -129,17 +129,17 @@ const AndreMuligheterEnglish: React.FC = () => {
                             Rights and duties as a provider
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="./hvis-du-er-enslig-forsorger?lang=en">
-                                If you are a single parent
-                            </LenkeboksLinje>
-                            <LenkeboksLinje href="./hvis-du-har-barn?lang=en">
-                                If you have children
-                            </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-har-samboer?lang=en">
                                 If you are a cohabitant
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-er-gift?lang=en">
                                 If you are married
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="./hvis-du-har-barn?lang=en">
+                                If you have children
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
+                                If you are a single parent
                             </LenkeboksLinje>
                         </ul>
                     </div>
