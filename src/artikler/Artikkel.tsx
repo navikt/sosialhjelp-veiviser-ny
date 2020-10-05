@@ -1,20 +1,17 @@
 import * as React from "react";
 import "./artikkel.less";
 import Dekorator from "../komponenter/dekorator/Dekorator";
-import SprakVelger from "../komponenter/sprakVelger/SprakVelger";
-import {Sprak} from "../utils/sprakUtils";
-import Brodsmulesti, {
-    BrodsmulestiForeldreside,
-} from "../komponenter/brodsmulesti/Brodsmulesti";
-import {useContext, useEffect} from "react";
-import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
+
+import {useEffect} from "react";
+import {useDecorator} from "../utils/useDecorator";
+import {useHistory} from "react-router-dom";
 
 interface Props {
     children: React.ReactNode;
     className?: string;
     tittel: string;
     illustrasjon?: React.ReactNode;
-    foreldreside?: BrodsmulestiForeldreside;
+    foreldreside?: {title: string; slug: string};
 }
 
 const Artikkel: React.FC<Props> = ({
@@ -25,10 +22,16 @@ const Artikkel: React.FC<Props> = ({
     foreldreside,
 }) => {
     document.title = tittel ? tittel : "ingen tittel";
-    const context = useContext(SprakvelgerContext);
-    const sprak: Sprak[] = context.sprak;
+
+    const history = useHistory();
 
     const pathname = window.location.pathname;
+
+    const breadcrumbPages = [{title: tittel, slug: history.location.pathname}];
+    if (foreldreside) {
+        breadcrumbPages.push(foreldreside);
+    }
+    useDecorator(breadcrumbPages);
 
     useEffect(() => {
         window.scrollTo({
@@ -40,14 +43,7 @@ const Artikkel: React.FC<Props> = ({
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
-                <Brodsmulesti
-                    className="breadcrumbs__article"
-                    tittel={tittel ? tittel : "ingen tittel"}
-                    foreldreside={foreldreside}
-                />
-
                 <article className="artikkel" role="main">
-                    {sprak.length > 1 && <SprakVelger sprak={sprak} />}
                     <div className="innhold">
                         {illustrasjon && <span>{illustrasjon}</span>}
                         {children}

@@ -4,23 +4,22 @@ import AndreMuligheterBokmal from "./AndreMuligheterBokmal";
 import AndreMuligheterEnglish from "./AndreMuligheterEnglish";
 import AndreMuligheterNynorsk from "./AndreMuligheterNynorsk";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-import {BrodsmulestiForeldreside} from "../../komponenter/brodsmulesti/Brodsmulesti";
 
-const andreMuligheterUrlPath = "/andre-muligheter";
+const andreMuligheterUrlPath = `/andre-muligheter`;
 
-export const andreMuligheterBrodsmulestiBokmal: BrodsmulestiForeldreside = {
-    tittel: "Andre muligheter",
-    path: andreMuligheterUrlPath,
+export const andreMuligheterBrodsmulestiBokmal = {
+    title: "Andre muligheter",
+    slug: andreMuligheterUrlPath,
 };
 
-export const andreMuligheterBrodsmulestiNynorsk: BrodsmulestiForeldreside = {
-    tittel: "Andre moglegheiter",
-    path: andreMuligheterUrlPath + "?lang=nn",
+export const andreMuligheterBrodsmulestiNynorsk = {
+    title: "Andre moglegheiter",
+    slug: andreMuligheterUrlPath,
 };
 
-export const andreMuligheterBrodsmulestiEngelsk: BrodsmulestiForeldreside = {
-    tittel: "Other possibilities",
-    path: andreMuligheterUrlPath + "?lang=en",
+export const andreMuligheterBrodsmulestiEngelsk = {
+    title: "Other possibilities",
+    slug: andreMuligheterUrlPath,
 };
 
 const AndreMuligheter: React.FC = () => {

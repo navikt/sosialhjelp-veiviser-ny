@@ -8,17 +8,16 @@ import {Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import ChatIkon from "../../komponenter/bilder/ChatIkon";
-import {SprakvelgerForside} from "./komponenter/SprakvelgerForside";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
+import {useDecorator} from "../../utils/useDecorator";
 import {InternLenke} from "../../komponenter/InternLenke";
 
 export const ForsideNynorsk: React.FC = () => {
+    useDecorator([]);
     return (
         <Dekorator erForside={true}>
             <div role="main" className="blokk-center forside">
-                <SprakvelgerForside />
-
                 <AlertStripeInfo>
                     <InternLenke href="/korona">
                         Koronavirus - Fleire kan ha rett til økonomisk
