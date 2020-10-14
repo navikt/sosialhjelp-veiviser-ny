@@ -17,15 +17,19 @@ import AlertStripe from "nav-frontend-alertstriper";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import {REST_STATUS} from "../../utils/restUtils";
 import Lenke from "nav-frontend-lenker";
-import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
+import useTilgjengeligeKommunerService, {
+    antallKommuner,
+} from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
+import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
 
 const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
+    const [valgtKommuneNavn, setValgtKommuneNavn] = useState("");
     const nedetidService = useNedetidService();
 
     const sokDigital = (event: any) => {
@@ -36,9 +40,13 @@ const SokSosialhjelpNynorsk: React.FC = () => {
     const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+    const kommuneNrService = useKommuneNrService();
+
     let antallTilgjengeligKommuner: string = "";
     if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
-        antallTilgjengeligKommuner = tilgjengeligeKommunerService.payload.results.length.toString();
+        antallTilgjengeligKommuner = antallKommuner(
+            tilgjengeligeKommunerService.payload.results
+        );
     }
 
     return (
@@ -109,22 +117,49 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                         <UnmountClosed isOpened={lesMer}>
                             <KommuneSok
                                 ledetekst="Sjekk om du kan søkje digitalt i din kommune"
-                                soknadTilgjengeligTekst="Du kan søkje digitalt i"
-                                soknadIkkeTilgjengelig={
-                                    <span>
-                                        kan dessverre ikkje ta i mot digitale
-                                        søknader enno. Du kan{" "}
+                                soknadOgInnsynTilgjengeligTekst={
+                                    <>
+                                        Du kan søkje digitalt i{" "}
+                                        {valgtKommuneNavn}. Du kan også følge{" "}
+                                        <Lenke href="https://www.nav.no/sosialhjelp/innsyn">
+                                            status på søknaden
+                                        </Lenke>{" "}
+                                        din på nav.no.
+                                    </>
+                                }
+                                soknadTilgjengeligUtenInnsynTekst={
+                                    <>
+                                        Du kan søkje digitalt i{" "}
+                                        {valgtKommuneNavn}. Snart kan du også
+                                        følge{" "}
+                                        <InternLenke href="/status-soknad?lang=nn">
+                                            status på søknaden
+                                        </InternLenke>{" "}
+                                        din på nav.no.
+                                    </>
+                                }
+                                soknadIkkeTilgjengeligTekst={
+                                    <>
+                                        Du kan dessverre ikkje søkje digitalt i{" "}
+                                        {valgtKommuneNavn} enno. Du kan{" "}
                                         <Lenke href={"./sok-papir?lang=nn"}>
                                             søkje på papirskjema
                                         </Lenke>
                                         .
-                                    </span>
+                                    </>
                                 }
                                 placeholderTekst="Skriv kommunenavn"
                                 ariaLabel="Søk etter kommunenavn"
+                                tilgjengeligeKommunerService={
+                                    tilgjengeligeKommunerService
+                                }
+                                kommuneNrService={kommuneNrService}
                                 onValgtKommune={(
                                     kommuneId: string | undefined
                                 ) => setKommuneId(kommuneId)}
+                                setValgtKommuneNavn={(kommuneNavn: string) =>
+                                    setValgtKommuneNavn(kommuneNavn)
+                                }
                             />
                         </UnmountClosed>
                         <Normaltekst>

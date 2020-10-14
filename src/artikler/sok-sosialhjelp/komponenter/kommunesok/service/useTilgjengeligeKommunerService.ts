@@ -7,17 +7,27 @@ import {
 } from "../../../../../utils/restUtils";
 
 export interface TilgjengeligeKommuner {
-    results: string[];
+    results: {
+        [key: string]: KommuneInfo;
+    };
 }
 
-const useTilgjengeligeKommunerService = () => {
+export interface KommuneInfo {
+    kommunenummer: string;
+    kanMottaSoknader: boolean;
+    kanOppdatereStatus: boolean;
+}
+
+const useTilgjengeligeKommunerService = (): ServiceHookTypes<
+    TilgjengeligeKommuner
+> => {
     const [result, setResult] = useState<
         ServiceHookTypes<TilgjengeligeKommuner>
     >({
         restStatus: REST_STATUS.PENDING,
     });
 
-    let url = "/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+    let url = "/sosialhjelp/soknad-api/informasjon/kommuneinfo";
 
     if (erDevMiljo()) {
         // Kjør mot lokal proxyserver:
@@ -31,10 +41,12 @@ const useTilgjengeligeKommunerService = () => {
             url = "https://digisos.labs.nais.io" + url;
         } else if (window.location.origin.indexOf(".labs.nais.io") >= 0) {
             url = "https://sosialhjelp-soknad-api.labs.nais.io" + url;
+        } else if (window.location.origin.indexOf("localhost") >= 0) {
+            url = "http://localhost:8181" + url;
         } else {
             // Heroku:
             url =
-                "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+                "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/kommuneinfo";
         }
 
         // Nytt endepunkt med status om kommune er midlertidig nede:
@@ -46,7 +58,7 @@ const useTilgjengeligeKommunerService = () => {
     if (erCodesandbox()) {
         // Public
         url =
-            "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
+            "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/kommuneinfo";
     }
 
     useEffect(() => {
@@ -68,33 +80,37 @@ const useTilgjengeligeKommunerService = () => {
         };
         fetch(url, options)
             .then((response) => response.json())
-            .then((response) =>
+            .then((response: {[key: string]: KommuneInfo}) => {
                 setResult({
                     restStatus: REST_STATUS.OK,
                     payload: {results: response},
-                })
-            )
+                });
+            })
             .catch((error) =>
                 setResult({restStatus: REST_STATUS.FEILET, error})
             );
     }, [url]);
+    console.log("result", result);
     return result;
 };
 
 const finnTilgjengeligKommune = (
-    tilgjengeligeKommuner: string[],
+    tilgjengeligeKommuner: {[key: string]: KommuneInfo},
     kommunenummer: string
-): boolean => {
-    let funnetKommune: any = undefined;
-    tilgjengeligeKommuner.map((tilgjengeligeKommuneNr: string) => {
-        if (tilgjengeligeKommuneNr.match(kommunenummer)) {
-            // console.log("bingo!: " + tilgjengeligeKommuneNr + ".match( " + kommunenummer);
-            funnetKommune = tilgjengeligeKommuneNr;
-        }
-        return funnetKommune;
-    });
+): KommuneInfo | undefined => {
+    const tilgjengeligKommune = Object.values(
+        tilgjengeligeKommuner
+    ).filter((kommune) => kommune.kommunenummer.match(kommunenummer));
 
-    return funnetKommune !== undefined;
+    return tilgjengeligKommune[0];
+};
+
+export const antallKommuner = (tilgjengeligeKommuner: {
+    [key: string]: KommuneInfo;
+}): string => {
+    return Object.values(tilgjengeligeKommuner)
+        .filter((kommune) => kommune.kanMottaSoknader)
+        .length.toString();
 };
 
 export {finnTilgjengeligKommune};
