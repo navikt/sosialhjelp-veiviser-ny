@@ -90,7 +90,6 @@ const useTilgjengeligeKommunerService = (): ServiceHookTypes<
                 setResult({restStatus: REST_STATUS.FEILET, error})
             );
     }, [url]);
-    console.log("result", result);
     return result;
 };
 
@@ -98,11 +97,9 @@ const finnTilgjengeligKommune = (
     tilgjengeligeKommuner: {[key: string]: KommuneInfo},
     kommunenummer: string
 ): KommuneInfo | undefined => {
-    const tilgjengeligKommune = Object.values(
-        tilgjengeligeKommuner
-    ).filter((kommune) => kommune.kommunenummer.match(kommunenummer));
-
-    return tilgjengeligKommune[0];
+    return Object.values(tilgjengeligeKommuner)
+        .filter((kommune) => kommune.kommunenummer.match(kommunenummer))
+        .shift();
 };
 
 export const antallKommuner = (tilgjengeligeKommuner: {

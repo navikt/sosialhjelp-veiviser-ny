@@ -67,7 +67,6 @@ const KommuneSok: React.FC<Props> = ({
             );
             if (kommuneErTilgjengelig) {
                 onValgtKommune(suggestion.key);
-                console.log("currentSuggestion", suggestion.value);
             } else {
                 onValgtKommune(undefined);
             }

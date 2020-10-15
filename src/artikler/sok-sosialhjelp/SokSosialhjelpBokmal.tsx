@@ -128,7 +128,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                                         <Lenke href="https://www.nav.no/sosialhjelp/innsyn">
                                             statusen på søknaden
                                         </Lenke>{" "}
-                                        din på nav.no
+                                        din på nav.no.
                                     </>
                                 }
                                 soknadTilgjengeligUtenInnsynTekst={
