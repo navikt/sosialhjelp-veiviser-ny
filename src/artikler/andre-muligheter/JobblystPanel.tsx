@@ -11,10 +11,17 @@ export const JobblystBokmalPanel = () => {
             border={false}
             className="jobblyst_panel"
         >
-            <Innholdstittel tag="h2">Jobblyst på Facebook</Innholdstittel>
-            <Normaltekst>
-                Råd og veiledning for deg som er ung og har spørsmål
-            </Normaltekst>
+            <div className="jobblyst_panel__content">
+                <Innholdstittel tag="h2">Jobblyst</Innholdstittel>
+                <Normaltekst>
+                    Råd og veiledning for deg som er ung og har spørsmål
+                </Normaltekst>
+            </div>
+            <img
+                className="jobblyst_panel__image"
+                src="img/JobblystS.png"
+                alt=""
+            />
         </Lenkepanel>
     );
 };
@@ -26,10 +33,13 @@ export const JobblystNynorskPanel = () => (
         border={false}
         className="jobblyst_panel"
     >
-        <Innholdstittel tag="h2">Jobblyst på Facebook</Innholdstittel>
-        <Normaltekst>
-            Råd og rettleiing for deg som er ung og har spørsmål
-        </Normaltekst>
+        <div className="jobblyst_panel__content">
+            <Innholdstittel tag="h2">Jobblyst</Innholdstittel>
+            <Normaltekst>
+                Råd og rettleiing for deg som er ung og har spørsmål
+            </Normaltekst>
+        </div>
+        <img className="jobblyst_panel__image" src="img/JobblystS.png" alt="" />
     </Lenkepanel>
 );
 
@@ -40,7 +50,10 @@ export const JobblystEnglishPanel = () => (
         border={false}
         className="jobblyst_panel"
     >
-        <Innholdstittel tag="h2">"Jobblyst" on Facebook</Innholdstittel>
-        <Normaltekst>Advice and guidance for young people</Normaltekst>
+        <div className="jobblyst_panel__content">
+            <Innholdstittel tag="h2">Jobblyst</Innholdstittel>
+            <Normaltekst>Advice and guidance for young people</Normaltekst>
+        </div>
+        <img className="jobblyst_panel__image" src="img/JobblystS.png" alt="" />
     </Lenkepanel>
 );
