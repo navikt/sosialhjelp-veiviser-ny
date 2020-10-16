@@ -14,6 +14,8 @@ import {UnmountClosed} from "react-collapse";
 import useTilgjengeligeKommunerService from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
+import {InternLenke} from "../../komponenter/InternLenke";
 
 const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
     return (
@@ -32,6 +34,7 @@ const AdvarselNedetid: React.FC<{nedetidService: any}> = ({nedetidService}) => {
 
 const SokSosialhjelpEngelskForskudd: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
+    const [valgtKommuneNavn, setValgtKommuneNavn] = useState("");
     const nedetidService = useNedetidService();
 
     const sokDigital = (event: any) => {
@@ -42,6 +45,7 @@ const SokSosialhjelpEngelskForskudd: React.FC = () => {
     const [lesMer, setLesMer] = useState<boolean>(false);
 
     const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+    const kommuneNrService = useKommuneNrService();
 
     let antallTilgjengeligKommuner: string = "";
     if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
@@ -80,28 +84,54 @@ const SokSosialhjelpEngelskForskudd: React.FC = () => {
                             )}
                         </Normaltekst>
                         <UnmountClosed isOpened={lesMer}>
-                            <div className="kommunesok_midlertidig">
-                                <KommuneSok
-                                    ledetekst="Check if you can apply digitally in your municipality"
-                                    soknadTilgjengeligTekst="You can apply digitally in "
-                                    soknadIkkeTilgjengelig={
-                                        <span>
-                                            is unfortunately not able to accept
-                                            digital applications. You can apply
-                                            using the municipality's own{" "}
-                                            <Lenke href={"./sok-papir?lang=nb"}>
-                                                paper form
-                                            </Lenke>
-                                            .
-                                        </span>
-                                    }
-                                    placeholderTekst="Enter municipality name"
-                                    ariaLabel="Search for municipality"
-                                    onValgtKommune={(
-                                        kommuneId: string | undefined
-                                    ) => setKommuneId(kommuneId)}
-                                />
-                            </div>
+                            <KommuneSok
+                                ledetekst="Check if you can apply digitally in your municipality"
+                                soknadOgInnsynTilgjengeligTekst={
+                                    <>
+                                        You can apply digitally in{" "}
+                                        {valgtKommuneNavn}. You can also follow
+                                        the{" "}
+                                        <Lenke href="https://www.nav.no/sosialhjelp/innsyn">
+                                            status of your application
+                                        </Lenke>{" "}
+                                        online.
+                                    </>
+                                }
+                                soknadTilgjengeligUtenInnsynTekst={
+                                    <>
+                                        You can apply digitally in{" "}
+                                        {valgtKommuneNavn}. Soon you will also
+                                        be able to follow the{" "}
+                                        <InternLenke href="./status-soknad?lang=en">
+                                            status of your application
+                                        </InternLenke>{" "}
+                                        online.
+                                    </>
+                                }
+                                soknadIkkeTilgjengeligTekst={
+                                    <>
+                                        {valgtKommuneNavn} is unfortunately not
+                                        yet able to accept digital applications.
+                                        You can apply using the{" "}
+                                        <Lenke href={"./sok-papir?lang=en"}>
+                                            municipality's own paper form
+                                        </Lenke>
+                                        .
+                                    </>
+                                }
+                                placeholderTekst="Enter municipality name"
+                                ariaLabel="Search for municipality"
+                                tilgjengeligeKommunerService={
+                                    tilgjengeligeKommunerService
+                                }
+                                kommuneNrService={kommuneNrService}
+                                onValgtKommune={(
+                                    kommuneId: string | undefined
+                                ) => setKommuneId(kommuneId)}
+                                setValgtKommuneNavn={(kommuneNavn: string) =>
+                                    setValgtKommuneNavn(kommuneNavn)
+                                }
+                            />
                         </UnmountClosed>
                         <Normaltekst>
                             <AapneLukkeLenke
