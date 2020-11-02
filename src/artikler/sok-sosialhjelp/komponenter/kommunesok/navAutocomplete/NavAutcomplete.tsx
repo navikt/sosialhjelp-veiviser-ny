@@ -93,34 +93,14 @@ const NavAutocomplete: React.FC<Props> = ({
                 }
                 break;
             case KEY.ENTER:
-                if (displayedSuggestions.length === 0) {
+                if (displayedSuggestions.length < 1) {
                     onReset && onReset();
                     setHasErrors(true);
-                }
-                if (displayedSuggestions.length === 1) {
-                    const displayedSuggestions: Suggestion[] = searchSuggestions(
-                        suggestions,
-                        value
-                    );
-                    event.preventDefault(); // Unngå form submit når bruker velger et av forslagene
-                    setValue(displayedSuggestions[0].value);
-                    onClick(displayedSuggestions[0]);
                 } else {
-                    if (hasSelectedSuggestion && shouldShowSuggestions) {
-                        const displayedSuggestions: Suggestion[] = searchSuggestions(
-                            suggestions,
-                            value
-                        );
-                        event.preventDefault(); // Unngå form submit når bruker velger et av forslagene
-                        setValue(
-                            displayedSuggestions[activeSuggestionIndex].value
-                        );
-                        onClick(displayedSuggestions[activeSuggestionIndex]);
-                    } else {
-                        onReset && onReset();
-                        setHasErrors(true);
-                        setShouldShowSuggestions(false);
-                    }
+                    event.preventDefault(); // Unngå form submit når bruker velger et av forslagene
+                    const suggestionIndex = activeSuggestionIndex >= 0 ? activeSuggestionIndex : 0;
+                    setValue(displayedSuggestions[suggestionIndex].value);
+                    onClick(displayedSuggestions[suggestionIndex]);
                 }
                 break;
             case KEY.ESC:
