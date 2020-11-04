@@ -1,68 +1,83 @@
 import * as React from "react";
 import NavAutocomplete, {Suggestion} from "./navAutocomplete/NavAutcomplete";
 import {useState} from "react";
-import useKommuneNrService from "./service/useKommuneNrService";
+import {KommuneNummere} from "./service/useKommuneNrService";
 import {REST_STATUS} from "../../../../utils/restUtils";
-import useTilgjengeligeKommunerService, {
+import {
     finnTilgjengeligKommune,
+    TilgjengeligeKommuner,
 } from "./service/useTilgjengeligeKommunerService";
 import "./kommunesok.less";
 import {Normaltekst} from "nav-frontend-typografi";
+import NavFrontendSpinner from "nav-frontend-spinner";
+import {ServiceHookTypes} from "./service/ServiceHookTypes";
 
 interface Props {
     ledetekst: string;
-    soknadTilgjengeligTekst: string;
-    soknadIkkeTilgjengeligTekst?: string;
-    soknadIkkeTilgjengelig?: React.ReactNode;
+    soknadOgInnsynTilgjengeligTekst: React.ReactNode;
+    soknadTilgjengeligUtenInnsynTekst: React.ReactNode;
+    soknadIkkeTilgjengeligTekst: React.ReactNode;
     placeholderTekst: string;
     ariaLabel: string;
+    tilgjengeligeKommunerService: ServiceHookTypes<TilgjengeligeKommuner>;
+    kommuneNrService: ServiceHookTypes<KommuneNummere>;
     onValgtKommune: (kommuneId: string | undefined) => void;
+    setValgtKommuneNavn: (kommuneNavn: string) => void;
 }
 
 const KommuneSok: React.FC<Props> = ({
     ledetekst,
-    soknadTilgjengeligTekst,
+    soknadOgInnsynTilgjengeligTekst,
+    soknadTilgjengeligUtenInnsynTekst,
     soknadIkkeTilgjengeligTekst,
-    soknadIkkeTilgjengelig,
     placeholderTekst,
     ariaLabel,
+    tilgjengeligeKommunerService,
+    kommuneNrService,
     onValgtKommune,
+    setValgtKommuneNavn,
 }) => {
     const [
         currentSuggestion,
         setCurrentSuggestion,
     ] = useState<Suggestion | null>(null);
-    const [soknadTilgjengelig, setSoknadTilgjengelig] = useState<boolean>(
-        false
-    );
-    const kommunerService = useKommuneNrService();
-    const tilgjengeligeKommunerService = useTilgjengeligeKommunerService();
+    const [kommuneHarSoknad, setKommuneHarSoknad] = useState(false);
+    const [kommuneHarInnsyn, setKommuneHarInnsyn] = useState(false);
 
     const onReset = () => {
         setCurrentSuggestion(null);
-        setSoknadTilgjengelig(false);
+        setKommuneHarSoknad(false);
+        setKommuneHarInnsyn(false);
     };
 
     const onSelect = (suggestion: Suggestion) => {
         onReset();
         if (tilgjengeligeKommunerService.restStatus === REST_STATUS.OK) {
-            let kommuneErTilgjengelig: boolean = finnTilgjengeligKommune(
+            const tilgjengeligKommune = finnTilgjengeligKommune(
                 tilgjengeligeKommunerService.payload.results,
                 suggestion.key
             );
-            setSoknadTilgjengelig(kommuneErTilgjengelig);
+            const kommuneErTilgjengelig: boolean =
+                tilgjengeligKommune !== undefined &&
+                tilgjengeligKommune.kanMottaSoknader;
+            setKommuneHarSoknad(kommuneErTilgjengelig);
+            setKommuneHarInnsyn(
+                tilgjengeligKommune !== undefined &&
+                    tilgjengeligKommune.kanOppdatereStatus
+            );
             if (kommuneErTilgjengelig) {
                 onValgtKommune(suggestion.key);
             } else {
                 onValgtKommune(undefined);
             }
         }
+        setValgtKommuneNavn(suggestion.value);
         setCurrentSuggestion(suggestion);
     };
 
     const suggestions: Suggestion[] =
-        kommunerService.restStatus === REST_STATUS.OK
-            ? kommunerService.payload.results
+        kommuneNrService.restStatus === REST_STATUS.OK
+            ? kommuneNrService.payload.results
             : [];
 
     return (
@@ -71,34 +86,46 @@ const KommuneSok: React.FC<Props> = ({
                 <b>{ledetekst}</b>
             </Normaltekst>
             <br />
-            <NavAutocomplete
-                placeholder={placeholderTekst}
-                suggestions={suggestions}
-                ariaLabel={ariaLabel}
-                id="kommunesok"
-                onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
-                onReset={() => onReset()}
-            />
-            {currentSuggestion && soknadTilgjengelig && (
+            {kommuneNrService.restStatus === REST_STATUS.OK &&
+            tilgjengeligeKommunerService.restStatus === REST_STATUS.OK ? (
+                <NavAutocomplete
+                    placeholder={placeholderTekst}
+                    suggestions={suggestions}
+                    ariaLabel={ariaLabel}
+                    id="kommunesok"
+                    onSelect={(suggestion: Suggestion) => onSelect(suggestion)}
+                    onReset={() => onReset()}
+                />
+            ) : (
+                <NavFrontendSpinner />
+            )}
+            {currentSuggestion && kommuneHarSoknad && kommuneHarInnsyn && (
                 <div style={{textAlign: "left", paddingTop: "1rem"}}>
                     <div className="kommunesok_tilbakemelding ">
                         <Normaltekst>
-                            {soknadTilgjengeligTekst} {currentSuggestion.value}
+                            {soknadOgInnsynTilgjengeligTekst}
                         </Normaltekst>
                     </div>
                 </div>
             )}
-            {!soknadTilgjengelig && currentSuggestion && (
+            {currentSuggestion && kommuneHarSoknad && !kommuneHarInnsyn && (
+                <div style={{textAlign: "left", paddingTop: "1rem"}}>
+                    <div className="kommunesok_tilbakemelding ">
+                        <Normaltekst>
+                            {soknadTilgjengeligUtenInnsynTekst}
+                        </Normaltekst>
+                    </div>
+                </div>
+            )}
+            {!kommuneHarSoknad && currentSuggestion && (
                 <div style={{textAlign: "left", paddingTop: "1rem"}}>
                     <div
                         className="kommunesok_tilbakemelding "
                         style={{paddingTop: "0.5rem", marginBottom: "0"}}
                     >
                         <Normaltekst>
-                            {currentSuggestion.value}{" "}
                             {soknadIkkeTilgjengeligTekst &&
                                 soknadIkkeTilgjengeligTekst}
-                            {soknadIkkeTilgjengelig && soknadIkkeTilgjengelig}
                         </Normaltekst>
                     </div>
                 </div>
