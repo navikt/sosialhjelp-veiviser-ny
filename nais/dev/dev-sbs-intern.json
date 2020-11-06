@@ -1,8 +1,10 @@
 {
-  "applicationName": "sosialhjelp-veiviser",
-  "namespace": "q1",
+  "applicationName": "sosialhjelp-veiviser-intern",
+  "namespace": "teamdigisos",
   "ingresses": [
-    "https://sosialhjelp-veiviser-q1.dev-sbs.nais.io/"
+    "https://sosialhjelp-veiviser-intern.dev.nav.no/",
+    "https://www-q1.dev.nav.no/sosialhjelp",
+    "https://www-q1.nav.no/sosialhjelp"
   ],
   "prometheusEnabled": true,
   "webProxyEnabled": true,
