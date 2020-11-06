@@ -1,4 +1,5 @@
 {
+  "applicationName": "sosialhjelp-veiviser",
   "namespace": "teamdigisos",
   "ingresses": [
     "https://sosialhjelp-veiviser.dev.nav.no/sosialhjelp"

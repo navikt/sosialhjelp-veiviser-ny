@@ -1,4 +1,5 @@
 {
+  "applicationName": "sosialhjelp-veiviser",
   "namespace": "default",
   "ingresses": [
     "https://sosialhjelp-veiviser.nais.oera.no/",
