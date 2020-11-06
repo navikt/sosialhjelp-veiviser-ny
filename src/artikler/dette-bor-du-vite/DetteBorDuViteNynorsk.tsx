@@ -136,12 +136,14 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 I vedtaksbrevet ditt finn du meir informasjon om utbetalingar.
             </Avsnitt>
 
+            <Undertittel>Regelverk</Undertittel>
+
             <Avsnitt>
                 Sjå utfyllande informasjon om{" "}
-                <Lenke href="https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/Nynorsk/%C3%B8konomisk-sosialhjelp">
-                    økonomisk sosialhjelp
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/relatert-innhold/lov-om-sosiale-tjenester-i-nav">
+                    Lov om sosiale tjenester i NAV
                 </Lenke>
-                .{" "}
+                .
             </Avsnitt>
         </Artikkel>
     );
