@@ -1,4 +1,5 @@
 {
+  "applicationName": "sosialhjelp-veiviser",
   "namespace": "q1",
   "ingresses": [
     "https://sosialhjelp-veiviser-q1.dev-sbs.nais.io/",
