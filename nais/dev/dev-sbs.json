@@ -1,8 +1,8 @@
 {
   "applicationName": "sosialhjelp-veiviser",
-  "namespace": "q0",
+  "namespace": "teamdigisos",
   "ingresses": [
-    "https://sosialhjelp-veiviser-q0.dev-sbs.nais.io/",
+    "https://sosialhjelp-veiviser.dev.nav.no/",
     "https://www-q0.dev.nav.no/sosialhjelp",
     "https://www-q0.nav.no/sosialhjelp"
   ],
