@@ -140,8 +140,8 @@ const DetteBorDuViteNynorsk: React.FC = () => {
 
             <Avsnitt>
                 Sjå utfyllande informasjon om{" "}
-                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/relatert-innhold/lov-om-sosiale-tjenester-i-nav">
-                    Lov om sosiale tjenester i NAV
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/lov-om-sosiale-tenester-i-nav">
+                    Lov om sosiale tenester i NAV
                 </Lenke>
                 .
             </Avsnitt>
