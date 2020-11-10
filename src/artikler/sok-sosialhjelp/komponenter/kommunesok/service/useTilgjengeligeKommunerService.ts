@@ -33,8 +33,8 @@ const useTilgjengeligeKommunerService = (): ServiceHookTypes<
         // Kjør mot lokal proxyserver:
         // url = "http://localhost:8080/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
 
-        if (window.location.origin.indexOf(".dev.nav.no") >= 0) {
-            url = "https://sosialhjelp-soknad-api.dev.nav.no" + url;
+        if (window.location.origin.indexOf("-gcp.dev.nav.no") >= 0) {
+            url = "https://sosialhjelp-soknad-api-gcp.dev.nav.no" + url;
         } else if (
             window.location.origin.indexOf("digisos.labs.nais.io") >= 0
         ) {
