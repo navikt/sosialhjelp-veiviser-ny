@@ -1,6 +1,6 @@
 {
   "applicationName": "sosialhjelp-veiviser",
-  "namespace": "default",
+  "namespace": "teamdigisos",
   "ingresses": [
     "https://sosialhjelp-veiviser.nais.oera.no/",
     "https://sosialhjelp-veiviser.prod-sbs.nais.io/",
