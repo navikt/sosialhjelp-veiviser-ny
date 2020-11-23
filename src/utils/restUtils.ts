@@ -1,3 +1,8 @@
+export function erProd(): boolean {
+    const url = window.location.href;
+    return url.indexOf("www.nav.no") >= 0;
+}
+
 export function erDev(): boolean {
     const url = window.location.href;
     return url.indexOf("localhost") > 0;
