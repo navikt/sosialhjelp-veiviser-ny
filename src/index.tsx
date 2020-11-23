@@ -28,14 +28,18 @@ import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
 import Korona from "./artikler/korona/Korona";
 import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
-import {erDev, erQ} from "./utils/restUtils";
+import {erProd, erQ} from "./utils/restUtils";
 
-if (erDev() || erQ()) {
+if (erProd()) {
+    Sentry.init({
+        dsn: "https://8c95ef33f4ec40abbd167d021f997637@sentry.gc.nav.no/52",
+    });
+} else if (erQ()) {
     Sentry.init({
         dsn: "https://92f71d949aac44bbbef3792447677d7c@sentry.gc.nav.no/16",
     });
-    Sentry.setUser({ip_address: "", id: uuid()});
 }
+Sentry.setUser({ip_address: "", id: uuid()});
 
 function App() {
     return (
