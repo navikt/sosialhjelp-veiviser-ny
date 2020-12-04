@@ -34,10 +34,14 @@ const Artikkel: React.FC<Props> = ({
     useDecorator(breadcrumbPages);
 
     useEffect(() => {
-        window.scrollTo({
-            behavior: "smooth",
-            top: 0,
-        });
+        const supportsNativeSmoothScroll =
+            "scrollBehavior" in document.documentElement.style;
+        supportsNativeSmoothScroll
+            ? window.scrollTo({
+                  behavior: "smooth",
+                  top: 0,
+              })
+            : window.scrollTo(0, 0);
     }, [pathname]);
 
     return (
