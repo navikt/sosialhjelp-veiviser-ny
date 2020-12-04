@@ -56,7 +56,7 @@ export const ForsideNynorsk: React.FC = () => {
                                 Nødsituasjon
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./sok-papir?lang=nn"
+                                href="./sok-papir?lang=nb"
                                 description="Kor finn du søknadsskjema på papir"
                             >
                                 Søknadsskjema på papir
@@ -76,19 +76,19 @@ export const ForsideNynorsk: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./behandlingstid?lang=nn"
+                                href="./behandlingstid?lang=nb"
                                 description="Kor lang tid tek det å behandle søknaden?"
                             >
                                 Behandlingstid
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./ettersende?lang=nn"
+                                href="./ettersende?lang=nb"
                                 description="Korleis ettersende dokumentasjon"
                             >
                                 Ettersende
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./status-soknad?lang=nn"
+                                href="./status-soknad?lang=nb"
                                 description="Kva er status på søknaden din?"
                             >
                                 Status på søknad
