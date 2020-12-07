@@ -1,19 +1,21 @@
 import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import SprakvelgerContext, {
+    Oversettelser,
+} from "../../komponenter/oversettelser/Oversettelser";
 import SoknadPaPapirBokmal from "./SoknadPaPapirBokmal";
-import SoknadPaPapirNynorsk from "./SoknadPaPapirBokmal";
 import SoknadPaPapirEngelsk from "./SoknadPaPapirEnglish";
 
 const SoknadPaPapir: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
+    const sprakContext = React.useContext(SprakvelgerContext);
     return (
-        <Oversettelser
-            sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
-        >
+        <Oversettelser sprak={[Sprak.NORSK_BOKMAL, Sprak.ENGELSK]}>
             {valgtSprak === Sprak.NORSK_BOKMAL && <SoknadPaPapirBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <SoknadPaPapirNynorsk />}
             {valgtSprak === Sprak.ENGELSK && <SoknadPaPapirEngelsk />}
+            {!sprakContext.sprak.includes(valgtSprak) && (
+                <SoknadPaPapirBokmal />
+            )}
         </Oversettelser>
     );
 };

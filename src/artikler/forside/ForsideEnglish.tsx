@@ -76,19 +76,19 @@ export const ForsideEnglish: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./behandlingstid?lang=en"
+                                href="./behandlingstid?lang=nb"
                                 description="How long will it take to process my application?"
                             >
                                 Processing time
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./ettersende?lang=en"
+                                href="./ettersende?lang=nb"
                                 description="How to upload documentation"
                             >
                                 Upload documentation
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./status-soknad?lang=en"
+                                href="./status-soknad?lang=nb"
                                 description="What is the status of your application?"
                             >
                                 Application status
