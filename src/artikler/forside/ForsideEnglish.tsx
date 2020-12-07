@@ -56,7 +56,7 @@ export const ForsideEnglish: React.FC = () => {
                                 When you are in a financial emergency
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./sok-papir?lang=nb"
+                                href="./sok-papir?lang=en"
                                 description="Where to find application form on paper"
                             >
                                 Application form on paper
@@ -88,7 +88,7 @@ export const ForsideEnglish: React.FC = () => {
                                 Upload documentation
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./status-soknad?lang=en"
+                                href="./status-soknad?lang=nb"
                                 description="What is the status of your application?"
                             >
                                 Application status
