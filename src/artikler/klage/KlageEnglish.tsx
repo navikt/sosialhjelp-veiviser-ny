@@ -58,13 +58,14 @@ const KlageEnglish: React.FC = () => (
 
         <Avsnitt>
             If the decision remains unchanged, your appeal is forwarded to
-            Fylkemannen who will make a final decision. You will receive a
-            letter when the case is sent to Fylkesmannen. The letter will
+            Statsforvalteren who will make a final decision. You will receive a
+            letter when the case is sent to Statsforvalteren. The letter will
             explain the further process.
         </Avsnitt>
 
         <Avsnitt>
-            You will receive a new decision when Fylkesmannen decides your case.
+            You will receive a new decision when Statsforvalteren decides your
+            case.
         </Avsnitt>
         <Undertittel>You can get your expenses covered</Undertittel>
         <Avsnitt>
