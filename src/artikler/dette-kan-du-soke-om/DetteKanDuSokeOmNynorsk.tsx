@@ -32,17 +32,18 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
 
             <Ekspanderbartpanel tittel="å leve" border>
                 <Avsnitt>
-                    Dei heilt grunnleggande behova som mat, klede, bustad og
-                    oppvarming omtalar vi ofte som livsopphald når vi gjer eit
-                    vedtak om sosialhjelp.
+                    Dei heilt grunnleggande behova som mat, klede, bustad
+                    og oppvarming omtalar vi ofte som livsopphald når vi
+                    behandlar ein søknad om sosialhjelp.
                 </Avsnitt>
 
                 <Avsnitt>
                     Også utgifter til fritidsaktiviteter, telefoni, tv,
                     internett, transport og helse- og tannbehandling blir av NAV
                     rekna som en del av livsopphaldet. Vi vurderer òg om du har
-                    særlege ekstrautgifter som vi bør ta omsyn til. Vi legg
-                    særleg vekt på barn og unge sine behov.
+                    ekstrautgifter som vi bør ta omsyn til. Ekstrautgifter kan
+                    til dømes oppstå ved feiring av spesielle hendelsar og høgtider.
+                    Vi legg særleg vekt på barn og unge sine behov.
                 </Avsnitt>
             </Ekspanderbartpanel>
 
