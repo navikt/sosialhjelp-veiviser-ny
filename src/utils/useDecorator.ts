@@ -80,5 +80,5 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
 
     useEffect(() => {
         setParams(params);
-    });
+    }, [params]);
 };
