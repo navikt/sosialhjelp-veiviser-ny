@@ -31,17 +31,17 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
             <Ekspanderbartpanel tittel="Living costs" border={true}>
                 <Avsnitt>
                     Basic needs, such as food, clothing, housing and heating,
-                    are often referred to as subsistence needs when we make
-                    decisions concerning financial assistance.
+                    are often referred to as subsistence needs when we process
+                    your application.
                 </Avsnitt>
 
                 <Avsnitt>
                     NAV also includes costs related to certain hobbies or
-                    sports, telephone, TV or Internet costs, transport costs and
-                    medical or dental costs when assessing your subsistence
-                    needs. We will also consider whether you have any special
-                    added expenses we should take into account. We will
-                    emphasize the needs of children and youths.
+                    sports, telephone, TV or Internet costs, transport costs
+                    and medical or dental costs when assessing your subsistence needs.
+                    We will also consider whether you have any other expenses
+                    we should take into account, which could for example be special events
+                    or holidays. We will emphasize the needs of children and youths.
                 </Avsnitt>
             </Ekspanderbartpanel>
 
