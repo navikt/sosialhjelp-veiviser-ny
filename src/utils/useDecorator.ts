@@ -64,6 +64,7 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
 
     const params = {
         feedback: false,
+        chatbot: false,
     };
 
     useEffect(() => {
