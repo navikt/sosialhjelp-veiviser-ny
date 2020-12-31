@@ -108,35 +108,6 @@ export const ForsideNynorsk: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-
-                <InfoPanelContainer>
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/sosialhjelp"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om sosiale tenester og økonomisk
-                            sosialhjelp?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om sosiale tenester
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/okonomi"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om budsjett, økonomi og gjeld?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om økonomi og gjeld
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
             </div>
         </Dekorator>
     );
