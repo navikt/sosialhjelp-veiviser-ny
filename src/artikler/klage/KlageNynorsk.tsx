@@ -55,12 +55,12 @@ const KlageNynorsk: React.FC = () => (
 
         <Avsnitt>
             Dersom du ikkje får medhald, blir klagen sendt vidare til
-            Fylkesmannen som vurderer saka di på nytt. Du får informasjon om
-            saksbehandlingstid hjå Fylkesmannen og kva som skjer vidare.
+            Statsforvalteren som vurderer saka di på nytt. Du får informasjon om
+            saksbehandlingstid hjå Statsforvalteren og kva som skjer vidare.
         </Avsnitt>
 
         <Avsnitt>
-            Når Fylkesmannen har behandla saka di, får du eit nytt vedtak.{" "}
+            Når Statsforvalteren har behandla saka di, får du eit nytt vedtak.{" "}
         </Avsnitt>
         <Undertittel>Du kan få dekt utgifter</Undertittel>
         <Avsnitt>
