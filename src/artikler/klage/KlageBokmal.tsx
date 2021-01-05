@@ -19,8 +19,11 @@ const KlageBokmal: React.FC = () => (
         <Undertittel>Slik klager du</Undertittel>
         <Avsnitt>
             Du skal sende klagen til NAV-kontoret som har gjort vedtaket.
-            Klagefristen er tre uker fra du mottar vedtaket.
-            Her finner du <Lenke href="www.nav.no/finnkontor">kontaktinformasjon til NAV-kontoret</Lenke>.
+            Klagefristen er tre uker fra du mottar vedtaket. Her finner du{" "}
+            <Lenke href="https://www.nav.no/finnkontor">
+                kontaktinformasjon til NAV-kontoret
+            </Lenke>
+            .
         </Avsnitt>
         <Undertittel>Trenger du hjelp til å klage?</Undertittel>
         <Avsnitt>
