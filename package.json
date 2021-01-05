@@ -17,7 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
-    "core-js": "^3.6.4",
+    "core-js": "^3.8.1",
     "history": "^4.10.1",
     "less-plugin-npm-import": "^2.1.0",
     "lodash.throttle": "^4.1.1",
