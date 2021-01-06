@@ -111,7 +111,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             When you want to talk to someone
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+                            <LenkeboksLinje href="https://www.nav.no/person/kontakt-oss/en/finnkontor">
                                 Your NAV office
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
