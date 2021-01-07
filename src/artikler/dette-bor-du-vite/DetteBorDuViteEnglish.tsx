@@ -21,7 +21,7 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 own savings. Consult with your{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
                     }
                 >
                     NAV-office

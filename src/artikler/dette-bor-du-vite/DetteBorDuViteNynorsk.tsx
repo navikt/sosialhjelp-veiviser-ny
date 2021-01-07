@@ -22,7 +22,7 @@ const DetteBorDuViteNynorsk: React.FC = () => {
                 kontakt med{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/finnkontor"
                     }
                 >
                     NAV-kontoret
