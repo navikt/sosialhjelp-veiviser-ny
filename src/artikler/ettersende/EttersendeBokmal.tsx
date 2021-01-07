@@ -39,7 +39,7 @@ const EttersendeBokmal: React.FC = () => {
                 Har du søkt på papir, må du levere dokumentasjonen til{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/finnkontor"
                     }
                 >
                     ditt NAV-kontor
