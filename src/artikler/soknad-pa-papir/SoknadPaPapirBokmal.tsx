@@ -54,7 +54,7 @@ const SoknadPaPapirBokmal: React.FC = () => {
                 Du kan levere søknaden på{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/finnkontor"
                     }
                 >
                     ditt NAV-kontor
