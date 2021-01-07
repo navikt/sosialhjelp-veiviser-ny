@@ -41,7 +41,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
                 office under find{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
                     }
                 >
                     your NAV office
@@ -54,7 +54,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
                 You can submit the application to{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
                     }
                 >
                     your NAV office
@@ -67,7 +67,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
                 Contact{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
                     }
                 >
                     your NAV office
