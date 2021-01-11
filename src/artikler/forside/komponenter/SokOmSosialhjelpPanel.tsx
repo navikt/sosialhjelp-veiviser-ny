@@ -20,11 +20,14 @@ const SokOmSosialhjelpPanel: React.FC<{
                 </NavLink>
             )}
             href={href}
+            border
         >
             <div className="sokMobilIllustrasjon" />
 
             {/*SVG har feil: <MobilSirkel />*/}
-            <Systemtittel>{children}</Systemtittel>
+            <Systemtittel className="lenkepanel__heading">
+                {children}
+            </Systemtittel>
             <div className="illustrasjonsGruppe">
                 <IllustrasjonsGruppe />
             </div>
