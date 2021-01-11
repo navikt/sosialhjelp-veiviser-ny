@@ -103,7 +103,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                     <div className="lenkeboks">
                         <Undertittel>Når du vil snakke med nokon</Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+                            <LenkeboksLinje href="https://www.nav.no/finnkontor">
                                 Ditt NAV-kontor
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">

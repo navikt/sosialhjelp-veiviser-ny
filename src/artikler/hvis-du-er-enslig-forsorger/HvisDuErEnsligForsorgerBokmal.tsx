@@ -25,7 +25,7 @@ const HvisDuErEnsligForsorgerBokmal = () => (
             <Avsnitt>
                 Du kan ha rett til barnetrygd for ett barn mer enn du faktisk
                 bor sammen med hvis du bor alene med barn. Les mer om{" "}
-                <Lenke href="https://www.nav.no/no/Person/Familie/Barnetrygd+og+kontantstotte/barnetrygd--156">
+                <Lenke href="https://www.nav.no/no/person/familie/barnetrygd-og-kontantstotte/barnetrygd#chapter-2">
                     utvidet barnetrygd
                 </Lenke>
                 .

@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
+import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
@@ -19,7 +20,8 @@ const KlageEnglish: React.FC = () => (
         <Avsnitt>
             Send the appeal to the NAV office that made the decision. The term
             of appeal is 3 weeks from the date on which you receive notice of
-            the decision.
+            the decision. 
+            You can find the <Lenke href="https://www.nav.no/person/kontakt-oss/en/finnkontor">contact information to the NAV-office here</Lenke>.
         </Avsnitt>
         <Undertittel>Who can help you lodge an appeal?</Undertittel>
         <Avsnitt>
