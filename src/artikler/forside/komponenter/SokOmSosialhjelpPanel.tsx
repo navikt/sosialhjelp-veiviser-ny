@@ -13,7 +13,7 @@ const SokOmSosialhjelpPanel: React.FC<{
         <LenkepanelBase
             linkCreator={(props) => (
                 <NavLink
-                    className="start_soknad_panel lenkepanel"
+                    className="start_soknad_panel lenkepanel lenkepanel--border"
                     to={props.href ?? ""}
                 >
                     {props.children}
