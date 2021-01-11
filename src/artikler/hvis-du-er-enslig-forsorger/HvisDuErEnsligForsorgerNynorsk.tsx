@@ -25,7 +25,7 @@ const HvisDuErEnsligForsorgerNynorsk = () => (
             <Avsnitt>
                 Du kan ha rett til barnetrygd for eitt barn meir enn du faktisk
                 bur saman med om du bur aleine med barn. Les meir om{" "}
-                <Lenke href="https://www.nav.no/no/Person/Familie/Barnetrygd+og+kontantstotte/barnetrygd--156">
+                <Lenke href="https://www.nav.no/no/person/familie/barnetrygd-og-kontantstotte/barnetrygd#chapter-2">
                     utvida barnetrygd
                 </Lenke>
                 .
