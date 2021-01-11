@@ -26,7 +26,7 @@ const HvisDuErEnsligForsorgerEnglish = () => (
                 You may qualify for child benefits for one child more than the
                 number of children in your household if you live alone with
                 children. Read more about{" "}
-                <Lenke href="https://www.nav.no/en/Home/Benefits+and+services/Relatert+informasjon/child-benefit">
+                <Lenke href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/child-benefit#chapter-2">
                     extended child benefits
                 </Lenke>
                 .
