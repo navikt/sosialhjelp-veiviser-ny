@@ -78,7 +78,9 @@ const AndreMuligheterBokmal: React.FC = () => {
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
                     <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
-                        <Undertittel tag="h3">Bostøtte</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Bostøtte
+                        </Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -86,7 +88,9 @@ const AndreMuligheterBokmal: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/bolig/midlertidig-botilbud"
                         }
                     >
-                        <Undertittel tag="h3">Midlertidig botilbud</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Midlertidig botilbud
+                        </Undertittel>
                         <Normaltekst>Nødsituasjon</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -94,7 +98,9 @@ const AndreMuligheterBokmal: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel tag="h3">Leie eller eie bolig</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Leie eller eie bolig
+                        </Undertittel>
                     </LenkepanelBase>
                 </div>
 
