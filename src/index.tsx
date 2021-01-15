@@ -14,7 +14,6 @@ import {history} from "./utils/navigasjon";
 import Forside from "./artikler/forside/Forside";
 import SokSosialhjelp from "./artikler/sok-sosialhjelp/SokSosialhjelp";
 import Nodsituasjon from "./artikler/nodsituasjon/Nodsituasjon";
-import HvisDuErEnsligForsorger from "./artikler/hvis-du-er-enslig-forsorger/HvisDuErEnsligForsorger";
 import HvisDuHarBarn from "./artikler/hvis-du-har-barn/HvisDuHarBarn";
 import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
@@ -74,11 +73,6 @@ function App() {
                 <Route exact path="/nodsituasjon" component={Nodsituasjon} />
                 <Route
                     exact
-                    path="/hvis-du-er-enslig-forsorger"
-                    component={HvisDuErEnsligForsorger}
-                />
-                <Route
-                    exact
                     path="/hvis-du-har-barn"
                     component={HvisDuHarBarn}
                 />
@@ -118,9 +112,6 @@ function App() {
                 {/* Redirects */}
                 <Route exact path="/artikkel/514891">
                     <Redirect to="/nodsituasjon" />
-                </Route>
-                <Route exact path="/artikkel/514877">
-                    <Redirect to="/hvis-du-er-enslig-forsorger" />
                 </Route>
                 <Route exact path="/artikkel/514874">
                     <Redirect to="/hvis-du-har-barn" />
