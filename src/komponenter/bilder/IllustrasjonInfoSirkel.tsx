@@ -10,7 +10,10 @@ const IllustrasjonInfoSirkel: React.FC<{className?: string}> = ({
             height="47"
             viewBox="0 0 47 47"
             className={className}
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Informasjons</title>
             <g
                 fill="none"
                 fillRule="evenodd"

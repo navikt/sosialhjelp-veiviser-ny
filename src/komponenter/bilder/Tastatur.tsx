@@ -7,7 +7,10 @@ function Tastatur() {
             width="91"
             height="86"
             viewBox="0 0 91 86"
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Tastatur</title>
             <g fill="none" fillRule="evenodd">
                 <path
                     fill="#595B5C"

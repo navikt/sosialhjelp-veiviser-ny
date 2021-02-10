@@ -8,7 +8,10 @@ const BrevHender: React.FC<{className?: string}> = ({className}) => {
             height="79"
             viewBox="0 0 86 79"
             className={className}
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Brev og hender</title>
             <g fill="none" fillRule="evenodd">
                 <path
                     fill="#0C576F"
