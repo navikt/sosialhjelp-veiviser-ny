@@ -9,7 +9,10 @@ const ForsideBanner: React.FC<{className?: string}> = ({className}) => {
             width="252"
             height="122"
             viewBox="0 0 252 122"
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Person og veileder</title>
             <defs>
                 <path
                     id="forside_a"

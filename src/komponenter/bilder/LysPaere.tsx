@@ -7,7 +7,10 @@ const LysPaere: React.FC = () => {
             width="76"
             height="80"
             viewBox="0 0 76 80"
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Lyspære</title>
             <path
                 fill="none"
                 fillRule="evenodd"

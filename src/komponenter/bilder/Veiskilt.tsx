@@ -7,7 +7,10 @@ const Veiskilt = (props: {className?: string}) => (
         height="128"
         viewBox="0 0 96 128"
         className={props.className}
+        aria-hidden="true"
+        pointerEvents="none"
     >
+        <title>Veiskilt</title>
         <g fill="none" fillRule="evenodd">
             <path
                 fill="#3E3821"

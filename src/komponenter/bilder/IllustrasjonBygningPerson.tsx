@@ -10,7 +10,10 @@ const IllustrasjonBygningPerson: React.FC<{className?: string}> = ({
             height="63"
             viewBox="0 0 56 63"
             className={className}
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Bygning og person</title>
             <g
                 fill="none"
                 fillRule="evenodd"

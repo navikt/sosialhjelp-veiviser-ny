@@ -8,7 +8,10 @@ const IllustrasjonsGruppe: React.FC = () => {
             width="315"
             height="40"
             viewBox="0 0 315 40"
+            aria-hidden="true"
+            pointerEvents="none"
         >
+            <title>Illustrasjon</title>
             <defs>
                 <path id="a" d="M0 0h54.286v30.476H0z" />
             </defs>
