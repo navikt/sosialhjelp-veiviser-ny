@@ -3,29 +3,31 @@ import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import {Systemtittel} from "nav-frontend-typografi";
 import "./sokOmSosialhjelpPanel.less";
 import IllustrasjonsGruppe from "../../../komponenter/bilder/IllustrasjonsGruppe";
-import {useHistory} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const SokOmSosialhjelpPanel: React.FC<{
     href: string;
     children: React.ReactNode;
 }> = ({href, children}) => {
-    const history = useHistory();
-
-    const onClick = (href: string, event: any) => {
-        history.push(href);
-        event.preventDefault();
-    };
-
     return (
         <LenkepanelBase
-            className="start_soknad_panel"
+            linkCreator={(props) => (
+                <NavLink
+                    className="start_soknad_panel lenkepanel lenkepanel--border"
+                    to={props.href ?? ""}
+                >
+                    {props.children}
+                </NavLink>
+            )}
             href={href}
-            onClick={(event: any) => onClick(event, href)}
+            border
         >
             <div className="sokMobilIllustrasjon" />
 
             {/*SVG har feil: <MobilSirkel />*/}
-            <Systemtittel>{children}</Systemtittel>
+            <Systemtittel className="lenkepanel__heading">
+                {children}
+            </Systemtittel>
             <div className="illustrasjonsGruppe">
                 <IllustrasjonsGruppe />
             </div>

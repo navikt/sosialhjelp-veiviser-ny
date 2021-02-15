@@ -1,19 +1,19 @@
 import * as React from "react";
 import BehandlingstidBokmal from "./BehandlingstidBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import BehandlingstidNynorsk from "./BehandlingstidBokmal";
-import BehandlingstidEnglish from "./BehandlingstidBokmal";
-import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import SprakvelgerContext, {
+    Oversettelser,
+} from "../../komponenter/oversettelser/Oversettelser";
 
 const Behandlingstid: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
+    const sprakContext = React.useContext(SprakvelgerContext);
     return (
-        <Oversettelser
-            sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
-        >
+        <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
             {valgtSprak === Sprak.NORSK_BOKMAL && <BehandlingstidBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <BehandlingstidNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <BehandlingstidEnglish />}
+            {!sprakContext.sprak.includes(valgtSprak) && (
+                <BehandlingstidBokmal />
+            )}
         </Oversettelser>
     );
 };

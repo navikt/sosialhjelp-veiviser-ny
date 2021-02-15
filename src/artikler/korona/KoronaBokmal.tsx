@@ -36,8 +36,10 @@ const KoronaBokmal = () => (
 
         <Undertittel>Har du økonomiske bekymringer?</Undertittel>
         <Avsnitt>
-            I denne korte filmen får du som har økonomiske bekymringer og{" "}
-            midlertidige betalingsproblemer nyttige råd og tips.
+            I denne korte filmen får du som har økonomiske bekymringer og
+            midlertidige betalingsproblemer nyttige råd og tips. Står du i fare
+            for å miste strømmen eller boligen din, kan du ta kontakt med NAV
+            for råd og veiledning.
         </Avsnitt>
 
         <div style={{padding: "56.25% 0 0 0", position: "relative"}}>

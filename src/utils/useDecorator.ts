@@ -1,16 +1,15 @@
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {
     setAvailableLanguages,
     setBreadcrumbs,
     setParams,
 } from "@navikt/nav-dekoratoren-moduler";
-import {detekterSprak} from "./sprakUtils";
+import {detekterSprak, Sprak} from "./sprakUtils";
 import {useCookies} from "react-cookie";
-
-type Locale = "nb" | "nn" | "en";
+import SprakvelgerContext from "../komponenter/oversettelser/Oversettelser";
 
 interface AvailableLanguage {
-    locale: Locale;
+    locale: Sprak;
     url: string;
 }
 
@@ -21,31 +20,32 @@ const getAppUrl = (): string => {
 export const useDecorator = (pages: {title: string; slug: string}[]) => {
     const [cookie, setCookie] = useCookies(["decorator-language"]);
 
-    const language = detekterSprak();
+    const selectedLanguage = detekterSprak();
+
+    const sprakvelger = useContext(SprakvelgerContext);
 
     const breadcrumbs = [
         {
             title:
-                language === "en"
+                selectedLanguage === "en"
                     ? "Financial Assistance"
                     : "Økonomisk sosialhjelp",
-            url: `${getAppUrl()}/?lang=${language}`,
+            url: `${getAppUrl()}/?lang=${selectedLanguage}`,
         },
     ];
 
     pages.reverse().forEach((page) => {
         const breadcrumb = {
             title: page.title,
-            url: `${getAppUrl()}${page.slug}?lang=${language}`,
+            url: `${getAppUrl()}${page.slug}?lang=${selectedLanguage}`,
         };
         breadcrumbs.push(breadcrumb);
     });
 
-    const languages: Locale[] = ["nb", "nn", "en"];
     const availableLanguages: AvailableLanguage[] = [];
 
     if (pages.length === 0) {
-        languages.forEach((locale) => {
+        sprakvelger.sprak.forEach((locale) => {
             availableLanguages.push({
                 locale: locale,
                 url: `${getAppUrl()}/?lang=${locale}`,
@@ -54,7 +54,7 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
     }
     if (pages.length > 0) {
         const page = pages.pop();
-        languages.forEach((locale) => {
+        sprakvelger.sprak.forEach((locale) => {
             availableLanguages.push({
                 locale: locale,
                 url: `${getAppUrl()}${page?.slug}?lang=${locale}`,
@@ -64,6 +64,7 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
 
     const params = {
         feedback: false,
+        chatbot: false,
     };
 
     useEffect(() => {
@@ -71,13 +72,13 @@ export const useDecorator = (pages: {title: string; slug: string}[]) => {
     }, [breadcrumbs]);
 
     useEffect(() => {
-        setCookie("decorator-language", language);
+        setCookie("decorator-language", selectedLanguage);
         if (availableLanguages.length > 0) {
             setAvailableLanguages(availableLanguages);
         }
-    }, [availableLanguages, language, cookie, setCookie]);
+    }, [availableLanguages, selectedLanguage, cookie, setCookie]);
 
     useEffect(() => {
         setParams(params);
-    });
+    }, [params]);
 };

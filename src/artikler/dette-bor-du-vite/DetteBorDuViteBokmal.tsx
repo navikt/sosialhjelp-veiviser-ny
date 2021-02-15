@@ -23,7 +23,7 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 du har, så kan du ta kontakt med{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/finnkontor"
                     }
                 >
                     NAV-kontoret
@@ -135,10 +135,12 @@ const DetteBorDuViteBokmal: React.FC = () => {
                 I vedtaksbrevet ditt finner du mer informasjon om utbetalinger.
             </Avsnitt>
 
+            <Undertittel>Regelverk</Undertittel>
+
             <Avsnitt>
                 Se utfyllende informasjon om{" "}
-                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/okonomisk-sosialhjelp2">
-                    økonomisk sosialhjelp
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/relatert-innhold/lov-om-sosiale-tjenester-i-nav">
+                    Lov om sosiale tjenester i NAV
                 </Lenke>
                 .
             </Avsnitt>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
+import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
@@ -19,7 +20,8 @@ const KlageEnglish: React.FC = () => (
         <Avsnitt>
             Send the appeal to the NAV office that made the decision. The term
             of appeal is 3 weeks from the date on which you receive notice of
-            the decision.
+            the decision. 
+            You can find the <Lenke href="https://www.nav.no/person/kontakt-oss/en/finnkontor">contact information to the NAV-office here</Lenke>.
         </Avsnitt>
         <Undertittel>Who can help you lodge an appeal?</Undertittel>
         <Avsnitt>
@@ -58,13 +60,14 @@ const KlageEnglish: React.FC = () => (
 
         <Avsnitt>
             If the decision remains unchanged, your appeal is forwarded to
-            Fylkemannen who will make a final decision. You will receive a
-            letter when the case is sent to Fylkesmannen. The letter will
+            Statsforvalteren who will make a final decision. You will receive a
+            letter when the case is sent to Statsforvalteren. The letter will
             explain the further process.
         </Avsnitt>
 
         <Avsnitt>
-            You will receive a new decision when Fylkesmannen decides your case.
+            You will receive a new decision when Statsforvalteren decides your
+            case.
         </Avsnitt>
         <Undertittel>You can get your expenses covered</Undertittel>
         <Avsnitt>

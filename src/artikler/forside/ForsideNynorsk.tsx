@@ -1,13 +1,8 @@
 import * as React from "react";
-import {
-    InfoPanel,
-    InfoPanelContainer,
-} from "../../komponenter/infopanel/InfoPanel";
 import "./komponenter/forside.less";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
-import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import {useDecorator} from "../../utils/useDecorator";
@@ -56,7 +51,7 @@ export const ForsideNynorsk: React.FC = () => {
                                 Nødsituasjon
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./sok-papir?lang=nn"
+                                href="./sok-papir?lang=nb"
                                 description="Kor finn du søknadsskjema på papir"
                             >
                                 Søknadsskjema på papir
@@ -76,19 +71,19 @@ export const ForsideNynorsk: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./behandlingstid?lang=nn"
+                                href="./behandlingstid?lang=nb"
                                 description="Kor lang tid tek det å behandle søknaden?"
                             >
                                 Behandlingstid
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./ettersende?lang=nn"
+                                href="./ettersende?lang=nb"
                                 description="Korleis ettersende dokumentasjon"
                             >
                                 Ettersende
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./status-soknad?lang=nn"
+                                href="./status-soknad?lang=nb"
                                 description="Kva er status på søknaden din?"
                             >
                                 Status på søknad
@@ -108,35 +103,6 @@ export const ForsideNynorsk: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-
-                <InfoPanelContainer>
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/sosialhjelp"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om sosiale tenester og økonomisk
-                            sosialhjelp?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om sosiale tenester
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/okonomi"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om budsjett, økonomi og gjeld?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om økonomi og gjeld
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
             </div>
         </Dekorator>
     );

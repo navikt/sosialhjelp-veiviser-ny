@@ -1,13 +1,8 @@
 import * as React from "react";
-import {
-    InfoPanel,
-    InfoPanelContainer,
-} from "../../komponenter/infopanel/InfoPanel";
 import "./komponenter/forside.less";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
-import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import {useDecorator} from "../../utils/useDecorator";
@@ -76,19 +71,19 @@ export const ForsideEnglish: React.FC = () => {
                         </Undertittel>
                         <ul>
                             <ForsideLenke
-                                href="./behandlingstid?lang=en"
+                                href="./behandlingstid?lang=nb"
                                 description="How long will it take to process my application?"
                             >
                                 Processing time
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./ettersende?lang=en"
+                                href="./ettersende?lang=nb"
                                 description="How to upload documentation"
                             >
                                 Upload documentation
                             </ForsideLenke>
                             <ForsideLenke
-                                href="./status-soknad?lang=en"
+                                href="./status-soknad?lang=nb"
                                 description="What is the status of your application?"
                             >
                                 Application status
@@ -108,36 +103,6 @@ export const ForsideEnglish: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-
-                <InfoPanelContainer>
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/sosialhjelp"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Do you have questions about social services and
-                            financial assistance?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat witch us about social services
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/okonomi"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Do you have questions about budgeting, finances and
-                            debt?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat with us about your finance and debt
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
             </div>
         </Dekorator>
     );

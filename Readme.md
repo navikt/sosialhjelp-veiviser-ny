@@ -9,6 +9,16 @@ For å kjøre lokalt:
   npm start
 ```
 
+## Manuell deploy
+
+Ved bruk av [cli](https://github.com/navikt/sosialhjelp-ci):
+
+-   `deploy labs-gcp`
+-   `deploy dev-gcp`
+-   `deploy dev-sbs`
+-   `deploy dev-sbs-intern`
+-   `deploy prod`
+
 ## Bygg og deploy
 
 Koden bygges automatisk ved push til branch på Github. Se `.github/workflows/build.yml` for detaljer.

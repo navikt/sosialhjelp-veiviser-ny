@@ -1,5 +1,6 @@
 import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
+import Lenke from "nav-frontend-lenker";
 
 import Artikkel from "../Artikkel";
 import Veiskilft from "../../komponenter/bilder/Veiskilt";
@@ -18,6 +19,7 @@ const KlageNynorsk: React.FC = () => (
         <Avsnitt>
             Du skal sende klagen til NAV-kontoret som har gjort vedtaket.
             Klagefristen er tre veker frå du har fått vedtaket.
+            Her finn du <Lenke href="https://www.nav.no/finnkontor">kontaktinformasjon til NAV-kontoret</Lenke>.
         </Avsnitt>
         <Undertittel>Trenger du hjelp til å klage?</Undertittel>
         <Avsnitt>
@@ -55,12 +57,12 @@ const KlageNynorsk: React.FC = () => (
 
         <Avsnitt>
             Dersom du ikkje får medhald, blir klagen sendt vidare til
-            Fylkesmannen som vurderer saka di på nytt. Du får informasjon om
-            saksbehandlingstid hjå Fylkesmannen og kva som skjer vidare.
+            Statsforvalteren som vurderer saka di på nytt. Du får informasjon om
+            saksbehandlingstid hjå Statsforvalteren og kva som skjer vidare.
         </Avsnitt>
 
         <Avsnitt>
-            Når Fylkesmannen har behandla saka di, får du eit nytt vedtak.{" "}
+            Når Statsforvalteren har behandla saka di, får du eit nytt vedtak.{" "}
         </Avsnitt>
         <Undertittel>Du kan få dekt utgifter</Undertittel>
         <Avsnitt>

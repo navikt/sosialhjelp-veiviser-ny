@@ -83,7 +83,9 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.husbanken.no/english/what-is-housing-allowance/"
                         }
                     >
-                        <Undertittel tag="h3">Housing allowance</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Housing allowance
+                        </Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -91,7 +93,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.nav.no/en/home/relatert-informasjon/temporary-accommodation-emergency"
                         }
                     >
-                        <Undertittel tag="h3">
+                        <Undertittel className="lenkepanel__heading" tag="h3">
                             Temporary accommodation
                         </Undertittel>
                         <Normaltekst>Emergency</Normaltekst>
@@ -101,7 +103,9 @@ const AndreMuligheterEnglish: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel tag="h3">Rent or own housing</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Rent or own housing
+                        </Undertittel>
                     </LenkepanelBase>
                 </div>
 
@@ -111,7 +115,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             When you want to talk to someone
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+                            <LenkeboksLinje href="https://www.nav.no/person/kontakt-oss/en/finnkontor">
                                 Your NAV office
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/general-advice-and-guidance">
@@ -129,17 +133,17 @@ const AndreMuligheterEnglish: React.FC = () => {
                             Rights and duties as a provider
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="./hvis-du-er-enslig-forsorger?lang=en">
-                                If you are a single parent
-                            </LenkeboksLinje>
-                            <LenkeboksLinje href="./hvis-du-har-barn?lang=en">
-                                If you have children
-                            </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-har-samboer?lang=en">
                                 If you are a cohabitant
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-er-gift?lang=en">
                                 If you are married
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="./hvis-du-har-barn?lang=en">
+                                If you have children
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
+                                If you are a single parent
                             </LenkeboksLinje>
                         </ul>
                     </div>

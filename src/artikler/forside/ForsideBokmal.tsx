@@ -1,13 +1,8 @@
 import * as React from "react";
-import {
-    InfoPanel,
-    InfoPanelContainer,
-} from "../../komponenter/infopanel/InfoPanel";
 import "./komponenter/forside.less";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
-import ChatIkon from "../../komponenter/bilder/ChatIkon";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import {useDecorator} from "../../utils/useDecorator";
@@ -109,35 +104,6 @@ export const ForsideBokmal: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-
-                <InfoPanelContainer>
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/sosialhjelp"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om sosiale tjenester og økonomisk
-                            sosialhjelp?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om sosiale tjenester
-                        </Normaltekst>
-                    </InfoPanel>
-
-                    <InfoPanel
-                        href="https://www.nav.no/person/kontakt-oss/chat/okonomi"
-                        className="infopanel_chat"
-                    >
-                        <Undertittel>
-                            Har du spørsmål om budsjett, økonomi og gjeld?
-                        </Undertittel>
-                        <Normaltekst>
-                            <ChatIkon />
-                            Chat med oss om økonomi og gjeld
-                        </Normaltekst>
-                    </InfoPanel>
-                </InfoPanelContainer>
             </div>
         </Dekorator>
     );

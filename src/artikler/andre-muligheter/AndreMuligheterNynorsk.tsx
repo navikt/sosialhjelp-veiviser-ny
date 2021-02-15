@@ -77,7 +77,9 @@ const AndreMuligheterNynorsk: React.FC = () => {
                 </PanelBase>
                 <div className="hjelp_til_bolig_panel__underpaneler">
                     <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
-                        <Undertittel tag="h3">Bustønad</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Bustønad
+                        </Undertittel>
                         <Normaltekst>Husbanken</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -85,7 +87,9 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             "https://www.nav.no/no/person/flere-tema/sosiale-tjenester/mellombels-butilbod-naudssituasjon"
                         }
                     >
-                        <Undertittel tag="h3">Mellombels butilbod</Undertittel>
+                        <Undertittel className="lenkepanel__heading" tag="h3">
+                            Mellombels butilbod
+                        </Undertittel>
                         <Normaltekst>Nødssituasjon</Normaltekst>
                     </LenkepanelBase>
                     <LenkepanelBase
@@ -93,7 +97,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             "https://www.nav.no/no/Person/Flere+tema/Sosiale+tjenester/leie-eller-eie-bolig"
                         }
                     >
-                        <Undertittel tag="h3">
+                        <Undertittel className="lenkepanel__heading" tag="h3">
                             Leige eller eige bustad
                         </Undertittel>
                     </LenkepanelBase>
@@ -103,7 +107,7 @@ const AndreMuligheterNynorsk: React.FC = () => {
                     <div className="lenkeboks">
                         <Undertittel>Når du vil snakke med nokon</Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/person/personopplysninger/#ditt-nav-kontor">
+                            <LenkeboksLinje href="https://www.nav.no/finnkontor">
                                 Ditt NAV-kontor
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/nynorsk/generelle-rad-og-rettleiing">
@@ -120,17 +124,17 @@ const AndreMuligheterNynorsk: React.FC = () => {
                             Rettar og plikter som forsørgjar
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="./hvis-du-er-enslig-forsorger?lang=nn">
-                                Dersom du er einsleg forsørgjar
-                            </LenkeboksLinje>
-                            <LenkeboksLinje href="./hvis-du-har-barn?lang=nn">
-                                Dersom du har barn
-                            </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-har-samboer?lang=nn">
                                 Dersom du er sambuar
                             </LenkeboksLinje>
                             <LenkeboksLinje href="./hvis-du-er-gift?lang=nn">
                                 Dersom du er gift
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="./hvis-du-har-barn?lang=nn">
+                                Dersom du har barn
+                            </LenkeboksLinje>
+                            <LenkeboksLinje href="https://www.nav.no/familie/alene-med-barn">
+                                Dersom du er aleine med barn
                             </LenkeboksLinje>
                         </ul>
                     </div>

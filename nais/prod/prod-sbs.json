@@ -1,0 +1,17 @@
+{
+  "applicationName": "sosialhjelp-veiviser",
+  "namespace": "teamdigisos",
+  "ingresses": [
+    "https://sosialhjelp-veiviser.nais.oera.no/",
+    "https://sosialhjelp-veiviser.prod-sbs.nais.io/",
+    "https://tjenester.nav.no/sosialhjelp-veiviser",
+    "https://www.nav.no/sosialhjelp"
+  ],
+  "prometheusEnabled": true,
+  "webProxyEnabled": true,
+  "env": {
+    "APPRES_CMS_URL": "https://appres.nav.no",
+    "FASIT_ENVIRONMENT_NAME": "p",
+    "DECORATOR_URL": "https://www.nav.no/dekoratoren"
+  }
+}

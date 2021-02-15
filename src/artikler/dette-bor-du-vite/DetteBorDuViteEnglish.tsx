@@ -21,7 +21,7 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 own savings. Consult with your{" "}
                 <Lenke
                     href={
-                        "https://www.nav.no/person/personopplysninger/#ditt-nav-kontor"
+                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
                     }
                 >
                     NAV-office
@@ -145,12 +145,14 @@ const DetteBorDuViteEnglish: React.FC = () => {
                 Your decision notice will include information about payments.
             </Avsnitt>
 
+            <Undertittel>Laws and regulations</Undertittel>
+
             <Avsnitt>
                 Read more about{" "}
-                <Lenke href="https://www.nav.no/en/Home/Benefits+and+services/Relatert+informasjon/financial-assistance-social-assistance">
-                    financial assistance
-                </Lenke>
-                .
+                <Lenke href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/relatert-innhold/lov-om-sosiale-tjenester-i-nav">
+                    Lov om sosiale tjenester i NAV
+                </Lenke>{" "}
+                (Only available in Norwegian).
             </Avsnitt>
         </Artikkel>
     );
