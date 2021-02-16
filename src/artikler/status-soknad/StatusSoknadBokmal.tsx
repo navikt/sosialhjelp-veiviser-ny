@@ -2,7 +2,6 @@ import * as React from "react";
 import {Innholdstittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const StatusSoknadBokmal: React.FC = () => {

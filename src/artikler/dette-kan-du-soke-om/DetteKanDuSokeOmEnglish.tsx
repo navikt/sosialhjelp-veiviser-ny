@@ -3,7 +3,6 @@ import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import "../artikkel.less";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
@@ -37,11 +36,12 @@ const DetteKanDuSokeOmEnglish: React.FC = () => {
 
                 <Avsnitt>
                     NAV also includes costs related to certain hobbies or
-                    sports, telephone, TV or Internet costs, transport costs
-                    and medical or dental costs when assessing your subsistence needs.
-                    We will also consider whether you have any other expenses
-                    we should take into account, which could for example be special events
-                    or holidays. We will emphasize the needs of children and youths.
+                    sports, telephone, TV or Internet costs, transport costs and
+                    medical or dental costs when assessing your subsistence
+                    needs. We will also consider whether you have any other
+                    expenses we should take into account, which could for
+                    example be special events or holidays. We will emphasize the
+                    needs of children and youths.
                 </Avsnitt>
             </Ekspanderbartpanel>
 

@@ -2,7 +2,6 @@ import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SoknadPaPapirBokmal: React.FC = () => {
@@ -39,11 +38,7 @@ const SoknadPaPapirBokmal: React.FC = () => {
             <Avsnitt>
                 Du finner adresse og telefonnummer til ditt nærmeste kontor
                 under finn{" "}
-                <Lenke
-                    href={
-                        "https://www.nav.no/finnkontor"
-                    }
-                >
+                <Lenke href={"https://www.nav.no/finnkontor"}>
                     ditt NAV-kontor
                 </Lenke>
                 .
@@ -52,11 +47,7 @@ const SoknadPaPapirBokmal: React.FC = () => {
             <Undertittel>Når du skal levere søknaden</Undertittel>
             <Avsnitt>
                 Du kan levere søknaden på{" "}
-                <Lenke
-                    href={
-                        "https://www.nav.no/finnkontor"
-                    }
-                >
+                <Lenke href={"https://www.nav.no/finnkontor"}>
                     ditt NAV-kontor
                 </Lenke>{" "}
                 eller sende den i posten.
@@ -65,11 +56,7 @@ const SoknadPaPapirBokmal: React.FC = () => {
             <Undertittel>Hvis du trenger hjelp</Undertittel>
             <Avsnitt>
                 Ta kontakt med{" "}
-                <Lenke
-                    href={
-                        "https://www.nav.no/finnkontor"
-                    }
-                >
+                <Lenke href={"https://www.nav.no/finnkontor"}>
                     ditt NAV-kontor
                 </Lenke>{" "}
                 hvis du trenger hjelp til å finne søknadsskjema eller fylle ut

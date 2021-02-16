@@ -1,10 +1,66 @@
 import * as React from "react";
-import "./artikkel.less";
+import styled from "styled-components";
 import Dekorator from "../komponenter/dekorator/Dekorator";
 
 import {useEffect} from "react";
 import {useDecorator} from "../utils/useDecorator";
 import {useHistory} from "react-router-dom";
+
+const StyledArticle = styled.article`
+    background-color: white;
+    margin-bottom: 4rem;
+
+    @media all and (min-width: 601px) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    @media all and (max-width: 600px) {
+        padding-bottom: 2rem;
+    }
+
+    .ekspanderbartPanel {
+        margin-top: 1rem;
+
+        .ekspanderbartPanel__heading {
+            font-size: 1rem;
+        }
+    }
+`;
+
+const Innhold = styled.div`
+    display: block;
+
+    @media all and (min-width: 601px) {
+        padding: 2rem 6rem 4rem 6rem;
+    }
+
+    @media all and (max-width: 600px) {
+        padding: 2rem 0.5rem 0rem 0.5rem;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2.artikkel_sidetittel {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 6px;
+    }
+
+    .illustrasjon {
+        width: 100%;
+        height: 65px;
+    }
+`;
 
 interface Props {
     children: React.ReactNode;
@@ -47,12 +103,12 @@ const Artikkel: React.FC<Props> = ({
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
             <div className={"blokk-center " + className}>
-                <article className="artikkel" role="main">
-                    <div className="innhold">
+                <StyledArticle role="main">
+                    <Innhold>
                         {illustrasjon && <span>{illustrasjon}</span>}
                         {children}
-                    </div>
-                </article>
+                    </Innhold>
+                </StyledArticle>
             </div>
         </Dekorator>
     );

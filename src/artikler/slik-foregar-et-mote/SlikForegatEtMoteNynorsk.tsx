@@ -11,7 +11,7 @@ const SlikForegatEtMoteNynorsk: React.FC = () => {
     return (
         <Artikkel
             tittel="Når du må snakkke med nokon"
-            illustrasjon={<Veiskilt className="sentrert_illustrasjon" />}
+            illustrasjon={<Veiskilt className="illustrasjon" />}
             foreldreside={andreMuligheterBrodsmulestiNynorsk}
         >
             <Innholdstittel>Korleis føregår eit møte?</Innholdstittel>

@@ -2,7 +2,6 @@ import * as React from "react";
 import {Innholdstittel} from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
-import "../artikkel.less";
 import {InternLenke} from "../../komponenter/InternLenke";
 
 const BehandlingstidBokmal: React.FC = () => {

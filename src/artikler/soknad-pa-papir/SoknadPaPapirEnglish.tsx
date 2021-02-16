@@ -2,7 +2,6 @@ import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const SoknadPaPapirEnglish: React.FC = () => {
@@ -40,9 +39,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
                 You can find the address and telephone number of your nearest
                 office under find{" "}
                 <Lenke
-                    href={
-                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
-                    }
+                    href={"https://www.nav.no/person/kontakt-oss/en/finnkontor"}
                 >
                     your NAV office
                 </Lenke>
@@ -53,9 +50,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
             <Avsnitt>
                 You can submit the application to{" "}
                 <Lenke
-                    href={
-                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
-                    }
+                    href={"https://www.nav.no/person/kontakt-oss/en/finnkontor"}
                 >
                     your NAV office
                 </Lenke>{" "}
@@ -66,9 +61,7 @@ const SoknadPaPapirEnglish: React.FC = () => {
             <Avsnitt>
                 Contact{" "}
                 <Lenke
-                    href={
-                        "https://www.nav.no/person/kontakt-oss/en/finnkontor"
-                    }
+                    href={"https://www.nav.no/person/kontakt-oss/en/finnkontor"}
                 >
                     your NAV office
                 </Lenke>{" "}

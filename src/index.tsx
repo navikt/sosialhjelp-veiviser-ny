@@ -7,7 +7,6 @@ import * as Sentry from "@sentry/browser";
 import {v4 as uuid} from "uuid";
 
 import DetteBorDuVite from "./artikler/dette-bor-du-vite/DetteBorDuVite";
-import "./styles.css";
 import "./index.less";
 import {Router, Route, Switch, Redirect} from "react-router-dom";
 import DetteKanDuSokeOm from "./artikler/dette-kan-du-soke-om/DetteKanDuSokeOm";
@@ -45,108 +44,126 @@ Sentry.setUser({ip_address: "", id: uuid()});
 
 function App() {
     return (
-        <Router history={history}>
-            <Switch>
-                <Route exact path="/" component={Forside} />
-                <Route
-                    exact
-                    path="/dette-bor-du-vite"
-                    component={DetteBorDuVite}
-                />
-                <Route
-                    exact
-                    path="/andre-muligheter"
-                    component={AndreMuligheter}
-                />
-                <Route
-                    exact
-                    path="/dette-kan-du-soke-om"
-                    component={DetteKanDuSokeOm}
-                />
-                <Route exact path="/gi-beskjed" component={GiBeskjed} />
-                <Route exact path="/klage" component={Klage} />
-                <Route exact path="/krav-til-deg" component={KravTilDeg} />
-                <Route
-                    exact
-                    path="/sok-sosialhjelp"
-                    component={SokSosialhjelp}
-                />
-                <Route exact path="/slik-soker-du" component={SokSosialhjelp} />
-                {/* Et alias */}
-                <Route exact path="/nodsituasjon" component={Nodsituasjon} />
-                <Route
-                    exact
-                    path="/hvis-du-er-enslig-forsorger"
-                    component={HvisDuErEnsligForsorger}
-                />
-                <Route
-                    exact
-                    path="/hvis-du-har-barn"
-                    component={HvisDuHarBarn}
-                />
-                <Route
-                    exact
-                    path="/hvis-du-har-samboer"
-                    component={HvisDuHarSamboer}
-                />
-                <Route exact path="/hvis-du-er-gift" component={HvisDuErGift} />
+        <div id="app" className="app">
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/" component={Forside} />
+                    <Route
+                        exact
+                        path="/dette-bor-du-vite"
+                        component={DetteBorDuVite}
+                    />
+                    <Route
+                        exact
+                        path="/andre-muligheter"
+                        component={AndreMuligheter}
+                    />
+                    <Route
+                        exact
+                        path="/dette-kan-du-soke-om"
+                        component={DetteKanDuSokeOm}
+                    />
+                    <Route exact path="/gi-beskjed" component={GiBeskjed} />
+                    <Route exact path="/klage" component={Klage} />
+                    <Route exact path="/krav-til-deg" component={KravTilDeg} />
+                    <Route
+                        exact
+                        path="/sok-sosialhjelp"
+                        component={SokSosialhjelp}
+                    />
+                    <Route
+                        exact
+                        path="/slik-soker-du"
+                        component={SokSosialhjelp}
+                    />
+                    {/* Et alias */}
+                    <Route
+                        exact
+                        path="/nodsituasjon"
+                        component={Nodsituasjon}
+                    />
+                    <Route
+                        exact
+                        path="/hvis-du-er-enslig-forsorger"
+                        component={HvisDuErEnsligForsorger}
+                    />
+                    <Route
+                        exact
+                        path="/hvis-du-har-barn"
+                        component={HvisDuHarBarn}
+                    />
+                    <Route
+                        exact
+                        path="/hvis-du-har-samboer"
+                        component={HvisDuHarSamboer}
+                    />
+                    <Route
+                        exact
+                        path="/hvis-du-er-gift"
+                        component={HvisDuErGift}
+                    />
 
-                <Route
-                    exact
-                    path="/slik-foregar-et-mote"
-                    component={SlikForegatEtMote}
-                />
+                    <Route
+                        exact
+                        path="/slik-foregar-et-mote"
+                        component={SlikForegatEtMote}
+                    />
 
-                <Route exact path="/sok-papir" component={SoknadPaPapir} />
+                    <Route exact path="/sok-papir" component={SoknadPaPapir} />
 
-                <Route
-                    exact
-                    path="/behandlingstid"
-                    component={Behandlingstid}
-                />
+                    <Route
+                        exact
+                        path="/behandlingstid"
+                        component={Behandlingstid}
+                    />
 
-                <Route exact path="/status-soknad" component={StatusSoknad} />
+                    <Route
+                        exact
+                        path="/status-soknad"
+                        component={StatusSoknad}
+                    />
 
-                <Route exact path="/ettersende" component={Ettersende} />
+                    <Route exact path="/ettersende" component={Ettersende} />
 
-                <Route
-                    exact
-                    path="/kontakte-veileder"
-                    component={KontakteVeileder}
-                />
+                    <Route
+                        exact
+                        path="/kontakte-veileder"
+                        component={KontakteVeileder}
+                    />
 
-                <Route exact path="/korona" component={Korona} />
+                    <Route exact path="/korona" component={Korona} />
 
-                {/* Redirects */}
-                <Route exact path="/artikkel/514891">
-                    <Redirect to="/nodsituasjon" />
-                </Route>
-                <Route exact path="/artikkel/514877">
-                    <Redirect to="/hvis-du-er-enslig-forsorger" />
-                </Route>
-                <Route exact path="/artikkel/514874">
-                    <Redirect to="/hvis-du-har-barn" />
-                </Route>
-                <Route exact path="/artikkel/514879">
-                    <Redirect to="/hvis-du-har-samboer" />
-                </Route>
-                <Route exact path="/artikkel/514878">
-                    <Redirect to="/hvis-du-er-gift" />
-                </Route>
-                <Route exact path="/artikkel/514876">
-                    <Redirect to="/slik-foregar-et-mote" />
-                </Route>
-                <Route exact path="/artikkel/124876">
-                    <Redirect to="/gi-beskjed" />
-                </Route>
-                <Route exact path="/artikkel/514875">
-                    <Redirect to="/krav-til-deg" />
-                </Route>
-                <Route exact path="/artikkel/124875">
-                    <Redirect to="/klage" />
-                </Route>
-            </Switch>
-        </Router>
+                    {/* Redirects */}
+                    <Route exact path="/artikkel/514891">
+                        <Redirect to="/nodsituasjon" />
+                    </Route>
+                    <Route exact path="/artikkel/514877">
+                        <Redirect to="/hvis-du-er-enslig-forsorger" />
+                    </Route>
+                    <Route exact path="/artikkel/514874">
+                        <Redirect to="/hvis-du-har-barn" />
+                    </Route>
+                    <Route exact path="/artikkel/514879">
+                        <Redirect to="/hvis-du-har-samboer" />
+                    </Route>
+                    <Route exact path="/artikkel/514878">
+                        <Redirect to="/hvis-du-er-gift" />
+                    </Route>
+                    <Route exact path="/artikkel/514876">
+                        <Redirect to="/slik-foregar-et-mote" />
+                    </Route>
+                    <Route exact path="/artikkel/124876">
+                        <Redirect to="/gi-beskjed" />
+                    </Route>
+                    <Route exact path="/artikkel/514875">
+                        <Redirect to="/krav-til-deg" />
+                    </Route>
+                    <Route exact path="/artikkel/124875">
+                        <Redirect to="/klage" />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
     );
 }
 

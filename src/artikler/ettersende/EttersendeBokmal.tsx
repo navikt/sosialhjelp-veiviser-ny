@@ -2,7 +2,6 @@ import * as React from "react";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
-import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 
 const EttersendeBokmal: React.FC = () => {
@@ -37,11 +36,7 @@ const EttersendeBokmal: React.FC = () => {
             <Undertittel>Hvis du har søkt på papir</Undertittel>
             <Avsnitt>
                 Har du søkt på papir, må du levere dokumentasjonen til{" "}
-                <Lenke
-                    href={
-                        "https://www.nav.no/finnkontor"
-                    }
-                >
+                <Lenke href={"https://www.nav.no/finnkontor"}>
                     ditt NAV-kontor
                 </Lenke>
                 . Du kan også sende det i posten.

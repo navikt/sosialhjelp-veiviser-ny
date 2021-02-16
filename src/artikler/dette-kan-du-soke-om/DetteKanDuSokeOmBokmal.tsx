@@ -4,7 +4,6 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
 import Artikkel from "../Artikkel";
 import IllustrasjonBygningPerson from "../../komponenter/bilder/IllustrasjonBygningPerson";
-import "../artikkel.less";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 
@@ -30,18 +29,18 @@ const DetteKanDuSokeOmBokmal: React.FC = () => {
 
             <Ekspanderbartpanel tittel="å leve" border>
                 <Avsnitt>
-                    De helt grunnleggende behovene som mat, klær, bolig
-                    og oppvarming omtaler vi ofte som livsopphold når vi
-                    behandler en søknad om sosialhjelp.
+                    De helt grunnleggende behovene som mat, klær, bolig og
+                    oppvarming omtaler vi ofte som livsopphold når vi behandler
+                    en søknad om sosialhjelp.
                 </Avsnitt>
 
                 <Avsnitt>
                     Også utgifter til fritidsaktiviteter, telefoni, tv,
                     internett, transport og helse- og tannbehandling regner NAV
-                    som en del av livsoppholdet. Vi ser også på om du har ekstrautgifter
-                    som vi bør ta hensyn til. Ekstrautgifter kan for eksempel oppstå ved
-                    feiring av spesielle begivenheter og høytider. Vi legger særlig vekt
-                    på barn og unges behov.
+                    som en del av livsoppholdet. Vi ser også på om du har
+                    ekstrautgifter som vi bør ta hensyn til. Ekstrautgifter kan
+                    for eksempel oppstå ved feiring av spesielle begivenheter og
+                    høytider. Vi legger særlig vekt på barn og unges behov.
                 </Avsnitt>
             </Ekspanderbartpanel>
 
