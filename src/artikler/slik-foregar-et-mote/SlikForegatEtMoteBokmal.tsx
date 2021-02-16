@@ -11,7 +11,7 @@ const SlikForegatEtMoteBokmal: React.FC = () => {
     return (
         <Artikkel
             tittel="Slik foregår et møte med oss"
-            illustrasjon={<Veiskilt className="sentrert_illustrasjon" />}
+            illustrasjon={<Veiskilt className="illustrasjon" />}
             foreldreside={andreMuligheterBrodsmulestiBokmal}
         >
             <Innholdstittel>Slik foregår et møte med oss</Innholdstittel>

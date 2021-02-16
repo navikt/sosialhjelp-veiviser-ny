@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../artikkel.less";
 import {Innholdstittel, Undertittel} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import Lenke from "nav-frontend-lenker";
@@ -32,9 +31,9 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
 
             <Ekspanderbartpanel tittel="å leve" border>
                 <Avsnitt>
-                    Dei heilt grunnleggande behova som mat, klede, bustad
-                    og oppvarming omtalar vi ofte som livsopphald når vi
-                    behandlar ein søknad om sosialhjelp.
+                    Dei heilt grunnleggande behova som mat, klede, bustad og
+                    oppvarming omtalar vi ofte som livsopphald når vi behandlar
+                    ein søknad om sosialhjelp.
                 </Avsnitt>
 
                 <Avsnitt>
@@ -42,8 +41,8 @@ const DetteKanDuSokeOmNynorsk: React.FC = () => {
                     internett, transport og helse- og tannbehandling blir av NAV
                     rekna som en del av livsopphaldet. Vi vurderer òg om du har
                     ekstrautgifter som vi bør ta omsyn til. Ekstrautgifter kan
-                    til dømes oppstå ved feiring av spesielle hendelsar og høgtider.
-                    Vi legg særleg vekt på barn og unge sine behov.
+                    til dømes oppstå ved feiring av spesielle hendelsar og
+                    høgtider. Vi legg særleg vekt på barn og unge sine behov.
                 </Avsnitt>
             </Ekspanderbartpanel>
 

@@ -11,7 +11,7 @@ const SlikForegatEtMoteEngelsk: React.FC = () => {
     return (
         <Artikkel
             tittel="When you need to talk to someone"
-            illustrasjon={<Veiskilt className="sentrert_illustrasjon" />}
+            illustrasjon={<Veiskilt className="illustrasjon" />}
             foreldreside={andreMuligheterBrodsmulestiEngelsk}
         >
             <Innholdstittel>What happens in a meeting?</Innholdstittel>
