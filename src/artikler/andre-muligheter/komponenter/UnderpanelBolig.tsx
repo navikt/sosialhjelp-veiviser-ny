@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const UnderpanelBolig = styled.div`
     @media all and (min-width: 601px) {

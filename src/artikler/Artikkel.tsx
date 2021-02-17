@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Dekorator from "../komponenter/dekorator/Dekorator";
 import {BlokkCenter} from "../komponenter/BlokkCenter";
 
