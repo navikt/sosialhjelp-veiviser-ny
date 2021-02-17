@@ -1,4 +1,4 @@
 export const ARTICLE_WIDTH = {
-    default: "792px",
-    large: "880px",
+    default: "49.5rem",
+    large: "55rem",
 };

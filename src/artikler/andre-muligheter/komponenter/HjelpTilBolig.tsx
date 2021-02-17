@@ -11,7 +11,7 @@ export const HjelpTilBolig = styled(PanelBase)`
 
         svg {
             margin-right: 1rem;
-            margin-bottom: -4px;
+            margin-bottom: -0.25rem;
         }
     }
 `;

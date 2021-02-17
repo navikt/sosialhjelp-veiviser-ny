@@ -6,13 +6,13 @@ export const UnderpanelBolig = styled.div`
         flex-direction: row;
         justify-content: space-between;
         flex-grow: initial;
-        margin-top: 4px;
+        margin-top: 0.25rem;
 
         .lenkepanel:nth-child(1) {
-            margin-right: 4px;
+            margin-right: 0.25rem;
         }
         .lenkepanel:nth-child(2) {
-            margin-right: 4px;
+            margin-right: 0.25rem;
         }
 
         .lenkepanel {
@@ -30,7 +30,7 @@ export const UnderpanelBolig = styled.div`
     @media all and (max-width: 600px) {
         .lenkepanel {
             width: 100%;
-            margin: 4px 0 0 0;
+            margin: 0.25rem 0 0 0;
 
             p {
                 display: none;
