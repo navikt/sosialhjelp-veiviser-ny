@@ -1,8 +1,13 @@
 import * as React from "react";
+import styled from "styled-components";
 import "./banner.less";
 import {Sidetittel, Innholdstittel} from "nav-frontend-typografi";
 import ForsideBanner from "../bilder/ForsideBanner";
 import {detekterSprak} from "../../utils/sprakUtils";
+
+const StyledDecorator = styled.div`
+    margin-bottom: 2rem;
+`;
 
 const Dekorator: React.FC<{
     children: React.ReactNode;
@@ -18,7 +23,7 @@ const Dekorator: React.FC<{
         : "banner__underside";
 
     return (
-        <div>
+        <StyledDecorator>
             <div role="banner" className={"banner " + bannerClassNames}>
                 <div className="blokk-center">
                     {erForside && (
@@ -44,7 +49,7 @@ const Dekorator: React.FC<{
             <br />
             <br />
             {children}
-        </div>
+        </StyledDecorator>
     );
 };
 

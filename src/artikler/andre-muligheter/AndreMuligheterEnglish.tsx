@@ -2,11 +2,14 @@ import * as React from "react";
 import Artikkel from "../Artikkel";
 import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
-import PanelBase from "nav-frontend-paneler";
+import {HjelpTilBolig} from "./komponenter/HjelpTilBolig";
+import {UnderpanelBolig} from "./komponenter/UnderpanelBolig";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import {JobblystEnglishPanel} from "./JobblystPanel";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
+import {BlokkCenter} from "../../komponenter/BlokkCenter";
+import {ARTICLE_WIDTH} from "../../utils/variables";
 
 const AndreMuligheterEnglish: React.FC = () => {
     return (
@@ -14,9 +17,11 @@ const AndreMuligheterEnglish: React.FC = () => {
             <Artikkel
                 className="artikkel--andre_mulighter"
                 tittel="Other possibilities"
+                illustrasjon={
+                    <LysPaere className="illustrasjon_andre_muligheter" />
+                }
+                extraWide
             >
-                <LysPaere />
-
                 <Ingress>
                     Financial assistance is å temporary form of benefit. You
                     should consider every other possibility for you to provide
@@ -26,7 +31,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                 </Ingress>
             </Artikkel>
 
-            <div className="blokk-center artikkel--andre_mulighter">
+            <BlokkCenter width={ARTICLE_WIDTH.large}>
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
                         <Undertittel style={{textAlign: "left"}}>
@@ -74,10 +79,10 @@ const AndreMuligheterEnglish: React.FC = () => {
                     </div>
                 </div>
 
-                <PanelBase className="hjelp_til_bolig_panel">
+                <HjelpTilBolig>
                     <Undertittel>Housing assistance</Undertittel>
-                </PanelBase>
-                <div className="hjelp_til_bolig_panel__underpaneler">
+                </HjelpTilBolig>
+                <UnderpanelBolig>
                     <LenkepanelBase
                         href={
                             "https://www.husbanken.no/english/what-is-housing-allowance/"
@@ -107,7 +112,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             Rent or own housing
                         </Undertittel>
                     </LenkepanelBase>
-                </div>
+                </UnderpanelBolig>
 
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
@@ -150,7 +155,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                 </div>
 
                 <JobblystEnglishPanel />
-            </div>
+            </BlokkCenter>
         </>
     );
 };

@@ -8,7 +8,7 @@ export const LenkeboksLinje = (props: {href: string; children: any}) => {
         onClickHandler = undefined;
     }
     return (
-        <li className="lenkeboks-linje">
+        <li>
             <Lenke href={props.href} onClick={onClickHandler}>
                 {props.children}
             </Lenke>

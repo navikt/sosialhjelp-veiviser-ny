@@ -1,6 +1,6 @@
 import React from "react";
 
-const LysPaere: React.FC = () => {
+const LysPaere: React.FC<{className?: string}> = ({className}) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ const LysPaere: React.FC = () => {
             viewBox="0 0 76 80"
             aria-hidden="true"
             pointerEvents="none"
+            className={className}
         >
             <title>Lyspære</title>
             <path
