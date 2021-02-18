@@ -7,13 +7,15 @@ import {ForsideLenke} from "./komponenter/ForsideLenke";
 import {AlertStripeInfo} from "nav-frontend-alertstriper";
 import {useDecorator} from "../../utils/useDecorator";
 import {InternLenke} from "../../komponenter/InternLenke";
+import {BlokkCenter} from "../../komponenter/BlokkCenter";
+import {ARTICLE_WIDTH} from "../../utils/variables";
 
 export const ForsideBokmal: React.FC = () => {
     useDecorator([]);
 
     return (
         <Dekorator erForside={true}>
-            <div role="main" className="blokk-center forside">
+            <BlokkCenter width={ARTICLE_WIDTH.default} role="main">
                 <AlertStripeInfo>
                     <InternLenke href="/korona">
                         Koronavirus - Flere kan ha rett til økonomisk
@@ -104,7 +106,7 @@ export const ForsideBokmal: React.FC = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </BlokkCenter>
         </Dekorator>
     );
 };

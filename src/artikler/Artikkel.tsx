@@ -1,18 +1,21 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Dekorator from "../komponenter/dekorator/Dekorator";
+import {BlokkCenter} from "../komponenter/BlokkCenter";
 
 import {useEffect} from "react";
 import {useDecorator} from "../utils/useDecorator";
 import {useHistory} from "react-router-dom";
 
-const StyledArticle = styled.article`
+import {ARTICLE_WIDTH} from "../utils/variables";
+
+const StyledArticle = styled.article<{margin: string}>`
     background-color: white;
     margin-bottom: 4rem;
 
     @media all and (min-width: 601px) {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin-left: ${(props) => props.margin};
+        margin-right: ${(props) => props.margin};
     }
 
     @media all and (max-width: 600px) {
@@ -60,6 +63,12 @@ const Innhold = styled.div`
         width: 100%;
         height: 65px;
     }
+
+    .illustrasjon_andre_muligheter {
+        width: 100%;
+        height: 65px;
+        margin-bottom: 2rem;
+    }
 `;
 
 interface Props {
@@ -68,6 +77,7 @@ interface Props {
     tittel: string;
     illustrasjon?: React.ReactNode;
     foreldreside?: {title: string; slug: string};
+    extraWide?: boolean;
 }
 
 const Artikkel: React.FC<Props> = ({
@@ -76,12 +86,15 @@ const Artikkel: React.FC<Props> = ({
     tittel,
     illustrasjon,
     foreldreside,
+    extraWide,
 }) => {
     document.title = tittel ? tittel : "ingen tittel";
 
     const history = useHistory();
 
     const pathname = window.location.pathname;
+
+    const margin = extraWide ? "0" : "1rem";
 
     const breadcrumbPages = [{title: tittel, slug: history.location.pathname}];
     if (foreldreside) {
@@ -102,14 +115,16 @@ const Artikkel: React.FC<Props> = ({
 
     return (
         <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
-            <div className={"blokk-center " + className}>
-                <StyledArticle role="main">
+            <BlokkCenter
+                width={extraWide ? ARTICLE_WIDTH.large : ARTICLE_WIDTH.default}
+            >
+                <StyledArticle role="main" margin={margin}>
                     <Innhold>
                         {illustrasjon && <span>{illustrasjon}</span>}
                         {children}
                     </Innhold>
                 </StyledArticle>
-            </div>
+            </BlokkCenter>
         </Dekorator>
     );
 };

@@ -2,11 +2,14 @@ import * as React from "react";
 import Artikkel from "../Artikkel";
 import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import "./komponenter/andreMuligheter.less";
-import PanelBase from "nav-frontend-paneler";
+import {HjelpTilBolig} from "./komponenter/HjelpTilBolig";
+import {UnderpanelBolig} from "./komponenter/UnderpanelBolig";
 import {LenkepanelBase} from "nav-frontend-lenkepanel/lib";
 import {JobblystBokmalPanel} from "./JobblystPanel";
 import {LenkeboksLinje} from "../../komponenter/infopanel/LenkepanelLinje";
 import LysPaere from "../../komponenter/bilder/LysPaere";
+import {BlokkCenter} from "../../komponenter/BlokkCenter";
+import {ARTICLE_WIDTH} from "../../utils/variables";
 
 const AndreMuligheterBokmal: React.FC = () => {
     return (
@@ -14,9 +17,11 @@ const AndreMuligheterBokmal: React.FC = () => {
             <Artikkel
                 className="artikkel--andre_mulighter"
                 tittel="Andre muligheter"
+                illustrasjon={
+                    <LysPaere className="illustrasjon_andre_muligheter" />
+                }
+                extraWide
             >
-                <LysPaere />
-
                 <Ingress>
                     Økonomisk sosialhjelp er en midlertidig stønad. Du bør
                     vurdere om du har andre muligheter til å forsørge deg selv.
@@ -26,7 +31,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                 </Ingress>
             </Artikkel>
 
-            <div className="blokk-center artikkel--andre_mulighter">
+            <BlokkCenter width={ARTICLE_WIDTH.large}>
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
                         <Undertittel style={{textAlign: "left"}}>
@@ -73,10 +78,10 @@ const AndreMuligheterBokmal: React.FC = () => {
                     </div>
                 </div>
 
-                <PanelBase className="hjelp_til_bolig_panel">
+                <HjelpTilBolig>
                     <Undertittel>Hjelp til bolig</Undertittel>
-                </PanelBase>
-                <div className="hjelp_til_bolig_panel__underpaneler">
+                </HjelpTilBolig>
+                <UnderpanelBolig>
                     <LenkepanelBase href={"https://www.husbanken.no/bostotte/"}>
                         <Undertittel className="lenkepanel__heading" tag="h3">
                             Bostøtte
@@ -102,7 +107,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                             Leie eller eie bolig
                         </Undertittel>
                     </LenkepanelBase>
-                </div>
+                </UnderpanelBolig>
 
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks">
@@ -142,7 +147,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                 </div>
 
                 <JobblystBokmalPanel />
-            </div>
+            </BlokkCenter>
         </>
     );
 };
