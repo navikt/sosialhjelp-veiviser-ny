@@ -59,6 +59,10 @@ const Innhold = styled.div`
         margin-bottom: 6px;
     }
 
+    .typo-ingress {
+        margin-bottom: 1rem;
+    }
+
     .illustrasjon {
         width: 100%;
         height: 65px;

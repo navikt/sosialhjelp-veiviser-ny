@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BlockContent from "@sanity/block-content-to-react";
 import Lenke from "nav-frontend-lenker";
 import {
@@ -65,7 +64,7 @@ const serializers = {
     },
 };
 
-export const SanityBlockContent = (props: {blocks: any}) => {
+export const SanityBlockContent = (props) => {
     return (
         <BlockContent
             blocks={props.blocks}
