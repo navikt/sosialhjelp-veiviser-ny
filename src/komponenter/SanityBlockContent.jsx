@@ -45,7 +45,7 @@ const serializers = {
             const {blank, href} = mark;
 
             return blank ? (
-                <Lenke href={href} target="_blank" rel="noopener">
+                <Lenke href={href} target="_blank" rel="noreferrer noopener">
                     {children}
                 </Lenke>
             ) : (
