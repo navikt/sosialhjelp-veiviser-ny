@@ -29,6 +29,7 @@ import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
 import Korona from "./artikler/korona/Korona";
 import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
+import SanityTest from "./artikler/sanity-test/SanityTest";
 import {erProd, erQ} from "./utils/restUtils";
 
 if (erProd()) {
@@ -132,6 +133,8 @@ function App() {
                     />
 
                     <Route exact path="/korona" component={Korona} />
+
+                    <Route exact path="/sanity-test" component={SanityTest} />
 
                     {/* Redirects */}
                     <Route exact path="/artikkel/514891">
