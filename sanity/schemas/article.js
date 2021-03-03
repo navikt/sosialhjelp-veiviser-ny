@@ -1,24 +1,19 @@
+import {defaultLanguage} from "./utils/lang";
+
 export default {
     name: "article",
     title: "Artikkel",
     type: "document",
-    fields: [
-        {
-            name: "language",
-            title: "Språk",
-            type: "string",
-            options: {
-                list: [
-                    {title: "Bokmål", value: "nb"},
-                    {title: "Nynorsk", value: "nn"},
-                    {title: "Engelsk", value: "en"},
-                ],
-            },
+    preview: {
+        select: {
+            title: `title.${defaultLanguage.id}`,
         },
+    },
+    fields: [
         {
             name: "title",
             title: "Tittel",
-            type: "string",
+            type: "localeString",
             validation: (Rule) => Rule.required(),
         },
         {
@@ -26,7 +21,7 @@ export default {
             title: "Slug",
             type: "slug",
             options: {
-                source: "title",
+                source: `title.${defaultLanguage.id}`,
                 maxLength: 96,
             },
             validation: (Rule) => Rule.required(),
@@ -34,13 +29,13 @@ export default {
         {
             name: "description",
             title: "Beskrivelse",
-            type: "string",
+            type: "localeString",
             validation: (Rule) => Rule.required(),
         },
         {
             name: "metaDescription",
             title: "Metabeskrivelse",
-            type: "string",
+            type: "localeString",
             description:
                 "Dette er teksten som vil vises for søkeresultater på eks. Google",
             validation: (Rule) => Rule.required(),
@@ -52,8 +47,8 @@ export default {
         },
         {
             name: "body",
-            title: "Body",
-            type: "blockContent",
+            title: "Innhold",
+            type: "localeBlockContent",
             validation: (Rule) => Rule.required(),
         },
     ],

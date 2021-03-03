@@ -3,12 +3,11 @@ import client from "./sanityClient";
 const articleSpec = `
 {
     "id": _id,
-    title,
+    "title": coalesce(title[$locale], title.nb),
     "slug": slug.current,
-    description,
-    metaDescription,
-    language,
-    body[]{
+    "description": coalesce(description[$locale], description.nb),
+    "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+    "body": coalesce(body[$locale], body.nb)[]{
         ...,
         markDefs[]{
             ...,
@@ -30,7 +29,7 @@ export const fetchArticleWithSlugAndLocale = async (
     slug = "",
     locale = "nb"
 ): Promise<SanityArticle> => {
-    const query = `*[_type == "article" && slug.current == $slug && language == $locale][0]
+    const query = `*[_type == "article" && slug.current == $slug][0]
     ${articleSpec}`;
     const params = {slug: slug, locale: locale};
     return client.fetch(query, params);
