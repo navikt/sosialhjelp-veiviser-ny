@@ -63,6 +63,14 @@ const Innhold = styled.div`
         margin-bottom: 1rem;
     }
 
+    .typo-normal {
+        margin-bottom: 1rem;
+    }
+
+    .ekspanderbartPanel {
+        margin-bottom: 1rem;
+    }
+
     .illustrasjon {
         width: 100%;
         height: 65px;
