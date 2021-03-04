@@ -100,9 +100,6 @@ export default {
             type: "image",
             options: {hotspot: true},
         },
-        /*{
-            type: 'vimeo',
-        },
-        { type: 'expandedPanel'}*/
+        {type: "expandedPanel"},
     ],
 };

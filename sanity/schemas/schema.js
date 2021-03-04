@@ -5,7 +5,8 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import article from "./article";
-import blockContent from "./blockContent";
+import blockContent from "./blockContent/blockContent";
+import expandedPanel from "./blockContent/expandedPanel";
 import localeString from "./locale/localeString";
 import localeBlockContent from "./locale/localeBlockContent";
 
@@ -18,6 +19,7 @@ export default createSchema({
     types: schemaTypes.concat([
         article,
         blockContent,
+        expandedPanel,
         localeBlockContent,
         localeString,
     ]),

@@ -6,7 +6,7 @@ import {
     fetchArticleWithSlugAndLocale,
     SanityArticle,
 } from "../utils/sanityFetch";
-import NavFrontendSpinner from "nav-frontend-spinner";
+import {Lastestriper} from "../komponenter/Lastestriper";
 
 const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     const [article, setArticle] = React.useState<SanityArticle>();
@@ -19,8 +19,13 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     }, [props.slug, props.locale, setArticle]);
 
     if (!article) {
-        return <NavFrontendSpinner />;
+        return (
+            <Artikkel tittel=" ">
+                <Lastestriper />
+            </Artikkel>
+        );
     }
+
     return (
         <Artikkel tittel={article.title}>
             <Innholdstittel>{article.title}</Innholdstittel>

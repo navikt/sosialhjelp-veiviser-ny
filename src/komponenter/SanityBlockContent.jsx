@@ -6,6 +6,7 @@ import {
     Normaltekst,
     Undertittel,
 } from "nav-frontend-typografi";
+import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import React from "react";
 import {Link} from "react-router-dom";
 
@@ -13,6 +14,13 @@ import client from "../utils/sanityClient";
 
 const serializers = {
     types: {
+        expandedPanel: function renderExpandedPanel({node}) {
+            return (
+                <Ekspanderbartpanel tittel={node.title} apen={node.defaultOpen}>
+                    <SanityBlockContent blocks={node.body} />
+                </Ekspanderbartpanel>
+            );
+        },
         block: function renderBlock({node, children}) {
             const style = node.style;
             if (style === "normal") {

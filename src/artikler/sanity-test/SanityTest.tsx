@@ -1,16 +1,13 @@
 import * as React from "react";
-import SanityTestBokmal from "./SanityTestBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import SprakvelgerContext, {
-    Oversettelser,
-} from "../../komponenter/oversettelser/Oversettelser";
+import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import SanityArtikkel from "../SanityArtikkel";
 
 const SanityTest: React.FC = () => {
     const valgtSprak = detekterSprak();
-    const sprakContext = React.useContext(SprakvelgerContext);
     return (
-        <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
-            {valgtSprak === Sprak.NORSK_BOKMAL && <SanityTestBokmal />}
+        <Oversettelser sprak={[Sprak.NORSK_BOKMAL, Sprak.ENGELSK]}>
+            <SanityArtikkel slug="dette-bor-du-vite" locale={valgtSprak} />
         </Oversettelser>
     );
 };
