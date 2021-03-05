@@ -11,6 +11,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import client from "../utils/sanityClient";
+import {detekterSprak} from "../utils/sprakUtils";
 
 const serializers = {
     types: {
@@ -62,10 +63,10 @@ const serializers = {
         },
         internalLink: function renderInternalLink({mark, children}) {
             const {slug = {}} = mark;
-            const href = `/${slug.current}`;
+            const href = `/${slug.current}?lang=${detekterSprak()}`;
             return (
-                <Link to={href}>
-                    <a className="lenke">{children}</a>
+                <Link to={href} className="lenke">
+                    {children}
                 </Link>
             );
         },
