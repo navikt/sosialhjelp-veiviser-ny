@@ -1,18 +1,13 @@
 import * as React from "react";
-import EttersendeBokmal from "./EttersendeBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-
-import SprakvelgerContext, {
-    Oversettelser,
-} from "../../komponenter/oversettelser/Oversettelser";
+import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import SanityArtikkel from "../SanityArtikkel";
 
 const Ettersende: React.FC = () => {
     const valgtSprak = detekterSprak();
-    const sprakContext = React.useContext(SprakvelgerContext);
     return (
         <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
-            {valgtSprak === Sprak.NORSK_BOKMAL && <EttersendeBokmal />}
-            {!sprakContext.sprak.includes(valgtSprak) && <EttersendeBokmal />}
+            <SanityArtikkel slug="ettersende" locale={valgtSprak} />
         </Oversettelser>
     );
 };

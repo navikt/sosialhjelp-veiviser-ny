@@ -2,19 +2,15 @@ import * as React from "react";
 
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-import HvisDuHarSamboerBokmal from "./HvisDuHarSamboerBokmal";
-import HvisDuHarSamboerNynorsk from "./HvisDuHarSamboerNynorsk";
-import HvisDuHarSamboerEnglish from "./HvisDuHarSamboerEnglish";
+import SanityArtikkel from "../SanityArtikkel";
 
 const HvisDuHarSamboer = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <HvisDuHarSamboerBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <HvisDuHarSamboerNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <HvisDuHarSamboerEnglish />}
+            <SanityArtikkel slug="hvis-du-har-samboer" locale={valgtSprak} />
         </Oversettelser>
     );
 };

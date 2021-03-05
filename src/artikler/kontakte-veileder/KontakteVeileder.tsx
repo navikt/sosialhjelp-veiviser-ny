@@ -1,19 +1,15 @@
 import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-import KontakteVeilederBokmal from "./KontakteVeilederBokmal";
-import KontakteVeilederNynorsk from "./KontakteVeilederNynorsk";
-import KontakteVeilederEngelsk from "./KontakteVeilederEngelsk";
+import SanityArtikkel from "../SanityArtikkel";
 
 const KontaktVeileder: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <KontakteVeilederBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <KontakteVeilederNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <KontakteVeilederEngelsk />}
+            <SanityArtikkel slug="kontakte-veileder" locale={valgtSprak} />
         </Oversettelser>
     );
 };

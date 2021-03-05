@@ -1,20 +1,15 @@
 import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-
-import KlageBokmal from "./KlageBokmal";
-import KlageNynorsk from "./KlageNynorsk";
-import KlageEnglish from "./KlageEnglish";
+import SanityArtikkel from "../SanityArtikkel";
 
 const Klage: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <KlageBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <KlageNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <KlageEnglish />}
+            <SanityArtikkel slug="klage" locale={valgtSprak} />
         </Oversettelser>
     );
 };

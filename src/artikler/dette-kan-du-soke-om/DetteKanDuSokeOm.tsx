@@ -1,19 +1,15 @@
 import * as React from "react";
-import DetteKanDuSokeOmBokmal from "./DetteKanDuSokeOmBokmal";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
-import DetteKanDuSokeOmNynorsk from "./DetteKanDuSokeOmNynorsk";
-import DetteKanDuSokeOmEnglish from "./DetteKanDuSokeOmEnglish";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
+import SanityArtikkel from "../SanityArtikkel";
 
 const DetteKanDuSokeOm: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <DetteKanDuSokeOmBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <DetteKanDuSokeOmNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <DetteKanDuSokeOmEnglish />}
+            <SanityArtikkel slug="dette-kan-du-soke-om" locale={valgtSprak} />
         </Oversettelser>
     );
 };

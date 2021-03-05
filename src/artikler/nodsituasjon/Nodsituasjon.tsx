@@ -2,20 +2,16 @@ import * as React from "react";
 
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-import NodsituasjonBokmal from "./NodistuasjonBokmal";
-import NodsituasjonNynorsk from "./NodistuasjonNynorsk";
-import NodsituasjonEnglish from "./NodistuasjonEnglish";
+import SanityArtikkel from "../SanityArtikkel";
 
 const Nodsituasjon = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
 
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <NodsituasjonBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <NodsituasjonNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <NodsituasjonEnglish />}
+            <SanityArtikkel slug="nodsituasjon" locale={valgtSprak} />
         </Oversettelser>
     );
 };

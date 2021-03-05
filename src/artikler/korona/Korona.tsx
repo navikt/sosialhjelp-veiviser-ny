@@ -1,14 +1,13 @@
 import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-
-import KoronaBokmal from "./KoronaBokmal";
+import SanityArtikkel from "../SanityArtikkel";
 
 const Korona = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser sprak={[Sprak.NORSK_BOKMAL]}>
-            {valgtSprak === Sprak.NORSK_BOKMAL && <KoronaBokmal />}
+            <SanityArtikkel slug="korona" locale={valgtSprak} />
         </Oversettelser>
     );
 };

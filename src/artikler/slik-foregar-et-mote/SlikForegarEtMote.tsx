@@ -1,19 +1,15 @@
 import * as React from "react";
 import {detekterSprak, Sprak} from "../../utils/sprakUtils";
 import {Oversettelser} from "../../komponenter/oversettelser/Oversettelser";
-import SlikForegatEtMoteBokmal from "./SlikForegatEtMoteBokmal";
-import SlikForegatEtMoteNynorsk from "./SlikForegatEtMoteNynorsk";
-import SlikForegatEtMoteEngelsk from "./SlikForegatEtMoteEngelsk";
+import SanityArtikkel from "../SanityArtikkel";
 
 const SlikForegatEtMote: React.FC = () => {
-    const valgtSprak: string = detekterSprak();
+    const valgtSprak = detekterSprak();
     return (
         <Oversettelser
             sprak={[Sprak.NORSK_BOKMAL, Sprak.NYNORSK, Sprak.ENGELSK]}
         >
-            {valgtSprak === Sprak.NORSK_BOKMAL && <SlikForegatEtMoteBokmal />}
-            {valgtSprak === Sprak.NYNORSK && <SlikForegatEtMoteNynorsk />}
-            {valgtSprak === Sprak.ENGELSK && <SlikForegatEtMoteEngelsk />}
+            <SanityArtikkel slug="slik-foregar-et-mote" locale={valgtSprak} />
         </Oversettelser>
     );
 };
