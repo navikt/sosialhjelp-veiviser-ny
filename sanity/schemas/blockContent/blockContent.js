@@ -98,5 +98,6 @@ export default {
             options: {hotspot: true},
         },
         {type: "expandedPanel"},
+        {type: "vimeo"},
     ],
 };

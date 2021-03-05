@@ -9,12 +9,16 @@ import {
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import React from "react";
 import {Link} from "react-router-dom";
-
+import Vimeo from "@u-wave/react-vimeo";
 import client from "../utils/sanityClient";
 import {detekterSprak} from "../utils/sprakUtils";
 
 const serializers = {
     types: {
+        vimeo: function renderVimeo({node}) {
+            const {url} = node;
+            return <Vimeo responsive video={url} />;
+        },
         expandedPanel: function renderExpandedPanel({node}) {
             return (
                 <Ekspanderbartpanel tittel={node.title} apen={node.defaultOpen}>

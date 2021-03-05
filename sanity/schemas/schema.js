@@ -9,6 +9,7 @@ import blockContent from "./blockContent/blockContent";
 import expandedPanel from "./blockContent/expandedPanel";
 import localeString from "./locale/localeString";
 import localeBlockContent from "./locale/localeBlockContent";
+import vimeo from "./blockContent/vimeo";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +23,6 @@ export default createSchema({
         expandedPanel,
         localeBlockContent,
         localeString,
+        vimeo,
     ]),
 });
