@@ -16,6 +16,7 @@
     "@sanity/client": "^2.2.6",
     "@sentry/browser": "^5.30.0",
     "@types/react-router": "^5.1.11",
+    "@u-wave/react-vimeo": "^0.9.3",
     "babel-polyfill": "^6.26.0",
     "braces": ">=3.0.2",
     "classnames": "^2.2.6",
