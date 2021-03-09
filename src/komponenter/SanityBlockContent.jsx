@@ -10,8 +10,23 @@ import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import React from "react";
 import {Link} from "react-router-dom";
 import Vimeo from "@u-wave/react-vimeo";
-import client from "../utils/sanityClient";
+import client, {urlFor} from "../utils/sanityClient";
 import {detekterSprak} from "../utils/sprakUtils";
+import Veilederpanel from "nav-frontend-veilederpanel";
+import styled from "styled-components/macro";
+import {SokDigitalt} from "./sokDigitalt/SokDigitalt";
+
+const StyledVeilederPanel = styled.div`
+    margin: 5em 0 2em 0;
+
+    .typo-undertittel {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+`;
 
 const serializers = {
     types: {
@@ -19,11 +34,34 @@ const serializers = {
             const {url} = node;
             return <Vimeo responsive video={url} />;
         },
+        customBlockComponent: function renderCustomBlockComponent({node}) {
+            const {customValue} = node;
+            if (customValue === "sokDigitalt") {
+                return <SokDigitalt />;
+            }
+            return <div>Ikke implementert</div>;
+        },
         expandedPanel: function renderExpandedPanel({node}) {
             return (
                 <Ekspanderbartpanel tittel={node.title} apen={node.defaultOpen}>
                     <SanityBlockContent blocks={node.body} />
                 </Ekspanderbartpanel>
+            );
+        },
+        veilederPanel: function renderVeilederPanel({node}) {
+            console.log("node", node);
+            return (
+                <StyledVeilederPanel>
+                    <Veilederpanel
+                        type="plakat"
+                        kompakt
+                        fargetema="suksess"
+                        svg={<img src={urlFor(node.icon).url()} alt="" />}
+                    >
+                        <Undertittel>{node.title}</Undertittel>
+                        <SanityBlockContent blocks={node.body} />
+                    </Veilederpanel>
+                </StyledVeilederPanel>
             );
         },
         block: function renderBlock({node, children}) {
@@ -46,14 +84,6 @@ const serializers = {
         },
     },
     marks: {
-        fileUpload: function renderFileUpload({mark, children}) {
-            const {slug} = mark;
-            return (
-                <Lenke href={`/okonomi-og-gjeld/api/download/${slug}`}>
-                    {children}
-                </Lenke>
-            );
-        },
         link: function renderLink({mark, children}) {
             const {blank, href} = mark;
 
