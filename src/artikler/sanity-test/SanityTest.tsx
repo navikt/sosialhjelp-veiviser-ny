@@ -7,7 +7,7 @@ const SanityTest: React.FC = () => {
     const valgtSprak = detekterSprak();
     return (
         <Oversettelser sprak={[Sprak.NORSK_BOKMAL, Sprak.ENGELSK]}>
-            <SanityArtikkel slug="dette-bor-du-vite" locale={valgtSprak} />
+            <SanityArtikkel slug="slik-soker-du" locale={valgtSprak} />
         </Oversettelser>
     );
 };
