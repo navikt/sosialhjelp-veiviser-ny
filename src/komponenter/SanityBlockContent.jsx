@@ -49,7 +49,6 @@ const serializers = {
             );
         },
         veilederPanel: function renderVeilederPanel({node}) {
-            console.log("node", node);
             return (
                 <StyledVeilederPanel>
                     <Veilederpanel
