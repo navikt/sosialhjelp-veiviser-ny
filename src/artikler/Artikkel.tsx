@@ -126,7 +126,7 @@ const Artikkel: React.FC<Props> = ({
     }, [pathname]);
 
     return (
-        <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
+        <Dekorator>
             <BlokkCenter
                 width={extraWide ? ARTICLE_WIDTH.large : ARTICLE_WIDTH.default}
             >
