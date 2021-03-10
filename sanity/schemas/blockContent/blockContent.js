@@ -97,7 +97,9 @@ export default {
             type: "image",
             options: {hotspot: true},
         },
+        {type: "customBlockComponent"},
         {type: "expandedPanel"},
+        {type: "veilederPanel"},
         {type: "vimeo"},
     ],
 };
