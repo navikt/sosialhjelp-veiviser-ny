@@ -13,9 +13,9 @@ const articleSpec = `
             ...,
             _type == 'internalLink' => {
                 "slug": @.reference->slug,
-                "type": @.reference->_type,
             },
         },
+        
     },
     "iconUrl": icon.asset->url,
 }`;
