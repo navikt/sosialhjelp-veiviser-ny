@@ -11,9 +11,8 @@ const StyledDecorator = styled.div`
 
 const Dekorator: React.FC<{
     children: React.ReactNode;
-    tittel?: string;
     erForside?: boolean;
-}> = ({children, tittel, erForside}) => {
+}> = ({children, erForside}) => {
     const valgtSprak: string = detekterSprak();
     const sosialhjelpTittel =
         valgtSprak === "en" ? "Financial Assistance" : "Økonomisk sosialhjelp";
@@ -36,12 +35,7 @@ const Dekorator: React.FC<{
                     )}
                     {!erForside && (
                         <div className="undersideBanner__tekst">
-                            {tittel && tittel !== "" && (
-                                <Innholdstittel>{tittel}</Innholdstittel>
-                            )}
-                            {!(tittel && tittel !== "") && (
-                                <span>{sosialhjelpTittel}</span>
-                            )}
+                            <Innholdstittel>{sosialhjelpTittel}</Innholdstittel>
                         </div>
                     )}
                 </div>
