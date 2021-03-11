@@ -12,9 +12,15 @@ import {Lastestriper} from "../komponenter/Lastestriper";
 const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     const [article, setArticle] = React.useState<SanityArticle>();
     const [hasErros, setHasErrors] = React.useState(false);
+    const [notFound, setNotFound] = React.useState(false);
+
     React.useEffect(() => {
         fetchArticleWithSlugAndLocale(props.slug, props.locale)
             .then((article) => {
+                if (Object.keys(article).length === 0) {
+                    setNotFound(true);
+                }
+                console.log("article", article);
                 setArticle(article);
             })
             .catch((e) => {
@@ -28,6 +34,14 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
             <Artikkel tittel="Det har oppstått en feil">
                 <Innholdstittel>Det har oppstått en feil</Innholdstittel>
                 Du kan laste siden på nytt, eller prøve igjen senere.
+            </Artikkel>
+        );
+    }
+
+    if (notFound) {
+        return (
+            <Artikkel tittel="Denne siden finnes ikke">
+                <Innholdstittel>Denne siden finnes ikke</Innholdstittel>
             </Artikkel>
         );
     }
