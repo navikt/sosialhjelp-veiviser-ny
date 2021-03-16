@@ -12,6 +12,11 @@ import localeBlockContent from "./locale/localeBlockContent";
 import vimeo from "./blockContent/vimeo";
 import veilederpanel from "./blockContent/veilederpanel";
 import customBlockComponent from "./blockContent/customBlockComponent";
+import frontPage from "./frontpage/frontPage";
+import alert from "./frontpage/alert";
+import linkPanel from "./frontpage/linkPanel";
+import linkBoxLine from "./frontpage/linkBoxLine";
+import linkBox from "./frontpage/linkBox";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,10 +25,15 @@ export default createSchema({
     // Then proceed to concatenate our document type
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
+        alert,
         article,
         blockContent,
         customBlockComponent,
         expandedPanel,
+        frontPage,
+        linkBox,
+        linkBoxLine,
+        linkPanel,
         localeBlockContent,
         localeString,
         veilederpanel,

@@ -1,8 +1,8 @@
-import {defaultLanguage} from "./utils/lang";
+import {defaultLanguage} from "../utils/lang";
 
 export default {
-    name: "article",
-    title: "Artikkel",
+    name: "frontPage",
+    title: "Forside",
     type: "document",
     preview: {
         select: {
@@ -17,16 +17,6 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
-            name: "slug",
-            title: "Slug",
-            type: "slug",
-            options: {
-                source: `title.${defaultLanguage.id}`,
-                maxLength: 96,
-            },
-            validation: (Rule) => Rule.required(),
-        },
-        {
             name: "metaDescription",
             title: "Metabeskrivelse",
             type: "localeString",
@@ -35,15 +25,29 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
-            name: "icon",
-            title: "Ikon",
+            name: "bannerIcon",
+            title: "Banner Icon",
             type: "image",
+            validation: (Rule) => Rule.required(),
         },
         {
-            name: "body",
-            title: "Innhold",
-            type: "localeBlockContent",
+            name: "alert",
+            title: "Varselboks",
+            type: "reference",
+            to: {type: "alert"},
+        },
+        {
+            name: "soknadPanel",
+            title: "Søknadpanel",
+            type: "reference",
+            to: {type: "linkPanel"},
             validation: (Rule) => Rule.required(),
+        },
+        {
+            name: "linkBoxes",
+            title: "Lenkebokser",
+            type: "array",
+            of: [{type: "reference", to: {type: "linkBox"}}],
         },
     ],
 };
