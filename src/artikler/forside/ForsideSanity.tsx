@@ -4,31 +4,95 @@ import {Undertittel} from "nav-frontend-typografi";
 import Dekorator from "../../komponenter/dekorator/Dekorator";
 import SokOmSosialhjelpPanel from "./komponenter/SokOmSosialhjelpPanel";
 import {ForsideLenke} from "./komponenter/ForsideLenke";
-import {AlertStripeInfo} from "nav-frontend-alertstriper";
+import AlertStripe from "nav-frontend-alertstriper";
 import {useDecorator} from "../../utils/useDecorator";
 import {InternLenke} from "../../komponenter/InternLenke";
 import {BlokkCenter} from "../../komponenter/BlokkCenter";
 import {ARTICLE_WIDTH} from "../../utils/variables";
+import {detekterSprak} from "../../utils/sprakUtils";
+import {
+    fetchFrontPageWithLocale,
+    SanityFrontpage,
+} from "../../utils/sanityFetch";
+import styled from "styled-components/macro";
 
-export const ForsideBokmal: React.FC = () => {
+const StyledAlertStripe = styled(AlertStripe)`
+    margin-bottom: 1rem;
+`;
+
+export const ForsideSanity: React.FC = () => {
     useDecorator([]);
+
+    const [frontPage, setFrontPage] = React.useState<
+        SanityFrontpage | undefined
+    >(undefined);
+    const [hasErros, setHasErrors] = React.useState(false);
+    const [notFound, setNotFound] = React.useState(false);
+
+    React.useEffect(() => {
+        fetchFrontPageWithLocale(detekterSprak())
+            .then((result) => setFrontPage(result))
+            .catch((e) => setHasErrors(true));
+    }, []);
+
+    if (frontPage) {
+        return (
+            <Dekorator erForside>
+                <BlokkCenter width={ARTICLE_WIDTH.default} role="main">
+                    {frontPage.alert && (
+                        <StyledAlertStripe type={frontPage.alert.type}>
+                            <InternLenke
+                                href={`/${
+                                    frontPage.alert.slug
+                                }?lang=${detekterSprak()}`}
+                            >
+                                {frontPage.alert.title}
+                            </InternLenke>
+                        </StyledAlertStripe>
+                    )}
+                    <SokOmSosialhjelpPanel
+                        href={`/${
+                            frontPage.soknadPanel.slug
+                        }?lang=${detekterSprak()}`}
+                    >
+                        {frontPage.soknadPanel.title}
+                    </SokOmSosialhjelpPanel>
+                    <div className="lenkeboks_container lenkeboks_container--2_spalter">
+                        {frontPage.linkBoxes.map((linkBox) => {
+                            return (
+                                <div
+                                    key={linkBox.title}
+                                    className="lenkeboks lenkeboks_forside lenkeboks_med_border"
+                                >
+                                    <Undertittel>{linkBox.title}</Undertittel>
+                                    <ul>
+                                        {linkBox.articles.map((article) => {
+                                            return (
+                                                <ForsideLenke
+                                                    href={`/${
+                                                        article.slug
+                                                    }?lang=${detekterSprak()}`}
+                                                    description={
+                                                        article.description
+                                                    }
+                                                >
+                                                    {article.title}
+                                                </ForsideLenke>
+                                            );
+                                        })}
+                                    </ul>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </BlokkCenter>
+            </Dekorator>
+        );
+    }
 
     return (
         <Dekorator erForside={true}>
             <BlokkCenter width={ARTICLE_WIDTH.default} role="main">
-                <AlertStripeInfo>
-                    <InternLenke href="/korona">
-                        Koronavirus - Flere kan ha rett til økonomisk
-                        sosialhjelp
-                    </InternLenke>
-                </AlertStripeInfo>
-
-                <br />
-
-                <SokOmSosialhjelpPanel href="./slik-soker-du?lang=nb">
-                    Søk om økonomisk sosialhjelp
-                </SokOmSosialhjelpPanel>
-
                 <div className="lenkeboks_container lenkeboks_container--2_spalter">
                     <div className="lenkeboks lenkeboks_forside lenkeboks_med_border">
                         <Undertittel style={{textAlign: "left"}}>

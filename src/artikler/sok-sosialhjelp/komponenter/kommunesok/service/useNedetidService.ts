@@ -26,6 +26,19 @@ const useNedetidService = () => {
 
     useEffect(() => {
         if (erDevMiljo() || erCodesandbox()) {
+            /*setResult({
+                restStatus: REST_STATUS.OK,
+                payload: {
+                    isNedetid: true,
+                    isPlanlagtNedetid: true,
+                    nedetidStart: "START",
+                    nedetidSlutt: "SLUTT",
+                    nedetidStartText: "START TEXT",
+                    nedetidSluttText: "SLUTT TEXT",
+                    nedetidStartTextEn: "START TEXT",
+                    nedetidSluttTextEn: "SLUTT TEXT",
+                },
+            });*/
             return;
         }
 
