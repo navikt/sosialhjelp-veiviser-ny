@@ -9,8 +9,18 @@ export default () =>
                 .child(
                     S.editor().schemaType("frontPage").documentId("frontPage")
                 ),
+            S.listItem()
+                .title("Andre muligheter")
+                .child(
+                    S.editor()
+                        .schemaType("otherPossibilities")
+                        .documentId("otherPossibilities")
+                ),
             S.divider(),
             ...S.documentTypeListItems().filter(
-                (listItem) => !["frontPage"].includes(listItem.getId())
+                (listItem) =>
+                    !["frontPage", "otherPossibilities"].includes(
+                        listItem.getId()
+                    )
             ),
         ]);
