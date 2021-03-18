@@ -9,6 +9,7 @@ import blockContent from "./blockContent/blockContent";
 import expandedPanel from "./blockContent/expandedPanel";
 import localeString from "./locale/localeString";
 import localeBlockContent from "./locale/localeBlockContent";
+import localeUrl from "./locale/localeUrl";
 import vimeo from "./blockContent/vimeo";
 import veilederpanel from "./blockContent/veilederpanel";
 import customBlockComponent from "./blockContent/customBlockComponent";
@@ -17,6 +18,11 @@ import alert from "./frontpage/alert";
 import linkPanel from "./frontpage/linkPanel";
 import linkBoxLine from "./frontpage/linkBoxLine";
 import linkBox from "./frontpage/linkBox";
+import otherPossibilities from "./otherPossibilities/otherPossibilities";
+import jobblystPanel from "./otherPossibilities/jobblystPanel";
+import housingPanel from "./otherPossibilities/housingPanel";
+import boxContent from "./otherPossibilities/boxContent";
+import boxPanel from "./otherPossibilities/boxPanel";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,14 +34,20 @@ export default createSchema({
         alert,
         article,
         blockContent,
+        boxContent,
+        boxPanel,
         customBlockComponent,
         expandedPanel,
         frontPage,
+        housingPanel,
+        jobblystPanel,
         linkBox,
         linkBoxLine,
         linkPanel,
         localeBlockContent,
+        localeUrl,
         localeString,
+        otherPossibilities,
         veilederpanel,
         vimeo,
     ]),

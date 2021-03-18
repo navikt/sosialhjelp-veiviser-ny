@@ -47,6 +47,44 @@ const frontPageSpec = `
 }
 `;
 
+const panelSpec = `
+{
+    "innhold": innhold[]{
+        "title": coalesce(title[$locale], title.nb),
+        "boxElements": boxElements[]{
+            "text": coalesce(text[$locale], text.nb),
+            "externalHref": coalesce(externalHref[$locale], externalHref.nb),
+            "internalHref": internalHref->slug.current,
+        },
+    }
+}
+`;
+
+const otherPossibilitiesSpec = `
+{
+    "title": coalesce(title[$locale], title.nb),
+    "ingress": coalesce(ingress[$locale], ingress.nb),
+    "panelTopLeft": panelTopLeft${panelSpec},
+    "panelTopRight": panelTopRight${panelSpec},
+    "housing": housing{
+        "title": coalesce(title[$locale], title.nb),
+        "panels": panels[]{
+            "title": coalesce(title[$locale], title.nb),
+            "description": coalesce(description[$locale], description.nb),
+            "href": coalesce(href[$locale], href.nb),
+        }
+    },
+    "panelBottomLeft": panelBottomLeft${panelSpec},
+    "panelBottomRight": panelBottomRight${panelSpec},
+    "jobblyst": jobblyst{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "illustrationUrl": illustration.asset->url,
+        href
+    },
+}
+`;
+
 export interface SanityArticle {
     body: any;
     title: string;
@@ -80,6 +118,50 @@ export interface SanityFrontpage {
     ];
 }
 
+export interface SanityOtherPossibilitiesPage {
+    title: string;
+    ingress: string;
+    panelTopLeft: SanityPanelSpec;
+    panelTopRight: SanityPanelSpec;
+    housing: SanityHousingPanel;
+    panelBottomLeft: SanityPanelSpec;
+    panelBottomRight: SanityPanelSpec;
+    jobblyst: SanityJobblystPanel;
+}
+
+export interface SanityPanelSpec {
+    innhold: [
+        {
+            title: string;
+            boxElements: [
+                {
+                    text: string;
+                    externalHref?: string;
+                    internalHref?: string;
+                }
+            ];
+        }
+    ];
+}
+
+export interface SanityHousingPanel {
+    title: string;
+    panels: [
+        {
+            title: string;
+            description?: string;
+            href: string;
+        }
+    ];
+}
+
+export interface SanityJobblystPanel {
+    title: string;
+    description: string;
+    illustrationUrl: string;
+    href: string;
+}
+
 export interface SanityAlert {
     type: "info" | "suksess" | "advarsel" | "feil";
 }
@@ -98,6 +180,14 @@ export const fetchFrontPageWithLocale = async (
     locale = "nb"
 ): Promise<SanityFrontpage> => {
     const query = `*[_type == "frontPage"][0]${frontPageSpec}`;
+    const params = {locale: locale};
+    return client.fetch(query, params);
+};
+
+export const fetchOtherPossibilitiesWithLocale = async (
+    locale = "nb"
+): Promise<SanityOtherPossibilitiesPage> => {
+    const query = `*[_type == "otherPossibilities"][0]${otherPossibilitiesSpec}`;
     const params = {locale: locale};
     return client.fetch(query, params);
 };
