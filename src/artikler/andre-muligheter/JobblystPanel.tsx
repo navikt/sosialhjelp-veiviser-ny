@@ -2,8 +2,9 @@ import * as React from "react";
 import styled from "styled-components/macro";
 import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
 import Lenkepanel from "nav-frontend-lenkepanel/lib";
+import {SanityJobblystPanel} from "../../utils/sanityFetch";
 
-const JobblystPanel = styled(Lenkepanel)`
+const StyledJobblystPanel = styled(Lenkepanel)`
     margin-top: 1rem;
     margin-bottom: 4rem;
     min-height: 10rem;
@@ -62,9 +63,25 @@ const JobblystImage = styled.img`
     }
 `;
 
+export const JobblystPanel = (props: SanityJobblystPanel) => {
+    return (
+        <StyledJobblystPanel
+            href={props.href}
+            tittelProps="normaltekst"
+            border={false}
+        >
+            <Content>
+                <Innholdstittel tag="h2">{props.title}</Innholdstittel>
+                <Normaltekst>{props.description}</Normaltekst>
+            </Content>
+            <JobblystImage src={props.illustrationUrl} alt="" />
+        </StyledJobblystPanel>
+    );
+};
+
 export const JobblystBokmalPanel = () => {
     return (
-        <JobblystPanel
+        <StyledJobblystPanel
             href="https://www.facebook.com/navjobblyst/"
             tittelProps="normaltekst"
             border={false}
@@ -76,12 +93,12 @@ export const JobblystBokmalPanel = () => {
                 </Normaltekst>
             </Content>
             <JobblystImage src="img/JobblystS.png" alt="" />
-        </JobblystPanel>
+        </StyledJobblystPanel>
     );
 };
 
 export const JobblystNynorskPanel = () => (
-    <JobblystPanel
+    <StyledJobblystPanel
         href="https://www.facebook.com/navjobblyst/"
         tittelProps="normaltekst"
         border={false}
@@ -93,11 +110,11 @@ export const JobblystNynorskPanel = () => (
             </Normaltekst>
         </Content>
         <JobblystImage src="img/JobblystS.png" alt="" />
-    </JobblystPanel>
+    </StyledJobblystPanel>
 );
 
 export const JobblystEnglishPanel = () => (
-    <JobblystPanel
+    <StyledJobblystPanel
         href="https://www.facebook.com/navjobblyst/"
         tittelProps="normaltekst"
         border={false}
@@ -107,5 +124,5 @@ export const JobblystEnglishPanel = () => (
             <Normaltekst>Advice and guidance for young people</Normaltekst>
         </Content>
         <JobblystImage src="img/JobblystS.png" alt="" />
-    </JobblystPanel>
+    </StyledJobblystPanel>
 );
