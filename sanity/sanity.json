@@ -3,6 +3,25 @@
     "project": {
         "name": "sosialhjelp-veiviser"
     },
+    "__experimental_spaces": [
+        {
+            "name": "production",
+            "title": "Prod",
+            "default": true,
+            "api": {
+                "projectId": "hvfvg2j3",
+                "dataset": "production"
+            }
+        },
+        {
+            "name": "test",
+            "title": "Test",
+            "api": {
+                "projectId": "hvfvg2j3",
+                "dataset": "test"
+            }
+        }
+    ],
     "api": {
         "projectId": "hvfvg2j3",
         "dataset": "production"
