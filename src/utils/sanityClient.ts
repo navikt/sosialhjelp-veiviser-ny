@@ -1,11 +1,11 @@
 import sanityClient from "@sanity/client";
-import config from "../../sanity/sanity.json";
 import imageUrlBuilder from "@sanity/image-url";
 import {SanityImageSource} from "@sanity/image-url/lib/types/types";
+import {erProd} from "./restUtils";
 
 const client = sanityClient({
     projectId: "hvfvg2j3",
-    dataset: "production",
+    dataset: erProd() ? "production" : "test",
     useCdn: true,
 });
 
