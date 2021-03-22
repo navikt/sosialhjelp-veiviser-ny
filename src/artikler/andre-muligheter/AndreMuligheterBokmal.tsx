@@ -65,7 +65,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                             <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
                                 Tiltakspenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/aap">
+                            <LenkeboksLinje href="https://www.nav.no/no/Person/Arbeid/Arbeidsavklaringspenger/arbeidsavklaringspenger-aap">
                                 Arbeidsavklaringspenger
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">

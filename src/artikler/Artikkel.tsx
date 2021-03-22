@@ -59,6 +59,18 @@ const Innhold = styled.div`
         margin-bottom: 6px;
     }
 
+    .typo-ingress {
+        margin-bottom: 1rem;
+    }
+
+    .typo-normal {
+        margin-bottom: 1rem;
+    }
+
+    .ekspanderbartPanel {
+        margin-bottom: 1rem;
+    }
+
     .illustrasjon {
         width: 100%;
         height: 65px;
@@ -114,7 +126,7 @@ const Artikkel: React.FC<Props> = ({
     }, [pathname]);
 
     return (
-        <Dekorator tittel={tittel ? tittel : "ingen tittel"}>
+        <Dekorator>
             <BlokkCenter
                 width={extraWide ? ARTICLE_WIDTH.large : ARTICLE_WIDTH.default}
             >
