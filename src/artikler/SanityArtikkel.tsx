@@ -43,7 +43,7 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
 
                 <Undertittel>In English</Undertittel>
                 <Normaltekst>
-                    An error occured. You can try to reload the page, Go to the{" "}
+                    An error occured. You can try to refresh the page, Go to the{" "}
                     <Lenke href="https://www.nav.no/">front page</Lenke>, or try
                     again later.
                 </Normaltekst>
