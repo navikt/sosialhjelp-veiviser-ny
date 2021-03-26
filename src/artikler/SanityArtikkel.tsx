@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as Sentry from "@sentry/browser";
-import {Innholdstittel} from "nav-frontend-typografi";
+import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Artikkel from "./Artikkel";
 import {SanityBlockContent} from "../komponenter/SanityBlockContent";
 import {
@@ -8,6 +8,8 @@ import {
     SanityArticle,
 } from "../utils/sanityFetch";
 import {Lastestriper} from "../komponenter/Lastestriper";
+import Lenke from "nav-frontend-lenker";
+import {Link} from "react-router-dom";
 
 const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     const [article, setArticle] = React.useState<SanityArticle>();
@@ -33,15 +35,53 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
         return (
             <Artikkel tittel="Det har oppstått en feil">
                 <Innholdstittel>Det har oppstått en feil</Innholdstittel>
-                Du kan laste siden på nytt, eller prøve igjen senere.
+                <Normaltekst>
+                    Du kan laste siden på nytt,{" "}
+                    <Lenke href="https://www.nav.no/">gå til forsiden</Lenke>,
+                    eller prøve igjen senere .
+                </Normaltekst>
+
+                <Undertittel>In English</Undertittel>
+                <Normaltekst>
+                    An error occured. You can try to reload the page, Go to the{" "}
+                    <Lenke href="https://www.nav.no/">front page</Lenke>, or try
+                    again later.
+                </Normaltekst>
             </Artikkel>
         );
     }
 
     if (notFound) {
         return (
-            <Artikkel tittel="Denne siden finnes ikke">
-                <Innholdstittel>Denne siden finnes ikke</Innholdstittel>
+            <Artikkel tittel="Fant ikke siden">
+                <Innholdstittel>Fant ikke siden</Innholdstittel>
+                <Normaltekst>
+                    Beklager, siden kan være slettet eller flyttet, eller det
+                    var en feil i lenken som førte deg hit.
+                </Normaltekst>
+                <Normaltekst>
+                    Du kan{" "}
+                    <Lenke href="https://www.nav.no/">gå til forsiden</Lenke>,
+                    eller lese mer om{" "}
+                    <Link to="/" className="lenke">
+                        økonomisk sosialhjelp
+                    </Link>
+                    .
+                </Normaltekst>
+
+                <Undertittel>In English</Undertittel>
+                <Normaltekst>
+                    The page you requested cannot be found.
+                </Normaltekst>
+                <Normaltekst>
+                    Go to the{" "}
+                    <Lenke href="https://www.nav.no/">front page</Lenke>, or
+                    read more about{" "}
+                    <Link to="/?lang=en" className="lenke">
+                        financial assistance
+                    </Link>
+                    .
+                </Normaltekst>
             </Artikkel>
         );
     }
