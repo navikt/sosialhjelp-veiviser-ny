@@ -38,14 +38,14 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
                 <Normaltekst>
                     Du kan laste siden på nytt,{" "}
                     <Lenke href="https://www.nav.no/">gå til forsiden</Lenke>,
-                    eller prøve igjen senere .
+                    eller prøve igjen senere.
                 </Normaltekst>
 
                 <Undertittel>In English</Undertittel>
                 <Normaltekst>
-                    An error occured. You can try to refresh the page, Go to the{" "}
-                    <Lenke href="https://www.nav.no/">front page</Lenke>, or try
-                    again later.
+                    An error occurred. You can try to refresh the page, go to
+                    the <Lenke href="https://www.nav.no/">front page</Lenke>, or
+                    try again later.
                 </Normaltekst>
             </Artikkel>
         );
