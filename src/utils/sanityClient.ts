@@ -7,6 +7,7 @@ const client = sanityClient({
     projectId: "hvfvg2j3",
     dataset: erProd() ? "production" : "test",
     useCdn: true,
+    apiVersion: "2021-03-26",
 });
 
 const builder = imageUrlBuilder(client);
