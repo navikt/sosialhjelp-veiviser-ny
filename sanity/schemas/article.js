@@ -17,6 +17,20 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: "languages",
+            title: "Tilgjengelige språk",
+            type: "array",
+            of: [{type: "string"}],
+            options: {
+                list: [
+                    {title: "Bokmål", value: "nb"},
+                    {title: "Nynorsk", value: "nn"},
+                    {title: "Engelsk", value: "en"},
+                ],
+            },
+            validation: (Rule) => Rule.required(),
+        },
+        {
             name: "slug",
             title: "Slug",
             type: "slug",

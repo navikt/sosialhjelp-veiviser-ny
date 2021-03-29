@@ -9,21 +9,28 @@ import {
 } from "../utils/sanityFetch";
 import {Lastestriper} from "../komponenter/Lastestriper";
 import Lenke from "nav-frontend-lenker";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import styled from "styled-components/macro";
+import {Oversettelser} from "../komponenter/oversettelser/Oversettelser";
+import {detekterSprak} from "../utils/sprakUtils";
 
 const StyledIcon = styled.img`
     width: 100%;
     height: 65px;
 `;
 
-const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
+const SanityArtikkel = () => {
     const [article, setArticle] = React.useState<SanityArticle>();
     const [hasErros, setHasErrors] = React.useState(false);
     const [notFound, setNotFound] = React.useState(false);
 
+    const {pathname} = useLocation();
+    const slug = pathname.replace(/\\|\//g, "");
+
+    const locale = detekterSprak();
+
     React.useEffect(() => {
-        fetchArticleWithSlugAndLocale(props.slug, props.locale)
+        fetchArticleWithSlugAndLocale(slug, locale)
             .then((article) => {
                 if (Object.keys(article).length === 0) {
                     setNotFound(true);
@@ -34,7 +41,7 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
                 setHasErrors(true);
                 Sentry.captureException(e);
             });
-    }, [props.slug, props.locale, setArticle]);
+    }, [slug, locale, setArticle]);
 
     if (hasErros) {
         return (
@@ -100,11 +107,13 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     }
 
     return (
-        <Artikkel tittel={article.title}>
-            {article.iconUrl && <StyledIcon src={article.iconUrl} alt="" />}
-            <Innholdstittel>{article.title}</Innholdstittel>
-            <SanityBlockContent blocks={article.body} />
-        </Artikkel>
+        <Oversettelser sprak={article.languages ?? []}>
+            <Artikkel tittel={article.title}>
+                {article.iconUrl && <StyledIcon src={article.iconUrl} alt="" />}
+                <Innholdstittel>{article.title}</Innholdstittel>
+                <SanityBlockContent blocks={article.body} />
+            </Artikkel>
+        </Oversettelser>
     );
 };
 
