@@ -10,6 +10,12 @@ import {
 import {Lastestriper} from "../komponenter/Lastestriper";
 import Lenke from "nav-frontend-lenker";
 import {Link} from "react-router-dom";
+import styled from "styled-components/macro";
+
+const StyledIcon = styled.img`
+    width: 100%;
+    height: 65px;
+`;
 
 const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
     const [article, setArticle] = React.useState<SanityArticle>();
@@ -22,7 +28,6 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
                 if (Object.keys(article).length === 0) {
                     setNotFound(true);
                 }
-                console.log("article", article);
                 setArticle(article);
             })
             .catch((e) => {
@@ -96,6 +101,7 @@ const SanityArtikkel = (props: {slug: string; locale: "nb" | "nn" | "en"}) => {
 
     return (
         <Artikkel tittel={article.title}>
+            {article.iconUrl && <StyledIcon src={article.iconUrl} alt="" />}
             <Innholdstittel>{article.title}</Innholdstittel>
             <SanityBlockContent blocks={article.body} />
         </Artikkel>

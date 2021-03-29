@@ -6,7 +6,6 @@ const articleSpec = `
     "id": _id,
     "title": coalesce(title[$locale], title.nb),
     "slug": slug.current,
-    "description": coalesce(description[$locale], description.nb),
     "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
     "body": coalesce(body[$locale], body.nb)[]{
         ...,
@@ -88,6 +87,9 @@ const otherPossibilitiesSpec = `
 export interface SanityArticle {
     body: any;
     title: string;
+    slug: string;
+    metaDescription?: string;
+    iconUrl?: string;
 }
 
 export interface SanityFrontpage {
