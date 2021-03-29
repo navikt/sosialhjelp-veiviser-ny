@@ -1,5 +1,6 @@
 import {AlertStripeType} from "nav-frontend-alertstriper";
 import client from "./sanityClient";
+import {Sprak} from "./sprakUtils";
 
 const articleSpec = `
 {
@@ -18,6 +19,7 @@ const articleSpec = `
         
     },
     "iconUrl": icon.asset->url,
+    languages
 }`;
 
 const frontPageSpec = `
@@ -90,6 +92,7 @@ export interface SanityArticle {
     slug: string;
     metaDescription?: string;
     iconUrl?: string;
+    languages?: Sprak[]; // Bytt til required når lagt på i alle artikler
 }
 
 export interface SanityFrontpage {
