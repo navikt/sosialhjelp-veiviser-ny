@@ -32,7 +32,7 @@ const SanityArtikkel = () => {
     React.useEffect(() => {
         fetchArticleWithSlugAndLocale(slug, locale)
             .then((article) => {
-                if (Object.keys(article).length === 0) {
+                if (!article || Object.keys(article).length === 0) {
                     setNotFound(true);
                 }
                 setArticle(article);
