@@ -20,11 +20,8 @@ import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
 import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote";
 import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
-import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
 import SoknadPaPapir from "./artikler/soknad-pa-papir/SoknadPaPapir";
-import Ettersende from "./artikler/ettersende/Ettersende";
-import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
 import Korona from "./artikler/korona/Korona";
 import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
@@ -64,7 +61,7 @@ function App() {
                         component={DetteKanDuSokeOm}
                     />
                     <Route exact path="/gi-beskjed" component={GiBeskjed} />
-                    <Route exact path="/klage" component={Klage} />
+                    <Route exact path="/klage" component={SanityArtikkel} />
                     <Route exact path="/krav-til-deg" component={KravTilDeg} />
                     <Route
                         exact
@@ -109,7 +106,7 @@ function App() {
                     <Route
                         exact
                         path="/behandlingstid"
-                        component={Behandlingstid}
+                        component={SanityArtikkel}
                     />
 
                     <Route
@@ -118,7 +115,11 @@ function App() {
                         component={StatusSoknad}
                     />
 
-                    <Route exact path="/ettersende" component={Ettersende} />
+                    <Route
+                        exact
+                        path="/ettersende"
+                        component={SanityArtikkel}
+                    />
 
                     <Route
                         exact
