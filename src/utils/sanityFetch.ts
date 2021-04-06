@@ -1,12 +1,12 @@
 import {AlertStripeType} from "nav-frontend-alertstriper";
 import client from "./sanityClient";
+import {Sprak} from "./sprakUtils";
 
 const articleSpec = `
 {
     "id": _id,
     "title": coalesce(title[$locale], title.nb),
     "slug": slug.current,
-    "description": coalesce(description[$locale], description.nb),
     "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
     "body": coalesce(body[$locale], body.nb)[]{
         ...,
@@ -19,6 +19,7 @@ const articleSpec = `
         
     },
     "iconUrl": icon.asset->url,
+    languages
 }`;
 
 const frontPageSpec = `
@@ -88,6 +89,10 @@ const otherPossibilitiesSpec = `
 export interface SanityArticle {
     body: any;
     title: string;
+    slug: string;
+    metaDescription?: string;
+    iconUrl?: string;
+    languages?: Sprak[]; // Bytt til required når lagt på i alle artikler
 }
 
 export interface SanityFrontpage {

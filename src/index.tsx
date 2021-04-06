@@ -15,7 +15,6 @@ import {history} from "./utils/navigasjon";
 import Forside from "./artikler/forside/Forside";
 import SokSosialhjelp from "./artikler/sok-sosialhjelp/SokSosialhjelp";
 import Nodsituasjon from "./artikler/nodsituasjon/Nodsituasjon";
-import HvisDuErEnsligForsorger from "./artikler/hvis-du-er-enslig-forsorger/HvisDuErEnsligForsorger";
 import HvisDuHarBarn from "./artikler/hvis-du-har-barn/HvisDuHarBarn";
 import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
 import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
@@ -29,8 +28,8 @@ import Behandlingstid from "./artikler/behandlingstid/Behandlingstid";
 import KontakteVeileder from "./artikler/kontakte-veileder/KontakteVeileder";
 import Korona from "./artikler/korona/Korona";
 import StatusSoknad from "./artikler/status-soknad/StatusSoknad";
-import SanityTest from "./artikler/sanity-test/SanityTest";
 import {erProd, erQ} from "./utils/restUtils";
+import SanityArtikkel from "./artikler/SanityArtikkel";
 
 if (erProd()) {
     Sentry.init({
@@ -85,11 +84,6 @@ function App() {
                     />
                     <Route
                         exact
-                        path="/hvis-du-er-enslig-forsorger"
-                        component={HvisDuErEnsligForsorger}
-                    />
-                    <Route
-                        exact
                         path="/hvis-du-har-barn"
                         component={HvisDuHarBarn}
                     />
@@ -134,14 +128,15 @@ function App() {
 
                     <Route exact path="/korona" component={Korona} />
 
-                    <Route exact path="/sanity-test" component={SanityTest} />
+                    <Route
+                        exact
+                        path="/sanity-test"
+                        component={SanityArtikkel}
+                    />
 
                     {/* Redirects */}
                     <Route exact path="/artikkel/514891">
                         <Redirect to="/nodsituasjon" />
-                    </Route>
-                    <Route exact path="/artikkel/514877">
-                        <Redirect to="/hvis-du-er-enslig-forsorger" />
                     </Route>
                     <Route exact path="/artikkel/514874">
                         <Redirect to="/hvis-du-har-barn" />
