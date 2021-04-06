@@ -16,6 +16,10 @@ app.set("views", `${__dirname}/build`);
 app.set("view engine", "mustache");
 app.engine("html", mustacheExpress());
 
+app.get(`${basePath}/hvis-du-er-enslig-forsorger`, (req, res) =>
+    res.redirect(301, "https://www.nav.no/familie/alene-med-barn")
+);
+
 app.use(basePath, express.static(buildPath, {index: false}));
 
 // Nais functions
