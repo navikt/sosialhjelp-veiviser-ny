@@ -3,6 +3,7 @@ const packageJson = require("./package.json");
 const navFrontendModuler = [];
 Object.keys(packageJson.dependencies).forEach((key) => {
     if (key.startsWith("nav-frontend-")) {
+        console.log("key", key);
         navFrontendModuler.push(key);
     }
     if (key.startsWith("@navikt/nav-dekoratoren-moduler")) {
@@ -14,7 +15,7 @@ const withTranspileModules = require("next-transpile-modules")(
 );
 module.exports = withTranspileModules(
     withLess({
-        basePath: "/sosialhjelp/next",
+        basePath: "/sosialhjelp",
         target: "server",
         trailingSlash: false,
         reactStrictMode: true,

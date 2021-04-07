@@ -23,13 +23,15 @@ interface Props {
     children: ReactChild;
 }
 
-const StyledDecoratedApp = styled.div``;
+const StyledDecoratedApp = styled.div`
+    background-color: #e7e9e9;
+`;
 
 export const DecoratedApp = (props: Props) => {
     const breadcrumbs = [
         {
             title: "Økonomisk sosialhjelp",
-            url: "/sosialhjelp/next",
+            url: "/sosialhjelp",
         },
     ];
 
@@ -39,15 +41,15 @@ export const DecoratedApp = (props: Props) => {
 
     const availableLanguages = [
         {
-            url: "/sosialhjelp/next/nb",
+            url: "/sosialhjelp/nb",
             locale: "nb",
         },
         {
-            url: "/sosialhjelp/next/nn",
+            url: "/sosialhjelp/nn",
             locale: "nn",
         },
         {
-            url: "/sosialhjelp/next/en",
+            url: "/sosialhjelp/en",
             locale: "en",
         },
     ];
