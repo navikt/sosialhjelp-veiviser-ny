@@ -1,4 +1,4 @@
-name: Deploy til dev
+name: Deploy next-app til dev
 on:
   workflow_dispatch:
     inputs:

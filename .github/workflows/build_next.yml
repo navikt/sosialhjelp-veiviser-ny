@@ -1,4 +1,4 @@
-name: Build image
+name: Build next-app image
 on:
   push:
     branches:
