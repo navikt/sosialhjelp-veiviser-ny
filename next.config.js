@@ -3,10 +3,9 @@ const packageJson = require("./package.json");
 const navFrontendModuler = [];
 Object.keys(packageJson.dependencies).forEach((key) => {
     if (key.startsWith("nav-frontend-")) {
-        console.log("key", key);
         navFrontendModuler.push(key);
     }
-    if (key.startsWith("@navikt/nav-dekoratoren-moduler")) {
+    if (key.startsWith("@navikt/")) {
         navFrontendModuler.push(key);
     }
 });
