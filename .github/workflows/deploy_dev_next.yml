@@ -15,10 +15,10 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to dev
+    name: Deploy next-app to dev
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/${{ github.event.repository.name }}
+      DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/${{ github.event.repository.name }}-next
     steps:
       - uses: actions/checkout@v2
       - name: Create artifact version

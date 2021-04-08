@@ -10,7 +10,7 @@ on:
 # FIXME: Legg til docker layer caching, f.eks. https://github.com/marketplace/actions/build-docker-images-using-cache
 jobs:
   build:
-    name: Build and push docker image
+    name: Build next-app and push docker image
     runs-on: ubuntu-latest
     env:
       DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/${{ github.event.repository.name }}-next
