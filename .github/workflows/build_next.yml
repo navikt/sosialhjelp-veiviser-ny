@@ -49,6 +49,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.artifact-version.outputs.version }}
-          release_name: ${{ steps.artifact-version.outputs.version }}
+          tag_name: next-${{ steps.artifact-version.outputs.version }}
+          release_name: next-${{ steps.artifact-version.outputs.version }}
           commitish: ${{ github.sha }}
