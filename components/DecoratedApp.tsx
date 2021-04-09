@@ -22,6 +22,7 @@ interface Props {
 
 const StyledDecoratedApp = styled.div`
     background-color: #e7e9e9;
+    padding-bottom: 4rem;
 `;
 
 export const DecoratedApp = (props: Props) => {

@@ -171,6 +171,10 @@ export interface SanityAlert {
     type: "info" | "suksess" | "advarsel" | "feil";
 }
 
+export const fetchAllArticleSlugs = async (): Promise<[{slug: string}]> => {
+    return client.fetch(`*[_type == "article"]{ 'slug': slug.current }`);
+};
+
 export const fetchArticleWithSlugAndLocale = async (
     slug = "",
     locale = "nb"

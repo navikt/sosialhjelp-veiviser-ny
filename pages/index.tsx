@@ -13,26 +13,11 @@ import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
 import {Lenkeboks} from "../components/frontPage/Lenkeboks";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
+import {Content} from "../components/Content";
 
 interface PageProps {
     frontPage: SanityFrontpage;
 }
-
-const Content = styled.div`
-    max-width: 49.5rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media all and (max-width: 803px) {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    @media all and (min-width: 804px) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-`;
 
 const Index = (props: PageProps) => {
     const router = useRouter();
