@@ -11,6 +11,8 @@ import {Alert} from "../components/frontPage/Alert";
 import {SokOmSosialhjelpPanel} from "../components/frontPage/SokSosialhjelpPanel";
 import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
 import {Lenkeboks} from "../components/frontPage/Lenkeboks";
+import {useRouter} from "next/router";
+import {Language} from "@navikt/nav-dekoratoren-moduler";
 
 interface PageProps {
     frontPage: SanityFrontpage;
@@ -33,8 +35,17 @@ const Content = styled.div`
 `;
 
 const Index = (props: PageProps) => {
+    const router = useRouter();
+
+    const languages: Language[] = router.locales.map((locale) => {
+        return {
+            locale,
+            url: `${router.basePath}/${locale}`,
+        };
+    });
+
     return (
-        <DecoratedApp breadcrumbs={[]} availableLanguages={[]}>
+        <DecoratedApp availableLanguages={languages}>
             <>
                 <PageBanner
                     isFrontPage
@@ -69,8 +80,8 @@ interface StaticProps {
     };
     revalidate: number;
 }
-export const getStaticProps = async (): Promise<StaticProps> => {
-    const frontPage = await fetchFrontPageWithLocale("nb");
+export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
+    const frontPage = await fetchFrontPageWithLocale(locale);
     return {
         props: {frontPage},
         revalidate: 60,
