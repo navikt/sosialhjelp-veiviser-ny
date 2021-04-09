@@ -23,11 +23,9 @@ app.get(`${basePath}/hvis-du-er-enslig-forsorger`, (req, res) =>
 app.use(basePath, express.static(buildPath, {index: false}));
 
 // Nais functions
-app.get(`${basePath}/internal/isAlive|isReady`, (req, res) =>
-    res.sendStatus(200)
-);
+app.get(`${basePath}/api/isAlive|isReady`, (req, res) => res.sendStatus(200));
 
-app.use(/^(?!.*\/(internal|static)\/).*$/, (req, res) =>
+app.use(/^(?!.*\/(internal|api|static)\/).*$/, (req, res) =>
     res.render("index.html", {DECORATOR_URL: decoratorUrl})
 );
 
