@@ -1,9 +1,6 @@
-import {ReactChild, useEffect} from "react";
+import {ReactChild} from "react";
 import styled from "styled-components/macro";
-import {
-    setBreadcrumbs,
-    setAvailableLanguages,
-} from "@navikt/nav-dekoratoren-moduler";
+import {useDecorator} from "../src/utils/useNextDecorator";
 
 export interface Breadcrumb {
     url: string;
@@ -18,7 +15,7 @@ export interface Language {
 }
 
 interface Props {
-    breadcrumbs: Breadcrumb[];
+    breadcrumbPage?: Breadcrumb;
     availableLanguages: Language[];
     children: ReactChild;
 }
@@ -28,35 +25,7 @@ const StyledDecoratedApp = styled.div`
 `;
 
 export const DecoratedApp = (props: Props) => {
-    const breadcrumbs = [
-        {
-            title: "Økonomisk sosialhjelp",
-            url: "/sosialhjelp",
-        },
-    ];
-
-    useEffect(() => {
-        setBreadcrumbs(breadcrumbs);
-    }, [breadcrumbs]);
-
-    const availableLanguages = [
-        {
-            url: "/sosialhjelp/nb",
-            locale: "nb",
-        },
-        {
-            url: "/sosialhjelp/nn",
-            locale: "nn",
-        },
-        {
-            url: "/sosialhjelp/en",
-            locale: "en",
-        },
-    ];
-
-    useEffect(() => {
-        setAvailableLanguages(availableLanguages);
-    }, [availableLanguages]);
+    useDecorator(props.breadcrumbPage, props.availableLanguages);
 
     return <StyledDecoratedApp>{props.children}</StyledDecoratedApp>;
 };
