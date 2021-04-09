@@ -1,25 +1,35 @@
-import Document, {Html, Head, Main, NextScript} from "next/document";
-import {fetchDecoratorReact} from "@navikt/nav-dekoratoren-moduler/ssr";
-import {FunctionComponent} from "react";
+import Document, {
+    Html,
+    Head,
+    Main,
+    NextScript,
+    DocumentContext,
+} from "next/document";
+import {
+    Components,
+    ENV,
+    fetchDecoratorReact,
+    Props,
+} from "@navikt/nav-dekoratoren-moduler/ssr";
+import {ServerStyleSheet} from "styled-components";
+import {NextPageContext} from "next";
+import {RenderPage} from "next/dist/next-server/lib/utils";
 
-interface DecoratorProps {
-    decorator: {
-        Styles: FunctionComponent;
-        Scripts: FunctionComponent;
-        Header: FunctionComponent;
-        Footer: FunctionComponent;
-    };
-}
+const decoratorEnv = process.env.DECORATOR_ENV as Exclude<ENV, "localhost">;
 
-class MyDocument extends Document<DecoratorProps> {
-    static async getInitialProps(ctx) {
-        const initialProps = await Document.getInitialProps(ctx);
-        const decorator = await fetchDecoratorReact({
-            env: "prod",
-            chatbot: false,
-            feedback: false,
-        });
-        return {...initialProps, decorator};
+const decoratorParams: Props = {
+    env: decoratorEnv ?? "prod",
+    chatbot: false,
+    feedback: false,
+};
+
+class MyDocument extends Document<{decorator: Components}> {
+    static async getInitialProps(ctx: DocumentContext) {
+        const styledComponentsStylesheet = await renderServersideStyledComponentsStylesheet(
+            ctx
+        );
+        const decorator = await fetchDecoratorReact(decoratorParams);
+        return {...styledComponentsStylesheet, decorator};
     }
 
     render() {
@@ -40,6 +50,33 @@ class MyDocument extends Document<DecoratorProps> {
                 </body>
             </Html>
         );
+    }
+}
+
+// https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
+async function renderServersideStyledComponentsStylesheet(
+    ctx: NextPageContext & {renderPage: RenderPage}
+) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+    try {
+        ctx.renderPage = () =>
+            originalRenderPage({
+                enhanceApp: (App) => (props) =>
+                    sheet.collectStyles(<App {...props} />),
+            });
+        const initialProps = await Document.getInitialProps(ctx);
+        return {
+            ...initialProps,
+            styles: (
+                <>
+                    {initialProps.styles}
+                    {sheet.getStyleElement()}
+                </>
+            ),
+        };
+    } finally {
+        sheet.seal();
     }
 }
 
