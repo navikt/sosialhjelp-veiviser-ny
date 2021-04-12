@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {
@@ -6,7 +7,6 @@ import {
 } from "../src/utils/sanityFetch";
 
 import {PageBanner} from "../components/PageBanner";
-import styled from "styled-components/macro";
 import {Alert} from "../components/frontPage/Alert";
 import {SokOmSosialhjelpPanel} from "../components/frontPage/SokSosialhjelpPanel";
 import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
@@ -32,6 +32,23 @@ const Index = (props: PageProps) => {
     return (
         <DecoratedApp availableLanguages={languages}>
             <>
+                <Head>
+                    <title>{props.frontPage.title}</title>
+                    <meta property="og:title" content={props.frontPage.title} />
+                    <meta
+                        name="Description"
+                        content={props.frontPage.metaDescription}
+                    />
+                    <meta
+                        property="og:description"
+                        content={props.frontPage.metaDescription}
+                    />
+                    <meta property="og:locale" content={router.locale} />
+                    {/*<meta
+                        property="og:image"
+                        content={props.frontPage.bannerIconUrl}
+                    /> TODO: Legge til delebilde i Sanity */}
+                </Head>
                 <PageBanner
                     isFrontPage
                     title={props.frontPage.title}
@@ -69,7 +86,7 @@ export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
     const frontPage = await fetchFrontPageWithLocale(locale);
     return {
         props: {frontPage},
-        revalidate: 60,
+        revalidate: 1,
     };
 };
 

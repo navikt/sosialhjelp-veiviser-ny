@@ -22,6 +22,12 @@ const articleSpec = `
     languages
 }`;
 
+const metadataSpec = `
+{
+    "title": coalesce(title[$locale], title.nb),
+}
+`;
+
 const frontPageSpec = `
 {
     "title": coalesce(title[$locale], title.nb),
@@ -93,6 +99,10 @@ export interface SanityArticle {
     metaDescription?: string;
     iconUrl?: string;
     languages?: Sprak[]; // Bytt til required når lagt på i alle artikler
+}
+
+export interface SanityMetadata {
+    title: string;
 }
 
 export interface SanityFrontpage {
@@ -170,6 +180,14 @@ export interface SanityJobblystPanel {
 export interface SanityAlert {
     type: "info" | "suksess" | "advarsel" | "feil";
 }
+
+export const fetchMetadataWithLocale = async (
+    locale = "nb"
+): Promise<SanityMetadata> => {
+    const query = `*[_type == "frontPage"][0]${metadataSpec}`;
+    const params = {locale: locale};
+    return client.fetch(query, params);
+};
 
 export const fetchAllArticleSlugs = async (): Promise<[{slug: string}]> => {
     return client.fetch(`*[_type == "article"]{ 'slug': slug.current }`);

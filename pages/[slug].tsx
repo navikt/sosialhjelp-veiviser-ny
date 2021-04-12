@@ -11,13 +11,17 @@ import {SanityBlockContent} from "../components/SanityBlockContentNext";
 import {
     fetchAllArticleSlugs,
     fetchArticleWithSlugAndLocale,
+    fetchMetadataWithLocale,
     SanityArticle,
+    SanityMetadata,
 } from "../src/utils/sanityFetch";
 import Custom404 from "./404";
 import {Lastestriper} from "../src/komponenter/Lastestriper";
+import Head from "next/head";
 
 interface PageProps {
     article: SanityArticle;
+    metadata: SanityMetadata;
 }
 
 const StyledIcon = styled.img`
@@ -28,7 +32,7 @@ const StyledIcon = styled.img`
 const ArticlePage = (props: PageProps) => {
     const router = useRouter();
 
-    const {article} = props;
+    const {article, metadata} = props;
 
     if (router.isFallback) {
         return (
@@ -67,7 +71,29 @@ const ArticlePage = (props: PageProps) => {
             availableLanguages={languages}
         >
             <>
-                <PageBanner title={article.title} />
+                <Head>
+                    <title>
+                        {props.metadata.title} - {props.article.title}
+                    </title>
+                    <meta
+                        property="og:title"
+                        content={`${props.metadata.title} - ${props.article.title}`}
+                    />
+                    <meta
+                        name="Description"
+                        content={props.article.metaDescription}
+                    />
+                    <meta
+                        property="og:description"
+                        content={props.article.metaDescription}
+                    />
+                    <meta property="og:locale" content={router.locale} />
+                    {/*<meta
+                        property="og:image"
+                        content={props.metadata.bannerIconUrl}
+                    /> TODO: Legge til delebilde i Sanity */}
+                </Head>
+                <PageBanner title={metadata.title} />
                 <Content>
                     <Article>
                         {article?.iconUrl && (
@@ -104,6 +130,7 @@ export const getStaticPaths = async (): Promise<StaticPathProps> => {
 interface StaticProps {
     props: {
         article: SanityArticle;
+        metadata: SanityMetadata;
     };
     revalidate: number;
 }
@@ -112,9 +139,10 @@ export const getStaticProps = async ({
     locale,
     params: {slug},
 }): Promise<StaticProps> => {
+    const metadata = await fetchMetadataWithLocale(locale);
     const article = await fetchArticleWithSlugAndLocale(slug, locale);
     return {
-        props: {article},
+        props: {article, metadata},
         revalidate: 60,
     };
 };
