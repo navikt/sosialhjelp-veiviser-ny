@@ -7,42 +7,30 @@ import {Content} from "../components/Content";
 import {Article} from "../components/article/Article";
 import {PageBanner} from "../components/PageBanner";
 
-const Custom404 = () => {
+const Custom500 = () => {
     return (
         <DecoratedApp availableLanguages={[]}>
             <>
                 <PageBanner title="Økonomisk sosialhjelp" />
                 <Content>
                     <Article>
-                        <Innholdstittel>Fant ikke siden</Innholdstittel>
+                        <Innholdstittel>
+                            Det har oppstått en feil
+                        </Innholdstittel>
                         <Normaltekst>
-                            Beklager, siden kan være slettet eller flyttet,
-                            eller det var en feil i lenken som førte deg hit.
-                        </Normaltekst>
-                        <Normaltekst>
-                            Du kan{" "}
+                            Du kan laste siden på nytt,{" "}
                             <Lenke href="https://www.nav.no/">
                                 gå til forsiden
                             </Lenke>
-                            , eller lese mer om{" "}
-                            <Link href="/">
-                                <a className="lenke">økonomisk sosialhjelp</a>
-                            </Link>
-                            .
+                            , eller prøve igjen senere.
                         </Normaltekst>
 
                         <Undertittel>In English</Undertittel>
                         <Normaltekst>
-                            The page you requested cannot be found.
-                        </Normaltekst>
-                        <Normaltekst>
-                            Go to the{" "}
+                            An error occurred. You can try to refresh the page,
+                            go to the{" "}
                             <Lenke href="https://www.nav.no/">front page</Lenke>
-                            , or read more about{" "}
-                            <Link href="/en">
-                                <a className="lenke">financial assistance</a>
-                            </Link>
-                            .
+                            , or try again later.
                         </Normaltekst>
                     </Article>
                 </Content>
@@ -51,4 +39,4 @@ const Custom404 = () => {
     );
 };
 
-export default Custom404;
+export default Custom500;
