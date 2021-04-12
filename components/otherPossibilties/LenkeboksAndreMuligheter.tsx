@@ -56,7 +56,9 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
                                 if (element.internalHref) {
                                     return (
                                         <li>
-                                            <Link href={element.internalHref}>
+                                            <Link
+                                                href={`/${element.internalHref}`}
+                                            >
                                                 <a className="lenke">
                                                     {element.text}
                                                 </a>
