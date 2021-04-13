@@ -17,6 +17,19 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: "metaDescription",
+            title: "Metabeskrivelse",
+            type: "localeString",
+            description:
+                "Dette er teksten som vil vises for søkeresultater på eks. Google",
+            validation: (Rule) => Rule.required(),
+        },
+        {
+            name: "icon",
+            title: "Ikon",
+            type: "image",
+        },
+        {
             name: "ingress",
             title: "Ingress",
             type: "localeString",

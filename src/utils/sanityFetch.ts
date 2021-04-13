@@ -70,6 +70,8 @@ const panelSpec = `
 const otherPossibilitiesSpec = `
 {
     "title": coalesce(title[$locale], title.nb),
+    "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+    "iconUrl": icon.asset->url,
     "ingress": coalesce(ingress[$locale], ingress.nb),
     "panelTopLeft": panelTopLeft${panelSpec},
     "panelTopRight": panelTopRight${panelSpec},
@@ -135,6 +137,8 @@ export interface SanityFrontpage {
 
 export interface SanityOtherPossibilitiesPage {
     title: string;
+    metaDescription?: string;
+    iconUrl?: string;
     ingress: string;
     panelTopLeft: SanityPanelSpec;
     panelTopRight: SanityPanelSpec;

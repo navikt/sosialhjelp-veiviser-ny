@@ -86,7 +86,7 @@ export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
     const frontPage = await fetchFrontPageWithLocale(locale);
     return {
         props: {frontPage},
-        revalidate: 1,
+        revalidate: 60,
     };
 };
 
