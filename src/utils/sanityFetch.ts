@@ -2,22 +2,26 @@ import {AlertStripeType} from "nav-frontend-alertstriper";
 import client from "./sanityClient";
 import {Sprak} from "./sprakUtils";
 
+const blockContentSpec = `
+{
+    ...,
+    markDefs[]{
+        ...,
+        _type == 'internalLink' => {
+            "slug": @.reference->slug,
+        },
+    },
+    
+}
+`;
+
 const articleSpec = `
 {
     "id": _id,
     "title": coalesce(title[$locale], title.nb),
     "slug": slug.current,
     "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
-    "body": coalesce(body[$locale], body.nb)[]{
-        ...,
-        markDefs[]{
-            ...,
-            _type == 'internalLink' => {
-                "slug": @.reference->slug,
-            },
-        },
-        
-    },
+    "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
     "iconUrl": icon.asset->url,
     languages
 }`;
@@ -53,6 +57,31 @@ const frontPageSpec = `
     }
 }
 `;
+
+const applicationPageSpec = `
+{
+    "title": coalesce(title[$locale], title.nb),
+    "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+    "ingress": coalesce(ingress[$locale], ingress.nb),
+    "applyDigitallyPanel": applyDigitallyPanel{
+        "title": coalesce(title[$locale], title.nb),
+        "iconUrl": icon.asset->url,
+        "buttonText": coalesce(buttonText[$locale], buttonText.nb),
+        "label": coalesce(label[$locale], label.nb),
+        "errorText": coalesce(errorText[$locale], errorText.nb),
+        "openPanelLink": coalesce(openPanelLink[$locale], openPanelLink.nb),
+        "closePanelLink": coalesce(closePanelLink[$locale], closePanelLink.nb),
+        "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+        "soknadOgInnsynTekst": coalesce(soknadOgInnsynTekst[$locale], soknadOgInnsynTekst.nb)[]${blockContentSpec},
+        "soknadUtenInnsynTekst": coalesce(soknadUtenInnsynTekst[$locale], soknadUtenInnsynTekst.nb)[]${blockContentSpec},
+        "kunPapirTekst": coalesce(kunPapirTekst[$locale], kunPapirTekst.nb)[]${blockContentSpec},
+    },
+    "applyOfflinePanel": applyOfflinePanel{
+        "title": coalesce(title[$locale], title.nb),
+        "iconUrl": icon.asset->url,
+        "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+    }
+}`;
 
 const panelSpec = `
 {
@@ -135,6 +164,32 @@ export interface SanityFrontpage {
     ];
 }
 
+export interface SanityApplicationPage {
+    title: string;
+    metaDescription: string;
+    ingress: string;
+    applyDigitallyPanel: SanityApplyDigitallyPanel;
+    applyOfflinePanel: {
+        title: string;
+        iconUrl: string;
+        body: any;
+    };
+}
+
+export interface SanityApplyDigitallyPanel {
+    title: string;
+    iconUrl: string;
+    buttonText: string;
+    label: string;
+    errorText: string;
+    openPanelLink: string;
+    closePanelLink: string;
+    body: any;
+    soknadOgInnsynTekst: any;
+    soknadUtenInnsynTekst: any;
+    kunPapirTekst: any;
+}
+
 export interface SanityOtherPossibilitiesPage {
     title: string;
     metaDescription?: string;
@@ -211,6 +266,14 @@ export const fetchFrontPageWithLocale = async (
     locale = "nb"
 ): Promise<SanityFrontpage> => {
     const query = `*[_type == "frontPage"][0]${frontPageSpec}`;
+    const params = {locale: locale};
+    return client.fetch(query, params);
+};
+
+export const fetchApplicationPageWithLocale = async (
+    locale = "nb"
+): Promise<SanityApplicationPage> => {
+    const query = `*[_type == "applicationPage"][0]${applicationPageSpec}`;
     const params = {locale: locale};
     return client.fetch(query, params);
 };
