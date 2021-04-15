@@ -23,6 +23,9 @@ import jobblystPanel from "./otherPossibilities/jobblystPanel";
 import housingPanel from "./otherPossibilities/housingPanel";
 import boxContent from "./otherPossibilities/boxContent";
 import boxPanel from "./otherPossibilities/boxPanel";
+import applicationPage from "./howToApply/applicationPage";
+import applyDigitallyPanel from "./howToApply/applyDigitallyPanel";
+import applyOfflinePanel from "./howToApply/applyOfflinePanel";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +35,9 @@ export default createSchema({
     // to the ones provided by any plugins that are installed
     types: schemaTypes.concat([
         alert,
+        applicationPage,
+        applyDigitallyPanel,
+        applyOfflinePanel,
         article,
         blockContent,
         boxContent,
