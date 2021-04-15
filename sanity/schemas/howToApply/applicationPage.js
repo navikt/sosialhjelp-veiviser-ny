@@ -9,12 +9,21 @@ export default {
             title: `title.${defaultLanguage.id}`,
         },
     },
+    initialValue: {
+        slug: "slik-soker-du",
+    },
     fields: [
         {
             name: "title",
             title: "Tittel",
             type: "localeString",
             validation: (Rule) => Rule.required(),
+        },
+        {
+            name: "slug",
+            title: "Slug",
+            type: "slug",
+            readOnly: true,
         },
         {
             name: "languages",

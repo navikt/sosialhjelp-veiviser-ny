@@ -67,6 +67,10 @@ export default {
                                     {
                                         type: "article",
                                     },
+                                    {
+                                        type: "otherPossibilities",
+                                    },
+                                    {type: "applicationPage"},
                                 ],
                             },
                         ],
