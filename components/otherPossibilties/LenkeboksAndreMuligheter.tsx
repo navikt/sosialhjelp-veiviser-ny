@@ -55,7 +55,7 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
                             {panel.boxElements.map((element) => {
                                 if (element.internalHref) {
                                     return (
-                                        <li>
+                                        <li key={element.internalHref}>
                                             <Link
                                                 href={`/${element.internalHref}`}
                                             >
@@ -68,7 +68,7 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
                                 }
                                 if (element.externalHref)
                                     return (
-                                        <li>
+                                        <li key={element.externalHref}>
                                             <Lenke href={element.externalHref}>
                                                 {element.text}
                                             </Lenke>

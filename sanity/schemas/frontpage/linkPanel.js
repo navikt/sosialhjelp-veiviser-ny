@@ -29,6 +29,10 @@ export default {
                 {
                     type: "article",
                 },
+                {
+                    type: "otherPossibilities",
+                },
+                {type: "applicationPage"},
             ],
             validation: (Rule) => Rule.required(),
         },

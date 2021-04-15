@@ -26,7 +26,15 @@ export default {
             name: "article",
             title: "Artikkel",
             type: "reference",
-            to: {type: "article"},
+            to: [
+                {
+                    type: "article",
+                },
+                {
+                    type: "otherPossibilities",
+                },
+                {type: "applicationPage"},
+            ],
             validation: (Rule) => Rule.required(),
         },
     ],

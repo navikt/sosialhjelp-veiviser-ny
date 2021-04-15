@@ -13,7 +13,6 @@ import Vimeo from "@u-wave/react-vimeo";
 import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
-//import {SokDigitalt} from "./sokDigitalt/SokDigitalt";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
@@ -32,13 +31,6 @@ const serializers = {
         vimeo: function renderVimeo({node}) {
             const {url} = node;
             return <Vimeo responsive video={url} />;
-        },
-        customBlockComponent: function renderCustomBlockComponent({node}) {
-            const {customValue} = node;
-            /*if (customValue === "sokDigitalt") {
-                return <SokDigitalt />;
-            }*/
-            return <div>Ikke implementert</div>;
         },
         expandedPanel: function renderExpandedPanel({node}) {
             return (

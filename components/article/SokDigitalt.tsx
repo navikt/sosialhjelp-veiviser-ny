@@ -34,7 +34,7 @@ export const SokDigitalt = (props: {
 
     const onButtonClick = (event) => {
         event.preventDefault();
-        router.push("/sosialhjelp/soknad/informasjon");
+        router.push("https://www.nav.no/sosialhjelp/soknad/informasjon");
     };
 
     return (
