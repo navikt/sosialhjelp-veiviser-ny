@@ -1,5 +1,6 @@
 import React from "react";
 import {FaPaperclip} from "react-icons/fa";
+import {properties} from "./interpolateProps";
 
 const IngressRender = (props) => (
     <p style={{fontSize: "1.25rem"}}>{props.children}</p>
@@ -84,6 +85,25 @@ export default {
                                 title: "Open in new tab",
                                 name: "blank",
                                 type: "boolean",
+                            },
+                        ],
+                    },
+                    {
+                        type: "object",
+                        name: "interpolate",
+                        title: "Interpolate",
+                        fields: [
+                            {
+                                name: "prop",
+                                type: "string",
+                                description:
+                                    "En templateverdi som blir byttet ut med en ekte verdi i appen, eks: kommuneNavn = 'Oslo'",
+                                options: {
+                                    list: Object.keys(properties).map((it) => ({
+                                        title: it,
+                                        value: it,
+                                    })),
+                                },
                             },
                         ],
                     },
