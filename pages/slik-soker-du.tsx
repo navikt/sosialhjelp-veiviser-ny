@@ -17,7 +17,6 @@ import {
     fetchApplicationPageWithLocale,
     SanityApplicationPage,
 } from "../src/utils/sanityFetch";
-import {localeToSprak} from "../src/utils/sprakUtils";
 import {fetchKommuner, KommunerResponse} from "./api/kommuner";
 import {fetchNedetid, NedetidResponse} from "./api/nedetid";
 
@@ -54,8 +53,6 @@ const SlikSokerDu = (props: PageProps) => {
             url: `${router.basePath}/${locale}/slik-soker-du`,
         };
     });
-
-    console.log("props", props.page.applyDigitallyPanel);
 
     return (
         <DecoratedApp
@@ -110,7 +107,6 @@ const SlikSokerDu = (props: PageProps) => {
                                     {props.page.applyDigitallyPanel.title}
                                 </Undertittel>
                                 <SokDigitalt
-                                    lang={localeToSprak(router.locale)}
                                     nedetid={props.nedetid}
                                     kommuner={props.kommuner}
                                     applyDigitallyPanel={

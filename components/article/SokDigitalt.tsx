@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components/macro";
 import {Hovedknapp} from "nav-frontend-knapper";
 
-import {Sprak} from "../../src/utils/sprakUtils";
-//import {tekster} from "../../src/komponenter/sokDigitalt/SokDigitalt";
 import {useRouter} from "next/router";
 import {Normaltekst} from "nav-frontend-typografi";
 import {KommunerResponse} from "../../pages/api/kommuner";
@@ -26,7 +24,6 @@ export const StyledSokDigitalt = styled.div`
 `;
 
 export const SokDigitalt = (props: {
-    lang: Sprak;
     nedetid: NedetidResponse;
     kommuner: KommunerResponse;
     applyDigitallyPanel: SanityApplyDigitallyPanel;
