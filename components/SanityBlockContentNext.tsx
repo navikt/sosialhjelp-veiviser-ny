@@ -7,7 +7,7 @@ import {
     Undertittel,
 } from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
-import React from "react";
+import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
 import client, {urlFor} from "../src/utils/sanityClient";
@@ -62,6 +62,7 @@ const serializers = {
                 </StyledVeilederPanel>
             );
         },
+
         block: function renderBlock({node, children}) {
             const style = node.style;
             if (style === "normal") {
@@ -76,7 +77,6 @@ const serializers = {
             if (style === "ingress") {
                 return <Ingress>{children}</Ingress>;
             }
-
             console.error("unhandled style", node);
             return children;
         },
@@ -102,15 +102,30 @@ const serializers = {
                 </Link>
             );
         },
+        interpolate: function renderInterpolate({mark}) {
+            const context = useContext(SanityContext);
+            const {prop} = mark;
+
+            const value = context[prop];
+
+            return <>{value}</>;
+        },
     },
 };
 
-export const SanityBlockContent = (props) => {
+const SanityContext = React.createContext({});
+
+export const SanityBlockContent = (props: {
+    blocks: any;
+    templateProps?: object;
+}) => {
     return (
-        <BlockContent
-            blocks={props.blocks}
-            serializers={serializers}
-            {...client.config()}
-        />
+        <SanityContext.Provider value={props.templateProps}>
+            <BlockContent
+                blocks={props.blocks}
+                serializers={serializers}
+                {...client.config()}
+            />
+        </SanityContext.Provider>
     );
 };
