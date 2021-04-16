@@ -113,17 +113,18 @@ export interface StaticPathProps {
     fallback: boolean;
 }
 
-export const getStaticPaths = async (): Promise<StaticPathProps> => {
+export const getStaticPaths = async ({locales}): Promise<StaticPathProps> => {
     const articleSlugs = await fetchAllArticleSlugs();
 
     return {
-        paths:
-            articleSlugs?.map((article) => ({
-                params: {
-                    slug: article.slug,
-                },
-            })) || [],
-        fallback: true,
+        paths: locales
+            .map((locale: string) => {
+                return articleSlugs?.map((page) => {
+                    return {params: {slug: page.slug}, locale};
+                });
+            })
+            .flat(),
+        fallback: false,
     };
 };
 
