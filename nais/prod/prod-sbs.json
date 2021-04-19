@@ -12,6 +12,7 @@
   "env": {
     "APPRES_CMS_URL": "https://appres.nav.no",
     "FASIT_ENVIRONMENT_NAME": "p",
-    "DECORATOR_URL": "https://www.nav.no/dekoratoren"
+    "DECORATOR_URL": "https://www.nav.no/dekoratoren",
+    "NODE_EXTRA_CA_CERTS": "/etc/ssl/ca-bundle.pem"
   }
 }
