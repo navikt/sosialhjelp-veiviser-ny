@@ -11,8 +11,12 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: "appres.nav.no"
-        - host: "nav.psplugin.com"
+        - host: www.nav.no
+        - host: api.sanity.io
+        - host: hvfvg2j3.api.sanity.io
+        - host: apicdn.sanity.io
+        - host: hvfvg2j3.apicdn.sanity.io
+        - host: cdn.sanity.io
       rules: []
   ingresses:
 {{#each ingresses}}
@@ -38,16 +42,7 @@ spec:
     min: 2
     max: 4
     cpuThresholdPercentage: 70
-  webproxy: {{webProxyEnabled}}
-  accessPolicy:
-    outbound:
-      external:
-        - host: www.nav.no
-        - host: api.sanity.io
-        - host: hvfvg2j3.api.sanity.io
-        - host: apicdn.sanity.io
-        - host: hvfvg2j3.apicdn.sanity.io
-        - host: cdn.sanity.io
+  webproxy: {{webProxyEnabled}} 
   env:
 {{#each env}}
     - name: {{@key}}
