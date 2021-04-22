@@ -1,5 +1,6 @@
 import {erDev} from "./restUtils";
 import {createBrowserHistory} from "history";
+import React from "react";
 
 /**
  * Resolves basename in a pathname independent way
@@ -35,6 +36,11 @@ const gaaTilDigitalSoknad = (kommuneId?: string): void => {
             "https://sosialhjelp-soknad.labs.nais.io/sosialhjelp/soknad/mock-login";
     }
     window.location.href = soknadUrl;
+};
+
+export const goToInnsyn = (event: React.SyntheticEvent) => {
+    window.location.assign("https://www.nav.no/sosialhjelp/innsyn");
+    event.preventDefault();
 };
 
 export {getAbsoluteBasename, history, gaaTilDigitalSoknad, onClickLink};

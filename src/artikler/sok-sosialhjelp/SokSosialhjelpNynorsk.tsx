@@ -12,7 +12,7 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
-import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
+import {gaaTilDigitalSoknad, goToInnsyn} from "../../utils/navigasjon";
 import AlertStripe from "nav-frontend-alertstriper";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import {REST_STATUS} from "../../utils/restUtils";
@@ -22,7 +22,7 @@ import useTilgjengeligeKommunerService, {
 } from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
-import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {ANTALL_KOMMUNER, ButtonRow, StyledKnapp} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
@@ -66,24 +66,14 @@ const SokSosialhjelpNynorsk: React.FC = () => {
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid && (
-                        <div>
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp disabled={true}>
-                                    Gå til søknad
-                                </Hovedknapp>
-                            </div>
-                            <AlertStripe
-                                type="feil"
-                                style={{textAlign: "left"}}
-                            >
-                                Du kan ikkje sende digital søknad i perioden{" "}
-                                {nedetidService.payload.nedetidStartText} –{" "}
-                                {nedetidService.payload.nedetidSluttText} grunna
-                                teknisk vedlikehald. Ta kontakt med ditt lokale
-                                NAV-kontor viss du skal søkje om økonomisk
-                                sosialhjelp i denne perioden.
-                            </AlertStripe>
-                        </div>
+                        <AlertStripe type="feil" style={{textAlign: "left"}}>
+                            Du kan ikkje sende digital søknad i perioden{" "}
+                            {nedetidService.payload.nedetidStartText} –{" "}
+                            {nedetidService.payload.nedetidSluttText} grunna
+                            teknisk vedlikehald. Ta kontakt med ditt lokale
+                            NAV-kontor viss du skal søkje om økonomisk
+                            sosialhjelp i denne perioden.
+                        </AlertStripe>
                     )}
 
                 {!(
@@ -91,12 +81,29 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                     nedetidService.payload.isNedetid
                 ) && (
                     <>
-                        <Hovedknapp
-                            style={{marginTop: "1.5rem", marginBottom: "2rem"}}
-                            onClick={(event: any) => sokDigital(event)}
-                        >
-                            Søk digitalt
-                        </Hovedknapp>
+                        <ButtonRow>
+                            <Hovedknapp
+                                disabled={
+                                    nedetidService.restStatus ===
+                                        REST_STATUS.OK &&
+                                    nedetidService.payload.isNedetid
+                                }
+                                onClick={(event: any) => sokDigital(event)}
+                            >
+                                Søk digitalt
+                            </Hovedknapp>
+
+                            <StyledKnapp
+                                disabled={
+                                    nedetidService.restStatus ===
+                                        REST_STATUS.OK &&
+                                    nedetidService.payload.isNedetid
+                                }
+                                onClick={(event) => goToInnsyn(event)}
+                            >
+                                Sjå mine søknader
+                            </StyledKnapp>
+                        </ButtonRow>
 
                         <Avsnitt>
                             Digital søknad om økonomisk sosialhjelp vil snart

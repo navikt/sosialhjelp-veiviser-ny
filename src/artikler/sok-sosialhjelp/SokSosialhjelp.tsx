@@ -5,6 +5,8 @@ import SokSosialhjelpNynorsk from "./SokSosialhjelpNynorsk";
 import SokSosialhjelpBokmal from "./SokSosialhjelpBokmal";
 import SokSosialhjelpEngelsk from "./SokSosialhjelpEngelsk";
 import "./sokSosialhjelp.less";
+import {Knapp} from "nav-frontend-knapper";
+import styled from "styled-components";
 
 export const ANTALL_KOMMUNER = 356;
 
@@ -21,5 +23,31 @@ const SokSosialhjelp: React.FC = () => {
         </Oversettelser>
     );
 };
+
+export const ButtonRow = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    justify-content: space-evenly;
+
+    @media all and (min-width: 804px) {
+        flex-direction: row;
+    }
+`;
+
+export const StyledKnapp = styled(Knapp)`
+    transform: translateY(-2px);
+
+    margin-top: 1rem;
+
+    @media all and (min-width: 804px) {
+        margin-top: 0rem;
+    }
+`;
 
 export default SokSosialhjelp;

@@ -12,7 +12,7 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
-import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
+import {gaaTilDigitalSoknad, goToInnsyn} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import AlertStripe from "nav-frontend-alertstriper";
@@ -22,7 +22,7 @@ import useTilgjengeligeKommunerService, {
 } from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
-import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {ANTALL_KOMMUNER, ButtonRow, StyledKnapp} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
@@ -66,12 +66,27 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     Apply digitally
                 </Undertittel>
 
-                <Hovedknapp
-                    style={{marginTop: "1.5rem", marginBottom: "2rem"}}
-                    onClick={(event: any) => sokDigital(event)}
-                >
-                    Apply digitally
-                </Hovedknapp>
+                <ButtonRow>
+                    <Hovedknapp
+                        disabled={
+                            nedetidService.restStatus === REST_STATUS.OK &&
+                            nedetidService.payload.isNedetid
+                        }
+                        onClick={(event: any) => sokDigital(event)}
+                    >
+                        Apply digitally
+                    </Hovedknapp>
+
+                    <StyledKnapp
+                        disabled={
+                            nedetidService.restStatus === REST_STATUS.OK &&
+                            nedetidService.payload.isNedetid
+                        }
+                        onClick={(event) => goToInnsyn(event)}
+                    >
+                        See my applications
+                    </StyledKnapp>
+                </ButtonRow>
 
                 <Avsnitt>
                     All municipalities should be able to receive digital
