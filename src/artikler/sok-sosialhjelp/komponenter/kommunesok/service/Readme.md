@@ -13,7 +13,3 @@ npm start
 
 Dette starter opp en proxyserver lokalt på port 8080. Alle endepunkter kan kontaktes via
 `http://localhost:8080/https://navn.no/osv.osv`
-
-## Proxyserver på codesandbox
-
-På codesandbox kan serveren `cors-anywhere.herokuapp.com` brukes.
