@@ -7,6 +7,9 @@ import SokSosialhjelpEngelsk from "./SokSosialhjelpEngelsk";
 import "./sokSosialhjelp.less";
 import {Knapp} from "nav-frontend-knapper";
 import styled from "styled-components";
+import {REST_STATUS} from "../../utils/restUtils";
+import {ServiceHookTypes} from "./komponenter/kommunesok/service/ServiceHookTypes";
+import {Nedetid} from "./komponenter/kommunesok/service/useNedetidService";
 
 export const ANTALL_KOMMUNER = 356;
 
@@ -24,6 +27,15 @@ const SokSosialhjelp: React.FC = () => {
     );
 };
 
+export const getDisabledClassname = (
+    nedetidService: ServiceHookTypes<Nedetid>
+) => {
+    return nedetidService.restStatus === REST_STATUS.OK &&
+        nedetidService.payload.isNedetid
+        ? "knapp--disabled"
+        : "";
+};
+
 export const ButtonRow = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -33,21 +45,15 @@ export const ButtonRow = styled.div`
     margin-top: 1.5rem;
     margin-bottom: 2rem;
 
-    justify-content: space-evenly;
-
-    @media all and (min-width: 804px) {
-        flex-direction: row;
+    a {
+        white-space: break-spaces;
     }
 `;
 
-export const StyledKnapp = styled(Knapp)`
+export const StyledKnapp = styled.a`
     transform: translateY(-2px);
 
     margin-top: 1rem;
-
-    @media all and (min-width: 804px) {
-        margin-top: 0rem;
-    }
 `;
 
 export default SokSosialhjelp;

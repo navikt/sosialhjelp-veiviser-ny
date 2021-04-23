@@ -38,9 +38,4 @@ const gaaTilDigitalSoknad = (kommuneId?: string): void => {
     window.location.href = soknadUrl;
 };
 
-export const goToInnsyn = (event: React.SyntheticEvent) => {
-    window.location.assign("https://www.nav.no/sosialhjelp/innsyn");
-    event.preventDefault();
-};
-
 export {getAbsoluteBasename, history, gaaTilDigitalSoknad, onClickLink};

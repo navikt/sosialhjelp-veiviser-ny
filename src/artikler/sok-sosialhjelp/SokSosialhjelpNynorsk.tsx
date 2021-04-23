@@ -6,13 +6,11 @@ import {
     Innholdstittel,
 } from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
-import {Hovedknapp} from "nav-frontend-knapper";
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
-import {gaaTilDigitalSoknad, goToInnsyn} from "../../utils/navigasjon";
 import AlertStripe from "nav-frontend-alertstriper";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import {REST_STATUS} from "../../utils/restUtils";
@@ -22,7 +20,12 @@ import useTilgjengeligeKommunerService, {
 } from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
-import {ANTALL_KOMMUNER, ButtonRow, StyledKnapp} from "./SokSosialhjelp";
+import {
+    ANTALL_KOMMUNER,
+    ButtonRow,
+    getDisabledClassname,
+    StyledKnapp,
+} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
@@ -31,11 +34,6 @@ const SokSosialhjelpNynorsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const [valgtKommuneNavn, setValgtKommuneNavn] = useState("");
     const nedetidService = useNedetidService();
-
-    const sokDigital = (event: any) => {
-        gaaTilDigitalSoknad(kommuneId);
-        event.preventDefault();
-    };
 
     const [lesMer, setLesMer] = useState<boolean>(false);
 
@@ -82,26 +80,22 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                 ) && (
                     <>
                         <ButtonRow>
-                            <Hovedknapp
-                                disabled={
-                                    nedetidService.restStatus ===
-                                        REST_STATUS.OK &&
-                                    nedetidService.payload.isNedetid
-                                }
-                                onClick={(event: any) => sokDigital(event)}
+                            <a
+                                href="/sosialhjelp/soknad/informasjon"
+                                className={`knapp knapp--hoved ${getDisabledClassname(
+                                    nedetidService
+                                )}`}
                             >
                                 Søk digitalt
-                            </Hovedknapp>
+                            </a>
 
                             <StyledKnapp
-                                disabled={
-                                    nedetidService.restStatus ===
-                                        REST_STATUS.OK &&
-                                    nedetidService.payload.isNedetid
-                                }
-                                onClick={(event) => goToInnsyn(event)}
+                                href="/sosialhjelp/innsyn"
+                                className={`knapp ${getDisabledClassname(
+                                    nedetidService
+                                )}`}
                             >
-                                Sjå mine søknader
+                                Sjå dine søknader
                             </StyledKnapp>
                         </ButtonRow>
 
