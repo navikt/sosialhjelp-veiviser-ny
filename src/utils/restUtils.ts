@@ -16,14 +16,6 @@ export function erQ(): boolean {
     return url.indexOf("www-q0") >= 0 || url.indexOf("www-q1") >= 0;
 }
 
-export function erCodesandbox(): boolean {
-    const hostname = window.location.hostname;
-    return (
-        hostname.match(/codesandbox\.io/) !== null ||
-        hostname.match(/\.csb\.app/) !== null
-    );
-}
-
 export enum REST_STATUS {
     OK = "OK",
     FEILET = "FEILET",
