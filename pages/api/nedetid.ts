@@ -18,7 +18,7 @@ export interface NedetidResponse {
 }
 
 export async function fetchNedetid(): Promise<NedetidResponse> {
-    const nedetidUrl = "https://www.nav.no/sosialhjelp/soknad-api/nedetid";
+    const nedetidUrl = `${process.env.SOSIALHJELP_SOKNAD_API_URL}/nedetid`;
     return await fetch(nedetidUrl)
         .then((response) => response.json())
         .then((json) => {

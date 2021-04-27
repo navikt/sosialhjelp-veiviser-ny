@@ -9,6 +9,19 @@ For å kjøre lokalt:
   npm start
 ```
 
+## Bygge nextjs app
+
+Nextjs-versjon av veiviseren er fortsatt under utvikling, og skal på sikt ta over for create-react-app versjonen av veiviser.
+
+For å kjøre nextjs versjon av veiviseren lokalt:
+
+```
+  npm install
+  npm run dev
+```
+
+Default ENV-variabler for appen ligger i `.env`. Ved behov kan ENV-variabler overstyres lokalt ved å lage en egen `.env.local`.
+
 ## Manuell deploy
 
 Ved bruk av [cli](https://github.com/navikt/sosialhjelp-ci):
