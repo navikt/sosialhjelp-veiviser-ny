@@ -34,6 +34,12 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: "innsynButtonText",
+            title: "Innsyn knapp",
+            type: "localeString",
+            validation: (Rule) => Rule.required(),
+        },
+        {
             name: "label",
             title: "Label",
             type: "localeString",
