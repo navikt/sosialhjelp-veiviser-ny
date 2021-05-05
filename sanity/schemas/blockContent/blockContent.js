@@ -125,5 +125,6 @@ export default {
         {type: "expandedPanel"},
         {type: "veilederPanel"},
         {type: "vimeo"},
+        {type: "embeddedVideo"},
     ],
 };

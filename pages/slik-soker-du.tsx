@@ -138,6 +138,7 @@ const SlikSokerDu = (props: PageProps) => {
                                 />
                             </Veilederpanel>
                         </StyledVeilederPanel>
+                        <SanityBlockContent blocks={props.page.body} />
                     </Article>
                 </Content>
             </>

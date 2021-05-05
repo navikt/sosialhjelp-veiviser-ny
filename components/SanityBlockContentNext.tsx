@@ -13,6 +13,7 @@ import Vimeo from "@u-wave/react-vimeo";
 import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
+import {EmbeddedVideo} from "./EmbeddedVideo";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
@@ -31,6 +32,10 @@ const serializers = {
         vimeo: function renderVimeo({node}) {
             const {url} = node;
             return <Vimeo responsive video={url} />;
+        },
+        embeddedVideo: function renderEmbeddedVideo({node}) {
+            const {url, title} = node;
+            return <EmbeddedVideo title={title} url={url} />;
         },
         expandedPanel: function renderExpandedPanel({node}) {
             return (

@@ -5,7 +5,7 @@ const Preview = ({value}) => <Vimeo video={value.url} />;
 
 export default {
     name: "vimeo",
-    title: "Embdedded Vimeo",
+    title: "Vimeo",
     type: "object",
     fields: [
         {
