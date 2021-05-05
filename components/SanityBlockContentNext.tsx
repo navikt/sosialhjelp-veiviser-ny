@@ -13,7 +13,7 @@ import Vimeo from "@u-wave/react-vimeo";
 import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
-import {EmbeddedVideo} from "./EmbeddedVideo";
+import {EmbeddedVideo} from "./article/EmbeddedVideo";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;

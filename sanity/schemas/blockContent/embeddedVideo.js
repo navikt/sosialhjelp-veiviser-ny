@@ -7,8 +7,6 @@ const Preview = ({value}) => (
         src={value.url}
         allowFullScreen={true}
         frameBorder="0"
-        style={{border: "none"}}
-        className="sok_sosialhjelp_video_player"
     ></iframe>
 );
 
