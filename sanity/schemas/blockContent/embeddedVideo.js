@@ -1,13 +1,21 @@
 import React from "react";
 import Vimeo from "@u-wave/react-vimeo";
 
-const Preview = ({value}) => <Vimeo video={value.url} />;
+const Preview = ({value}) => (
+    <iframe
+        title={value.title}
+        src={value.url}
+        allowFullScreen={true}
+        frameBorder="0"
+    ></iframe>
+);
 
 export default {
-    name: "vimeo",
-    title: "Vimeo",
+    name: "embeddedVideo",
+    title: "Embdedded Video",
     type: "object",
     fields: [
+        {name: "title", title: "Tittel", type: "string"},
         {
             name: "url",
             title: "URL",
@@ -17,6 +25,7 @@ export default {
     preview: {
         select: {
             url: "url",
+            title: "title",
         },
         component: Preview,
     },

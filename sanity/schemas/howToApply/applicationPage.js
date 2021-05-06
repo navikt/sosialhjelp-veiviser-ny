@@ -65,5 +65,11 @@ export default {
             type: "applyOfflinePanel",
             validation: (Rule) => Rule.required(),
         },
+        {
+            name: "body",
+            title: "Innhold",
+            type: "localeBlockContent",
+            validation: (Rule) => Rule.required(),
+        },
     ],
 };

@@ -81,7 +81,8 @@ const applicationPageSpec = `
         "title": coalesce(title[$locale], title.nb),
         "iconUrl": icon.asset->url,
         "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
-    }
+    },
+    "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
 }`;
 
 const panelSpec = `
@@ -175,6 +176,7 @@ export interface SanityApplicationPage {
         iconUrl: string;
         body: any;
     };
+    body: any;
 }
 
 export interface SanityApplyDigitallyPanel {

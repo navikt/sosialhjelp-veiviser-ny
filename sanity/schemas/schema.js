@@ -26,6 +26,7 @@ import boxPanel from "./otherPossibilities/boxPanel";
 import applicationPage from "./howToApply/applicationPage";
 import applyDigitallyPanel from "./howToApply/applyDigitallyPanel";
 import applyOfflinePanel from "./howToApply/applyOfflinePanel";
+import embeddedVideo from "./blockContent/embeddedVideo";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,6 +44,7 @@ export default createSchema({
         boxContent,
         boxPanel,
         customBlockComponent,
+        embeddedVideo,
         expandedPanel,
         frontPage,
         housingPanel,
