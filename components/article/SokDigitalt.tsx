@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components/macro";
+import {Knapp} from "nav-frontend-knapper";
 
 import {Normaltekst} from "nav-frontend-typografi";
 import {KommunerResponse} from "../../pages/api/kommuner";
@@ -89,9 +90,9 @@ export const SokDigitalt = (props: {
                         />
                     </UnmountClosed>
                     <Normaltekst>
-                        <a
-                            href="#"
-                            className="lenke"
+                        <Knapp
+                            mini
+                            type="flat"
                             onClick={() => setLesMer(!lesMer)}
                         >
                             {lesMer ? (
@@ -105,7 +106,7 @@ export const SokDigitalt = (props: {
                                     <NedChevron />
                                 </>
                             )}
-                        </a>
+                        </Knapp>
                     </Normaltekst>
                 </>
             )}
