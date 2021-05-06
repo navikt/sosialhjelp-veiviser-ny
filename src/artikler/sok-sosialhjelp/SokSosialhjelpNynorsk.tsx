@@ -95,7 +95,7 @@ const SokSosialhjelpNynorsk: React.FC = () => {
                                     nedetidService
                                 )}`}
                             >
-                                Sjå dine søknader
+                                Dine søknader
                             </StyledKnapp>
                         </ButtonRow>
 

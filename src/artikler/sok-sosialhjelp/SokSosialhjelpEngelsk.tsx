@@ -81,7 +81,7 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                             nedetidService
                         )}`}
                     >
-                        See your applications
+                        Your applications
                     </StyledKnapp>
                 </ButtonRow>
 

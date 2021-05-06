@@ -92,7 +92,7 @@ const SokSosialhjelpBokmal: React.FC = () => {
                             nedetidService
                         )}`}
                     >
-                        Se mine søknader
+                        Dine søknader
                     </StyledKnapp>
                 </ButtonRow>
 
