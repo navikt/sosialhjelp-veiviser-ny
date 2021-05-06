@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components/macro";
-import {Hovedknapp, Knapp} from "nav-frontend-knapper";
+import {Knapp} from "nav-frontend-knapper";
 
-import {useRouter} from "next/router";
 import {Normaltekst} from "nav-frontend-typografi";
 import {KommunerResponse} from "../../pages/api/kommuner";
 import {NedetidResponse} from "../../pages/api/nedetid";
@@ -13,9 +12,24 @@ import {Kommunesøk} from "./Kommunesøk";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
 
-const StyledHovedknapp = styled(Hovedknapp)`
+export const getDisabledClassname = (erNedetid: boolean) => {
+    return erNedetid ? "knapp--disabled" : "";
+};
+
+export const ButtonRow = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
+    a {
+        white-space: break-spaces;
+    }
+`;
+
+const StyledInnsynknapp = styled.a`
+    transform: translateY(-2px);
+    margin-top: 1rem;
 `;
 
 export const StyledSokDigitalt = styled.div`
@@ -30,13 +44,6 @@ export const SokDigitalt = (props: {
 }) => {
     const [lesMer, setLesMer] = useState(false);
 
-    const router = useRouter();
-
-    const onButtonClick = (event) => {
-        event.preventDefault();
-        router.push("https://www.nav.no/sosialhjelp/soknad/informasjon");
-    };
-
     return (
         <StyledSokDigitalt>
             {props.nedetid.isNedetid && (
@@ -48,12 +55,24 @@ export const SokDigitalt = (props: {
                     skal søke om økonomisk sosialhjelp i denne perioden.
                 </AlertStripe>
             )}
-            <StyledHovedknapp
-                disabled={props.nedetid.isNedetid}
-                onClick={(event: any) => onButtonClick(event)}
-            >
-                {props.applyDigitallyPanel.buttonText}
-            </StyledHovedknapp>
+            <ButtonRow>
+                <a
+                    href="https://www.nav.no/sosialhjelp/soknad/informasjon"
+                    className={`knapp knapp--hoved ${getDisabledClassname(
+                        props.nedetid.isNedetid
+                    )}`}
+                >
+                    {props.applyDigitallyPanel.buttonText}
+                </a>
+                <StyledInnsynknapp
+                    href="https://www.nav.no/sosialhjelp/innsyn"
+                    className={`knapp ${getDisabledClassname(
+                        props.nedetid.isNedetid
+                    )}`}
+                >
+                    {props.applyDigitallyPanel.innsynButtonText}
+                </StyledInnsynknapp>
+            </ButtonRow>
             <SanityBlockContent
                 blocks={props.applyDigitallyPanel.body}
                 templateProps={{

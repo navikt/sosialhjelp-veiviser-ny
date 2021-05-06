@@ -67,6 +67,7 @@ const applicationPageSpec = `
         "title": coalesce(title[$locale], title.nb),
         "iconUrl": icon.asset->url,
         "buttonText": coalesce(buttonText[$locale], buttonText.nb),
+        "innsynButtonText": coalesce(innsynButtonText[$locale], innsynButtonText.nb),
         "label": coalesce(label[$locale], label.nb),
         "errorText": coalesce(errorText[$locale], errorText.nb),
         "openPanelLink": coalesce(openPanelLink[$locale], openPanelLink.nb),
@@ -180,6 +181,7 @@ export interface SanityApplyDigitallyPanel {
     title: string;
     iconUrl: string;
     buttonText: string;
+    innsynButtonText: string;
     label: string;
     errorText: string;
     openPanelLink: string;
