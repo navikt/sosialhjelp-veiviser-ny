@@ -1,11 +1,7 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
 import {Suggestion} from "../navAutocomplete/NavAutcomplete";
-import {
-    erCodesandbox,
-    RequestMethod,
-    REST_STATUS,
-} from "../../../../../utils/restUtils";
+import {RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
 
 export interface KommuneNummere {
     results: Suggestion[];
@@ -20,13 +16,6 @@ const useKommuneNrService = () => {
     if (erDevMiljo()) {
         url =
             "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
-        // url = "http://localhost:8080/https://www.nav.no" + url; // NAV's egen proxy
-        // url = "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer"; // Public proxy
-    }
-
-    if (erCodesandbox()) {
-        url =
-            "https://register.geonorge.no/api/subregister/sosi-kodelister/kartverket/kommunenummer-alle.json";
     }
 
     useEffect(() => {
@@ -34,13 +23,7 @@ const useKommuneNrService = () => {
             "Accept-Charset": "utf-8",
             Accept: "application/json, text/plain, */*",
         });
-        if (erCodesandbox()) {
-            headers = new Headers({
-                Origin: "null",
-                "Accept-Charset": "utf-8",
-                Accept: "application/json, text/plain, */*",
-            });
-        }
+
         const options: RequestInit = {
             headers: headers,
             method: RequestMethod.GET,

@@ -1,10 +1,6 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
-import {
-    erCodesandbox,
-    RequestMethod,
-    REST_STATUS,
-} from "../../../../../utils/restUtils";
+import {RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
 
 export interface Nedetid {
     isNedetid: boolean;
@@ -25,7 +21,7 @@ const useNedetidService = () => {
     let url = "/sosialhjelp/soknad-api/nedetid";
 
     useEffect(() => {
-        if (erDevMiljo() || erCodesandbox()) {
+        if (erDevMiljo()) {
             return;
         }
 

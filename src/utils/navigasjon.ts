@@ -1,23 +1,8 @@
-import {erDev} from "./restUtils";
 import {createBrowserHistory} from "history";
 import React from "react";
 
-/**
- * Resolves basename in a pathname independent way
- */
-const getAbsoluteBasename = () => {
-    // @ts-ignore
-    // return erDev() ? "sosialhjelp/innsyn" : window.location.pathname.replace(/^\/(([^/]+\/)?sosialhjelp\/innsyn).+$/, "$1");
-    return erDev()
-        ? "sosialhjelp"
-        : window.location.pathname.replace(
-              /^\/(([^/]+\/)?sosialhjelp).+$/,
-              "$1"
-          );
-};
-
 const history = createBrowserHistory({
-    basename: "/sosialhjelp", // getAbsoluteBasename()
+    basename: "/sosialhjelp",
 });
 
 const onClickLink = (event: any, sti: string) => {
@@ -38,4 +23,4 @@ const gaaTilDigitalSoknad = (kommuneId?: string): void => {
     window.location.href = soknadUrl;
 };
 
-export {getAbsoluteBasename, history, gaaTilDigitalSoknad, onClickLink};
+export {history, gaaTilDigitalSoknad, onClickLink};

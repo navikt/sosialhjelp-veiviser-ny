@@ -1,10 +1,6 @@
 import {useEffect, useState} from "react";
 import {erDevMiljo, ServiceHookTypes} from "./ServiceHookTypes";
-import {
-    erCodesandbox,
-    RequestMethod,
-    REST_STATUS,
-} from "../../../../../utils/restUtils";
+import {RequestMethod, REST_STATUS} from "../../../../../utils/restUtils";
 
 export interface TilgjengeligeKommuner {
     results: {
@@ -18,9 +14,7 @@ export interface KommuneInfo {
     kanOppdatereStatus: boolean;
 }
 
-const useTilgjengeligeKommunerService = (): ServiceHookTypes<
-    TilgjengeligeKommuner
-> => {
+const useTilgjengeligeKommunerService = (): ServiceHookTypes<TilgjengeligeKommuner> => {
     const [result, setResult] = useState<
         ServiceHookTypes<TilgjengeligeKommuner>
     >({
@@ -30,9 +24,6 @@ const useTilgjengeligeKommunerService = (): ServiceHookTypes<
     let url = "/sosialhjelp/soknad-api/informasjon/kommuneinfo";
 
     if (erDevMiljo()) {
-        // Kjør mot lokal proxyserver:
-        // url = "http://localhost:8080/https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
-
         if (window.location.origin.indexOf("-gcp.dev.nav.no") >= 0) {
             url = "https://sosialhjelp-soknad-api-gcp.dev.nav.no" + url;
         } else if (
@@ -48,17 +39,6 @@ const useTilgjengeligeKommunerService = (): ServiceHookTypes<
             url =
                 "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/kommuneinfo";
         }
-
-        // Nytt endepunkt med status om kommune er midlertidig nede:
-        //    url = "/https://www.nav.no/sosialhjelp/innsyn-api/api/v1/innsyn/kommune";
-        // Gammelt endepunkt med bare kommunenummer:
-        //   url = "https://www.nav.no/sosialhjelp/soknad-api/informasjon/tilgjengelige_kommuner";
-    }
-
-    if (erCodesandbox()) {
-        // Public
-        url =
-            "https://cors-anywhere.herokuapp.com/https://www.nav.no/sosialhjelp/soknad-api/informasjon/kommuneinfo";
     }
 
     useEffect(() => {
@@ -66,13 +46,6 @@ const useTilgjengeligeKommunerService = (): ServiceHookTypes<
             "Accept-Charset": "utf-8",
             Accept: "application/json, text/plain, */*",
         });
-        if (erCodesandbox()) {
-            headers = new Headers({
-                Origin: "null",
-                "Accept-Charset": "utf-8",
-                Accept: "application/json, text/plain, */*",
-            });
-        }
 
         const options: RequestInit = {
             headers: headers,

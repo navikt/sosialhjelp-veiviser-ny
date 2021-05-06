@@ -51,15 +51,13 @@ export interface KommuneNummer {
 }
 
 export async function fetchKommuner(): Promise<KommunerResponse> {
-    const kommuneinfoUrl =
-        "https://www.nav.no/sosialhjelp/soknad-api/informasjon/kommuneinfo";
+    const kommuneinfoUrl = `${process.env.SOSIALHJELP_SOKNAD_API_URL}/informasjon/kommuneinfo`;
 
     const kommuneinfo: KommuneinfoResponse = await fetch(
         kommuneinfoUrl
     ).then((response) => response.json());
 
-    const kommunenrUrl =
-        "https://www.nav.no/sosialhjelp/innsyn-api/api/veiviser/kommunenummer";
+    const kommunenrUrl = `${process.env.SOSIALHJELP_INNSYN_API_URL}/api/veiviser/kommunenummer`;
 
     const kommuner = await fetch(kommunenrUrl)
         .then((response) => response.json())
