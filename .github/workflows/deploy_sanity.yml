@@ -1,0 +1,20 @@
+name: Deploy Sanity Studio
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    name: Deploy Sanity Studio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - uses: actions/checkout@v2
+      - name: npm install
+        working-directory: ./sanity
+        run: npm ci
+      - name: Deploy Sanity Studio
+        env: 
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+        working-directory: ./sanity
+        run: npm run deploy
