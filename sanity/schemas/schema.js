@@ -11,7 +11,7 @@ import localeString from "./locale/localeString";
 import localeBlockContent from "./locale/localeBlockContent";
 import localeUrl from "./locale/localeUrl";
 import vimeo from "./blockContent/vimeo";
-import veilederpanel from "./blockContent/veilederpanel";
+import veilederPanel from "./blockContent/veilederPanel";
 import customBlockComponent from "./blockContent/customBlockComponent";
 import frontPage from "./frontpage/frontPage";
 import alert from "./frontpage/alert";
@@ -56,7 +56,7 @@ export default createSchema({
         localeUrl,
         localeString,
         otherPossibilities,
-        veilederpanel,
+        veilederPanel,
         vimeo,
     ]),
 });
