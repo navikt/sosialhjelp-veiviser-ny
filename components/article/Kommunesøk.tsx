@@ -64,7 +64,9 @@ const ListItem = styled.li<ListItemProps>`
 
 const filterKommuneOnInputValue = (kommuner: Kommune[], inputValue: string) => {
     return kommuner.filter(
-        (kommune) => !inputValue || kommune.kommuneNavn.includes(inputValue)
+        (kommune) =>
+            !inputValue ||
+            kommune.kommuneNavn.toLowerCase().includes(inputValue.toLowerCase())
     );
 };
 
@@ -114,7 +116,8 @@ export const Kommunesøk = (props: {
                         <AutocompleteList
                             isVisible={
                                 inputValue.length > 0 &&
-                                inputValue !== selectedItem?.kommuneNavn &&
+                                inputValue.toLowerCase() !==
+                                    selectedItem?.kommuneNavn.toLowerCase() &&
                                 filterKommuneOnInputValue(
                                     kommuneArray,
                                     inputValue
@@ -144,7 +147,8 @@ export const Kommunesøk = (props: {
                                 })}
                         </AutocompleteList>
                         {selectedItem &&
-                            selectedItem.kommuneNavn === inputValue && (
+                            selectedItem.kommuneNavn.toLowerCase() ===
+                                inputValue.toLowerCase() && (
                                 <>
                                     {selectedItem.kanMottaSoknader &&
                                         selectedItem.kanOppdatereStatus && (
