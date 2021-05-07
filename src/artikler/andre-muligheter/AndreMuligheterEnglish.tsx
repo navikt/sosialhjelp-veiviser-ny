@@ -38,7 +38,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                             Help with finding jobs
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/">
+                            <LenkeboksLinje href="https://www.nav.no/arbeid">
                                 What you need to get started when applying for
                                 jobs
                             </LenkeboksLinje>
@@ -59,10 +59,10 @@ const AndreMuligheterEnglish: React.FC = () => {
                         </Undertittel>
 
                         <ul>
-                            <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/unemployment-benefits">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/arbeid/dagpenger-ved-arbeidsloshet-og-permittering/dagpenger">
                                 Unemployment benefits
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/tiltakspenger">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/arbeid/oppfolging-og-tiltak-for-a-komme-i-jobb/stonader-ved-tiltak">
                                 Benefits while attending NAV activities
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/en/home/benefits-and-services/relatert-informasjon/work-assessment-allowance-aap">
@@ -72,7 +72,7 @@ const AndreMuligheterEnglish: React.FC = () => {
                                 Supplementary benefit for persons who have only
                                 lived a short period in Norway
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/kvalifiseringsprogrammet">
                                 Qualification programme
                             </LenkeboksLinje>
                         </ul>
