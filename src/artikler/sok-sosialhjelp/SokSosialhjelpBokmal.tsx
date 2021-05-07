@@ -6,13 +6,12 @@ import {
     Innholdstittel,
 } from "nav-frontend-typografi";
 import Artikkel from "../Artikkel";
-import {Hovedknapp} from "nav-frontend-knapper";
+import {Hovedknapp, Knapp} from "nav-frontend-knapper";
 import SokDigitaltPanel from "./komponenter/SokDigitaltPanel";
 import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
-import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import AlertStripe from "nav-frontend-alertstriper";
@@ -23,7 +22,12 @@ import useTilgjengeligeKommunerService, {
     antallKommuner,
 } from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import HjelpeVideo from "./komponenter/hjelpevideo/HjelpeVideo";
-import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {
+    ANTALL_KOMMUNER,
+    ButtonRow,
+    getDisabledClassname,
+    StyledKnapp,
+} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
@@ -32,11 +36,6 @@ const SokSosialhjelpBokmal: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const [valgtKommuneNavn, setValgtKommuneNavn] = useState("");
     const nedetidService = useNedetidService();
-
-    const sokDigital = (event: any) => {
-        gaaTilDigitalSoknad(kommuneId);
-        event.preventDefault();
-    };
 
     const [lesMer, setLesMer] = useState<boolean>(false);
 
@@ -67,36 +66,35 @@ const SokSosialhjelpBokmal: React.FC = () => {
 
                 {nedetidService.restStatus === REST_STATUS.OK &&
                     nedetidService.payload.isNedetid && (
-                        <div>
-                            <div style={{paddingBottom: "1rem"}}>
-                                <Hovedknapp disabled={true}>
-                                    Gå til søknad
-                                </Hovedknapp>
-                            </div>
-                            <AlertStripe
-                                type="feil"
-                                style={{textAlign: "left"}}
-                            >
-                                Du kan ikke sende digital søknad i perioden{" "}
-                                {nedetidService.payload.nedetidStartText} –{" "}
-                                {nedetidService.payload.nedetidSluttText}{" "}
-                                grunnet teknisk vedlikehold. Ta kontakt med ditt
-                                lokale NAV-kontor hvis du skal søke om økonomisk
-                                sosialhjelp i denne perioden.
-                            </AlertStripe>
-                        </div>
+                        <AlertStripe type="feil" style={{textAlign: "left"}}>
+                            Du kan ikke sende digital søknad i perioden{" "}
+                            {nedetidService.payload.nedetidStartText} –{" "}
+                            {nedetidService.payload.nedetidSluttText} grunnet
+                            teknisk vedlikehold. Ta kontakt med ditt lokale
+                            NAV-kontor hvis du skal søke om økonomisk
+                            sosialhjelp i denne perioden.
+                        </AlertStripe>
                     )}
 
-                <Hovedknapp
-                    style={{marginTop: "1.5rem", marginBottom: "2rem"}}
-                    disabled={
-                        nedetidService.restStatus === REST_STATUS.OK &&
-                        nedetidService.payload.isNedetid
-                    }
-                    onClick={(event: any) => sokDigital(event)}
-                >
-                    Søk digitalt
-                </Hovedknapp>
+                <ButtonRow>
+                    <a
+                        href="/sosialhjelp/soknad/informasjon"
+                        className={`knapp knapp--hoved ${getDisabledClassname(
+                            nedetidService
+                        )}`}
+                    >
+                        Søk digitalt
+                    </a>
+
+                    <StyledKnapp
+                        href="/sosialhjelp/innsyn"
+                        className={`knapp ${getDisabledClassname(
+                            nedetidService
+                        )}`}
+                    >
+                        Dine søknader
+                    </StyledKnapp>
+                </ButtonRow>
 
                 <Avsnitt>
                     Digital søknad om økonomisk sosialhjelp skal innen kort tid

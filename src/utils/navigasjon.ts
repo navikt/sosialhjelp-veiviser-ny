@@ -1,4 +1,5 @@
 import {createBrowserHistory} from "history";
+import React from "react";
 
 const history = createBrowserHistory({
     basename: "/sosialhjelp",

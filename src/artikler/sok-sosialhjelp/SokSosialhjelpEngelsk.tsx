@@ -12,7 +12,6 @@ import IkkeSokDigitaltPanel from "./komponenter/IkkeSokDigitalt";
 import KommuneSok from "./komponenter/kommunesok/Kommunesok";
 import "./komponenter/sokSosialhjelp.less";
 import {useState} from "react";
-import {gaaTilDigitalSoknad} from "../../utils/navigasjon";
 import {REST_STATUS} from "../../utils/restUtils";
 import useNedetidService from "./komponenter/kommunesok/service/useNedetidService";
 import AlertStripe from "nav-frontend-alertstriper";
@@ -22,7 +21,12 @@ import useTilgjengeligeKommunerService, {
 } from "./komponenter/kommunesok/service/useTilgjengeligeKommunerService";
 import AapneLukkeLenke from "./komponenter/aapneLukkeLenke/AapneLukkeLenke";
 import {UnmountClosed} from "react-collapse";
-import {ANTALL_KOMMUNER} from "./SokSosialhjelp";
+import {
+    ANTALL_KOMMUNER,
+    ButtonRow,
+    getDisabledClassname,
+    StyledKnapp,
+} from "./SokSosialhjelp";
 import {Avsnitt} from "../../komponenter/avsnitt/Avsnitt";
 import {InternLenke} from "../../komponenter/InternLenke";
 import useKommuneNrService from "./komponenter/kommunesok/service/useKommuneNrService";
@@ -31,11 +35,6 @@ const SokSosialhjelpEngelsk: React.FC = () => {
     const [kommuneId, setKommuneId] = useState<string | undefined>(undefined);
     const [valgtKommuneNavn, setValgtKommuneNavn] = useState("");
     const nedetidService = useNedetidService();
-
-    const sokDigital = (event: any) => {
-        gaaTilDigitalSoknad(kommuneId);
-        event.preventDefault();
-    };
 
     const [lesMer, setLesMer] = useState<boolean>(false);
 
@@ -66,12 +65,25 @@ const SokSosialhjelpEngelsk: React.FC = () => {
                     Apply digitally
                 </Undertittel>
 
-                <Hovedknapp
-                    style={{marginTop: "1.5rem", marginBottom: "2rem"}}
-                    onClick={(event: any) => sokDigital(event)}
-                >
-                    Apply digitally
-                </Hovedknapp>
+                <ButtonRow>
+                    <a
+                        href="/sosialhjelp/soknad/informasjon"
+                        className={`knapp knapp--hoved ${getDisabledClassname(
+                            nedetidService
+                        )}`}
+                    >
+                        Apply digitally
+                    </a>
+
+                    <StyledKnapp
+                        href="/sosialhjelp/innsyn"
+                        className={`knapp ${getDisabledClassname(
+                            nedetidService
+                        )}`}
+                    >
+                        Your applications
+                    </StyledKnapp>
+                </ButtonRow>
 
                 <Avsnitt>
                     All municipalities should be able to receive digital
