@@ -38,7 +38,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                             Hjelp til å komme i jobb og aktivitet
                         </Undertittel>
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/">
+                            <LenkeboksLinje href="https://www.nav.no/arbeid">
                                 Dette trenger du for å komme i gang med å søke
                                 jobber
                             </LenkeboksLinje>
@@ -59,10 +59,10 @@ const AndreMuligheterBokmal: React.FC = () => {
                         </Undertittel>
 
                         <ul>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/mistet-jobben/dagpenger">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/arbeid/dagpenger-ved-arbeidsloshet-og-permittering/dagpenger">
                                 Dagpenger
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://tjenester.nav.no/veiledearbeidssoker/utenfor-arbeidslivet-lenge/tiltakspenger">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/arbeid/oppfolging-og-tiltak-for-a-komme-i-jobb/stonader-ved-tiltak">
                                 Tiltakspenger
                             </LenkeboksLinje>
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Arbeid/Arbeidsavklaringspenger/arbeidsavklaringspenger-aap">
@@ -71,7 +71,7 @@ const AndreMuligheterBokmal: React.FC = () => {
                             <LenkeboksLinje href="https://www.nav.no/no/Person/Pensjon/Andre+pensjonsordninger/supplerende-st%C3%B8nad-for-personer-med-kort-botid-i-norge">
                                 Stønad for deg med kort botid i Norge
                             </LenkeboksLinje>
-                            <LenkeboksLinje href="https://veiledearbeidssoker.nav.no/utenfor-arbeidslivet-lenge/kvalifiseringsprogrammet">
+                            <LenkeboksLinje href="https://www.nav.no/no/person/flere-tema/sosiale-tjenester/kvalifiseringsprogrammet">
                                 Kvalifiseringsprogram
                             </LenkeboksLinje>
                         </ul>
