@@ -79,19 +79,24 @@ const ArticlePage = (props: PageProps) => {
                         property="og:title"
                         content={`${props.metadata.title} - ${props.article.title}`}
                     />
-                    <meta
-                        name="Description"
-                        content={props.article.metaDescription}
-                    />
-                    <meta
-                        property="og:description"
-                        content={props.article.metaDescription}
-                    />
+                    {props.article.metaDescription && (
+                        <>
+                            <meta
+                                name="Description"
+                                content={props.article.metaDescription}
+                            />
+                            <meta
+                                property="og:description"
+                                content={props.article.metaDescription}
+                            />
+                        </>
+                    )}
+
                     <meta property="og:locale" content={router.locale} />
-                    {/*<meta
+                    <meta
                         property="og:image"
                         content={props.metadata.bannerIconUrl}
-                    /> TODO: Legge til delebilde i Sanity */}
+                    />
                 </Head>
                 <PageBanner title={metadata.title} />
                 <Content>

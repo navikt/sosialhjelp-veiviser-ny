@@ -101,19 +101,27 @@ const AndreMuligheter = (props: PageProps) => {
                         property="og:title"
                         content={`${props.metadata.title} - ${props.otherPossibilities.title}`}
                     />
-                    <meta
-                        name="Description"
-                        content={props.otherPossibilities.metaDescription}
-                    />
-                    <meta
-                        property="og:description"
-                        content={props.otherPossibilities.metaDescription}
-                    />
+                    {props.otherPossibilities.metaDescription && (
+                        <>
+                            <meta
+                                name="Description"
+                                content={
+                                    props.otherPossibilities.metaDescription
+                                }
+                            />
+                            <meta
+                                property="og:description"
+                                content={
+                                    props.otherPossibilities.metaDescription
+                                }
+                            />
+                        </>
+                    )}
                     <meta property="og:locale" content={router.locale} />
-                    {/*<meta
+                    <meta
                         property="og:image"
-                        content={props.frontPage.bannerIconUrl}
-                    /> TODO: Legge til delebilde i Sanity */}
+                        content={props.metadata.bannerIconUrl}
+                    />
                 </Head>
                 <PageBanner title={props.metadata.title} />
 

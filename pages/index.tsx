@@ -3,7 +3,9 @@ import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {
     fetchFrontPageWithLocale,
+    fetchMetadataWithLocale,
     SanityFrontpage,
+    SanityMetadata,
 } from "../src/utils/sanityFetch";
 
 import {PageBanner} from "../components/PageBanner";
@@ -16,6 +18,7 @@ import {Language} from "@navikt/nav-dekoratoren-moduler";
 import {Content} from "../components/Content";
 
 interface PageProps {
+    metadata: SanityMetadata;
     frontPage: SanityFrontpage;
 }
 
@@ -33,21 +36,25 @@ const Index = (props: PageProps) => {
         <DecoratedApp availableLanguages={languages}>
             <>
                 <Head>
-                    <title>{props.frontPage.title}</title>
-                    <meta property="og:title" content={props.frontPage.title} />
-                    <meta
-                        name="Description"
-                        content={props.frontPage.metaDescription}
-                    />
-                    <meta
-                        property="og:description"
-                        content={props.frontPage.metaDescription}
-                    />
+                    <title>{props.metadata.title}</title>
+                    <meta property="og:title" content={props.metadata.title} />
+                    {props.frontPage.metaDescription && (
+                        <>
+                            <meta
+                                name="Description"
+                                content={props.frontPage.metaDescription}
+                            />
+                            <meta
+                                property="og:description"
+                                content={props.frontPage.metaDescription}
+                            />
+                        </>
+                    )}
                     <meta property="og:locale" content={router.locale} />
-                    {/*<meta
+                    <meta
                         property="og:image"
-                        content={props.frontPage.bannerIconUrl}
-                    /> TODO: Legge til delebilde i Sanity */}
+                        content={props.metadata.bannerIconUrl}
+                    />
                 </Head>
                 <PageBanner
                     isFrontPage
@@ -78,14 +85,16 @@ const Index = (props: PageProps) => {
 
 interface StaticProps {
     props: {
+        metadata: SanityMetadata;
         frontPage: SanityFrontpage;
     };
     revalidate: number;
 }
 export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
+    const metadata = await fetchMetadataWithLocale(locale);
     const frontPage = await fetchFrontPageWithLocale(locale);
     return {
-        props: {frontPage},
+        props: {metadata, frontPage},
         revalidate: 60,
     };
 };
