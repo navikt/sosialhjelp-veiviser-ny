@@ -29,6 +29,7 @@ const articleSpec = `
 const metadataSpec = `
 {
     "title": coalesce(title[$locale], title.nb),
+    "bannerIconUrl": bannerIcon.asset->url,
 }
 `;
 
@@ -136,11 +137,12 @@ export interface SanityArticle {
 
 export interface SanityMetadata {
     title: string;
+    bannerIconUrl: string;
 }
 
 export interface SanityFrontpage {
     title: string;
-    metaDescription: string;
+    metaDescription?: string;
     bannerIconUrl: string;
     alert?: {
         title: string;
@@ -168,7 +170,7 @@ export interface SanityFrontpage {
 
 export interface SanityApplicationPage {
     title: string;
-    metaDescription: string;
+    metaDescription?: string;
     ingress: string;
     applyDigitallyPanel: SanityApplyDigitallyPanel;
     applyOfflinePanel: {

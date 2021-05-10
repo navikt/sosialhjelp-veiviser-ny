@@ -21,8 +21,7 @@ export default {
             title: "Metabeskrivelse",
             type: "localeString",
             description:
-                "Dette er teksten som vil vises for søkeresultater på eks. Google",
-            validation: (Rule) => Rule.required(),
+                "Søkemotorer kan bruke denne teksten i søkeresultater. Kan i de fleste tilfeller være tom, da Google etc helst genererer egne tekster basert på innholdet på siden",
         },
         {
             name: "bannerIcon",

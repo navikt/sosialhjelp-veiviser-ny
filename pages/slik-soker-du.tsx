@@ -68,19 +68,23 @@ const SlikSokerDu = (props: PageProps) => {
                         property="og:title"
                         content={`${props.metadata.title} - ${props.page.title}`}
                     />
-                    <meta
-                        name="Description"
-                        content={props.page.metaDescription}
-                    />
-                    <meta
-                        property="og:description"
-                        content={props.page.metaDescription}
-                    />
+                    {props.page.metaDescription && (
+                        <>
+                            <meta
+                                name="Description"
+                                content={props.page.metaDescription}
+                            />
+                            <meta
+                                property="og:description"
+                                content={props.page.metaDescription}
+                            />
+                        </>
+                    )}
                     <meta property="og:locale" content={router.locale} />
-                    {/*<meta
+                    <meta
                         property="og:image"
                         content={props.metadata.bannerIconUrl}
-                    /> TODO: Legge til delebilde i Sanity */}
+                    />
                 </Head>
                 <PageBanner title={props.metadata.title} />
                 <Content>
