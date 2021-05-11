@@ -19,12 +19,16 @@ const Banner = styled.div<BannerProps>`
 
 const BannerContent = styled.div`
     width: 100%;
-    max-width: 1024px;
+    max-width: 792px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+
+    h1 {
+        margin: 0.5rem 1rem;
+    }
 `;
 
 const BannerIcon = styled.img`
@@ -38,7 +42,7 @@ export const PageBanner = (props: {
     iconUrl?: string;
 }) => {
     return (
-        <Banner height={props.isFrontPage ? "190px" : "70px"}>
+        <Banner height={props.isFrontPage ? "165px" : "70px"}>
             <BannerContent>
                 {props.isFrontPage ? (
                     <Sidetittel tag="h1">{props.title}</Sidetittel>
