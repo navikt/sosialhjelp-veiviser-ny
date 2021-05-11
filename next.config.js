@@ -12,6 +12,12 @@ Object.keys(packageJson.dependencies).forEach((key) => {
 const withTranspileModules = require("next-transpile-modules")(
     navFrontendModuler
 );
+
+const redirects = [
+    {source: "/artikkel/124876", destination: "/gi-beskjed", permanent: true},
+    {source: "/artikkel/124875", destination: "/klage", permanent: true},
+];
+
 module.exports = withTranspileModules(
     withLess({
         basePath: "/sosialhjelp",
@@ -23,6 +29,10 @@ module.exports = withTranspileModules(
             locales: ["en", "nb", "nn"],
             defaultLocale: "nb",
             localeDetection: false,
+        },
+
+        async redirects() {
+            return redirects;
         },
     })
 );
