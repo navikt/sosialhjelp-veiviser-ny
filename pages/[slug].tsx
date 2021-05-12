@@ -97,6 +97,10 @@ const ArticlePage = (props: PageProps) => {
                         property="og:image"
                         content={props.metadata.bannerIconUrl}
                     />
+                    <link
+                        rel="canonical"
+                        href={`${process.env.NEXT_PUBLIC_APP_URL}/${props.article.slug}`}
+                    />
                 </Head>
                 <PageBanner title={metadata.title} />
                 <Content>
