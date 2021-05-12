@@ -122,6 +122,10 @@ const AndreMuligheter = (props: PageProps) => {
                         property="og:image"
                         content={props.metadata.bannerIconUrl}
                     />
+                    <link
+                        rel="canonical"
+                        href={`${process.env.NEXT_PUBLIC_APP_URL}/andre-muligheter`}
+                    />
                 </Head>
                 <PageBanner title={props.metadata.title} />
 
