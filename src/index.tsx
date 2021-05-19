@@ -14,10 +14,6 @@ import {history} from "./utils/navigasjon";
 import Forside from "./artikler/forside/Forside";
 import SokSosialhjelp from "./artikler/sok-sosialhjelp/SokSosialhjelp";
 import Nodsituasjon from "./artikler/nodsituasjon/Nodsituasjon";
-import HvisDuHarBarn from "./artikler/hvis-du-har-barn/HvisDuHarBarn";
-import HvisDuHarSamboer from "./artikler/hvis-du-har-samboer/HvisDuHarSamboer";
-import HvisDuErGift from "./artikler/hvis-du-er-gift/HvisDuErGift";
-import SlikForegatEtMote from "./artikler/slik-foregar-et-mote/SlikForegarEtMote";
 import GiBeskjed from "./artikler/gi-beskjed/GiBeskjed";
 import Klage from "./artikler/klage/Klage";
 import KravTilDeg from "./artikler/krav-til-deg/KravTilDeg";
@@ -75,27 +71,6 @@ function App() {
                         exact
                         path="/nodsituasjon"
                         component={Nodsituasjon}
-                    />
-                    <Route
-                        exact
-                        path="/hvis-du-har-barn"
-                        component={HvisDuHarBarn}
-                    />
-                    <Route
-                        exact
-                        path="/hvis-du-har-samboer"
-                        component={HvisDuHarSamboer}
-                    />
-                    <Route
-                        exact
-                        path="/hvis-du-er-gift"
-                        component={HvisDuErGift}
-                    />
-
-                    <Route
-                        exact
-                        path="/slik-foregar-et-mote"
-                        component={SlikForegatEtMote}
                     />
 
                     <Route exact path="/sok-papir" component={SoknadPaPapir} />
