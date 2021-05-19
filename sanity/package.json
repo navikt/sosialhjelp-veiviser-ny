@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Halvor Bjørn <mrbjoern92@gmail.com>",
-  "license": "UNLICENSED",
+  "author": "NAV",
+  "license": "MIT",
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
