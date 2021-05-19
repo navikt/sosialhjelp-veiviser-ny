@@ -1,11 +1,14 @@
-FROM navikt/node-express:12.2.0-alpine
+FROM node:14-alpine
 
 ENV NODE_ENV production
 
-RUN npm install -g mustache-express@1.3.0
-
 WORKDIR /app
-COPY server.js server.js
-COPY build build/
+COPY package.json .
+COPY .next/ .next/
+COPY .env .
+# COPY .env.local . # TODO
+COPY next.config.js .
+COPY node_modules/ node_modules/
 
-CMD ["node", "./server.js"]
+EXPOSE 3000
+CMD npm run start
