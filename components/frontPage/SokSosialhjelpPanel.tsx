@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components/macro";
 import {Systemtittel} from "nav-frontend-typografi";
 import {colors} from "../../src/utils/variables";
-import IllustrasjonsGruppe from "../../src/komponenter/bilder/IllustrasjonsGruppe";
+import IllustrasjonsGruppe from "./IllustrasjonsGruppe";
 
 const StyledPanel = styled.a`
     transition: all 0.2s;
