@@ -74,7 +74,7 @@ const serializers = {
             if (style === "ingress") {
                 return <Ingress>{children}</Ingress>;
             }
-            console.error("unhandled style", node);
+
             return children;
         },
     },
