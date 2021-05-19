@@ -2,34 +2,23 @@ import Head from "next/head";
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {
-    fetchFrontPageWithLocale,
     fetchMetadataWithLocale,
     fetchOtherPossibilitiesWithLocale,
-    SanityFrontpage,
     SanityMetadata,
     SanityOtherPossibilitiesPage,
-    SanityPanelSpec,
 } from "../src/utils/sanityFetch";
 
 import {PageBanner} from "../components/PageBanner";
-import {Alert} from "../components/frontPage/Alert";
-import {SokOmSosialhjelpPanel} from "../components/frontPage/SokSosialhjelpPanel";
 import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
-import {Lenkeboks} from "../components/frontPage/Lenkeboks";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import {Content} from "../components/Content";
 import styled from "styled-components/macro";
-import {Article} from "../components/article/Article";
 import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
-import {detekterSprak} from "../src/utils/sprakUtils";
-import Lenke from "nav-frontend-lenker";
-import Link from "next/link";
 import {LenkeboksAndreMuligheter} from "../components/otherPossibilties/LenkeboksAndreMuligheter";
 import {JobblystPanel} from "../components/otherPossibilties/JobblystPanel";
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
-import {HjelpTilBolig} from "../src/artikler/andre-muligheter/komponenter/HjelpTilBolig";
-import {UnderpanelBolig} from "../src/artikler/andre-muligheter/komponenter/UnderpanelBolig";
+import {HjelpTilBolig} from "../components/otherPossibilties//HjelpTilBolig";
+import {UnderpanelBolig} from "../components/otherPossibilties/UnderpanelBolig";
 
 interface PageProps {
     otherPossibilities: SanityOtherPossibilitiesPage;
