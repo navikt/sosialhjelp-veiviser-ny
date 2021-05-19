@@ -26,8 +26,6 @@ jobs:
           restore-keys: ${{ runner.os }}-node-
       - name: Install dependencies
         run: npm ci
-      - name: Rename index_express.html to index.html
-        run: mv public/index_express.html public/index.html
       - name: Build application
         run: npm run build
       - name: Login to GitHub package registry
