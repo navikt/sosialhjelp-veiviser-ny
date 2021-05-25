@@ -36,10 +36,10 @@ class MyDocument extends Document<{decorator: Components}> {
         const {Styles, Scripts, Header, Footer} = this.props.decorator;
         return (
             <Html>
-                <Head>
-                    <Styles />
-                    <Scripts />
-                </Head>
+                <Head />
+                <Styles />
+                <Scripts />
+
                 <body>
                     <Header />
                     <div id="app" className="app">
