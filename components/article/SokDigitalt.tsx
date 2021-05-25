@@ -45,7 +45,7 @@ export const SokDigitalt = (props: {
 }) => {
     const [lesMer, setLesMer] = useState(false);
 
-    const toggleKommunesøk = (newToggleValue: boolean) => {
+    const toggleKommunesok = (newToggleValue: boolean) => {
         if (newToggleValue)
             logAmplitudeEvent(
                 "Klikk på knapp",
@@ -103,7 +103,7 @@ export const SokDigitalt = (props: {
                         <Knapp
                             mini
                             type="flat"
-                            onClick={() => toggleKommunesøk(!lesMer)}
+                            onClick={() => toggleKommunesok(!lesMer)}
                         >
                             {lesMer ? (
                                 <>
