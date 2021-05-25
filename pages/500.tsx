@@ -2,7 +2,6 @@ import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import Lenke from "nav-frontend-lenker";
-import Link from "next/link";
 import {Content} from "../components/Content";
 import {Article} from "../components/article/Article";
 import {PageBanner} from "../components/PageBanner";

@@ -1,6 +1,11 @@
 import {AlertStripeType} from "nav-frontend-alertstriper";
 import client from "./sanityClient";
-import {Sprak} from "./sprakUtils";
+
+export enum Sprak {
+    NORSK_BOKMAL = "nb",
+    NYNORSK = "nn",
+    ENGELSK = "en",
+}
 
 const blockContentSpec = `
 {

@@ -1,11 +1,8 @@
-import {Normaltekst} from "nav-frontend-typografi";
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import Downshift from "downshift";
 import {Kommune, KommunerResponse} from "../../pages/api/kommuner";
 import {Input, Label} from "nav-frontend-skjema";
-import Lenke from "nav-frontend-lenker";
-import Link from "next/link";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
 

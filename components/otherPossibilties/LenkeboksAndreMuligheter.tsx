@@ -1,5 +1,5 @@
 import Lenke from "nav-frontend-lenker";
-import {Normaltekst, Undertittel} from "nav-frontend-typografi";
+import {Undertittel} from "nav-frontend-typografi";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components/macro";

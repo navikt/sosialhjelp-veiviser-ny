@@ -16,7 +16,7 @@ import {
     SanityMetadata,
 } from "../src/utils/sanityFetch";
 import Custom404 from "./404";
-import {Lastestriper} from "../src/komponenter/Lastestriper";
+import {Lastestriper} from "../components/Lastestriper";
 import Head from "next/head";
 
 interface PageProps {

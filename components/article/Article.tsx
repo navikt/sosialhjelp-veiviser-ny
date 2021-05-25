@@ -1,8 +1,5 @@
-import {Innholdstittel} from "nav-frontend-typografi";
 import React from "react";
 import styled from "styled-components/macro";
-import {SanityArticle} from "../../src/utils/sanityFetch";
-import {SanityBlockContent} from "../SanityBlockContentNext";
 
 const StyledArticle = styled.article`
     background-color: white;
