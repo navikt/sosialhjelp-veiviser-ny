@@ -16,6 +16,7 @@
     "@sanity/image-url": "^0.140.22",
     "@sentry/browser": "^5.30.0",
     "@u-wave/react-vimeo": "^0.9.3",
+    "amplitude-js": "^8.2.3",
     "downshift": "^6.1.2",
     "html-react-parser": "^1.2.4",
     "jsdom": "^16.5.3",
