@@ -11,6 +11,7 @@ import {UnmountClosed} from "react-collapse";
 import {Kommunesøk} from "./Kommunesøk";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
+import {buttonClickEvent, logAmplitudeEvent} from "../../src/utils/amplitude";
 
 export const getDisabledClassname = (erNedetid: boolean) => {
     return erNedetid ? "knapp--disabled" : "";
@@ -43,6 +44,15 @@ export const SokDigitalt = (props: {
     applyDigitallyPanel: SanityApplyDigitallyPanel;
 }) => {
     const [lesMer, setLesMer] = useState(false);
+
+    const toggleKommunesøk = (newToggleValue: boolean) => {
+        if (newToggleValue)
+            logAmplitudeEvent(
+                "Klikk på knapp",
+                buttonClickEvent("Sjekk om du kan søke digitalt i din kommune")
+            );
+        setLesMer(newToggleValue);
+    };
 
     return (
         <StyledSokDigitalt>
@@ -93,7 +103,7 @@ export const SokDigitalt = (props: {
                         <Knapp
                             mini
                             type="flat"
-                            onClick={() => setLesMer(!lesMer)}
+                            onClick={() => toggleKommunesøk(!lesMer)}
                         >
                             {lesMer ? (
                                 <>
