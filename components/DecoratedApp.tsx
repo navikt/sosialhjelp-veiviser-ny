@@ -1,5 +1,6 @@
 import {ReactChild} from "react";
 import styled from "styled-components/macro";
+import {NavdsColorGray10} from "@navikt/ds-tokens/dist/tokens";
 import {useDecorator} from "../src/utils/useNextDecorator";
 
 export interface Breadcrumb {
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const StyledDecoratedApp = styled.div`
-    background-color: #e7e9e9;
+    background-color: ${NavdsColorGray10};
     padding-bottom: 4rem;
 `;
 
