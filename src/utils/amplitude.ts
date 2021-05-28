@@ -31,7 +31,6 @@ export function logAmplitudeEvent(
 
 export const buttonClickEvent = (tittel: string) => {
     return {
-        app: "sosialhjelp-veiviser",
         tittel,
     };
 };
