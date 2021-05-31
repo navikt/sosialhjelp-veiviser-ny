@@ -18,10 +18,18 @@ export default {
         },
         {
             name: "type",
-            title: "Type",
+            title: "Type (deprecated)",
             type: "string",
             options: {
                 list: ["info", "suksess", "advarsel", "feil"],
+            },
+        },
+        {
+            name: "variant",
+            title: "Variant",
+            type: "string",
+            options: {
+                list: ["success", "warning", "error", "info"],
             },
         },
         {

@@ -47,6 +47,7 @@ const frontPageSpec = `
       "title": coalesce(title[$locale], title.nb),
       "slug": article->slug.current,
       type,
+      variant,
     },
   	"soknadPanel": soknadPanel->{
       "title": coalesce(title[$locale], title.nb),
@@ -153,6 +154,7 @@ export interface SanityFrontpage {
         title: string;
         slug: string;
         type: AlertStripeType;
+        variant: "error" | "warning" | "info" | "success";
     };
     soknadPanel: {
         title: string;
