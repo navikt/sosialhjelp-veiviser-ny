@@ -48,7 +48,7 @@ jobs:
           echo "CURRENT_TIME=$( date +%s )" >> $GITHUB_ENV
       - name: Create docker image tags
         run: |
-          echo "DOCKER_TAG=${{ env.DOCKER_IMAGE }}:${{ github.event.inputs.config-file-name }}-${{ steps.artifact-version.outputs.version }}-${{ env.CURRENT_TIME }}" >> $GITHUB_ENV
+          echo "DOCKER_TAG=${{ env.DOCKER_IMAGE }}:${{ github.event.inputs.config-file-name }}-${{ env.CURRENT_TIME }}-${{ steps.artifact-version.outputs.version }}" >> $GITHUB_ENV
       - name: Build docker image
         run: docker build -t ${{ env.DOCKER_TAG }} .
       - name: Push docker image
