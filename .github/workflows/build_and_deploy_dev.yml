@@ -45,7 +45,7 @@ jobs:
         uses: navikt/sosialhjelp-ci/actions/create-artifact-version@master
       - name: Create docker image tags
         run: |
-          echo "DOCKER_TAG=${{ env.DOCKER_IMAGE }}:${{ github.event.inputs.config-file-name }}-${{ steps.artifact-version.outputs.version }}-${{ date +%s }}" >> $GITHUB_ENV
+          echo "DOCKER_TAG=${{ env.DOCKER_IMAGE }}:${{ github.event.inputs.config-file-name }}-${{ steps.artifact-version.outputs.version }}-$( date +%s )" >> $GITHUB_ENV
       - name: Build docker image
         run: docker build -t ${{ env.DOCKER_TAG }} .
       - name: Push docker image
