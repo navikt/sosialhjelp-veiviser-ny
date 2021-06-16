@@ -10,7 +10,6 @@ const Banner = styled.div<BannerProps>`
     background-color: ${colors.digisosGronn};
     border-bottom: 4px solid ${colors.digisosMorkGronn};
     width: 100%;
-    padding: 0 1rem;
     display: flex;
     justify-content: center;
     min-height: ${(props) => props.height};
