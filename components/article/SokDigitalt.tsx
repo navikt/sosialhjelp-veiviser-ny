@@ -33,6 +33,10 @@ const StyledInnsynknapp = styled.a`
     margin-top: 1rem;
 `;
 
+const ToggleKommunesokButton = styled(Knapp)`
+    white-space: normal;
+`;
+
 export const StyledSokDigitalt = styled.div`
     text-align: center;
     display: block;
@@ -100,7 +104,7 @@ export const SokDigitalt = (props: {
                         />
                     </UnmountClosed>
                     <Normaltekst>
-                        <Knapp
+                        <ToggleKommunesokButton
                             mini
                             type="flat"
                             onClick={() => toggleKommunesok(!lesMer)}
@@ -116,7 +120,7 @@ export const SokDigitalt = (props: {
                                     <NedChevron />
                                 </>
                             )}
-                        </Knapp>
+                        </ToggleKommunesokButton>
                     </Normaltekst>
                 </>
             )}
