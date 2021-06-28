@@ -48,5 +48,17 @@ export default {
             type: "array",
             of: [{type: "reference", to: {type: "linkBox"}}],
         },
+        {
+            name: "featuredArticles",
+            title: "Fremhevede artikler",
+            type: "array",
+            of: [{type: "linkWithDescription"}],
+        },
+        {
+            name: "otherArticles",
+            title: "Andre artikler og lenker",
+            type: "array",
+            of: [{type: "linkWithDescription"}],
+        },
     ],
 };

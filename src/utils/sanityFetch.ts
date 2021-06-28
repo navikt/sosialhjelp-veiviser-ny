@@ -61,7 +61,19 @@ const frontPageSpec = `
            "description": coalesce(description[$locale], description.nb),
             "slug": article->slug.current,
         },
-    }
+    },
+    "featuredArticles": featuredArticles[]{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "slug": article->slug.current,
+        externalLink
+    },
+    "otherArticles": otherArticles[]{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "slug": article->slug.current,
+        externalLink
+    },
 }
 `;
 
@@ -171,6 +183,22 @@ export interface SanityFrontpage {
                     slug: string;
                 }
             ];
+        }
+    ];
+    featuredArticles: [
+        {
+            title: string;
+            description: string;
+            slug?: string;
+            externalLink?: string;
+        }
+    ];
+    otherArticles: [
+        {
+            title: string;
+            description: string;
+            slug?: string;
+            externalLink?: string;
         }
     ];
 }
