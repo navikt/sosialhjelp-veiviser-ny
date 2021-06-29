@@ -117,6 +117,7 @@ const Index = (props: PageProps) => {
                                     slug={link.slug}
                                     externalLink={link.externalLink}
                                     description={link.description}
+                                    iconUrl={link.iconUrl}
                                 />
                             </Cell>
                         ))}

@@ -23,6 +23,11 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: "icon",
+            title: "Ikon",
+            type: "image",
+        },
+        {
             name: "article",
             title: "Artikkel",
             type: "reference",

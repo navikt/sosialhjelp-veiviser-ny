@@ -66,13 +66,15 @@ const frontPageSpec = `
         "title": coalesce(title[$locale], title.nb),
         "description": coalesce(description[$locale], description.nb),
         "slug": article->slug.current,
-        externalLink
+        externalLink,
+        "iconUrl": icon.asset->url,
     },
     "otherArticles": otherArticles[]{
         "title": coalesce(title[$locale], title.nb),
         "description": coalesce(description[$locale], description.nb),
         "slug": article->slug.current,
-        externalLink
+        externalLink,
+        "iconUrl": icon.asset->url,
     },
 }
 `;
@@ -191,6 +193,7 @@ export interface SanityFrontpage {
             description: string;
             slug?: string;
             externalLink?: string;
+            iconUrl?: string;
         }
     ];
     otherArticles: [
@@ -199,6 +202,7 @@ export interface SanityFrontpage {
             description: string;
             slug?: string;
             externalLink?: string;
+            iconUrl?: string;
         }
     ];
 }

@@ -1,8 +1,10 @@
 import {BodyShort, LinkPanel, Title} from "@navikt/ds-react";
 import {NavdsColorTextLink} from "@navikt/ds-tokens/dist/tokens";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import {ExternalLink} from "@navikt/ds-icons";
 
 const StyledLinkPanel = styled(LinkPanel)`
     padding: 1.25rem;
@@ -20,7 +22,9 @@ const StyledLinkPanel = styled(LinkPanel)`
 `;
 
 const StyledHeading = styled.div`
+    display: flex;
     color: ${NavdsColorTextLink};
+    gap: 0.5rem;
 `;
 
 export const FrontPageLinkPanel = (props: {
@@ -28,6 +32,7 @@ export const FrontPageLinkPanel = (props: {
     slug?: string;
     externalLink?: string;
     description: string;
+    iconUrl?: string;
 }) => {
     return (
         <Link
@@ -36,9 +41,20 @@ export const FrontPageLinkPanel = (props: {
         >
             <StyledLinkPanel border={false}>
                 <StyledHeading>
-                    <Title level={2} size="m" spacing>
+                    {props.iconUrl && (
+                        <Image
+                            width="24"
+                            height="24"
+                            src={props.iconUrl}
+                            alt=""
+                        />
+                    )}
+                    <Title level={2} size="m">
                         {props.title}
                     </Title>
+                    {props.externalLink && (
+                        <ExternalLink height="24" width="24" fill="#0067C5" />
+                    )}
                 </StyledHeading>
                 <BodyShort>{props.description}</BodyShort>
             </StyledLinkPanel>
