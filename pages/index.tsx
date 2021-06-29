@@ -108,10 +108,12 @@ const Index = (props: PageProps) => {
                             <Alert {...props.frontPage.alert} />
                         </Cell>
                         <Cell xs={12}>
-                            <ApplyDigitallyPanel />
+                            <ApplyDigitallyPanel
+                                {...props.frontPage.applyDigitallyPanel}
+                            />
                         </Cell>
                         {props.frontPage.featuredArticles?.map((link) => (
-                            <Cell xs={12} lg={4} key={link.title}>
+                            <Cell xs={12} md={6} lg={4} key={link.title}>
                                 <FrontPageLinkPanel
                                     title={link.title}
                                     slug={link.slug}
@@ -126,14 +128,14 @@ const Index = (props: PageProps) => {
                             <HeadingWithLine>
                                 <Line />
                                 <Title level={2} size="m">
-                                    Om økonomisk sosialhjelp
+                                    {props.frontPage.otherArticlesTitle}
                                 </Title>
                                 <Line />
                             </HeadingWithLine>
                         </Cell>
 
                         {props.frontPage.otherArticles?.map((link) => (
-                            <Cell xs={12} lg={4} key={link.title}>
+                            <Cell xs={12} md={6} lg={4} key={link.title}>
                                 <FrontPageLinkPanel
                                     title={link.title}
                                     slug={link.slug}

@@ -62,6 +62,13 @@ const frontPageSpec = `
             "slug": article->slug.current,
         },
     },
+    "applyDigitallyPanel": applyDigitallyPanel{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "nySoknadButtonText": coalesce(nySoknadButtonText[$locale], nySoknadButtonText.nb),
+        "innsynButtonText": coalesce(innsynButtonText[$locale], innsynButtonText.nb),
+        "illustrationUrl": illustration.asset->url,
+    },
     "featuredArticles": featuredArticles[]{
         "title": coalesce(title[$locale], title.nb),
         "description": coalesce(description[$locale], description.nb),
@@ -69,6 +76,7 @@ const frontPageSpec = `
         externalLink,
         "iconUrl": icon.asset->url,
     },
+    "otherArticlesTitle": coalesce(otherArticlesTitle[$locale], otherArticlesTitle.nb),
     "otherArticles": otherArticles[]{
         "title": coalesce(title[$locale], title.nb),
         "description": coalesce(description[$locale], description.nb),
@@ -187,6 +195,13 @@ export interface SanityFrontpage {
             ];
         }
     ];
+    applyDigitallyPanel: {
+        title: string;
+        description: string;
+        nySoknadButtonText: string;
+        innsynButtonText: string;
+        illustrationUrl: string;
+    };
     featuredArticles: [
         {
             title: string;
@@ -196,6 +211,7 @@ export interface SanityFrontpage {
             iconUrl?: string;
         }
     ];
+    otherArticlesTitle: string;
     otherArticles: [
         {
             title: string;

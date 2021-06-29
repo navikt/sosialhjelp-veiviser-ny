@@ -5,8 +5,8 @@ const IllustrasjonsGruppe: React.FC = () => {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="315"
-            height="40"
+            width="630"
+            height="80"
             viewBox="0 0 315 40"
             aria-hidden="true"
             pointerEvents="none"

@@ -37,10 +37,42 @@ export default {
         },
         {
             name: "soknadPanel",
-            title: "Søknadpanel",
+            title: "Søknadpanel (deprecated)",
             type: "reference",
             to: {type: "linkPanel"},
             validation: (Rule) => Rule.required(),
+        },
+        {
+            name: "applyDigitallyPanel",
+            title: "Søknadpanel",
+            type: "object",
+            fields: [
+                {
+                    name: "title",
+                    title: "Tittel",
+                    type: "localeString",
+                },
+                {
+                    name: "description",
+                    title: "Beskrivelse",
+                    type: "localeString",
+                },
+                {
+                    name: "nySoknadButtonText",
+                    title: "Ny søknad knappetekst",
+                    type: "localeString",
+                },
+                {
+                    name: "innsynButtonText",
+                    title: "Innsyn knappetekst",
+                    type: "localeString",
+                },
+                {
+                    name: "illustration",
+                    title: "Illustasjon",
+                    type: "image",
+                },
+            ],
         },
         {
             name: "linkBoxes",
@@ -53,6 +85,11 @@ export default {
             title: "Fremhevede artikler",
             type: "array",
             of: [{type: "linkWithDescription"}],
+        },
+        {
+            name: "otherArticlesTitle",
+            title: "Overskrift for andre artikler og lenker",
+            type: "localeString",
         },
         {
             name: "otherArticles",

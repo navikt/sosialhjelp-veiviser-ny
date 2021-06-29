@@ -7,10 +7,15 @@ import styled from "styled-components";
 import {ExternalLink} from "@navikt/ds-icons";
 
 const StyledLinkPanel = styled(LinkPanel)`
-    padding: 1.25rem;
+    padding: 2rem;
     cursor: pointer;
     margin-bottom: 0;
-    height: calc(100% - 2.5rem);
+    height: calc(100% - 4.5rem);
+
+    @media (max-width: 648px) {
+        padding: 1rem;
+        height: calc(100% - 1.5rem);
+    }
 
     .navds-link-panel__content {
         align-self: start;
@@ -26,6 +31,10 @@ const StyledHeading = styled.div`
     align-items: center;
     color: ${NavdsColorTextLink};
     gap: 0.5rem;
+
+    img {
+        margin-bottom: var(--navds-spacing-3);
+    }
 `;
 
 export const FrontPageLinkPanel = (props: {
@@ -50,7 +59,7 @@ export const FrontPageLinkPanel = (props: {
                             alt=""
                         />
                     )}
-                    <Title level={2} size="m">
+                    <Title level={2} size="m" spacing>
                         {props.title}
                     </Title>
                     {props.externalLink && (
