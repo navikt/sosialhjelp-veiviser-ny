@@ -23,6 +23,7 @@ const StyledLinkPanel = styled(LinkPanel)`
 
 const StyledHeading = styled.div`
     display: flex;
+    align-items: center;
     color: ${NavdsColorTextLink};
     gap: 0.5rem;
 `;
@@ -42,7 +43,7 @@ export const FrontPageLinkPanel = (props: {
             <StyledLinkPanel border={false}>
                 <StyledHeading>
                     {props.iconUrl && (
-                        <Image
+                        <img
                             width="24"
                             height="24"
                             src={props.iconUrl}
