@@ -29,7 +29,6 @@ export const UnderpanelBolig = styled.div`
 
     @media all and (max-width: 600px) {
         .lenkepanel {
-            width: 100%;
             margin: 0.25rem 0 0 0;
 
             p {
