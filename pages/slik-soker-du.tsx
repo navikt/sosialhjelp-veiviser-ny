@@ -1,5 +1,5 @@
+import {Ingress, Title} from "@navikt/ds-react";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import Head from "next/head";
 import {useRouter} from "next/router";
@@ -23,9 +23,7 @@ import {fetchNedetid, NedetidResponse} from "./api/nedetid";
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
 
-    .typo-undertittel {
-        margin-top: 0;
-        margin-bottom: 1rem;
+    .navds-title {
         display: block;
         width: 100%;
         text-align: center;
@@ -93,8 +91,10 @@ const SlikSokerDu = (props: PageProps) => {
                 <PageBanner title={props.metadata.title} />
                 <Content>
                     <Article>
-                        <Innholdstittel>{props.page.title}</Innholdstittel>
-                        <Normaltekst>{props.page.ingress}</Normaltekst>
+                        <Title level={1} size="2xl" spacing>
+                            {props.page.title}
+                        </Title>
+                        <Ingress spacing>{props.page.ingress}</Ingress>
 
                         <StyledVeilederPanel>
                             <Veilederpanel
@@ -111,9 +111,9 @@ const SlikSokerDu = (props: PageProps) => {
                                     />
                                 }
                             >
-                                <Undertittel>
+                                <Title level={2} size="m" spacing>
                                     {props.page.applyDigitallyPanel.title}
-                                </Undertittel>
+                                </Title>
                                 <SokDigitalt
                                     nedetid={props.nedetid}
                                     kommuner={props.kommuner}
@@ -138,9 +138,9 @@ const SlikSokerDu = (props: PageProps) => {
                                     />
                                 }
                             >
-                                <Undertittel>
+                                <Title level={2} size="m" spacing>
                                     {props.page.applyOfflinePanel.title}
-                                </Undertittel>
+                                </Title>
                                 <SanityBlockContent
                                     blocks={props.page.applyOfflinePanel.body}
                                 />

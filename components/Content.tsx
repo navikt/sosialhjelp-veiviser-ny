@@ -1,17 +1,16 @@
-import styled from "styled-components/macro";
+import {Cell, ContentContainer, Grid} from "@navikt/ds-react";
+import React from "react";
 
-export const Content = styled.div`
-    max-width: 49.5rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media all and (max-width: 803px) {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    @media all and (min-width: 804px) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-`;
+export const Content = (props: {children}) => {
+    return (
+        <ContentContainer>
+            <Grid>
+                <Cell xs={12} md={1} lg={2}></Cell>
+                <Cell xs={12} md={10} lg={8}>
+                    {props.children}
+                </Cell>
+                <Cell xs={12} md={1} lg={2}></Cell>
+            </Grid>
+        </ContentContainer>
+    );
+};

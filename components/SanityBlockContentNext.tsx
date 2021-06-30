@@ -1,11 +1,5 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Lenke from "nav-frontend-lenker";
-import {
-    Element,
-    Ingress,
-    Normaltekst,
-    Undertittel,
-} from "nav-frontend-typografi";
 import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import React, {useContext} from "react";
 import Link from "next/link";
@@ -14,6 +8,7 @@ import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
+import {BodyLong, Ingress, Title} from "@navikt/ds-react";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
@@ -53,7 +48,9 @@ const serializers = {
                         fargetema="suksess"
                         svg={<img src={urlFor(node.icon).url()} alt="" />}
                     >
-                        <Undertittel>{node.title}</Undertittel>
+                        <Title level={2} size="l" spacing>
+                            {node.title}
+                        </Title>
                         <SanityBlockContent blocks={node.body} />
                     </Veilederpanel>
                 </StyledVeilederPanel>
@@ -63,16 +60,24 @@ const serializers = {
         block: function renderBlock({node, children}) {
             const style = node.style;
             if (style === "normal") {
-                return <Normaltekst>{children}</Normaltekst>;
+                return <BodyLong spacing>{children}</BodyLong>;
             }
             if (style === "h2") {
-                return <Undertittel>{children}</Undertittel>;
+                return (
+                    <Title level={2} size="l" spacing>
+                        {children}
+                    </Title>
+                );
             }
             if (style === "h3") {
-                return <Element tag="h3">{children}</Element>;
+                return (
+                    <Title level={3} size="m" spacing>
+                        {children}
+                    </Title>
+                );
             }
             if (style === "ingress") {
-                return <Ingress>{children}</Ingress>;
+                return <Ingress spacing>{children}</Ingress>;
             }
 
             return children;

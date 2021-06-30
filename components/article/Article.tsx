@@ -5,10 +5,6 @@ const StyledArticle = styled.article`
     background-color: white;
     margin-bottom: 4rem;
 
-    @media all and (min-width: 601px) {
-        margin: 0 1rem;
-    }
-
     @media all and (max-width: 600px) {
         padding-bottom: 2rem;
     }
@@ -24,17 +20,15 @@ const StyledArticle = styled.article`
 
 const Innhold = styled.div`
     display: block;
-
-    @media all and (min-width: 601px) {
+    padding: 2rem 1.5rem 4rem 1.5rem;
+    @media all and (min-width: 960px) {
         padding: 2rem 6rem 4rem 6rem;
     }
 
     @media all and (max-width: 600px) {
-        padding: 2rem 0.5rem 0rem 0.5rem;
     }
 
     h1 {
-        text-align: center;
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
