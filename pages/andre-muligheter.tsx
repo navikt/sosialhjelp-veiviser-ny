@@ -40,7 +40,7 @@ const OtherPossibilitiesArticle = styled.div`
     }
 
     @media (max-width: 600px) {
-        padding: 2rem 0.5rem 2rem;
+        padding: 2rem 1rem 2rem;
     }
 `;
 

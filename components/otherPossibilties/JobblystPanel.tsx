@@ -1,4 +1,4 @@
-import {BodyShort, Title} from "@navikt/ds-react";
+import {BodyShort, Ingress, Title} from "@navikt/ds-react";
 import Lenkepanel from "nav-frontend-lenkepanel";
 import React from "react";
 import styled from "styled-components/macro";
@@ -28,10 +28,6 @@ const StyledJobblystPanel = styled(Lenkepanel)`
 
     @media all and (max-width: 800px) {
         padding: 1rem;
-    }
-
-    h1 {
-        margin-bottom: 1rem;
     }
 
     :hover {
@@ -73,7 +69,7 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
                 <Title level={2} size="xl" spacing>
                     {props.title}
                 </Title>
-                <BodyShort spacing>{props.description}</BodyShort>
+                <Ingress spacing>{props.description}</Ingress>
             </Content>
             <JobblystImage src={props.illustrationUrl} alt="" />
         </StyledJobblystPanel>
