@@ -61,7 +61,29 @@ const frontPageSpec = `
            "description": coalesce(description[$locale], description.nb),
             "slug": article->slug.current,
         },
-    }
+    },
+    "applyDigitallyPanel": applyDigitallyPanel{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "nySoknadButtonText": coalesce(nySoknadButtonText[$locale], nySoknadButtonText.nb),
+        "innsynButtonText": coalesce(innsynButtonText[$locale], innsynButtonText.nb),
+        "illustrationUrl": illustration.asset->url,
+    },
+    "featuredArticles": featuredArticles[]{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "slug": article->slug.current,
+        externalLink,
+        "iconUrl": icon.asset->url,
+    },
+    "otherArticlesTitle": coalesce(otherArticlesTitle[$locale], otherArticlesTitle.nb),
+    "otherArticles": otherArticles[]{
+        "title": coalesce(title[$locale], title.nb),
+        "description": coalesce(description[$locale], description.nb),
+        "slug": article->slug.current,
+        externalLink,
+        "iconUrl": icon.asset->url,
+    },
 }
 `;
 
@@ -156,11 +178,13 @@ export interface SanityFrontpage {
         type: AlertStripeType;
         variant: "error" | "warning" | "info" | "success";
     };
+    // Deprecated - Fjernes etter at ny forside er prodsatt
     soknadPanel: {
         title: string;
         slug: string;
         iconUrl: string;
     };
+    // Deprecated - Fjernes etter at ny forside er prodsatt
     linkBoxes: [
         {
             title: string;
@@ -171,6 +195,32 @@ export interface SanityFrontpage {
                     slug: string;
                 }
             ];
+        }
+    ];
+    applyDigitallyPanel: {
+        title: string;
+        description: string;
+        nySoknadButtonText: string;
+        innsynButtonText: string;
+        illustrationUrl: string;
+    };
+    featuredArticles: [
+        {
+            title: string;
+            description: string;
+            slug?: string;
+            externalLink?: string;
+            iconUrl?: string;
+        }
+    ];
+    otherArticlesTitle: string;
+    otherArticles: [
+        {
+            title: string;
+            description: string;
+            slug?: string;
+            externalLink?: string;
+            iconUrl?: string;
         }
     ];
 }
