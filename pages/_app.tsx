@@ -1,6 +1,8 @@
 import "nav-frontend-lenker-style";
 import "nav-frontend-knapper-style";
 
+import "@navikt/ds-css";
+
 import {useEffect} from "react";
 import * as Sentry from "@sentry/browser";
 import {v4 as uuid} from "uuid";
