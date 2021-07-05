@@ -1,3 +1,4 @@
+const withCss = require("@zeit/next-css");
 const withLess = require("@zeit/next-less");
 const packageJson = require("./package.json");
 const navFrontendModuler = [];
@@ -24,20 +25,23 @@ const redirects = [
 ];
 
 module.exports = withTranspileModules(
-    withLess({
-        basePath: "/sosialhjelp",
-        target: "server",
-        trailingSlash: false,
-        reactStrictMode: true,
+    // withCss må med siden css blir disablet av withLess. Kan fjernes når alle less-avhengigheter er ute
+    withCss(
+        withLess({
+            basePath: "/sosialhjelp",
+            target: "server",
+            trailingSlash: false,
+            reactStrictMode: true,
 
-        i18n: {
-            locales: ["en", "nb", "nn"],
-            defaultLocale: "nb",
-            localeDetection: false,
-        },
+            i18n: {
+                locales: ["en", "nb", "nn"],
+                defaultLocale: "nb",
+                localeDetection: false,
+            },
 
-        async redirects() {
-            return redirects;
-        },
-    })
+            async redirects() {
+                return redirects;
+            },
+        })
+    )
 );
