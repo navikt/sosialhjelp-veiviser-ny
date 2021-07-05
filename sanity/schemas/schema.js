@@ -18,6 +18,7 @@ import alert from "./frontpage/alert";
 import linkPanel from "./frontpage/linkPanel";
 import linkBoxLine from "./frontpage/linkBoxLine";
 import linkBox from "./frontpage/linkBox";
+import linkWithDescription from "./frontpage/linkWithDescription";
 import otherPossibilities from "./otherPossibilities/otherPossibilities";
 import jobblystPanel from "./otherPossibilities/jobblystPanel";
 import housingPanel from "./otherPossibilities/housingPanel";
@@ -52,6 +53,7 @@ export default createSchema({
         linkBox,
         linkBoxLine,
         linkPanel,
+        linkWithDescription,
         localeBlockContent,
         localeUrl,
         localeString,
