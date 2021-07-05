@@ -55,6 +55,7 @@ const JobblystImage = styled.img`
     @media all and (min-width: 801px) {
         align-self: flex-end;
         width: 322px;
+        margin-right: 1rem;
     }
 `;
 
@@ -69,7 +70,7 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
                 <Title level={2} size="xl" spacing>
                     {props.title}
                 </Title>
-                <Ingress spacing>{props.description}</Ingress>
+                <Ingress>{props.description}</Ingress>
             </Content>
             <JobblystImage src={props.illustrationUrl} alt="" />
         </StyledJobblystPanel>

@@ -19,10 +19,6 @@ const StyledLenkeboks = styled.div`
 
     margin-bottom: 1rem;
 
-    .typo-undertittel {
-        margin-bottom: 1rem;
-    }
-
     ul {
         list-style: none;
         padding: 0;
@@ -32,16 +28,6 @@ const StyledLenkeboks = styled.div`
             margin-bottom: 0.7rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #b7b1a9;
-        }
-    }
-
-    @media all and (min-width: 601px) {
-        :nth-child(1) {
-            margin-right: 0.5rem;
-        }
-
-        :nth-child(2) {
-            margin-left: 0.5rem;
         }
     }
 `;

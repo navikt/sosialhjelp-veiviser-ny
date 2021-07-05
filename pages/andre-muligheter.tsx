@@ -172,7 +172,6 @@ const AndreMuligheter = (props: PageProps) => {
                                 )}
                             </UnderpanelBolig>
                         </Cell>
-
                         <Cell xs={12} lg={6}>
                             <LenkeboksAndreMuligheter
                                 innhold={
@@ -189,7 +188,6 @@ const AndreMuligheter = (props: PageProps) => {
                                 }
                             />
                         </Cell>
-
                         <Cell xs={12}>
                             <JobblystPanel
                                 {...props.otherPossibilities.jobblyst}
