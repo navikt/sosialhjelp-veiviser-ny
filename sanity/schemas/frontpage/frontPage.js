@@ -76,7 +76,7 @@ export default {
         },
         {
             name: "linkBoxes",
-            title: "Lenkebokser",
+            title: "Lenkebokser (deprecated)",
             type: "array",
             of: [{type: "reference", to: {type: "linkBox"}}],
         },
