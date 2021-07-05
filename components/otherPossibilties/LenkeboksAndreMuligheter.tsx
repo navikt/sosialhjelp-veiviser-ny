@@ -1,3 +1,4 @@
+import {BodyShort, Title} from "@navikt/ds-react";
 import Lenke from "nav-frontend-lenker";
 import {Undertittel} from "nav-frontend-typografi";
 import Link from "next/link";
@@ -15,11 +16,9 @@ const StyledLenkeboks = styled.div`
     border-radius: 0.25rem;
     padding: 1rem;
 
-    margin-bottom: 1rem;
+    height: calc(100% - 2.5rem);
 
-    .typo-undertittel {
-        margin-bottom: 1rem;
-    }
+    margin-bottom: 1rem;
 
     ul {
         list-style: none;
@@ -32,16 +31,6 @@ const StyledLenkeboks = styled.div`
             border-bottom: 1px solid #b7b1a9;
         }
     }
-
-    @media all and (min-width: 601px) {
-        :nth-child(1) {
-            margin-right: 0.5rem;
-        }
-
-        :nth-child(2) {
-            margin-left: 0.5rem;
-        }
-    }
 `;
 
 export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
@@ -50,28 +39,36 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
             {props.innhold?.map((panel) => {
                 return (
                     <React.Fragment key={panel.title}>
-                        <Undertittel>{panel.title}</Undertittel>
+                        <Title level={2} size="m" spacing>
+                            {panel.title}
+                        </Title>
                         <ul>
                             {panel.boxElements.map((element) => {
                                 if (element.internalHref) {
                                     return (
                                         <li key={element.internalHref}>
-                                            <Link
-                                                href={`/${element.internalHref}`}
-                                            >
-                                                <a className="lenke">
-                                                    {element.text}
-                                                </a>
-                                            </Link>
+                                            <BodyShort>
+                                                <Link
+                                                    href={`/${element.internalHref}`}
+                                                >
+                                                    <a className="lenke">
+                                                        {element.text}
+                                                    </a>
+                                                </Link>
+                                            </BodyShort>
                                         </li>
                                     );
                                 }
                                 if (element.externalHref)
                                     return (
                                         <li key={element.externalHref}>
-                                            <Lenke href={element.externalHref}>
-                                                {element.text}
-                                            </Lenke>
+                                            <BodyShort>
+                                                <Lenke
+                                                    href={element.externalHref}
+                                                >
+                                                    {element.text}
+                                                </Lenke>
+                                            </BodyShort>
                                         </li>
                                     );
                             })}

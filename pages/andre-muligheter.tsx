@@ -9,37 +9,27 @@ import {
 } from "../src/utils/sanityFetch";
 
 import {PageBanner} from "../components/PageBanner";
-import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
 import styled from "styled-components/macro";
-import {Ingress, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import {LenkeboksAndreMuligheter} from "../components/otherPossibilties/LenkeboksAndreMuligheter";
 import {JobblystPanel} from "../components/otherPossibilties/JobblystPanel";
 import {LenkepanelBase} from "nav-frontend-lenkepanel";
 import {HjelpTilBolig} from "../components/otherPossibilties//HjelpTilBolig";
 import {UnderpanelBolig} from "../components/otherPossibilties/UnderpanelBolig";
+import {
+    BodyShort,
+    Cell,
+    ContentContainer,
+    Grid,
+    Ingress,
+    Title,
+} from "@navikt/ds-react";
 
 interface PageProps {
     otherPossibilities: SanityOtherPossibilitiesPage;
     metadata: SanityMetadata;
 }
-
-const OtherPossibilitiesContent = styled.div`
-    max-width: 55rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media all and (max-width: 803px) {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    @media all and (min-width: 804px) {
-        padding-left: 0;
-        padding-right: 0;
-    }
-`;
 
 const OtherPossibilitiesArticle = styled.div`
     background-color: white;
@@ -50,7 +40,7 @@ const OtherPossibilitiesArticle = styled.div`
     }
 
     @media (max-width: 600px) {
-        padding: 2rem 0.5rem 2rem;
+        padding: 2rem 1rem 2rem;
     }
 `;
 
@@ -118,76 +108,93 @@ const AndreMuligheter = (props: PageProps) => {
                 </Head>
                 <PageBanner title={props.metadata.title} />
 
-                <OtherPossibilitiesContent>
-                    <OtherPossibilitiesArticle>
-                        {props.otherPossibilities?.iconUrl && (
-                            <StyledIcon
-                                src={props.otherPossibilities?.iconUrl}
-                                alt=""
+                <ContentContainer>
+                    <Grid>
+                        <Cell xs={12}>
+                            <OtherPossibilitiesArticle>
+                                {props.otherPossibilities?.iconUrl && (
+                                    <StyledIcon
+                                        src={props.otherPossibilities?.iconUrl}
+                                        alt=""
+                                    />
+                                )}
+
+                                <Ingress>
+                                    {props.otherPossibilities.ingress}
+                                </Ingress>
+                            </OtherPossibilitiesArticle>
+                        </Cell>
+                        <Cell xs={12} lg={6}>
+                            <LenkeboksAndreMuligheter
+                                innhold={
+                                    props.otherPossibilities.panelTopLeft
+                                        .innhold
+                                }
                             />
-                        )}
-
-                        <Ingress>{props.otherPossibilities.ingress}</Ingress>
-                    </OtherPossibilitiesArticle>
-                    <LenkeboksContainer>
-                        <LenkeboksAndreMuligheter
-                            innhold={
-                                props.otherPossibilities.panelTopLeft.innhold
-                            }
-                        />
-                        <LenkeboksAndreMuligheter
-                            innhold={
-                                props.otherPossibilities.panelTopRight.innhold
-                            }
-                        />
-                    </LenkeboksContainer>
-
-                    <HjelpTilBolig>
-                        <Undertittel>
-                            {props.otherPossibilities.housing.title}
-                        </Undertittel>
-                    </HjelpTilBolig>
-                    <UnderpanelBolig>
-                        {props.otherPossibilities.housing.panels.map(
-                            (panel) => {
-                                return (
-                                    <LenkepanelBase
-                                        key={panel.title}
-                                        href={panel.href}
-                                    >
-                                        <Undertittel
-                                            className="lenkepanel__heading"
-                                            tag="h3"
-                                        >
-                                            {panel.title}
-                                        </Undertittel>
-                                        {panel.description && (
-                                            <Normaltekst>
-                                                {panel.description}
-                                            </Normaltekst>
-                                        )}
-                                    </LenkepanelBase>
-                                );
-                            }
-                        )}
-                    </UnderpanelBolig>
-
-                    <LenkeboksContainer>
-                        <LenkeboksAndreMuligheter
-                            innhold={
-                                props.otherPossibilities.panelBottomLeft.innhold
-                            }
-                        />
-                        <LenkeboksAndreMuligheter
-                            innhold={
-                                props.otherPossibilities.panelBottomRight
-                                    .innhold
-                            }
-                        />
-                    </LenkeboksContainer>
-
-                    <JobblystPanel {...props.otherPossibilities.jobblyst} />
-                </OtherPossibilitiesContent>
+                        </Cell>
+                        <Cell xs={12} lg={6}>
+                            <LenkeboksAndreMuligheter
+                                innhold={
+                                    props.otherPossibilities.panelTopRight
+                                        .innhold
+                                }
+                            />
+                        </Cell>
+                        <Cell xs={12}>
+                            <HjelpTilBolig>
+                                <Title level={2} size="m">
+                                    {props.otherPossibilities.housing.title}
+                                </Title>
+                            </HjelpTilBolig>
+                            <UnderpanelBolig>
+                                {props.otherPossibilities.housing.panels.map(
+                                    (panel) => {
+                                        return (
+                                            <LenkepanelBase
+                                                key={panel.title}
+                                                href={panel.href}
+                                            >
+                                                <Title
+                                                    level={3}
+                                                    size="m"
+                                                    className="lenkepanel__heading"
+                                                >
+                                                    {panel.title}
+                                                </Title>
+                                                {panel.description && (
+                                                    <BodyShort>
+                                                        {panel.description}
+                                                    </BodyShort>
+                                                )}
+                                            </LenkepanelBase>
+                                        );
+                                    }
+                                )}
+                            </UnderpanelBolig>
+                        </Cell>
+                        <Cell xs={12} lg={6}>
+                            <LenkeboksAndreMuligheter
+                                innhold={
+                                    props.otherPossibilities.panelBottomLeft
+                                        .innhold
+                                }
+                            />
+                        </Cell>
+                        <Cell xs={12} lg={6}>
+                            <LenkeboksAndreMuligheter
+                                innhold={
+                                    props.otherPossibilities.panelBottomRight
+                                        .innhold
+                                }
+                            />
+                        </Cell>
+                        <Cell xs={12}>
+                            <JobblystPanel
+                                {...props.otherPossibilities.jobblyst}
+                            />
+                        </Cell>
+                    </Grid>
+                </ContentContainer>
             </>
         </DecoratedApp>
     );
