@@ -76,9 +76,26 @@ export default {
         },
         {
             name: "linkBoxes",
-            title: "Lenkebokser",
+            title: "Lenkebokser (deprecated)",
             type: "array",
             of: [{type: "reference", to: {type: "linkBox"}}],
+        },
+        {
+            name: "featuredArticles",
+            title: "Fremhevede artikler",
+            type: "array",
+            of: [{type: "linkWithDescription"}],
+        },
+        {
+            name: "otherArticlesTitle",
+            title: "Overskrift for andre artikler og lenker",
+            type: "localeString",
+        },
+        {
+            name: "otherArticles",
+            title: "Andre artikler og lenker",
+            type: "array",
+            of: [{type: "linkWithDescription"}],
         },
     ],
 };
