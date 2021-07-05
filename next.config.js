@@ -25,6 +25,7 @@ const redirects = [
 ];
 
 module.exports = withTranspileModules(
+    // withCss må med siden css blir disablet av withLess. Kan fjernes når alle less-avhengigheter er ute
     withCss(
         withLess({
             basePath: "/sosialhjelp",

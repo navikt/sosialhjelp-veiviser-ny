@@ -178,11 +178,13 @@ export interface SanityFrontpage {
         type: AlertStripeType;
         variant: "error" | "warning" | "info" | "success";
     };
+    // Deprecated - Fjernes etter at ny forside er prodsatt
     soknadPanel: {
         title: string;
         slug: string;
         iconUrl: string;
     };
+    // Deprecated - Fjernes etter at ny forside er prodsatt
     linkBoxes: [
         {
             title: string;
