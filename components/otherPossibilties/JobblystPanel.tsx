@@ -1,4 +1,4 @@
-import {BodyShort, Ingress, Title} from "@navikt/ds-react";
+import {Ingress, Title} from "@navikt/ds-react";
 import Lenkepanel from "nav-frontend-lenkepanel";
 import React from "react";
 import styled from "styled-components/macro";
