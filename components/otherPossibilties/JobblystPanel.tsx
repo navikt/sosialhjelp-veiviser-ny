@@ -1,5 +1,5 @@
+import {Ingress, Title} from "@navikt/ds-react";
 import Lenkepanel from "nav-frontend-lenkepanel";
-import {Innholdstittel, Normaltekst} from "nav-frontend-typografi";
 import React from "react";
 import styled from "styled-components/macro";
 import {SanityJobblystPanel} from "../../src/utils/sanityFetch";
@@ -30,10 +30,6 @@ const StyledJobblystPanel = styled(Lenkepanel)`
         padding: 1rem;
     }
 
-    h1 {
-        margin-bottom: 1rem;
-    }
-
     :hover {
         border: 4px solid #0067c5;
 
@@ -59,6 +55,7 @@ const JobblystImage = styled.img`
     @media all and (min-width: 801px) {
         align-self: flex-end;
         width: 322px;
+        margin-right: 1rem;
     }
 `;
 
@@ -70,8 +67,10 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
             border={false}
         >
             <Content>
-                <Innholdstittel tag="h2">{props.title}</Innholdstittel>
-                <Normaltekst>{props.description}</Normaltekst>
+                <Title level={2} size="xl" spacing>
+                    {props.title}
+                </Title>
+                <Ingress>{props.description}</Ingress>
             </Content>
             <JobblystImage src={props.illustrationUrl} alt="" />
         </StyledJobblystPanel>
