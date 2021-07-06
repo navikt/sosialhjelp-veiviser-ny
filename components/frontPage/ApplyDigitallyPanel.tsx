@@ -2,7 +2,6 @@ import {Panel, Title, Ingress} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import IllustrasjonsGruppe from "./IllustrasjonsGruppe";
 
 const StyledPanel = styled(Panel)`
     padding: 2rem;

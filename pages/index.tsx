@@ -8,24 +8,13 @@ import {
 } from "../src/utils/sanityFetch";
 
 import {Alert} from "../components/frontPage/Alert";
-import {SokOmSosialhjelpPanel} from "../components/frontPage/SokSosialhjelpPanel";
-import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
-import {Lenkeboks} from "../components/frontPage/Lenkeboks";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
 import styled from "styled-components";
 import {NavdsColorGray10} from "@navikt/ds-tokens/dist/tokens";
 import {FrontpageBanner} from "../components/FrontpageBanner";
 import {useDecorator} from "../src/utils/useNextDecorator";
-import {
-    BodyShort,
-    Cell,
-    ContentContainer,
-    Grid,
-    LinkPanel,
-    Title,
-} from "@navikt/ds-react";
-import Link from "next/link";
+import {Cell, ContentContainer, Grid, Title} from "@navikt/ds-react";
 import {FrontPageLinkPanel} from "../components/frontPage/FrontPageLinkPanel";
 import {ApplyDigitallyPanel} from "../components/frontPage/ApplyDigitallyPanel";
 

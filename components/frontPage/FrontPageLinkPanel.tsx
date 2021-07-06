@@ -1,7 +1,6 @@
 import {BodyShort, LinkPanel, Title} from "@navikt/ds-react";
 import {NavdsColorTextLink} from "@navikt/ds-tokens/dist/tokens";
 import Link from "next/link";
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import {ExternalLink} from "@navikt/ds-icons";
@@ -32,7 +31,8 @@ const StyledHeading = styled.div`
     color: ${NavdsColorTextLink};
     gap: 0.5rem;
 
-    img {
+    img,
+    svg {
         margin-bottom: var(--navds-spacing-3);
     }
 `;
