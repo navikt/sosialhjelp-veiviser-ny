@@ -1,17 +1,15 @@
-import styled from "styled-components/macro";
+import React from "react";
+import styled from "styled-components";
 
-export const Content = styled.div`
-    max-width: 49.5rem;
-    margin-left: auto;
-    margin-right: auto;
+const Container = styled.div`
+    box-sizing: border-box;
 
-    @media all and (max-width: 803px) {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    @media all and (min-width: 804px) {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 840px;
 `;
+
+export const Content = (props: {children}) => {
+    return <Container>{props.children}</Container>;
+};

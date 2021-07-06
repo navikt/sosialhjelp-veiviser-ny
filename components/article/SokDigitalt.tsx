@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components/macro";
 import {Knapp} from "nav-frontend-knapper";
 
-import {Normaltekst} from "nav-frontend-typografi";
 import {KommunerResponse} from "../../pages/api/kommuner";
 import {NedetidResponse} from "../../pages/api/nedetid";
 import AlertStripe from "nav-frontend-alertstriper";
@@ -103,25 +102,23 @@ export const SokDigitalt = (props: {
                             kommuner={props.kommuner}
                         />
                     </UnmountClosed>
-                    <Normaltekst>
-                        <ToggleKommunesokButton
-                            mini
-                            type="flat"
-                            onClick={() => toggleKommunesok(!lesMer)}
-                        >
-                            {lesMer ? (
-                                <>
-                                    {props.applyDigitallyPanel.closePanelLink}{" "}
-                                    <OppChevron />
-                                </>
-                            ) : (
-                                <>
-                                    {props.applyDigitallyPanel.openPanelLink}{" "}
-                                    <NedChevron />
-                                </>
-                            )}
-                        </ToggleKommunesokButton>
-                    </Normaltekst>
+                    <ToggleKommunesokButton
+                        mini
+                        type="flat"
+                        onClick={() => toggleKommunesok(!lesMer)}
+                    >
+                        {lesMer ? (
+                            <>
+                                {props.applyDigitallyPanel.closePanelLink}{" "}
+                                <OppChevron />
+                            </>
+                        ) : (
+                            <>
+                                {props.applyDigitallyPanel.openPanelLink}{" "}
+                                <NedChevron />
+                            </>
+                        )}
+                    </ToggleKommunesokButton>
                 </>
             )}
         </StyledSokDigitalt>

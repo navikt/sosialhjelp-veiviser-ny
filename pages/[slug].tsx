@@ -1,5 +1,4 @@
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import {Innholdstittel} from "nav-frontend-typografi";
 import {useRouter} from "next/router";
 import React from "react";
 import styled from "styled-components/macro";
@@ -18,6 +17,7 @@ import {
 import Custom404 from "./404";
 import {Lastestriper} from "../components/Lastestriper";
 import Head from "next/head";
+import {Title} from "@navikt/ds-react";
 
 interface PageProps {
     article: SanityArticle;
@@ -108,7 +108,9 @@ const ArticlePage = (props: PageProps) => {
                         {article?.iconUrl && (
                             <StyledIcon src={article.iconUrl} alt="" />
                         )}
-                        <Innholdstittel>{article?.title}</Innholdstittel>
+                        <Title level={1} size="2xl" spacing>
+                            {article?.title}
+                        </Title>
                         <SanityBlockContent blocks={article.body} />
                     </Article>
                 </Content>
