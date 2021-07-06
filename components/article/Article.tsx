@@ -21,11 +21,12 @@ const StyledArticle = styled.article`
 const Innhold = styled.div`
     display: block;
     padding: 2rem 1.5rem 4rem 1.5rem;
+    max-width: 640px;
+
+    margin: 0 auto;
+
     @media all and (min-width: 960px) {
         padding: 2rem 6rem 4rem 6rem;
-    }
-
-    @media all and (max-width: 600px) {
     }
 
     h1 {
@@ -33,23 +34,9 @@ const Innhold = styled.div`
         margin-bottom: 2rem;
     }
 
-    h2.artikkel_sidetittel {
-        text-align: center;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
     h2 {
         margin-top: 2rem;
         margin-bottom: 6px;
-    }
-
-    .typo-ingress {
-        margin-bottom: 1rem;
-    }
-
-    .typo-normal {
-        margin-bottom: 1rem;
     }
 
     .ekspanderbartPanel {

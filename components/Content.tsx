@@ -1,16 +1,15 @@
-import {Cell, ContentContainer, Grid} from "@navikt/ds-react";
 import React from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 840px;
+`;
 
 export const Content = (props: {children}) => {
-    return (
-        <ContentContainer>
-            <Grid>
-                <Cell xs={12} lg={2}></Cell>
-                <Cell xs={12} lg={8}>
-                    {props.children}
-                </Cell>
-                <Cell xs={12} lg={2}></Cell>
-            </Grid>
-        </ContentContainer>
-    );
+    return <Container>{props.children}</Container>;
 };

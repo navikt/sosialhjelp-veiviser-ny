@@ -1,4 +1,3 @@
-import {Innholdstittel, Normaltekst, Undertittel} from "nav-frontend-typografi";
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import Lenke from "nav-frontend-lenker";

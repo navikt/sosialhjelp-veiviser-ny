@@ -23,9 +23,14 @@ import {fetchNedetid, NedetidResponse} from "./api/nedetid";
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
 
+    @media (max-width: 448px) {
+        .nav-veilederpanel {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
     .navds-title {
-        display: block;
-        width: 100%;
         text-align: center;
     }
 `;
