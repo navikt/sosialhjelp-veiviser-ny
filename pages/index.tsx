@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import {DecoratedApp} from "../components/DecoratedApp";
 import {
     fetchFrontPageWithLocale,
     fetchMetadataWithLocale,
@@ -8,15 +7,45 @@ import {
     SanityMetadata,
 } from "../src/utils/sanityFetch";
 
-import {PageBanner} from "../components/PageBanner";
 import {Alert} from "../components/frontPage/Alert";
-import {SokOmSosialhjelpPanel} from "../components/frontPage/SokSosialhjelpPanel";
-import {LenkeboksContainer} from "../components/frontPage/LenkeboksContainer";
-import {Lenkeboks} from "../components/frontPage/Lenkeboks";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import {Content} from "../components/Content";
+import styled from "styled-components";
+import {NavdsColorGray10} from "@navikt/ds-tokens/dist/tokens";
+import {FrontpageBanner} from "../components/FrontpageBanner";
+import {useDecorator} from "../src/utils/useNextDecorator";
+import {Cell, ContentContainer, Grid, Title} from "@navikt/ds-react";
+import {FrontPageLinkPanel} from "../components/frontPage/FrontPageLinkPanel";
+import {ApplyDigitallyPanel} from "../components/frontPage/ApplyDigitallyPanel";
 
+const StyledApp = styled.div`
+    background-color: ${NavdsColorGray10};
+    padding-bottom: 5.625rem;
+`;
+
+const HeadingWithLine = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    margin-top: 2rem;
+
+    @media screen and (min-width: 480px) {
+        .navds-title {
+            margin: 0 2rem;
+        }
+    }
+`;
+
+const Line = styled.span`
+    @media screen and (min-width: 480px) {
+        flex: 1;
+        height: 0px;
+        border: 1px solid #78706a;
+    }
+`;
 interface PageProps {
     metadata: SanityMetadata;
     frontPage: SanityFrontpage;
@@ -32,54 +61,82 @@ const Index = (props: PageProps) => {
         };
     });
 
+    useDecorator(undefined, languages);
+
     return (
-        <DecoratedApp availableLanguages={languages}>
-            <>
-                <Head>
-                    <title>{props.metadata.title}</title>
-                    <meta property="og:title" content={props.metadata.title} />
-                    {props.frontPage.metaDescription && (
-                        <>
-                            <meta
-                                name="Description"
-                                content={props.frontPage.metaDescription}
-                            />
-                            <meta
-                                property="og:description"
-                                content={props.frontPage.metaDescription}
-                            />
-                        </>
-                    )}
-                    <meta property="og:locale" content={router.locale} />
-                    <meta
-                        property="og:image"
-                        content={props.metadata.bannerIconUrl}
-                    />
-                </Head>
-                <PageBanner
-                    isFrontPage
+        <>
+            <Head>
+                <title>{props.metadata.title}</title>
+                <meta property="og:title" content={props.metadata.title} />
+                {props.frontPage.metaDescription && (
+                    <>
+                        <meta
+                            name="Description"
+                            content={props.frontPage.metaDescription}
+                        />
+                        <meta
+                            property="og:description"
+                            content={props.frontPage.metaDescription}
+                        />
+                    </>
+                )}
+                <meta property="og:locale" content={router.locale} />
+                <meta
+                    property="og:image"
+                    content={props.metadata.bannerIconUrl}
+                />
+            </Head>
+            <StyledApp>
+                <FrontpageBanner
                     title={props.frontPage.title}
                     iconUrl={props.frontPage.bannerIconUrl}
                 />
-                <Content>
-                    {props.frontPage.alert && (
-                        <Alert {...props.frontPage.alert} />
-                    )}
-                    {props.frontPage.soknadPanel && (
-                        <SokOmSosialhjelpPanel
-                            {...props.frontPage.soknadPanel}
-                        />
-                    )}
-                    <LenkeboksContainer>
-                        {props.frontPage.linkBoxes.map((linkBox) => {
-                            return (
-                                <Lenkeboks key={linkBox.title} {...linkBox} />
-                            );
-                        })}
-                    </LenkeboksContainer>
-                </Content>
-            </>
-        </DecoratedApp>
+                <ContentContainer>
+                    <Grid>
+                        <Cell xs={12}>
+                            <Alert {...props.frontPage.alert} />
+                        </Cell>
+                        <Cell xs={12}>
+                            <ApplyDigitallyPanel
+                                {...props.frontPage.applyDigitallyPanel}
+                            />
+                        </Cell>
+                        {props.frontPage.featuredArticles?.map((link) => (
+                            <Cell xs={12} md={6} lg={4} key={link.title}>
+                                <FrontPageLinkPanel
+                                    title={link.title}
+                                    slug={link.slug}
+                                    externalLink={link.externalLink}
+                                    description={link.description}
+                                    iconUrl={link.iconUrl}
+                                />
+                            </Cell>
+                        ))}
+
+                        <Cell xs={12}>
+                            <HeadingWithLine>
+                                <Line />
+                                <Title level={2} size="m">
+                                    {props.frontPage.otherArticlesTitle}
+                                </Title>
+                                <Line />
+                            </HeadingWithLine>
+                        </Cell>
+
+                        {props.frontPage.otherArticles?.map((link) => (
+                            <Cell xs={12} md={6} lg={4} key={link.title}>
+                                <FrontPageLinkPanel
+                                    title={link.title}
+                                    slug={link.slug}
+                                    externalLink={link.externalLink}
+                                    description={link.description}
+                                />
+                            </Cell>
+                        ))}
+                    </Grid>
+                </ContentContainer>
+            </StyledApp>
+        </>
     );
 };
 

@@ -1,21 +1,22 @@
-import {Title} from "@navikt/ds-react";
 import React from "react";
 import styled from "styled-components";
+import {Title} from "@navikt/ds-react";
+
 import {colors} from "../src/utils/variables";
 
 const Banner = styled.div`
+    min-height: calc(200px - 1rem);
     background-color: ${colors.digisosGronn};
     border-bottom: 4px solid ${colors.digisosMorkGronn};
-    width: 100%;
     display: flex;
     justify-content: center;
-    min-height: 70px;
     margin-bottom: 2rem;
+    padding: 1rem 1rem 0 1rem;
 `;
 
 const BannerContent = styled.div`
     width: 100%;
-    max-width: 792px;
+    max-width: 1024px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -27,17 +28,19 @@ const BannerContent = styled.div`
     }
 `;
 
-export const PageBanner = (props: {
-    isFrontPage?: boolean;
-    title: string;
-    iconUrl?: string;
-}) => {
+const BannerIcon = styled.img`
+    margin-top: 1rem;
+    align-self: flex-end;
+`;
+
+export const FrontpageBanner = (props: {title: string; iconUrl: string}) => {
     return (
         <Banner>
             <BannerContent>
-                <Title level={1} size="m">
+                <Title level={1} size="2xl">
                     {props.title}
                 </Title>
+                <BannerIcon src={props.iconUrl} alt="" />
             </BannerContent>
         </Banner>
     );

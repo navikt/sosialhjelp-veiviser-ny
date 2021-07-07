@@ -33,6 +33,10 @@ module.exports = withTranspileModules(
             trailingSlash: false,
             reactStrictMode: true,
 
+            images: {
+                domains: ["cdn.sanity.io"],
+            },
+
             i18n: {
                 locales: ["en", "nb", "nn"],
                 defaultLocale: "nb",

@@ -1,6 +1,5 @@
 import {BodyShort, Title} from "@navikt/ds-react";
 import Lenke from "nav-frontend-lenker";
-import {Undertittel} from "nav-frontend-typografi";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components/macro";
