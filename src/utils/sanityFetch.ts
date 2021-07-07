@@ -46,21 +46,7 @@ const frontPageSpec = `
     "alert": alert->{
       "title": coalesce(title[$locale], title.nb),
       "slug": article->slug.current,
-      type,
       variant,
-    },
-  	"soknadPanel": soknadPanel->{
-      "title": coalesce(title[$locale], title.nb),
-      "slug": article->slug.current,
-      "iconUrl": icon.asset->url,
-    },
-    "linkBoxes": linkBoxes[]->{
-        "title": coalesce(title[$locale], title.nb),
-        "articles": articles[]{
-           "title": coalesce(title[$locale], title.nb),
-           "description": coalesce(description[$locale], description.nb),
-            "slug": article->slug.current,
-        },
     },
     "applyDigitallyPanel": applyDigitallyPanel{
         "title": coalesce(title[$locale], title.nb),
@@ -178,25 +164,6 @@ export interface SanityFrontpage {
         type: AlertStripeType;
         variant: "error" | "warning" | "info" | "success";
     };
-    // Deprecated - Fjernes etter at ny forside er prodsatt
-    soknadPanel: {
-        title: string;
-        slug: string;
-        iconUrl: string;
-    };
-    // Deprecated - Fjernes etter at ny forside er prodsatt
-    linkBoxes: [
-        {
-            title: string;
-            articles: [
-                {
-                    title: string;
-                    description: string;
-                    slug: string;
-                }
-            ];
-        }
-    ];
     applyDigitallyPanel: {
         title: string;
         description: string;
