@@ -36,13 +36,6 @@ export default {
             to: {type: "alert"},
         },
         {
-            name: "soknadPanel",
-            title: "Søknadpanel (deprecated)",
-            type: "reference",
-            to: {type: "linkPanel"},
-            validation: (Rule) => Rule.required(),
-        },
-        {
             name: "applyDigitallyPanel",
             title: "Søknadpanel",
             type: "object",
@@ -73,12 +66,6 @@ export default {
                     type: "image",
                 },
             ],
-        },
-        {
-            name: "linkBoxes",
-            title: "Lenkebokser (deprecated)",
-            type: "array",
-            of: [{type: "reference", to: {type: "linkBox"}}],
         },
         {
             name: "featuredArticles",
