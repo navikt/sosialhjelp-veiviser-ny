@@ -4,13 +4,13 @@ import {Knapp} from "nav-frontend-knapper";
 
 import {KommunerResponse} from "../../pages/api/kommuner";
 import {NedetidResponse} from "../../pages/api/nedetid";
-import AlertStripe from "nav-frontend-alertstriper";
 import {NedChevron, OppChevron} from "nav-frontend-chevron";
 import {UnmountClosed} from "react-collapse";
 import {Kommunesøk} from "./Kommunesøk";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
 import {buttonClickEvent, logAmplitudeEvent} from "../../src/utils/amplitude";
+import {Alert} from "@navikt/ds-react";
 
 export const getDisabledClassname = (erNedetid: boolean) => {
     return erNedetid ? "knapp--disabled" : "";
@@ -60,13 +60,13 @@ export const SokDigitalt = (props: {
     return (
         <StyledSokDigitalt>
             {props.nedetid.isNedetid && (
-                <AlertStripe type="feil" style={{textAlign: "left"}}>
+                <Alert variant="error" style={{textAlign: "left"}}>
                     Du kan ikke sende digital søknad i perioden{" "}
                     {props.nedetid.nedetidStartText} –{" "}
                     {props.nedetid.nedetidSluttText} grunnet teknisk
                     vedlikehold. Ta kontakt med ditt lokale NAV-kontor hvis du
                     skal søke om økonomisk sosialhjelp i denne perioden.
-                </AlertStripe>
+                </Alert>
             )}
             <ButtonRow>
                 <a

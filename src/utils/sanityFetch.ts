@@ -1,4 +1,3 @@
-import {AlertStripeType} from "nav-frontend-alertstriper";
 import client from "./sanityClient";
 
 export enum Sprak {
@@ -46,7 +45,6 @@ const frontPageSpec = `
     "alert": alert->{
       "title": coalesce(title[$locale], title.nb),
       "slug": article->slug.current,
-      type,
       variant,
     },
   	"soknadPanel": soknadPanel->{
@@ -175,7 +173,6 @@ export interface SanityFrontpage {
     alert?: {
         title: string;
         slug: string;
-        type: AlertStripeType;
         variant: "error" | "warning" | "info" | "success";
     };
     // Deprecated - Fjernes etter at ny forside er prodsatt

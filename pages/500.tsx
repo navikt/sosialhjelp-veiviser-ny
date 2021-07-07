@@ -1,10 +1,9 @@
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
-import Lenke from "nav-frontend-lenker";
 import {Content} from "../components/Content";
 import {Article} from "../components/article/Article";
 import {PageBanner} from "../components/PageBanner";
-import {BodyLong, Title} from "@navikt/ds-react";
+import {BodyLong, Title, Link as DSLink} from "@navikt/ds-react";
 
 const Custom500 = () => {
     return (
@@ -18,9 +17,9 @@ const Custom500 = () => {
                         </Title>
                         <BodyLong spacing>
                             Du kan laste siden på nytt,{" "}
-                            <Lenke href="https://www.nav.no/">
+                            <DSLink href="https://www.nav.no/">
                                 gå til forsiden
-                            </Lenke>
+                            </DSLink>
                             , eller prøve igjen senere.
                         </BodyLong>
 
@@ -30,7 +29,9 @@ const Custom500 = () => {
                         <BodyLong spacing>
                             An error occurred. You can try to refresh the page,
                             go to the{" "}
-                            <Lenke href="https://www.nav.no/">front page</Lenke>
+                            <DSLink href="https://www.nav.no/">
+                                front page
+                            </DSLink>
                             , or try again later.
                         </BodyLong>
                     </Article>
