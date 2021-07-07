@@ -1,6 +1,5 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Lenke from "nav-frontend-lenker";
-import Ekspanderbartpanel from "nav-frontend-ekspanderbartpanel";
 import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
@@ -8,7 +7,7 @@ import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
-import {BodyLong, Ingress, Title} from "@navikt/ds-react";
+import {Accordion, BodyLong, Ingress, Title} from "@navikt/ds-react";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
@@ -20,6 +19,10 @@ const StyledVeilederPanel = styled.div`
         width: 100%;
         text-align: center;
     }
+`;
+
+const StyledAccordion = styled(Accordion)`
+    margin: 1rem 0;
 `;
 
 const serializers = {
@@ -34,9 +37,9 @@ const serializers = {
         },
         expandedPanel: function renderExpandedPanel({node}) {
             return (
-                <Ekspanderbartpanel tittel={node.title} apen={node.defaultOpen}>
+                <StyledAccordion heading={node.title} open={node.defaultOpen}>
                     <SanityBlockContent blocks={node.body} />
-                </Ekspanderbartpanel>
+                </StyledAccordion>
             );
         },
         veilederPanel: function renderVeilederPanel({node}) {
