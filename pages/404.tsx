@@ -1,11 +1,10 @@
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
-import Lenke from "nav-frontend-lenker";
 import Link from "next/link";
 import {Content} from "../components/Content";
 import {Article} from "../components/article/Article";
 import {PageBanner} from "../components/PageBanner";
-import {BodyLong, Title} from "@navikt/ds-react";
+import {BodyLong, Title, Link as DSLink} from "@navikt/ds-react";
 
 const Custom404 = () => {
     return (
@@ -23,12 +22,14 @@ const Custom404 = () => {
                         </BodyLong>
                         <BodyLong spacing>
                             Du kan{" "}
-                            <Lenke href="https://www.nav.no/">
+                            <DSLink href="https://www.nav.no/">
                                 gå til forsiden
-                            </Lenke>
+                            </DSLink>
                             , eller lese mer om{" "}
                             <Link href="/">
-                                <a className="lenke">økonomisk sosialhjelp</a>
+                                <a className="navds-link">
+                                    økonomisk sosialhjelp
+                                </a>
                             </Link>
                             .
                         </BodyLong>
@@ -41,10 +42,14 @@ const Custom404 = () => {
                         </BodyLong>
                         <BodyLong spacing>
                             Go to the{" "}
-                            <Lenke href="https://www.nav.no/">front page</Lenke>
+                            <DSLink href="https://www.nav.no/">
+                                front page
+                            </DSLink>
                             , or read more about{" "}
                             <Link href="/en">
-                                <a className="lenke">financial assistance</a>
+                                <a className="navds-link">
+                                    financial assistance
+                                </a>
                             </Link>
                             .
                         </BodyLong>

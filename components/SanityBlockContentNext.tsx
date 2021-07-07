@@ -1,5 +1,4 @@
 import BlockContent from "@sanity/block-content-to-react";
-import Lenke from "nav-frontend-lenker";
 import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
@@ -7,7 +6,13 @@ import client, {urlFor} from "../src/utils/sanityClient";
 import Veilederpanel from "nav-frontend-veilederpanel";
 import styled from "styled-components/macro";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
-import {Accordion, BodyLong, Ingress, Title} from "@navikt/ds-react";
+import {
+    Accordion,
+    BodyLong,
+    Ingress,
+    Title,
+    Link as DSLink,
+} from "@navikt/ds-react";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
@@ -91,11 +96,11 @@ const serializers = {
             const {blank, href} = mark;
 
             return blank ? (
-                <Lenke href={href} target="_blank" rel="noreferrer noopener">
+                <DSLink href={href} target="_blank" rel="noreferrer noopener">
                     {children}
-                </Lenke>
+                </DSLink>
             ) : (
-                <Lenke href={href}>{children}</Lenke>
+                <DSLink href={href}>{children}</DSLink>
             );
         },
         internalLink: function renderInternalLink({mark, children}) {
@@ -103,7 +108,7 @@ const serializers = {
             const href = `/${slug.current}`;
             return (
                 <Link href={href}>
-                    <a className="lenke">{children}</a>
+                    <a className="navds-link">{children}</a>
                 </Link>
             );
         },

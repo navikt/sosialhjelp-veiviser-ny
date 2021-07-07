@@ -1,5 +1,4 @@
-import {BodyShort, Title} from "@navikt/ds-react";
-import Lenke from "nav-frontend-lenker";
+import {BodyShort, Title, Link as DSLink} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components/macro";
@@ -50,7 +49,7 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
                                                 <Link
                                                     href={`/${element.internalHref}`}
                                                 >
-                                                    <a className="lenke">
+                                                    <a className="navds-link">
                                                         {element.text}
                                                     </a>
                                                 </Link>
@@ -62,11 +61,11 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
                                     return (
                                         <li key={element.externalHref}>
                                             <BodyShort>
-                                                <Lenke
+                                                <DSLink
                                                     href={element.externalHref}
                                                 >
                                                     {element.text}
-                                                </Lenke>
+                                                </DSLink>
                                             </BodyShort>
                                         </li>
                                     );
