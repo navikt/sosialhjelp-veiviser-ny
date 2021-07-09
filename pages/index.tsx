@@ -92,7 +92,7 @@ const Index = (props: PageProps) => {
                     iconUrl={props.frontPage.bannerIconUrl}
                 />
                 <ContentContainer>
-                    <Grid>
+                    <Grid role="main">
                         <Cell xs={12}>
                             <Alert {...props.frontPage.alert} />
                         </Cell>

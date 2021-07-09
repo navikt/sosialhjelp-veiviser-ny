@@ -109,7 +109,7 @@ const AndreMuligheter = (props: PageProps) => {
                 <PageBanner title={props.metadata.title} />
 
                 <ContentContainer>
-                    <Grid>
+                    <Grid role="main">
                         <Cell xs={12}>
                             <OtherPossibilitiesArticle>
                                 {props.otherPossibilities?.iconUrl && (
