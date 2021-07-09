@@ -15,9 +15,6 @@ import veilederPanel from "./blockContent/veilederPanel";
 import customBlockComponent from "./blockContent/customBlockComponent";
 import frontPage from "./frontpage/frontPage";
 import alert from "./frontpage/alert";
-import linkPanel from "./frontpage/linkPanel";
-import linkBoxLine from "./frontpage/linkBoxLine";
-import linkBox from "./frontpage/linkBox";
 import linkWithDescription from "./frontpage/linkWithDescription";
 import otherPossibilities from "./otherPossibilities/otherPossibilities";
 import jobblystPanel from "./otherPossibilities/jobblystPanel";
@@ -50,9 +47,6 @@ export default createSchema({
         frontPage,
         housingPanel,
         jobblystPanel,
-        linkBox,
-        linkBoxLine,
-        linkPanel,
         linkWithDescription,
         localeBlockContent,
         localeUrl,

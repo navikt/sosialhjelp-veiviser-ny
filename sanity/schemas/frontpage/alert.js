@@ -17,14 +17,6 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
-            name: "type",
-            title: "Type (deprecated)",
-            type: "string",
-            options: {
-                list: ["info", "suksess", "advarsel", "feil"],
-            },
-        },
-        {
             name: "variant",
             title: "Variant",
             type: "string",
