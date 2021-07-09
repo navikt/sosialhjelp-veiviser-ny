@@ -4,7 +4,7 @@ import {Title} from "@navikt/ds-react";
 
 import {colors} from "../src/utils/variables";
 
-const Banner = styled.div`
+const Banner = styled.header`
     min-height: calc(200px - 1rem);
     background-color: ${colors.digisosGronn};
     border-bottom: 4px solid ${colors.digisosMorkGronn};

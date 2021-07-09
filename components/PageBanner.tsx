@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import {colors} from "../src/utils/variables";
 
-const Banner = styled.div`
+const Banner = styled.header`
     background-color: ${colors.digisosGronn};
     border-bottom: 4px solid ${colors.digisosMorkGronn};
     width: 100%;
