@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
-import PanelBase from "nav-frontend-paneler";
+import {Panel} from "@navikt/ds-react";
 
-export const HjelpTilBolig = styled(PanelBase)`
+export const HjelpTilBolig = styled(Panel)`
     padding-top: 2rem;
     padding-bottom: 2rem;
 

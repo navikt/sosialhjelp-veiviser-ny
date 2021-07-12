@@ -1,5 +1,3 @@
-import "nav-frontend-knapper-style";
-
 import "@navikt/ds-css";
 
 import {useEffect} from "react";

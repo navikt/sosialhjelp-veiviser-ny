@@ -19,7 +19,6 @@ const ButtonRow = styled.div`
 
     @media (max-width: 448px) {
         flex-direction: column;
-        
     }
 `;
 
@@ -28,8 +27,7 @@ const DescriptionText = styled(Ingress)`
 `;
 
 const LinkButton = styled.a`
-box-sizing: border-box;
-   
+    box-sizing: border-box;
 `;
 
 const StyledIllustrasjonsGruppe = styled.div`
@@ -52,7 +50,7 @@ export const ApplyDigitallyPanel = ({...props}) => {
             <DescriptionText spacing>{props.description}</DescriptionText>
             <ButtonRow>
                 <Link href="/slik-soker-du" passHref>
-                    <LinkButton className="navds-button navds-button--action navds-body-short   ">
+                    <LinkButton className="navds-button navds-button--action navds-body-short">
                         {props.nySoknadButtonText}
                     </LinkButton>
                 </Link>

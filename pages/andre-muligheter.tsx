@@ -14,7 +14,6 @@ import {Language} from "@navikt/nav-dekoratoren-moduler";
 import styled from "styled-components/macro";
 import {LenkeboksAndreMuligheter} from "../components/otherPossibilties/LenkeboksAndreMuligheter";
 import {JobblystPanel} from "../components/otherPossibilties/JobblystPanel";
-import {LenkepanelBase} from "nav-frontend-lenkepanel";
 import {HjelpTilBolig} from "../components/otherPossibilties//HjelpTilBolig";
 import {UnderpanelBolig} from "../components/otherPossibilties/UnderpanelBolig";
 import {
@@ -23,6 +22,7 @@ import {
     ContentContainer,
     Grid,
     Ingress,
+    LinkPanel,
     Title,
 } from "@navikt/ds-react";
 
@@ -150,9 +150,10 @@ const AndreMuligheter = (props: PageProps) => {
                                 {props.otherPossibilities.housing.panels.map(
                                     (panel) => {
                                         return (
-                                            <LenkepanelBase
+                                            <LinkPanel
                                                 key={panel.title}
                                                 href={panel.href}
+                                                border={false}
                                             >
                                                 <Title
                                                     level={3}
@@ -166,7 +167,7 @@ const AndreMuligheter = (props: PageProps) => {
                                                         {panel.description}
                                                     </BodyShort>
                                                 )}
-                                            </LenkepanelBase>
+                                            </LinkPanel>
                                         );
                                     }
                                 )}

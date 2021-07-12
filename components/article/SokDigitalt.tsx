@@ -1,16 +1,15 @@
 import React, {useState} from "react";
 import styled from "styled-components/macro";
-import {Knapp} from "nav-frontend-knapper";
 
 import {KommunerResponse} from "../../pages/api/kommuner";
 import {NedetidResponse} from "../../pages/api/nedetid";
-import {NedChevron, OppChevron} from "nav-frontend-chevron";
 import {UnmountClosed} from "react-collapse";
 import {Kommunesøk} from "./Kommunesøk";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
 import {buttonClickEvent, logAmplitudeEvent} from "../../src/utils/amplitude";
-import {Alert} from "@navikt/ds-react";
+import {Alert, Button} from "@navikt/ds-react";
+import {CollapseFilled, ExpandFilled} from "@navikt/ds-icons";
 
 export const getDisabledClassname = (erNedetid: boolean) => {
     return erNedetid ? "knapp--disabled" : "";
@@ -20,25 +19,31 @@ export const ButtonRow = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 0.75rem;
+
+    margin-bottom: 1rem;
     a {
         white-space: break-spaces;
     }
 `;
 
-const StyledInnsynknapp = styled.a`
-    transform: translateY(-2px);
-    margin-top: 1rem;
-`;
-
-const ToggleKommunesokButton = styled(Knapp)`
+const ToggleKommunesokButton = styled(Button)`
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
     white-space: normal;
+    @media (max-width: 448px) {
+        flex-direction: column;
+    }
 `;
 
 export const StyledSokDigitalt = styled.div`
     text-align: center;
     display: block;
+`;
+
+const LinkButton = styled.a`
+    box-sizing: border-box;
 `;
 
 export const SokDigitalt = (props: {
@@ -69,22 +74,22 @@ export const SokDigitalt = (props: {
                 </Alert>
             )}
             <ButtonRow>
-                <a
+                <LinkButton
                     href="https://www.nav.no/sosialhjelp/soknad/informasjon"
-                    className={`knapp knapp--hoved ${getDisabledClassname(
+                    className={`navds-button navds-button--action navds-body-short ${getDisabledClassname(
                         props.nedetid.isNedetid
                     )}`}
                 >
                     {props.applyDigitallyPanel.buttonText}
-                </a>
-                <StyledInnsynknapp
+                </LinkButton>
+                <LinkButton
                     href="https://www.nav.no/sosialhjelp/innsyn"
-                    className={`knapp ${getDisabledClassname(
+                    className={`navds-button navds-button--primary navds-body-short ${getDisabledClassname(
                         props.nedetid.isNedetid
                     )}`}
                 >
                     {props.applyDigitallyPanel.innsynButtonText}
-                </StyledInnsynknapp>
+                </LinkButton>
             </ButtonRow>
             <SanityBlockContent
                 blocks={props.applyDigitallyPanel.body}
@@ -103,19 +108,18 @@ export const SokDigitalt = (props: {
                         />
                     </UnmountClosed>
                     <ToggleKommunesokButton
-                        mini
-                        type="flat"
+                        variant="secondary"
                         onClick={() => toggleKommunesok(!lesMer)}
                     >
                         {lesMer ? (
                             <>
                                 {props.applyDigitallyPanel.closePanelLink}{" "}
-                                <OppChevron />
+                                <CollapseFilled />
                             </>
                         ) : (
                             <>
                                 {props.applyDigitallyPanel.openPanelLink}{" "}
-                                <NedChevron />
+                                <ExpandFilled />
                             </>
                         )}
                     </ToggleKommunesokButton>
