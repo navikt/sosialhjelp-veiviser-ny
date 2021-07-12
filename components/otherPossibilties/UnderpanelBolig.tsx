@@ -8,27 +8,27 @@ export const UnderpanelBolig = styled.div`
         flex-grow: initial;
         margin-top: 0.25rem;
 
-        .lenkepanel:nth-child(1) {
+        .navds-link-panel:nth-child(1) {
             margin-right: 0.25rem;
         }
-        .lenkepanel:nth-child(2) {
+        .navds-link-panel:nth-child(2) {
             margin-right: 0.25rem;
         }
 
-        .lenkepanel {
+        .navds-link-panel {
             display: flex;
             flex-direction: column;
             text-align: center;
             width: 100%;
 
-            .lenkepanel__indikator {
+            .navds-link-panel__chevron {
                 margin-top: 1rem;
             }
         }
     }
 
     @media all and (max-width: 600px) {
-        .lenkepanel {
+        .navds-link-panel {
             margin: 0.25rem 0 0 0;
 
             p {
@@ -36,7 +36,7 @@ export const UnderpanelBolig = styled.div`
             }
         }
 
-        .lenkepanel:nth-child(3) {
+        .navds-link-panel:nth-child(3) {
             margin-bottom: 1rem;
         }
     }

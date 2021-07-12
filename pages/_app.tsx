@@ -1,4 +1,3 @@
-import "nav-frontend-knapper-style";
 
 import "@navikt/ds-css";
 

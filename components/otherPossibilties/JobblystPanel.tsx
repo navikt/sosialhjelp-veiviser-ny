@@ -1,17 +1,16 @@
-import {Ingress, Title} from "@navikt/ds-react";
-import Lenkepanel from "nav-frontend-lenkepanel";
+import {Ingress, LinkPanel, Title} from "@navikt/ds-react";
 import React from "react";
 import styled from "styled-components/macro";
 import {SanityJobblystPanel} from "../../src/utils/sanityFetch";
 
-const StyledJobblystPanel = styled(Lenkepanel)`
+const StyledJobblystPanel = styled(LinkPanel)`
     margin-top: 1rem;
     margin-bottom: 4rem;
     border: 4px solid #9bd0b0;
     border-radius: 5px;
     transition: all 0.2s;
 
-    .lenkepanel__heading {
+    .navds-link-panel__content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -19,7 +18,7 @@ const StyledJobblystPanel = styled(Lenkepanel)`
     }
 
     @media all and (min-width: 801px) {
-        .lenkepanel__indikator {
+        .navds-link-panel__chevron {
             margin-bottom: 3rem;
         }
 
@@ -63,7 +62,6 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
     return (
         <StyledJobblystPanel
             href={props.href}
-            tittelProps="normaltekst"
             border={false}
         >
             <Content>
