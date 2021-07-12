@@ -60,10 +60,7 @@ const JobblystImage = styled.img`
 
 export const JobblystPanel = (props: SanityJobblystPanel) => {
     return (
-        <StyledJobblystPanel
-            href={props.href}
-            border={false}
-        >
+        <StyledJobblystPanel href={props.href} border={false}>
             <Content>
                 <Title level={2} size="xl" spacing>
                     {props.title}

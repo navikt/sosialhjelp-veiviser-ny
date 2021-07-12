@@ -9,7 +9,7 @@ import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
 import {buttonClickEvent, logAmplitudeEvent} from "../../src/utils/amplitude";
 import {Alert, Button} from "@navikt/ds-react";
-import {  CollapseFilled, ExpandFilled } from "@navikt/ds-icons";
+import {CollapseFilled, ExpandFilled} from "@navikt/ds-icons";
 
 export const getDisabledClassname = (erNedetid: boolean) => {
     return erNedetid ? "knapp--disabled" : "";
@@ -34,7 +34,6 @@ const ToggleKommunesokButton = styled(Button)`
     white-space: normal;
     @media (max-width: 448px) {
         flex-direction: column;
-        
     }
 `;
 
@@ -44,7 +43,7 @@ export const StyledSokDigitalt = styled.div`
 `;
 
 const LinkButton = styled.a`
-    box-sizing: border-box; 
+    box-sizing: border-box;
 `;
 
 export const SokDigitalt = (props: {

@@ -19,7 +19,6 @@ const ButtonRow = styled.div`
 
     @media (max-width: 448px) {
         flex-direction: column;
-        
     }
 `;
 
@@ -28,7 +27,7 @@ const DescriptionText = styled(Ingress)`
 `;
 
 const LinkButton = styled.a`
-box-sizing: border-box; 
+    box-sizing: border-box;
 `;
 
 const StyledIllustrasjonsGruppe = styled.div`

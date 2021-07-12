@@ -1,4 +1,3 @@
-
 import "@navikt/ds-css";
 
 import {useEffect} from "react";
