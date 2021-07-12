@@ -15,10 +15,11 @@ const StyledPanel = styled(Panel)`
 const ButtonRow = styled.div`
     display: flex;
     flex-wrap: wrap;
+    gap: 0.75rem;
 
     @media (max-width: 448px) {
         flex-direction: column;
-        gap: 0.75rem;
+        
     }
 `;
 
@@ -26,16 +27,9 @@ const DescriptionText = styled(Ingress)`
     max-width: 90ch;
 `;
 
-const NySoknadKnapp = styled.a`
-    margin-right: 1.5rem;
-
-    @media (max-width: 448px) {
-        margin-right: 0;
-    }
-`;
-
-const DineSoknaderKnapp = styled.a`
-    margin-bottom: 2px;
+const LinkButton = styled.a`
+box-sizing: border-box;
+   
 `;
 
 const StyledIllustrasjonsGruppe = styled.div`
@@ -58,16 +52,16 @@ export const ApplyDigitallyPanel = ({...props}) => {
             <DescriptionText spacing>{props.description}</DescriptionText>
             <ButtonRow>
                 <Link href="/slik-soker-du" passHref>
-                    <NySoknadKnapp className="navds-button navds-button--action navds-body-short">
+                    <LinkButton className="navds-button navds-button--action navds-body-short   ">
                         {props.nySoknadButtonText}
-                    </NySoknadKnapp>
+                    </LinkButton>
                 </Link>
-                <DineSoknaderKnapp
+                <LinkButton
                     className="navds-button navds-button--primary navds-body-short"
                     href="https://www.nav.no/sosialhjelp/innsyn"
                 >
                     {props.innsynButtonText}
-                </DineSoknaderKnapp>
+                </LinkButton>
             </ButtonRow>
             <StyledIllustrasjonsGruppe>
                 <img alt="" src={props.illustrationUrl} />
