@@ -47,4 +47,4 @@ Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på Git
 
 ## For NAV-ansatte
 
-Interne henvendelser kan sendes på Slack i kanalen #digisos
+Interne henvendelser kan sendes på Slack i kanalen #digisos .
