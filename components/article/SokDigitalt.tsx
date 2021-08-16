@@ -43,6 +43,8 @@ export const StyledSokDigitalt = styled.div`
 `;
 
 const LinkButton = styled.a`
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
 `;
 
