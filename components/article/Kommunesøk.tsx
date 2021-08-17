@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components/macro";
 import Downshift from "downshift";
 import {Kommune, KommunerResponse} from "../../pages/api/kommuner";
-import {Input, Label} from "nav-frontend-skjema";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
+import {Label, TextField} from "@navikt/ds-react";
 
 const StyledKommunesøk = styled.div`
     border: none;
@@ -94,14 +94,19 @@ export const Kommunesøk = (props: {
                     getRootProps,
                 }) => (
                     <StyledAutocomplete {...getRootProps()}>
-                        <Label htmlFor="kommunesøk" {...getLabelProps()}>
-                            {props.applyDigitallyPanel.label}
-                        </Label>
-                        <Input
+                        <TextField
                             autoFocus={true}
                             id="kommunesøk"
                             {...getInputProps()}
-                            feil={
+                            label={
+                                <Label
+                                    htmlFor="kommunesøk"
+                                    {...getLabelProps()}
+                                >
+                                    {props.applyDigitallyPanel.label}
+                                </Label>
+                            }
+                            error={
                                 inputValue &&
                                 filterKommuneOnInputValue(
                                     kommuneArray,
