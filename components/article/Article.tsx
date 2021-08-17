@@ -25,10 +25,6 @@ const Innhold = styled.div`
 
     margin: 0 auto;
 
-    @media all and (min-width: 960px) {
-        padding: 2rem 6rem 4rem 6rem;
-    }
-
     h1 {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -37,10 +33,6 @@ const Innhold = styled.div`
     h2 {
         margin-top: 2rem;
         margin-bottom: 6px;
-    }
-
-    .ekspanderbartPanel {
-        margin-bottom: 1rem;
     }
 
     .illustrasjon {

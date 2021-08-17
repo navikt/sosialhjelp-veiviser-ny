@@ -9,11 +9,10 @@ const StyledLinkPanel = styled(LinkPanel)`
     padding: 2rem;
     cursor: pointer;
     margin-bottom: 0;
-    height: calc(100% - 4.5rem);
+    height: calc(100%);
 
     @media (max-width: 648px) {
         padding: 1rem;
-        height: calc(100% - 1.5rem);
     }
 
     .navds-link-panel__content {
