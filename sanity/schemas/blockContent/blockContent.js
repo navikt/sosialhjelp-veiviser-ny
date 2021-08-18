@@ -123,7 +123,6 @@ export default {
         },
         {type: "customBlockComponent"},
         {type: "expandedPanel"},
-        {type: "veilederPanel"},
         {type: "vimeo"},
         {type: "embeddedVideo"},
     ],

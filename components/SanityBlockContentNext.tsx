@@ -2,8 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
-import client, {urlFor} from "../src/utils/sanityClient";
-import Veilederpanel from "nav-frontend-veilederpanel";
+import client from "../src/utils/sanityClient";
 import styled from "styled-components/macro";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
 import {
@@ -13,18 +12,6 @@ import {
     Title,
     Link as DSLink,
 } from "@navikt/ds-react";
-
-const StyledVeilederPanel = styled.div`
-    margin: 5em 0 2em 0;
-
-    .typo-undertittel {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-`;
 
 const StyledAccordion = styled(Accordion)`
     margin: 1rem 0;
@@ -45,23 +32,6 @@ const serializers = {
                 <StyledAccordion heading={node.title} open={node.defaultOpen}>
                     <SanityBlockContent blocks={node.body} />
                 </StyledAccordion>
-            );
-        },
-        veilederPanel: function renderVeilederPanel({node}) {
-            return (
-                <StyledVeilederPanel>
-                    <Veilederpanel
-                        type="plakat"
-                        kompakt
-                        fargetema="suksess"
-                        svg={<img src={urlFor(node.icon).url()} alt="" />}
-                    >
-                        <Title level={2} size="l" spacing>
-                            {node.title}
-                        </Title>
-                        <SanityBlockContent blocks={node.body} />
-                    </Veilederpanel>
-                </StyledVeilederPanel>
             );
         },
 
