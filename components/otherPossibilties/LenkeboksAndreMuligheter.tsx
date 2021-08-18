@@ -14,7 +14,7 @@ const StyledLenkeboks = styled.div`
     border-radius: 0.25rem;
     padding: 1rem;
 
-    height: calc(100%);
+    height: 100%;
 
     margin-bottom: 1rem;
 

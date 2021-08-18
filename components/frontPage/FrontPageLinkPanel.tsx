@@ -9,7 +9,7 @@ const StyledLinkPanel = styled(LinkPanel)`
     padding: 2rem;
     cursor: pointer;
     margin-bottom: 0;
-    height: calc(100%);
+    height: 100%;
 
     @media (max-width: 648px) {
         padding: 1rem;
