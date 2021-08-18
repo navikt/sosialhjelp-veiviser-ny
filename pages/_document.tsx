@@ -12,8 +12,6 @@ import {
     Props,
 } from "@navikt/nav-dekoratoren-moduler/ssr";
 import {ServerStyleSheet} from "styled-components";
-import {NextPageContext} from "next";
-import {RenderPage} from "next/dist/next-server/lib/utils";
 
 const decoratorEnv = process.env.DECORATOR_ENV as Exclude<ENV, "localhost">;
 
@@ -55,7 +53,7 @@ class MyDocument extends Document<{decorator: Components}> {
 
 // https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
 async function renderServersideStyledComponentsStylesheet(
-    ctx: NextPageContext & {renderPage: RenderPage}
+    ctx: DocumentContext
 ) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;

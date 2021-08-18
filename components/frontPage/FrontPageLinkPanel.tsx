@@ -1,5 +1,4 @@
 import {BodyShort, LinkPanel, Title} from "@navikt/ds-react";
-import {NavdsColorTextLink} from "@navikt/ds-tokens/dist/tokens";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
@@ -27,7 +26,7 @@ const StyledLinkPanel = styled(LinkPanel)`
 const StyledHeading = styled.div`
     display: flex;
     align-items: center;
-    color: ${NavdsColorTextLink};
+    color: var(--navds-color-text-link);
     gap: 0.5rem;
 
     img,
