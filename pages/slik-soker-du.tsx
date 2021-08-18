@@ -1,11 +1,11 @@
 import {Ingress, Title} from "@navikt/ds-react";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import Veilederpanel from "nav-frontend-veilederpanel";
 import Head from "next/head";
 import {useRouter} from "next/router";
 import React from "react";
 import styled from "styled-components/macro";
 import {Article} from "../components/article/Article";
+import {ReimplementedGuidePanel} from "../components/article/ReimplementedGuidePanel";
 import {SokDigitalt} from "../components/article/SokDigitalt";
 import {Content} from "../components/Content";
 import {DecoratedApp} from "../components/DecoratedApp";
@@ -22,17 +22,6 @@ import {fetchNedetid, NedetidResponse} from "./api/nedetid";
 
 const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
-
-    @media (max-width: 448px) {
-        .nav-veilederpanel {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    }
-
-    .navds-title {
-        text-align: center;
-    }
 `;
 
 interface PageProps {
@@ -102,10 +91,7 @@ const SlikSokerDu = (props: PageProps) => {
                         <Ingress spacing>{props.page.ingress}</Ingress>
 
                         <StyledVeilederPanel>
-                            <Veilederpanel
-                                type="plakat"
-                                kompakt
-                                fargetema="suksess"
+                            <ReimplementedGuidePanel
                                 svg={
                                     <img
                                         src={
@@ -126,14 +112,11 @@ const SlikSokerDu = (props: PageProps) => {
                                         props.page.applyDigitallyPanel
                                     }
                                 />
-                            </Veilederpanel>
+                            </ReimplementedGuidePanel>
                         </StyledVeilederPanel>
 
                         <StyledVeilederPanel>
-                            <Veilederpanel
-                                type="plakat"
-                                kompakt
-                                fargetema="suksess"
+                            <ReimplementedGuidePanel
                                 svg={
                                     <img
                                         src={
@@ -149,7 +132,7 @@ const SlikSokerDu = (props: PageProps) => {
                                 <SanityBlockContent
                                     blocks={props.page.applyOfflinePanel.body}
                                 />
-                            </Veilederpanel>
+                            </ReimplementedGuidePanel>
                         </StyledVeilederPanel>
                         <SanityBlockContent blocks={props.page.body} />
                     </Article>
