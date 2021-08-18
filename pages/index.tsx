@@ -11,7 +11,6 @@ import {Alert} from "../components/frontPage/Alert";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
 import styled from "styled-components";
-import {NavdsColorGray10} from "@navikt/ds-tokens/dist/tokens";
 import {FrontpageBanner} from "../components/FrontpageBanner";
 import {useDecorator} from "../src/utils/useNextDecorator";
 import {Cell, ContentContainer, Grid, Title} from "@navikt/ds-react";
@@ -19,7 +18,7 @@ import {FrontPageLinkPanel} from "../components/frontPage/FrontPageLinkPanel";
 import {ApplyDigitallyPanel} from "../components/frontPage/ApplyDigitallyPanel";
 
 const StyledApp = styled.div`
-    background-color: ${NavdsColorGray10};
+    background-color: var(--navds-color-gray-10);
     padding-bottom: 5.625rem;
 `;
 
