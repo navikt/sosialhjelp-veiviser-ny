@@ -20,10 +20,6 @@ export const UnderpanelBolig = styled.div`
             flex-direction: column;
             text-align: center;
             width: 100%;
-
-            .navds-link-panel__chevron {
-                margin-top: 1rem;
-            }
         }
     }
 

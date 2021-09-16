@@ -1,4 +1,4 @@
-import {Panel, Title, Ingress} from "@navikt/ds-react";
+import {Panel, Heading, Ingress, Button} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
@@ -26,10 +26,6 @@ const DescriptionText = styled(Ingress)`
     max-width: 90ch;
 `;
 
-const LinkButton = styled.a`
-    box-sizing: border-box;
-`;
-
 const StyledIllustrasjonsGruppe = styled.div`
     position: absolute;
     right: 2rem;
@@ -44,22 +40,23 @@ const StyledIllustrasjonsGruppe = styled.div`
 export const ApplyDigitallyPanel = ({...props}) => {
     return (
         <StyledPanel>
-            <Title level={2} size="m" spacing>
+            <Heading level="2" size="medium" spacing>
                 {props.title}
-            </Title>
+            </Heading>
             <DescriptionText spacing>{props.description}</DescriptionText>
             <ButtonRow>
                 <Link href="/slik-soker-du" passHref>
-                    <LinkButton className="navds-button navds-button--action navds-body-short">
+                    <Button as="a" variant="primary">
                         {props.nySoknadButtonText}
-                    </LinkButton>
+                    </Button>
                 </Link>
-                <LinkButton
-                    className="navds-button navds-button--primary navds-body-short"
+                <Button
+                    as="a"
+                    variant="secondary"
                     href="https://www.nav.no/sosialhjelp/innsyn"
                 >
                     {props.innsynButtonText}
-                </LinkButton>
+                </Button>
             </ButtonRow>
             <StyledIllustrasjonsGruppe>
                 <img alt="" src={props.illustrationUrl} />

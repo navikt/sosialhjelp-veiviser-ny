@@ -1,4 +1,4 @@
-import {Title} from "@navikt/ds-react";
+import {Heading} from "@navikt/ds-react";
 import React from "react";
 import styled from "styled-components";
 import {colors} from "../src/utils/variables";
@@ -35,9 +35,9 @@ export const PageBanner = (props: {
     return (
         <Banner>
             <BannerContent>
-                <Title level={1} size="m">
+                <Heading level="1" size="medium">
                     {props.title}
-                </Title>
+                </Heading>
             </BannerContent>
         </Banner>
     );

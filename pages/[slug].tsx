@@ -17,7 +17,7 @@ import {
 import Custom404 from "./404";
 import {Lastestriper} from "../components/Lastestriper";
 import Head from "next/head";
-import {Title} from "@navikt/ds-react";
+import {Heading} from "@navikt/ds-react";
 
 interface PageProps {
     article: SanityArticle;
@@ -108,9 +108,9 @@ const ArticlePage = (props: PageProps) => {
                         {article?.iconUrl && (
                             <StyledIcon src={article.iconUrl} alt="" />
                         )}
-                        <Title level={1} size="2xl" spacing>
+                        <Heading level="" size="2xlarge" spacing>
                             {article?.title}
-                        </Title>
+                        </Heading>
                         <SanityBlockContent blocks={article.body} />
                     </Article>
                 </Content>

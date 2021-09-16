@@ -17,7 +17,7 @@ const StyledGuidePanel = styled.div`
     display: flex;
     align-items: center;
 
-    .navds-title {
+    .navds-heading {
         text-align: center;
     }
 `;

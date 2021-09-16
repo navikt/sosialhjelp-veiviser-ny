@@ -23,7 +23,7 @@ import {
     Grid,
     Ingress,
     LinkPanel,
-    Title,
+    Heading,
 } from "@navikt/ds-react";
 
 interface PageProps {
@@ -142,9 +142,9 @@ const AndreMuligheter = (props: PageProps) => {
                         </Cell>
                         <Cell xs={12}>
                             <HjelpTilBolig>
-                                <Title level={2} size="m">
+                                <Heading level="2" size="medium">
                                     {props.otherPossibilities.housing.title}
-                                </Title>
+                                </Heading>
                             </HjelpTilBolig>
                             <UnderpanelBolig>
                                 {props.otherPossibilities.housing.panels.map(
@@ -155,17 +155,13 @@ const AndreMuligheter = (props: PageProps) => {
                                                 href={panel.href}
                                                 border={false}
                                             >
-                                                <Title
-                                                    level={3}
-                                                    size="m"
-                                                    className="lenkepanel__heading"
-                                                >
+                                                <LinkPanel.Title>
                                                     {panel.title}
-                                                </Title>
+                                                </LinkPanel.Title>
                                                 {panel.description && (
-                                                    <BodyShort>
+                                                    <LinkPanel.Description>
                                                         {panel.description}
-                                                    </BodyShort>
+                                                    </LinkPanel.Description>
                                                 )}
                                             </LinkPanel>
                                         );

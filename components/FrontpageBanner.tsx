@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Title} from "@navikt/ds-react";
+import {Heading} from "@navikt/ds-react";
 
 import {colors} from "../src/utils/variables";
 
@@ -37,9 +37,9 @@ export const FrontpageBanner = (props: {title: string; iconUrl: string}) => {
     return (
         <Banner>
             <BannerContent>
-                <Title level={1} size="2xl">
+                <Heading level="1" size="2xlarge">
                     {props.title}
-                </Title>
+                </Heading>
                 <BannerIcon src={props.iconUrl} alt="" />
             </BannerContent>
         </Banner>

@@ -13,7 +13,7 @@ import {Language} from "@navikt/nav-dekoratoren-moduler";
 import styled from "styled-components";
 import {FrontpageBanner} from "../components/FrontpageBanner";
 import {useDecorator} from "../src/utils/useNextDecorator";
-import {Cell, ContentContainer, Grid, Title} from "@navikt/ds-react";
+import {Cell, ContentContainer, Grid, Heading} from "@navikt/ds-react";
 import {FrontPageLinkPanel} from "../components/frontPage/FrontPageLinkPanel";
 import {ApplyDigitallyPanel} from "../components/frontPage/ApplyDigitallyPanel";
 
@@ -32,7 +32,7 @@ const HeadingWithLine = styled.div`
     margin-top: 2rem;
 
     @media screen and (min-width: 480px) {
-        .navds-title {
+        .navds-heading {
             margin: 0 2rem;
         }
     }
@@ -42,7 +42,7 @@ const Line = styled.span`
     @media screen and (min-width: 480px) {
         flex: 1;
         height: 0px;
-        border: 1px solid #78706a;
+        border-bottom: 1px solid #78706a;
     }
 `;
 interface PageProps {
@@ -115,9 +115,9 @@ const Index = (props: PageProps) => {
                         <Cell xs={12}>
                             <HeadingWithLine>
                                 <Line />
-                                <Title level={2} size="m">
+                                <Heading level="2" size="medium">
                                     {props.frontPage.otherArticlesTitle}
-                                </Title>
+                                </Heading>
                                 <Line />
                             </HeadingWithLine>
                         </Cell>

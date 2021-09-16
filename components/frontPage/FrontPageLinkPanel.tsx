@@ -1,4 +1,4 @@
-import {BodyShort, LinkPanel, Title} from "@navikt/ds-react";
+import {BodyShort, LinkPanel, Heading} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
@@ -48,23 +48,31 @@ export const FrontPageLinkPanel = (props: {
             passHref
         >
             <StyledLinkPanel border={false}>
-                <StyledHeading>
-                    {props.iconUrl && (
-                        <img
-                            width="24"
-                            height="24"
-                            src={props.iconUrl}
-                            alt=""
-                        />
-                    )}
-                    <Title level={2} size="m" spacing>
-                        {props.title}
-                    </Title>
-                    {props.externalLink && (
-                        <ExternalLink height="24" width="24" fill="#0067C5" />
-                    )}
-                </StyledHeading>
-                <BodyShort>{props.description}</BodyShort>
+                <LinkPanel.Title>
+                    <StyledHeading>
+                        {props.iconUrl && (
+                            <img
+                                width="24"
+                                height="24"
+                                src={props.iconUrl}
+                                alt=""
+                            />
+                        )}
+                        <Heading level="2" size="medium" spacing>
+                            {props.title}
+                        </Heading>
+                        {props.externalLink && (
+                            <ExternalLink
+                                height="24"
+                                width="24"
+                                fill="#0067C5"
+                            />
+                        )}
+                    </StyledHeading>
+                </LinkPanel.Title>
+                <LinkPanel.Description>
+                    <BodyShort>{props.description}</BodyShort>
+                </LinkPanel.Description>
             </StyledLinkPanel>
         </Link>
     );

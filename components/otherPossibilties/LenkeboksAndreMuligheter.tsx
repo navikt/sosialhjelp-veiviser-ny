@@ -1,4 +1,4 @@
-import {BodyShort, Title, Link as DSLink} from "@navikt/ds-react";
+import {BodyShort, Heading, Link as DSLink} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components/macro";
@@ -37,9 +37,9 @@ export const LenkeboksAndreMuligheter = (props: SanityPanelSpec) => {
             {props.innhold?.map((panel) => {
                 return (
                     <React.Fragment key={panel.title}>
-                        <Title level={2} size="m" spacing>
+                        <Heading level="2" size="medium" spacing>
                             {panel.title}
-                        </Title>
+                        </Heading>
                         <ul>
                             {panel.boxElements.map((element) => {
                                 if (element.internalHref) {

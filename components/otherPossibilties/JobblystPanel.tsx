@@ -1,4 +1,4 @@
-import {Ingress, LinkPanel, Title} from "@navikt/ds-react";
+import {Ingress, LinkPanel, Heading} from "@navikt/ds-react";
 import React from "react";
 import styled from "styled-components/macro";
 import {SanityJobblystPanel} from "../../src/utils/sanityFetch";
@@ -62,9 +62,9 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
     return (
         <StyledJobblystPanel href={props.href} border={false}>
             <Content>
-                <Title level={2} size="xl" spacing>
+                <Heading level="2" size="xlarge" spacing>
                     {props.title}
-                </Title>
+                </Heading>
                 <Ingress>{props.description}</Ingress>
             </Content>
             <JobblystImage src={props.illustrationUrl} alt="" />
