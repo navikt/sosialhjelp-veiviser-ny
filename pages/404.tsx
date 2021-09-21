@@ -4,7 +4,7 @@ import Link from "next/link";
 import {Content} from "../components/Content";
 import {Article} from "../components/article/Article";
 import {PageBanner} from "../components/PageBanner";
-import {BodyLong, Title, Link as DSLink} from "@navikt/ds-react";
+import {BodyLong, Heading, Link as DSLink} from "@navikt/ds-react";
 
 const Custom404 = () => {
     return (
@@ -13,9 +13,9 @@ const Custom404 = () => {
                 <PageBanner title="Økonomisk sosialhjelp" />
                 <Content>
                     <Article>
-                        <Title level={1} size="l" spacing>
+                        <Heading level="1" size="large" spacing>
                             Fant ikke siden
-                        </Title>
+                        </Heading>
                         <BodyLong spacing>
                             Beklager, siden kan være slettet eller flyttet,
                             eller det var en feil i lenken som førte deg hit.
@@ -34,9 +34,9 @@ const Custom404 = () => {
                             .
                         </BodyLong>
 
-                        <Title level={2} size="m" spacing>
+                        <Heading level="2" size="medium" spacing>
                             In English
-                        </Title>
+                        </Heading>
                         <BodyLong spacing>
                             The page you requested cannot be found.
                         </BodyLong>

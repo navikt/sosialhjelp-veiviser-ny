@@ -11,10 +11,6 @@ import {buttonClickEvent, logAmplitudeEvent} from "../../src/utils/amplitude";
 import {Alert, Button} from "@navikt/ds-react";
 import {CollapseFilled, ExpandFilled} from "@navikt/ds-icons";
 
-export const getDisabledClassname = (erNedetid: boolean) => {
-    return erNedetid ? "knapp--disabled" : "";
-};
-
 export const ButtonRow = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -40,12 +36,6 @@ const ToggleKommunesokButton = styled(Button)`
 export const StyledSokDigitalt = styled.div`
     text-align: center;
     display: block;
-`;
-
-const LinkButton = styled.a`
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
 `;
 
 export const SokDigitalt = (props: {
@@ -76,22 +66,22 @@ export const SokDigitalt = (props: {
                 </Alert>
             )}
             <ButtonRow>
-                <LinkButton
+                <Button
+                    as="a"
+                    variant="primary"
                     href="https://www.nav.no/sosialhjelp/soknad/informasjon"
-                    className={`navds-button navds-button--action navds-body-short ${getDisabledClassname(
-                        props.nedetid.isNedetid
-                    )}`}
+                    disabled={props.nedetid.isNedetid}
                 >
                     {props.applyDigitallyPanel.buttonText}
-                </LinkButton>
-                <LinkButton
+                </Button>
+                <Button
+                    as="a"
+                    variant="secondary"
+                    disabled={props.nedetid.isNedetid}
                     href="https://www.nav.no/sosialhjelp/innsyn"
-                    className={`navds-button navds-button--primary navds-body-short ${getDisabledClassname(
-                        props.nedetid.isNedetid
-                    )}`}
                 >
                     {props.applyDigitallyPanel.innsynButtonText}
-                </LinkButton>
+                </Button>
             </ButtonRow>
             <SanityBlockContent
                 blocks={props.applyDigitallyPanel.body}
@@ -110,7 +100,7 @@ export const SokDigitalt = (props: {
                         />
                     </UnmountClosed>
                     <ToggleKommunesokButton
-                        variant="secondary"
+                        variant="tertiary"
                         onClick={() => toggleKommunesok(!lesMer)}
                     >
                         {lesMer ? (

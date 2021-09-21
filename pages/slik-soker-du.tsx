@@ -1,4 +1,4 @@
-import {Ingress, Title} from "@navikt/ds-react";
+import {Ingress, Heading} from "@navikt/ds-react";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
 import Head from "next/head";
 import {useRouter} from "next/router";
@@ -85,9 +85,9 @@ const SlikSokerDu = (props: PageProps) => {
                 <PageBanner title={props.metadata.title} />
                 <Content>
                     <Article>
-                        <Title level={1} size="2xl" spacing>
+                        <Heading level="1" size="2xlarge" spacing>
                             {props.page.title}
-                        </Title>
+                        </Heading>
                         <Ingress spacing>{props.page.ingress}</Ingress>
 
                         <StyledVeilederPanel>
@@ -102,9 +102,9 @@ const SlikSokerDu = (props: PageProps) => {
                                     />
                                 }
                             >
-                                <Title level={2} size="m" spacing>
+                                <Heading level="2" size="medium" spacing>
                                     {props.page.applyDigitallyPanel.title}
-                                </Title>
+                                </Heading>
                                 <SokDigitalt
                                     nedetid={props.nedetid}
                                     kommuner={props.kommuner}
@@ -126,9 +126,9 @@ const SlikSokerDu = (props: PageProps) => {
                                     />
                                 }
                             >
-                                <Title level={2} size="m" spacing>
+                                <Heading level="2" size="medium" spacing>
                                     {props.page.applyOfflinePanel.title}
-                                </Title>
+                                </Heading>
                                 <SanityBlockContent
                                     blocks={props.page.applyOfflinePanel.body}
                                 />
