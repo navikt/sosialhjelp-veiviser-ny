@@ -44,7 +44,7 @@ const query = groq`
 {
     "metadata": ${metadataSpec},
     "otherPossibilities": *[_type == "otherPossibilities"][0]
-    {{
+    {
         "title": coalesce(title[$locale], title.nb),
         "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
         "iconUrl": icon.asset->url,
