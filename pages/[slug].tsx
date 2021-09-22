@@ -8,9 +8,9 @@ import {DecoratedApp} from "../components/DecoratedApp";
 import {PageBanner} from "../components/PageBanner";
 import {SanityBlockContent} from "../components/SanityBlockContentNext";
 import {
+    blockContentSpec,
     fetchAllArticleSlugs,
-    fetchArticleWithSlugAndLocale,
-    fetchMetadataWithLocale,
+    metadataSpec,
     SanityArticle,
     SanityMetadata,
 } from "../src/utils/sanityFetch";
@@ -18,10 +18,30 @@ import Custom404 from "./404";
 import {Lastestriper} from "../components/Lastestriper";
 import Head from "next/head";
 import {Heading} from "@navikt/ds-react";
+import {groq} from "next-sanity";
+import client from "../src/utils/sanityClient";
+import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
+
+const query = groq`
+{
+    "metadata": ${metadataSpec},
+    "article": *[_type == "article" && slug.current == $slug][0]
+    {
+        "id": _id,
+        "title": coalesce(title[$locale], title.nb),
+        "slug": slug.current,
+        "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+        "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+        "iconUrl": icon.asset->url,
+        languages
+    }
+}`;
 
 interface PageProps {
-    article: SanityArticle;
-    metadata: SanityMetadata;
+    data: {
+        article: SanityArticle;
+        metadata: SanityMetadata;
+    };
 }
 
 const StyledIcon = styled.img`
@@ -30,9 +50,9 @@ const StyledIcon = styled.img`
 `;
 
 const ArticlePage = (props: PageProps) => {
-    const router = useRouter();
+    const {data} = props;
 
-    const {article, metadata} = props;
+    const router = useRouter();
 
     if (router.isFallback) {
         return (
@@ -49,19 +69,19 @@ const ArticlePage = (props: PageProps) => {
         );
     }
 
-    if (!router.isFallback && !article) {
+    if (!router.isFallback && !data.article) {
         return <Custom404 />;
     }
 
     const breadcrumbPage = {
-        title: article.title,
-        url: `${router.basePath}/${router.locale}/${article.slug}`,
+        title: data.article.title,
+        url: `${router.basePath}/${router.locale}/${data.article.slug}`,
     };
 
-    const languages: Language[] = article.languages.map((locale) => {
+    const languages: Language[] = data.article.languages.map((locale) => {
         return {
             locale,
-            url: `${router.basePath}/${locale}/${article.slug}`,
+            url: `${router.basePath}/${locale}/${data.article.slug}`,
         };
     });
 
@@ -73,21 +93,21 @@ const ArticlePage = (props: PageProps) => {
             <>
                 <Head>
                     <title>
-                        {props.metadata.title} - {props.article.title}
+                        {data.metadata.title} - {data.article.title}
                     </title>
                     <meta
                         property="og:title"
-                        content={`${props.metadata.title} - ${props.article.title}`}
+                        content={`${data.metadata.title} - ${data.article.title}`}
                     />
-                    {props.article.metaDescription && (
+                    {data.article.metaDescription && (
                         <>
                             <meta
                                 name="Description"
-                                content={props.article.metaDescription}
+                                content={data.article.metaDescription}
                             />
                             <meta
                                 property="og:description"
-                                content={props.article.metaDescription}
+                                content={data.article.metaDescription}
                             />
                         </>
                     )}
@@ -95,23 +115,23 @@ const ArticlePage = (props: PageProps) => {
                     <meta property="og:locale" content={router.locale} />
                     <meta
                         property="og:image"
-                        content={props.metadata.bannerIconUrl}
+                        content={data.metadata.bannerIconUrl}
                     />
                     <link
                         rel="canonical"
-                        href={`${process.env.NEXT_PUBLIC_APP_URL}/${props.article.slug}`}
+                        href={`${process.env.NEXT_PUBLIC_APP_URL}/${data.article.slug}`}
                     />
                 </Head>
-                <PageBanner title={metadata.title} />
+                <PageBanner title={data.metadata.title} />
                 <Content>
                     <Article>
-                        {article?.iconUrl && (
-                            <StyledIcon src={article.iconUrl} alt="" />
+                        {data.article?.iconUrl && (
+                            <StyledIcon src={data.article.iconUrl} alt="" />
                         )}
-                        <Heading level="" size="2xlarge" spacing>
-                            {article?.title}
+                        <Heading level="1" size="2xlarge" spacing>
+                            {data.article?.title}
                         </Heading>
-                        <SanityBlockContent blocks={article.body} />
+                        <SanityBlockContent blocks={data.article.body} />
                     </Article>
                 </Content>
             </>
@@ -141,8 +161,10 @@ export const getStaticPaths = async ({locales}): Promise<StaticPathProps> => {
 
 interface StaticProps {
     props: {
-        article: SanityArticle;
-        metadata: SanityMetadata;
+        data: {
+            article: SanityArticle;
+            metadata: SanityMetadata;
+        };
     };
     revalidate: number;
 }
@@ -151,11 +173,11 @@ export const getStaticProps = async ({
     locale,
     params: {slug},
 }): Promise<StaticProps> => {
-    const metadata = await fetchMetadataWithLocale(locale);
-    const article = await fetchArticleWithSlugAndLocale(slug, locale);
+    const params = {slug: slug, locale: locale};
+    const data = await client.fetch(query, params);
     return {
-        props: {article, metadata},
-        revalidate: 60,
+        props: {data},
+        revalidate: REVALIDATE_IN_SECONDS,
     };
 };
 

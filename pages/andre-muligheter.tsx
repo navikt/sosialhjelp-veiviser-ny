@@ -2,8 +2,7 @@ import Head from "next/head";
 import React from "react";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {
-    fetchMetadataWithLocale,
-    fetchOtherPossibilitiesWithLocale,
+    metadataSpec,
     SanityMetadata,
     SanityOtherPossibilitiesPage,
 } from "../src/utils/sanityFetch";
@@ -25,10 +24,57 @@ import {
     LinkPanel,
     Heading,
 } from "@navikt/ds-react";
+import groq from "groq";
+import client from "../src/utils/sanityClient";
+import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
+
+const panelSpec = `
+{
+    "innhold": innhold[]{
+        "title": coalesce(title[$locale], title.nb),
+        "boxElements": boxElements[]{
+            "text": coalesce(text[$locale], text.nb),
+            "externalHref": coalesce(externalHref[$locale], externalHref.nb),
+            "internalHref": internalHref->slug.current,
+        },
+    }
+}`;
+
+const query = groq`
+{
+    "metadata": ${metadataSpec},
+    "otherPossibilities": *[_type == "otherPossibilities"][0]
+    {
+        "title": coalesce(title[$locale], title.nb),
+        "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+        "iconUrl": icon.asset->url,
+        "ingress": coalesce(ingress[$locale], ingress.nb),
+        "panelTopLeft": panelTopLeft${panelSpec},
+        "panelTopRight": panelTopRight${panelSpec},
+        "housing": housing{
+            "title": coalesce(title[$locale], title.nb),
+            "panels": panels[]{
+                "title": coalesce(title[$locale], title.nb),
+                "description": coalesce(description[$locale], description.nb),
+                "href": coalesce(href[$locale], href.nb),
+            }
+        },
+        "panelBottomLeft": panelBottomLeft${panelSpec},
+        "panelBottomRight": panelBottomRight${panelSpec},
+        "jobblyst": jobblyst{
+            "title": coalesce(title[$locale], title.nb),
+            "description": coalesce(description[$locale], description.nb),
+            "illustrationUrl": illustration.asset->url,
+            href
+        },
+    }
+}`;
 
 interface PageProps {
-    otherPossibilities: SanityOtherPossibilitiesPage;
-    metadata: SanityMetadata;
+    data: {
+        otherPossibilities: SanityOtherPossibilitiesPage;
+        metadata: SanityMetadata;
+    };
 }
 
 const OtherPossibilitiesArticle = styled.div`
@@ -51,10 +97,11 @@ const StyledIcon = styled.img`
 `;
 
 const AndreMuligheter = (props: PageProps) => {
+    const {data} = props;
     const router = useRouter();
 
     const breadcrumbPage = {
-        title: props.otherPossibilities.title,
+        title: data.otherPossibilities.title,
         url: `${router.basePath}/${router.locale}/andre-muligheter`,
     };
 
@@ -73,25 +120,24 @@ const AndreMuligheter = (props: PageProps) => {
             <>
                 <Head>
                     <title>
-                        {props.metadata.title} -{" "}
-                        {props.otherPossibilities.title}
+                        {data.metadata.title} - {data.otherPossibilities.title}
                     </title>
                     <meta
                         property="og:title"
-                        content={`${props.metadata.title} - ${props.otherPossibilities.title}`}
+                        content={`${data.metadata.title} - ${data.otherPossibilities.title}`}
                     />
-                    {props.otherPossibilities.metaDescription && (
+                    {data.otherPossibilities.metaDescription && (
                         <>
                             <meta
                                 name="Description"
                                 content={
-                                    props.otherPossibilities.metaDescription
+                                    data.otherPossibilities.metaDescription
                                 }
                             />
                             <meta
                                 property="og:description"
                                 content={
-                                    props.otherPossibilities.metaDescription
+                                    data.otherPossibilities.metaDescription
                                 }
                             />
                         </>
@@ -99,43 +145,42 @@ const AndreMuligheter = (props: PageProps) => {
                     <meta property="og:locale" content={router.locale} />
                     <meta
                         property="og:image"
-                        content={props.metadata.bannerIconUrl}
+                        content={data.metadata.bannerIconUrl}
                     />
                     <link
                         rel="canonical"
                         href={`${process.env.NEXT_PUBLIC_APP_URL}/andre-muligheter`}
                     />
                 </Head>
-                <PageBanner title={props.metadata.title} />
+                <PageBanner title={data.metadata.title} />
 
                 <ContentContainer>
                     <Grid role="main">
                         <Cell xs={12}>
                             <OtherPossibilitiesArticle>
-                                {props.otherPossibilities?.iconUrl && (
+                                {data.otherPossibilities?.iconUrl && (
                                     <StyledIcon
-                                        src={props.otherPossibilities?.iconUrl}
+                                        src={data.otherPossibilities?.iconUrl}
                                         alt=""
                                     />
                                 )}
 
                                 <Ingress>
-                                    {props.otherPossibilities.ingress}
+                                    {data.otherPossibilities.ingress}
                                 </Ingress>
                             </OtherPossibilitiesArticle>
                         </Cell>
                         <Cell xs={12} lg={6}>
                             <LenkeboksAndreMuligheter
                                 innhold={
-                                    props.otherPossibilities.panelTopLeft
-                                        .innhold
+                                    data.otherPossibilities.panelTopLeft.innhold
                                 }
                             />
                         </Cell>
                         <Cell xs={12} lg={6}>
                             <LenkeboksAndreMuligheter
                                 innhold={
-                                    props.otherPossibilities.panelTopRight
+                                    data.otherPossibilities.panelTopRight
                                         .innhold
                                 }
                             />
@@ -143,11 +188,11 @@ const AndreMuligheter = (props: PageProps) => {
                         <Cell xs={12}>
                             <HjelpTilBolig>
                                 <Heading level="2" size="medium">
-                                    {props.otherPossibilities.housing.title}
+                                    {data.otherPossibilities.housing.title}
                                 </Heading>
                             </HjelpTilBolig>
                             <UnderpanelBolig>
-                                {props.otherPossibilities.housing.panels.map(
+                                {data.otherPossibilities.housing.panels.map(
                                     (panel) => {
                                         return (
                                             <LinkPanel
@@ -172,7 +217,7 @@ const AndreMuligheter = (props: PageProps) => {
                         <Cell xs={12} lg={6}>
                             <LenkeboksAndreMuligheter
                                 innhold={
-                                    props.otherPossibilities.panelBottomLeft
+                                    data.otherPossibilities.panelBottomLeft
                                         .innhold
                                 }
                             />
@@ -180,14 +225,14 @@ const AndreMuligheter = (props: PageProps) => {
                         <Cell xs={12} lg={6}>
                             <LenkeboksAndreMuligheter
                                 innhold={
-                                    props.otherPossibilities.panelBottomRight
+                                    data.otherPossibilities.panelBottomRight
                                         .innhold
                                 }
                             />
                         </Cell>
                         <Cell xs={12}>
                             <JobblystPanel
-                                {...props.otherPossibilities.jobblyst}
+                                {...data.otherPossibilities.jobblyst}
                             />
                         </Cell>
                     </Grid>
@@ -199,17 +244,19 @@ const AndreMuligheter = (props: PageProps) => {
 
 interface StaticProps {
     props: {
-        otherPossibilities: SanityOtherPossibilitiesPage;
-        metadata: SanityMetadata;
+        data: {
+            otherPossibilities: SanityOtherPossibilitiesPage;
+            metadata: SanityMetadata;
+        };
     };
     revalidate: number;
 }
 export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
-    const metadata = await fetchMetadataWithLocale(locale);
-    const otherPossibilities = await fetchOtherPossibilitiesWithLocale(locale);
+    const params = {locale: locale};
+    const data = await client.fetch(query, params);
     return {
-        props: {otherPossibilities, metadata},
-        revalidate: 60,
+        props: {data},
+        revalidate: REVALIDATE_IN_SECONDS,
     };
 };
 

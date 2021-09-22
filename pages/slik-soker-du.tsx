@@ -1,5 +1,6 @@
 import {Ingress, Heading} from "@navikt/ds-react";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
+import {groq} from "next-sanity";
 import Head from "next/head";
 import {useRouter} from "next/router";
 import React from "react";
@@ -11,12 +12,14 @@ import {Content} from "../components/Content";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {PageBanner} from "../components/PageBanner";
 import {SanityBlockContent} from "../components/SanityBlockContentNext";
+import client from "../src/utils/sanityClient";
 import {
-    fetchMetadataWithLocale,
     SanityMetadata,
-    fetchApplicationPageWithLocale,
     SanityApplicationPage,
+    metadataSpec,
+    blockContentSpec,
 } from "../src/utils/sanityFetch";
+import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
 import {fetchKommuner, KommunerResponse} from "./api/kommuner";
 import {fetchNedetid, NedetidResponse} from "./api/nedetid";
 
@@ -24,18 +27,52 @@ const StyledVeilederPanel = styled.div`
     margin: 5em 0 2em 0;
 `;
 
+const query = groq`
+{
+    "metadata": ${metadataSpec},
+    "page": *[_type == "applicationPage"][0]
+    {
+        "title": coalesce(title[$locale], title.nb),
+        "metaDescription": coalesce(metaDescription[$locale], metaDescription.nb),
+        "ingress": coalesce(ingress[$locale], ingress.nb),
+        "applyDigitallyPanel": applyDigitallyPanel{
+            "title": coalesce(title[$locale], title.nb),
+            "iconUrl": icon.asset->url,
+            "buttonText": coalesce(buttonText[$locale], buttonText.nb),
+            "innsynButtonText": coalesce(innsynButtonText[$locale], innsynButtonText.nb),
+            "label": coalesce(label[$locale], label.nb),
+            "errorText": coalesce(errorText[$locale], errorText.nb),
+            "openPanelLink": coalesce(openPanelLink[$locale], openPanelLink.nb),
+            "closePanelLink": coalesce(closePanelLink[$locale], closePanelLink.nb),
+            "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+            "soknadOgInnsynTekst": coalesce(soknadOgInnsynTekst[$locale], soknadOgInnsynTekst.nb)[]${blockContentSpec},
+            "soknadUtenInnsynTekst": coalesce(soknadUtenInnsynTekst[$locale], soknadUtenInnsynTekst.nb)[]${blockContentSpec},
+            "kunPapirTekst": coalesce(kunPapirTekst[$locale], kunPapirTekst.nb)[]${blockContentSpec},
+        },
+        "applyOfflinePanel": applyOfflinePanel{
+            "title": coalesce(title[$locale], title.nb),
+            "iconUrl": icon.asset->url,
+            "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+        },
+        "body": coalesce(body[$locale], body.nb)[]${blockContentSpec},
+    }
+}`;
+
 interface PageProps {
-    page: SanityApplicationPage;
-    metadata: SanityMetadata;
+    data: {
+        page: SanityApplicationPage;
+        metadata: SanityMetadata;
+    };
     kommuner: KommunerResponse;
     nedetid: NedetidResponse;
 }
 
 const SlikSokerDu = (props: PageProps) => {
+    const {data} = props;
     const router = useRouter();
 
     const breadcrumbPage = {
-        title: props.page.title,
+        title: data.page.title,
         url: `${router.basePath}/${router.locale}/slik-soker-du`,
     };
 
@@ -54,48 +91,48 @@ const SlikSokerDu = (props: PageProps) => {
             <>
                 <Head>
                     <title>
-                        {props.metadata.title} - {props.page.title}
+                        {data.metadata.title} - {data.page.title}
                     </title>
                     <meta
                         property="og:title"
-                        content={`${props.metadata.title} - ${props.page.title}`}
+                        content={`${data.metadata.title} - ${data.page.title}`}
                     />
-                    {props.page.metaDescription && (
+                    {data.page.metaDescription && (
                         <>
                             <meta
                                 name="Description"
-                                content={props.page.metaDescription}
+                                content={data.page.metaDescription}
                             />
                             <meta
                                 property="og:description"
-                                content={props.page.metaDescription}
+                                content={data.page.metaDescription}
                             />
                         </>
                     )}
                     <meta property="og:locale" content={router.locale} />
                     <meta
                         property="og:image"
-                        content={props.metadata.bannerIconUrl}
+                        content={data.metadata.bannerIconUrl}
                     />
                     <link
                         rel="canonical"
                         href={`${process.env.NEXT_PUBLIC_APP_URL}/slik-soker-du`}
                     />
                 </Head>
-                <PageBanner title={props.metadata.title} />
+                <PageBanner title={data.metadata.title} />
                 <Content>
                     <Article>
                         <Heading level="1" size="2xlarge" spacing>
-                            {props.page.title}
+                            {data.page.title}
                         </Heading>
-                        <Ingress spacing>{props.page.ingress}</Ingress>
+                        <Ingress spacing>{data.page.ingress}</Ingress>
 
                         <StyledVeilederPanel>
                             <ReimplementedGuidePanel
                                 svg={
                                     <img
                                         src={
-                                            props.page.applyDigitallyPanel
+                                            data.page.applyDigitallyPanel
                                                 .iconUrl
                                         }
                                         alt=""
@@ -103,13 +140,13 @@ const SlikSokerDu = (props: PageProps) => {
                                 }
                             >
                                 <Heading level="2" size="medium" spacing>
-                                    {props.page.applyDigitallyPanel.title}
+                                    {data.page.applyDigitallyPanel.title}
                                 </Heading>
                                 <SokDigitalt
                                     nedetid={props.nedetid}
                                     kommuner={props.kommuner}
                                     applyDigitallyPanel={
-                                        props.page.applyDigitallyPanel
+                                        data.page.applyDigitallyPanel
                                     }
                                 />
                             </ReimplementedGuidePanel>
@@ -120,21 +157,21 @@ const SlikSokerDu = (props: PageProps) => {
                                 svg={
                                     <img
                                         src={
-                                            props.page.applyOfflinePanel.iconUrl
+                                            data.page.applyOfflinePanel.iconUrl
                                         }
                                         alt=""
                                     />
                                 }
                             >
                                 <Heading level="2" size="medium" spacing>
-                                    {props.page.applyOfflinePanel.title}
+                                    {data.page.applyOfflinePanel.title}
                                 </Heading>
                                 <SanityBlockContent
-                                    blocks={props.page.applyOfflinePanel.body}
+                                    blocks={data.page.applyOfflinePanel.body}
                                 />
                             </ReimplementedGuidePanel>
                         </StyledVeilederPanel>
-                        <SanityBlockContent blocks={props.page.body} />
+                        <SanityBlockContent blocks={data.page.body} />
                     </Article>
                 </Content>
             </>
@@ -144,8 +181,10 @@ const SlikSokerDu = (props: PageProps) => {
 
 interface StaticProps {
     props: {
-        page: SanityApplicationPage;
-        metadata: SanityMetadata;
+        data: {
+            page: SanityApplicationPage;
+            metadata: SanityMetadata;
+        };
         kommuner: KommunerResponse;
         nedetid: NedetidResponse;
     };
@@ -153,13 +192,13 @@ interface StaticProps {
 }
 
 export const getStaticProps = async ({locale}): Promise<StaticProps> => {
-    const metadata = await fetchMetadataWithLocale(locale);
-    const page = await fetchApplicationPageWithLocale(locale);
+    const params = {locale: locale};
+    const data = await client.fetch(query, params);
     const kommuner = await fetchKommuner();
     const nedetid = await fetchNedetid();
     return {
-        props: {page, metadata, kommuner, nedetid},
-        revalidate: 60,
+        props: {data, kommuner, nedetid},
+        revalidate: REVALIDATE_IN_SECONDS,
     };
 };
 
