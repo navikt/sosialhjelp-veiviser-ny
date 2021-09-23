@@ -194,12 +194,17 @@ interface StaticProps {
     revalidate: number;
 }
 export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
-    const params = {locale: locale};
-    const data = await client.fetch(query, params);
-    return {
-        props: {data},
-        revalidate: REVALIDATE_IN_SECONDS,
-    };
+    try {
+        const params = {locale: locale};
+        const data = await client.fetch(query, params);
+        return {
+            props: {data},
+            revalidate: REVALIDATE_IN_SECONDS,
+        };
+    } catch (e) {
+        console.log("error", e);
+        throw e;
+    }
 };
 
 export default Index;
