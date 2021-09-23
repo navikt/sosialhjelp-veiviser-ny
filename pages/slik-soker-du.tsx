@@ -192,14 +192,19 @@ interface StaticProps {
 }
 
 export const getStaticProps = async ({locale}): Promise<StaticProps> => {
-    const params = {locale: locale};
-    const data = await client.fetch(query, params);
-    const kommuner = await fetchKommuner();
-    const nedetid = await fetchNedetid();
-    return {
-        props: {data, kommuner, nedetid},
-        revalidate: REVALIDATE_IN_SECONDS,
-    };
+    try {
+        const params = {locale: locale};
+        const data = await client.fetch(query, params);
+        const kommuner = await fetchKommuner();
+        const nedetid = await fetchNedetid();
+        return {
+            props: {data, kommuner, nedetid},
+            revalidate: REVALIDATE_IN_SECONDS,
+        };
+    } catch (e) {
+        console.log("error", e);
+        throw e;
+    }
 };
 
 export default SlikSokerDu;
