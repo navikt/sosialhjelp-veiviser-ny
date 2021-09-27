@@ -5,7 +5,9 @@ metadata:
   namespace: {{namespace}}
   labels:
     team: teamdigisos
-spec:
+  annotations:
+    nais.io/read-only-file-system: "false"
+    spec:
   image: {{image}}
   port: 5000
   accessPolicy:
