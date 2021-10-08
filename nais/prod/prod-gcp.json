@@ -2,7 +2,7 @@
   "applicationName": "sosialhjelp-veiviser",
   "namespace": "teamdigisos",
   "ingresses": [
-    "https://sosialhjelp-veiviser-gcp.dev.nav.no/sosialhjelp"
+    "https://www.nav.no/sosialhjelp"
   ],
   "env": {
     "NODE_EXTRA_CA_CERTS": "/etc/ssl/ca-bundle.pem"
