@@ -6,7 +6,6 @@
     "https://www-q1.dev.nav.no/sosialhjelp",
     "https://www-q1.nav.no/sosialhjelp"
   ],
-  "prometheusEnabled": true,
   "webProxyEnabled": true,
   "env": {
     "APPRES_CMS_URL": "https://appres-q1.nav.no",

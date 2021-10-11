@@ -24,9 +24,6 @@ spec:
 {{#each ingresses}}
    - "{{this}}"
 {{/each}}
-  prometheus:
-    enabled: {{prometheusEnabled}}
-    path: /prometheus
   liveness:
     path: /sosialhjelp/api/isAlive
     initialDelay: 20
