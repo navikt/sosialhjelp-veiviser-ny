@@ -155,7 +155,7 @@ export const getStaticPaths = async ({locales}): Promise<StaticPathProps> => {
                 });
             })
             .flat(),
-        fallback: false,
+        fallback: true,
     };
 };
 
