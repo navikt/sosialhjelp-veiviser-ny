@@ -31,6 +31,13 @@ export default {
             name: "article",
             title: "Artikkel",
             type: "reference",
+            validation: (Rule) =>
+                Rule.custom((field, context) =>
+                    context.parent.externalLink === undefined &&
+                    field === undefined
+                        ? "Må enten lenke til en artikkel eller ekstern side"
+                        : true
+                ),
             to: [
                 {
                     type: "article",
@@ -45,6 +52,12 @@ export default {
             name: "externalLink",
             title: "Ekstern lenke",
             type: "url",
+            validation: (Rule) =>
+                Rule.custom((field, context) =>
+                    context.parent.article === undefined && field === undefined
+                        ? "Må enten lenke til en artikkel eller ekstern side"
+                        : true
+                ),
         },
     ],
 };
