@@ -4,6 +4,7 @@
   "ingresses": [
     "https://www.nav.no/sosialhjelp"
   ],
+  "webProxyEnabled": false,
   "env": {
     "NODE_EXTRA_CA_CERTS": "/etc/ssl/ca-bundle.pem"
   }
