@@ -63,6 +63,7 @@ export default {
                                 title: "Reference",
                                 name: "reference",
                                 type: "reference",
+                                validation: (Rule) => Rule.required(),
                                 to: [
                                     {
                                         type: "article",
@@ -84,6 +85,7 @@ export default {
                                 title: "URL",
                                 name: "href",
                                 type: "url",
+                                validation: (Rule) => Rule.required(),
                             },
                             {
                                 title: "Open in new tab",
