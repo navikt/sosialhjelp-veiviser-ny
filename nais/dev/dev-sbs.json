@@ -6,9 +6,7 @@
     "https://www-q0.dev.nav.no/sosialhjelp",
     "https://www-q0.nav.no/sosialhjelp"
   ],
-  "prometheusEnabled": true,
   "webProxyEnabled": true,
-  "openForLabsInbound": false,
   "env": {
     "APPRES_CMS_URL": "https://appres-q0.nav.no",
     "FASIT_ENVIRONMENT_NAME": "q0",

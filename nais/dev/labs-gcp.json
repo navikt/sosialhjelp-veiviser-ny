@@ -4,7 +4,6 @@
   "ingresses": [
     "https://sosialhjelp-veiviser.labs.nais.io/sosialhjelp"
   ],
-  "prometheusEnabled": false,
   "webProxyEnabled": false,
   "env": {
     "APPRES_CMS_URL": "https://appres.nav.no",
