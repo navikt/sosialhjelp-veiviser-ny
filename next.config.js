@@ -1,3 +1,11 @@
+const {withSentryConfig} = require("@sentry/nextjs");
+
+const sentryWebpackPluginOptions = {
+    silent: true,
+    // For all available options, see:
+    // https://github.com/getsentry/sentry-webpack-plugin#options.
+};
+
 const redirects = [
     {source: "/artikkel/124876", destination: "/gi-beskjed", permanent: true},
     {source: "/artikkel/124875", destination: "/klage", permanent: true},
@@ -8,7 +16,7 @@ const redirects = [
     },
 ];
 
-module.exports = {
+const moduleExports = {
     basePath: "/sosialhjelp",
     target: "server",
     trailingSlash: false,
@@ -28,3 +36,13 @@ module.exports = {
         return redirects;
     },
 };
+
+if (process.env.ENABLE_SENTRY === "true") {
+    console.log("sentry enabled", process.env.ENABLE_SENTRY);
+    module.exports = withSentryConfig(
+        moduleExports,
+        sentryWebpackPluginOptions
+    );
+} else {
+    module.exports = moduleExports;
+}
