@@ -37,7 +37,8 @@ const moduleExports = {
     },
 };
 
-if (process.env.ENABLE_SENTRY) {
+if (process.env.ENABLE_SENTRY === "true") {
+    console.log("sentry enabled", process.env.ENABLE_SENTRY);
     module.exports = withSentryConfig(
         moduleExports,
         sentryWebpackPluginOptions
