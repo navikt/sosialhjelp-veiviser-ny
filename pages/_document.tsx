@@ -17,15 +17,15 @@ const decoratorEnv = process.env.DECORATOR_ENV as Exclude<ENV, "localhost">;
 
 const decoratorParams: Props = {
     env: decoratorEnv ?? "prod",
+    context: "privatperson",
     chatbot: false,
     feedback: false,
 };
 
 class MyDocument extends Document<{decorator: Components}> {
     static async getInitialProps(ctx: DocumentContext) {
-        const styledComponentsStylesheet = await renderServersideStyledComponentsStylesheet(
-            ctx
-        );
+        const styledComponentsStylesheet =
+            await renderServersideStyledComponentsStylesheet(ctx);
         const decorator = await fetchDecoratorReact(decoratorParams);
         return {...styledComponentsStylesheet, decorator};
     }
