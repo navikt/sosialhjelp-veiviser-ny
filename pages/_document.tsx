@@ -7,13 +7,13 @@ import Document, {
 } from "next/document";
 import {
     Components,
-    ENV,
+    Env,
     fetchDecoratorReact,
     Props,
 } from "@navikt/nav-dekoratoren-moduler/ssr";
 import {ServerStyleSheet} from "styled-components";
 
-const decoratorEnv = process.env.DECORATOR_ENV as Exclude<ENV, "localhost">;
+const decoratorEnv = process.env.DECORATOR_ENV as Exclude<Env, "localhost">;
 
 const decoratorParams: Props = {
     env: decoratorEnv ?? "prod",
