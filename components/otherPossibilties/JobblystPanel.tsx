@@ -1,6 +1,6 @@
 import {Ingress, LinkPanel, Heading} from "@navikt/ds-react";
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {SanityJobblystPanel} from "../../src/utils/sanityFetch";
 
 const StyledJobblystPanel = styled(LinkPanel)`

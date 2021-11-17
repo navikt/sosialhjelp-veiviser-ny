@@ -10,7 +10,7 @@ import {
 import {PageBanner} from "../components/PageBanner";
 import {useRouter} from "next/router";
 import {Language} from "@navikt/nav-dekoratoren-moduler";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {LenkeboksAndreMuligheter} from "../components/otherPossibilties/LenkeboksAndreMuligheter";
 import {JobblystPanel} from "../components/otherPossibilties/JobblystPanel";
 import {HjelpTilBolig} from "../components/otherPossibilties//HjelpTilBolig";

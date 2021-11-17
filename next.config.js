@@ -35,14 +35,19 @@ const moduleExports = {
     async redirects() {
         return redirects;
     },
+
+    experimental: {
+        // Enables the styled-components SWC transform
+        styledComponents: true,
+    },
 };
 
-if (process.env.ENABLE_SENTRY === "true") {
+/*if (process.env.ENABLE_SENTRY === "true") {
     console.log("sentry enabled", process.env.ENABLE_SENTRY);
     module.exports = withSentryConfig(
         moduleExports,
         sentryWebpackPluginOptions
     );
-} else {
-    module.exports = moduleExports;
-}
+} else {*/
+module.exports = moduleExports;
+//}
