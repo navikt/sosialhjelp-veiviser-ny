@@ -3,7 +3,7 @@ import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
 import client from "../src/utils/sanityClient";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
 import {
     Accordion,

@@ -4,7 +4,7 @@ import {groq} from "next-sanity";
 import Head from "next/head";
 import {useRouter} from "next/router";
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {Article} from "../components/article/Article";
 import {ReimplementedGuidePanel} from "../components/article/ReimplementedGuidePanel";
 import {SokDigitalt} from "../components/article/SokDigitalt";

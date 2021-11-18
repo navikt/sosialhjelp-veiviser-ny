@@ -35,6 +35,11 @@ const moduleExports = {
     async redirects() {
         return redirects;
     },
+
+    experimental: {
+        // Enables the styled-components SWC transform
+        styledComponents: true,
+    },
 };
 
 if (process.env.ENABLE_SENTRY === "true") {

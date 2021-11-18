@@ -1,5 +1,5 @@
 import {ReactChild} from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {useDecorator} from "../src/utils/useNextDecorator";
 
 export interface Breadcrumb {

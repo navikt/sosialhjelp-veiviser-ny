@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import Downshift from "downshift";
 import {Kommune, KommunerResponse} from "../../pages/api/kommuner";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";

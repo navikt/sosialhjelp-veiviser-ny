@@ -1,7 +1,7 @@
 import {BodyShort, Heading, Link as DSLink} from "@navikt/ds-react";
 import Link from "next/link";
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import {SanityPanelSpec} from "../../src/utils/sanityFetch";
 
 const StyledLenkeboks = styled.div`
