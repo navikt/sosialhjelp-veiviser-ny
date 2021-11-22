@@ -2,7 +2,8 @@
   "applicationName": "sosialhjelp-veiviser",
   "namespace": "teamdigisos",
   "ingresses": [
-    "https://sosialhjelp-veiviser-gcp.prod-gcp.nais.io/sosialhjelp"
+    "https://sosialhjelp-veiviser-gcp.prod-gcp.nais.io/sosialhjelp",
+    "https://www.nav.no/sosialhjelp"
   ],
   "webProxyEnabled": false,
   "env": {
