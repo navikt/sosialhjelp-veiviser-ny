@@ -4,7 +4,7 @@ import Downshift from "downshift";
 import {Kommune, KommunerResponse} from "../../pages/api/kommuner";
 import {SanityApplyDigitallyPanel} from "../../src/utils/sanityFetch";
 import {SanityBlockContent} from "../SanityBlockContentNext";
-import {Label, TextField} from "@navikt/ds-react";
+import {Label, Link, TextField} from "@navikt/ds-react";
 
 const StyledKommunesøk = styled.div`
     border: none;
@@ -155,17 +155,33 @@ export const Kommunesøk = (props: {
                                     {selectedItem.kanMottaSoknader &&
                                         selectedItem.kanOppdatereStatus && (
                                             <Resultat>
-                                                <SanityBlockContent
-                                                    blocks={
-                                                        props
-                                                            .applyDigitallyPanel
-                                                            .soknadOgInnsynTekst
-                                                    }
-                                                    templateProps={{
-                                                        kommuneNavn:
-                                                            selectedItem.kommuneNavn,
-                                                    }}
-                                                />
+                                                {selectedItem.kommuneNavn.toLowerCase() ===
+                                                "hamar" ? (
+                                                    <p>
+                                                        Du kan søke digitalt i
+                                                        Hamar. Du kan også følge{" "}
+                                                        <Link href="https://www.nav.no/sosialhjelp/innsyn">
+                                                            statusen på søknaden
+                                                        </Link>{" "}
+                                                        din og{" "}
+                                                        <Link href="https://nav.no/sosialhjelp/meldinger">
+                                                            sende melding
+                                                        </Link>{" "}
+                                                        til din veileder.
+                                                    </p>
+                                                ) : (
+                                                    <SanityBlockContent
+                                                        blocks={
+                                                            props
+                                                                .applyDigitallyPanel
+                                                                .soknadOgInnsynTekst
+                                                        }
+                                                        templateProps={{
+                                                            kommuneNavn:
+                                                                selectedItem.kommuneNavn,
+                                                        }}
+                                                    />
+                                                )}
                                             </Resultat>
                                         )}
                                     {selectedItem.kanMottaSoknader &&
