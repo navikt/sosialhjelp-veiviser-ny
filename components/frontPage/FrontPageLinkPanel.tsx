@@ -26,7 +26,7 @@ const StyledLinkPanel = styled(LinkPanel)`
 const StyledHeading = styled.div`
     display: flex;
     align-items: center;
-    color: var(--navds-color-text-link);
+    color: var(--navds-semantic-color-link);
     gap: 0.5rem;
 
     img,
