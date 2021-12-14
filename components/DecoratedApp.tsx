@@ -21,7 +21,7 @@ interface Props {
 }
 
 const StyledDecoratedApp = styled.div`
-    background-color: var(--navds-color-gray-10);
+    background-color: var(--navds-semantic-color-canvas-background);
     padding-bottom: 4rem;
 `;
 

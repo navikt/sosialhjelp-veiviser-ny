@@ -20,7 +20,7 @@ import client from "../src/utils/sanityClient";
 import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
 
 const StyledApp = styled.div`
-    background-color: var(--navds-color-gray-10);
+    background-color: var(--navds-semantic-color-canvas-background);
     padding-bottom: 5.625rem;
 `;
 
