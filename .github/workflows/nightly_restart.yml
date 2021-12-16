@@ -14,7 +14,7 @@ jobs:
       api_deploy_token: ${{ secrets.NAIS_DEPLOY_APIKEY }}
       sentry_auth_token: ${{ secrets.SENTRY_AUTH_TOKEN }}
   deploy_dev-sbs-intern:
-    uses: navikt/sosialhjelp-soknad/.github/workflows/build_and_deploy_dev.yml@master
+    uses: navikt/sosialhjelp-veiviser-ny/.github/workflows/build_and_deploy_dev.yml@master
     with:
       config-file-name: dev-sbs-intern
       cluster: dev-sbs
@@ -22,7 +22,7 @@ jobs:
       api_deploy_token: ${{ secrets.NAIS_DEPLOY_APIKEY }}
       sentry_auth_token: ${{ secrets.SENTRY_AUTH_TOKEN }}
   deploy_dev-gcp:
-    uses: navikt/sosialhjelp-soknad/.github/workflows/build_and_deploy_dev.yml@master
+    uses: navikt/sosialhjelp-veiviser-ny/.github/workflows/build_and_deploy_dev.yml@master
     with:
       config-file-name: dev-gcp
       cluster: dev-gcp
@@ -30,7 +30,7 @@ jobs:
       api_deploy_token: ${{ secrets.NAIS_DEPLOY_APIKEY }}
       sentry_auth_token: ${{ secrets.SENTRY_AUTH_TOKEN }}
   deploy_labs-gcp:
-    uses: navikt/sosialhjelp-soknad/.github/workflows/build_and_deploy_dev.yml@master
+    uses: navikt/sosialhjelp-veiviser-ny/.github/workflows/build_and_deploy_dev.yml@master
     with:
       config-file-name: labs-gcp
       cluster: labs-gcp
