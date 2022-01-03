@@ -32,6 +32,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/amplitude-js": "^8.9.2",
     "@types/react": "^17.0.26",
     "@types/react-collapse": "^5.0.1",
     "@types/react-dom": "^17.0.9",
