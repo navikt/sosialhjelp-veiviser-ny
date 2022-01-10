@@ -11,5 +11,11 @@
     "APPRES_CMS_URL": "https://appres-q0.nav.no",
     "FASIT_ENVIRONMENT_NAME": "q0",
     "NODE_EXTRA_CA_CERTS": "/etc/ssl/ca-bundle.pem"
-  }
+  },
+  "minReplicas": "1",
+  "maxReplicas": "2",
+  "cpuLimit": "300m",
+  "memoryLimit": "256Mi",
+  "cpuRequest": "1m",
+  "memoryRequest": "64Mi"
 }

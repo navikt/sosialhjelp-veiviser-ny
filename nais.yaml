@@ -32,14 +32,14 @@ spec:
     initialDelay: 20
   resources:
     limits:
-      cpu: 300m
-      memory: 256Mi
+      cpu: {{cpuLimit}}
+      memory: {{memoryLimit}}
     requests:
-      cpu: 40m
-      memory: 128Mi
+      cpu: {{cpuRequest}}
+      memory: {{memoryRequest}}
   replicas:
-    min: 2
-    max: 4
+    min: {{minReplicas}}
+    max: {{maxReplicas}}
     cpuThresholdPercentage: 70
   webproxy: {{webProxyEnabled}} 
   env:
