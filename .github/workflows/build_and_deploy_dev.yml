@@ -19,10 +19,21 @@ on:
         description: 'Config-fil (uten .json) som skal deployes'
         required: true
         default: 'dev-sbs-intern'
+        type: choice
+        options:
+          - 'dev-gcp'
+          - 'dev-sbs'
+          - 'dev-sbs-intern'
+          - 'labs-gcp'
       cluster:
         description: 'Cluster å deploye til (dev-sbs, labs-gcp eller dev-gcp)'
         required: true
         default: 'dev-sbs'
+        type: choice
+        options:
+          - 'dev-gcp'
+          - 'dev-sbs'
+          - 'labs-gcp'
 
 # FIXME: Legg til docker layer caching, f.eks. https://github.com/marketplace/actions/build-docker-images-using-cache
 jobs:
