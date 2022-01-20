@@ -21,7 +21,7 @@
     "@sanity/core": "^2.21.4",
     "@sanity/default-layout": "^2.21.4",
     "@sanity/default-login": "^2.21.4",
-    "@sanity/desk-tool": "^2.21.4",
+    "@sanity/desk-tool": "^2.25.0",
     "@sanity/vision": "^2.21.4",
     "@u-wave/react-vimeo": "^0.9.5",
     "prop-types": "^15.6",
