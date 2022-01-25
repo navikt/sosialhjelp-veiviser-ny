@@ -16,7 +16,15 @@ const getBasepath = () => {
         return "http://localhost:3000/sosialhjelp";
     }
 
-    return `${window.location.origin}/sosialhjelp`;
+    if (
+        window.location.href.includes(
+            "https://sosialhjelp-veiviser.sanity.studio/test"
+        )
+    ) {
+        return "https://sosialhjelp-veiviser.labs.nais.io/sosialhjelp";
+    }
+
+    return `https://www.nav.no/sosialhjelp`;
 };
 
 export function WebPreviewWrapper(props: {url: string}) {
