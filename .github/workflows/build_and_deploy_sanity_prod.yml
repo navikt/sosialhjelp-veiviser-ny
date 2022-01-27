@@ -1,7 +1,7 @@
 name: Build and deploy sanity studio to prod
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 # FIXME: Legg til docker layer caching, f.eks. https://github.com/marketplace/actions/build-docker-images-using-cache
 jobs:
