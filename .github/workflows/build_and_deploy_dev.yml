@@ -22,6 +22,7 @@ on:
         type: choice
         options:
           - 'dev-gcp'
+          - 'dev-gcp-mock'
           - 'dev-sbs'
           - 'dev-sbs-intern'
           - 'labs-gcp'
