@@ -39,7 +39,7 @@ on:
 # FIXME: Legg til docker layer caching, f.eks. https://github.com/marketplace/actions/build-docker-images-using-cache
 jobs:
   build_and_deploy:
-    if: github.event.inputs.cluster != 'prod-sbs'
+    if: github.event.inputs.cluster != 'prod-gcp'
     name: Build and deploy to dev
     runs-on: ubuntu-latest
     env:
