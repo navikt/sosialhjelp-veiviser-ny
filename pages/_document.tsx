@@ -34,7 +34,11 @@ class MyDocument extends Document<{decorator: Components}> {
         const {Styles, Scripts, Header, Footer} = this.props.decorator;
         return (
             <Html>
-                <Head />
+                <Head>
+                    {process.env.NEXT_PUBLIC_ENVIRONMENT != "prod-gcp" && (
+                        <meta name="robots" content="noindex,nofollow" />
+                    )}
+                </Head>
                 <Styles />
                 <Scripts />
 
