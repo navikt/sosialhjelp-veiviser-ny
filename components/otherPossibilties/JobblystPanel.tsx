@@ -62,7 +62,7 @@ export const JobblystPanel = (props: SanityJobblystPanel) => {
     return (
         <StyledJobblystPanel href={props.href} border={false}>
             <Content>
-                <Heading level="2" size="xlarge" spacing>
+                <Heading level="2" size="large" spacing>
                     {props.title}
                 </Heading>
                 <Ingress>{props.description}</Ingress>

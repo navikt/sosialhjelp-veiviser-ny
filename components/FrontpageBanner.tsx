@@ -37,7 +37,7 @@ export const FrontpageBanner = (props: {title: string; iconUrl: string}) => {
     return (
         <Banner>
             <BannerContent>
-                <Heading level="1" size="2xlarge">
+                <Heading level="1" size="xlarge">
                     {props.title}
                 </Heading>
                 <BannerIcon src={props.iconUrl} alt="" />
