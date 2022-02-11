@@ -128,7 +128,7 @@ const ArticlePage = (props: PageProps) => {
                         {data.article?.iconUrl && (
                             <StyledIcon src={data.article.iconUrl} alt="" />
                         )}
-                        <Heading level="1" size="2xlarge" spacing>
+                        <Heading level="1" size="xlarge" spacing>
                             {data.article?.title}
                         </Heading>
                         <SanityBlockContent blocks={data.article.body} />

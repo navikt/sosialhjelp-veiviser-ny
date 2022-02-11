@@ -122,7 +122,7 @@ const SlikSokerDu = (props: PageProps) => {
                 <PageBanner title={data.metadata.title} />
                 <Content>
                     <Article>
-                        <Heading level="1" size="2xlarge" spacing>
+                        <Heading level="1" size="xlarge" spacing>
                             {data.page.title}
                         </Heading>
                         <Ingress spacing>{data.page.ingress}</Ingress>
