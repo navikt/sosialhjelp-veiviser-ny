@@ -15,9 +15,9 @@
     "@navikt/nav-dekoratoren-moduler": "^1.6.4",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.23.2",
-    "@sentry/nextjs": "^6.17.3",
+    "@sentry/nextjs": "^6.17.7",
     "@u-wave/react-vimeo": "^0.9.5",
-    "amplitude-js": "^8.16.1",
+    "amplitude-js": "^8.17.0",
     "downshift": "^6.1.7",
     "html-react-parser": "^1.4.6",
     "jsdom": "^19.0.0",
@@ -31,7 +31,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@types/amplitude-js": "^8.9.5",
+    "@types/amplitude-js": "^8.9.6",
     "@types/node": "^16.11.21",
     "@types/react": "^17.0.38",
     "@types/react-collapse": "^5.0.1",
