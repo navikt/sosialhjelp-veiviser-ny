@@ -1,8 +1,11 @@
-import BlockContent from "@sanity/block-content-to-react";
+import {
+    PortableText,
+    PortableTextBlockComponent,
+    PortableTextMarkComponent,
+} from "@portabletext/react";
 import React, {useContext} from "react";
 import Link from "next/link";
 import Vimeo from "@u-wave/react-vimeo";
-import client from "../src/utils/sanityClient";
 import styled from "styled-components";
 import {EmbeddedVideo} from "./article/EmbeddedVideo";
 import {
@@ -13,88 +16,97 @@ import {
     Link as DSLink,
 } from "@navikt/ds-react";
 
+const NormalText: PortableTextBlockComponent = ({children}) => (
+    <BodyLong spacing>{children}</BodyLong>
+);
+
+const H2: PortableTextBlockComponent = ({children}) => (
+    <Heading level="2" size="medium" spacing>
+        {children}
+    </Heading>
+);
+
+const H3: PortableTextBlockComponent = ({children}) => (
+    <Heading level="3" size="small" spacing>
+        {children}
+    </Heading>
+);
+
+const IngressText: PortableTextBlockComponent = ({children}) => (
+    <Ingress spacing>{children}</Ingress>
+);
+
+const PortableTextLink: PortableTextMarkComponent<{
+    _type: "link";
+    blank: boolean;
+    href: string;
+}> = ({value, children}) => {
+    return value.blank ? (
+        <DSLink href={value.href} target="_blank" rel="noreferrer noopener">
+            {children}
+        </DSLink>
+    ) : (
+        <DSLink href={value.href}>{children}</DSLink>
+    );
+};
+
+const InternalLink: PortableTextMarkComponent<{
+    _type: "internalLink";
+    slug: {current: string};
+}> = ({value, children}) => {
+    const href = `/${value.slug.current}`;
+    return (
+        <Link href={href}>
+            <a className="navds-link">{children}</a>
+        </Link>
+    );
+};
+
+const InterpolatedText: PortableTextMarkComponent<{
+    _type: "interpolate";
+    prop: string;
+}> = ({value}) => {
+    const context = useContext(SanityContext);
+    const {prop} = value;
+
+    const interpolatedValue = context[prop];
+
+    return <>{interpolatedValue}</>;
+};
+
 const StyledAccordion = styled(Accordion)`
     margin: 1rem 0;
 `;
 
 const serializers = {
     types: {
-        vimeo: function renderVimeo({node}) {
-            const {url} = node;
-            return <Vimeo responsive video={url} />;
-        },
-        embeddedVideo: function renderEmbeddedVideo({node}) {
-            const {url, title} = node;
-            return <EmbeddedVideo title={title} url={url} />;
-        },
-        expandedPanel: function renderExpandedPanel({node}) {
-            return (
-                <StyledAccordion>
-                    <Accordion.Item defaultOpen={node.defaultOpen}>
-                        <Accordion.Header>{node.title}</Accordion.Header>
-                        <Accordion.Content>
-                            <SanityBlockContent blocks={node.body} />
-                        </Accordion.Content>
-                    </Accordion.Item>
-                </StyledAccordion>
-            );
-        },
+        vimeo: ({value}) => <Vimeo responsive video={value.url} />,
 
-        block: function renderBlock({node, children}) {
-            const style = node.style;
-            if (style === "normal") {
-                return <BodyLong spacing>{children}</BodyLong>;
-            }
-            if (style === "h2") {
-                return (
-                    <Heading level="2" size="medium" spacing>
-                        {children}
-                    </Heading>
-                );
-            }
-            if (style === "h3") {
-                return (
-                    <Heading level="3" size="small" spacing>
-                        {children}
-                    </Heading>
-                );
-            }
-            if (style === "ingress") {
-                return <Ingress spacing>{children}</Ingress>;
-            }
+        embeddedVideo: ({value}) => (
+            <EmbeddedVideo title={value.title} url={value.url} />
+        ),
 
-            return children;
-        },
+        expandedPanel: ({value}) => (
+            <StyledAccordion>
+                <Accordion.Item defaultOpen={value.defaultOpen}>
+                    <Accordion.Header>{value.title}</Accordion.Header>
+                    <Accordion.Content>
+                        <SanityBlockContent blocks={value.body} />
+                    </Accordion.Content>
+                </Accordion.Item>
+            </StyledAccordion>
+        ),
+    },
+    block: {
+        normal: NormalText,
+        h2: H2,
+        h3: H3,
+        ingress: IngressText,
     },
     marks: {
-        link: function renderLink({mark, children}) {
-            const {blank, href} = mark;
-
-            return blank ? (
-                <DSLink href={href} target="_blank" rel="noreferrer noopener">
-                    {children}
-                </DSLink>
-            ) : (
-                <DSLink href={href}>{children}</DSLink>
-            );
-        },
-        internalLink: function renderInternalLink({mark, children}) {
-            const {slug = {}} = mark;
-            const href = `/${slug.current}`;
-            return (
-                <Link href={href}>
-                    <a className="navds-link">{children}</a>
-                </Link>
-            );
-        },
-        interpolate: function renderInterpolate({mark}) {
-            const context = useContext(SanityContext);
-            const {prop} = mark;
-
-            const value = context[prop];
-
-            return <>{value}</>;
-        },
+        link: PortableTextLink,
+        internalLink: InternalLink,
+        interpolate: InterpolatedText,
     },
 };
 
@@ -106,11 +118,7 @@ export const SanityBlockContent = (props: {
 }) => {
     return (
         <SanityContext.Provider value={props.templateProps}>
-            <BlockContent
-                blocks={props.blocks}
-                serializers={serializers}
-                {...client.config()}
-            />
+            <PortableText value={props.blocks} components={serializers} />
         </SanityContext.Provider>
     );
 };
