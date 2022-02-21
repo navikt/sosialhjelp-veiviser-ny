@@ -21,6 +21,7 @@ const moduleExports = {
     target: "server",
     trailingSlash: false,
     reactStrictMode: true,
+    swcMinify: true, // Blir default på i Next 12.2
 
     images: {
         domains: ["cdn.sanity.io"],
@@ -34,11 +35,6 @@ const moduleExports = {
 
     async redirects() {
         return redirects;
-    },
-
-    experimental: {
-        // Enables the styled-components SWC transform
-        styledComponents: true,
     },
 };
 
