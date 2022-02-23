@@ -12,7 +12,7 @@ import {Content} from "../components/Content";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {PageBanner} from "../components/PageBanner";
 import {SanityBlockContent} from "../components/SanityBlockContentNext";
-import client from "../src/utils/sanityClient";
+import client, {usePreviewSubscription} from "../src/utils/sanityClient";
 import {
     SanityMetadata,
     SanityApplicationPage,
@@ -65,6 +65,7 @@ interface Props {
     };
     kommuner: KommunerResponse;
     nedetid: NedetidResponse;
+    params: {locale: string};
     preview: boolean;
 }
 
@@ -199,7 +200,7 @@ export const getStaticProps = async ({
         const kommuner = await fetchKommuner();
         const nedetid = await fetchNedetid();
         return {
-            props: {data, kommuner, nedetid, preview},
+            props: {data, kommuner, nedetid, params, preview},
             revalidate: REVALIDATE_IN_SECONDS,
         };
     } catch (e) {
