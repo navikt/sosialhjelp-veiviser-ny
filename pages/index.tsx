@@ -102,6 +102,7 @@ const Index = (props: Props) => {
         params: props.params,
         enabled: props.preview,
     });
+
     const router = useRouter();
 
     const languages: Language[] = router.locales.map((locale) => {

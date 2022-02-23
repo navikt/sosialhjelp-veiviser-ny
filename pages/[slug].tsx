@@ -19,7 +19,7 @@ import {Lastestriper} from "../components/Lastestriper";
 import Head from "next/head";
 import {Heading} from "@navikt/ds-react";
 import {groq} from "next-sanity";
-import client from "../src/utils/sanityClient";
+import client, {usePreviewSubscription} from "../src/utils/sanityClient";
 import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
 
 const query = groq`
@@ -52,7 +52,11 @@ const StyledIcon = styled.img`
 `;
 
 const ArticlePage = (props: Props) => {
-    const {data} = props;
+    const {data} = usePreviewSubscription(query, {
+        initialData: props.data,
+        params: props.params,
+        enabled: props.preview,
+    });
 
     const router = useRouter();
 

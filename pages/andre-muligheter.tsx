@@ -104,6 +104,7 @@ const AndreMuligheter = (props: Props) => {
         params: props.params,
         enabled: props.preview,
     });
+
     const router = useRouter();
 
     const breadcrumbPage = {
