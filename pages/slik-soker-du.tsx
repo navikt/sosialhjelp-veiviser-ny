@@ -12,7 +12,7 @@ import {Content} from "../components/Content";
 import {DecoratedApp} from "../components/DecoratedApp";
 import {PageBanner} from "../components/PageBanner";
 import {SanityBlockContent} from "../components/SanityBlockContentNext";
-import client from "../src/utils/sanityClient";
+import client, {usePreviewSubscription} from "../src/utils/sanityClient";
 import {
     SanityMetadata,
     SanityApplicationPage,
@@ -58,17 +58,24 @@ const query = groq`
     }
 }`;
 
-interface PageProps {
+interface Props {
     data: {
         page: SanityApplicationPage;
         metadata: SanityMetadata;
     };
     kommuner: KommunerResponse;
     nedetid: NedetidResponse;
+    params: {locale: string};
+    preview: boolean;
 }
 
-const SlikSokerDu = (props: PageProps) => {
-    const {data} = props;
+const SlikSokerDu = (props: Props) => {
+    const {data} = usePreviewSubscription(query, {
+        initialData: props.data,
+        params: props.params,
+        enabled: props.preview,
+    });
+
     const router = useRouter();
 
     const breadcrumbPage = {
@@ -180,25 +187,21 @@ const SlikSokerDu = (props: PageProps) => {
 };
 
 interface StaticProps {
-    props: {
-        data: {
-            page: SanityApplicationPage;
-            metadata: SanityMetadata;
-        };
-        kommuner: KommunerResponse;
-        nedetid: NedetidResponse;
-    };
+    props: Props;
     revalidate: number;
 }
 
-export const getStaticProps = async ({locale}): Promise<StaticProps> => {
+export const getStaticProps = async ({
+    locale,
+    preview = false,
+}): Promise<StaticProps> => {
     try {
         const params = {locale: locale};
         const data = await client.fetch(query, params);
         const kommuner = await fetchKommuner();
         const nedetid = await fetchNedetid();
         return {
-            props: {data, kommuner, nedetid},
+            props: {data, kommuner, nedetid, params, preview},
             revalidate: REVALIDATE_IN_SECONDS,
         };
     } catch (e) {
