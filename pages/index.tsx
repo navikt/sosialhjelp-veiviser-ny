@@ -16,7 +16,7 @@ import {Cell, ContentContainer, Grid, Heading} from "@navikt/ds-react";
 import {FrontPageLinkPanel} from "../components/frontPage/FrontPageLinkPanel";
 import {ApplyDigitallyPanel} from "../components/frontPage/ApplyDigitallyPanel";
 import {groq} from "next-sanity";
-import client from "../src/utils/sanityClient";
+import client, {usePreviewSubscription} from "../src/utils/sanityClient";
 import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
 
 const StyledApp = styled.div`
@@ -87,15 +87,21 @@ const query = groq`
 }
 `;
 
-interface PageProps {
+interface Props {
     data: {
         metadata: SanityMetadata;
         frontPage: SanityFrontpage;
     };
+    params: {locale: string};
+    preview: boolean;
 }
 
-const Index = (props: PageProps) => {
-    const {data} = props;
+const Index = (props: Props) => {
+    const {data} = usePreviewSubscription(query, {
+        initialData: props.data,
+        params: props.params,
+        enabled: props.preview,
+    });
     const router = useRouter();
 
     const languages: Language[] = router.locales.map((locale) => {
@@ -185,20 +191,18 @@ const Index = (props: PageProps) => {
 };
 
 interface StaticProps {
-    props: {
-        data: {
-            metadata: SanityMetadata;
-            frontPage: SanityFrontpage;
-        };
-    };
+    props: Props;
     revalidate: number;
 }
-export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
+export const getStaticProps = async ({
+    locale = "nb",
+    preview = false,
+}): Promise<StaticProps> => {
     try {
         const params = {locale: locale};
         const data = await client.fetch(query, params);
         return {
-            props: {data},
+            props: {data, params, preview},
             revalidate: REVALIDATE_IN_SECONDS,
         };
     } catch (e) {

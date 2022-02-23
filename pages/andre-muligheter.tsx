@@ -25,7 +25,7 @@ import {
     Heading,
 } from "@navikt/ds-react";
 import groq from "groq";
-import client from "../src/utils/sanityClient";
+import client, {usePreviewSubscription} from "../src/utils/sanityClient";
 import {REVALIDATE_IN_SECONDS} from "../src/utils/variables";
 
 const panelSpec = `
@@ -70,11 +70,13 @@ const query = groq`
     }
 }`;
 
-interface PageProps {
+interface Props {
     data: {
         otherPossibilities: SanityOtherPossibilitiesPage;
         metadata: SanityMetadata;
     };
+    params: {locale: string};
+    preview: boolean;
 }
 
 const OtherPossibilitiesArticle = styled.div`
@@ -96,8 +98,12 @@ const StyledIcon = styled.img`
     margin-bottom: 2rem;
 `;
 
-const AndreMuligheter = (props: PageProps) => {
-    const {data} = props;
+const AndreMuligheter = (props: Props) => {
+    const {data} = usePreviewSubscription(query, {
+        initialData: props.data,
+        params: props.params,
+        enabled: props.preview,
+    });
     const router = useRouter();
 
     const breadcrumbPage = {
@@ -243,19 +249,17 @@ const AndreMuligheter = (props: PageProps) => {
 };
 
 interface StaticProps {
-    props: {
-        data: {
-            otherPossibilities: SanityOtherPossibilitiesPage;
-            metadata: SanityMetadata;
-        };
-    };
+    props: Props;
     revalidate: number;
 }
-export const getStaticProps = async ({locale = "nb"}): Promise<StaticProps> => {
+export const getStaticProps = async ({
+    locale = "nb",
+    preview = false,
+}): Promise<StaticProps> => {
     const params = {locale: locale};
     const data = await client.fetch(query, params);
     return {
-        props: {data},
+        props: {data, params, preview},
         revalidate: REVALIDATE_IN_SECONDS,
     };
 };

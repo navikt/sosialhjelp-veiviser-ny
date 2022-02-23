@@ -37,11 +37,13 @@ const query = groq`
     }
 }`;
 
-interface PageProps {
+interface Props {
     data: {
         article: SanityArticle;
         metadata: SanityMetadata;
     };
+    params: {locale: string; slug: string};
+    preview: boolean;
 }
 
 const StyledIcon = styled.img`
@@ -49,7 +51,7 @@ const StyledIcon = styled.img`
     height: 65px;
 `;
 
-const ArticlePage = (props: PageProps) => {
+const ArticlePage = (props: Props) => {
     const {data} = props;
 
     const router = useRouter();
@@ -160,23 +162,19 @@ export const getStaticPaths = async ({locales}): Promise<StaticPathProps> => {
 };
 
 interface StaticProps {
-    props: {
-        data: {
-            article: SanityArticle;
-            metadata: SanityMetadata;
-        };
-    };
+    props: Props;
     revalidate: number;
 }
 
 export const getStaticProps = async ({
     locale,
     params: {slug},
+    preview = false,
 }): Promise<StaticProps> => {
     const params = {slug: slug, locale: locale};
     const data = await client.fetch(query, params);
     return {
-        props: {data},
+        props: {data, params, preview},
         revalidate: REVALIDATE_IN_SECONDS,
     };
 };
