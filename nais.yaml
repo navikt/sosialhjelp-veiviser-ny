@@ -41,7 +41,6 @@ spec:
     min: {{minReplicas}}
     max: {{maxReplicas}}
     cpuThresholdPercentage: 70
-  webproxy: {{webProxyEnabled}} 
   env:
 {{#each env}}
     - name: {{@key}}
