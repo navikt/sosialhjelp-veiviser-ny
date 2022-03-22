@@ -1,0 +1,14 @@
+{
+    "applicationName": "sosialhjelp-veiviser-mock",
+    "namespace": "teamdigisos",
+    "ingresses": ["https://sosialhjelp-veiviser-mock.dev.nav.no/sosialhjelp"],
+    "env": {
+        "NODE_EXTRA_CA_CERTS": "/etc/ssl/ca-bundle.pem"
+    },
+    "minReplicas": "1",
+    "maxReplicas": "2",
+    "cpuLimit": "300m",
+    "memoryLimit": "256Mi",
+    "cpuRequest": "1m",
+    "memoryRequest": "64Mi"
+}
