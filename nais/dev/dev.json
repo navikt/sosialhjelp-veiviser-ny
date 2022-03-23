@@ -1,5 +1,5 @@
 {
-    "applicationName": "sosialhjelp-veiviser",
+    "applicationName": "sosialhjelp-veiviser-dev",
     "namespace": "teamdigisos",
     "ingresses": ["https://sosialhjelp-veiviser-dev.dev.nav.no/sosialhjelp"],
     "env": {
