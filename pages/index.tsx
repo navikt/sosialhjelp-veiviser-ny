@@ -144,9 +144,12 @@ const Index = (props: Props) => {
                 />
                 <ContentContainer>
                     <Grid role="main">
-                        <Cell xs={12}>
-                            <Alert {...data.frontPage.alert} />
-                        </Cell>
+                        {data.frontPage.alert && (
+                            <Cell xs={12}>
+                                <Alert {...data.frontPage.alert} />
+                            </Cell>
+                        )}
+
                         <Cell xs={12}>
                             <ApplyDigitallyPanel
                                 {...data.frontPage.applyDigitallyPanel}
