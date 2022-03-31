@@ -9,16 +9,16 @@
   "private": true,
   "homepage": "https://www.nav.no/sosialhjelp/",
   "dependencies": {
-    "@navikt/ds-css": "^0.16.4",
-    "@navikt/ds-icons": "^0.8.4",
-    "@navikt/ds-react": "^0.17.4",
+    "@navikt/ds-css": "^0.16.12",
+    "@navikt/ds-icons": "^0.8.6",
+    "@navikt/ds-react": "^0.17.16",
     "@navikt/nav-dekoratoren-moduler": "^1.6.14",
     "@portabletext/react": "^1.0.4",
-    "@sentry/nextjs": "^6.18.2",
+    "@sentry/nextjs": "^6.19.3",
     "@u-wave/react-vimeo": "^0.9.5",
     "amplitude-js": "^8.17.0",
     "downshift": "^6.1.7",
-    "html-react-parser": "^1.4.8",
+    "html-react-parser": "^1.4.10",
     "jsdom": "^19.0.0",
     "next": "^12.1.0",
     "next-sanity": "^0.5.1",
@@ -27,7 +27,7 @@
     "react-collapse": "^5.1.1",
     "react-cookie": "^4.1.1",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/amplitude-js": "^8.16.0",
@@ -38,9 +38,9 @@
     "@types/styled-components": "^5.1.24",
     "babel-plugin-macros": "^3.1.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.5",
-    "prettier": "^2.5.1",
-    "typescript": "^4.6.2"
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1",
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "start": "next start -p 5000",
