@@ -24,7 +24,7 @@
     "@sanity/default-login": "^2.29.3",
     "@sanity/desk-tool": "^2.29.3",
     "@sanity/vision": "^2.29.3",
-    "@u-wave/react-vimeo": "^0.9.5",
+    "@u-wave/react-vimeo": "^0.9.6",
     "express": "^4.17.3",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
