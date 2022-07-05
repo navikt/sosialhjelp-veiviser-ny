@@ -1,5 +1,9 @@
 ## Veiviser økonomisk sosialhjelp
 
+## Repoet er arkivert
+
+Innholdet i veiviseren er flyttet til Enonic CMS, så dette repoet er arkivert.
+
 ## Komme i gang
 
 For å kjøre lokalt:
