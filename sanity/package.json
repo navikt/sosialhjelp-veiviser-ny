@@ -22,7 +22,7 @@
     "@sanity/core": "^2.29.3",
     "@sanity/default-layout": "^2.29.3",
     "@sanity/default-login": "^2.29.3",
-    "@sanity/desk-tool": "^2.29.3",
+    "@sanity/desk-tool": "^2.29.4",
     "@sanity/vision": "^2.29.3",
     "@u-wave/react-vimeo": "^0.9.5",
     "express": "^4.17.3",
